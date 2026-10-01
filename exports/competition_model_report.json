@@ -1,0 +1,956 @@
+{
+  "document": "robot2",
+  "isModified": false,
+  "body_count": 55,
+  "mass_real_cad_g": 1034.17,
+  "mass_envelopes_g": 24.267,
+  "mass_by_group_cad_g": {
+    "01_Chassis": 458.426,
+    "02_Drivetrain": 240.129,
+    "03_Front_Spinner": 152.292,
+    "05_Electronics": 140.21,
+    "06_3D_Printed": 67.381
+  },
+  "com_all_cad_world_mm": [
+    0.3,
+    31.56,
+    -1.38
+  ],
+  "parts": [
+    {
+      "group": "01_Chassis",
+      "name": "Base_Plate_Al",
+      "min": [
+        -80.0,
+        3.0,
+        -90.0
+      ],
+      "max": [
+        80.0,
+        5.0,
+        90.0
+      ],
+      "mass_g": 142.358,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Batt_Post_1",
+      "min": [
+        -36.5,
+        5.0,
+        27.5
+      ],
+      "max": [
+        -31.5,
+        32.6,
+        32.5
+      ],
+      "mass_g": 0.545,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Batt_Post_2",
+      "min": [
+        31.5,
+        5.0,
+        27.5
+      ],
+      "max": [
+        36.5,
+        32.6,
+        32.5
+      ],
+      "mass_g": 0.545,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Batt_Post_3",
+      "min": [
+        -36.5,
+        5.0,
+        43.5
+      ],
+      "max": [
+        -31.5,
+        32.6,
+        48.5
+      ],
+      "mass_g": 0.545,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Batt_Post_4",
+      "min": [
+        31.5,
+        5.0,
+        43.5
+      ],
+      "max": [
+        36.5,
+        32.6,
+        48.5
+      ],
+      "mass_g": 0.545,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Battery_Holder",
+      "min": [
+        -52.0,
+        32.6,
+        18.5
+      ],
+      "max": [
+        52.0,
+        39.6,
+        57.5
+      ],
+      "mass_g": 10.245,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "Battery_and_Tray",
+      "min": [
+        -52.0,
+        34.6,
+        20.5
+      ],
+      "max": [
+        52.0,
+        61.6,
+        55.5
+      ],
+      "mass_g": 104.177,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "DRV8874_A",
+      "min": [
+        -34.9,
+        7.0,
+        66.4
+      ],
+      "max": [
+        -17.1,
+        10.0,
+        81.6
+      ],
+      "mass_g": 0.86,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "DRV8874_B",
+      "min": [
+        -11.6,
+        7.0,
+        66.1
+      ],
+      "max": [
+        3.6,
+        10.0,
+        83.9
+      ],
+      "mass_g": 0.86,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Disconnect_Post_1",
+      "min": [
+        29.5,
+        5.0,
+        67.0
+      ],
+      "max": [
+        35.5,
+        45.0,
+        73.0
+      ],
+      "mass_g": 2.904,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Disconnect_Post_2",
+      "min": [
+        48.5,
+        5.0,
+        67.0
+      ],
+      "max": [
+        54.5,
+        45.0,
+        73.0
+      ],
+      "mass_g": 2.904,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "ESC_Tekko32",
+      "min": [
+        17.85,
+        7.0,
+        -36.65
+      ],
+      "max": [
+        52.15,
+        11.5,
+        -19.35
+      ],
+      "mass_g": 2.83,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "ESP32_DevKit",
+      "min": [
+        -25.75,
+        25.0,
+        23.85
+      ],
+      "max": [
+        25.75,
+        26.6,
+        52.15
+      ],
+      "mass_g": 2.436,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "ESP32_Dupont_Keepout_A",
+      "min": [
+        -20.72,
+        8.5,
+        49.43
+      ],
+      "max": [
+        14.88,
+        25.0,
+        51.97
+      ],
+      "mass_g": 1.582,
+      "analysis_envelope": true,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "ESP32_Dupont_Keepout_B",
+      "min": [
+        -20.72,
+        8.5,
+        24.03
+      ],
+      "max": [
+        14.88,
+        25.0,
+        26.57
+      ],
+      "mass_g": 1.582,
+      "analysis_envelope": true,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "ESP32_Module",
+      "min": [
+        -25.75,
+        26.6,
+        29.0
+      ],
+      "max": [
+        -0.25,
+        29.7,
+        47.0
+      ],
+      "mass_g": 1.508,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "FingerTech_Mini_Switch_Envelope",
+      "min": [
+        35.65,
+        49.0,
+        63.65
+      ],
+      "max": [
+        48.35,
+        55.35,
+        76.35
+      ],
+      "mass_g": 1.102,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "FingerTech_Switch_Adapter",
+      "min": [
+        28.0,
+        45.0,
+        61.0
+      ],
+      "max": [
+        56.0,
+        49.0,
+        79.0
+      ],
+      "mass_g": 2.143,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "01_Chassis",
+      "name": "Front_Wedge_L",
+      "min": [
+        -80.0,
+        5.0,
+        -90.0
+      ],
+      "max": [
+        -35.0,
+        83.0,
+        -40.0
+      ],
+      "mass_g": 71.861,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "01_Chassis",
+      "name": "Front_Wedge_R",
+      "min": [
+        35.0,
+        5.0,
+        -90.0
+      ],
+      "max": [
+        80.0,
+        83.0,
+        -40.0
+      ],
+      "mass_g": 71.861,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Holder_DRV8874_A",
+      "min": [
+        -36.7,
+        5.0,
+        64.6
+      ],
+      "max": [
+        -15.3,
+        9.0,
+        83.4
+      ],
+      "mass_g": 1.025,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Holder_DRV8874_B",
+      "min": [
+        -13.4,
+        5.0,
+        64.3
+      ],
+      "max": [
+        5.4,
+        9.0,
+        85.7
+      ],
+      "mass_g": 1.025,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Holder_ESC_Tekko32",
+      "min": [
+        16.05,
+        5.0,
+        -38.45
+      ],
+      "max": [
+        53.95,
+        10.5,
+        -17.55
+      ],
+      "mass_g": 2.319,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Holder_ESP32",
+      "min": [
+        -27.75,
+        5.0,
+        21.85
+      ],
+      "max": [
+        27.75,
+        25.0,
+        54.15
+      ],
+      "mass_g": 4.447,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Holder_Rx_ER6",
+      "min": [
+        -66.3,
+        5.0,
+        39.7
+      ],
+      "max": [
+        -37.7,
+        21.0,
+        86.3
+      ],
+      "mass_g": 6.404,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Holder_UBEC_5A",
+      "min": [
+        55.7,
+        5.0,
+        24.2
+      ],
+      "max": [
+        76.3,
+        16.0,
+        77.8
+      ],
+      "mass_g": 4.612,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "01_Chassis",
+      "name": "Left_Side_Plate_Al",
+      "min": [
+        -80.0,
+        5.0,
+        -40.0
+      ],
+      "max": [
+        -78.0,
+        83.0,
+        90.0
+      ],
+      "mass_g": 42.864,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "Left_Support",
+      "min": [
+        -32.5,
+        32.0,
+        -81.5
+      ],
+      "max": [
+        -22.5,
+        45.0,
+        -68.5
+      ],
+      "mass_g": 3.244,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "Left_Wheel",
+      "min": [
+        -80.0,
+        -0.0,
+        -21.0
+      ],
+      "max": [
+        -61.0,
+        42.0,
+        21.0
+      ],
+      "mass_g": 27.903,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "Motor_Pulley",
+      "min": [
+        16.0,
+        28.5,
+        -35.75
+      ],
+      "max": [
+        22.0,
+        48.5,
+        -15.75
+      ],
+      "mass_g": 4.962,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "06_3D_Printed",
+      "name": "Rear_Panel",
+      "min": [
+        -78.0,
+        5.0,
+        88.0
+      ],
+      "max": [
+        78.0,
+        83.0,
+        90.0
+      ],
+      "mass_g": 27.175,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "01_Chassis",
+      "name": "Right_Side_Plate_Al",
+      "min": [
+        78.0,
+        5.0,
+        -40.0
+      ],
+      "max": [
+        80.0,
+        83.0,
+        90.0
+      ],
+      "mass_g": 42.864,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "Right_Support",
+      "min": [
+        22.5,
+        32.0,
+        -81.5
+      ],
+      "max": [
+        32.5,
+        45.0,
+        -68.5
+      ],
+      "mass_g": 3.244,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "Right_Wheel",
+      "min": [
+        61.0,
+        -0.0,
+        -21.0
+      ],
+      "max": [
+        80.0,
+        42.0,
+        21.0
+      ],
+      "mass_g": 27.903,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "Rx_ER6",
+      "min": [
+        -64.5,
+        7.0,
+        41.5
+      ],
+      "max": [
+        -39.5,
+        22.0,
+        84.5
+      ],
+      "mass_g": 17.092,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "Spinner_Bar",
+      "min": [
+        -3.0,
+        28.5,
+        -107.5
+      ],
+      "max": [
+        3.0,
+        48.5,
+        -42.5
+      ],
+      "mass_g": 21.693,
+      "analysis_envelope": false,
+      "material": "Aluminum 7075"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "Spinner_Motor",
+      "min": [
+        -15.0,
+        24.75,
+        -39.5
+      ],
+      "max": [
+        15.0,
+        52.25,
+        -12.0
+      ],
+      "mass_g": 48.111,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "Spinner_Motor_Cradle",
+      "min": [
+        -15.0,
+        5.0,
+        -41.0
+      ],
+      "max": [
+        15.0,
+        30.5,
+        -12.0
+      ],
+      "mass_g": 35.805,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "Spinner_Shaft",
+      "min": [
+        -32.5,
+        36.5,
+        -77.0
+      ],
+      "max": [
+        32.5,
+        40.5,
+        -73.0
+      ],
+      "mass_g": 6.412,
+      "analysis_envelope": false,
+      "material": "Steel"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "Spinner_Sweep_Envelope",
+      "min": [
+        -3.0,
+        6.0,
+        -107.5
+      ],
+      "max": [
+        3.0,
+        71.0,
+        -42.5
+      ],
+      "mass_g": 21.104,
+      "analysis_envelope": true,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "01_Chassis",
+      "name": "Standoff_1",
+      "min": [
+        -78.0,
+        5.0,
+        -38.0
+      ],
+      "max": [
+        -72.0,
+        83.0,
+        -32.0
+      ],
+      "mass_g": 5.612,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "01_Chassis",
+      "name": "Standoff_2",
+      "min": [
+        72.0,
+        5.0,
+        82.0
+      ],
+      "max": [
+        78.0,
+        83.0,
+        88.0
+      ],
+      "mass_g": 5.455,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "01_Chassis",
+      "name": "Standoff_3",
+      "min": [
+        -78.0,
+        5.0,
+        82.0
+      ],
+      "max": [
+        -72.0,
+        83.0,
+        88.0
+      ],
+      "mass_g": 5.612,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "01_Chassis",
+      "name": "Standoff_4",
+      "min": [
+        72.0,
+        5.0,
+        -38.0
+      ],
+      "max": [
+        78.0,
+        83.0,
+        -32.0
+      ],
+      "mass_g": 5.612,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "TT_Gearbox_L",
+      "min": [
+        -61.0,
+        12.0,
+        -11.0
+      ],
+      "max": [
+        -37.0,
+        30.0,
+        11.0
+      ],
+      "mass_g": 10.156,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "TT_Gearbox_R",
+      "min": [
+        37.0,
+        12.0,
+        -11.0
+      ],
+      "max": [
+        61.0,
+        30.0,
+        11.0
+      ],
+      "mass_g": 10.156,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "TT_Motor_Can_L",
+      "min": [
+        -28.7,
+        11.0,
+        -10.0
+      ],
+      "max": [
+        -3.7,
+        31.0,
+        10.0
+      ],
+      "mass_g": 61.654,
+      "analysis_envelope": false,
+      "material": "Steel"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "TT_Motor_Can_R",
+      "min": [
+        3.7,
+        11.0,
+        -10.0
+      ],
+      "max": [
+        28.7,
+        31.0,
+        10.0
+      ],
+      "mass_g": 61.654,
+      "analysis_envelope": false,
+      "material": "Steel"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "TT_Motor_Clamp_L",
+      "min": [
+        -49.85,
+        30.0,
+        -16.5
+      ],
+      "max": [
+        -39.85,
+        33.0,
+        16.5
+      ],
+      "mass_g": 2.526,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "TT_Motor_Clamp_R",
+      "min": [
+        39.85,
+        30.0,
+        -16.5
+      ],
+      "max": [
+        49.85,
+        33.0,
+        16.5
+      ],
+      "mass_g": 2.526,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "TT_Motor_Mount_L",
+      "min": [
+        -55.0,
+        5.0,
+        -16.5
+      ],
+      "max": [
+        -34.7,
+        28.5,
+        16.5
+      ],
+      "mass_g": 17.826,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "02_Drivetrain",
+      "name": "TT_Motor_Mount_R",
+      "min": [
+        34.7,
+        5.0,
+        -16.5
+      ],
+      "max": [
+        55.0,
+        28.5,
+        16.5
+      ],
+      "mass_g": 17.826,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    },
+    {
+      "group": "01_Chassis",
+      "name": "Top_Cover",
+      "min": [
+        -80.0,
+        83.0,
+        -90.0
+      ],
+      "max": [
+        80.0,
+        85.0,
+        90.0
+      ],
+      "mass_g": 64.327,
+      "analysis_envelope": false,
+      "material": "Nylon 6"
+    },
+    {
+      "group": "05_Electronics",
+      "name": "UBEC_5A",
+      "min": [
+        57.5,
+        7.0,
+        26.0
+      ],
+      "max": [
+        74.5,
+        17.0,
+        76.0
+      ],
+      "mass_g": 9.01,
+      "analysis_envelope": false,
+      "material": "ABS Plastic"
+    },
+    {
+      "group": "03_Front_Spinner",
+      "name": "Weapon_Pulley",
+      "min": [
+        16.0,
+        28.5,
+        -85.0
+      ],
+      "max": [
+        22.0,
+        48.5,
+        -65.0
+      ],
+      "mass_g": 4.886,
+      "analysis_envelope": false,
+      "material": "Aluminum 6061"
+    }
+  ]
+}

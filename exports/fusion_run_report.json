@@ -1,0 +1,553 @@
+{
+  "generated": "2026-09-23T02:48:26",
+  "steps": {
+    "4_mass_and_checks": {
+      "by_body": [
+        {
+          "subsystem": "01_Chassis",
+          "body": "Base_Plate_Al",
+          "material": "Aluminum 6061",
+          "mass_g": 142.36
+        },
+        {
+          "subsystem": "01_Chassis",
+          "body": "Left_Side_Plate_Al",
+          "material": "Aluminum 6061",
+          "mass_g": 42.86
+        },
+        {
+          "subsystem": "01_Chassis",
+          "body": "Right_Side_Plate_Al",
+          "material": "Aluminum 6061",
+          "mass_g": 42.86
+        },
+        {
+          "subsystem": "01_Chassis",
+          "body": "Top_Cover",
+          "material": "Nylon 6",
+          "mass_g": 63.67
+        },
+        {
+          "subsystem": "01_Chassis",
+          "body": "Front_Wedge_L",
+          "material": "Aluminum 6061",
+          "mass_g": 71.86
+        },
+        {
+          "subsystem": "01_Chassis",
+          "body": "Front_Wedge_R",
+          "material": "Aluminum 6061",
+          "mass_g": 71.86
+        },
+        {
+          "subsystem": "01_Chassis",
+          "body": "Standoff_1",
+          "material": "Aluminum 6061",
+          "mass_g": 5.61
+        },
+        {
+          "subsystem": "01_Chassis",
+          "body": "Standoff_2",
+          "material": "Aluminum 6061",
+          "mass_g": 5.46
+        },
+        {
+          "subsystem": "01_Chassis",
+          "body": "Standoff_3",
+          "material": "Aluminum 6061",
+          "mass_g": 5.61
+        },
+        {
+          "subsystem": "01_Chassis",
+          "body": "Standoff_4",
+          "material": "Aluminum 6061",
+          "mass_g": 5.61
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "Left_Wheel",
+          "material": "ABS Plastic",
+          "mass_g": 27.9
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "Right_Wheel",
+          "material": "ABS Plastic",
+          "mass_g": 27.9
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "TT_Gearbox_L",
+          "material": "Nylon 6",
+          "mass_g": 10.16
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "TT_Motor_Can_L",
+          "material": "Steel",
+          "mass_g": 61.65
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "TT_Gearbox_R",
+          "material": "Nylon 6",
+          "mass_g": 10.16
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "TT_Motor_Can_R",
+          "material": "Steel",
+          "mass_g": 61.65
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "TT_Motor_Mount_L",
+          "material": "Aluminum 6061",
+          "mass_g": 17.83
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "TT_Motor_Clamp_L",
+          "material": "Aluminum 6061",
+          "mass_g": 2.53
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "TT_Motor_Mount_R",
+          "material": "Aluminum 6061",
+          "mass_g": 17.83
+        },
+        {
+          "subsystem": "02_Drivetrain",
+          "body": "TT_Motor_Clamp_R",
+          "material": "Aluminum 6061",
+          "mass_g": 2.53
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "Spinner_Shaft",
+          "material": "Steel",
+          "mass_g": 6.41
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "Left_Support",
+          "material": "Aluminum 6061",
+          "mass_g": 3.24
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "Right_Support",
+          "material": "Aluminum 6061",
+          "mass_g": 3.24
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "Spinner_Sweep_Envelope",
+          "material": "ABS Plastic",
+          "mass_g": 21.1
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "Spinner_Motor",
+          "material": "Aluminum 6061",
+          "mass_g": 48.11
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "Spinner_Bar",
+          "material": "Aluminum 7075",
+          "mass_g": 21.69
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "Spinner_Motor_Cradle",
+          "material": "Aluminum 6061",
+          "mass_g": 35.81
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "Weapon_Pulley",
+          "material": "Aluminum 6061",
+          "mass_g": 4.89
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "Motor_Pulley",
+          "material": "Aluminum 6061",
+          "mass_g": 4.96
+        },
+        {
+          "subsystem": "03_Front_Spinner",
+          "body": "ESC_Tekko32",
+          "material": "ABS Plastic",
+          "mass_g": 2.83
+        },
+        {
+          "subsystem": "04_Top_Hammer",
+          "body": "Hammer_Servo",
+          "material": "ABS Plastic",
+          "mass_g": 35.8
+        },
+        {
+          "subsystem": "04_Top_Hammer",
+          "body": "Hammer_Arm",
+          "material": "Aluminum 6061",
+          "mass_g": 32.4
+        },
+        {
+          "subsystem": "04_Top_Hammer",
+          "body": "Hammer_Head",
+          "material": "Aluminum 6061",
+          "mass_g": 18.22
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "Main_Disconnect",
+          "material": "ABS Plastic",
+          "mass_g": 5.22
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "Battery_and_Tray",
+          "material": "ABS Plastic",
+          "mass_g": 104.18
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "Rx_ER6",
+          "material": "ABS Plastic",
+          "mass_g": 17.09
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "UBEC_5A",
+          "material": "ABS Plastic",
+          "mass_g": 9.01
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "DRV8874_A",
+          "material": "ABS Plastic",
+          "mass_g": 0.86
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "DRV8874_B",
+          "material": "ABS Plastic",
+          "mass_g": 0.86
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "ESP32_DevKit",
+          "material": "ABS Plastic",
+          "mass_g": 2.44
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "ESP32_Module",
+          "material": "ABS Plastic",
+          "mass_g": 1.51
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "ESP32_Dupont_Keepout_A",
+          "material": "ABS Plastic",
+          "mass_g": 1.58
+        },
+        {
+          "subsystem": "05_Electronics",
+          "body": "ESP32_Dupont_Keepout_B",
+          "material": "ABS Plastic",
+          "mass_g": 1.58
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Rear_Panel",
+          "material": "Nylon 6",
+          "mass_g": 27.17
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Battery_Holder",
+          "material": "Nylon 6",
+          "mass_g": 10.24
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Batt_Post_1",
+          "material": "Nylon 6",
+          "mass_g": 0.54
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Batt_Post_2",
+          "material": "Nylon 6",
+          "mass_g": 0.54
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Batt_Post_3",
+          "material": "Nylon 6",
+          "mass_g": 0.54
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Batt_Post_4",
+          "material": "Nylon 6",
+          "mass_g": 0.54
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Disconnect_Post_1",
+          "material": "Aluminum 6061",
+          "mass_g": 2.9
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Disconnect_Post_2",
+          "material": "Aluminum 6061",
+          "mass_g": 2.9
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Holder_ESC_Tekko32",
+          "material": "Nylon 6",
+          "mass_g": 2.32
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Holder_Rx_ER6",
+          "material": "Nylon 6",
+          "mass_g": 6.4
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Holder_UBEC_5A",
+          "material": "Nylon 6",
+          "mass_g": 4.61
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Holder_DRV8874_A",
+          "material": "Nylon 6",
+          "mass_g": 1.02
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Holder_DRV8874_B",
+          "material": "Nylon 6",
+          "mass_g": 1.02
+        },
+        {
+          "subsystem": "06_3D_Printed",
+          "body": "Holder_ESP32",
+          "material": "Nylon 6",
+          "mass_g": 4.45
+        }
+      ],
+      "by_subsystem_g": {
+        "01_Chassis": 457.77,
+        "02_Drivetrain": 240.13,
+        "03_Front_Spinner": 152.29,
+        "04_Top_Hammer": 86.42,
+        "05_Electronics": 144.33,
+        "06_3D_Printed": 65.24
+      },
+      "model_total_mass_g": 1146.18,
+      "centre_of_mass_mm": [
+        0.33,
+        -1.25,
+        38.22
+      ],
+      "envelope_mass_g": 24.26,
+      "real_body_mass_g": 1121.92,
+      "interference_count": 2,
+      "interference_pairs": [
+        {
+          "a": "Spinner_Shaft",
+          "b": "Spinner_Sweep_Envelope",
+          "volume_mm3": 75.398
+        },
+        {
+          "a": "Spinner_Sweep_Envelope",
+          "b": "Spinner_Bar",
+          "volume_mm3": 7595.003
+        }
+      ],
+      "bodies_checked": 57
+    },
+    "3_bar_material": {
+      "mass_before_g": 21.69,
+      "material_before": "Aluminum 7075",
+      "material_after": "Aluminum 7075",
+      "resolved_by": "already applied - left alone",
+      "mass_after_g": 21.69,
+      "bar_span_mm": 65.0,
+      "kinetic_energy": {
+        "assumed_rpm_no_load": 15540.0,
+        "model": "thin bar about its centre, I = m*L^2/12",
+        "6061_mock": {
+          "mass_g": 21.69,
+          "I_kgm2": 7.637704731564136e-06,
+          "KE_J": 10.11
+        },
+        "7075_T6": {
+          "mass_g": 21.69,
+          "I_kgm2": 7.637704731564136e-06,
+          "KE_J": 10.11
+        },
+        "steel_if_chosen": {
+          "mass_g": 63.07,
+          "I_kgm2": 2.2205919312140165e-05,
+          "KE_J": 29.4,
+          "note": "not applied - ~3x the energy and ~+40 g over budget"
+        },
+        "caveat": "no-load RPM, no gearing/belt ratio applied, bar treated as a uniform thin bar. Loaded RPM is lower. This is an order-of-magnitude figure for rule-checking, not a validated number."
+      },
+      "status": "APPLIED"
+    },
+    "5_exports": {
+      "step": {
+        "path": "/Users/jitwisutthobut/Desktop/robot/exports/ESP32_Mini_BattleBot_Master.step",
+        "ok": true
+      },
+      "stale_stl_removed": [
+        "PCB_Standoff_4.stl",
+        "PCB_Standoff_3.stl",
+        "PCB_Standoff_2.stl",
+        "PCB_Standoff_1.stl"
+      ],
+      "stl": [
+        {
+          "component": "Wire_Clips",
+          "skipped": "no bodies"
+        },
+        {
+          "component": "Non_Structural_Covers",
+          "skipped": "no bodies"
+        },
+        {
+          "component": "Rear_Panel",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Rear_Panel.stl"
+        },
+        {
+          "component": "TPU_Bumpers",
+          "skipped": "no bodies"
+        },
+        {
+          "component": "Battery_Holder",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Battery_Holder.stl"
+        },
+        {
+          "component": "Batt_Post_1",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Batt_Post_1.stl"
+        },
+        {
+          "component": "Batt_Post_2",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Batt_Post_2.stl"
+        },
+        {
+          "component": "Batt_Post_3",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Batt_Post_3.stl"
+        },
+        {
+          "component": "Batt_Post_4",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Batt_Post_4.stl"
+        },
+        {
+          "component": "Disconnect_Post_1",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Disconnect_Post_1.stl"
+        },
+        {
+          "component": "Disconnect_Post_2",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Disconnect_Post_2.stl"
+        },
+        {
+          "component": "Holder_ESC_Tekko32",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Holder_ESC_Tekko32.stl"
+        },
+        {
+          "component": "Holder_Rx_ER6",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Holder_Rx_ER6.stl"
+        },
+        {
+          "component": "Holder_UBEC_5A",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Holder_UBEC_5A.stl"
+        },
+        {
+          "component": "Holder_DRV8874_A",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Holder_DRV8874_A.stl"
+        },
+        {
+          "component": "Holder_DRV8874_B",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Holder_DRV8874_B.stl"
+        },
+        {
+          "component": "Holder_ESP32",
+          "ok": true,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/STL/Holder_ESP32.stl"
+        }
+      ],
+      "dxf": [
+        {
+          "part": "Base_Plate_Al",
+          "ok": true,
+          "curves": 62,
+          "loops": 39,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/DXF/Base_Plate_Al.dxf"
+        },
+        {
+          "part": "Left_Side_Plate_Al",
+          "ok": true,
+          "curves": 10,
+          "loops": 3,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/DXF/Left_Side_Plate_Al.dxf"
+        },
+        {
+          "part": "Right_Side_Plate_Al",
+          "ok": true,
+          "curves": 10,
+          "loops": 3,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/DXF/Right_Side_Plate_Al.dxf"
+        },
+        {
+          "part": "Front_Wedge_L",
+          "ok": true,
+          "curves": 3,
+          "loops": 1,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/DXF/Front_Wedge_L.dxf"
+        },
+        {
+          "part": "Front_Wedge_R",
+          "ok": true,
+          "curves": 3,
+          "loops": 1,
+          "path": "/Users/jitwisutthobut/Desktop/robot/exports/DXF/Front_Wedge_R.dxf"
+        }
+      ]
+    }
+  },
+  "errors": [],
+  "summary": [
+    "Mass: 1121.9 g real bodies (1146.2 g incl. envelopes), COM z=38.2 mm, 2 interference pair(s)",
+    "Spinner_Bar: Aluminum 7075 -> Aluminum 7075, 21.7 g -> 21.7 g, KE 10.1 J -> 10.1 J",
+    "Exports: STEP + 14 STL + 5 DXF rewritten"
+  ],
+  "document": "robot2",
+  "saved": true,
+  "mass_markdown": "/Users/jitwisutthobut/Desktop/robot/exports/Mass_Report_Generated.md"
+}

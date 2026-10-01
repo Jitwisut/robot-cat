@@ -1,0 +1,7 @@
+effective_contact_width_mm,vertical_tip_force_N,ideal_peak_elastic_bending_stress_MPa,ideal_peak_location_y_mm,ideal_tip_displacement_mm,ideal_elastic_yield_screen
+120.0,300.0,3.9583,107.7774,0.005324,below assumed yield for plow member only
+120.0,583.0,7.6924,107.7774,0.010346,below assumed yield for plow member only
+120.0,1163.0,15.3451,107.7774,0.020638,below assumed yield for plow member only
+10.0,300.0,47.5,107.7774,0.063885,below assumed yield for plow member only
+10.0,583.0,92.3083,107.7774,0.124149,below assumed yield for plow member only
+10.0,1163.0,184.1417,107.7774,0.24766,below assumed yield for plow member only

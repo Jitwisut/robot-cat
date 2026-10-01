@@ -1,0 +1,242 @@
+{
+  "head_on": {
+    "p_r3_under_at_impact": 0.64795,
+    "p_r3_under_during_push": 0.87325,
+    "p_r3_lifts_robot2_wheels": 0.68765,
+    "p_r3_wins_pure_push_jammed": 0.7017,
+    "p_r3_wins_push_when_under_no_lift": 1.0,
+    "p_r3_controls": 0.96215,
+    "lift_gain_needed_mm": 14.208305524657026,
+    "lift_gain_available_mm_median": 19.833403209199155,
+    "robot2_front_load_to_lift_N_median": 4.772839754557436,
+    "r3_lift_force_at_contact_N_min": 39.12367358416803
+  },
+  "r3_hits_robot2_flank": {
+    "p_r3_under": 0.8918,
+    "p_r3_lifts_near_wheel": 0.59185,
+    "p_r3_lifts_side": 0.8918,
+    "note": "hit point uniform along robot2 flank; lifter 79 mm wide"
+  },
+  "robot2_hits_r3_flank": {
+    "p_robot2_under_at_impact": 0.93975,
+    "p_robot2_under_while_pushing": 0.80155,
+    "p_robot2_lifts_r3_side": 0.93975,
+    "note": "hit point uniform along R3 side incl. wing; tyres exposed at the corners"
+  },
+  "robot2_hits_r3_flank_with_1mm_skirts": {
+    "p_robot2_under": 0.16835
+  },
+  "r3_hits_robot2_rear": {
+    "p_r3_under_if_robot2_fleeing": 0.04225,
+    "p_r3_under_if_robot2_parked": 1.0,
+    "p_r3_under_50_50": 0.52035,
+    "note": "lifting robot2 rear by 6 mm raises its wheels 3 mm (they sit mid-way to the front skid)"
+  },
+  "robot2_hits_r3_rear": {
+    "p_robot2_catches_r3_rear_tyre": 1.0,
+    "note": "robot2 front edge (base plate on the floor when nose-down) wedges under an exposed rear tyre"
+  },
+  "push": {
+    "r3_traction_N_median": 9.629367489902531,
+    "robot2_traction_N_median": 8.492219036700007,
+    "r3_motor_limit_N_median": 63.035808937093265,
+    "robot2_motor_limit_N_median": 32.9448730799287,
+    "p_r3_out_pushes_equal_tyres": 0.7017,
+    "p_r3_out_pushes_if_robot2_abs_wheels_mu0p4": 1.0
+  },
+  "sensitivity_corr": {
+    "head_on_r3_controls": {
+      "mu_r3": 0.16439361627433424,
+      "mu_r2": -0.1257989319889401,
+      "mass_r3": 0.07852470356214522,
+      "mass_r2": -0.07066003180746237,
+      "eta": -0.0020470660915990813,
+      "volts": -0.012024474545669454,
+      "edge_sigma": -2.680824391083804e-16,
+      "cg2_dy": -0.2147409545693289,
+      "mu_contact": 0.0039449239161176925,
+      "slide_in": -0.017157234850570656,
+      "r2_lift_N": 0.0005712065594334318,
+      "servo_derate": 0.011702746158961379,
+      "edge_noise_r3_tip": -0.1542505671231114
+    },
+    "push_margin_jam": {
+      "mu_r3": 0.655071903770614,
+      "mu_r2": -0.5783612174794283,
+      "mass_r3": 0.3587483385313119,
+      "mass_r2": -0.30781740876732994,
+      "eta": -0.005917131133785694,
+      "volts": -0.0023594560072014393,
+      "edge_sigma": -5.2088877870469676e-17,
+      "cg2_dy": -0.006956619730185548,
+      "mu_contact": -0.0043119395696087056,
+      "slide_in": -0.011840936726347388,
+      "r2_lift_N": 0.0029147701193091287,
+      "servo_derate": 0.014027055354185424,
+      "edge_noise_r3_tip": -0.003152375975106181
+    },
+    "robot2_lifts_r3_flank": {
+      "mu_r3": 0.007321669792555516,
+      "mu_r2": 0.002623340726399269,
+      "mass_r3": 0.0023300670757335513,
+      "mass_r2": -0.008098205192009657,
+      "eta": -0.0067198119953830624,
+      "volts": 0.002330750192757615,
+      "edge_sigma": -1.082464149916885e-16,
+      "cg2_dy": -0.012700643818759844,
+      "mu_contact": 0.004410520597955254,
+      "slide_in": -0.010573755935733824,
+      "r2_lift_N": -0.008078036865201857,
+      "servo_derate": 0.0013391835202215144,
+      "edge_noise_r3_tip": 5.9325154896220476e-05
+    }
+  },
+  "time_sim": {
+    "start_gap_m": 0.4,
+    "contact_time_s": 0.2262999999999914,
+    "closing_speed_m_s": 3.3975130754918235,
+    "impact_force_scaled_from_583N_at_0p5_m_s": 3961.500246023466,
+    "r3_displacement_after_2p5s_lift_m": 3.6961433287948893,
+    "r3_displacement_after_2p5s_no_lift_m": 1.8454333645083785
+  },
+  "turning": {
+    "R3_4WD": {
+      "yaw_accel_rad_s2": 21.073799471901896,
+      "t_90deg_s": 0.38610330108566226
+    },
+    "robot2_2WD": {
+      "yaw_accel_rad_s2": 100.41052948617553,
+      "t_90deg_s": 0.17688267918595485
+    }
+  },
+  "inputs": {
+    "robot2_mass_kg": 1.0865000000000002,
+    "robot2_cg_ahead_of_axle_mm": 0.5237735849056608,
+    "robot2_cg_height_mm": 30.53293143120111,
+    "r3_mass_kg": 1.2374,
+    "r3_cg_y_mm": 14.735049296912878,
+    "r3_cg_height_mm": 14.682301600129309,
+    "motor_Ke_V_s_per_rad_estimate": 0.11977168437540073,
+    "motor_R_ohm": 2.7906976744186047,
+    "stall_force_per_motor_N_at_11p1V_eta0p75": 15.730727474662004,
+    "no_load_speed_m_s_at_11p1V": 1.7994119876920345,
+    "robot2_edges_mm": {
+      "spatula_tip_down": 2.0666666666666664,
+      "spatula_tip_up": 9.533333333333333,
+      "front_edge_down": 0.0,
+      "front_edge_up": 6.0,
+      "rear_edge_down": 6.0,
+      "rear_edge_up": 0.0,
+      "side_level": 3.0,
+      "tyre_y": [
+        -21.0,
+        21.0
+      ],
+      "height": 85.0,
+      "width": 160.0,
+      "wheel_top": 42.0
+    },
+    "r3_edges_mm": {
+      "tip_bottom": 0.5,
+      "tip_top": 1.5,
+      "ramp_deg": 25.345354956125014,
+      "pivot": [
+        80.5,
+        11.0
+      ],
+      "lift_max_deg": 60.0,
+      "side_guard_bottom": 6.0,
+      "rail_bottom": 1.0,
+      "lid_top": 37.0,
+      "wheel_top": 42.0,
+      "width": 168.0,
+      "height": 42.0,
+      "track": 0.148,
+      "wheelbase": 0.118
+    },
+    "params": {
+      "mu_r3": [
+        "uniform",
+        0.6,
+        1.0,
+        "tyre-floor friction R3"
+      ],
+      "mu_r2": [
+        "uniform",
+        0.6,
+        1.0,
+        "tyre-floor friction robot2 (rubber tyres assumed)"
+      ],
+      "mass_r3": [
+        "normal_rel",
+        1.2374,
+        0.08,
+        "R3 mass, +/-8% (1 sigma)"
+      ],
+      "mass_r2": [
+        "normal_rel",
+        1.0865000000000002,
+        0.08,
+        "robot2 mass, +/-8% (1 sigma)"
+      ],
+      "eta": [
+        "uniform",
+        0.6,
+        0.9,
+        "gearbox efficiency under load (estimate)"
+      ],
+      "volts": [
+        "uniform",
+        10.8,
+        12.4,
+        "3S pack voltage under load"
+      ],
+      "edge_sigma": [
+        "fixed",
+        0.7,
+        null,
+        "height noise per edge (mm, 1 sigma): tolerance, tyre squash, floor"
+      ],
+      "cg2_dy": [
+        "normal",
+        0.5237735849056608,
+        5.0,
+        "robot2 CoM ahead of axle (mm)"
+      ],
+      "mu_contact": [
+        "uniform",
+        0.2,
+        0.4,
+        "metal-on-metal friction at the wedge contact"
+      ],
+      "slide_in": [
+        "uniform",
+        5.0,
+        25.0,
+        "how far robot2 edge slides onto R3 lifter before lifting (mm)"
+      ],
+      "r2_lift_N": [
+        "uniform",
+        30.0,
+        150.0,
+        "robot2 spatula tip force (linkage unsolved in CAD: bracket)"
+      ],
+      "servo_derate": [
+        "uniform",
+        0.5,
+        1.0,
+        "fraction of ideal stall torque the R3 servo delivers"
+      ]
+    },
+    "n_mc": 20000,
+    "seed": 20260925
+  },
+  "flip_invert": {
+    "r3_invertible_wheel_top_vs_lid_mm": 5.0,
+    "robot2_invertible_wheel_top_vs_cover_mm": -43.0,
+    "tilt_to_flip_robot2_sideways_deg": 69.11006274710336,
+    "tilt_to_flip_r3_sideways_deg": 80.08546814239789,
+    "r3_max_tip_lift_mm": 35.9,
+    "robot2_side_lift_needed_to_flip_mm": 149.48273809899308
+  }
+}

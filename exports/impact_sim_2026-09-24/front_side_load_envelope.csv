@@ -1,0 +1,13 @@
+equivalent_mass_kg,speed_m_s,assumed_stopping_distance_mm,kinetic_energy_J,average_force_N,average_deceleration_g,peak_force,load_path
+1.5,0.5,2.0,0.1875,93.75,6.373226331112051,unknown,unknown: front wedge / side panel / fasteners
+1.5,0.5,5.0,0.1875,37.5,2.5492905324448207,unknown,unknown: front wedge / side panel / fasteners
+1.5,0.5,10.0,0.1875,18.75,1.2746452662224104,unknown,unknown: front wedge / side panel / fasteners
+1.5,1.0,2.0,0.75,375.0,25.492905324448206,unknown,unknown: front wedge / side panel / fasteners
+1.5,1.0,5.0,0.75,150.0,10.197162129779283,unknown,unknown: front wedge / side panel / fasteners
+1.5,1.0,10.0,0.75,75.0,5.0985810648896415,unknown,unknown: front wedge / side panel / fasteners
+1.5,2.0,2.0,3.0,1500.0,101.97162129779282,unknown,unknown: front wedge / side panel / fasteners
+1.5,2.0,5.0,3.0,600.0,40.78864851911713,unknown,unknown: front wedge / side panel / fasteners
+1.5,2.0,10.0,3.0,300.0,20.394324259558566,unknown,unknown: front wedge / side panel / fasteners
+1.5,3.0,2.0,6.75,3375.0,229.43614792003385,unknown,unknown: front wedge / side panel / fasteners
+1.5,3.0,5.0,6.75,1350.0,91.77445916801354,unknown,unknown: front wedge / side panel / fasteners
+1.5,3.0,10.0,6.75,675.0,45.88722958400677,unknown,unknown: front wedge / side panel / fasteners

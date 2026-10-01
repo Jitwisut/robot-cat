@@ -1,0 +1,80 @@
+{
+  "model": "1D variable-section Euler-Bernoulli beam; perfect root; static vertical tip force",
+  "source_geometry": "Bolt_On_Full_Width_Plow_6061 in ROBOT_V3_Competition.f3d",
+  "E_MPa": 68900.0,
+  "assumed_yield_MPa": 275.0,
+  "convergence_mm_per_N": {
+    "120": {
+      "40": 1.7749477567450025e-05,
+      "80": 1.774556265399654e-05,
+      "160": 1.7745863522853676e-05,
+      "320": 1.7745777625859237e-05,
+      "640": 1.7745770791297136e-05
+    },
+    "10": {
+      "40": 0.00021299373080940035,
+      "80": 0.00021294675184795845,
+      "160": 0.00021295036227424386,
+      "320": 0.00021294933151031086,
+      "640": 0.00021294924949556587
+    }
+  },
+  "scenario_results": [
+    {
+      "effective_contact_width_mm": 120.0,
+      "vertical_tip_force_N": 300.0,
+      "ideal_peak_elastic_bending_stress_MPa": 3.9583,
+      "ideal_peak_location_y_mm": 107.7774,
+      "ideal_tip_displacement_mm": 0.005324,
+      "ideal_elastic_yield_screen": "below assumed yield for plow member only"
+    },
+    {
+      "effective_contact_width_mm": 120.0,
+      "vertical_tip_force_N": 583.0,
+      "ideal_peak_elastic_bending_stress_MPa": 7.6924,
+      "ideal_peak_location_y_mm": 107.7774,
+      "ideal_tip_displacement_mm": 0.010346,
+      "ideal_elastic_yield_screen": "below assumed yield for plow member only"
+    },
+    {
+      "effective_contact_width_mm": 120.0,
+      "vertical_tip_force_N": 1163.0,
+      "ideal_peak_elastic_bending_stress_MPa": 15.3451,
+      "ideal_peak_location_y_mm": 107.7774,
+      "ideal_tip_displacement_mm": 0.020638,
+      "ideal_elastic_yield_screen": "below assumed yield for plow member only"
+    },
+    {
+      "effective_contact_width_mm": 10.0,
+      "vertical_tip_force_N": 300.0,
+      "ideal_peak_elastic_bending_stress_MPa": 47.5,
+      "ideal_peak_location_y_mm": 107.7774,
+      "ideal_tip_displacement_mm": 0.063885,
+      "ideal_elastic_yield_screen": "below assumed yield for plow member only"
+    },
+    {
+      "effective_contact_width_mm": 10.0,
+      "vertical_tip_force_N": 583.0,
+      "ideal_peak_elastic_bending_stress_MPa": 92.3083,
+      "ideal_peak_location_y_mm": 107.7774,
+      "ideal_tip_displacement_mm": 0.124149,
+      "ideal_elastic_yield_screen": "below assumed yield for plow member only"
+    },
+    {
+      "effective_contact_width_mm": 10.0,
+      "vertical_tip_force_N": 1163.0,
+      "ideal_peak_elastic_bending_stress_MPa": 184.1417,
+      "ideal_peak_location_y_mm": 107.7774,
+      "ideal_tip_displacement_mm": 0.24766,
+      "ideal_elastic_yield_screen": "below assumed yield for plow member only"
+    }
+  ],
+  "excluded": [
+    "plow bolts and tabs",
+    "front bulkhead",
+    "wheel/ground compliance",
+    "3D contact",
+    "plasticity",
+    "transient velocity and acceleration"
+  ]
+}

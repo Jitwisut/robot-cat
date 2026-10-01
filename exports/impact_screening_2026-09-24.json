@@ -1,0 +1,74 @@
+{
+  "model": "idealized first-yield screening; no whole-robot failure claim",
+  "source": "live Fusion robot2 body geometry and assigned material, 2026-09-24",
+  "yield_MPa": 275.0,
+  "pin": {
+    "diameter_mm": 6.0,
+    "span_mm": 67.0,
+    "central_point_yield_N": 348.2,
+    "distributed_yield_N": 696.3
+  },
+  "spatula": {
+    "full_width_mm": 62.0,
+    "root_thickness_mm": 3.944,
+    "full_width_ideal_yield_N": 1163.3,
+    "full_width_critical_y_mm": 74.0,
+    "ten_mm_strip_ideal_yield_N": 187.6,
+    "ten_mm_strip_critical_y_mm": 74.0
+  },
+  "impact_scenarios_for_1p5kg": [
+    {
+      "speed_m_s": 1.0,
+      "stop_mm": 2.0,
+      "average_force_N": 375.0
+    },
+    {
+      "speed_m_s": 1.0,
+      "stop_mm": 5.0,
+      "average_force_N": 150.0
+    },
+    {
+      "speed_m_s": 1.0,
+      "stop_mm": 10.0,
+      "average_force_N": 75.0
+    },
+    {
+      "speed_m_s": 2.0,
+      "stop_mm": 2.0,
+      "average_force_N": 1500.0
+    },
+    {
+      "speed_m_s": 2.0,
+      "stop_mm": 5.0,
+      "average_force_N": 600.0
+    },
+    {
+      "speed_m_s": 2.0,
+      "stop_mm": 10.0,
+      "average_force_N": 300.0
+    },
+    {
+      "speed_m_s": 3.0,
+      "stop_mm": 2.0,
+      "average_force_N": 3375.0
+    },
+    {
+      "speed_m_s": 3.0,
+      "stop_mm": 5.0,
+      "average_force_N": 1350.0
+    },
+    {
+      "speed_m_s": 3.0,
+      "stop_mm": 10.0,
+      "average_force_N": 675.0
+    }
+  ],
+  "limitations": [
+    "Pin load distribution, contact widths, clearances and joints are not defined.",
+    "Wedges have no validated mechanical fastener load path in the current design.",
+    "Hinge actuator, stop and battery/motor retention are not detailed.",
+    "Yield is permanent deformation onset, not fracture or robot disablement.",
+    "Impact average force is not peak force; actual effective mass and speed unknown.",
+    "Material temper of purchased stock and printed part properties are unverified."
+  ]
+}

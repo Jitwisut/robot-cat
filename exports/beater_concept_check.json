@@ -1,0 +1,149 @@
+{
+  "document": "robot2",
+  "modified": false,
+  "body_count": 55,
+  "parts": [
+    {
+      "name": "Base_Plate_Al",
+      "bbox_world_mm": [
+        [
+          -80.0,
+          3.0,
+          -90.0
+        ],
+        [
+          80.0,
+          5.0,
+          90.0
+        ]
+      ],
+      "mass_cad_g": 142.358
+    },
+    {
+      "name": "Top_Cover",
+      "bbox_world_mm": [
+        [
+          -80.0,
+          83.0,
+          -90.0
+        ],
+        [
+          80.0,
+          85.0,
+          90.0
+        ]
+      ],
+      "mass_cad_g": 64.327
+    },
+    {
+      "name": "Spinner_Shaft",
+      "bbox_world_mm": [
+        [
+          -32.5,
+          36.5,
+          -77.0
+        ],
+        [
+          32.5,
+          40.5,
+          -73.0
+        ]
+      ],
+      "mass_cad_g": 6.412
+    },
+    {
+      "name": "Left_Support",
+      "bbox_world_mm": [
+        [
+          -32.5,
+          32.0,
+          -81.5
+        ],
+        [
+          -22.5,
+          45.0,
+          -68.5
+        ]
+      ],
+      "mass_cad_g": 3.244
+    },
+    {
+      "name": "Right_Support",
+      "bbox_world_mm": [
+        [
+          22.5,
+          32.0,
+          -81.5
+        ],
+        [
+          32.5,
+          45.0,
+          -68.5
+        ]
+      ],
+      "mass_cad_g": 3.244
+    },
+    {
+      "name": "Weapon_Pulley",
+      "bbox_world_mm": [
+        [
+          16.0,
+          28.5,
+          -85.0
+        ],
+        [
+          22.0,
+          48.5,
+          -65.0
+        ]
+      ],
+      "mass_cad_g": 4.886
+    },
+    {
+      "name": "Beater_Rotor_Concept",
+      "bbox_world_mm": [
+        [
+          -20.0,
+          28.5,
+          -107.5
+        ],
+        [
+          14.0,
+          48.5,
+          -42.5
+        ]
+      ],
+      "mass_cad_g": 58.166
+    },
+    {
+      "name": "Beater_Sweep_Envelope",
+      "bbox_world_mm": [
+        [
+          -20.0,
+          6.0,
+          -107.5
+        ],
+        [
+          14.0,
+          71.0,
+          -42.5
+        ]
+      ],
+      "mass_cad_g": 885.656
+    }
+  ],
+  "physical_cad_mass_g": 1070.643,
+  "analysis_envelope_mass_g": 888.819,
+  "interference": [
+    {
+      "a": "Spinner_Shaft",
+      "b": "Beater_Sweep_Envelope",
+      "volume_mm3": 427.257
+    },
+    {
+      "a": "Beater_Rotor_Concept",
+      "b": "Beater_Sweep_Envelope",
+      "volume_mm3": 19991.778
+    }
+  ]
+}

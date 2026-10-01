@@ -1,0 +1,595 @@
+{
+  "as_built_cad": {
+    "geometry_mm": {
+      "horn_pin_rest_yz": [
+        57.0,
+        22.0
+      ],
+      "horn": 15.0,
+      "rod": 23.77,
+      "lever": 14.4,
+      "tip_radius": 50.96
+    },
+    "servo_rotation_for_0_to_45deg_deg": 33.39,
+    "min_transmission_angle_deg": 34.9,
+    "min_rod_to_pin_clearance_mm": 2.25,
+    "min_tip_force_perp_N_stall": 43.7,
+    "max_rod_force_N_stall": 309.7,
+    "table": [
+      {
+        "lift_deg": 0.0,
+        "servo_deg": 0.0,
+        "tip_height_mm": 5.8,
+        "tip_y_mm": 112.0,
+        "ratio_dphi_dth": -0.568,
+        "pivot_torque_Nm_stall": 2.227,
+        "tip_force_perp_N_stall": 43.7,
+        "tip_force_vertical_N_stall": 50.6,
+        "rod_force_N_stall": 270.1,
+        "rod_arm_about_servo_mm": 14.51,
+        "rod_arm_about_pivot_mm": 8.25,
+        "transmission_angle_deg": 34.9,
+        "horn_rod_angle_deg": 75.4,
+        "horn_pin_yz": [
+          57.0,
+          22.0
+        ],
+        "lever_pin_yz": [
+          63.0,
+          45.0
+        ],
+        "rod_edge_to_pin_surface_mm": 2.25,
+        "servo_torque_Nm_per_100N_down": 7.746
+      },
+      {
+        "lift_deg": 1.0,
+        "servo_deg": -0.57,
+        "tip_height_mm": 6.6,
+        "tip_y_mm": 112.4,
+        "ratio_dphi_dth": -0.571,
+        "pivot_torque_Nm_stall": 2.239,
+        "tip_force_perp_N_stall": 43.9,
+        "tip_force_vertical_N_stall": 50.4,
+        "rod_force_N_stall": 268.7,
+        "rod_arm_about_servo_mm": 14.59,
+        "rod_arm_about_pivot_mm": 8.33,
+        "transmission_angle_deg": 35.4,
+        "horn_rod_angle_deg": 76.5,
+        "horn_pin_yz": [
+          57.0,
+          21.85
+        ],
+        "lever_pin_yz": [
+          62.77,
+          44.91
+        ],
+        "rod_edge_to_pin_surface_mm": 2.33,
+        "servo_torque_Nm_per_100N_down": 7.776
+      },
+      {
+        "lift_deg": 5.0,
+        "servo_deg": -2.88,
+        "tip_height_mm": 9.7,
+        "tip_y_mm": 114.1,
+        "ratio_dphi_dth": -0.586,
+        "pivot_torque_Nm_stall": 2.298,
+        "tip_force_perp_N_stall": 45.1,
+        "tip_force_vertical_N_stall": 49.9,
+        "rod_force_N_stall": 264.5,
+        "rod_arm_about_servo_mm": 14.82,
+        "rod_arm_about_pivot_mm": 8.69,
+        "transmission_angle_deg": 37.1,
+        "horn_rod_angle_deg": 81.1,
+        "horn_pin_yz": [
+          56.98,
+          21.25
+        ],
+        "lever_pin_yz": [
+          61.84,
+          44.51
+        ],
+        "rod_edge_to_pin_surface_mm": 2.69,
+        "servo_torque_Nm_per_100N_down": 7.867
+      },
+      {
+        "lift_deg": 10.0,
+        "servo_deg": -5.88,
+        "tip_height_mm": 13.8,
+        "tip_y_mm": 115.8,
+        "ratio_dphi_dth": -0.612,
+        "pivot_torque_Nm_stall": 2.4,
+        "tip_force_perp_N_stall": 47.1,
+        "tip_force_vertical_N_stall": 50.2,
+        "rod_force_N_stall": 261.8,
+        "rod_arm_about_servo_mm": 14.97,
+        "rod_arm_about_pivot_mm": 9.17,
+        "transmission_angle_deg": 39.5,
+        "horn_rod_angle_deg": 86.7,
+        "horn_pin_yz": [
+          56.92,
+          20.46
+        ],
+        "lever_pin_yz": [
+          60.73,
+          43.93
+        ],
+        "rod_edge_to_pin_surface_mm": 3.17,
+        "servo_torque_Nm_per_100N_down": 7.81
+      },
+      {
+        "lift_deg": 15.0,
+        "servo_deg": -9.02,
+        "tip_height_mm": 18.1,
+        "tip_y_mm": 117.2,
+        "ratio_dphi_dth": -0.646,
+        "pivot_torque_Nm_stall": 2.531,
+        "tip_force_perp_N_stall": 49.7,
+        "tip_force_vertical_N_stall": 51.5,
+        "rod_force_N_stall": 261.5,
+        "rod_arm_about_servo_mm": 14.99,
+        "rod_arm_about_pivot_mm": 9.68,
+        "transmission_angle_deg": 42.2,
+        "horn_rod_angle_deg": 87.9,
+        "horn_pin_yz": [
+          56.81,
+          19.65
+        ],
+        "lever_pin_yz": [
+          59.68,
+          43.25
+        ],
+        "rod_edge_to_pin_surface_mm": 3.68,
+        "servo_torque_Nm_per_100N_down": 7.616
+      },
+      {
+        "lift_deg": 20.0,
+        "servo_deg": -12.35,
+        "tip_height_mm": 22.4,
+        "tip_y_mm": 118.1,
+        "ratio_dphi_dth": -0.687,
+        "pivot_torque_Nm_stall": 2.693,
+        "tip_force_perp_N_stall": 52.9,
+        "tip_force_vertical_N_stall": 53.7,
+        "rod_force_N_stall": 263.6,
+        "rod_arm_about_servo_mm": 14.87,
+        "rod_arm_about_pivot_mm": 10.22,
+        "transmission_angle_deg": 45.2,
+        "horn_rod_angle_deg": 82.6,
+        "horn_pin_yz": [
+          56.65,
+          18.79
+        ],
+        "lever_pin_yz": [
+          58.68,
+          42.48
+        ],
+        "rod_edge_to_pin_surface_mm": 4.22,
+        "servo_torque_Nm_per_100N_down": 7.293
+      },
+      {
+        "lift_deg": 25.0,
+        "servo_deg": -15.9,
+        "tip_height_mm": 26.8,
+        "tip_y_mm": 118.7,
+        "ratio_dphi_dth": -0.737,
+        "pivot_torque_Nm_stall": 2.89,
+        "tip_force_perp_N_stall": 56.7,
+        "tip_force_vertical_N_stall": 57.0,
+        "rod_force_N_stall": 267.9,
+        "rod_arm_about_servo_mm": 14.63,
+        "rod_arm_about_pivot_mm": 10.79,
+        "transmission_angle_deg": 48.5,
+        "horn_rod_angle_deg": 77.3,
+        "horn_pin_yz": [
+          56.43,
+          17.89
+        ],
+        "lever_pin_yz": [
+          57.76,
+          41.62
+        ],
+        "rod_edge_to_pin_surface_mm": 4.79,
+        "servo_torque_Nm_per_100N_down": 6.879
+      },
+      {
+        "lift_deg": 30.0,
+        "servo_deg": -19.73,
+        "tip_height_mm": 31.2,
+        "tip_y_mm": 119.0,
+        "ratio_dphi_dth": -0.797,
+        "pivot_torque_Nm_stall": 3.125,
+        "tip_force_perp_N_stall": 61.3,
+        "tip_force_vertical_N_stall": 61.3,
+        "rod_force_N_stall": 274.5,
+        "rod_arm_about_servo_mm": 14.28,
+        "rod_arm_about_pivot_mm": 11.38,
+        "transmission_angle_deg": 52.3,
+        "horn_rod_angle_deg": 72.2,
+        "horn_pin_yz": [
+          56.12,
+          16.94
+        ],
+        "lever_pin_yz": [
+          56.92,
+          40.69
+        ],
+        "rod_edge_to_pin_surface_mm": 5.38,
+        "servo_torque_Nm_per_100N_down": 6.399
+      },
+      {
+        "lift_deg": 35.0,
+        "servo_deg": -23.89,
+        "tip_height_mm": 35.7,
+        "tip_y_mm": 118.8,
+        "ratio_dphi_dth": -0.867,
+        "pivot_torque_Nm_stall": 3.4,
+        "tip_force_perp_N_stall": 66.7,
+        "tip_force_vertical_N_stall": 66.9,
+        "rod_force_N_stall": 283.5,
+        "rod_arm_about_servo_mm": 13.83,
+        "rod_arm_about_pivot_mm": 11.99,
+        "transmission_angle_deg": 56.4,
+        "horn_rod_angle_deg": 67.2,
+        "horn_pin_yz": [
+          55.71,
+          15.93
+        ],
+        "lever_pin_yz": [
+          56.16,
+          39.69
+        ],
+        "rod_edge_to_pin_surface_mm": 5.99,
+        "servo_torque_Nm_per_100N_down": 5.859
+      },
+      {
+        "lift_deg": 40.0,
+        "servo_deg": -28.43,
+        "tip_height_mm": 40.1,
+        "tip_y_mm": 118.2,
+        "ratio_dphi_dth": -0.949,
+        "pivot_torque_Nm_stall": 3.718,
+        "tip_force_perp_N_stall": 73.0,
+        "tip_force_vertical_N_stall": 74.0,
+        "rod_force_N_stall": 295.2,
+        "rod_arm_about_servo_mm": 13.28,
+        "rod_arm_about_pivot_mm": 12.6,
+        "transmission_angle_deg": 61.0,
+        "horn_rod_angle_deg": 62.3,
+        "horn_pin_yz": [
+          55.19,
+          14.86
+        ],
+        "lever_pin_yz": [
+          55.49,
+          38.63
+        ],
+        "rod_edge_to_pin_surface_mm": 6.6,
+        "servo_torque_Nm_per_100N_down": 5.29
+      },
+      {
+        "lift_deg": 45.0,
+        "servo_deg": -33.39,
+        "tip_height_mm": 44.4,
+        "tip_y_mm": 117.3,
+        "ratio_dphi_dth": -1.041,
+        "pivot_torque_Nm_stall": 4.081,
+        "tip_force_perp_N_stall": 80.1,
+        "tip_force_vertical_N_stall": 82.8,
+        "rod_force_N_stall": 309.7,
+        "rod_arm_about_servo_mm": 12.66,
+        "rod_arm_about_pivot_mm": 13.18,
+        "transmission_angle_deg": 66.3,
+        "horn_rod_angle_deg": 57.6,
+        "horn_pin_yz": [
+          54.52,
+          13.74
+        ],
+        "lever_pin_yz": [
+          54.92,
+          37.51
+        ],
+        "rod_edge_to_pin_surface_mm": 7.18,
+        "servo_torque_Nm_per_100N_down": 4.736
+      }
+    ]
+  },
+  "lowered_contacts_as_built": {
+    "tip_on_floor_deg": -7.89,
+    "blade_on_hard_stop_deg": -8.2,
+    "blade_to_stop_gap_at_rest_mm": 4.41
+  },
+  "option_toggle_at_rest": {
+    "geometry_mm": {
+      "horn_pin_rest_yz": [
+        52.11,
+        33.08
+      ],
+      "horn": 15.0,
+      "rod": 16.14,
+      "lever": 14.4,
+      "tip_radius": 50.96
+    },
+    "servo_rotation_for_0_to_45deg_deg": 49.52,
+    "min_transmission_angle_deg": 48.7,
+    "min_rod_to_pin_clearance_mm": 4.81,
+    "min_tip_force_perp_N_stall": 58.2,
+    "max_rod_force_N_stall": 1547.7,
+    "table": [
+      {
+        "lift_deg": 0.0,
+        "servo_deg": -4.93,
+        "tip_height_mm": 6.2,
+        "tip_y_mm": 112.2,
+        "ratio_dphi_dth": -4.843,
+        "pivot_torque_Nm_stall": 18.984,
+        "tip_force_perp_N_stall": 372.6,
+        "tip_force_vertical_N_stall": 429.3,
+        "rod_force_N_stall": 1547.7,
+        "rod_arm_about_servo_mm": 2.53,
+        "rod_arm_about_pivot_mm": 12.27,
+        "transmission_angle_deg": 58.4,
+        "horn_rod_angle_deg": 9.7,
+        "horn_pin_yz": [
+          53.03,
+          32.17
+        ],
+        "lever_pin_yz": [
+          62.88,
+          44.96
+        ],
+        "rod_edge_to_pin_surface_mm": 6.27,
+        "servo_torque_Nm_per_100N_down": 0.913
+      },
+      {
+        "lift_deg": 1.0,
+        "servo_deg": -6.93,
+        "tip_height_mm": 6.6,
+        "tip_y_mm": 112.4,
+        "ratio_dphi_dth": -3.378,
+        "pivot_torque_Nm_stall": 13.244,
+        "tip_force_perp_N_stall": 259.9,
+        "tip_force_vertical_N_stall": 298.0,
+        "rod_force_N_stall": 1098.4,
+        "rod_arm_about_servo_mm": 3.57,
+        "rod_arm_about_pivot_mm": 12.06,
+        "transmission_angle_deg": 56.9,
+        "horn_rod_angle_deg": 13.8,
+        "horn_pin_yz": [
+          53.38,
+          31.78
+        ],
+        "lever_pin_yz": [
+          62.77,
+          44.91
+        ],
+        "rod_edge_to_pin_surface_mm": 6.05,
+        "servo_torque_Nm_per_100N_down": 1.314
+      },
+      {
+        "lift_deg": 5.0,
+        "servo_deg": -15.11,
+        "tip_height_mm": 9.7,
+        "tip_y_mm": 114.1,
+        "ratio_dphi_dth": -1.461,
+        "pivot_torque_Nm_stall": 5.728,
+        "tip_force_perp_N_stall": 112.4,
+        "tip_force_vertical_N_stall": 124.3,
+        "rod_force_N_stall": 506.5,
+        "rod_arm_about_servo_mm": 7.74,
+        "rod_arm_about_pivot_mm": 11.31,
+        "transmission_angle_deg": 51.8,
+        "horn_rod_angle_deg": 31.1,
+        "horn_pin_yz": [
+          54.65,
+          30.06
+        ],
+        "lever_pin_yz": [
+          61.84,
+          44.51
+        ],
+        "rod_edge_to_pin_surface_mm": 5.31,
+        "servo_torque_Nm_per_100N_down": 3.155
+      },
+      {
+        "lift_deg": 10.0,
+        "servo_deg": -21.17,
+        "tip_height_mm": 13.8,
+        "tip_y_mm": 115.8,
+        "ratio_dphi_dth": -1.043,
+        "pivot_torque_Nm_stall": 4.087,
+        "tip_force_perp_N_stall": 80.2,
+        "tip_force_vertical_N_stall": 85.5,
+        "rod_force_N_stall": 373.5,
+        "rod_arm_about_servo_mm": 10.5,
+        "rod_arm_about_pivot_mm": 10.94,
+        "transmission_angle_deg": 49.5,
+        "horn_rod_angle_deg": 44.4,
+        "horn_pin_yz": [
+          55.43,
+          28.68
+        ],
+        "lever_pin_yz": [
+          60.73,
+          43.93
+        ],
+        "rod_edge_to_pin_surface_mm": 4.95,
+        "servo_torque_Nm_per_100N_down": 4.583
+      },
+      {
+        "lift_deg": 15.0,
+        "servo_deg": -25.93,
+        "tip_height_mm": 18.1,
+        "tip_y_mm": 117.2,
+        "ratio_dphi_dth": -0.881,
+        "pivot_torque_Nm_stall": 3.453,
+        "tip_force_perp_N_stall": 67.8,
+        "tip_force_vertical_N_stall": 70.3,
+        "rod_force_N_stall": 319.2,
+        "rod_arm_about_servo_mm": 12.28,
+        "rod_arm_about_pivot_mm": 10.82,
+        "transmission_angle_deg": 48.7,
+        "horn_rod_angle_deg": 54.9,
+        "horn_pin_yz": [
+          55.94,
+          27.54
+        ],
+        "lever_pin_yz": [
+          59.68,
+          43.25
+        ],
+        "rod_edge_to_pin_surface_mm": 4.82,
+        "servo_torque_Nm_per_100N_down": 5.585
+      },
+      {
+        "lift_deg": 20.0,
+        "servo_deg": -30.12,
+        "tip_height_mm": 22.4,
+        "tip_y_mm": 118.1,
+        "ratio_dphi_dth": -0.803,
+        "pivot_torque_Nm_stall": 3.148,
+        "tip_force_perp_N_stall": 61.8,
+        "tip_force_vertical_N_stall": 62.8,
+        "rod_force_N_stall": 290.6,
+        "rod_arm_about_servo_mm": 13.49,
+        "rod_arm_about_pivot_mm": 10.83,
+        "transmission_angle_deg": 48.8,
+        "horn_rod_angle_deg": 64.0,
+        "horn_pin_yz": [
+          56.31,
+          26.51
+        ],
+        "lever_pin_yz": [
+          58.68,
+          42.48
+        ],
+        "rod_edge_to_pin_surface_mm": 4.83,
+        "servo_torque_Nm_per_100N_down": 6.239
+      },
+      {
+        "lift_deg": 25.0,
+        "servo_deg": -34.03,
+        "tip_height_mm": 26.8,
+        "tip_y_mm": 118.7,
+        "ratio_dphi_dth": -0.767,
+        "pivot_torque_Nm_stall": 3.005,
+        "tip_force_perp_N_stall": 59.0,
+        "tip_force_vertical_N_stall": 59.2,
+        "rod_force_N_stall": 274.4,
+        "rod_arm_about_servo_mm": 14.28,
+        "rod_arm_about_pivot_mm": 10.95,
+        "transmission_angle_deg": 49.5,
+        "horn_rod_angle_deg": 72.2,
+        "horn_pin_yz": [
+          56.58,
+          25.52
+        ],
+        "lever_pin_yz": [
+          57.76,
+          41.62
+        ],
+        "rod_edge_to_pin_surface_mm": 4.95,
+        "servo_torque_Nm_per_100N_down": 6.61
+      },
+      {
+        "lift_deg": 30.0,
+        "servo_deg": -37.83,
+        "tip_height_mm": 31.2,
+        "tip_y_mm": 119.0,
+        "ratio_dphi_dth": -0.756,
+        "pivot_torque_Nm_stall": 2.963,
+        "tip_force_perp_N_stall": 58.2,
+        "tip_force_vertical_N_stall": 58.2,
+        "rod_force_N_stall": 265.6,
+        "rod_arm_about_servo_mm": 14.76,
+        "rod_arm_about_pivot_mm": 11.16,
+        "transmission_angle_deg": 50.8,
+        "horn_rod_angle_deg": 79.7,
+        "horn_pin_yz": [
+          56.78,
+          24.55
+        ],
+        "lever_pin_yz": [
+          56.92,
+          40.69
+        ],
+        "rod_edge_to_pin_surface_mm": 5.16,
+        "servo_torque_Nm_per_100N_down": 6.746
+      },
+      {
+        "lift_deg": 35.0,
+        "servo_deg": -41.62,
+        "tip_height_mm": 35.7,
+        "tip_y_mm": 118.8,
+        "ratio_dphi_dth": -0.764,
+        "pivot_torque_Nm_stall": 2.995,
+        "tip_force_perp_N_stall": 58.8,
+        "tip_force_vertical_N_stall": 59.0,
+        "rod_force_N_stall": 261.8,
+        "rod_arm_about_servo_mm": 14.98,
+        "rod_arm_about_pivot_mm": 11.44,
+        "transmission_angle_deg": 52.6,
+        "horn_rod_angle_deg": 86.7,
+        "horn_pin_yz": [
+          56.92,
+          23.56
+        ],
+        "lever_pin_yz": [
+          56.16,
+          39.69
+        ],
+        "rod_edge_to_pin_surface_mm": 5.44,
+        "servo_torque_Nm_per_100N_down": 6.649
+      },
+      {
+        "lift_deg": 40.0,
+        "servo_deg": -45.49,
+        "tip_height_mm": 40.1,
+        "tip_y_mm": 118.2,
+        "ratio_dphi_dth": -0.787,
+        "pivot_torque_Nm_stall": 3.087,
+        "tip_force_perp_N_stall": 60.6,
+        "tip_force_vertical_N_stall": 61.5,
+        "rod_force_N_stall": 261.7,
+        "rod_arm_about_servo_mm": 14.98,
+        "rod_arm_about_pivot_mm": 11.79,
+        "transmission_angle_deg": 55.0,
+        "horn_rod_angle_deg": 86.8,
+        "horn_pin_yz": [
+          56.99,
+          22.55
+        ],
+        "lever_pin_yz": [
+          55.49,
+          38.63
+        ],
+        "rod_edge_to_pin_surface_mm": 5.79,
+        "servo_torque_Nm_per_100N_down": 6.379
+      },
+      {
+        "lift_deg": 45.0,
+        "servo_deg": -49.52,
+        "tip_height_mm": 44.4,
+        "tip_y_mm": 117.3,
+        "ratio_dphi_dth": -0.824,
+        "pivot_torque_Nm_stall": 3.231,
+        "tip_force_perp_N_stall": 63.4,
+        "tip_force_vertical_N_stall": 65.6,
+        "rod_force_N_stall": 264.8,
+        "rod_arm_about_servo_mm": 14.8,
+        "rod_arm_about_pivot_mm": 12.2,
+        "transmission_angle_deg": 57.9,
+        "horn_rod_angle_deg": 80.7,
+        "horn_pin_yz": [
+          56.99,
+          21.5
+        ],
+        "lever_pin_yz": [
+          54.92,
+          37.51
+        ],
+        "rod_edge_to_pin_surface_mm": 6.2,
+        "servo_torque_Nm_per_100N_down": 5.983
+      }
+    ]
+  }
+}

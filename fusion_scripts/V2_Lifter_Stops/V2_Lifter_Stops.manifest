@@ -1,0 +1,10 @@
+{
+    "autodeskProduct": "Fusion360",
+    "type": "script",
+    "author": "ESP32 Mini BattleBot project",
+    "description": {
+        "": "robot2 V2: raise the lifter lower hard stop to seat the blade at 0 deg and add an upper stop at 45 deg on the right pivot support, then check clearances through the stroke."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}
