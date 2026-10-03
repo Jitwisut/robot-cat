@@ -148,15 +148,16 @@ def mass_budget(rotor_g):
         'sensors: GY-521 IMU, A3144 + magnet + PETG post, 2x DS18B20, divider, wires': 12,
         'power switch / removable link + fuse': 15,
         'wiring, connectors': 50,
-        # solid TPU would be 515 g (Fusion 429.3 incl. skirt knuckles + 55.9 g lid, as Nylon 6, x1.21/1.14);
+        # solid TPU would be 520 g (Fusion 434.3 incl. skirt brackets + 55.9 g lid, as Nylon 6, x1.21/1.14);
         # printed with 4 walls + 60% gyroid the part is ~85% of solid (ASSUMED, weigh the print)
-        'tub + 2 mm lid TPU printed (85% of 515 g solid)': 438,
+        'tub + 2 mm lid TPU printed (85% of 520 g solid)': 442,
         'wedgelet hinge blocks + 4 carriers PETG (Fusion 18.0 g as Nylon 6, x1.27/1.14, 80% printed)': 16,
         'wedgelet hinge pins 3 mm steel x2 + E-clips (Fusion)': 6.5,
+        'UHMW nose skid 40x10x3 + 2 M3': 3,
         'weapon uprights 6061 6 mm x2 (Fusion)': 66,
         'weapon braces + motor mount 6061 3 mm (Fusion ~20 g)': 20,
         'front steel wedgelets 2 mm x2 (Fusion 53.6 g)': 54,
-        'hinged skirts, 35 deg tilt: 0.8 mm Al plates 24.1 g + 1.5 mm wire 8.2 g + PETG clips 4.7 g (Fusion) + M2 4 g': 41.0,
+        'rigid skirts, 35 deg, 0.5 mm off the floor: 0.8 mm Al plates 24.1 g (Fusion) + 11 M2 screws 3 g': 27.1,
         'other fasteners (motor, upright, ESC mounts) (ASSUMED)': 25,
     }
     total = sum(items.values())

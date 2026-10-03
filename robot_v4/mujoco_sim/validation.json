@@ -49,10 +49,10 @@
     }
   },
   "V4": {
-    "mass_kg": 1.8954969999999995,
+    "mass_kg": 1.8885969999999996,
     "com_body_mm": [
-      -0.0,
-      8.6,
+      0.0,
+      8.7,
       29.5
     ],
     "com_height_mm": 29.5,
@@ -60,20 +60,20 @@
     "edge_min_z_mm": {
       "A_wedgeL_g": -0.0,
       "A_wedgeR_g": -0.0,
-      "A_skirtL_g": -0.0,
-      "A_skirtR_g": -0.0,
-      "A_skirtB_g": -0.0,
+      "A_skirtL_g": 0.5,
+      "A_skirtR_g": 0.5,
+      "A_skirtB_g": 0.51,
       "A_tub": 4.0,
       "A_skid": 1.0,
       "A_toothL00": 19.53
     },
-    "top_speed_m_s": 1.046,
-    "push_N_mu0.6": 7.77,
-    "push_traction_limit_N": 11.16,
+    "top_speed_m_s": 1.05,
+    "push_N_mu0.6": 8.45,
+    "push_traction_limit_N": 11.12,
     "t90_s": 0.44300000000000034,
     "inverted_drive_m_in_1.5s": 1.37,
     "target": {
-      "mass": 1.8954973156961634,
+      "mass": 1.8885973156961633,
       "t90": 0.36
     }
   },
@@ -81,7 +81,7 @@
     "lift_yaw_rad_s": null,
     "rotor_rpm": 13781,
     "energy_J": 70.8,
-    "peak_yaw_rad_s": 9.04,
+    "peak_yaw_rad_s": 9.16,
     "predicted_lift_yaw_rad_s": 14.7
   }
 }

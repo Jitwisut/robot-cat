@@ -1,0 +1,52 @@
+{
+ "now_tip2.5_skid1.0|R3|charging": {
+  "p_launched_over_10cm": 0.06,
+  "opp_max_com_z_mm_median": 27.0,
+  "p_inverted": 0.06
+ },
+ "now_tip2.5_skid1.0|R3|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 18.3,
+  "p_inverted": 0.0
+ },
+ "now_tip2.5_skid1.0|V2|charging": {
+  "p_launched_over_10cm": 0.62,
+  "opp_max_com_z_mm_median": 123.0,
+  "p_inverted": 0.25
+ },
+ "now_tip2.5_skid1.0|V2|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 31.8,
+  "p_inverted": 0.0
+ },
+ "tip1.5_skid0.5|R3|charging": {
+  "p_launched_over_10cm": 0.06,
+  "opp_max_com_z_mm_median": 26.7,
+  "p_inverted": 0.0
+ },
+ "tip1.5_skid0.5|R3|parked": {
+  "p_launched_over_10cm": 0.06,
+  "opp_max_com_z_mm_median": 18.5,
+  "p_inverted": 0.06
+ },
+ "tip1.5_skid0.5|V2|charging": {
+  "p_launched_over_10cm": 0.44,
+  "opp_max_com_z_mm_median": 56.1,
+  "p_inverted": 0.06
+ },
+ "tip1.5_skid0.5|V2|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 34.3,
+  "p_inverted": 0.0
+ },
+ "spinup_and_drive": {
+  "now_tip2.5_skid1.0": {
+   "rotor_floor_contact_steps": 0,
+   "rpm": 13782
+  },
+  "tip1.5_skid0.5": {
+   "rotor_floor_contact_steps": 0,
+   "rpm": 13782
+  }
+ }
+}

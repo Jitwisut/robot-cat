@@ -27,6 +27,14 @@ YAW_LIMIT = 12.0                                                           # rad
 V4_CHASSIS_CG_Y = -0.0042                                                  # gives whole-robot CoG y +8.7 mm
 SERVO_RATE = math.radians(60) / 0.16                                       # Repeat 40 kg class: 60 deg in 0.16 s
 V4_SKIRTS = True                                                           # False = baseline without skirts (flank test)
+# skirt variants (flank_test / skirt_variants.py): 'hinged' (25 deg free outward), 'limit5' (5 deg), 'spring'
+# (torsion spring pressing it down), 'fixedX' (rigid, bottom edge X mm above the floor, e.g. 'fixed0.5')
+V4_SKIRT_MODE = 'fixed0.5'                                                  # chosen 4 Oct (skirt_variants/tolerance)
+V4_DRIVE_RPM = 400                                                         # JGA25-370 variant (400 or 620 rpm)
+ROTOR_RATIO = 1.0
+V4_TIP_R = 0.0295                                                          # tooth tip radius (axle at 32 mm -> 2.5 mm off the floor)
+V4_SKID_Z = 0.001                                                          # nose skid underside height                                                          # motor rpm / rotor rpm (belt reduction)
+V4_CENTRE_WEDGE = False                                                    # hinged wedgelet between the discs: tested 4 Oct, no gain vs R3 -> off
 G = 9.81
 
 
@@ -73,7 +81,7 @@ def v4(prefix, pos, yaw, mu_tyre, col):
     tyre = 'friction="%s 0.005 0.0001" %s' % (f(mu_tyre), col)
     hard = 'friction="0.3 0.005 0.0001" %s' % col
     m_wheel, m_wedge, m_skirt_side, m_skirt_rear = 0.045, 0.030, 0.0106, 0.0084
-    m_chassis = V4_MASS - 4 * m_wheel - ROTOR_M - 2 * m_wedge - 2 * m_skirt_side - m_skirt_rear
+    m_chassis = V4_MASS - 4 * m_wheel - ROTOR_M - 2 * m_wedge - 2 * m_skirt_side - m_skirt_rear - (0.025 if V4_CENTRE_WEDGE else 0)
     ixx = m_chassis / 12 * (0.238 ** 2 + 0.056 ** 2)
     iyy = m_chassis / 12 * (0.176 ** 2 + 0.056 ** 2)
     izz = m_chassis / 12 * (0.176 ** 2 + 0.238 ** 2)
@@ -91,7 +99,7 @@ def v4(prefix, pos, yaw, mu_tyre, col):
          box(p + '_sideL', -0.050, -0.034, 0.064, 0.096, 0.007, 0.050, 'mass="0" ' + hard),
          box(p + '_sideR', 0.034, 0.050, 0.064, 0.096, 0.007, 0.050, 'mass="0" ' + hard),
          # UHMW nose skid 1 mm off the floor (build_robot_v4.py): catches the nose before the teeth reach the floor
-         box(p + '_skid', -0.020, 0.020, 0.064, 0.074, 0.001, 0.004, 'mass="0" friction="0.15 0.005 0.0001" ' + col)]
+         box(p + '_skid', -0.020, 0.020, 0.064, 0.074, V4_SKID_Z, 0.004, 'mass="0" friction="0.15 0.005 0.0001" ' + col)]
     for n, (x, y) in enumerate([(-0.070, 0.010), (0.070, 0.010), (-0.070, -0.070), (0.070, -0.070)]):
         b.append(wheel(p, 'w%d' % n, x, y, 0.032, 0.032, 0.008, m_wheel, tyre))
     # rotor: two toothed discs + hub, inertia from design_v4.py
@@ -107,12 +115,21 @@ def v4(prefix, pos, yaw, mu_tyre, col):
         for k, a0 in enumerate((0.0, math.pi)):
             for j, da in enumerate((-0.2618, 0.2618)):
                 a = a0 + da
-                c = 0.02625
+                half = (V4_TIP_R - 0.023) / 2
+                c = 0.023 + half
                 q = (math.cos(a / 2), math.sin(a / 2), 0, 0)
-                rg.append('<geom name="%s_tooth%s%d%d" type="box" pos="%s" quat="%s" size="0.003 0.00325 0.005" mass="0" %s/>' % (
-                    p, side, k, j, f(x, c * math.cos(a), c * math.sin(a)), f(*q), hard))
+                rg.append('<geom name="%s_tooth%s%d%d" type="box" pos="%s" quat="%s" size="0.003 %s 0.005" mass="0" %s/>' % (
+                    p, side, k, j, f(x, c * math.cos(a), c * math.sin(a)), f(*q), f(half), hard))
     rg.append('</body>')
     b += rg
+    # centre wedgelet between the discs (|x| < 19.3 mm, under the hub): pin (y 0.0765, z 0.0052), 1.5 mm steel
+    # plate whose underside runs from (0.079, 0.0055) to the tip (0.124, 0.0005); it rests on the floor and
+    # makes a low wedge that slips under the rotor climb into the teeth
+    if V4_CENTRE_WEDGE:
+        b.append('<body name="%s_wedgeC" pos="0 0.0765 0.0052">' % p +
+                 '<joint name="%s_wedgeC_j" type="hinge" axis="1 0 0" range="-0.03 0.25" damping="0.002" limited="true"/>' % p +
+                 ramp('%s_wedgeC_g' % p, -0.0193, 0.0193, 0.0025, 0.0003, 0.0475, -0.0047, 0.0015,
+                      'mass="0.025" %s' % hard) + '</body>')
     # hinged wedgelets: pin at (y 0.102, z 0.0145); plate underside from (0.100, 0.0205) to (0.128, 0.0005)
     for side, x0, x1 in (('L', -0.088, -0.027), ('R', 0.027, 0.088)):
         b.append('<body name="%s_wedge%s" pos="0 0.102 0.0145">' % (p, side) +
@@ -123,26 +140,37 @@ def v4(prefix, pos, yaw, mu_tyre, col):
     # 1 mm outside the wall. Plate centre (8.14, -6.98) mm from the wire, 19 mm long. Floor loads swing it
     # outward (free to 25 deg); sideways pushes swing it inward onto the clip/wall stop at 1.2 deg.
     cy, sy = math.cos(math.radians(17.5)), math.sin(math.radians(17.5))
+    mode = V4_SKIRT_MODE
+    lift_dz = float(mode[5:]) / 1000 if mode.startswith('fixed') else 0.0
+    out_lim = 0.087 if mode == 'limit5' else 0.436
+    spring = 'stiffness="0.3" springref="%s"' if mode == 'spring' else ''
+
+    def joint(name, axis, lo, hi, ref):
+        if mode.startswith('fixed'):
+            return ''
+        sp = (spring % f(ref)) if spring else ''
+        return '<joint name="%s" type="hinge" axis="%s" range="%s" limited="true" damping="0.0005" %s/>' % (
+            name, axis, f(lo, hi), sp)
     for side, sgn in ((('R', 1), ('L', -1)) if V4_SKIRTS else ()):
-        rng_ = '-0.436 0.021' if sgn > 0 else '-0.021 0.436'
+        lo, hi = (-out_lim, 0.021) if sgn > 0 else (-0.021, out_lim)
         q = (cy, 0, -sy * sgn, 0)                      # rotate -35 deg (R) / +35 deg (L) about y
-        b.append('<body name="%s_skirt%s" pos="%s"><joint name="%s_skirt%s_j" type="hinge" axis="0 1 0" '
-                 'range="%s" limited="true" damping="0.0005"/>'
+        b.append('<body name="%s_skirt%s" pos="%s">%s'
                  '<geom name="%s_skirt%s_g" type="box" pos="%s" quat="%s" size="0.0004 0.1035 0.0095" mass="%s" %s/></body>' % (
-                     p, side, f(sgn * 0.089, -0.0065, 0.015), p, side, rng_, p, side,
-                     f(sgn * 0.00814, 0, -0.00698), f(*q), f(m_skirt_side), hard))
+                     p, side, f(sgn * 0.089, -0.0065, 0.015 + lift_dz),
+                     joint('%s_skirt%s_j' % (p, side), '0 1 0', lo, hi, 0.05 * sgn),
+                     p, side, f(sgn * 0.00814, 0, -0.00698), f(*q), f(m_skirt_side), hard))
     q = (math.cos(math.radians(72.5)), math.sin(math.radians(72.5)), 0, 0)   # 145 deg about x
     if V4_SKIRTS:
-        b.append('<body name="%s_skirtB" pos="0 -0.111 0.015"><joint name="%s_skirtB_j" type="hinge" axis="1 0 0" '
-                 'range="-0.436 0.021" limited="true" damping="0.0005"/>'
+        b.append('<body name="%s_skirtB" pos="%s">%s'
                  '<geom name="%s_skirtB_g" type="box" pos="0 -0.00814 -0.00698" quat="%s" size="0.088 0.0004 0.0095" mass="%s" %s/></body>' % (
-                     p, p, p, f(*q), f(m_skirt_rear), hard))
+                     p, f(0, -0.111, 0.015 + lift_dz), joint('%s_skirtB_j' % p, '1 0 0', -out_lim, 0.021, 0.05),
+                     p, f(*q), f(m_skirt_rear), hard))
     b.append('</body>')
     act = ''.join('<motor name="%s_m%d" joint="%s_w%d_j" gear="1" ctrllimited="false"/>' % (p, n, p, n) for n in range(4))
     act += '<motor name="%s_rotor_m" joint="%s_rotor_j" gear="1" ctrllimited="false"/>' % (p, p)
     meta = {'kind': 'V4', 'wheels': [0, 1, 2, 3], 'left': [0, 2], 'right': [1, 3], 'r_wheel': 0.032,
             # JGA25-370 400 rpm at 11.1 V: stall 0.113 N*m, no-load 38.7 rad/s at the wheel
-            'stall': 0.8 * 620 / 400 * 0.0981 * V_PACK / 12, 'w0': 400 * V_PACK / 12 * 2 * math.pi / 60,
+            'stall': 0.8 * 620 / V4_DRIVE_RPM * 0.0981 * V_PACK / 12, 'w0': V4_DRIVE_RPM * V_PACK / 12 * 2 * math.pi / 60,
             'invertible': True, 'weapon': 'rotor'}
     return '\n'.join(b), act, meta
 
@@ -304,9 +332,9 @@ class Robot:
     def rotor_step(self, dt_ctrl, spin=True):
         target = 1.0 if spin else 0.0
         self.throttle = min(target, self.throttle + RAMP_US_PER_S / 1000.0 * dt_ctrl) if target > self.throttle else target
-        w = self.d.qvel[self.rotor_dof]
+        w = self.d.qvel[self.rotor_dof] * ROTOR_RATIO                 # motor speed
         amps = max((self.throttle * V_PACK - KE * w) / R_M, 0.0)
-        self.d.ctrl[self.rotor_act] = KE * max(amps - I0, 0.0)
+        self.d.ctrl[self.rotor_act] = KE * max(amps - I0, 0.0) * ROTOR_RATIO * 0.92   # belt efficiency
         return amps
 
     def rotor_rpm(self):
@@ -353,7 +381,7 @@ def drive_towards(robot, target_xy, yaw_rate, rotor_fast):
 
 
 def engagement(kind_a, kind_b, seed, arena=2.4, mu_tyre=0.6, solref=(0.004, 1.0), dt=2e-5, t_end=6.0,
-               ctrl_dt=1e-3, record=None, start=None, prespin=False, scripted=False):
+               ctrl_dt=1e-3, record=None, start=None, prespin=False, scripted=False, b_still=False):
     """Both robots chase each other with the same driver. Returns per-robot outcome stats.
     record: optional dict; receives 'xml' and 'frames' [(time, qpos)] every record['frame_dt'] s (default 1/30)."""
     rng = np.random.default_rng(seed)
@@ -375,7 +403,7 @@ def engagement(kind_a, kind_b, seed, arena=2.4, mu_tyre=0.6, solref=(0.004, 1.0)
     A, B = Robot(m, d, 'A', metas['A']), Robot(m, d, 'B', metas['B'])
     for r in (A, B):
         if prespin and r.meta['weapon'] == 'rotor':      # start with the weapon already at no-load speed
-            d.qvel[r.rotor_dof] = (V_PACK - I0 * R_M) / KE
+            d.qvel[r.rotor_dof] = (V_PACK - I0 * R_M) / KE / ROTOR_RATIO
             d.qpos[m.jnt_qposadr[mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_JOINT, r.p + '_rotor_j')]] = rng.uniform(0, 6.2832)
             r.throttle = 1.0
     floor = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_GEOM, 'floor')
@@ -392,7 +420,10 @@ def engagement(kind_a, kind_b, seed, arena=2.4, mu_tyre=0.6, solref=(0.004, 1.0)
             x_opp = opp.pose()[0][:2]
             yaw_rate = d.cvel[me.body][2]
             rotor_fast = me.meta['weapon'] == 'rotor' and abs(me.rotor_rpm()) > 3000
-            if scripted:                                 # straight full-throttle charge, no steering
+            if scripted and b_still and me is B:          # target parked (wheels unpowered)
+                me.wheel_cmd(0.0, 0.0)
+                err, dist = 1.0, float(np.linalg.norm(x_opp - me.pose()[0][:2]))
+            elif scripted:                               # straight full-throttle charge, no steering
                 me.wheel_cmd(1.0, 1.0)
                 err, dist = 0.0, float(np.linalg.norm(x_opp - me.pose()[0][:2]))
             else:

@@ -22,7 +22,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 N = 24
 
 
-def one(job):
+def one(job, record=None):
     attacker, side, skirts, mu, seed = job
     sim.V4_SKIRTS = skirts
     rng = np.random.default_rng(seed)
@@ -39,6 +39,9 @@ def one(job):
     A, B = sim.Robot(m, d, 'A', metas['A']), sim.Robot(m, d, 'B', metas['B'])
     floor = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_GEOM, 'floor')
     t, run, lifted, tilt = 0.0, 0.0, 0.0, 0.0
+    if record is not None:
+        record['xml'], record['frames'] = xml, []
+    next_f = 0.0
     while t < 2.0:
         A.wheel_cmd(0.0, 0.0)
         B.wheel_cmd(1.0, 1.0)
@@ -52,6 +55,9 @@ def one(job):
         run = run + 1e-3 if frac < 0.25 else 0.0
         if run > 0.25:
             lifted += 1e-3
+        if record is not None and t >= next_f:
+            record['frames'].append((t, d.qpos.copy()))
+            next_f += record.get('frame_dt', 1 / 30)
         up = A.pose()[2]
         tilt = max(tilt, math.degrees(math.acos(max(-1.0, min(1.0, up[2])))))
     return job, {'lifted_s': lifted, 'max_tilt_deg': tilt, 'under': bool(lifted > 0 or tilt > 5.0)}
