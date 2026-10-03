@@ -229,6 +229,7 @@ DXF_PARTS = [
     ('Weapon_Motor_Mount_3mm', 'V4_Weapon_Motor_Mount_3mm_6061_x1.dxf'),
 ]
 STL_PARTS = [
+    ('Hall_Post_PETG', 'V4_Hall_Post_PETG_x1.stl'),
     ('Tub_TPU', 'V4_Tub_TPU95A_x1.stl'),
     ('Lid_TPU_3mm', 'V4_Lid_TPU95A_x1.stl'),
     ('Wheel_Hub_PETG_Front_L', 'V4_Wheel_Hub_PETG_x4.stl'),
@@ -422,11 +423,22 @@ def run(_):
     # --- 05 electronics -------------------------------------------------------
     el = group(root, '05_Electronics_ENVELOPES')
     # Free bay between the wheel pairs: x -56..56, y -57.5..-2.5 (drive motors bound it).
-    box(el, '3S_1000mAh_LiPo_75x35x25', -37.5, 37.5, -45, -10, 8, 33, proxy)
+    # battery moved forward (0.5 mm from the front drive motors) to free a floor strip for the IMU
+    box(el, '3S_850mAh_LiPo_ENVELOPE_75x35x25', -37.5, 37.5, -38, -3, 8, 33, proxy)
     box(el, 'Skywalker_40A_ESC_55x25x12', -60, -5, -40, -15, 34, 46, proxy)
     box(el, 'ESP32_DevKit_51.5x28.3', 4, 55.5, -42, -13.7, 34, 48, proxy)
     box(el, 'DRV8871_L', 39, 59, -45, -25, 8, 14, proxy)
     box(el, 'DRV8871_R', 39, 59, -24, -4, 8, 14, proxy)
+    # --- sensors ---
+    # IMU (GY-521 MPU6050, 21x16 board) flat on a 1 mm foam pad, Z axis up, X axis to the robot's right,
+    # centred left-right and behind the battery, clear of the weapon motor and ESC
+    box(el, 'IMU_Foam_Pad_1mm', -10.5, 10.5, -56, -40, 7, 8, rubber)
+    box(el, 'IMU_GY521_MPU6050_21x16', -10.5, 10.5, -56, -40, 8, 11.5, proxy)
+    # weapon RPM: A3144 hall sensor 2.5 mm from the motor pulley face (x = 4; flexible TPU floor, so
+    # not closer), reading a 3x2 mm magnet pressed into that face at r = 7 mm; flat face toward the
+    # pulley; sensor sits on a printed PETG post on the tub floor
+    box(el, 'Hall_Post_PETG', 8.0, 12.0, 40, 48, 7, 43, polymer)
+    box(el, 'Hall_A3144_TO92', 6.5, 8.0, 42, 46, 37, 41, proxy)
     # Switch sits in the 16 mm gap between front and rear wheels, keyed from the side wall.
     box(el, 'Power_Switch_Link', 66, 80, -34, -26, 20, 30, proxy)
 

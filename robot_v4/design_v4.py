@@ -144,7 +144,8 @@ def mass_budget(rotor_g):
         'wheels x4: PETG hub 24 g (80% of 30 g solid) + TPU tyre 25 g (Fusion)': 196,
         'ESP32 DevKit': 10,
         'DRV8871 x2': 10,
-        '3S 1000 mAh LiPo (ASSUMED)': 90,
+        '3S 850 mAh 80C LiPo (GNB, ASSUMED 75 g + leads)': 80,
+        'sensors: GY-521 IMU, A3144 + magnet + PETG post, 2x DS18B20, divider, wires': 12,
         'power switch / removable link + fuse': 15,
         'wiring, connectors': 50,
         # solid TPU would be 544 g (Fusion 428.4 + 83.9 g as Nylon 6, x1.21/1.14);
