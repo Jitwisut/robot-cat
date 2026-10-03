@@ -13,10 +13,10 @@
       "tip_speed_m_s": 38.31614027519664,
       "energy_J": 57.38714775903816,
       "t_spin_90pct_s": 0.4030000000000003,
-      "max_yaw_rate_before_wheel_lift_rad_s": 14.699003032629099,
+      "max_yaw_rate_before_wheel_lift_rad_s": 14.693563266980236,
       "bite_mm_at_2m_s": 4.837490551776266,
       "tooth_height_mm": 6.5,
-      "robot_mass_g": 1891.4973156961635
+      "robot_mass_g": 1890.7973156961634
     },
     {
       "disc_t_mm": 6.0,
@@ -30,10 +30,10 @@
       "tip_speed_m_s": 30.652912220157315,
       "energy_J": 36.72777456578443,
       "t_spin_90pct_s": 0.2820000000000002,
-      "max_yaw_rate_before_wheel_lift_rad_s": 18.373753790786374,
+      "max_yaw_rate_before_wheel_lift_rad_s": 18.366954083725293,
       "bite_mm_at_2m_s": 6.046863189720332,
       "tooth_height_mm": 6.5,
-      "robot_mass_g": 1891.4973156961635
+      "robot_mass_g": 1890.7973156961634
     },
     {
       "disc_t_mm": 6.0,
@@ -47,10 +47,10 @@
       "tip_speed_m_s": 25.544093516797762,
       "energy_J": 25.50539900401696,
       "t_spin_90pct_s": 0.21700000000000016,
-      "max_yaw_rate_before_wheel_lift_rad_s": 22.048504548943647,
+      "max_yaw_rate_before_wheel_lift_rad_s": 22.04034490047035,
       "bite_mm_at_2m_s": 7.256235827664398,
       "tooth_height_mm": 6.5,
-      "robot_mass_g": 1891.4973156961635
+      "robot_mass_g": 1890.7973156961634
     },
     {
       "disc_t_mm": 8.0,
@@ -64,10 +64,10 @@
       "tip_speed_m_s": 38.31614027519664,
       "energy_J": 74.52761389224567,
       "t_spin_90pct_s": 0.5030000000000003,
-      "max_yaw_rate_before_wheel_lift_rad_s": 11.642952021078006,
+      "max_yaw_rate_before_wheel_lift_rad_s": 11.638763336927763,
       "bite_mm_at_2m_s": 4.837490551776266,
       "tooth_height_mm": 6.5,
-      "robot_mass_g": 1945.7342980331778
+      "robot_mass_g": 1945.0342980331777
     },
     {
       "disc_t_mm": 8.0,
@@ -81,10 +81,10 @@
       "tip_speed_m_s": 30.652912220157315,
       "energy_J": 47.69767289103724,
       "t_spin_90pct_s": 0.34600000000000025,
-      "max_yaw_rate_before_wheel_lift_rad_s": 14.553690026347509,
+      "max_yaw_rate_before_wheel_lift_rad_s": 14.548454171159703,
       "bite_mm_at_2m_s": 6.046863189720332,
       "tooth_height_mm": 6.5,
-      "robot_mass_g": 1945.7342980331778
+      "robot_mass_g": 1945.0342980331777
     },
     {
       "disc_t_mm": 8.0,
@@ -98,10 +98,10 @@
       "tip_speed_m_s": 25.544093516797762,
       "energy_J": 33.123383952109194,
       "t_spin_90pct_s": 0.2610000000000002,
-      "max_yaw_rate_before_wheel_lift_rad_s": 17.46442803161701,
+      "max_yaw_rate_before_wheel_lift_rad_s": 17.458145005391643,
       "bite_mm_at_2m_s": 7.256235827664398,
       "tooth_height_mm": 6.5,
-      "robot_mass_g": 1945.7342980331778
+      "robot_mass_g": 1945.0342980331777
     }
   ],
   "chosen": {
@@ -116,10 +116,10 @@
     "tip_speed_m_s": 38.31614027519664,
     "energy_J": 57.38714775903816,
     "t_spin_90pct_s": 0.4030000000000003,
-    "max_yaw_rate_before_wheel_lift_rad_s": 14.699003032629099,
+    "max_yaw_rate_before_wheel_lift_rad_s": 14.693563266980236,
     "bite_mm_at_2m_s": 4.837490551776266,
     "tooth_height_mm": 6.5,
-    "robot_mass_g": 1891.4973156961635
+    "robot_mass_g": 1890.7973156961634
   },
   "mass_budget_g": {
     "weapon rotor (2 discs + tube + pulley + bearings)": 229.9973156961635,
@@ -137,17 +137,17 @@
     "sensors: GY-521 IMU, A3144 + magnet + PETG post, 2x DS18B20, divider, wires": 12,
     "power switch / removable link + fuse": 15,
     "wiring, connectors": 50,
-    "tub + 2 mm lid TPU printed (85% of 514 g solid)": 437,
+    "tub + 2 mm lid TPU printed (85% of 516 g solid)": 439,
     "wedgelet hinge blocks + 4 carriers PETG (Fusion 18.0 g as Nylon 6, x1.27/1.14, 80% printed)": 16,
-    "wedgelet hinge pins 3 mm steel x2 (Fusion)": 6,
+    "wedgelet hinge pins 3 mm steel x2 + E-clips (Fusion)": 6.5,
     "weapon uprights 6061 6 mm x2 (Fusion)": 66,
     "weapon braces + motor mount 6061 3 mm (Fusion ~20 g)": 20,
     "front steel wedgelets 2 mm x2 (Fusion 53.6 g)": 54,
-    "hinged skirts: 1 mm Al plates 22.5 g (Fusion) + 1.5 mm wire hinge + knuckles + clips ~12 g (ASSUMED) + M2 screws 4 g": 38.5,
+    "hinged skirts: 1 mm Al plates 20.6 g + 1.5 mm wire 8.2 g + PETG clips 2.5 g (Fusion) + M2 screws/nuts 4 g": 35.3,
     "other fasteners (motor, upright, ESC mounts) (ASSUMED)": 25
   },
-  "mass_total_g": 1891.4973156961635,
-  "mass_margin_to_2kg_g": 108.50268430383653,
+  "mass_total_g": 1890.7973156961634,
+  "mass_margin_to_2kg_g": 109.20268430383658,
   "firmware_ramp": [
     {
       "ramp_us_per_s": 500,
@@ -175,21 +175,21 @@
     "mu_0.4": {
       "top_speed_m_s": 1.2398819006167716,
       "motor_push_N": 14.065087499999999,
-      "traction_push_N": 7.422235466791745,
-      "push_N": 7.422235466791745,
+      "traction_push_N": 7.419488666791747,
+      "push_N": 7.419488666791747,
       "limited_by": "traction"
     },
     "mu_0.6": {
       "top_speed_m_s": 1.2398819006167716,
       "motor_push_N": 14.065087499999999,
-      "traction_push_N": 11.133353200187619,
-      "push_N": 11.133353200187619,
+      "traction_push_N": 11.129233000187618,
+      "push_N": 11.129233000187618,
       "limited_by": "traction"
     },
     "mu_0.8": {
       "top_speed_m_s": 1.2398819006167716,
       "motor_push_N": 14.065087499999999,
-      "traction_push_N": 14.84447093358349,
+      "traction_push_N": 14.838977333583493,
       "push_N": 14.065087499999999,
       "limited_by": "motors"
     }

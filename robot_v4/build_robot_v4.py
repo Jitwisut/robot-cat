@@ -23,6 +23,11 @@ BASE_R, TIP_R, TOOTH_DEG = 23.0, 29.5, 60.0
 WEDGE_SUPPORT = [(100, 4), (100, 20.5), (106, 20.5 - 6 * 20 / 28), (106, 4)]
 BLOCK_WALL_SCREWS = [(80, 13.5), (92, 13.5)]                 # (y, z) side wall -> PETG block
 PIN_Y, PIN_Z = 102.0, 14.5                                    # wedgelet hinge axis (along x)
+# skirt hinge: knuckles on the tub and clips on the plate alternate along the wire (1.5 mm wire, 1.6 mm bores)
+SKIRT_KNUCKLES_SIDE = [(-108, -98), (-55, -45), (0, 10), (80, 90)]
+SKIRT_CLIPS_SIDE = [(-90, -75), (-35, -20), (25, 40), (55, 70)]
+SKIRT_KNUCKLES_REAR = [(-86, -76), (-30, -20), (20, 30), (76, 86)]
+SKIRT_CLIPS_REAR = [(-65, -50), (-8, 8), (50, 65)]
 # carrier section: top edge = plate underside (z = 20.5 - (y - 100) * 20/28), clear of the spine (z <= 11 at y <= 104)
 CARRIER = [(100, 11.5), (100, 20.5), (114, 20.5 - 14 * 20 / 28), (114, 8), (105, 8), (104.5, 11.5)]
 LID_SCREWS_Y = (-95, -15, 55)
@@ -125,6 +130,35 @@ def cyl_x(parent, name, x0, x1, y, z, r, mat, bore=None):
     if bore:
         loops.append(('circle', (y, z, bore)))
     return solid_x(parent, name, loops, x0, x1, mat)
+
+
+def extrude_xz(comp, name, circles, y0, y1, operation, body=None):
+    """Extrude circles (x, z, r) along conceptual y from y0 to y1 (sketch on Fusion XY = conceptual x-z)."""
+    sketch = comp.sketches.add(comp.xYConstructionPlane)
+    sketch.name = name
+    for x, z, r in circles:
+        sketch.sketchCurves.sketchCircles.addByCenterRadius(point(sketch, x, 0, z), cm(r))
+    profiles = adsk.core.ObjectCollection.create()
+    for i in range(sketch.profiles.count):
+        profiles.add(sketch.profiles.item(i))
+    extrudes = comp.features.extrudeFeatures
+    inp = extrudes.createInput(profiles, operation)
+    # Fusion +Z is conceptual -y: start at -y1 and extrude +Z by (y1 - y0)
+    inp.startExtent = adsk.fusion.OffsetStartDefinition.create(adsk.core.ValueInput.createByReal(cm(-y1)))
+    extent(inp, y1 - y0)
+    if body is not None:
+        inp.participantBodies = [body]
+    feature = extrudes.add(inp)
+    sketch.isVisible = False
+    return feature
+
+
+def cyl_y(parent, name, x, z, y0, y1, r, mat):
+    comp = part(parent, name)
+    body = extrude_xz(comp, name, [(x, z, r)], y0, y1, NEW_BODY).bodies.item(0)
+    body.name = name
+    body.material = mat
+    return comp, body
 
 
 def cut_box(comp, body, name, x0, x1, y0, y1, z0, z1):
@@ -234,6 +268,8 @@ DXF_PARTS = [
     ('Weapon_Motor_Mount_3mm', 'V4_Weapon_Motor_Mount_3mm_6061_x1.dxf'),
 ]
 STL_PARTS = [
+    ('Skirt_Clip_PETG_R1', 'V4_Skirt_Clip_Side_PETG_x8.stl'),
+    ('Skirt_Clip_PETG_Rear1', 'V4_Skirt_Clip_Rear_PETG_x3.stl'),
     ('Hall_Post_PETG', 'V4_Hall_Post_PETG_x1.stl'),
     ('Tub_TPU', 'V4_Tub_TPU95A_x1.stl'),
     ('Lid_TPU_2mm', 'V4_Lid_TPU95A_x1.stl'),
@@ -434,7 +470,13 @@ def run(_):
             cc, cb = solid_x(wd, 'Wedgelet_Carrier_PETG_%s%d' % (side, n + 1), [('poly', CARRIER)], a0, a1, polymer)
             extrude_yz(cc, 'Pin_Bore', [('circle', (PIN_Y, PIN_Z, 1.6))], a0 - 1, a1 + 1, CUT, cb)
             face_holes(cc, cb, 'Wedgelet_Insert', [(x, 109.05, 14.03) for x in holes if a0 < x < a1], 2.0, 6.0)
-        cyl_x(wd, 'Hinge_Pin_D3_' + side, f0, f1, PIN_Y, PIN_Z, 1.5, steel)
+        # pin: inner end stops 0.5 mm from the upright (inward stop), outer end carries an E-clip (DIN 6799
+        # size 2.3 for a 3 mm shaft) in a 0.6 mm groove just outside the last knuckle
+        q0, q1 = xr(33.5, 90.5)
+        pc, pb = cyl_x(wd, 'Hinge_Pin_D3_' + side, q0, q1, PIN_Y, PIN_Z, 1.5, steel)
+        g0, g1 = xr(89.0, 89.6)
+        extrude_yz(pc, 'Eclip_Groove', [('circle', (PIN_Y, PIN_Z, 1.5)), ('circle', (PIN_Y, PIN_Z, 1.15))], g0, g1, CUT, pb)
+        cyl_x(wd, 'Eclip_DIN6799_2.3_' + side, g0, g1, PIN_Y, PIN_Z, 3.5, steel, bore=1.15)
 
     # --- 03b hinged skirts (sides + rear) ------------------------------------
     # 1 mm 5052/6061 plates hang from a 1.5 mm spring-steel wire hinge (printed knuckles on the wall,
@@ -442,14 +484,42 @@ def run(_):
     # so a wedge meets a ~0 mm edge instead of the 4 mm tub floor (three_way_sim: 98-100 % -> 7-24 %).
     # Hinge axis at z 14 keeps the strip below the switch key hole (z 22-28). Works right side up only:
     # nobody in the field can flip V4 (needs a 165 mm edge lift).
+    # Hinge axis 1.5 mm outside the plate at z 15: the wall is the inward stop (a wedge pushes the skirt
+    # flat against the wall), outward and upward the plate swings free over bumps.
     sk = group(root, '03b_Hinged_Skirts')
     for side, sgn in [('L', -1), ('R', 1)]:
-        p0, p1 = sorted((sgn * 88.5, sgn * 89.5))
-        h0, h1 = sorted((sgn * 88.0, sgn * 90.0))
-        box(sk, 'Skirt_Plate_1mm_' + side, p0, p1, -110, 97, 0, 14, aluminum)
-        box(sk, 'Skirt_Hinge_Wire_Knuckles_ENVELOPE_' + side, h0, h1, -110, 97, 14, 20, aluminum)
-    box(sk, 'Skirt_Plate_1mm_Rear', -88, 88, -111.5, -110.5, 0, 14, aluminum)
-    box(sk, 'Skirt_Hinge_Wire_Knuckles_ENVELOPE_Rear', -88, 88, -112, -110, 14, 20, aluminum)
+        def xs(a0, a1):
+            return sorted((sgn * a0, sgn * a1))
+        p0, p1 = xs(88.5, 89.5)
+        pc, plate_b = box(sk, 'Skirt_Plate_1mm_' + side, p0, p1, -110, 97, 0, 13, aluminum), None
+        plate_b = pc.bRepBodies.item(0)
+        cyl_y(sk, 'Skirt_Wire_D1.5_' + side, sgn * 90, 15, -110, 97, 0.75, steel)
+        for k0, k1 in SKIRT_KNUCKLES_SIDE:                               # printed with the tub
+            a0, a1 = xs(88, 92)
+            join_box(tub_comp, tub, 'Skirt_Knuckle', a0, a1, k0, k1, 13, 17)
+        extrude_xz(tub_comp, 'Skirt_Wire_Bore', [(sgn * 90, 15, 0.8)], -111, 98, CUT, tub)
+        for n, (c0, c1) in enumerate(SKIRT_CLIPS_SIDE):
+            a0, a1 = xs(89.5, 92)
+            cc = box(sk, 'Skirt_Clip_PETG_%s%d' % (side, n + 1), a0, a1, c0, c1, 10, 17, polymer)
+            cb = cc.bRepBodies.item(0)
+            extrude_xz(cc, 'Wire_Bore', [(sgn * 90, 15, 0.8)], c0 - 1, c1 + 1, CUT, cb)
+            ym = (c0 + c1) / 2
+            m0, m1 = xs(88, 93)
+            extrude_yz(cc, 'M2_Hole', [('circle', (ym, 11.5, 1.1))], m0, m1, CUT, cb)
+            extrude_yz(pc, 'M2_Hole', [('circle', (ym, 11.5, 1.1))], m0, m1, CUT, plate_b)
+    rc = box(sk, 'Skirt_Plate_1mm_Rear', -88, 88, -111.5, -110.5, 0, 13, aluminum)
+    rplate = rc.bRepBodies.item(0)
+    cyl_x(sk, 'Skirt_Wire_D1.5_Rear', -88, 88, -112, 15, 0.75, steel)
+    for k0, k1 in SKIRT_KNUCKLES_REAR:
+        join_box(tub_comp, tub, 'Skirt_Knuckle', k0, k1, -114, -110, 13, 17)
+    extrude_yz(tub_comp, 'Skirt_Wire_Bore', [('circle', (-112, 15, 0.8))], -89, 89, CUT, tub)
+    for n, (c0, c1) in enumerate(SKIRT_CLIPS_REAR):
+        cc = box(sk, 'Skirt_Clip_PETG_Rear%d' % (n + 1), c0, c1, -114, -111.5, 10, 17, polymer)
+        cb = cc.bRepBodies.item(0)
+        extrude_yz(cc, 'Wire_Bore', [('circle', (-112, 15, 0.8))], c0 - 1, c1 + 1, CUT, cb)
+        xm = (c0 + c1) / 2
+        extrude_xz(cc, 'M2_Hole', [(xm, 11.5, 1.1)], -115, -110, CUT, cb)
+        extrude_xz(rc, 'M2_Hole', [(xm, 11.5, 1.1)], -115, -110, CUT, rplate)
 
     # --- 04 drive --------------------------------------------------------------
     dr = group(root, '04_Drive_4WD')
@@ -541,7 +611,8 @@ def run(_):
         'wedgelet_carriers_g_all_100pct_nylon6': mass_g(['Wedgelet_Carrier_PETG']),
         'wedgelet_pins_g': mass_g(['Hinge_Pin_D3']),
         'skirt_plates_g': mass_g(['Skirt_Plate']),
-        'skirt_hinge_envelopes_g_solid': mass_g(['Skirt_Hinge']),
+        'skirt_wires_g': mass_g(['Skirt_Wire']),
+        'skirt_clips_g_all_100pct_nylon6': mass_g(['Skirt_Clip_PETG']),
         'bbox_mm': [[round(v * 10, 1) for v in (root.boundingBox.minPoint.x, -root.boundingBox.maxPoint.z, root.boundingBox.minPoint.y)],
                     [round(v * 10, 1) for v in (root.boundingBox.maxPoint.x, -root.boundingBox.minPoint.z, root.boundingBox.maxPoint.y)]],
     }

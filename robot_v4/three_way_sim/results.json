@@ -8,7 +8,7 @@
   "masses_kg": {
     "V2": 1.0865000000000002,
     "R3": 1.2374,
-    "V4": 1.8914973156961634
+    "V4": 1.8907973156961635
   },
   "regression": {
     "head_on_r3_controls": [
@@ -23,7 +23,7 @@
   "t90_s": {
     "V2": 0.2042465248859865,
     "R3": 0.44583368963362047,
-    "V4": 0.36042522770614444
+    "V4": 0.3604252277061445
   },
   "v4_flip": {
     "edge_lift_needed_mm": 165.40364253396493,
@@ -159,8 +159,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.98392,
-        "neutral": 0.016079999999999983
+        "B_control": 0.98394,
+        "neutral": 0.016059999999999963
       },
       "A_rear": {
         "A_immobilises_B": 0.50218,
@@ -233,8 +233,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.99708,
-        "neutral": 0.0029200000000000337
+        "B_control": 0.9971,
+        "neutral": 0.0029000000000000137
       },
       "A_rear": {
         "A_immobilises_B": 0.4982,
@@ -270,8 +270,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.07706,
-        "neutral": 0.92294
+        "B_control": 0.07728,
+        "neutral": 0.92272
       },
       "A_rear": {
         "A_immobilises_B": 0.4982,
@@ -284,8 +284,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.07808,
-        "neutral": 0.92192
+        "B_control": 0.0783,
+        "neutral": 0.9217
       }
     },
     "PESSIMISTIC_V4_vs_V2": {
@@ -307,8 +307,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.98392,
-        "neutral": 0.016079999999999983
+        "B_control": 0.98394,
+        "neutral": 0.016059999999999963
       },
       "A_rear": {
         "A_immobilises_B": 0.18414,
@@ -329,8 +329,8 @@
       "head_on": {
         "A_immobilises_B": 0.06946,
         "B_immobilises_A": 0.0,
-        "A_control": 0.34636,
-        "B_control": 0.58418,
+        "A_control": 0.34634,
+        "B_control": 0.5842,
         "neutral": 0.0
       },
       "A_flank": {
@@ -344,8 +344,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.99708,
-        "neutral": 0.0029200000000000337
+        "B_control": 0.9971,
+        "neutral": 0.0029000000000000137
       },
       "A_rear": {
         "A_immobilises_B": 0.16082,
@@ -381,8 +381,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.25746,
-        "neutral": 0.74254
+        "B_control": 0.25754,
+        "neutral": 0.74246
       },
       "A_rear": {
         "A_immobilises_B": 0.50218,
@@ -395,8 +395,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.25862,
-        "neutral": 0.7413799999999999
+        "B_control": 0.25868,
+        "neutral": 0.74132
       }
     },
     "V4skirt_vs_R3": {
@@ -418,8 +418,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.14252,
-        "neutral": 0.85748
+        "B_control": 0.14272,
+        "neutral": 0.85728
       },
       "A_rear": {
         "A_immobilises_B": 0.4982,
@@ -432,8 +432,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.14198,
-        "neutral": 0.85802
+        "B_control": 0.14214,
+        "neutral": 0.8578600000000001
       }
     },
     "PESSIMISTIC_V4skirt_vs_V2": {
@@ -455,8 +455,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.25746,
-        "neutral": 0.74254
+        "B_control": 0.25754,
+        "neutral": 0.74246
       },
       "A_rear": {
         "A_immobilises_B": 0.18414,
@@ -469,16 +469,16 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.25862,
-        "neutral": 0.7413799999999999
+        "B_control": 0.25868,
+        "neutral": 0.74132
       }
     },
     "PESSIMISTIC_V4skirt_vs_R3": {
       "head_on": {
         "A_immobilises_B": 0.06946,
         "B_immobilises_A": 0.0,
-        "A_control": 0.34636,
-        "B_control": 0.58418,
+        "A_control": 0.34634,
+        "B_control": 0.5842,
         "neutral": 0.0
       },
       "A_flank": {
@@ -492,8 +492,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.14252,
-        "neutral": 0.85748
+        "B_control": 0.14272,
+        "neutral": 0.85728
       },
       "A_rear": {
         "A_immobilises_B": 0.16082,
@@ -506,8 +506,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.14198,
-        "neutral": 0.85802
+        "B_control": 0.14214,
+        "neutral": 0.8578600000000001
       }
     },
     "V4full_vs_V2": {
@@ -529,8 +529,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.25746,
-        "neutral": 0.74254
+        "B_control": 0.25754,
+        "neutral": 0.74246
       },
       "A_rear": {
         "A_immobilises_B": 0.50218,
@@ -543,8 +543,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.25862,
-        "neutral": 0.7413799999999999
+        "B_control": 0.25868,
+        "neutral": 0.74132
       }
     },
     "V4full_vs_R3": {
@@ -566,8 +566,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.14252,
-        "neutral": 0.85748
+        "B_control": 0.14272,
+        "neutral": 0.85728
       },
       "A_rear": {
         "A_immobilises_B": 0.4982,
@@ -580,8 +580,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.14198,
-        "neutral": 0.85802
+        "B_control": 0.14214,
+        "neutral": 0.8578600000000001
       }
     },
     "PESSIMISTIC_V4full_vs_V2": {
@@ -603,8 +603,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.25746,
-        "neutral": 0.74254
+        "B_control": 0.25754,
+        "neutral": 0.74246
       },
       "A_rear": {
         "A_immobilises_B": 0.18414,
@@ -617,16 +617,16 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.25862,
-        "neutral": 0.7413799999999999
+        "B_control": 0.25868,
+        "neutral": 0.74132
       }
     },
     "PESSIMISTIC_V4full_vs_R3": {
       "head_on": {
         "A_immobilises_B": 0.14832,
         "B_immobilises_A": 0.0,
-        "A_control": 0.7417,
-        "B_control": 0.10998,
+        "A_control": 0.74168,
+        "B_control": 0.11,
         "neutral": 0.0
       },
       "A_flank": {
@@ -640,8 +640,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.14252,
-        "neutral": 0.85748
+        "B_control": 0.14272,
+        "neutral": 0.85728
       },
       "A_rear": {
         "A_immobilises_B": 0.16082,
@@ -654,8 +654,8 @@
         "A_immobilises_B": 0.0,
         "B_immobilises_A": 0.0,
         "A_control": 0.0,
-        "B_control": 0.14198,
-        "neutral": 0.85802
+        "B_control": 0.14214,
+        "neutral": 0.8578600000000001
       }
     }
   },
@@ -710,9 +710,9 @@
         "B_by_immobilise": 0.0
       },
       "V4_vs_R3": {
-        "A_win": 0.7685,
+        "A_win": 0.76825,
         "B_win": 0.082,
-        "draw": 0.1495,
+        "draw": 0.14975,
         "A_by_immobilise": 0.0,
         "B_by_immobilise": 0.0
       },
@@ -952,9 +952,9 @@
         "B_by_immobilise": 0.0
       },
       "PESSIMISTIC_V4skirt_vs_R3": {
-        "A_win": 0.83375,
+        "A_win": 0.8335,
         "B_win": 0.10175,
-        "draw": 0.0645,
+        "draw": 0.06475,
         "A_by_immobilise": 0.0,
         "B_by_immobilise": 0.0
       },
@@ -1010,9 +1010,9 @@
         "B_by_immobilise": 0.0
       },
       "V4_vs_R3": {
-        "A_win": 0.85625,
+        "A_win": 0.856,
         "B_win": 0.03625,
-        "draw": 0.1075,
+        "draw": 0.10775,
         "A_by_immobilise": 0.0,
         "B_by_immobilise": 0.0
       },
@@ -1045,9 +1045,9 @@
         "B_by_immobilise": 0.0
       },
       "PESSIMISTIC_V4skirt_vs_V2": {
-        "A_win": 0.222,
+        "A_win": 0.22175,
         "B_win": 0.65625,
-        "draw": 0.12175,
+        "draw": 0.122,
         "A_by_immobilise": 0.149,
         "B_by_immobilise": 0.0
       },
@@ -1146,8 +1146,8 @@
       },
       "PESSIMISTIC_V4skirt_vs_V2": {
         "A_win": 0.269,
-        "B_win": 0.66475,
-        "draw": 0.06625,
+        "B_win": 0.665,
+        "draw": 0.066,
         "A_by_immobilise": 0.21575,
         "B_by_immobilise": 0.0
       },
@@ -1619,7 +1619,7 @@
       0.9985
     ],
     "V4_vs_R3": [
-      0.7685,
+      0.76825,
       0.94325,
       0.9985
     ],
@@ -1651,7 +1651,7 @@
     "PESSIMISTIC_V4skirt_vs_R3": [
       0.44675,
       0.62425,
-      0.83375
+      0.8335
     ],
     "V4full_vs_V2": [
       0.896,
