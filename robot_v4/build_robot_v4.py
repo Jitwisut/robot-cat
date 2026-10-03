@@ -22,6 +22,9 @@ BASE_R, TIP_R, TOOTH_DEG = 23.0, 29.5, 60.0
 # support block under each wedgelet: its top edge is the wedgelet's lower surface
 WEDGE_SUPPORT = [(100, 4), (100, 20.5), (106, 20.5 - 6 * 20 / 28), (106, 4)]
 BLOCK_WALL_SCREWS = [(80, 13.5), (92, 13.5)]                 # (y, z) side wall -> PETG block
+PIN_Y, PIN_Z = 102.0, 14.5                                    # wedgelet hinge axis (along x)
+# carrier section: top edge = plate underside (z = 20.5 - (y - 100) * 20/28), clear of the spine (z <= 11 at y <= 104)
+CARRIER = [(100, 11.5), (100, 20.5), (114, 20.5 - 14 * 20 / 28), (114, 8), (105, 8), (104.5, 11.5)]
 LID_SCREWS_Y = (-95, -15, 55)
 UPRIGHT_SCREWS = [(70, 14), (70, 50), (90, 14), (90, 46)]     # (y, z) through the uprights
 MFG = os.path.join(OUT, 'manufacturing')
@@ -222,6 +225,8 @@ def find_body(root, name):
 
 # flat parts -> DXF (outline of the largest face, true size), printed parts -> STL
 DXF_PARTS = [
+    ('Skirt_Plate_1mm_R', 'V4_Skirt_Side_1mm_Al_x2.dxf'),
+    ('Skirt_Plate_1mm_Rear', 'V4_Skirt_Rear_1mm_Al_x1.dxf'),
     ('Beater_Disc_L', 'V4_Beater_Disc_6mm_steel_x2.dxf'),
     ('Upright_6061_6mm_L', 'V4_Upright_6mm_6061_x2.dxf'),
     ('Wedgelet_L', 'V4_Wedgelet_2mm_steel_x2_mirror.dxf'),
@@ -231,11 +236,13 @@ DXF_PARTS = [
 STL_PARTS = [
     ('Hall_Post_PETG', 'V4_Hall_Post_PETG_x1.stl'),
     ('Tub_TPU', 'V4_Tub_TPU95A_x1.stl'),
-    ('Lid_TPU_3mm', 'V4_Lid_TPU95A_x1.stl'),
+    ('Lid_TPU_2mm', 'V4_Lid_TPU95A_x1.stl'),
     ('Wheel_Hub_PETG_Front_L', 'V4_Wheel_Hub_PETG_x4.stl'),
     ('Wheel_Tyre_TPU_Front_L', 'V4_Wheel_Tyre_TPU95A_x4.stl'),
-    ('Wedgelet_Block_PETG_L', 'V4_Wedgelet_Block_PETG_L_x1.stl'),
-    ('Wedgelet_Block_PETG_R', 'V4_Wedgelet_Block_PETG_R_x1.stl'),
+    ('Wedgelet_Block_PETG_L', 'V4_Wedgelet_Hinge_Block_PETG_L_x1.stl'),
+    ('Wedgelet_Block_PETG_R', 'V4_Wedgelet_Hinge_Block_PETG_R_x1.stl'),
+    ('Wedgelet_Carrier_PETG_R1', 'V4_Wedgelet_Carrier_Inner_PETG_x2_mirror.stl'),
+    ('Wedgelet_Carrier_PETG_R2', 'V4_Wedgelet_Carrier_Outer_PETG_x2_mirror.stl'),
 ]
 
 
@@ -299,14 +306,15 @@ def run(_):
             x0, x1 = sorted((side * 60, side * 80))
             cut_box(tub_comp, tub, 'Floor_WheelWell', x0, x1, wy - 35, wy + 35, 3, 8)
     for x0, x1 in [(-88, -80), (80, 88)]:
-        join_box(tub_comp, tub, 'Side_Wall', x0, x1, -110, 100, 7, 57)
-    join_box(tub_comp, tub, 'Rear_Wall', -80, 80, -110, -104, 7, 57)
-    join_box(tub_comp, tub, 'Front_Bulkhead', -80, 80, 62, 64, 7, 57)
+        # walls to z 58 under a 2 mm lid; front end at y 97 so the wedgelet's rear edge can swing back
+        join_box(tub_comp, tub, 'Side_Wall', x0, x1, -110, 97, 7, 58)
+    join_box(tub_comp, tub, 'Rear_Wall', -80, 80, -110, -104, 7, 58)
+    join_box(tub_comp, tub, 'Front_Bulkhead', -80, 80, 62, 64, 7, 58)
     cut_box(tub_comp, tub, 'Belt_Slot', -6, 6, 61, 65, 12, 52)
     # drive motor walls: motor face bolts here, shaft passes to the wheel
     for wy in WHEEL_Y:
         for x0, x1 in [(-60, -56), (56, 60)]:
-            join_box(tub_comp, tub, 'Motor_Wall', x0, x1, wy - 13, wy + 13, 7, 57)
+            join_box(tub_comp, tub, 'Motor_Wall', x0, x1, wy - 13, wy + 13, 7, 58)
         extrude_yz(tub_comp, 'Motor_Shaft_Hole', [('circle', (wy, AXLE_Z, 4.0))], -61, -55, CUT, tub)
         extrude_yz(tub_comp, 'Motor_Shaft_Hole', [('circle', (wy, AXLE_Z, 4.0))], 55, 61, CUT, tub)
     # front floor + support blocks under the wedgelets (outboard of the uprights)
@@ -319,26 +327,26 @@ def run(_):
     # blocks beside the uprights: 4 M3 x 20 per side go from the bay side of the block (x +-50),
     # through a clearance hole, into M3 threads tapped in the 6 mm upright (no inserts in TPU here)
     for x0, x1 in [(-50, -34), (34, 50)]:
-        join_box(tub_comp, tub, 'Weapon_Side_Block', x0, x1, 64, 98, 7, 50)
+        join_box(tub_comp, tub, 'Weapon_Side_Block', x0, x1, 64, 96, 7, 50)
         for y, z in UPRIGHT_SCREWS:
             extrude_yz(tub_comp, 'Upright_Screw_Clearance', [('circle', (y, z, 1.7))], x0 - 1, x1 + 1, CUT, tub)
     # lid screws: heat-set insert holes (D4 x 6) in the wall tops, clearance D3.4 in the lid
     for x in (-84, 84):
         for y in LID_SCREWS_Y:
-            cut_z(tub_comp, tub, 'Lid_Insert', x, y, 2.0, 50, 58)
+            cut_z(tub_comp, tub, 'Lid_Insert', x, y, 2.0, 51, 59)
     # power switch key hole through the right wall, in the gap between the wheels
     extrude_yz(tub_comp, 'Switch_Key_Hole', [('circle', (-30, 25, 3.0))], 79, 89, CUT, tub)
     tub.name = 'Tub_TPU'
 
-    lid_comp = box(ch, 'Lid_TPU_3mm', -88, 88, -110, 64, 57, 60, polymer)
+    lid_comp = box(ch, 'Lid_TPU_2mm', -88, 88, -110, 64, 58, 60, polymer)   # 2 mm (was 3) pays for the skirts
     lid = lid_comp.bRepBodies.item(0)
     for side in (-1, 1):
         for wy in WHEEL_Y:
             x0, x1 = sorted((side * 60, side * 80))
-            cut_box(lid_comp, lid, 'Lid_WheelWell', x0, x1, wy - 35, wy + 35, 56, 61)
+            cut_box(lid_comp, lid, 'Lid_WheelWell', x0, x1, wy - 35, wy + 35, 57, 61)
     for x in (-84, 84):
         for y in LID_SCREWS_Y:
-            cut_z(lid_comp, lid, 'Lid_Screw', x, y, 1.7, 56, 61)
+            cut_z(lid_comp, lid, 'Lid_Screw', x, y, 1.7, 57, 61)
 
     # --- 02 weapon -------------------------------------------------------------
     wp = group(root, '02_Weapon_Beater')
@@ -386,30 +394,62 @@ def run(_):
     for name, z0, z1 in [('Belt_Upper_ENVELOPE', 45.5, 47.0), ('Belt_Lower_ENVELOPE', 17.0, 18.5)]:
         box(wp, name, -3, 3, 52, 86, z0, z1, rubber)
 
-    # --- 03 wedgelets --------------------------------------------------------
-    wd = group(root, '03_Steel_Wedgelets_2mm')
+    # --- 03 hinged wedgelets ------------------------------------------------
+    # Each 2 mm steel plate is screwed (2x M3 countersunk into heat-set inserts) to two PETG carriers that
+    # pivot on a 3 mm steel pin along x at (y 102, z 14.5). The pin runs through fixed PETG knuckles on a
+    # spine + rail that bolt to the tub. At rest the plate tip lies on the floor under its own weight
+    # (drawn here 0.5 mm up; it settles ~1 deg). It can swing up ~10 deg before the plate meets the
+    # upright's lower edge (rigid up-stop); the floor is the down-stop. three_way_sim: front edge ~0 mm.
+    wd = group(root, '03_Hinged_Wedgelets')
     wedgelets = []
-    for side, x0, x1, holes in [('L', -88, -27, (-40, -75)), ('R', 27, 88, (40, 75))]:
-        c, body = solid_x(wd, 'Wedgelet_' + side, [('poly', [(128, 0.5), (128, 2.5), (100, 22.5), (100, 20.5)])],
-                          x0, x1, steel)
+    plate = [(128, 0.5), (128, 2.5), (100, 22.5), (100, 20.5)]
+    for side, x0, x1, holes in [('L', -88, -27, (-49, -75)), ('R', 27, 88, (49, 75))]:
+        c, body = solid_x(wd, 'Wedgelet_' + side, [('poly', plate)], x0, x1, steel)
         wedgelets.append(body)
-        # M3 countersunk through the plate
-        face_holes(c, body, 'Wedgelet_M3', [(x, 103.0, 20.357) for x in holes], 1.7, 3.0)
-    # PETG blocks under the wedgelets (heat-set inserts hold in PETG, not in TPU 95A):
-    #  - a prism whose top is the wedgelet's underside (x 34..88), carrying 2 inserts on the screw axes
-    #  - a rail along the side wall (x 70..80, y 64..100) that bears on the bulkhead and takes
-    #    2 horizontal M3 through the side wall into inserts
+        face_holes(c, body, 'Wedgelet_M3', [(x, 110.0, 22.5 - 10 * 20 / 28) for x in holes], 1.7, 3.0)
     blocks = []
-    for side, sgn, holes in [('L', -1, (-40, -75)), ('R', 1, (40, 75))]:
-        x0, x1 = sorted((sgn * 34, sgn * 88))
-        bc, bb = solid_x(wd, 'Wedgelet_Block_PETG_' + side, [('poly', WEDGE_SUPPORT)], x0, x1, polymer)
-        r0, r1 = sorted((sgn * 70, sgn * 80))
-        join_box(bc, bb, 'Rail', r0, r1, 64, 100, 7, 20)
-        i0, i1 = sorted((sgn * 72, sgn * 80))
+    for side, sgn, holes in [('L', -1, (-49, -75)), ('R', 1, (49, 75))]:
+        def xr(a0, a1):
+            return sorted((sgn * a0, sgn * a1))
+        # fixed: spine + 3 knuckles + rail (rail takes 2 horizontal M3 through the side wall)
+        f0, f1 = xr(34, 88)
+        bc, bb = solid_x(wd, 'Wedgelet_Block_PETG_' + side, [('poly', [(100, 4), (100, 11), (104, 11), (104, 4)])],
+                         f0, f1, polymer)
+        for k0, k1 in [(34, 38), (60, 66), (84, 88)]:
+            a0, a1 = xr(k0, k1)
+            join_box(bc, bb, 'Knuckle', a0, a1, 100, 104, 11, 16.5)
+        r0, r1 = xr(70, 80)
+        join_box(bc, bb, 'Bridge', r0, r1, 97, 101, 7, 10)    # ties the rail to the spine, below the carrier's swing
+        join_box(bc, bb, 'Rail', r0, r1, 64, 98, 7, 18)      # 2 mm clear of the swinging plate and carriers
+        extrude_yz(bc, 'Pin_Bore', [('circle', (PIN_Y, PIN_Z, 1.6))], f0 - 1, f1 + 1, CUT, bb)
+        i0, i1 = xr(72, 80)
         for y, z in BLOCK_WALL_SCREWS:
             extrude_yz(bc, 'Wall_Insert', [('circle', (y, z, 2.0))], i0, i1, CUT, bb)
-        face_holes(bc, bb, 'Wedgelet_Insert', [(x, 102.05, 19.03) for x in holes], 2.0, 7.0)
+        if bc.bRepBodies.count != 1:
+            raise RuntimeError('wedgelet block %s split into %d bodies' % (side, bc.bRepBodies.count))
         blocks.append(bb)
+        # moving carriers between the knuckles (1 mm gaps), top = plate underside
+        for n, (c0, c1) in enumerate([(39, 59), (67, 83)]):
+            a0, a1 = xr(c0, c1)
+            cc, cb = solid_x(wd, 'Wedgelet_Carrier_PETG_%s%d' % (side, n + 1), [('poly', CARRIER)], a0, a1, polymer)
+            extrude_yz(cc, 'Pin_Bore', [('circle', (PIN_Y, PIN_Z, 1.6))], a0 - 1, a1 + 1, CUT, cb)
+            face_holes(cc, cb, 'Wedgelet_Insert', [(x, 109.05, 14.03) for x in holes if a0 < x < a1], 2.0, 6.0)
+        cyl_x(wd, 'Hinge_Pin_D3_' + side, f0, f1, PIN_Y, PIN_Z, 1.5, steel)
+
+    # --- 03b hinged skirts (sides + rear) ------------------------------------
+    # 1 mm 5052/6061 plates hang from a 1.5 mm spring-steel wire hinge (printed knuckles on the wall,
+    # PETG clips on the plate; a store piano hinge weighs ~100 g here) and rest on the floor,
+    # so a wedge meets a ~0 mm edge instead of the 4 mm tub floor (three_way_sim: 98-100 % -> 7-24 %).
+    # Hinge axis at z 14 keeps the strip below the switch key hole (z 22-28). Works right side up only:
+    # nobody in the field can flip V4 (needs a 165 mm edge lift).
+    sk = group(root, '03b_Hinged_Skirts')
+    for side, sgn in [('L', -1), ('R', 1)]:
+        p0, p1 = sorted((sgn * 88.5, sgn * 89.5))
+        h0, h1 = sorted((sgn * 88.0, sgn * 90.0))
+        box(sk, 'Skirt_Plate_1mm_' + side, p0, p1, -110, 97, 0, 14, aluminum)
+        box(sk, 'Skirt_Hinge_Wire_Knuckles_ENVELOPE_' + side, h0, h1, -110, 97, 14, 20, aluminum)
+    box(sk, 'Skirt_Plate_1mm_Rear', -88, 88, -111.5, -110.5, 0, 14, aluminum)
+    box(sk, 'Skirt_Hinge_Wire_Knuckles_ENVELOPE_Rear', -88, 88, -112, -110, 14, 20, aluminum)
 
     # --- 04 drive --------------------------------------------------------------
     dr = group(root, '04_Drive_4WD')
@@ -417,7 +457,10 @@ def run(_):
         for side, mx, wx in [('L', (-56, -4), (-78, -62)), ('R', (4, 56), (62, 78))]:
             cyl_x(dr, 'JGA25_370_400rpm_%s_%s' % (pos, side), mx[0], mx[1], wy, AXLE_Z, 12.5, proxy)
             solid_x(dr, 'Wheel_Hub_PETG_%s_%s' % (pos, side),
-                    [('circle', (wy, AXLE_Z, 22.0)), ('poly', d_bore(wy, AXLE_Z))], wx[0], wx[1], polymer)
+                    [('circle', (wy, AXLE_Z, 22.0)), ('poly', d_bore(wy, AXLE_Z))] +
+                    [('circle', (wy + 13 * math.cos(math.radians(a)), AXLE_Z + 13 * math.sin(math.radians(a)), 4.0))
+                     for a in range(0, 360, 72)],                     # 5 lightening holes
+                    wx[0], wx[1], polymer)
             cyl_x(dr, 'Wheel_Tyre_TPU_%s_%s' % (pos, side), wx[0], wx[1], wy, AXLE_Z, WHEEL_R, rubber, bore=22.0)
 
     # --- 05 electronics -------------------------------------------------------
@@ -495,6 +538,10 @@ def run(_):
         'wheel_tyre_g_each_rubber': mass_g(['Wheel_Tyre_TPU_Front_L']),
         'braces_and_motor_mount_g': mass_g(['Weapon_Top_Brace', 'Weapon_Bottom_Brace', 'Weapon_Motor_Mount']),
         'wedgelet_blocks_g_both_100pct_nylon6': mass_g(['Wedgelet_Block_PETG']),
+        'wedgelet_carriers_g_all_100pct_nylon6': mass_g(['Wedgelet_Carrier_PETG']),
+        'wedgelet_pins_g': mass_g(['Hinge_Pin_D3']),
+        'skirt_plates_g': mass_g(['Skirt_Plate']),
+        'skirt_hinge_envelopes_g_solid': mass_g(['Skirt_Hinge']),
         'bbox_mm': [[round(v * 10, 1) for v in (root.boundingBox.minPoint.x, -root.boundingBox.maxPoint.z, root.boundingBox.minPoint.y)],
                     [round(v * 10, 1) for v in (root.boundingBox.maxPoint.x, -root.boundingBox.minPoint.z, root.boundingBox.maxPoint.y)]],
     }

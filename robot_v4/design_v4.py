@@ -141,20 +141,22 @@ def mass_budget(rotor_g):
         'motor pulley + 5 mm PU round belt': 15,
         'weapon ESC Skywalker 40A (ASSUMED)': 35,
         'drive motors JGA25-370 x4 (PMD datasheet 110 g)': 440,
-        'wheels x4: PETG hub 24 g (80% of 30 g solid) + TPU tyre 25 g (Fusion)': 196,
+        'wheels x4: lightened PETG hub 20 g (80% of 25 g solid) + TPU tyre 25 g (Fusion)': 180,
         'ESP32 DevKit': 10,
         'DRV8871 x2': 10,
         '3S 850 mAh 80C LiPo (GNB, ASSUMED 75 g + leads)': 80,
         'sensors: GY-521 IMU, A3144 + magnet + PETG post, 2x DS18B20, divider, wires': 12,
         'power switch / removable link + fuse': 15,
         'wiring, connectors': 50,
-        # solid TPU would be 544 g (Fusion 428.4 + 83.9 g as Nylon 6, x1.21/1.14);
+        # solid TPU would be 514 g (Fusion 428.2 + 55.9 g as Nylon 6 with the 2 mm lid, x1.21/1.14);
         # printed with 4 walls + 60% gyroid the part is ~85% of solid (ASSUMED, weigh the print)
-        'tub + lid TPU printed (85% of 544 g solid)': 462,
-        'wedgelet blocks PETG x2 (Fusion 20.2 g as Nylon 6, x1.27/1.14, 80% printed)': 18,
+        'tub + 2 mm lid TPU printed (85% of 514 g solid)': 437,
+        'wedgelet hinge blocks + 4 carriers PETG (Fusion 18.0 g as Nylon 6, x1.27/1.14, 80% printed)': 16,
+        'wedgelet hinge pins 3 mm steel x2 (Fusion)': 6,
         'weapon uprights 6061 6 mm x2 (Fusion)': 66,
         'weapon braces + motor mount 6061 3 mm (Fusion ~20 g)': 20,
         'front steel wedgelets 2 mm x2 (Fusion 53.6 g)': 54,
+        'hinged skirts: 1 mm Al plates 22.5 g (Fusion) + 1.5 mm wire hinge + knuckles + clips ~12 g (ASSUMED) + M2 screws 4 g': 38.5,
         'other fasteners (motor, upright, ESC mounts) (ASSUMED)': 25,
     }
     total = sum(items.values())

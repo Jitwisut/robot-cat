@@ -39,6 +39,9 @@ V4_PUSH_MOTOR = v4['drive']['mu_0.4']['motor_push_N']
 # V4 (from build_robot_v4.py): front = rotor zone |x|<26 at 2.5 mm, wedgelets 27..88 at 0.5..1.5;
 # flank and rear = tub floor underside at 4 mm (floor runs under the side and rear walls).
 V4_FRONT = [(-26, 26, 'rotor', 2.5, 2.5), (27, 88, 'wedge', 0.5, 1.5), (-88, -27, 'wedge', 0.5, 1.5)]
+# hinged wedgelets (4 Oct): plate tip rests on the floor, ~0 mm with sigma 0.3 like the hinged skirt
+V4_FRONT_HINGED = [(-26, 26, 'rotor', 2.5, 2.5), (27, 88, 'wedge', 0.0, 0.0), (-88, -27, 'wedge', 0.0, 0.0)]
+FRONT = {'zones': V4_FRONT, 'sig': SIG}
 V4_SIDE_EDGE = 4.0
 V4_HALF_WIDTH, V4_CG_Z = 88.0, 32.0
 V4_CG_Y, V4_REAR_AXLE_Y, V4_TIP_Y = 5.0, -70.0, 128.0   # CoG y ASSUMED (rotor + weapon motor forward)
@@ -126,14 +129,15 @@ def headon_v4(r, opp, weapon_on=True):
     """V4 (A) head-on vs V2 or R3 (B)."""
     off = u(r, -60, 60)
     mu_a, mu_b = u(r, *MU_TILE), u(r, *MU_TILE)
-    v4_edges = {i: u(r, lo, hi) + r.normal(0, SIG, N) for i, (_x0, _x1, _k, lo, hi) in enumerate(V4_FRONT)}
+    zones_v4, sig_v4 = FRONT['zones'], FRONT['sig']
+    v4_edges = {i: u(r, lo, hi) + r.normal(0, sig_v4, N) for i, (_x0, _x1, _k, lo, hi) in enumerate(zones_v4)}
     zones = V2_FRONT if opp == 'V2' else [(-84, 84, None)]
     rotor = np.zeros(N, bool)
     opp_under = np.zeros(N, bool)
     spatula_hit = np.zeros(N, bool)
     for zi, (ox0, ox1, oh) in enumerate(zones):
         oe = (u(r, 0.5, 1.5) if oh is None else oh) + r.normal(0, SIG, N)
-        for i, (x0, x1, kind, _lo, _hi) in enumerate(V4_FRONT):
+        for i, (x0, x1, kind, _lo, _hi) in enumerate(zones_v4):
             ov = (off + ox1 > x0) & (off + ox0 < x1)
             if kind == 'rotor':
                 rotor |= ov
@@ -238,17 +242,17 @@ def v2_r3(mu_range):
     return sc, sc_skirt, out
 
 
-def v4_vs(opp):
+def v4_vs(opp, side_edge=V4_SIDE_EDGE, side_sig=SIG):
     """Scenario outcomes with A = V4, B = opp; also the 'B weapon off' variants for the match model."""
     r = rng()
     ho, p_dis, h_mean = headon_v4(r, opp, True)
     ho_off, _, _ = headon_v4(r, opp, False)
     af, p_af_inv = v4_attacks_side(r, opp)
     ar, _ = v4_attacks_side(r, opp)
-    bf, p_bf_under = opp_attacks_v4_side(r, opp, True)
-    bf_off, _ = opp_attacks_v4_side(r, opp, False)
-    br, _ = opp_attacks_v4_side(r, opp, True)
-    br_off, _ = opp_attacks_v4_side(r, opp, False)
+    bf, p_bf_under = opp_attacks_v4_side(r, opp, True, side_edge, side_sig)
+    bf_off, _ = opp_attacks_v4_side(r, opp, False, side_edge, side_sig)
+    br, _ = opp_attacks_v4_side(r, opp, True, side_edge, side_sig)
+    br_off, _ = opp_attacks_v4_side(r, opp, False, side_edge, side_sig)
     on = {'head_on': ho, 'A_flank': af, 'B_flank': bf, 'A_rear': ar, 'B_rear': br}
     off = {'head_on': ho_off, 'A_flank': af, 'B_flank': bf_off, 'A_rear': ar, 'B_rear': br_off}
     return on, off, {'p_B_weapon_disabled_per_headon': float(p_dis), 'mean_launch_h_m_headon': float(h_mean),
@@ -323,15 +327,31 @@ def main():
     HIT.update(HIT_SETS['base'])
     sc_42_on, sc_42_off, ex42 = v4_vs('V2')
     sc_43_on, sc_43_off, ex43 = v4_vs('R3')
+    # V4 with hinged skirts resting on the floor (sides + rear): edge ~0 mm, sigma 0.3
+    s42_on, s42_off, sex42 = v4_vs('V2', 0.0, 0.3)
+    s43_on, s43_off, sex43 = v4_vs('R3', 0.0, 0.3)
     HIT.update(HIT_SETS['pessimistic_v4'])
     p42_on, p42_off, pex42 = v4_vs('V2')
     p43_on, p43_off, pex43 = v4_vs('R3')
+    ps42_on, ps42_off, psex42 = v4_vs('V2', 0.0, 0.3)
+    ps43_on, ps43_off, psex43 = v4_vs('R3', 0.0, 0.3)
+    # V4 as built now: hinged skirts AND hinged wedgelets
+    FRONT.update({'zones': V4_FRONT_HINGED, 'sig': 0.3})
+    pf42_on, pf42_off, pfex42 = v4_vs('V2', 0.0, 0.3)
+    pf43_on, pf43_off, pfex43 = v4_vs('R3', 0.0, 0.3)
     HIT.update(HIT_SETS['base'])
+    f42_on, f42_off, fex42 = v4_vs('V2', 0.0, 0.3)
+    f43_on, f43_off, fex43 = v4_vs('R3', 0.0, 0.3)
+    FRONT.update({'zones': V4_FRONT, 'sig': SIG})
     out['hit_assumption_sets'] = HIT_SETS
     out['scenarios'] = {'V2_vs_R3': sc_23, 'V2_vs_R3_skirted': sc_23_skirt,
                         'V4_vs_V2': sc_42_on, 'V4_vs_V2_lifter_broken': sc_42_off,
                         'V4_vs_R3': sc_43_on, 'V4_vs_R3_lifter_lost': sc_43_off,
-                        'PESSIMISTIC_V4_vs_V2': p42_on, 'PESSIMISTIC_V4_vs_R3': p43_on}
+                        'PESSIMISTIC_V4_vs_V2': p42_on, 'PESSIMISTIC_V4_vs_R3': p43_on,
+                        'V4skirt_vs_V2': s42_on, 'V4skirt_vs_R3': s43_on,
+                        'PESSIMISTIC_V4skirt_vs_V2': ps42_on, 'PESSIMISTIC_V4skirt_vs_R3': ps43_on,
+                        'V4full_vs_V2': f42_on, 'V4full_vs_R3': f43_on,
+                        'PESSIMISTIC_V4full_vs_V2': pf42_on, 'PESSIMISTIC_V4full_vs_R3': pf43_on}
     out['extras'] = {'V4_vs_V2': ex42, 'V4_vs_R3': ex43, 'PESSIMISTIC_V4_vs_V2': pex42, 'PESSIMISTIC_V4_vs_R3': pex43,
                      'V2_vs_R3_tile_headon_r3_controls': raw23['head_on']['p_r3_controls']}
 
@@ -348,6 +368,20 @@ def main():
                 'PESSIMISTIC_V4_vs_V2': match(p42_on, p42_off, pex42['p_B_weapon_disabled_per_headon'], t_v4, t_v2,
                                               hs, ne, 4000, b_weapon_breakable=True),
                 'PESSIMISTIC_V4_vs_R3': match(p43_on, p43_off, 0, t_v4, t_r3, hs, ne, 4000, b_inverts_disable=True),
+                'V4skirt_vs_V2': match(s42_on, s42_off, sex42['p_B_weapon_disabled_per_headon'], t_v4, t_v2, hs, ne,
+                                       4000, b_weapon_breakable=True),
+                'V4skirt_vs_R3': match(s43_on, s43_off, 0, t_v4, t_r3, hs, ne, 4000, b_inverts_disable=True),
+                'PESSIMISTIC_V4skirt_vs_V2': match(ps42_on, ps42_off, psex42['p_B_weapon_disabled_per_headon'], t_v4,
+                                                   t_v2, hs, ne, 4000, b_weapon_breakable=True),
+                'PESSIMISTIC_V4skirt_vs_R3': match(ps43_on, ps43_off, 0, t_v4, t_r3, hs, ne, 4000,
+                                                   b_inverts_disable=True),
+                'V4full_vs_V2': match(f42_on, f42_off, fex42['p_B_weapon_disabled_per_headon'], t_v4, t_v2, hs, ne,
+                                      4000, b_weapon_breakable=True),
+                'V4full_vs_R3': match(f43_on, f43_off, 0, t_v4, t_r3, hs, ne, 4000, b_inverts_disable=True),
+                'PESSIMISTIC_V4full_vs_V2': match(pf42_on, pf42_off, pfex42['p_B_weapon_disabled_per_headon'], t_v4,
+                                                  t_v2, hs, ne, 4000, b_weapon_breakable=True),
+                'PESSIMISTIC_V4full_vs_R3': match(pf43_on, pf43_off, 0, t_v4, t_r3, hs, ne, 4000,
+                                                  b_inverts_disable=True),
             }
     out['match_grid'] = grid
 
@@ -360,8 +394,12 @@ def main():
     def band(pair, k='A_win'):
         vals = [grid[g][pair][k] for g in grid]
         return [min(vals), float(np.median(vals)), max(vals)]
-    out['summary_A_win_min_median_max'] = {p: band(p) for p in ('V2_vs_R3', 'V2_vs_R3_skirted', 'V4_vs_V2', 'V4_vs_R3', 'PESSIMISTIC_V4_vs_V2', 'PESSIMISTIC_V4_vs_R3')}
-    out['summary_B_win_min_median_max'] = {p: band(p, 'B_win') for p in ('V2_vs_R3', 'V2_vs_R3_skirted', 'V4_vs_V2', 'V4_vs_R3', 'PESSIMISTIC_V4_vs_V2', 'PESSIMISTIC_V4_vs_R3')}
+    out['summary_A_win_min_median_max'] = {p: band(p) for p in ('V2_vs_R3', 'V2_vs_R3_skirted', 'V4_vs_V2', 'V4_vs_R3', 'PESSIMISTIC_V4_vs_V2', 'PESSIMISTIC_V4_vs_R3',
+                    'V4skirt_vs_V2', 'V4skirt_vs_R3', 'PESSIMISTIC_V4skirt_vs_V2', 'PESSIMISTIC_V4skirt_vs_R3',
+                    'V4full_vs_V2', 'V4full_vs_R3', 'PESSIMISTIC_V4full_vs_V2', 'PESSIMISTIC_V4full_vs_R3')}
+    out['summary_B_win_min_median_max'] = {p: band(p, 'B_win') for p in ('V2_vs_R3', 'V2_vs_R3_skirted', 'V4_vs_V2', 'V4_vs_R3', 'PESSIMISTIC_V4_vs_V2', 'PESSIMISTIC_V4_vs_R3',
+                    'V4skirt_vs_V2', 'V4skirt_vs_R3', 'PESSIMISTIC_V4skirt_vs_V2', 'PESSIMISTIC_V4skirt_vs_R3',
+                    'V4full_vs_V2', 'V4full_vs_R3', 'PESSIMISTIC_V4full_vs_V2', 'PESSIMISTIC_V4full_vs_R3')}
     json.dump(out, open(os.path.join(HERE, 'results.json'), 'w'), indent=2, default=float)
 
     print('regression', out['regression'])
