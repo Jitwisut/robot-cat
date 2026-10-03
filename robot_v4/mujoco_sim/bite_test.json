@@ -1,0 +1,82 @@
+{
+ "drive400_1.5to1|R3|charging": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 25.7,
+  "p_inverted": 0.0
+ },
+ "drive400_1.5to1|R3|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 18.5,
+  "p_inverted": 0.0
+ },
+ "drive400_1.5to1|V2|charging": {
+  "p_launched_over_10cm": 0.88,
+  "opp_max_com_z_mm_median": 203.5,
+  "p_inverted": 0.38
+ },
+ "drive400_1.5to1|V2|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 32.2,
+  "p_inverted": 0.0
+ },
+ "drive620_1.5to1|R3|charging": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 25.7,
+  "p_inverted": 0.0
+ },
+ "drive620_1.5to1|R3|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 18.7,
+  "p_inverted": 0.0
+ },
+ "drive620_1.5to1|V2|charging": {
+  "p_launched_over_10cm": 0.69,
+  "opp_max_com_z_mm_median": 206.2,
+  "p_inverted": 0.38
+ },
+ "drive620_1.5to1|V2|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 31.7,
+  "p_inverted": 0.0
+ },
+ "drive620_1to1|R3|charging": {
+  "p_launched_over_10cm": 0.06,
+  "opp_max_com_z_mm_median": 27.0,
+  "p_inverted": 0.0
+ },
+ "drive620_1to1|R3|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 18.7,
+  "p_inverted": 0.0
+ },
+ "drive620_1to1|V2|charging": {
+  "p_launched_over_10cm": 0.62,
+  "opp_max_com_z_mm_median": 145.4,
+  "p_inverted": 0.12
+ },
+ "drive620_1to1|V2|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 31.7,
+  "p_inverted": 0.0
+ },
+ "now_400rpm_1to1|R3|charging": {
+  "p_launched_over_10cm": 0.06,
+  "opp_max_com_z_mm_median": 27.0,
+  "p_inverted": 0.06
+ },
+ "now_400rpm_1to1|R3|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 18.3,
+  "p_inverted": 0.0
+ },
+ "now_400rpm_1to1|V2|charging": {
+  "p_launched_over_10cm": 0.62,
+  "opp_max_com_z_mm_median": 123.0,
+  "p_inverted": 0.25
+ },
+ "now_400rpm_1to1|V2|parked": {
+  "p_launched_over_10cm": 0.0,
+  "opp_max_com_z_mm_median": 31.8,
+  "p_inverted": 0.0
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "R3_front": {
+  "opp_max_com_z_mm_median": 17.1,
+  "p_launched_over_10cm": 0.0,
+  "p_ends_inverted": 0.0
+ },
+ "R3_rear": {
+  "opp_max_com_z_mm_median": 17.0,
+  "p_launched_over_10cm": 0.0,
+  "p_ends_inverted": 0.0
+ },
+ "R3_side": {
+  "opp_max_com_z_mm_median": 18.4,
+  "p_launched_over_10cm": 0.04,
+  "p_ends_inverted": 0.04
+ },
+ "V2_front": {
+  "opp_max_com_z_mm_median": 31.7,
+  "p_launched_over_10cm": 0.0,
+  "p_ends_inverted": 0.0
+ },
+ "V2_rear": {
+  "opp_max_com_z_mm_median": 49.7,
+  "p_launched_over_10cm": 0.0,
+  "p_ends_inverted": 0.0
+ },
+ "V2_side": {
+  "opp_max_com_z_mm_median": 40.0,
+  "p_launched_over_10cm": 0.0,
+  "p_ends_inverted": 0.0
+ }
+}

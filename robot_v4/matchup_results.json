@@ -1,0 +1,78 @@
+{
+  "v4_energy_J": 57.38714775903816,
+  "v4_mass_kg": 1.8885973156961633,
+  "n": 50000,
+  "aim_offset_mm": 60.0,
+  "matchups": {
+    "V2 robot2 (wedge+lifter)": {
+      "p_rotor_contact": 1.0,
+      "p_v4_wedgelet_under_opponent": 0.83194,
+      "p_opponent_under_v4_somewhere": 0.92004,
+      "p_clean_hit (rotor contact, opponent not under)": 0.07996,
+      "p_bad (opponent under, no rotor contact)": 0.0,
+      "launch_v_m_s_median": 5.616060966255157,
+      "launch_height_m_median": 1.6075504983071665,
+      "p_v4_wins_push": 0.63076
+    },
+    "R3 (lifting wedge 4WD)": {
+      "p_rotor_contact": 1.0,
+      "p_v4_wedgelet_under_opponent": 0.5795,
+      "p_opponent_under_v4_somewhere": 0.58374,
+      "p_clean_hit (rotor contact, opponent not under)": 0.41626,
+      "p_bad (opponent under, no rotor contact)": 0.0,
+      "launch_v_m_s_median": 5.265434565789491,
+      "launch_height_m_median": 1.413088744479687,
+      "p_v4_wins_push": 0.45746
+    },
+    "Generic low wedge": {
+      "p_rotor_contact": 1.0,
+      "p_v4_wedgelet_under_opponent": 0.7449,
+      "p_opponent_under_v4_somewhere": 0.35574,
+      "p_clean_hit (rotor contact, opponent not under)": 0.64426,
+      "p_bad (opponent under, no rotor contact)": 0.0,
+      "launch_v_m_s_median": 4.37027544559057,
+      "launch_height_m_median": 0.9734611350860065,
+      "p_v4_wins_push": 0.41096
+    },
+    "Horizontal bar spinner": {
+      "p_rotor_contact": 1.0,
+      "p_v4_wedgelet_under_opponent": 0.99928,
+      "p_opponent_under_v4_somewhere": 0.00232,
+      "p_clean_hit (rotor contact, opponent not under)": 0.99768,
+      "p_bad (opponent under, no rotor contact)": 0.0,
+      "launch_v_m_s_median": 4.37027544559057,
+      "launch_height_m_median": 0.9734611350860065,
+      "p_v4_wins_push": 0.87598,
+      "p_v4_energy_higher": 0.16036,
+      "opponent_energy_J_range": [
+        40,
+        150
+      ]
+    },
+    "Vertical spinner": {
+      "p_rotor_contact": 1.0,
+      "p_v4_wedgelet_under_opponent": 0.96382,
+      "p_opponent_under_v4_somewhere": 0.43392,
+      "p_clean_hit (rotor contact, opponent not under)": 0.56608,
+      "p_bad (opponent under, no rotor contact)": 0.0,
+      "launch_v_m_s_median": 4.37027544559057,
+      "launch_height_m_median": 0.9734611350860065,
+      "p_v4_wins_push": 0.7707,
+      "p_v4_energy_higher": 0.30452,
+      "opponent_energy_J_range": [
+        30,
+        120
+      ]
+    },
+    "Control/pusher (no weapon)": {
+      "p_rotor_contact": 1.0,
+      "p_v4_wedgelet_under_opponent": 0.92496,
+      "p_opponent_under_v4_somewhere": 0.1186,
+      "p_clean_hit (rotor contact, opponent not under)": 0.8814,
+      "p_bad (opponent under, no rotor contact)": 0.0,
+      "launch_v_m_s_median": 4.146007323112041,
+      "launch_height_m_median": 0.8761150215774058,
+      "p_v4_wins_push": 0.0787
+    }
+  }
+}
