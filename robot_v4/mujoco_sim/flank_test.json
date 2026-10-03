@@ -1,0 +1,50 @@
+{
+ "R3_hits_V4_flank_no_skirts": {
+  "n": 48,
+  "p_gets_under": 1.0,
+  "median_tilt_deg": 23.6,
+  "median_lifted_s": 0.26
+ },
+ "R3_hits_V4_flank_skirts": {
+  "n": 48,
+  "p_gets_under": 0.69,
+  "median_tilt_deg": 13.0,
+  "median_lifted_s": 0.0
+ },
+ "R3_hits_V4_rear_no_skirts": {
+  "n": 24,
+  "p_gets_under": 1.0,
+  "median_tilt_deg": 16.6,
+  "median_lifted_s": 1.21
+ },
+ "R3_hits_V4_rear_skirts": {
+  "n": 24,
+  "p_gets_under": 1.0,
+  "median_tilt_deg": 13.2,
+  "median_lifted_s": 1.12
+ },
+ "V2_hits_V4_flank_no_skirts": {
+  "n": 48,
+  "p_gets_under": 0.0,
+  "median_tilt_deg": 0.5,
+  "median_lifted_s": 0.0
+ },
+ "V2_hits_V4_flank_skirts": {
+  "n": 48,
+  "p_gets_under": 0.0,
+  "median_tilt_deg": 0.3,
+  "median_lifted_s": 0.0
+ },
+ "V2_hits_V4_rear_no_skirts": {
+  "n": 24,
+  "p_gets_under": 0.29,
+  "median_tilt_deg": 1.2,
+  "median_lifted_s": 0.0
+ },
+ "V2_hits_V4_rear_skirts": {
+  "n": 24,
+  "p_gets_under": 0.0,
+  "median_tilt_deg": 0.9,
+  "median_lifted_s": 0.0
+ }
+}

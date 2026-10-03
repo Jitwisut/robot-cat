@@ -1,16 +1,16 @@
 """Swing each hinged skirt (plate + its clips) about its wire and report interference.
 
 Run in Fusion on the document built by build_robot_v4.py. Positive angle = bottom edge swings outward.
-The wall is meant to be the inward stop, so small negative angles should touch the tub.
+The clip meeting the wall is the inward stop (~1 deg), so small negative angles should touch the tub.
 """
 import adsk.core, adsk.fusion, json, math
 
-ANGLES = [-5, -2, -1, 2, 10, 30, 60, 90]
+ANGLES = [-3, -1.5, -1, -0.5, 2, 10, 25, 40]
 # conceptual (x, y, z) -> Fusion (x, z, -y), cm
 SKIRTS = {
-    'R': ('Skirt_Plate_1mm_R', 'Skirt_Clip_PETG_R', (9.0, 1.5, 0.0), (0, 0, 1), +1),
-    'L': ('Skirt_Plate_1mm_L', 'Skirt_Clip_PETG_L', (-9.0, 1.5, 0.0), (0, 0, 1), -1),
-    'Rear': ('Skirt_Plate_1mm_Rear', 'Skirt_Clip_PETG_Rear', (0.0, 1.5, 11.2), (1, 0, 0), +1),
+    'R': ('Skirt_Plate_08mm_R', 'Skirt_Clip_PETG_R', (8.9, 1.5, 0.0), (0, 0, 1), +1),
+    'L': ('Skirt_Plate_08mm_L', 'Skirt_Clip_PETG_L', (-8.9, 1.5, 0.0), (0, 0, 1), -1),
+    'Rear': ('Skirt_Plate_08mm_Rear', 'Skirt_Clip_PETG_Rear', (0.0, 1.5, 11.1), (1, 0, 0), +1),
 }
 
 
@@ -21,7 +21,8 @@ def run(_):
     tbm = adsk.fusion.TemporaryBRepManager.get()
     out = {}
     for key, (plate, clip, piv, ax, sgn) in SKIRTS.items():
-        moving = [b for b in bodies if b.name == plate or b.name.startswith(clip)]
+        moving = [b for b in bodies if b.name == plate or
+                  (b.name.startswith(clip) and b.name[len(clip):].isdigit())]   # 'R' must not match 'Rear'
         others = [b for b in bodies if b not in moving and not b.name.startswith('Skirt_Wire')]
         pivot = adsk.core.Point3D.create(*piv)
         axis = adsk.core.Vector3D.create(*ax)

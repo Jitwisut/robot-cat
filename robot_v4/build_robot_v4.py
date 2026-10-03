@@ -24,6 +24,8 @@ WEDGE_SUPPORT = [(100, 4), (100, 20.5), (106, 20.5 - 6 * 20 / 28), (106, 4)]
 BLOCK_WALL_SCREWS = [(80, 13.5), (92, 13.5)]                 # (y, z) side wall -> PETG block
 PIN_Y, PIN_Z = 102.0, 14.5                                    # wedgelet hinge axis (along x)
 # skirt hinge: knuckles on the tub and clips on the plate alternate along the wire (1.5 mm wire, 1.6 mm bores)
+SKIRT_TILT = 35.0                                             # deg from vertical, outward-down
+SKIRT_T = 0.8                                                 # 5052 aluminium skirt plate thickness (mm)
 SKIRT_KNUCKLES_SIDE = [(-108, -98), (-55, -45), (0, 10), (80, 90)]
 SKIRT_CLIPS_SIDE = [(-90, -75), (-35, -20), (25, 40), (55, 70)]
 SKIRT_KNUCKLES_REAR = [(-86, -76), (-30, -20), (20, 30), (76, 86)]
@@ -153,6 +155,56 @@ def extrude_xz(comp, name, circles, y0, y1, operation, body=None):
     return feature
 
 
+def extrude_xz_poly(comp, name, poly, y0, y1, operation, body=None):
+    """Extrude a closed (x, z) polygon along conceptual y from y0 to y1."""
+    sketch = comp.sketches.add(comp.xYConstructionPlane)
+    sketch.name = name
+    lines = sketch.sketchCurves.sketchLines
+    for i, (x, z) in enumerate(poly):
+        x2, z2 = poly[(i + 1) % len(poly)]
+        lines.addByTwoPoints(point(sketch, x, 0, z), point(sketch, x2, 0, z2))
+    extrudes = comp.features.extrudeFeatures
+    inp = extrudes.createInput(sketch.profiles.item(0), operation)
+    inp.startExtent = adsk.fusion.OffsetStartDefinition.create(adsk.core.ValueInput.createByReal(cm(-y1)))
+    extent(inp, y1 - y0)
+    if body is not None:
+        inp.participantBodies = [body]
+    feature = extrudes.add(inp)
+    sketch.isVisible = False
+    return feature
+
+
+def holes_on_face(comp, body, name, normal_fusion, centres, r, depth):
+    """Holes normal to the largest planar face of `body` whose normal is ~normal_fusion; symmetric cut into body."""
+    n = adsk.core.Vector3D.create(*normal_fusion)
+    faces = []
+    for fc in body.faces:
+        if fc.geometry.objectType != 'adsk::core::Plane':
+            continue
+        ok, nn = fc.evaluator.getNormalAtPoint(fc.pointOnFace)
+        if nn.dotProduct(n) > 0.99:                   # signed: picks the face that points along `n`
+            faces.append(fc)
+    face = max(faces, key=lambda fc: fc.area)
+    sketch = comp.sketches.add(face)
+    sketch.name = name
+    for x, y, z in centres:
+        sketch.sketchCurves.sketchCircles.addByCenterRadius(point(sketch, x, y, z), cm(r))
+    hole_area = math.pi * cm(r) ** 2
+    profiles = adsk.core.ObjectCollection.create()
+    for i in range(sketch.profiles.count):
+        pr = sketch.profiles.item(i)
+        if abs(pr.areaProperties().area - hole_area) < 0.05 * hole_area:
+            profiles.add(pr)
+    if profiles.count != len(centres):
+        raise RuntimeError('%s: expected %d hole profiles, got %d' % (name, len(centres), profiles.count))
+    extrudes = comp.features.extrudeFeatures
+    inp = extrudes.createInput(profiles, CUT)
+    inp.setSymmetricExtent(adsk.core.ValueInput.createByReal(cm(depth)), False)
+    inp.participantBodies = [body]
+    extrudes.add(inp)
+    sketch.isVisible = False
+
+
 def cyl_y(parent, name, x, z, y0, y1, r, mat):
     comp = part(parent, name)
     body = extrude_xz(comp, name, [(x, z, r)], y0, y1, NEW_BODY).bodies.item(0)
@@ -259,8 +311,8 @@ def find_body(root, name):
 
 # flat parts -> DXF (outline of the largest face, true size), printed parts -> STL
 DXF_PARTS = [
-    ('Skirt_Plate_1mm_R', 'V4_Skirt_Side_1mm_Al_x2.dxf'),
-    ('Skirt_Plate_1mm_Rear', 'V4_Skirt_Rear_1mm_Al_x1.dxf'),
+    ('Skirt_Plate_08mm_R', 'V4_Skirt_Side_0.8mm_Al_x2.dxf'),
+    ('Skirt_Plate_08mm_Rear', 'V4_Skirt_Rear_0.8mm_Al_x1.dxf'),
     ('Beater_Disc_L', 'V4_Beater_Disc_6mm_steel_x2.dxf'),
     ('Upright_6061_6mm_L', 'V4_Upright_6mm_6061_x2.dxf'),
     ('Wedgelet_L', 'V4_Wedgelet_2mm_steel_x2_mirror.dxf'),
@@ -395,8 +447,16 @@ def run(_):
     # braces tie the two uprights: 2 holes into M3 taps in each upright's top/bottom edge
     for name, z0, z1 in [('Weapon_Top_Brace_3mm', 57, 60), ('Weapon_Bottom_Brace_3mm', 4, 7)]:
         c = box(wp, name, -33, 33, 64, 74, z0, z1, aluminum)
-        for x in (-30, 30):
+        # x +-30: into the uprights' tapped edges; x +-15: nose skid screws (used on the bottom brace only;
+        # both braces share one DXF)
+        for x in (-30, -15, 15, 30):
             cut_z(c, c.bRepBodies.item(0), name + '_Hole', x, 69, 1.7, z0 - 1, z1 + 1)
+    # nose skid (4 Oct, from the MuJoCo check): V4's CoG sits only ~1 mm behind the front axle, so the rotor's
+    # spin-up reaction (~0.2 N*m) tips the nose down; without a skid the teeth (2.5 mm off the floor) strike the
+    # floor first. This UHMW block under the bottom brace stops the nose 1 mm down (teeth still ~1 mm clear).
+    c = box(wp, 'Nose_Skid_UHMW_3mm', -20, 20, 64, 74, 1, 4, polymer)
+    for x in (-15, 15):
+        cut_z(c, c.bRepBodies.item(0), 'Skid_M3', x, 69, 1.7, 0, 5)
     # rotor: 2 laser-cut discs bolted (4x M3 countersunk) to an aluminium hub on two 608 bearings
     disc_loops = [('poly', tooth_profile()), ('circle', (ROTOR_Y, AXLE_Z, 7.0))]
     for a in (45, 135, 225, 315):
@@ -484,42 +544,62 @@ def run(_):
     # so a wedge meets a ~0 mm edge instead of the 4 mm tub floor (three_way_sim: 98-100 % -> 7-24 %).
     # Hinge axis at z 14 keeps the strip below the switch key hole (z 22-28). Works right side up only:
     # nobody in the field can flip V4 (needs a 165 mm edge lift).
-    # Hinge axis 1.5 mm outside the plate at z 15: the wall is the inward stop (a wedge pushes the skirt
-    # flat against the wall), outward and upward the plate swings free over bumps.
+    # Hinge geometry (reworked 4 Oct after the MuJoCo checks):
+    #  * the plate sits on a 35 deg slanted face of each PETG clip, so its bottom edge lands ~13 mm outboard
+    #    of the wire and 15 mm below it. A floor load then has a 13 mm outward lever against at most
+    #    mu x 15 mm of friction lever (tan 35 deg = 0.70 > mu): it lifts the skirt instead of the skirt
+    #    lifting the robot. (Plates hung straight down jammed as struts in the 3D sim and carried the robot.)
+    #  * a sideways push from a wedge swings it inward, where the clip meets the wall (~1.2 deg) and holds.
+    #  * gravity keeps it on that stop with the bottom edge on the floor.
     sk = group(root, '03b_Hinged_Skirts')
+    s35, c35 = math.sin(math.radians(SKIRT_TILT)), math.cos(math.radians(SKIRT_TILT))
+    # clip section (outboard = +u, up = z) and plate section, in local (u, z) with u measured from the wall
+    clip_uz = [(88.1, 10), (88.1, 15), (88.8, 15), (88.8, 16.8), (90.5, 16.8), (90.5 + 6.8 / c35 * s35, 10)]
+    # plate starts 1.5 mm down the clip face so its top edge clears the knuckles when it swings out
+    p_top = (90.5 + 1.5 * s35, 16.8 - 1.5 * c35)
+    p_bot = (90.5 + 16.8 / c35 * s35, 0.0)
+    pt = SKIRT_T                                              # plate thickness, mm
+    plate_uz = [p_top, p_bot, (p_bot[0] + pt * c35, p_bot[1] + pt * s35), (p_top[0] + pt * c35, p_top[1] + pt * s35)]
+    hole_t = 4.0                                              # mm down the clip face from p_top
+    hole_uz = (90.5 + hole_t * s35, 16.8 - hole_t * c35)
     for side, sgn in [('L', -1), ('R', 1)]:
         def xs(a0, a1):
             return sorted((sgn * a0, sgn * a1))
-        p0, p1 = xs(88.5, 89.5)
-        pc, plate_b = box(sk, 'Skirt_Plate_1mm_' + side, p0, p1, -110, 97, 0, 13, aluminum), None
-        plate_b = pc.bRepBodies.item(0)
-        cyl_y(sk, 'Skirt_Wire_D1.5_' + side, sgn * 90, 15, -110, 97, 0.75, steel)
+        pc = part(sk, 'Skirt_Plate_08mm_' + side)
+        plate_b = extrude_xz_poly(pc, 'Plate', [(sgn * u, z) for u, z in plate_uz], -110, 97, NEW_BODY).bodies.item(0)
+        plate_b.name, plate_b.material = 'Skirt_Plate_08mm_' + side, aluminum
+        cyl_y(sk, 'Skirt_Wire_D1.5_' + side, sgn * 89, 15, -110, 97, 0.75, steel)
         for k0, k1 in SKIRT_KNUCKLES_SIDE:                               # printed with the tub
-            a0, a1 = xs(88, 92)
+            a0, a1 = xs(88, 90.5)
             join_box(tub_comp, tub, 'Skirt_Knuckle', a0, a1, k0, k1, 13, 17)
-        extrude_xz(tub_comp, 'Skirt_Wire_Bore', [(sgn * 90, 15, 0.8)], -111, 98, CUT, tub)
+        extrude_xz(tub_comp, 'Skirt_Wire_Bore', [(sgn * 89, 15, 0.8)], -111, 98, CUT, tub)
+        n_f = (sgn * c35, s35, 0)                                       # plate normal in Fusion axes
         for n, (c0, c1) in enumerate(SKIRT_CLIPS_SIDE):
-            a0, a1 = xs(89.5, 92)
-            cc = box(sk, 'Skirt_Clip_PETG_%s%d' % (side, n + 1), a0, a1, c0, c1, 10, 17, polymer)
-            cb = cc.bRepBodies.item(0)
-            extrude_xz(cc, 'Wire_Bore', [(sgn * 90, 15, 0.8)], c0 - 1, c1 + 1, CUT, cb)
-            ym = (c0 + c1) / 2
-            m0, m1 = xs(88, 93)
-            extrude_yz(cc, 'M2_Hole', [('circle', (ym, 11.5, 1.1))], m0, m1, CUT, cb)
-            extrude_yz(pc, 'M2_Hole', [('circle', (ym, 11.5, 1.1))], m0, m1, CUT, plate_b)
-    rc = box(sk, 'Skirt_Plate_1mm_Rear', -88, 88, -111.5, -110.5, 0, 13, aluminum)
-    rplate = rc.bRepBodies.item(0)
-    cyl_x(sk, 'Skirt_Wire_D1.5_Rear', -88, 88, -112, 15, 0.75, steel)
+            cc = part(sk, 'Skirt_Clip_PETG_%s%d' % (side, n + 1))
+            cb = extrude_xz_poly(cc, 'Clip', [(sgn * u, z) for u, z in clip_uz], c0, c1, NEW_BODY).bodies.item(0)
+            cb.name, cb.material = 'Skirt_Clip_PETG_%s%d' % (side, n + 1), polymer
+            extrude_xz(cc, 'Wire_Bore', [(sgn * 89, 15, 0.8)], c0 - 1, c1 + 1, CUT, cb)
+            holes_on_face(cc, cb, 'M2_Hole', n_f, [(sgn * hole_uz[0], (c0 + c1) / 2, hole_uz[1])], 1.1, 4.0)
+        # the plate's inner face (normal -n) lies on the clips' slanted faces, where the hole centres are
+        holes_on_face(pc, plate_b, 'M2_Holes', tuple(-v for v in n_f),
+                      [(sgn * hole_uz[0], (c0 + c1) / 2, hole_uz[1]) for c0, c1 in SKIRT_CLIPS_SIDE], 1.1, 2.0)
+    # rear: same section turned to face -y (u measured outward from the rear wall face at y -110)
+    rc = part(sk, 'Skirt_Plate_08mm_Rear')
+    rplate = extrude_yz(rc, 'Plate', [('poly', [(-(u + 22), z) for u, z in plate_uz])], -88, 88, NEW_BODY).bodies.item(0)
+    rplate.name, rplate.material = 'Skirt_Plate_08mm_Rear', aluminum
+    cyl_x(sk, 'Skirt_Wire_D1.5_Rear', -88, 88, -111, 15, 0.75, steel)
     for k0, k1 in SKIRT_KNUCKLES_REAR:
-        join_box(tub_comp, tub, 'Skirt_Knuckle', k0, k1, -114, -110, 13, 17)
-    extrude_yz(tub_comp, 'Skirt_Wire_Bore', [('circle', (-112, 15, 0.8))], -89, 89, CUT, tub)
+        join_box(tub_comp, tub, 'Skirt_Knuckle', k0, k1, -112.5, -110, 13, 17)
+    extrude_yz(tub_comp, 'Skirt_Wire_Bore', [('circle', (-111, 15, 0.8))], -89, 89, CUT, tub)
+    n_r = (0, s35, c35)                                                 # rear plate normal (conceptual -y -> Fusion +z)
     for n, (c0, c1) in enumerate(SKIRT_CLIPS_REAR):
-        cc = box(sk, 'Skirt_Clip_PETG_Rear%d' % (n + 1), c0, c1, -114, -111.5, 10, 17, polymer)
-        cb = cc.bRepBodies.item(0)
-        extrude_yz(cc, 'Wire_Bore', [('circle', (-112, 15, 0.8))], c0 - 1, c1 + 1, CUT, cb)
-        xm = (c0 + c1) / 2
-        extrude_xz(cc, 'M2_Hole', [(xm, 11.5, 1.1)], -115, -110, CUT, cb)
-        extrude_xz(rc, 'M2_Hole', [(xm, 11.5, 1.1)], -115, -110, CUT, rplate)
+        cc = part(sk, 'Skirt_Clip_PETG_Rear%d' % (n + 1))
+        cb = extrude_yz(cc, 'Clip', [('poly', [(-(u + 22), z) for u, z in clip_uz])], c0, c1, NEW_BODY).bodies.item(0)
+        cb.name, cb.material = 'Skirt_Clip_PETG_Rear%d' % (n + 1), polymer
+        extrude_yz(cc, 'Wire_Bore', [('circle', (-111, 15, 0.8))], c0 - 1, c1 + 1, CUT, cb)
+        holes_on_face(cc, cb, 'M2_Hole', n_r, [((c0 + c1) / 2, -(hole_uz[0] + 22), hole_uz[1])], 1.1, 4.0)
+    holes_on_face(rc, rplate, 'M2_Holes', tuple(-v for v in n_r),
+                  [((c0 + c1) / 2, -(hole_uz[0] + 22), hole_uz[1]) for c0, c1 in SKIRT_CLIPS_REAR], 1.1, 2.0)
 
     # --- 04 drive --------------------------------------------------------------
     dr = group(root, '04_Drive_4WD')

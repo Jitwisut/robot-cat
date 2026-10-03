@@ -1,0 +1,135 @@
+{
+ "V2_dt4e-05_solref0.004": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   90.1,
+   219.6,
+   263.2
+  ],
+  "p_opp_ends_inverted": 0.12,
+  "v4_max_com_z_mm_p50": 39.5
+ },
+ "V2_dt4e-05_solref0.002": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   57.1,
+   144.2,
+   247.0
+  ],
+  "p_opp_ends_inverted": 0.12,
+  "v4_max_com_z_mm_p50": 36.1
+ },
+ "V2_dt2e-05_solref0.004": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   122.4,
+   225.3,
+   254.6
+  ],
+  "p_opp_ends_inverted": 0.29,
+  "v4_max_com_z_mm_p50": 42.6
+ },
+ "V2_dt2e-05_solref0.002": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   61.5,
+   153.3,
+   314.8
+  ],
+  "p_opp_ends_inverted": 0.12,
+  "v4_max_com_z_mm_p50": 41.3
+ },
+ "V2_dt1e-05_solref0.004": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   111.4,
+   192.4,
+   261.5
+  ],
+  "p_opp_ends_inverted": 0.12,
+  "v4_max_com_z_mm_p50": 42.6
+ },
+ "V2_dt1e-05_solref0.002": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   56.8,
+   108.4,
+   204.4
+  ],
+  "p_opp_ends_inverted": 0.08,
+  "v4_max_com_z_mm_p50": 34.1
+ },
+ "R3_dt4e-05_solref0.004": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   25.5,
+   27.7,
+   28.6
+  ],
+  "p_opp_ends_inverted": 0.0,
+  "v4_max_com_z_mm_p50": 36.4
+ },
+ "R3_dt4e-05_solref0.002": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   22.8,
+   23.6,
+   25.1
+  ],
+  "p_opp_ends_inverted": 0.0,
+  "v4_max_com_z_mm_p50": 36.1
+ },
+ "R3_dt2e-05_solref0.004": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   25.6,
+   28.1,
+   28.6
+  ],
+  "p_opp_ends_inverted": 0.0,
+  "v4_max_com_z_mm_p50": 36.4
+ },
+ "R3_dt2e-05_solref0.002": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   22.8,
+   24.2,
+   25.0
+  ],
+  "p_opp_ends_inverted": 0.0,
+  "v4_max_com_z_mm_p50": 35.3
+ },
+ "R3_dt1e-05_solref0.004": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   25.6,
+   27.2,
+   28.5
+  ],
+  "p_opp_ends_inverted": 0.0,
+  "v4_max_com_z_mm_p50": 36.8
+ },
+ "R3_dt1e-05_solref0.002": {
+  "n": 24,
+  "diverged": 0,
+  "opp_max_com_z_mm_p25_p50_p75": [
+   22.7,
+   23.5,
+   24.8
+  ],
+  "p_opp_ends_inverted": 0.0,
+  "v4_max_com_z_mm_p50": 35.4
+ },
+ "_wall_s_total": 69.4
+}

@@ -7,7 +7,7 @@ Project status (Thai): [`STATUS.md`](STATUS.md). Nothing here is cleared for man
 |---|---|
 | `exports/` | V2 (`robot2`) CAD exports, reports, impact screening, lifter linkage analysis (`v2_linkage_2026-09-30/`) |
 | `robot_v3/` | V3 study: R1–R3 CAD (F3D/STEP), build scripts, reports, robot2 vs R3 duel model (`duel_sim/`) |
-| `robot_v4/` | V4 vertical beater: CAD, sizing (`design_v4.py`), matchup screen, ESP32 firmware, status (`robot_v4/STATUS.md`) |
+| `robot_v4/` | V4 vertical beater: CAD, sizing (`design_v4.py`), matchup screen, ESP32 firmware, status (`robot_v4/STATUS.md`), reduced-order three-way sim (`three_way_sim/`), MuJoCo 3D duel sim (`mujoco_sim/`, needs `python3 -m venv .venv && .venv/bin/pip install mujoco numpy "imageio[ffmpeg]"`) |
 | `fusion_scripts/` | Fusion 360 Python scripts that built/edited `robot2`; `V2_Lifter_Stops/` adds the lifter hard stops |
 
 ## Latest CAD
