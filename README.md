@@ -1,7 +1,8 @@
 # robot-cat — ESP32 Mini BattleBot (V2 robot2 / V3 R3)
 
 CAD, Fusion 360 scripts and reduced-order simulations for a ~1.1–1.5 kg mini battlebot.
-Project status (Thai): [`STATUS.md`](STATUS.md). Nothing here is cleared for manufacture yet; no 3D FEA has been solved.
+Project status (Thai): [`STATUS.md`](STATUS.md).
+**ทดสอบฟิสิกส์ V4 บน PC (MuJoCo + Fusion Simulation):** [`SIM_ON_PC.md`](SIM_ON_PC.md). Nothing here is cleared for manufacture yet; no 3D FEA has been solved.
 
 | Folder | Contents |
 |---|---|
