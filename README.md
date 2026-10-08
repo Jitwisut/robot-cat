@@ -18,6 +18,7 @@ Project status (Thai): [`STATUS.md`](STATUS.md).
 | V2 with lifter stops (recommended) | `exports/robot2_lifter_stops_2026-10-01.f3d` / `.step` |
 | V2 as of items 1–3 | `exports/robot2_items_1_3_2026-09-24.f3d`, `exports/robot2_items_1_3_active_lifter_2026-10-01.step` |
 | V3 R3 lifting wedge | `robot_v3/ROBOT_V3_R3_Lifter.f3d` / `.step` |
+| V4 Print R1 (draft; measured parts and shop evidence pending) | `robot_v4/print_revision/output/DRAFT/ROBOT_V4_PRINT_R1.step` — [`print preparation`](robot_v4/print_revision/README.md) |
 | V4 vertical beater (current direction) | `robot_v4/ROBOT_V4_Beater.f3d` / `.step` |
 
 Axes differ: **V2 is Z-up, nose +Y**; **V3 files are Y-up, nose −Z**. STEP units are mm.

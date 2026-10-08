@@ -1,0 +1,233 @@
+{
+  "date": "2026-10-08",
+  "revision": "V4_PRINT_R2",
+  "budget_thb": 6000,
+  "user_inventory": "No hardware purchased",
+  "status": "RESEARCH_ONLY",
+  "items": [
+    {
+      "id": "drive_motors",
+      "label": "มอเตอร์ขับ DCM068",
+      "required_quantity": 4,
+      "units_per_pack": 1,
+      "source_id": "TH01",
+      "note": "ราคา190ต่อมอเตอร์; ต้องยืนยันstockครบ4และdrawing"
+    },
+    {
+      "id": "weapon_motor",
+      "label": "มอเตอร์อาวุธ DYS D3536 1250KV",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "รอร้านไทย/SKU/drawing; ALT02เป็นทางเลือกยังไม่เลือก"
+    },
+    {
+      "id": "esc",
+      "label": "Skywalker40A V2 PN80060140",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": "TH03",
+      "note": "ยืนยันstockและความเข้ากันกับมอเตอร์อาวุธ"
+    },
+    {
+      "id": "battery",
+      "label": "DOGCOM3S850150C UCELL SKU-08923",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": "TH07",
+      "note": "เว็บ490/คงเหลือ9; รอขนาดมวล/ฉลาก/stockก่อนซื้อ"
+    },
+    {
+      "id": "esp32",
+      "label": "ESP32 30pin Type-C CH340C",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": "TH04",
+      "note": "ผู้ใช้ยังไม่มีบอร์ด; รอความสูงหลังต่อสาย"
+    },
+    {
+      "id": "drv8871",
+      "label": "DRV8871 ModuleMore SKU01477",
+      "required_quantity": 2,
+      "units_per_pack": 1,
+      "source_id": "TH05",
+      "note": "2บอร์ด; ต้องตรวจcurrent-limitกับ2มอเตอร์ต่อช่อง"
+    },
+    {
+      "id": "imu",
+      "label": "GY-521 MPU6050",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": "TH06",
+      "note": "รอความสูง/ขาต่อและมวล"
+    },
+    {
+      "id": "hall",
+      "label": "A3144 IC",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": "TH10",
+      "note": "IC ไม่ใช่module; รวมขา/ฉนวนด้วย"
+    },
+    {
+      "id": "temperature",
+      "label": "DS18B20 TO92",
+      "required_quantity": 2,
+      "units_per_pack": 1,
+      "source_id": "TH11",
+      "note": "2ตัวตามแบบ"
+    },
+    {
+      "id": "inserts",
+      "label": "M3x4x5 inserts (10pcs/ถุง)",
+      "required_quantity": 14,
+      "units_per_pack": 10,
+      "source_id": "TH09",
+      "note": "ต้องซื้อ2ถุง รวม40บาท; trialfitยังไม่ผ่าน"
+    },
+    {
+      "id": "bearings",
+      "label": "SRT608ZZ 8x22x7",
+      "required_quantity": 2,
+      "units_per_pack": 1,
+      "source_id": "TH08",
+      "note": "2ตลับ; รอmass/stock"
+    },
+    {
+      "id": "gamepad",
+      "label": "จอยBluetooth",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "รอmodelที่จับคู่Bluepad32ได้จริง ไม่ถือว่าcloneทุกรุ่นใช้ได้"
+    },
+    {
+      "id": "charger",
+      "label": "เครื่องชาร์จ+แหล่งจ่าย+สายแปลง",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "รอรุ่นที่balance-charge3Sพร้อมอุปกรณ์ครบ"
+    },
+    {
+      "id": "disconnect_fuse",
+      "label": "ตัวตัดไฟ+ฟิวส์+holder",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "รอขนาด/พิกัดกระแสจริง"
+    },
+    {
+      "id": "wiring_connectors",
+      "label": "สายไฟ+XT30+สายสัญญาณ+R",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "รวม3คู่XT30และฉนวน; TH18ยังไม่แยกvariant"
+    },
+    {
+      "id": "magnets",
+      "label": "แม่เหล็ก3x2mmสองลูก",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "TH12รอราคาตัวเลือก"
+    },
+    {
+      "id": "straps",
+      "label": "สายรัดแบตสองเส้น+ties",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "ต้องผ่านslot10mmและรอบแบตจริง"
+    },
+    {
+      "id": "belt",
+      "label": "สายพานกลมPU5mmเชื่อมวง",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "รอราคาความยาวขั้นต่ำ/เชื่อม/ทดลอง"
+    },
+    {
+      "id": "fasteners",
+      "label": "สกรู/น็อต/แหวน/สำรองยกเว้นinsert",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "ตามASSEMBLY.md ไม่รวมinsertซ้ำ"
+    },
+    {
+      "id": "dead_shaft",
+      "label": "M8x80hex12.9+น็อตล็อก+แหวน",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "TH14รอแบ่งขายและเกลียวตรงแบบ"
+    },
+    {
+      "id": "hinge_pins_clips",
+      "label": "แกนบานพับ3x57สองแกน+Eclips",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "ร่องตามSTEP รอร้านกลึงเสนอราคา"
+    },
+    {
+      "id": "skid",
+      "label": "UHMW3mm skid",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "ตัด/countersinkตามMACHINING"
+    },
+    {
+      "id": "metal_cutting",
+      "label": "แผ่นโลหะตัด9แบบ",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "แยกวัสดุ/จำนวนตามmanifestและMACHINING"
+    },
+    {
+      "id": "machining",
+      "label": "งานกลึงรอก/ดุม/spacers/ต๊าป/เก็บคม",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "รวมcountersink/ร่อง/งานประกอบที่ระบุ"
+    },
+    {
+      "id": "trial_prints",
+      "label": "พิมพ์ชิ้นทดลอง+เก็บงาน",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "เลือกcouponและชิ้นสวมที่ต้องใช้ ไม่จำเป็นต้องพิมพ์38ไฟล์ทั้งหมด"
+    },
+    {
+      "id": "full_prints",
+      "label": "พิมพ์TPU95A/PETGชุดเต็ม+support/เก็บงาน",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "26ชิ้น17แบบตามmanifest; ชิ้นใหญ่ยังไม่อนุมัติ"
+    },
+    {
+      "id": "shipping_tax",
+      "label": "ค่าส่ง/ภาษีที่ยังไม่รวม",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "อย่านับซ้ำส่วนที่รวมในใบเสนอราคา"
+    },
+    {
+      "id": "contingency",
+      "label": "เงินเผื่อ",
+      "required_quantity": 1,
+      "units_per_pack": 1,
+      "source_id": null,
+      "note": "ต้องระบุจำนวนไม่ปล่อยว่างก่อนสรุปงบ"
+    }
+  ]
+}

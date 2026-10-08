@@ -1,0 +1,45 @@
+{
+  "build_sha256": "f568a492e35cf395c6ddf2f1246d8a590da9da676421b64ebb28d5cba1669f32",
+  "model": "MuJoCo primitives + CAD mass/centroid/inertia, unverified purchased masses",
+  "limitations": [
+    "Rigid-body contacts do not predict breakage",
+    "Collision roof is conservative box envelope",
+    "No physical-fit or printer calibration evidence"
+  ],
+  "mass_kg": 1.9699115999999999,
+  "cad_mass_kg": 1.96991,
+  "initial_cg_mm": [
+    -1.2542,
+    8.711,
+    30.5911
+  ],
+  "cg_error_mm": 0.010938807837386317,
+  "rest_wheel_loads_N": [
+    8.4892,
+    8.1615,
+    1.2048,
+    1.1872
+  ],
+  "rear_load_fraction": 0.12378083053600303,
+  "rest_wheel_weight_fraction": 0.9854020699132107,
+  "spinup": {
+    "rotor_rpm": 13781.250000002592,
+    "minimum_tooth_floor_gap_mm": 2.0756639317458787,
+    "tooth_floor_contacts": 0
+  },
+  "turn": {
+    "peak_yaw_rad_s": 6.65635004041174,
+    "finite_state": true
+  },
+  "inverted_drive_m": 1.3681372536126541,
+  "checks": {
+    "mass_matches": true,
+    "cg_matches": true,
+    "rear_load_minimum": true,
+    "wheels_carry_robot": true,
+    "no_tooth_floor_contact": true,
+    "turns": true,
+    "inverted_drive": true
+  },
+  "passed": true
+}

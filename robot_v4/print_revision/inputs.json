@@ -1,0 +1,768 @@
+{
+  "schema_version": 1,
+  "revision": "V4_PRINT_R1",
+  "hardware": {
+    "drive_Front_L": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 52,
+        "diameter_mm": 25,
+        "mass_g": 110,
+        "shaft_diameter_mm": 4,
+        "shaft_flat_depth_mm": 0.5,
+        "shaft_projection_mm": 22,
+        "boss_diameter_mm": 8,
+        "boss_projection_mm": 0,
+        "mount_holes_yz_mm": [
+          [
+            -8.5,
+            0
+          ],
+          [
+            8.5,
+            0
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      }
+    },
+    "drive_Front_R": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 52,
+        "diameter_mm": 25,
+        "mass_g": 110,
+        "shaft_diameter_mm": 4,
+        "shaft_flat_depth_mm": 0.5,
+        "shaft_projection_mm": 22,
+        "boss_diameter_mm": 8,
+        "boss_projection_mm": 0,
+        "mount_holes_yz_mm": [
+          [
+            -8.5,
+            0
+          ],
+          [
+            8.5,
+            0
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      }
+    },
+    "drive_Rear_L": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 52,
+        "diameter_mm": 25,
+        "mass_g": 110,
+        "shaft_diameter_mm": 4,
+        "shaft_flat_depth_mm": 0.5,
+        "shaft_projection_mm": 22,
+        "boss_diameter_mm": 8,
+        "boss_projection_mm": 0,
+        "mount_holes_yz_mm": [
+          [
+            -8.5,
+            0
+          ],
+          [
+            8.5,
+            0
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      }
+    },
+    "drive_Rear_R": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 52,
+        "diameter_mm": 25,
+        "mass_g": 110,
+        "shaft_diameter_mm": 4,
+        "shaft_flat_depth_mm": 0.5,
+        "shaft_projection_mm": 22,
+        "boss_diameter_mm": 8,
+        "boss_projection_mm": 0,
+        "mount_holes_yz_mm": [
+          [
+            -8.5,
+            0
+          ],
+          [
+            8.5,
+            0
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      }
+    },
+    "weapon_motor": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 36,
+        "diameter_mm": 35,
+        "mass_g": 102,
+        "shaft_diameter_mm": 5,
+        "shaft_projection_mm": 13,
+        "boss_diameter_mm": 10,
+        "mount_holes_yz_mm": [
+          [
+            -8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            0,
+            -9.5
+          ],
+          [
+            0,
+            9.5
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      }
+    },
+    "battery": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          75,
+          35,
+          25
+        ],
+        "mass_g": 80,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "esc": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          55,
+          25,
+          12
+        ],
+        "mass_g": 35,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "esp32": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          51.5,
+          28.3,
+          14
+        ],
+        "mass_g": 10,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "drv_left": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          20,
+          20,
+          6
+        ],
+        "mass_g": 5,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "drv_right": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          20,
+          20,
+          6
+        ],
+        "mass_g": 5,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "imu": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          21,
+          16,
+          3.5
+        ],
+        "mass_g": 3,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "disconnect": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          14,
+          8,
+          10
+        ],
+        "mass_g": 15,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "bearing_608": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "outer_diameter_mm": null,
+        "inner_diameter_mm": null,
+        "width_mm": null,
+        "mass_g_each": null
+      },
+      "nominal": {
+        "outer_diameter_mm": 22,
+        "inner_diameter_mm": 8,
+        "width_mm": 7,
+        "mass_g_each": 12
+      }
+    },
+    "hinge_pin": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "diameter_mm": null,
+        "length_mm": null,
+        "mass_g_pair": null
+      },
+      "nominal": {
+        "diameter_mm": 3,
+        "length_mm": 57,
+        "mass_g_pair": 6.5
+      }
+    },
+    "insert_m3": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "outer_diameter_mm": null,
+        "length_mm": null
+      },
+      "nominal": {
+        "outer_diameter_mm": 4,
+        "length_mm": 6
+      }
+    },
+    "nut_m3": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "across_flats_mm": null,
+        "height_mm": null
+      },
+      "nominal": {
+        "across_flats_mm": 5.5,
+        "height_mm": 2.4
+      }
+    },
+    "hall_sensor": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "magnet_diameter_mm": null,
+        "magnet_thickness_mm": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          1.5,
+          4,
+          4
+        ],
+        "mass_g": 1,
+        "magnet_diameter_mm": 3,
+        "magnet_thickness_mm": 2
+      }
+    },
+    "dead_shaft": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null,
+        "diameter_mm": null,
+        "length_mm": null,
+        "head_across_flats_mm": null,
+        "head_thickness_mm": null,
+        "nut_across_flats_mm": null,
+        "nut_thickness_mm": null,
+        "washer_outer_diameter_mm": null,
+        "washer_inner_diameter_mm": null,
+        "washer_thickness_mm": null,
+        "thread_length_mm": null
+      },
+      "nominal": {
+        "mass_g": 46,
+        "diameter_mm": 8,
+        "length_mm": 80,
+        "head_across_flats_mm": 13,
+        "head_thickness_mm": 5.3,
+        "nut_across_flats_mm": 13,
+        "nut_thickness_mm": 6.5,
+        "washer_outer_diameter_mm": 16,
+        "washer_inner_diameter_mm": 8.4,
+        "washer_thickness_mm": 1.6,
+        "thread_length_mm": 22
+      }
+    },
+    "clips": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 0.5
+      }
+    },
+    "belt": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 10.5
+      }
+    },
+    "skid": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 3
+      }
+    },
+    "rotor_screws": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 8
+      }
+    },
+    "baseline_fasteners": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 40
+      }
+    },
+    "revision_fasteners": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 15
+      }
+    },
+    "wiring": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 50
+      }
+    },
+    "aux_sensors": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 8
+      }
+    },
+    "straps": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 8
+      }
+    }
+  },
+  "design": {
+    "front_axle_y_mm": 18,
+    "rear_axle_y_mm": -70,
+    "weapon_motor_y_mm": 47.5,
+    "hinge_min_wall_mm": 1.6,
+    "rear_load_target": 0.15,
+    "rear_load_min": 0.1,
+    "mass_target_g": 1900,
+    "mass_limit_g": 2000,
+    "budget_thb": 6000,
+    "weapon_motor_z_mm": 42.5
+  },
+  "fit": {
+    "verified": false,
+    "evidence": null,
+    "sha256_build": null,
+    "d_bore_diametral_clearance_mm": null,
+    "d_bore_flat_clearance_mm": null,
+    "hinge_diametral_clearance_mm": null,
+    "insert_hole_diameter_mm": null,
+    "tyre_inner_diameter_mm": null,
+    "nut_pocket_clearance_mm": null,
+    "results": {
+      "shaft_slides": null,
+      "hub_locks_rotation": null,
+      "hub_locks_axial": null,
+      "tyre_no_slip": null,
+      "hinge_free": null,
+      "wedgelet_secure": null,
+      "insert_no_rotation": null,
+      "lid_secure": null
+    }
+  },
+  "shop": {
+    "name": null,
+    "printer": null,
+    "usable_bed_mm": null,
+    "nozzle_mm": null,
+    "slicer": null,
+    "materials": {
+      "TPU95A": null,
+      "PETG": null
+    },
+    "brim_mm": null,
+    "profile_evidence": null
+  },
+  "cost": {
+    "verified": false,
+    "evidence": null,
+    "items": [
+      {
+        "id": "drive_motors",
+        "quantity": 4,
+        "total_thb": null
+      },
+      {
+        "id": "weapon_motor",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "esc",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "battery",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "drive_drivers",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "sensors",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "controller",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "charger",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "disconnect_fuse",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "wiring_connectors",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "bearings",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "belt",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "metal_cutting",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "machining",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "fasteners_inserts",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "hinge_pins_clips",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "skid",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "trial_prints",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "full_prints",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "shipping",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "contingency",
+        "quantity": 1,
+        "total_thb": null
+      }
+    ]
+  },
+  "slicer": {
+    "verified": false,
+    "sha256_build": null,
+    "project_file": null,
+    "report_file": null,
+    "printed_mass_g_by_file": {},
+    "review": {
+      "bed_with_brim": null,
+      "thin_features_present": null,
+      "support_removable": null,
+      "critical_holes_clear": null,
+      "materials_correct": null
+    }
+  },
+  "assembly": {
+    "verified": false,
+    "sha256_build": null,
+    "evidence": null,
+    "results": {
+      "fasteners_reachable": null,
+      "battery_retained": null,
+      "boards_insulated": null,
+      "wires_clear": null,
+      "disconnect_accessible": null,
+      "lid_accessible": null,
+      "no_undocumented_drilling": null,
+      "machined_hub_bearings_retained": null,
+      "shaft_clamp_free_rotation": null
+    }
+  }
+}
