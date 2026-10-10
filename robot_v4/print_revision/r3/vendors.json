@@ -1,0 +1,106 @@
+{
+  "status": "RFQ_PREPARED_NOT_SENT",
+  "vendors": [
+    {
+      "id": "P1",
+      "name": "TKK3D",
+      "kind": "print",
+      "url": "https://tkk3dprinting.com/fdm-3dprinting/",
+      "contact": "LINE @tkk3d; sale@tkk3dprinting.com;092-599-5661",
+      "web_capabilities": [
+        "FDM TPU/PETG",
+        "support removal/finish",
+        "fit review/trial fit described",
+        "parcel shipping"
+      ],
+      "pending": [
+        "TPU95A brand",
+        "usable bed + brim",
+        "caliper/mass service",
+        "two-round trial/insert5cycles",
+        "saved profile and slicer project"
+      ],
+      "preferred": true,
+      "checked_date": "2026-10-10",
+      "contacted": false,
+      "quote_received": false,
+      "quote_total_thb": null,
+      "quote_file": null
+    },
+    {
+      "id": "P2",
+      "name": "Threelines 3D",
+      "kind": "print",
+      "url": "https://3dprint.threelines.online/",
+      "contact": "097-969-8670; website contact",
+      "web_capabilities": [
+        "TPU/PETG",
+        "STL/OBJ/STEP/3MF",
+        "one piece",
+        "nationwide shipping"
+      ],
+      "pending": [
+        "TPU95A brand",
+        "usable bed + brim",
+        "measure/fit service",
+        "inserts/finish",
+        "saved profile/project"
+      ],
+      "preferred": false,
+      "checked_date": "2026-10-10",
+      "contacted": false,
+      "quote_received": false,
+      "quote_total_thb": null,
+      "quote_file": null
+    },
+    {
+      "id": "M1",
+      "name": "MALIEV",
+      "kind": "metal",
+      "url": "https://www.maliev.com/services/cnc-machining",
+      "contact": "website request a quote",
+      "web_capabilities": [
+        "CNC milling/turning",
+        "prototype single parts",
+        "nationwide service"
+      ],
+      "pending": [
+        "6061 and steel grades per BOM",
+        "plate cutting subcontract",
+        "tolerances/threads/finish",
+        "hinge pin grooves",
+        "VAT/shipping"
+      ],
+      "preferred": true,
+      "checked_date": "2026-10-10",
+      "contacted": false,
+      "quote_received": false,
+      "quote_total_thb": null,
+      "quote_file": null
+    },
+    {
+      "id": "M2",
+      "name": "SST Intertech โรงกลึงท่าข้าม",
+      "kind": "metal",
+      "url": "https://www.sstintertech.com/",
+      "contact": "website contact",
+      "web_capabilities": [
+        "CNC turning/milling",
+        "single-part prototype",
+        "laser/fixtures"
+      ],
+      "pending": [
+        "exact metal grades",
+        "fits/threads/finish",
+        "nationwide parcel shipping",
+        "VAT/minimum cost"
+      ],
+      "preferred": false,
+      "checked_date": "2026-10-10",
+      "contacted": false,
+      "quote_received": false,
+      "quote_total_thb": null,
+      "quote_file": null
+    }
+  ]
+}

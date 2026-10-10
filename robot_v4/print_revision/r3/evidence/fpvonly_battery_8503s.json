@@ -1,0 +1,40 @@
+{
+  "checked_date": "2026-10-08",
+  "source_url": "https://www.fpvonly.com/product/dogcom-3s-450-550-560-650-850-1050mah-150c-lipo-battery-อุปกรณ์โดรน-drone/11000371400006958",
+  "variant_url": "https://www.fpvonly.com/product/dogcom-3s-450-550-560-650-850-1050mah-150c-lipo-battery-อุปกรณ์โดรน-drone/11000371400006958/8923",
+  "source_html_sha256": "fd7b0bb717ee3c43a0ee16f130e1da7c4182010b26cc92bdc8efd160977b14d5",
+  "method": "Public HTML __NUXT_DATA__ referenced-array decode; ProductGroup.hasVariant and product.subproducts agree",
+  "schema_product": {
+    "@type": "Product",
+    "name": "  DOGCOM 3S 450 550 560 650 850 1050MAH 150C LIPO BATTERY อุปกรณ์โดรน Drone  - 3-6.DC850-150C3S UC",
+    "sku": "SKU-08923",
+    "image": [
+      "https://dr.lnwfile.com/17m6af.jpg"
+    ],
+    "inProductGroupWithID": "SKU-06958",
+    "size": "3-6.DC850-150C3S UC",
+    "offers": {
+      "@type": "Offer",
+      "price": 490,
+      "priceCurrency": "THB",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.fpvonly.com/product/dogcom-3s-450-550-560-650-850-1050mah-150c-lipo-battery-อุปกรณ์โดรน-drone/11000371400006958/8923"
+    }
+  },
+  "catalog_product": {
+    "id": 8923,
+    "name": "3-6.DC850-150C3S UC",
+    "uuid": "11000371400008923",
+    "price": 490,
+    "remain": 9,
+    "code": "SKU-08923",
+    "url": "/product/3-6-dc850-150c3s-uc/11000371400008923",
+    "barcode": "XX6.61A320"
+  },
+  "limitations": [
+    "Website stock is not reserved or seller-confirmed",
+    "No dimensions or mass for this exact variant; shared description refers to 560mAh 2S",
+    "No physical measurements; not release evidence"
+  ]
+}

@@ -1,0 +1,1079 @@
+{
+  "schema_version": 1,
+  "revision": "V4_PRINT_R3",
+  "hardware": {
+    "drive_Front_L": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 52,
+        "diameter_mm": 25,
+        "mass_g": 110,
+        "shaft_diameter_mm": 4,
+        "shaft_flat_depth_mm": 0.5,
+        "shaft_projection_mm": 22,
+        "boss_diameter_mm": 8,
+        "boss_projection_mm": 0,
+        "mount_holes_yz_mm": [
+          [
+            -8.5,
+            0
+          ],
+          [
+            8.5,
+            0
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      },
+      "catalog": {
+        "model": "JGA25-370 12V 400 rpm / DCM068",
+        "url": "https://www.fromfactory.net/product/6096/ดีซีมอเตอร์-พร้อมเกียร์ทด-jga25-370-gear-dc-motor-12v-high-torque-5-10-30-60-400-rpm-ขนาด-25mm",
+        "checked_date": "2026-10-08",
+        "source_id": "TH01",
+        "values": {
+          "diameter_mm": 25
+        }
+      }
+    },
+    "drive_Front_R": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 52,
+        "diameter_mm": 25,
+        "mass_g": 110,
+        "shaft_diameter_mm": 4,
+        "shaft_flat_depth_mm": 0.5,
+        "shaft_projection_mm": 22,
+        "boss_diameter_mm": 8,
+        "boss_projection_mm": 0,
+        "mount_holes_yz_mm": [
+          [
+            -8.5,
+            0
+          ],
+          [
+            8.5,
+            0
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      },
+      "catalog": {
+        "model": "JGA25-370 12V 400 rpm / DCM068",
+        "url": "https://www.fromfactory.net/product/6096/ดีซีมอเตอร์-พร้อมเกียร์ทด-jga25-370-gear-dc-motor-12v-high-torque-5-10-30-60-400-rpm-ขนาด-25mm",
+        "checked_date": "2026-10-08",
+        "source_id": "TH01",
+        "values": {
+          "diameter_mm": 25
+        }
+      }
+    },
+    "drive_Rear_L": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 52,
+        "diameter_mm": 25,
+        "mass_g": 110,
+        "shaft_diameter_mm": 4,
+        "shaft_flat_depth_mm": 0.5,
+        "shaft_projection_mm": 22,
+        "boss_diameter_mm": 8,
+        "boss_projection_mm": 0,
+        "mount_holes_yz_mm": [
+          [
+            -8.5,
+            0
+          ],
+          [
+            8.5,
+            0
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      },
+      "catalog": {
+        "model": "JGA25-370 12V 400 rpm / DCM068",
+        "url": "https://www.fromfactory.net/product/6096/ดีซีมอเตอร์-พร้อมเกียร์ทด-jga25-370-gear-dc-motor-12v-high-torque-5-10-30-60-400-rpm-ขนาด-25mm",
+        "checked_date": "2026-10-08",
+        "source_id": "TH01",
+        "values": {
+          "diameter_mm": 25
+        }
+      }
+    },
+    "drive_Rear_R": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 52,
+        "diameter_mm": 25,
+        "mass_g": 110,
+        "shaft_diameter_mm": 4,
+        "shaft_flat_depth_mm": 0.5,
+        "shaft_projection_mm": 22,
+        "boss_diameter_mm": 8,
+        "boss_projection_mm": 0,
+        "mount_holes_yz_mm": [
+          [
+            -8.5,
+            0
+          ],
+          [
+            8.5,
+            0
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      },
+      "catalog": {
+        "model": "JGA25-370 12V 400 rpm / DCM068",
+        "url": "https://www.fromfactory.net/product/6096/ดีซีมอเตอร์-พร้อมเกียร์ทด-jga25-370-gear-dc-motor-12v-high-torque-5-10-30-60-400-rpm-ขนาด-25mm",
+        "checked_date": "2026-10-08",
+        "source_id": "TH01",
+        "values": {
+          "diameter_mm": 25
+        }
+      }
+    },
+    "weapon_motor": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      },
+      "nominal": {
+        "length_mm": 36,
+        "diameter_mm": 35,
+        "mass_g": 102,
+        "shaft_diameter_mm": 5,
+        "shaft_projection_mm": 13,
+        "boss_diameter_mm": 10,
+        "mount_holes_yz_mm": [
+          [
+            -8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            0,
+            -9.5
+          ],
+          [
+            0,
+            9.5
+          ]
+        ],
+        "mount_thread_diameter_mm": 3,
+        "mount_thread_depth_mm": 5
+      },
+      "catalog": {
+        "model": "SURPASS C3536-V2 1300KV SP-235360-01 / UDSHOBBY SKU02373",
+        "url": "https://myosuploads3.banggood.com/products/20230705/20230705015052C35V2Manual.pdf",
+        "checked_date": "2026-10-10",
+        "source_id": "R3-08",
+        "values": {
+          "length_mm": 34.5,
+          "diameter_mm": 35,
+          "mass_g": 109,
+          "shaft_diameter_mm": 4,
+          "shaft_projection_mm": 20,
+          "mount_holes_yz_mm": [
+            [
+              -9.5,
+              0
+            ],
+            [
+              9.5,
+              0
+            ],
+            [
+              0,
+              -12.5
+            ],
+            [
+              0,
+              12.5
+            ]
+          ],
+          "mount_thread_diameter_mm": 3
+        },
+        "unconfirmed_fields": [
+          "boss_diameter_mm",
+          "mount_thread_depth_mm"
+        ],
+        "drawing_orientation": "Rotate motor19mm pair alongY and25mm pair alongZ; not a19x25 four-corner rectangle",
+        "legacy_body_id": "D3536_1250kV_Can_ENVELOPE retained as internal geometry identifier; selected model is SURPASS"
+      }
+    },
+    "battery": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          75,
+          35,
+          25
+        ],
+        "mass_g": 80,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      },
+      "catalog": {
+        "model": "GAONENG GNB8503S80A 3S85080C XT30",
+        "url": "https://www.gaoneng.shop/products/gaoneng-gnb-3s-11.1v-850mah-80c-xt30-lipo-battery",
+        "source_id": "R3-02",
+        "checked_date": "2026-10-10",
+        "values": {
+          "dimensions_mm": [
+            63,
+            30,
+            24
+          ],
+          "mass_g": 80
+        },
+        "field_notes": {
+          "dimensions_mm": "H24 W30 L63 mapped to CAD X63 Y30 Z24; wire/plug envelope remains nominal",
+          "mass_g": "Manufacturer80g +/-3; actual not measured"
+        },
+        "supplier_source_id": "R3-09"
+      }
+    },
+    "esc": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          55,
+          25,
+          12
+        ],
+        "mass_g": 35,
+        "connector_keepout_mm": [
+          5,
+          10,
+          8
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "left"
+      },
+      "catalog": {
+        "model": "Hobbywing Skywalker 40A V2 UBEC / PN80060140",
+        "url": "https://www.abcflying.com/product/8569/hobbywing-skywalker-40a-v2-ubec-3s-4s",
+        "checked_date": "2026-10-08",
+        "source_id": "TH03",
+        "values": {
+          "dimensions_mm": [
+            68,
+            25,
+            8
+          ],
+          "mass_g": 39
+        }
+      }
+    },
+    "esp32": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          51.5,
+          28.3,
+          14
+        ],
+        "mass_g": 10,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      },
+      "catalog": {
+        "model": "ESP32 30Pin Type-C CH340C ESP-WROOM-32 / 2990",
+        "url": "https://www.mikroelec.com/product/2990/esp32-30pin-type-c-ch340c-esp-wroom-32-board",
+        "checked_date": "2026-10-08",
+        "source_id": "TH04",
+        "values": {
+          "dimensions_mm": [
+            51.5,
+            28.5,
+            14
+          ]
+        },
+        "field_notes": {
+          "dimensions_mm": "XYจากเว็บ; Z14mm nominalเดิมรอวัดรวมขาบัดกรี"
+        }
+      }
+    },
+    "drv_left": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          20,
+          20,
+          6
+        ],
+        "mass_g": 5,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "drv_right": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          20,
+          20,
+          6
+        ],
+        "mass_g": 5,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "imu": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          21,
+          16,
+          3.5
+        ],
+        "mass_g": 3,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "rear"
+      },
+      "catalog": {
+        "model": "GY-521 MPU6050 / M0023",
+        "url": "https://www.cybertice.com/product/40/gy-521-mpu6050-6-axis-imu-module-โมดูลวัดความเร่งและไจโรสโคป-3-แกน",
+        "checked_date": "2026-10-08",
+        "source_id": "TH06",
+        "values": {
+          "dimensions_mm": [
+            21,
+            16,
+            3.5
+          ]
+        },
+        "field_notes": {
+          "dimensions_mm": "XYจากเว็บ; Z3.5mm nominalเดิมรอวัด"
+        }
+      }
+    },
+    "disconnect": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          14,
+          8,
+          10
+        ],
+        "mass_g": 15,
+        "connector_keepout_mm": [
+          5,
+          10,
+          5
+        ],
+        "connector_x_offset_mm": 0,
+        "connector_side": "front"
+      }
+    },
+    "bearing_608": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "outer_diameter_mm": null,
+        "inner_diameter_mm": null,
+        "width_mm": null,
+        "mass_g_each": null
+      },
+      "nominal": {
+        "outer_diameter_mm": 22,
+        "inner_diameter_mm": 8,
+        "width_mm": 7,
+        "mass_g_each": 12
+      },
+      "catalog": {
+        "model": "SRT25B608ZZ ABEC1 / JISClass0",
+        "url": "https://sunrise.co.th/en/product/deep-groove-ball-bearings-8x22x7-abec-1-jis-b1514-class-0",
+        "checked_date": "2026-10-08",
+        "source_id": "TH08",
+        "values": {
+          "outer_diameter_mm": 22,
+          "inner_diameter_mm": 8,
+          "width_mm": 7
+        }
+      }
+    },
+    "hinge_pin": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "diameter_mm": null,
+        "length_mm": null,
+        "mass_g_pair": null
+      },
+      "nominal": {
+        "diameter_mm": 3,
+        "length_mm": 57,
+        "mass_g_pair": 6.5
+      }
+    },
+    "insert_m3": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "outer_diameter_mm": null,
+        "length_mm": null
+      },
+      "nominal": {
+        "outer_diameter_mm": 4,
+        "length_mm": 6
+      },
+      "catalog": {
+        "model": "M3×4×5 heat-set insert / 385 (10pcs)",
+        "url": "https://www.friendrobotshop.com/product/385/m3x4x5-insert-nut-สำหรับงานพิมพ์-3d-สำหรับน๊อต-m3-สูง-4-มม-ขนาดเส้นผ่านศูนย์กลาง-5-มม-10-ชิ้น",
+        "checked_date": "2026-10-08",
+        "source_id": "TH09",
+        "values": {
+          "outer_diameter_mm": 5,
+          "length_mm": 4
+        }
+      }
+    },
+    "nut_m3": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "across_flats_mm": null,
+        "height_mm": null
+      },
+      "nominal": {
+        "across_flats_mm": 5.5,
+        "height_mm": 2.4
+      }
+    },
+    "hall_sensor": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "magnet_diameter_mm": null,
+        "magnet_thickness_mm": null
+      },
+      "nominal": {
+        "dimensions_mm": [
+          1.5,
+          4,
+          4
+        ],
+        "mass_g": 1,
+        "magnet_diameter_mm": 3,
+        "magnet_thickness_mm": 2
+      }
+    },
+    "dead_shaft": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null,
+        "diameter_mm": null,
+        "length_mm": null,
+        "head_across_flats_mm": null,
+        "head_thickness_mm": null,
+        "nut_across_flats_mm": null,
+        "nut_thickness_mm": null,
+        "washer_outer_diameter_mm": null,
+        "washer_inner_diameter_mm": null,
+        "washer_thickness_mm": null,
+        "thread_length_mm": null
+      },
+      "nominal": {
+        "mass_g": 46,
+        "diameter_mm": 8,
+        "length_mm": 80,
+        "head_across_flats_mm": 13,
+        "head_thickness_mm": 5.3,
+        "nut_across_flats_mm": 13,
+        "nut_thickness_mm": 6.5,
+        "washer_outer_diameter_mm": 16,
+        "washer_inner_diameter_mm": 8.4,
+        "washer_thickness_mm": 1.6,
+        "thread_length_mm": 22
+      }
+    },
+    "clips": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 0.5
+      }
+    },
+    "belt": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 10.5
+      }
+    },
+    "skid": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 3
+      }
+    },
+    "rotor_screws": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 8
+      }
+    },
+    "baseline_fasteners": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 40
+      }
+    },
+    "revision_fasteners": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 15
+      }
+    },
+    "wiring": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 50
+      }
+    },
+    "aux_sensors": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 8
+      }
+    },
+    "straps": {
+      "verified": false,
+      "evidence": null,
+      "actual": {
+        "mass_g": null
+      },
+      "nominal": {
+        "mass_g": 8
+      }
+    }
+  },
+  "design": {
+    "front_axle_y_mm": 18,
+    "rear_axle_y_mm": -70,
+    "weapon_motor_y_mm": 47.5,
+    "hinge_min_wall_mm": 1.6,
+    "rear_load_target": 0.15,
+    "rear_load_min": 0.1,
+    "mass_target_g": 1900,
+    "mass_limit_g": 2000,
+    "budget_thb": 6000,
+    "weapon_motor_z_mm": 42.5,
+    "electronics_xy_mm": {
+      "esc": [
+        -22,
+        -42.5
+      ],
+      "esp32": [
+        0,
+        -15.75
+      ],
+      "drv_left": [
+        -43,
+        -15
+      ],
+      "drv_right": [
+        43,
+        -15
+      ],
+      "imu": [
+        42,
+        -42.5
+      ]
+    },
+    "extra_connector_keepouts": {
+      "esc": [
+        [
+          12,
+          24,
+          -47.5,
+          -37.5,
+          0,
+          8
+        ],
+        [
+          -61,
+          -56,
+          -37.5,
+          -20,
+          0,
+          8
+        ]
+      ]
+    },
+    "insert_trial_hole_diameter_mm": 4.6
+  },
+  "fit": {
+    "verified": false,
+    "evidence": null,
+    "sha256_build": null,
+    "d_bore_diametral_clearance_mm": null,
+    "d_bore_flat_clearance_mm": null,
+    "hinge_diametral_clearance_mm": null,
+    "insert_hole_diameter_mm": null,
+    "tyre_inner_diameter_mm": null,
+    "nut_pocket_clearance_mm": null,
+    "results": {
+      "shaft_slides": null,
+      "hub_locks_rotation": null,
+      "hub_locks_axial": null,
+      "tyre_no_slip": null,
+      "hinge_free": null,
+      "wedgelet_secure": null,
+      "insert_no_rotation": null,
+      "lid_secure": null
+    },
+    "profile_sha256": null,
+    "round1_evidence": null,
+    "round2_evidence": null,
+    "round2_sha256_build": null,
+    "lid_cycles": null,
+    "tested_drive_shafts": []
+  },
+  "shop": {
+    "name": null,
+    "printer": null,
+    "usable_bed_mm": null,
+    "nozzle_mm": null,
+    "slicer": null,
+    "materials": {
+      "TPU95A": null,
+      "PETG": null
+    },
+    "brim_mm": null,
+    "profile_evidence": null
+  },
+  "cost": {
+    "verified": false,
+    "evidence": null,
+    "items": [
+      {
+        "id": "drive_motors",
+        "quantity": 4,
+        "total_thb": null
+      },
+      {
+        "id": "weapon_motor",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "esc",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "battery",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "drive_drivers",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "sensors",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "controller",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "charger",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "disconnect_fuse",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "wiring_connectors",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "bearings",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "belt",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "metal_cutting",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "machining",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "fasteners_inserts",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "hinge_pins_clips",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "skid",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "trial_prints",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "full_prints",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "shipping",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "contingency",
+        "quantity": 1,
+        "total_thb": 300
+      },
+      {
+        "id": "gamepad",
+        "quantity": 1,
+        "total_thb": null
+      },
+      {
+        "id": "measurement_fit_service",
+        "quantity": 1,
+        "total_thb": null
+      }
+    ]
+  },
+  "slicer": {
+    "verified": false,
+    "sha256_build": null,
+    "project_file": null,
+    "report_file": null,
+    "printed_mass_g_by_file": {},
+    "review": {
+      "bed_with_brim": null,
+      "thin_features_present": null,
+      "support_removable": null,
+      "critical_holes_clear": null,
+      "materials_correct": null
+    },
+    "profile_sha256": null
+  },
+  "assembly": {
+    "verified": false,
+    "sha256_build": null,
+    "evidence": null,
+    "results": {
+      "fasteners_reachable": null,
+      "battery_retained": null,
+      "boards_insulated": null,
+      "wires_clear": null,
+      "disconnect_accessible": null,
+      "lid_accessible": null,
+      "no_undocumented_drilling": null,
+      "machined_hub_bearings_retained": null,
+      "shaft_clamp_free_rotation": null
+    },
+    "measured_total_mass_g": null,
+    "measured_rear_load_fraction": null
+  },
+  "catalog_selection": {
+    "date": "2026-10-10",
+    "inventory": "user reports no parts purchased",
+    "status": "CANDIDATE_SETS_NOT_LOCKED",
+    "sources_file": "sources.json",
+    "limitations": [
+      "Not an exhaustive survey of every Thai website",
+      "Domestic stock of weapon motor unresolved",
+      "Connector keepouts are provisional engineering allowances",
+      "No physical verification substituted by catalog values",
+      "DCM068 stock conflicts across linked vendor sites; four units not confirmed",
+      "Backup AEI.th listing does not expose exact 12V400 variant",
+      "No shop quotes or physical evidence received",
+      "GNB8503S80A web dimensions used for draft CAD only; Thai variant price/stock/actual measurements pending"
+    ]
+  },
+  "readiness_version": 2,
+  "preflight": {
+    "verified": false,
+    "evidence": null,
+    "sha256_build": null,
+    "results": {
+      "assembly_instructions_complete": null,
+      "battery_straps_checked": null,
+      "disconnect_access_reviewed": null,
+      "fastener_lengths_checked": null,
+      "metal_interfaces_checked": null,
+      "tool_access_reviewed": null,
+      "wire_routes_reviewed": null
+    }
+  },
+  "target_decision": {
+    "accepted_by_user": false,
+    "sha256_build": null,
+    "evidence": null
+  },
+  "electrical": {
+    "verified": false,
+    "evidence": null,
+    "sha256_build": null,
+    "specs": {
+      "battery_cells": 3,
+      "battery_capacity_mah": 850,
+      "test_voltage_v": null,
+      "weapon_kv": 1300,
+      "weapon_resistance_ohm": 0.038,
+      "weapon_no_load_current_a": 1.8,
+      "drive_rated_rpm": null,
+      "drive_rated_voltage_v": null,
+      "drive_stall_torque_nm": null,
+      "drive_pair_start_current_a": null,
+      "drive_pair_stall_current_a": null,
+      "driver_continuous_current_a": null,
+      "driver_current_limit_a": null,
+      "weapon_spinup_current_a": null,
+      "esc_continuous_current_a": 40,
+      "power_path_continuous_current_a": null
+    },
+    "nominal": {
+      "battery_cells": 3,
+      "battery_capacity_mah": 850,
+      "test_voltage_v": 12.6,
+      "weapon_kv": 1250,
+      "weapon_resistance_ohm": 0.05,
+      "weapon_no_load_current_a": 1.5,
+      "drive_rated_rpm": 400,
+      "drive_rated_voltage_v": 12,
+      "drive_stall_torque_nm": 0.121644
+    },
+    "results": {
+      "battery_voltage_capacity_checked": null,
+      "connectors_fuse_wire_checked": null,
+      "drive_current_and_limit_checked": null,
+      "weapon_esc_checked": null
+    },
+    "parameter_sources": {
+      "battery_cells": "R3-03/R3-09",
+      "battery_capacity_mah": "R3-03/R3-09",
+      "weapon_kv": "R3-08",
+      "weapon_resistance_ohm": "R3-08",
+      "weapon_no_load_current_a": "R3-08",
+      "esc_continuous_current_a": "TH03"
+    }
+  },
+  "manufacturing": {
+    "verified": false,
+    "evidence": null,
+    "actual_mass_g_by_body": {}
+  }
+}

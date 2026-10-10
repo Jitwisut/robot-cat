@@ -1,0 +1,210 @@
+{
+  "revision": "V4_PRINT_R3",
+  "date": "2026-10-10",
+  "status": "CANDIDATE_SETS_NOT_PURCHASE_READY",
+  "main": {
+    "drive_motors": {
+      "model": "JGA25-370 12V400 DCM068",
+      "quantity": 4,
+      "sources": [
+        "TH01",
+        "R3-06"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "weapon_motor": {
+      "model": "SURPASS C3536-V2 1300KV SP-235360-01 / SKU02373",
+      "quantity": 1,
+      "sources": [
+        "R3-07",
+        "R3-08"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": "evidence/SURPASS_C35_V2_manual.pdf",
+      "current_compatibility_confirmed": false,
+      "web_price_thb": 840,
+      "web_availability": "instock=1",
+      "cad_candidate_applied": true
+    },
+    "battery": {
+      "model": "GNB8503S80A 3S85080C XT30 / FPVONLY3-20",
+      "quantity": 1,
+      "sources": [
+        "R3-03",
+        "R3-09"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": "R3-03 manufacturer page",
+      "current_compatibility_confirmed": false,
+      "web_price_thb": 605,
+      "web_availability": "InStock"
+    },
+    "esc": {
+      "model": "Hobbywing Skywalker40AV2 PN80060140",
+      "quantity": 1,
+      "sources": [
+        "TH03"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "drive_drivers": {
+      "model": "ModuleMore DRV8871 01477",
+      "quantity": 2,
+      "sources": [
+        "TH05"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "controller": {
+      "model": "Mikroelec ESP32 30pin Type-C CH340C 2990",
+      "quantity": 1,
+      "sources": [
+        "TH04"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "disconnect": {
+      "model": "removable XT30 loop + fuse/holder; rating pending",
+      "quantity": 1,
+      "sources": [
+        "TH18"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    }
+  },
+  "backup": {
+    "drive_motors": {
+      "model": "AEI.th JGA25-370 12V;400rpm variant pending",
+      "quantity": 4,
+      "sources": [
+        "R3-01"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "weapon_motor": {
+      "model": "DYS D3536 1250KV standard shaft",
+      "quantity": 1,
+      "sources": [
+        "TH02",
+        "R3-12"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "battery": {
+      "model": "DOGCOM3S850150C UCELL SKU08923",
+      "quantity": 1,
+      "sources": [
+        "TH07"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "esc": {
+      "model": "Hobbywing Skywalker40AV2 PN80060140",
+      "quantity": 1,
+      "sources": [
+        "TH03"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "drive_drivers": {
+      "model": "Cybertice DRV8871 RM116 4426",
+      "quantity": 2,
+      "sources": [
+        "R3-04"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "controller": {
+      "model": "Mikroelec ESP32 30pin Type-C CH340C 2990",
+      "quantity": 1,
+      "sources": [
+        "TH04"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    },
+    "disconnect": {
+      "model": "removable XT30 loop + fuse/holder; rating pending",
+      "quantity": 1,
+      "sources": [
+        "TH18"
+      ],
+      "locked": false,
+      "stock_confirmed_quantity": null,
+      "quote_evidence": null,
+      "dimensions_evidence": null,
+      "current_compatibility_confirmed": false
+    }
+  },
+  "same_vendor_warning": "TH01 FromFactory and Mechashop are linked; not independent backups",
+  "unresolved": [
+    "drive stock4, shaft projection and stall-current/torque/mass",
+    "weapon boss diameter and thread depth; ESC40A compatibility for motor50A max",
+    "driver pair current and thermal limits",
+    "disconnect/fuse/wire ratings",
+    "gamepad/charger complete kit",
+    "full production and service quotes"
+  ],
+  "evaluated_alternatives": {
+    "drive_motors": {
+      "model": "ORTECH JB361 SKU00378",
+      "source": "R3-10",
+      "direct_fit": false,
+      "reason": "11.5-12mm shaft projection versus16mm current requirement; redesign needed, stall/current/mass unknown"
+    },
+    "drive_drivers": {
+      "model": "Cytron MDD3A x2 one channel per motor",
+      "source": "R3-11",
+      "selected": false,
+      "reason": "PCB48.26x41.66 not20x20; current limit/drive stall/mass/height/layout unresolved",
+      "web_price_thb_total": 640
+    }
+  }
+}

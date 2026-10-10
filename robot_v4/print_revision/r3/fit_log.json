@@ -1,0 +1,45 @@
+{
+  "revision": "V4_PRINT_R3",
+  "status": "NOT_TESTED",
+  "shop": null,
+  "printer": null,
+  "materials": null,
+  "nozzle_mm": null,
+  "slicer_version": null,
+  "profile_file": null,
+  "profile_sha256": null,
+  "round1": {
+    "build_sha256": null,
+    "selected_dimensions": {
+      "d_bore_diametral_clearance_mm": null,
+      "d_bore_flat_clearance_mm": null,
+      "hinge_diametral_clearance_mm": null,
+      "insert_hole_diameter_mm": null,
+      "tyre_inner_diameter_mm": null,
+      "nut_pocket_clearance_mm": null
+    },
+    "images": []
+  },
+  "round2": {
+    "build_sha256": null,
+    "results": {
+      "shaft_slides": null,
+      "hub_locks_rotation": null,
+      "hub_locks_axial": null,
+      "tyre_no_slip": null,
+      "hinge_free": null,
+      "wedgelet_secure": null,
+      "insert_no_rotation": null,
+      "lid_secure": null
+    },
+    "drive_shafts": {
+      "drive_Front_L": null,
+      "drive_Front_R": null,
+      "drive_Rear_L": null,
+      "drive_Rear_R": null
+    },
+    "lid_cycles": null,
+    "images": [],
+    "videos": []
+  }
+}

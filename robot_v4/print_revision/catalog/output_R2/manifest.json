@@ -1,0 +1,283 @@
+[
+  {
+    "file": "V4_R2_Tub_TPU.stl",
+    "quantity": 1,
+    "material": "TPU95A",
+    "bodies": [
+      "Tub_TPU"
+    ],
+    "dimensions_mm": [
+      190.523,
+      217.261,
+      54.001
+    ],
+    "sha256": "1ec27ec3308cb3002f985d764df8b5432f3bf4320440f138f3012327c8fd221d",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Lid_TPU_2mm.stl",
+    "quantity": 1,
+    "material": "TPU95A",
+    "bodies": [
+      "Lid_TPU_2mm"
+    ],
+    "dimensions_mm": [
+      176.0,
+      174.004,
+      5.005
+    ],
+    "sha256": "d054c2b18232ca5ebedd25bbbcdb7404b6d5b234bc1c3098b784521c2706c51b",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Wedgelet_Block_PETG_L.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Wedgelet_Block_PETG_L"
+    ],
+    "dimensions_mm": [
+      54.0,
+      41.2,
+      14.0
+    ],
+    "sha256": "7295315c57ffe0aad5012984b3bf2930343516793275e71efa8bc1b95ebdf5be",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Wedgelet_Carrier_PETG_L1.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Wedgelet_Carrier_PETG_L1"
+    ],
+    "dimensions_mm": [
+      12.5,
+      15.2,
+      20.0
+    ],
+    "sha256": "45489756d1a5857b7d1e2664afa78183f7d993d27e594244102cd7fd443e9a23",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Wedgelet_Carrier_PETG_L2.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Wedgelet_Carrier_PETG_L2"
+    ],
+    "dimensions_mm": [
+      12.5,
+      15.2,
+      16.0
+    ],
+    "sha256": "deb32b1f6f4a7982a447dcd704d0b4b0e762ebe6ec6dedea03d40be231b705b1",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Wedgelet_Block_PETG_R.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Wedgelet_Block_PETG_R"
+    ],
+    "dimensions_mm": [
+      54.0,
+      41.2,
+      14.0
+    ],
+    "sha256": "358cbb7fc12395e2760463ed1bece1a3f1e5731da59c03ee2c8d1cbc2529c4f0",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Wedgelet_Carrier_PETG_R1.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Wedgelet_Carrier_PETG_R1"
+    ],
+    "dimensions_mm": [
+      12.5,
+      15.2,
+      20.0
+    ],
+    "sha256": "ddedbcaab821b9f69162c4cfcd591d8323c9c46999861a798325262193b664fe",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Wedgelet_Carrier_PETG_R2.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Wedgelet_Carrier_PETG_R2"
+    ],
+    "dimensions_mm": [
+      12.5,
+      15.2,
+      16.0
+    ],
+    "sha256": "bcd55e5785fa3728566edc90a16001b694d1146d17e9a8ce2600dcf59810e7eb",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Wheel_Hub_PETG.stl",
+    "quantity": 4,
+    "material": "PETG",
+    "bodies": [
+      "Wheel_Hub_PETG_Front_L",
+      "Wheel_Hub_PETG_Front_R",
+      "Wheel_Hub_PETG_Rear_L",
+      "Wheel_Hub_PETG_Rear_R"
+    ],
+    "dimensions_mm": [
+      44.003,
+      44.003,
+      16.003
+    ],
+    "sha256": "6d55d7c0c1d3c60a7d2f67d7df003c1e0b4358954209105a0add96853ef3270f",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Wheel_Tyre_TPU95A.stl",
+    "quantity": 4,
+    "material": "TPU95A",
+    "bodies": [
+      "Wheel_Tyre_TPU_Front_L",
+      "Wheel_Tyre_TPU_Front_R",
+      "Wheel_Tyre_TPU_Rear_L",
+      "Wheel_Tyre_TPU_Rear_R"
+    ],
+    "dimensions_mm": [
+      64.005,
+      64.005,
+      16.005
+    ],
+    "sha256": "68d14f4a77d8db62f034cab77616cd9d5acf0e15eac67d2bc7358dec2a3a1459",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Hall_Post_PETG.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Hall_Post_PETG"
+    ],
+    "dimensions_mm": [
+      46.5,
+      16.0,
+      10.0
+    ],
+    "sha256": "28303ea398a360af6091e4ada38c19f1398432583c2af106e1aabc51f427596d",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Weapon_Mount_Foot_PETG_1.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Weapon_Mount_Foot_PETG_1"
+    ],
+    "dimensions_mm": [
+      8.0,
+      13.0,
+      13.0
+    ],
+    "sha256": "1c481a83599cf38cb8bf676a8769af5335324b3c2ee8425935c3867c07bef79f",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Weapon_Mount_Foot_PETG_2.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Weapon_Mount_Foot_PETG_2"
+    ],
+    "dimensions_mm": [
+      8.0,
+      11.0,
+      13.0
+    ],
+    "sha256": "15ae835f3795a6ec58a3eaa18f0b88a836d24f2d765ac652bf26d93194028529",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Battery_Tray_PETG.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Battery_Tray_PETG"
+    ],
+    "dimensions_mm": [
+      83.001,
+      38.0,
+      5.001
+    ],
+    "sha256": "f5bd4c1f78845990afb38e818571d2b82412887c86040fde94b5a0abd0d0769b",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Electronics_Platform_PETG.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Electronics_Platform_PETG"
+    ],
+    "dimensions_mm": [
+      122.0,
+      54.5,
+      4.0
+    ],
+    "sha256": "067157214c131304b578bc08e445f8d3988f21e80df64d749a6252a1342e2ec5",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Electronics_Standoff_PETG.stl",
+    "quantity": 4,
+    "material": "PETG",
+    "bodies": [
+      "Electronics_Standoff_PETG_1",
+      "Electronics_Standoff_PETG_2",
+      "Electronics_Standoff_PETG_3",
+      "Electronics_Standoff_PETG_4"
+    ],
+    "dimensions_mm": [
+      8.001,
+      8.001,
+      31.601
+    ],
+    "sha256": "5e2446b01b358866555a0d6dc6f8fdbe8e6431c4d8b7396423caf21db623d099",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R2_Disconnect_Collar_PETG.stl",
+    "quantity": 1,
+    "material": "PETG",
+    "bodies": [
+      "Disconnect_Collar_PETG"
+    ],
+    "dimensions_mm": [
+      3.0,
+      16.0,
+      16.0
+    ],
+    "sha256": "c635be1935acda51a19cea41165de5eb15b5c9dffb631499d1dadf8e237f17a8",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  }
+]

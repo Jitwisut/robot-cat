@@ -1,0 +1,418 @@
+{
+  "date": "2026-10-08",
+  "status": "RESEARCH_NOT_PURCHASE_ORDER",
+  "records": [
+    {
+      "id": "TH01",
+      "model": "JGA25-370 12V 400 rpm / DCM068",
+      "shop": "FromFactory",
+      "url": "https://www.fromfactory.net/product/6096/ดีซีมอเตอร์-พร้อมเกียร์ทด-jga25-370-gear-dc-motor-12v-high-torque-5-10-30-60-400-rpm-ขนาด-25mm",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 190,
+      "stock": "หน้าเว็บระบุพร้อมส่ง",
+      "published": {
+        "diameter_mm": 25
+      },
+      "notes": "ภาพร้านเป็น D shaft แต่ไม่มี scale/drawing; ไม่อนุมานรูยึด ระยะบ่า ความยาวเพลา หรือ stall current จากรูป รุ่นอื่นชื่อเดียวกันใช้แทนหลักฐานไม่ได้",
+      "status": "candidate"
+    },
+    {
+      "id": "TH02",
+      "model": "DYS D3536 1250KV",
+      "shop": "Angel RC Store (Shopee Thailand)",
+      "url": "https://shopee.co.th/dys-d-3536-910-kv-1000-kv-1250-kv-1450-kv-มอเตอร์-brushless-outrunner-สําหรับเฮลิคอปเตอร์เครื่องบินของเล่น-i.53028894.3155547070",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 564,
+      "stock": "ผลค้นระบุส่งจากต่างประเทศ",
+      "published": {},
+      "notes": "พบหน้าตลาดไทย แต่ยังไม่ใช่ยืนยันของอยู่ในไทย ไม่เลือกเป็นรายการพร้อมซื้อ ต้องขอร้านไทยยืนยันรุ่น 1250KV short/long shaft และ drawing",
+      "status": "domestic_stock_unresolved"
+    },
+    {
+      "id": "REF02",
+      "model": "DYS D3536 Long shaft",
+      "shop": "DYS ผู้ผลิต",
+      "url": "https://www.dys.hk/product/D3536%20Long%20shaft.html",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "ผู้ผลิตมี variant long shaft; ไม่ถ่ายขนาดเพลา/รูยึดของ variant นี้เข้ามอเตอร์ที่ยังไม่ระบุ SKU",
+      "status": "manufacturer_variant_warning"
+    },
+    {
+      "id": "TH03",
+      "model": "Hobbywing Skywalker 40A V2 UBEC / PN80060140",
+      "shop": "ABC Flying",
+      "url": "https://www.abcflying.com/product/8569/hobbywing-skywalker-40a-v2-ubec-3s-4s",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 490,
+      "stock": "หน้าเว็บเปิดสั่งซื้อ; ต้องยืนยันสต็อก",
+      "published": {
+        "dimensions_mm": [
+          68,
+          25,
+          8
+        ],
+        "mass_g": 39
+      },
+      "notes": "ร้านระบุ 3–4S, BEC5V5A, 14AWG input100mm / output75mm; น้ำหนักและตัวกล่องยังไม่ใช่ measurement หน้างาน ขนาดไม่รวมพื้นที่โค้งสาย",
+      "status": "candidate"
+    },
+    {
+      "id": "ALT03",
+      "model": "HBW Skywalker 40A / Sky-ESC40A",
+      "shop": "SrRcTech",
+      "url": "https://www.srrctech.com/product/200/hbw-skywalker-esc-40a",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 350,
+      "stock": "หมวดสินค้ามีปุ่มสั่งซื้อ; ยังไม่ยืนยันสต็อก",
+      "published": {},
+      "notes": "คนละ listing กับ V2; ไม่ใช้ราคา350บาทคู่กับ CAD ขนาด68mm ของ V2",
+      "status": "alternative_not_applied"
+    },
+    {
+      "id": "TH04",
+      "model": "ESP32 30Pin Type-C CH340C ESP-WROOM-32 / 2990",
+      "shop": "Mikroelec",
+      "url": "https://www.mikroelec.com/product/2990/esp32-30pin-type-c-ch340c-esp-wroom-32-board",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 180,
+      "stock": "ต้องยืนยันสต็อก",
+      "published": {
+        "board_length_mm": 51.5,
+        "board_width_mm": 28.5
+      },
+      "notes": "ขนาดร้านระบุประมาณ; ความสูง14mm และพื้นที่สายเป็น nominal เดิม รอวัดหลังบัดกรีขา",
+      "status": "candidate"
+    },
+    {
+      "id": "TH05",
+      "model": "DRV8871 DC H-bridge / SKU01477",
+      "shop": "ModuleMore",
+      "url": "https://www.modulemore.com/product/1477/บอร์ดขับมอเตอร์-drv8871-3-6a-motor-driver-dc-h-bridge-pwm-driver-module",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 75,
+      "stock": "หน้าเว็บไม่แสดงจำนวนคงเหลือ",
+      "published": {},
+      "notes": "ราคาแสดง75บาทและราคาปกติ99; 4.9×6mm คือ package IC ไม่ใช่ขนาด PCB! คง envelope20×20×6mmแบบเดิม รอขนาดบอร์ด ขั้ว terminal และ Rlim จริง; 3.6A เป็น peak ไม่ใช่ continuous",
+      "status": "candidate"
+    },
+    {
+      "id": "REF05",
+      "model": "DRV8871",
+      "shop": "Texas Instruments",
+      "url": "https://www.ti.com/lit/ds/symlink/drv8871.pdf",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "ตรวจ current-limit/thermal กับมอเตอร์2ตัวต่อบอร์ดหลังได้รุ่นมอเตอร์จริง ยังไม่รับรอง continuous current",
+      "status": "electrical_check_required"
+    },
+    {
+      "id": "TH06",
+      "model": "GY-521 MPU6050 / M0023",
+      "shop": "Cybertice",
+      "url": "https://www.cybertice.com/product/40/gy-521-mpu6050-6-axis-imu-module-โมดูลวัดความเร่งและไจโรสโคป-3-แกน",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 80,
+      "stock": "หน้าเว็บระบุพร้อมส่ง",
+      "published": {
+        "board_length_mm": 21,
+        "board_width_mm": 16
+      },
+      "notes": "ร้านระบุประมาณ21×16mm ไม่ระบุความสูงหลังบัดกรีและน้ำหนัก คงnominalเดิม",
+      "status": "candidate"
+    },
+    {
+      "id": "ALT07",
+      "model": "GNB6503S160AHV 3S LiHV 650mAh 160C XT30",
+      "shop": "FPVTHAI",
+      "url": "https://www.fpvthai.com/products/gaoneng-gnb-lihv-3s-11-4v-650mah-160c-xt30-lipo-battery",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 400,
+      "stock": "หน้าเว็บมี Add to cart; ชื่อหลักขัดกับรายละเอียด",
+      "published": {
+        "dimensions_mm": [
+          64,
+          30,
+          18
+        ],
+        "mass_g": 61,
+        "mass_tolerance_g": 2
+      },
+      "notes": "ชื่อหลักเป็น4S11.4V แต่รายละเอียดเป็น3S1P รอยืนยัน SKU; ลดcapacityจาก850เหลือ650 ต้องทดสอบเวลารันและCG ไม่ใช้แทนเงียบๆ",
+      "status": "alternative_not_applied"
+    },
+    {
+      "id": "ALT08",
+      "model": "GNB3S720mAh LiHV100C XT30",
+      "shop": "FPVTHAI",
+      "url": "https://www.fpvthai.com/collections/battery/products/gnb-3s-720mah-11-4v-100c-xt30-lipo-lihv-battery",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 420,
+      "stock": "หน้าเว็บมี Add to cart",
+      "published": {
+        "dimensions_mm": [
+          67,
+          18,
+          23
+        ]
+      },
+      "notes": "ขนาดประมาณ; ไม่มีน้ำหนักที่ยืนยัน ไม่ใช้ลดมวลในCAD",
+      "status": "alternative_not_applied"
+    },
+    {
+      "id": "ALT09",
+      "model": "BETAFPV3S850mAh",
+      "shop": "FPVTHAI",
+      "url": "https://www.fpvthai.com/products/betafpv-3s-850-mah-battery",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 750,
+      "stock": "Sold out",
+      "published": {},
+      "notes": "ไม่ใช้เป็นรายการซื้อปัจจุบัน",
+      "status": "sold_out_not_applied"
+    },
+    {
+      "id": "TH07",
+      "model": "DOGCOM 3S 850mAh 150C UCELL XT30 / SKU-08923 / DC850-150C3S UC",
+      "shop": "FPVONLY",
+      "url": "https://www.fpvonly.com/product/dogcom-3s-450-550-560-650-850-1050mah-150c-lipo-battery-อุปกรณ์โดรน-drone/11000371400006958",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 490,
+      "stock": "Public HTML ตัวเลือก SKU-08923: remain=9; ต้องยืนยันก่อนซื้อ",
+      "published": {},
+      "notes": "แยกตัวเลือก3-6.DC850-150C3S UC จาก __NUXT_DATA__ และ ProductGroup.hasVariant ได้490บาทตรงกัน; ใบอธิบายรวม560mAh2Sยังใช้ไม่ได้กับCAD8503S; ไม่ได้ยืนยันมวล/ขนาด",
+      "status": "candidate_price_stock_identified_dimensions_unresolved",
+      "variant_url": "https://www.fpvonly.com/product/dogcom-3s-450-550-560-650-850-1050mah-150c-lipo-battery-อุปกรณ์โดรน-drone/11000371400006958/8923",
+      "evidence_file": "evidence/fpvonly_battery_8503s.json"
+    },
+    {
+      "id": "TH08",
+      "model": "SRT25B608ZZ ABEC1 / JISClass0",
+      "shop": "Sunrise",
+      "url": "https://sunrise.co.th/en/product/deep-groove-ball-bearings-8x22x7-abec-1-jis-b1514-class-0",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 9,
+      "stock": "หมวดสินค้าแสดงMax520; ต้องยืนยัน",
+      "published": {
+        "outer_diameter_mm": 22,
+        "inner_diameter_mm": 8,
+        "width_mm": 7
+      },
+      "notes": "ใช้2ตลับ ขนาดตรง608เดิม น้ำหนักไม่ระบุและยังไม่รับรองโหลดกระแทก",
+      "status": "candidate"
+    },
+    {
+      "id": "TH09",
+      "model": "M3×4×5 heat-set insert / 385 (10pcs)",
+      "shop": "Friend Robot",
+      "url": "https://www.friendrobotshop.com/product/385/m3x4x5-insert-nut-สำหรับงานพิมพ์-3d-สำหรับน๊อต-m3-สูง-4-มม-ขนาดเส้นผ่านศูนย์กลาง-5-มม-10-ชิ้น",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 20,
+      "stock": "ต้องยืนยันสต็อก",
+      "published": {
+        "outer_diameter_mm": 5,
+        "length_mm": 4
+      },
+      "notes": "20บาทต่อ10ชิ้น ใช้14จุด ซื้อ2ถุง; รู4.6mmเป็นค่าเริ่มทดลองทางออกแบบ ไม่ใช่ค่าทดสอบผ่าน ไม่ใช่ชื่อM3×6×4ในR1",
+      "status": "candidate"
+    },
+    {
+      "id": "TH10",
+      "model": "A3144 / A343 (IC)",
+      "shop": "ArduinoAll",
+      "url": "https://www.allnewstep.com/product/351/a3144-a3144e-oh3144e-hall-effect-sensor",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 10,
+      "stock": "หน้าเว็บระบุพร้อมส่ง",
+      "published": {},
+      "notes": "ตัวIC ไม่ใช่โมดูล ใช้ขนาดTO92เดิมชั่วคราว รอวัดรวมขา/ฉนวน",
+      "status": "candidate"
+    },
+    {
+      "id": "TH11",
+      "model": "DS18B20 TO92 / SG00085",
+      "shop": "Arduitronics",
+      "url": "https://www.arduitronics.com/product/383/ds18b20-temperature-sensor",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 25,
+      "stock": "หน้าเว็บระบุพร้อมส่ง",
+      "published": {},
+      "notes": "2ตัว คงallowanceaux_sensorsเดิมจนชั่งรวม",
+      "status": "candidate"
+    },
+    {
+      "id": "TH12",
+      "model": "Neodymium disc Ø3×2mm",
+      "shop": "KACHA",
+      "url": "https://www.kacha.co.th/product/round-magnet/",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "เลือกØ3หนา2และยืนยันสต็อก",
+      "published": {},
+      "notes": "ไม่ใช้ราคาเริ่มต้นของvariantอื่น ต้องยืนยันราคา2ลูกและเกรดแม่เหล็ก",
+      "status": "candidate"
+    },
+    {
+      "id": "TH13",
+      "model": "Round PU Ø5mm BELT MASTER RBR",
+      "shop": "BELT MASTER (Shopee Thailand)",
+      "url": "https://shopee.co.th/Ø-5mm-สายพานกลมแบบผิวหยาบ-BELT-MASTER-RBR-PU-i.502081560.29785878550",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "sellerระบุกรุงเทพฯ; รอยืนยัน",
+      "published": {},
+      "notes": "ขอราคาความยาวขั้นต่ำและเชื่อมเป็นวง; คำนวณpitch lengthจากR2แต่ระยะstretch/รอยต่อรอทดลอง",
+      "status": "candidate"
+    },
+    {
+      "id": "TH14",
+      "model": "Hex bolt12.9 M8×80 / 50pcsbox",
+      "shop": "KOH Inter",
+      "url": "https://www.kohinter.com/product/63387-76708/hex-bolt-129-m8x80-จำนวน50กล่อง",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "CADใช้หัวหกเหลี่ยม13mm nominal; ต้องขอแบ่งขาย1ตัว และ drawing/headheight/partialthread22mm ของSKU ห้ามแทนsocketheadเกลียวตลอดโดยไม่ตรวจ",
+      "status": "quote_and_geometry_required"
+    },
+    {
+      "id": "ALT14",
+      "model": "Socket head12.9 M8×80 fully threaded",
+      "shop": "JSP Store",
+      "url": "https://www.jspstore.com/product/51275-48815/น็อตหัวจมดำแข็ง-m8x80-เกรด-129-เกลียวตลอด",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "มีในไทยแต่หัว/เกลียวต่างจากCAD ไม่เลือกแทนอัตโนมัติ",
+      "status": "alternative_not_applied"
+    },
+    {
+      "id": "TH15",
+      "model": "M3 countersunk screws / 5312",
+      "shop": "BFAST",
+      "url": "https://www.bfastshop.com/product/5312/",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "URLเดิมเปิดไม่ได้ในรอบนี้ ราคา/ความยาวต้องตรวจอีกครั้ง ใช้BOMสกรูในASSEMBLY ไม่ยืนยันจากราคาเก่า",
+      "status": "recheck_required"
+    },
+    {
+      "id": "TH16",
+      "model": "Ø3×57mm grooved hinge pins / E clips",
+      "shop": "ร้านกลึงไทยตามMACHINING.md",
+      "url": "",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "ชิ้นเฉพาะCAD ต้องกลึงตัด57mm+ร่องEclip ไม่พบสินค้าสำเร็จตรงแบบ/ใบเสนอราคา",
+      "status": "custom_quote_required"
+    },
+    {
+      "id": "TH17",
+      "model": "UHMW-PE3mm nose skid",
+      "shop": "ร้านตัด/กลึงไทยตามMACHINING.md",
+      "url": "",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "ชิ้นตัดตามCAD ไม่พบรายการสำเร็จตรงแบบ/ใบเสนอราคา",
+      "status": "custom_quote_required"
+    },
+    {
+      "id": "TH18",
+      "model": "16AWG silicone, XT30pairs×3, fuse30A+holder",
+      "shop": "FPVONLY",
+      "url": "https://www.fpvonly.com/product/7205/xt60-xt30-wire-14awg-16awg-หัวต่อพร้อมสายไฟ-ตัวผู้-ตัวเมีย-มีสายพร้อมใช้งาน-ปลั๊กต่อพร้อมสาย",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "หน้ารวม25–30บาท/ชิ้นหลายvariant รายละเอียดเป็นXT60/14AWG ไม่ใช้เป็นdimensions/ratingของXT30 ต้องยืนยันXT30/16AWGคู่3ชุด fuse30A/holderแยก รอquote",
+      "status": "recheck_required"
+    },
+    {
+      "id": "TH19",
+      "model": "GEPRC Battery Strap5pcs",
+      "shop": "FPVONLY",
+      "url": "https://www.fpvonly.com/category/battery-accessory/32",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "หมวดแสดง200–230บาทหลายvariant ต้องหารุ่นกว้าง10mm/ยาวพอกับ850batteryก่อนซื้อ/ตรวจslots",
+      "status": "variant_specs_unresolved"
+    },
+    {
+      "id": "TH20",
+      "model": "IMAX B6/B6AC80W+adapter",
+      "shop": "Cybertice",
+      "url": "https://www.cybertice.com/product/tag/80w-charger",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "มีlistingเครื่องชาร์จแต่ยังไม่ยืนยันราคา/SKU/แท้/charging mode; ผู้ใช้ยังไม่ซื้อ ไม่หักเป็นของที่มีอยู่",
+      "status": "candidate"
+    },
+    {
+      "id": "TH21",
+      "model": "Bluetooth gamepad supported by Bluepad32",
+      "shop": "รอเลือกmodelจากร้านไทย",
+      "url": "",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "ต้องยืนยัน",
+      "published": {},
+      "notes": "ห้ามถือจอยPS4cloneทุกตัวว่าใช้ได้ ต้องยืนยันmodelและจับคู่จริง ไม่พบรายการที่ยืนยันครบ",
+      "status": "model_compatibility_unresolved"
+    },
+    {
+      "id": "ALT01",
+      "model": "JGA25-370 12V 400rpm / DCM068",
+      "shop": "Mechashop",
+      "url": "https://www.mechashop.com/product/detail/DCM068",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 190,
+      "stock": "ผลค้นหน้าเฉพาะรุ่นระบุมีสินค้า2ตัว; ข้อมูล crawl3สัปดาห์ก่อน ไม่ใช่สต็อกยืนยันสด",
+      "published": {
+        "diameter_mm": 25
+      },
+      "notes": "ต้องใช้4ตัว ไม่ถือว่าพอและไม่รวมสต็อก2เว็บโดยไม่รู้ว่าใช้คลังเดียวกันหรือไม่; ไม่มีdrawingเพลาหรือรูยึด",
+      "status": "insufficient_listed_quantity"
+    },
+    {
+      "id": "ALT02",
+      "model": "SURPASS C3536 V2 1300KV / SKU-02372 (listingรวม1500KV)",
+      "shop": "UDSHOBBY",
+      "url": "https://www.udshobby.com/product/tag/surpass",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": 840,
+      "stock": "ผลค้นหมวดเปิดเลือกvariant; ยังไม่ยืนยัน1300KVสต็อกจริง",
+      "published": {},
+      "notes": "มอเตอร์ทางเลือกจากร้านไทย ยังไม่เปลี่ยนDYS1250ในCAD; ต้องขอdrawing/เพลา/กระแส/น้ำหนักของV2ตรงvariantก่อนตรวจรอกและESC; live fetchมีcertificate mismatch ไม่ใช้ผลcrawlเป็นใบเสนอราคา",
+      "status": "alternative_not_applied"
+    },
+    {
+      "id": "REF07",
+      "model": "DOGCOM 850mAh 150C 3S 11.1V UCELL / DC850-150-3S-UC",
+      "shop": "Unmanned Tech (UK reference only)",
+      "url": "https://www.unmannedtechshop.co.uk/products/dogcom-850mah-150c-3s-11-1v-ucell-series",
+      "checked_date": "2026-10-08",
+      "unit_price_thb": null,
+      "stock": "reference only; Sold out",
+      "published": {},
+      "notes": "ยืนยันidentityชนิด3S850UCELL/XT30แต่ไม่มีdimension/mass ไม่ใช้ราคาGBPหรือมวลshippingเป็นข้อมูลCADไทย",
+      "status": "reference_no_dimensions"
+    }
+  ]
+}
