@@ -1,0 +1,440 @@
+{
+  "revision": "V4_PRINT_R3",
+  "status": "AWAITING_HARDWARE",
+  "shop": null,
+  "instrument": null,
+  "date": null,
+  "parts": {
+    "drive_Front_L": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      }
+    },
+    "drive_Front_R": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      }
+    },
+    "drive_Rear_L": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      }
+    },
+    "drive_Rear_R": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_flat_depth_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "boss_projection_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      }
+    },
+    "weapon_motor": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "length_mm": null,
+        "diameter_mm": null,
+        "mass_g": null,
+        "shaft_diameter_mm": null,
+        "shaft_projection_mm": null,
+        "boss_diameter_mm": null,
+        "mount_holes_yz_mm": null,
+        "mount_thread_diameter_mm": null,
+        "mount_thread_depth_mm": null
+      }
+    },
+    "battery": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      }
+    },
+    "esc": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      }
+    },
+    "esp32": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      }
+    },
+    "drv_left": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      }
+    },
+    "drv_right": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      }
+    },
+    "imu": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      }
+    },
+    "disconnect": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "connector_keepout_mm": null,
+        "connector_x_offset_mm": null,
+        "connector_side": null
+      }
+    },
+    "bearing_608": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "outer_diameter_mm": null,
+        "inner_diameter_mm": null,
+        "width_mm": null,
+        "mass_g_each": null
+      }
+    },
+    "hinge_pin": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "diameter_mm": null,
+        "length_mm": null,
+        "mass_g_pair": null
+      }
+    },
+    "insert_m3": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "outer_diameter_mm": null,
+        "length_mm": null
+      }
+    },
+    "nut_m3": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "across_flats_mm": null,
+        "height_mm": null
+      }
+    },
+    "hall_sensor": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "dimensions_mm": null,
+        "mass_g": null,
+        "magnet_diameter_mm": null,
+        "magnet_thickness_mm": null
+      }
+    },
+    "dead_shaft": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null,
+        "diameter_mm": null,
+        "length_mm": null,
+        "head_across_flats_mm": null,
+        "head_thickness_mm": null,
+        "nut_across_flats_mm": null,
+        "nut_thickness_mm": null,
+        "washer_outer_diameter_mm": null,
+        "washer_inner_diameter_mm": null,
+        "washer_thickness_mm": null,
+        "thread_length_mm": null
+      }
+    },
+    "clips": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null
+      }
+    },
+    "belt": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null
+      }
+    },
+    "skid": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null
+      }
+    },
+    "rotor_screws": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null
+      }
+    },
+    "baseline_fasteners": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null
+      }
+    },
+    "revision_fasteners": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null
+      }
+    },
+    "wiring": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null
+      }
+    },
+    "aux_sensors": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null
+      }
+    },
+    "straps": {
+      "sku": null,
+      "label_image": null,
+      "caliper_images": [],
+      "scale_image": null,
+      "actual": {
+        "mass_g": null
+      }
+    }
+  },
+  "manufactured_parts": {
+    "Upright_6061_6mm_L": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Upright_6061_6mm_R": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Weapon_Top_Brace_3mm": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Weapon_Bottom_Brace_3mm": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Beater_Disc_L": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Beater_Disc_R": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Beater_Hub_6061_D30": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Spacer_Outer_L_ID8.2_OD11": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Spacer_Inner_ID8.2_OD11": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Spacer_Outer_R_ID8.2_OD11": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Motor_Pulley_D30_1to1": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Weapon_Motor_Mount_3mm": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Wedgelet_L": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Wedgelet_R": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Skirt_Plate_08mm_L": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Skirt_Plate_08mm_R": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "Skirt_Plate_08mm_Rear": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    },
+    "IMU_Foam_Pad_1mm": {
+      "actual_mass_g": null,
+      "scale_image": null,
+      "material_certificate": null
+    }
+  }
+}

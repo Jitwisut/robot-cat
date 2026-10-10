@@ -146,6 +146,10 @@ def build(config):
     bore(find_body(root,'Upright_6061_6mm_L'),(-34,motor_y,motor_z),(1,0,0),mr+1,0,8)
     # Arched 2 mm TPU lid roof; 1 mm bell clearance, top below the inverted wheel plane.
     mx1=-41+value(config,'weapon_motor','length_mm')
+    if config.get('readiness_version') == 2:
+        # Catalogue shaft projection is measured from the bell end, not total shaft length.
+        motor.shape=motor.shape.fuse(prism([('circle',(motor_y,motor_z,value(config,'weapon_motor','shaft_diameter_mm')/2))],
+                                           'x',mx1,mx1+value(config,'weapon_motor','shaft_projection_mm'))).clean()
     outer=prism([('circle',(motor_y,motor_z,mr+3))],'x',-41.5,mx1+0.5)
     roof=outer.intersect(block(-42,mx1+1,motor_y-mr-4,motor_y+mr+4,58,motor_z+mr+3.01))
     lid.shape=lid.shape.fuse(roof).clean()
@@ -279,6 +283,11 @@ def build(config):
         if 'PETG' in body.name: body.material='PETG'
     constraints={'shaft_engagement':wheel_dims,'hinge_outer_radius_mm':pin_bore/2+design['hinge_min_wall_mm'],'hinge_bore_mm':pin_bore,'hinge_wall_mm':design['hinge_min_wall_mm'],'battery_y_mm':battery_y,'electronics_deck_z_mm':deck_z,'highest_electronics_mm':max(find_body(root,n).shape.BoundingBox().zmax for _,n,_,_ in components),'deck_to_battery_gap_mm':4,'lid_top_mm':lid.shape.BoundingBox().zmax,'weapon_motor_z_mm':motor_z}
     constraints['axle_nut_full_thread']=bool(end>=33+washer_t+nut_t+diameter*0.25 and end-value(config,'dead_shaft','thread_length_mm')<=33+washer_t)
+    if config.get('readiness_version') == 2:
+        # Pulley occupies x=-4..9; its set screw at x=6 must also land on the shaft.
+        shaft_end=mx1+value(config,'weapon_motor','shaft_projection_mm')
+        constraints['weapon_shaft_engagement_mm']=max(0,min(9,shaft_end)-max(-4,mx1))
+        constraints['weapon_set_screw_on_shaft']=mx1<=6<=shaft_end
     constraints['axle_socket_clearance_mm']=21
     constraints['front_drive_to_weapon_motor_clearance_mm']=math.hypot(motor_y-front,motor_z-32)-mr-max(value(config,'drive_Front_L','diameter_mm'),value(config,'drive_Front_R','diameter_mm'))/2
     return root,constraints

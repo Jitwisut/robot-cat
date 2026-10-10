@@ -12,7 +12,8 @@ def main():
     args=parser.parse_args();output=args.output.resolve();docs=args.docs.resolve();report=json.loads((output/'build_report.json').read_text())
     if report['status']!='DRAFT_NOT_RELEASED':raise ValueError('This packager only packages drafts')
     documents=[docs/n for n in ('README.md','MEASUREMENTS.md','SHOP_HANDOFF.md','FIT_TEST.md','ASSEMBLY.md','MACHINING.md')]+[args.inputs.resolve()]
-    documents += [docs/n for n in ('THAI_PARTS_RESEARCH.md','sources.json','hardware_source_map.json','PROCUREMENT.md','SUPPLIER_REQUESTS.md','procurement_inputs.json','procurement_report.json') if (docs/n).exists()]
+    documents += [docs/n for n in ('THAI_PARTS_RESEARCH.md','WEB_CONFIRMED.md','web_confirmed.json','sources.json','hardware_source_map.json','PROCUREMENT.md','SUPPLIER_REQUESTS.md','procurement_inputs.json','procurement_report.json','VENDORS.md','vendors.json','PARTS_SELECTION.md','parts_selection.json','ELECTRICAL.md','CLOSEOUT.md','MASS_BALANCE.md','measurement_log.json','fit_log.json','quote_comparison.json') if (docs/n).exists()]
+    if (docs/'RFQ').exists():documents+=list((docs/'RFQ').rglob('*'))
     if (docs/'evidence').exists():documents+=list((docs/'evidence').rglob('*'))
     reports=[output/n for n in ('STATUS.md','VERIFICATION.md','manifest.json','build_report.json','simulation.json','assembly_preview.png') if (output/n).exists()]
     prefix=report['revision'].replace('_PRINT_','_')

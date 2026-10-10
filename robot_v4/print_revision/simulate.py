@@ -22,10 +22,20 @@ import validate
 
 
 def configure(report,config):
+    electrical=config.get('electrical',{})
+    specs=electrical.get('specs',{});nominal=electrical.get('nominal',{})
+    def parameter(key):
+        return specs[key] if specs.get(key) is not None else nominal[key]
+    if electrical:
+        sim.V_PACK=parameter('test_voltage_v')
+        sim.KE=60/(2*math.pi*parameter('weapon_kv'))
+        sim.R_M=parameter('weapon_resistance_ohm');sim.I0=parameter('weapon_no_load_current_a')
+        sim.V4_DRIVE_RPM=parameter('drive_rated_rpm')
     old=sim.v4
     mass=report['mass'];rows={r['part']:r for r in mass['parts']}
     sim.V4_MASS=mass['total_g']/1000
     rotor_names=[n for n in rows if n.startswith(('Beater_','Bearing_')) or n=='rotor screws']
+    sim.ROTOR_I=mass.get('rotor_inertia_kg_m2',sim.ROTOR_I)
     sim.ROTOR_M=sum(rows[n]['mass_g'] for n in rotor_names)/1000
     front=config['design']['front_axle_y_mm']/1000
     rear=config['design']['rear_axle_y_mm']/1000
@@ -34,6 +44,12 @@ def configure(report,config):
     inertial='<inertial pos="%s" mass="%s" fullinertia="%s"/>' % (sim.f(*cg),sim.f(mass['chassis_mass_g']/1000),sim.f(I[0,0],I[1,1],I[2,2],I[0,1],I[0,2],I[1,2]))
     def revised(*args):
         body,act,meta=old(*args);p=args[0]
+        if electrical:
+            scale=sim.V_PACK/parameter('drive_rated_voltage_v')
+            meta['stall']=parameter('drive_stall_torque_nm')*scale
+            meta['w0']=parameter('drive_rated_rpm')*scale*2*math.pi/60
+            pair_stall=specs.get('drive_pair_stall_current_a');limit=specs.get('driver_current_limit_a')
+            if pair_stall and limit:meta['stall']*=min(1,limit/pair_stall)
         body=re.sub(r'<inertial[^>]+/>',lambda m:inertial,body,count=1)
         for n,(x,y) in enumerate([(-0.070,front),(0.070,front),(-0.070,rear),(0.070,rear)]):
             body=re.sub(r'(<body name="'+p+'_w'+str(n)+r'" pos=")[^"]+',lambda m:m.group(1)+sim.f(x,y,0.032),body)
@@ -45,7 +61,10 @@ def configure(report,config):
             body=re.sub(r'(<geom name="'+p+'_wedge'+side+r'_g"[^>]*mass=")[^"]+',lambda m:m.group(1)+sim.f(wm),body)
         for suffix,name in [('L','Skirt_Plate_08mm_L'),('R','Skirt_Plate_08mm_R'),('B','Skirt_Plate_08mm_Rear')]:
             body=re.sub(r'(<geom name="'+p+'_skirt'+suffix+r'_g"[^>]*mass=")[^"]+',lambda m:m.group(1)+sim.f(rows[name]['mass_g']/1000),body)
-        roof=sim.box(p+'_lid_roof',-0.0415,-0.0045,0.032,0.060,0.058,report['constraints']['lid_top_mm']/1000,'mass="0" '+args[-1])
+        motor=config['hardware']['weapon_motor']
+        length=motor['actual']['length_mm']
+        if length is None:length=motor.get('catalog',{}).get('values',{}).get('length_mm',motor['nominal']['length_mm'])
+        roof=sim.box(p+'_lid_roof',-0.0415,(-41+length+.5)/1000,0.032,0.060,0.058,report['constraints']['lid_top_mm']/1000,'mass="0" '+args[-1])
         index=body.index('<body name="'+p+'_w0"')
         body=body[:index]+roof+'\n'+body[index:]
         return body,act,meta
@@ -71,11 +90,16 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--inputs',type=Path,default=HERE/'inputs.json');parser.add_argument('--output',type=Path,default=HERE/'output')
     args=parser.parse_args()
     output=args.output;report=json.loads((output/'build_report.json').read_text());config=json.loads(args.inputs.read_text())
-    geometry={'hardware':config['hardware'],'design':config['design'],'fit':{k:v for k,v in config['fit'].items() if k not in ('verified','evidence','sha256_build','results')}}
+    from inputs import geometry_payload
+    geometry=geometry_payload(config)
     if hashlib.sha256(json.dumps(geometry,sort_keys=True).encode()).hexdigest()!=report['input_sha256']:
         raise RuntimeError('Inputs changed after CAD build; run build.py before simulating')
     configure(report,config)
     result={'build_sha256':report['build_sha256'],'model':'MuJoCo primitives + CAD mass/centroid/inertia, unverified purchased masses','limitations':['Rigid-body contacts do not predict breakage','Collision roof is conservative box envelope','No physical-fit or printer calibration evidence']}
+    if config.get('electrical'):
+        result['electrical_parameters']={k:config['electrical']['specs'].get(k) if config['electrical']['specs'].get(k) is not None else v for k,v in config['electrical']['nominal'].items()}
+        result['electrical_parameters_verified']=config['electrical']['verified'] is True and all(v is not None for v in config['electrical']['specs'].values())
+        result['limitations'] += ['Unmeasured motor constants/torque use labelled nominal values; no firmware validated','ESC voltage ramp model has no assumed current limiter; predicted current is not a measurement']
     m,d,r=validate.make('V4')
     # Confirm total mass/CG agrees with the CAD accounting before dynamics.
     expected=np.array(report['mass']['centroid_mm'])/1000
@@ -93,16 +117,16 @@ def main():
     result['rest_wheel_loads_N']=mean.round(4).tolist()
     result['rear_load_fraction']=float(mean[2:].sum()/weight)
     result['rest_wheel_weight_fraction']=float(mean.sum()/weight)
-    m,d,r=validate.make('V4');minimum=[1.0];floor_hits=[0]
+    m,d,r=validate.make('V4');minimum=[1.0];floor_hits=[0];amps_peak=[0.0]
     tooth_ids=[i for i in range(m.ngeom) if (mujoco.mj_id2name(m,mujoco.mjtObj.mjOBJ_GEOM,i) or '').startswith('A_tooth')]
     floor=mujoco.mj_name2id(m,mujoco.mjtObj.mjOBJ_GEOM,'floor')
     def spin(t):
-        r.rotor_step(validate.CTRL);r.wheel_cmd(0,0)
+        amps_peak[0]=max(amps_peak[0],r.rotor_step(validate.CTRL));r.wheel_cmd(0,0)
         if t>0.2:
             minimum[0]=min(minimum[0],min(validate.geom_min_z(m,d,mujoco.mj_id2name(m,mujoco.mjtObj.mjOBJ_GEOM,i)) for i in tooth_ids))
             floor_hits[0]+=sum(floor in (d.contact[i].geom1,d.contact[i].geom2) and any(g in tooth_ids for g in (d.contact[i].geom1,d.contact[i].geom2)) for i in range(d.ncon))
     validate.run(m,d,2.5,spin)
-    result['spinup']={'rotor_rpm':r.rotor_rpm(),'minimum_tooth_floor_gap_mm':minimum[0]*1000,'tooth_floor_contacts':floor_hits[0]}
+    result['spinup']={'rotor_rpm':r.rotor_rpm(),'predicted_peak_current_a':amps_peak[0],'minimum_tooth_floor_gap_mm':minimum[0]*1000,'tooth_floor_contacts':floor_hits[0]}
     peak=[0.0];finite=[True]
     def turn(t):
         r.rotor_step(validate.CTRL);r.wheel_cmd(-1,1)

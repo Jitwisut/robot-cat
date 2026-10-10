@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-10",
+  "status": "PUBLISHED_DATA_CONFIRMED_NOT_PHYSICAL_ACCEPTANCE",
+  "evidence": "evidence/web_variants_20261010.json",
+  "cad_applied_sources": [
+    "R3-03",
+    "R3-08"
+  ],
+  "new_exact_variant_prices": {
+    "weapon_motor": 840,
+    "battery": 605,
+    "drive_alternative_JB361": 130,
+    "driver_alternative_MDD3A": 320
+  },
+  "new_sources": [
+    "R3-07",
+    "R3-08",
+    "R3-09",
+    "R3-10",
+    "R3-11",
+    "R3-12"
+  ],
+  "actual_fields_changed": 0,
+  "physical_verified_flags_changed": 0
+}

@@ -11,13 +11,19 @@ def coupons(config):
     result=[]
     shaft=value(config,'drive_Front_L','shaft_diameter_mm')
     flat=shaft/2-value(config,'drive_Front_L','shaft_flat_depth_mm')
+    shaft_variants={(shaft,flat):''}
+    if config.get('readiness_version') == 2:
+        for name in ('drive_Front_R','drive_Rear_L','drive_Rear_R'):
+            diameter=value(config,name,'shaft_diameter_mm');face=diameter/2-value(config,name,'shaft_flat_depth_mm')
+            shaft_variants.setdefault((diameter,face),'_'+name)
     pin=value(config,'hinge_pin','diameter_mm')
     insert=value(config,'insert_m3','outer_diameter_mm')
     insert_trial=config['design'].get('insert_trial_hole_diameter_mm',insert)
     for clearance in (0.0,0.1,0.2,0.3):
-        shape=prism([('poly',[(-5,-5),(5,-5),(5,5),(-5,5)]),('poly',d_bore(0,0,(shaft+clearance)/2,flat+clearance/2,144))],'x',0,6)
-        shape=shape.rotate((0,0,0),(0,1,0),-90)
-        result.append(('D_Shaft_Clearance_%03d_PETG.stl'%round(clearance*100),'PETG',shape))
+        for (shaft,flat),suffix in shaft_variants.items():
+            shape=prism([('poly',[(-5,-5),(5,-5),(5,5),(-5,5)]),('poly',d_bore(0,0,(shaft+clearance)/2,flat+clearance/2,144))],'x',0,6)
+            shape=shape.rotate((0,0,0),(0,1,0),-90)
+            result.append(('D_Shaft_Clearance_%03d%s_PETG.stl'%(round(clearance*100),suffix),'PETG',shape))
         radius=(pin+clearance)/2
         shape=block(-6,6,-6,6,0,8).cut(cq.Solid.makeCylinder(radius,10,cq.Vector(0,0,-1)))
         result.append(('Pin_Vertical_Clearance_%03d_PETG.stl'%round(clearance*100),'PETG',shape))
@@ -31,7 +37,8 @@ def coupons(config):
             result.append(('Insert_Hole_D%.1f_%s.stl'%(d,material),material,shape))
         horizontal=block(0,10,-6,6,0,8).cut(cq.Solid.makeCylinder(d/2,value(config,'insert_m3','length_mm')+1,cq.Vector(10,0,4),cq.Vector(-1,0,0)))
         result.append(('Insert_Horizontal_D%.1f_PETG.stl'%d,'PETG',horizontal))
-    for inner in (43.4,43.6,43.8,44.0):
+    tyre_values=(43.4,43.5,43.6,43.7,43.8,43.9,44.0) if config.get('readiness_version') == 2 else (43.4,43.6,43.8,44.0)
+    for inner in tyre_values:
         shape=cq.Solid.makeCylinder(32,4).cut(cq.Solid.makeCylinder(inner/2,4))
         result.append(('Tyre_Ring_ID%.1f_TPU95A.stl'%inner,'TPU95A',shape))
     # A representative TPU lid wall and lid are separate pieces to test insert retention.

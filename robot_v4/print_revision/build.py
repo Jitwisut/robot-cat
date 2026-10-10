@@ -81,8 +81,9 @@ def export_metal(root,directory):
 
 def write_status(report,path):
     mass=report['mass'];cad=report['cad']
-    lines=['# '+report['revision']+' — DRAFT / ยังไม่ปล่อยผลิต','',
-           'ไฟล์ชุดนี้มีค่าขนาดต้นแบบที่ยังไม่วัดจริง ห้ามส่งพิมพ์ชุดใหญ่จากสถานะนี้',
+    released=report['status'] in ('PRINT_READY','RELEASED')
+    lines=['# '+report['revision']+(' — PRINT_READY / พร้อมส่งพิมพ์; ยังไม่ยืนยันประกอบจริง' if released else ' — DRAFT / ยังไม่ปล่อยผลิต'),'',
+           'ข้อมูลและหลักฐานก่อนพิมพ์ผ่าน; ผลประกอบหุ่นเต็มตัวตรวจแยกหลังผลิต' if released else 'ไฟล์ชุดนี้มีค่าขนาดต้นแบบที่ยังไม่วัดจริง ห้ามส่งพิมพ์ชุดใหญ่จากสถานะนี้',
            '',f"Build SHA256: `{report['build_sha256']}`",'',
            f"CAD ผ่าน: {cad['passed']} · mesh ผ่าน: {all(r['passed'] for r in report['mesh'])}",
            f"มวลประมาณ: {mass['total_g']} g · โหลดล้อหลังประมาณ: {100*mass['rear_static_load_fraction']:.1f}%",'',
@@ -124,6 +125,11 @@ def main():
     sim=output/'simulation.json'
     if sim.exists():report['simulation']=json.loads(sim.read_text())
     report['release_blockers']=release_blockers(config,report,args.inputs.parent)
+    if config.get('readiness_version') == 2:
+        from readiness import assembly_blockers, profile_signature
+        report['assembly_status']='ASSEMBLY_PENDING'
+        report['assembly_blockers']=assembly_blockers(config,report,args.inputs.parent)
+        report['profile_sha256']=profile_signature(config['shop'],args.inputs.parent)
     (output/'build_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
     write_status(report,output/'STATUS.md')
@@ -133,18 +139,35 @@ def main():
         final=output/'RELEASED'
         if final.exists():raise RuntimeError('Do not overwrite an existing release; use a new revision')
         shutil.copytree(draft,final)
-        report['status']='RELEASED'
-        for row in report['manifest']:row['status']='RELEASED'
+        report['status']='PRINT_READY' if config.get('readiness_version') == 2 else 'RELEASED'
+        if config.get('readiness_version') == 2:
+            report['assembly_blockers']=assembly_blockers(config,report,args.inputs.parent)
+            report['assembly_status']='ASSEMBLY_PENDING' if report['assembly_blockers'] else 'ASSEMBLED_CHECKED'
+        for row in report['manifest']:row['status']=report['status']
         (final/'manifest.json').write_text(json.dumps(report['manifest'],ensure_ascii=False,indent=2)+'\n')
         shutil.copy2(args.inputs,final/'verified_inputs.json')
         for name in ('ASSEMBLY.md','MACHINING.md','SHOP_HANDOFF.md','FIT_TEST.md'):
             document=args.inputs.parent/name
             if not document.exists():document=HERE/name
-            text=document.read_text().replace('output_R2/DRAFT/metal','metal').replace('output_R2/manifest.json','manifest.json').replace('output_R2/TRIAL_ONLY','../TRIAL_ONLY').replace('output/DRAFT/metal','metal').replace('output/manifest.json','manifest.json').replace('output/TRIAL_ONLY','../TRIAL_ONLY')
+            text=document.read_text().replace('output_R3/DRAFT/metal','metal').replace('output_R3/manifest.json','manifest.json').replace('output_R3/TRIAL_ONLY','../TRIAL_ONLY').replace('output_R2/DRAFT/metal','metal').replace('output_R2/manifest.json','manifest.json').replace('output_R2/TRIAL_ONLY','../TRIAL_ONLY').replace('output/DRAFT/metal','metal').replace('output/manifest.json','manifest.json').replace('output/TRIAL_ONLY','../TRIAL_ONLY')
             (final/name).write_text(text)
-        for name in ('THAI_PARTS_RESEARCH.md','sources.json','hardware_source_map.json'):
+        for name in ('THAI_PARTS_RESEARCH.md','sources.json','hardware_source_map.json','PROCUREMENT.md','VENDORS.md','PARTS_SELECTION.md','SUPPLIER_REQUESTS.md','ELECTRICAL.md','MASS_BALANCE.md','parts_selection.json','vendors.json','quote_comparison.json'):
             if (args.inputs.parent/name).exists():shutil.copy2(args.inputs.parent/name,final/name)
-        (final/'README.md').write_text('# '+config['revision']+' — RELEASED FOR PRINT/ASSEMBLY\n\nBuild SHA256: `'+report['build_sha256']+'`\n\nApproved measurements, physical fit/assembly evidence, shop profile/slicer evidence, budget and dynamics checks passed. Use manifest.json for quantities/materials. This is a manufacturing release, not a combat or firmware certification. Supporting preparation documents retain their trial-stage wording.\n')
+        (final/'README.md').write_text('# '+config['revision']+' — '+report['status']+'\n\nBuild SHA256: `'+report['build_sha256']+'`\n\nApproved measurements, physical fit/preflight evidence, shop profile/slicer, budget and dynamics checks passed. Full robot assembly remains a separate physical acceptance after production; this is not a firmware or combat certification. Use manifest.json for quantities/materials.\n')
+        evidence_paths=[]
+        for entry in list(config['hardware'].values())+[config[k] for k in ('fit','assembly','preflight','electrical','target_decision','manufacturing') if k in config]:
+            if entry.get('evidence'):evidence_paths.append(entry['evidence'])
+        evidence_paths += [config['fit'][k] for k in ('round1_evidence','round2_evidence') if config['fit'].get(k)]
+        evidence_paths += [config['shop']['profile_evidence'],config['slicer']['project_file'],config['slicer']['report_file'],config['cost']['evidence']]
+        evidence_manifest=[]
+        for index,original in enumerate(dict.fromkeys(evidence_paths)):
+            source=Path(original);source=source if source.is_absolute() else args.inputs.parent/source
+            dest=final/'evidence'/('%03d_'%index+source.name);dest.parent.mkdir(exist_ok=True)
+            shutil.copy2(source,dest);evidence_manifest.append({'original':original,'file':str(dest.relative_to(final)),'sha256':sha(dest)})
+        (final/'evidence_manifest.json').write_text(json.dumps(evidence_manifest,ensure_ascii=False,indent=2)+'\n')
+        (output/'manifest.json').write_text(json.dumps(report['manifest'],ensure_ascii=False,indent=2)+'\n')
+        (output/'build_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+        write_status(report,output/'STATUS.md')
         (final/'release_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'status':report['status'],'CAD_passed':report['cad']['passed'],'mesh_passed':all(r['passed'] for r in report['mesh']),'trials_passed':all(r['passed'] for r in report['trial_mesh']),'mass_g':report['mass']['total_g'],'rear_load_fraction':report['mass']['rear_static_load_fraction'],'blocker_count':len(report['release_blockers'])},indent=2))
     return 0

@@ -10,6 +10,7 @@ import cadquery as cq
 from OCP.BOPAlgo import BOPAlgo_CheckerSI
 from OCP.TopTools import TopTools_ListOfShape
 from revision import value
+from inputs import geometry_payload
 
 ROOT=Path(__file__).resolve().parent
 
@@ -20,18 +21,18 @@ def sha(path):
 
 def build_signature(config):
     # Shop/evidence fields are not geometry; recording evidence must not invalidate a build.
-    geometry={'hardware':config['hardware'],'design':config['design'],
-              'fit':{k:v for k,v in config['fit'].items() if k not in ('verified','evidence','sha256_build','results')}}
+    geometry=geometry_payload(config)
     h=hashlib.sha256(json.dumps(geometry,sort_keys=True).encode())
-    for name in ('cad_backend.py','legacy_geometry.py','revision.py','build.py','checks.py','coupons.py','inputs.py','simulate.py'):
+    for name in ('cad_backend.py','legacy_geometry.py','revision.py','build.py','checks.py','coupons.py','inputs.py','simulate.py','readiness.py'):
         p=ROOT/name
         if p.exists(): h.update(p.read_bytes())
+    for path in (ROOT.parent/'mujoco_sim/sim.py',ROOT.parent/'mujoco_sim/validate.py'):
+        h.update(path.read_bytes())
     return h.hexdigest()
 
 
 def input_signature(config):
-    geometry={'hardware':config['hardware'],'design':config['design'],
-              'fit':{k:v for k,v in config['fit'].items() if k not in ('verified','evidence','sha256_build','results')}}
+    geometry=geometry_payload(config)
     return hashlib.sha256(json.dumps(geometry,sort_keys=True).encode()).hexdigest()
 
 
@@ -95,6 +96,9 @@ def cad_checks(root,config,constraints):
     if constraints['hinge_wall_mm']<1.6:dimension_errors.append('Hinge wall below 1.6 mm')
     if not constraints['axle_nut_full_thread']:dimension_errors.append('M8 bolt does not engage the full locking nut plus 2 mm')
     if constraints['front_drive_to_weapon_motor_clearance_mm']<1:dimension_errors.append('Drive/weapon motors leave less than 1 mm clearance')
+    if config.get('readiness_version') == 2:
+        if constraints['weapon_shaft_engagement_mm']<10:dimension_errors.append('Weapon shaft engages less than 10 mm of pulley')
+        if not constraints['weapon_set_screw_on_shaft']:dimension_errors.append('Weapon pulley set screw misses shaft')
     passed=not (bad or clashes or sweep or dimension_errors or any(r['hits'] for rows in swing.values() for r in rows) or any(r['algorithm_errors'] or r['self_interferences'] for r in self_checks))
     return {'passed':passed,'invalid_solids':bad,'self_interference':self_checks,'unexpected_interferences':clashes,'intentional_tyre_press_fit':expected,'rotor_sweep_hits':sweep,'wedgelet_swing':swing,'dimension_errors':dimension_errors}
 
@@ -142,16 +146,18 @@ def mass_properties(root,config,print_files):
         elif b.name.startswith('Bearing_608'): mass=value(config,'bearing_608','mass_g_each');method='bearing measured/nominal'
         elif b.name.startswith(('Dead_Shaft','Weapon_Axle_')):mass=value(config,'dead_shaft','mass_g')*b.shape.Volume()/axle_volume;method='whole axle set measured/nominal, volume apportioned'
         elif b.name.startswith('Hinge_Pin'):mass=value(config,'hinge_pin','mass_g_pair')/2;method='pin measured/nominal'
-        elif b.name.startswith('Eclip'):mass=value(config,'clips','mass_g')/2
-        elif b.name.startswith('Belt_'):mass=value(config,'belt','mass_g')/2
-        elif b.name=='Nose_Skid_UHMW_3mm':mass=value(config,'skid','mass_g')
+        elif b.name.startswith('Eclip'):mass=value(config,'clips','mass_g')/2;method='clip measured/nominal'
+        elif b.name.startswith('Belt_'):mass=value(config,'belt','mass_g')/2;method='belt measured/nominal'
+        elif b.name=='Nose_Skid_UHMW_3mm':mass=value(config,'skid','mass_g');method='skid measured/nominal'
         else:
             fraction=0.85 if b.name in ('Tub_TPU','Lid_TPU_2mm') else 0.80 if b.material in ('PETG','TPU95A') else 1.0
             mass=b.shape.Volume()*density[b.material]*fraction
+        if b.material in ('steel','6061','foam') and method=='estimated CAD volume/density' and b.name in config.get('manufacturing',{}).get('actual_mass_g_by_body',{}):
+            mass=config['manufacturing']['actual_mass_g_by_body'][b.name];method='measured manufactured part'
         fname=print_files.get(b.name)
         if fname and fname in config['slicer']['printed_mass_g_by_file']:
             mass=config['slicer']['printed_mass_g_by_file'][fname];method='shop slicer'
-        rows.append({'part':b.name,'mass_g':round(mass,4),'centroid_mm':center,'method':method})
+        rows.append({'part':b.name,'material':b.material,'mass_g':round(mass,4),'centroid_mm':center,'method':method})
     # All unmodelled items remain explicit, not hidden in a tuned CoG constant.
     for name,key,center in [('rotor screws','rotor_screws',[0,95,32]),('original screws/inserts/washers','baseline_fasteners',[0,-5,25]),('R1 extra screws/nuts/washers','revision_fasteners',[0,-35,20]),('wiring/connectors','wiring',[0,-25,28]),('temperature sensors/magnets','aux_sensors',[0,0,30]),('straps/foam/insulation','straps',[0,-35,35])]:
         mass=value(config,key,'mass_g')
@@ -173,7 +179,13 @@ def mass_properties(root,config,print_files):
         # Unit-density exact shape inertia, scaled to the measured/estimated mass.
         own=np.array(cq.Shape.matrixOfInertia(b.shape))*mass_kg/b.shape.Volume()/1e6 if b else np.zeros((3,3))
         tensor+=own+mass_kg*(np.dot(delta,delta)*np.eye(3)-np.outer(delta,delta))
-    return {'estimated':True,'total_g':round(total,2),'centroid_mm':center.round(4).tolist(),'rear_static_load_fraction':round(float(rear_load),5),'rear_load_passed':bool(rear_load>=config['design']['rear_load_min']),'mass_target_passed':bool(total<=config['design']['mass_target_g']),'mass_limit_passed':bool(total<=config['design']['mass_limit_g']),'chassis_centroid_mm':chassis_center.round(4).tolist(),'chassis_mass_g':round(total-sm,4),'chassis_inertia_kg_m2':tensor.tolist(),'parts':rows}
+    rotor_rows=[r for r in rows if r['part'].startswith(('Beater_','Bearing_')) or r['part']=='rotor screws']
+    rotor_inertia=0.0
+    for row in rotor_rows:
+        b=body_map.get(row['part']);mass_kg=row['mass_g']/1000
+        own=cq.Shape.matrixOfInertia(b.shape)[0][0]*mass_kg/b.shape.Volume()/1e6 if b else 0
+        y,z=row['centroid_mm'][1:];rotor_inertia+=own+mass_kg*((y-95)**2+(z-32)**2)/1e6
+    return {'rotor_inertia_kg_m2':rotor_inertia,'estimated':True,'total_g':round(total,2),'centroid_mm':center.round(4).tolist(),'rear_static_load_fraction':round(float(rear_load),5),'rear_load_passed':bool(rear_load>=config['design']['rear_load_min']),'mass_target_passed':bool(total<=config['design']['mass_target_g']),'mass_limit_passed':bool(total<=config['design']['mass_limit_g']),'chassis_centroid_mm':chassis_center.round(4).tolist(),'chassis_mass_g':round(total-sm,4),'chassis_inertia_kg_m2':tensor.tolist(),'parts':rows}
 
 
 def evidence_file(path,base):
@@ -187,7 +199,7 @@ def release_blockers(config,report,base=ROOT):
     for key,item in config['hardware'].items():
         if item['verified'] is not True or any(v is None for v in item['actual'].values()) or not evidence_file(item['evidence'],base): blockers.append('Unconfirmed hardware: '+key)
     sig=report['build_sha256']
-    for key in ('fit','assembly'):
+    for key in (('fit','preflight') if config.get('readiness_version') == 2 else ('fit','assembly')):
         item=config[key]
         if not(item['verified'] is True and item['sha256_build']==sig and all(v is True for v in item['results'].values()) and evidence_file(item['evidence'],base)):
             blockers.append('Missing/current-build failed evidence: '+key)
@@ -217,4 +229,7 @@ def release_blockers(config,report,base=ROOT):
     if not report['mass']['mass_limit_passed']:blockers.append('Robot mass exceeds 2000 g')
     sim=report.get('simulation',{})
     if not(sim.get('passed') is True and sim.get('build_sha256')==sig):blockers.append('Current revision dynamics verification missing/failed')
+    if config.get('readiness_version') == 2:
+        from readiness import additional_print_blockers
+        blockers += additional_print_blockers(config, report, base)
     return blockers

@@ -1,5 +1,11 @@
 # Fusion scripts for `robot2`
 
+## Robot v4 R3 viewer orientation
+
+`OrientV4PrintR3.py` sets the active `ROBOT_V4_PRINT_R3` document's Top to +Z and Home to an oblique view above the XY floor. It does not rotate or translate components and does not change global Fusion preferences. It exports a local F3D without saving to the cloud. Use `robot_v4/print_revision/r3/output_R3/DRAFT/ROBOT_V4_PRINT_R3_FUSION_Z_UP.f3d` to reopen the corrected view; a STEP import may inherit Fusion's Y-up document orientation.
+
+Checked on 2026-10-10: all 70 occurrence transforms and assembly bounds were unchanged. Reimporting the F3D retained camera up `(0,0,1)` and showed the grid beneath the wheels. The images `ROBOT_V4_PRINT_R3_FUSION_Z_UP.png` and `ROBOT_V4_PRINT_R3_FUSION_REOPENED.png` record both checks. This fixes the viewing orientation only; R3 retains its DRAFT manufacturing status.
+
 The current `robot2` document is saved in Fusion with the wedge lifter visible. Its seven root occurrences use identity transforms, and the document's ViewCube Top is +Z. This puts the base on Fusion's XY layout grid and makes the front/top Home view show the robot lying flat. The backup is `../exports/robot2_grid_aligned.f3d`; the checked image is `../exports/views/robot2_flat_preview.png`. The original vertical spinner and optional grabber are available as modular groups; see `../exports/Modular_Weapons_Design_2026-09-24.md`. The beater concept is archived at `../exports/robot2_beater_concept_v1.f3d`.
 
 - RestoreOriginalVerticalSpinner.py — one-time replacement of the beater with the original 6 mm axial bar and rotation envelope.

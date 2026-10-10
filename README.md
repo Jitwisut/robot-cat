@@ -1,3 +1,5 @@
+**Robot V4 R3 (10 ต.ค.2026):** [ชุด CAD/ทดลอง/ขอราคาและงานที่ยังต้องปิด](robot_v4/print_revision/r3/README.md) — DRAFT, ยังไม่พร้อมส่งพิมพ์ชุดเต็ม
+
 # robot-cat — ESP32 Mini BattleBot (V2 robot2 / V3 R3)
 
 CAD, Fusion 360 scripts and reduced-order simulations for a mini battlebot. Current direction is V4 (≤2 kg, ≤6,000 THB per the competition rules; older V2/V3 studies assumed ~1.5 kg).
@@ -13,8 +15,11 @@ Project status (Thai): [`STATUS.md`](STATUS.md).
 
 ## Latest CAD
 
+**แนว Robot v4 ที่ล็อกตามคำสั่งผู้ใช้ (10 ต.ค. 2026):** Z ขึ้น, พื้น XY ที่ Z=0 ใต้ล้อ, ด้านหน้า +Y ห้ามหมุนโมเดลหรือสลับแกนเพื่อให้เข้ากับค่าเริ่มต้นของโปรแกรม เปิดไฟล์ Fusion ด้านล่างเพื่อใช้ Top/Home ที่ตรวจแล้ว ข้อกำหนดถาวรอยู่ใน [`AGENTS.md`](AGENTS.md)
+
 | Robot | File |
 |---|---|
+| V4 Print R3 — approved flat Fusion view (DRAFT) | [`ROBOT_V4_PRINT_R3_FUSION_Z_UP.f3d`](robot_v4/print_revision/r3/output_R3/DRAFT/ROBOT_V4_PRINT_R3_FUSION_Z_UP.f3d) |
 | V2 with lifter stops (recommended) | `exports/robot2_lifter_stops_2026-10-01.f3d` / `.step` |
 | V2 as of items 1–3 | `exports/robot2_items_1_3_2026-09-24.f3d`, `exports/robot2_items_1_3_active_lifter_2026-10-01.step` |
 | V3 R3 lifting wedge | `robot_v3/ROBOT_V3_R3_Lifter.f3d` / `.step` |

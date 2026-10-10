@@ -1,0 +1,60 @@
+{
+  "build_sha256": "319857d1a9f0a57815e203bf037db3a52d2c40b1a51fe7ead140aa4becb78534",
+  "model": "MuJoCo primitives + CAD mass/centroid/inertia, unverified purchased masses",
+  "limitations": [
+    "Rigid-body contacts do not predict breakage",
+    "Collision roof is conservative box envelope",
+    "No physical-fit or printer calibration evidence",
+    "Unmeasured motor constants/torque use labelled nominal values; no firmware validated",
+    "ESC voltage ramp model has no assumed current limiter; predicted current is not a measurement"
+  ],
+  "electrical_parameters": {
+    "battery_cells": 3,
+    "battery_capacity_mah": 850,
+    "test_voltage_v": 12.6,
+    "weapon_kv": 1300,
+    "weapon_resistance_ohm": 0.038,
+    "weapon_no_load_current_a": 1.8,
+    "drive_rated_rpm": 400,
+    "drive_rated_voltage_v": 12,
+    "drive_stall_torque_nm": 0.121644
+  },
+  "electrical_parameters_verified": false,
+  "mass_kg": 1.9754816,
+  "cad_mass_kg": 1.9754800000000001,
+  "initial_cg_mm": [
+    -1.362,
+    8.7848,
+    30.5928
+  ],
+  "cg_error_mm": 0.010897833983456949,
+  "rest_wheel_loads_N": [
+    8.5365,
+    8.1793,
+    1.2002,
+    1.1813
+  ],
+  "rear_load_fraction": 0.12289015609615093,
+  "rest_wheel_weight_fraction": 0.9854432316722409,
+  "spinup": {
+    "rotor_rpm": 16291.080000010868,
+    "predicted_peak_current_a": 28.87293779541304,
+    "minimum_tooth_floor_gap_mm": 2.0754963525155885,
+    "tooth_floor_contacts": 0
+  },
+  "turn": {
+    "peak_yaw_rad_s": 7.073203386350043,
+    "finite_state": true
+  },
+  "inverted_drive_m": 1.3686749755627439,
+  "checks": {
+    "mass_matches": true,
+    "cg_matches": true,
+    "rear_load_minimum": true,
+    "wheels_carry_robot": true,
+    "no_tooth_floor_contact": true,
+    "turns": true,
+    "inverted_drive": true
+  },
+  "passed": true
+}

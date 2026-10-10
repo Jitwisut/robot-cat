@@ -1,0 +1,126 @@
+{
+  "surpass": {
+    "checked_date": "2026-10-10",
+    "html_sha256": "1aeb82691b0309ac1a31f98a16edbd3fed16892927a8070dfdfb7442c4bdabd0",
+    "items": [
+      {
+        "title": "SURPASS C3536 - 1300KV และ 1500KV V2 Brushless Motors C3536-1300KV",
+        "url": "http://www.udshobby.com/p/2372?pid=2373",
+        "code": "SKU-02373",
+        "price": 840,
+        "status": {
+          "instock": 1,
+          "soldout": 0,
+          "preorder": 0,
+          "condition": 0,
+          "condition_1_option": null,
+          "condition_2_option": null,
+          "recommend": 0,
+          "hot": 0,
+          "new": 0,
+          "sale": 0,
+          "sell": "availability"
+        }
+      },
+      {
+        "title": "SURPASS C3536 - 1300KV และ 1500KV V2 Brushless Motors C3536-1500KV",
+        "url": "http://www.udshobby.com/p/2372?pid=2374",
+        "code": "SKU-02374",
+        "price": 840,
+        "status": {
+          "instock": 1,
+          "soldout": 0,
+          "preorder": 0,
+          "condition": 0,
+          "condition_1_option": null,
+          "condition_2_option": null,
+          "recommend": 0,
+          "hot": 0,
+          "new": 0,
+          "sale": 0,
+          "sell": "availability"
+        }
+      }
+    ],
+    "stock_quantity": null,
+    "basis": "public embedded shop payload; availability flag is not a counted/reserved quantity"
+  },
+  "jb361": {
+    "checked_date": "2026-10-10",
+    "html_sha256": "cce71b456e6599598a1b9ab422a191371e7a7f975b8a0511dc7c399a8dc7ce71",
+    "items": [
+      {
+        "title": "(1ชิ้น) JB361 มอเตอร์ มอเตอร์เกียร์ มอเตอร์อเนกประสงค์ 25GA-370 12VDC 400RPM DC Gear Motor (Shaft D, 4mm)",
+        "url": "https://www.ortech-online.com/p/378",
+        "code": "SKU-00378",
+        "price": 130,
+        "status": {
+          "instock": 1,
+          "soldout": 0,
+          "preorder": 0,
+          "condition": 1,
+          "condition_1_option": null,
+          "condition_2_option": null,
+          "recommend": 0,
+          "hot": 0,
+          "new": 0,
+          "sale": 1,
+          "sell": "availability"
+        }
+      }
+    ],
+    "stock_quantity": null,
+    "basis": "public embedded shop payload; availability flag is not a counted/reserved quantity"
+  },
+  "esc": {
+    "checked_date": "2026-10-10",
+    "html_sha256": "1556f7994766179f6baa6a5fabe86b362810ab96b3d871953d61b3f4bce49966",
+    "items": [
+      {
+        "title": "Hobbywing SkyWalker 40A-V2-UBEC (3S-4S)",
+        "url": "https://www.abcflying.com/p/8569",
+        "code": "SPSW-40AUBEC-V2",
+        "price": 490,
+        "status": {
+          "instock": 1,
+          "soldout": 0,
+          "preorder": 0,
+          "condition": 0,
+          "condition_1_option": null,
+          "condition_2_option": null,
+          "recommend": 0,
+          "hot": 0,
+          "new": 0,
+          "sale": 0,
+          "sell": "availability"
+        }
+      }
+    ],
+    "stock_quantity": null,
+    "basis": "public embedded shop payload; availability flag is not a counted/reserved quantity"
+  },
+  "battery": {
+    "checked_date": "2026-10-10",
+    "html_sha256": "d2732396321dfd3287f93e804df91c46bdf67bd284ca950be20ff429cdc1032b",
+    "variant": {
+      "@type": "Product",
+      "name": "  ส่งฟรี GNB 3s 300mah - 6500mah Gaoneng แบต LiPo Battery XT30 XT60 HV แบตเตอรี่ แบต อุปกรณ์ RC รถบังคับ โดรน เครื่องบิน  - 3-20 8503S80A",
+      "sku": "SKU-04101",
+      "image": [
+        "https://dr.lnwfile.com/rfmck0.jpg"
+      ],
+      "inProductGroupWithID": "SKU-04074",
+      "size": "3-20 8503S80A",
+      "offers": {
+        "@type": "Offer",
+        "price": 605,
+        "priceCurrency": "THB",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fpvonly.com/product/ส่งฟรี-gnb-3s-300mah-6500mah-gaoneng-แบต-lipo-battery-xt30-xt60-hv-แบตเตอรี่-แบต-อุปกรณ์-rc-รถบังคับ/11000371400004074/4101"
+      }
+    },
+    "stock_quantity": null,
+    "basis": "exact hasVariant/Offer; not generic product price, not HV variant"
+  }
+}

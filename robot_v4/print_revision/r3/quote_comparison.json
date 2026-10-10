@@ -1,0 +1,50 @@
+{
+  "revision": "V4_PRINT_R3",
+  "status": "NO_QUOTES_RECEIVED",
+  "print_quotes": [
+    {
+      "vendor_id": "P1",
+      "measuring_thb": null,
+      "trial_round1_thb": null,
+      "trial_round2_thb": null,
+      "insert_finish_thb": null,
+      "full_print_thb": null,
+      "tax_shipping_thb": null,
+      "total_thb": null,
+      "quote_file": null
+    },
+    {
+      "vendor_id": "P2",
+      "measuring_thb": null,
+      "trial_round1_thb": null,
+      "trial_round2_thb": null,
+      "insert_finish_thb": null,
+      "full_print_thb": null,
+      "tax_shipping_thb": null,
+      "total_thb": null,
+      "quote_file": null
+    }
+  ],
+  "metal_quotes": [
+    {
+      "vendor_id": "M1",
+      "cutting_thb": null,
+      "turning_milling_thb": null,
+      "pins_skid_finish_thb": null,
+      "tax_shipping_thb": null,
+      "total_thb": null,
+      "quote_file": null
+    },
+    {
+      "vendor_id": "M2",
+      "cutting_thb": null,
+      "turning_milling_thb": null,
+      "pins_skid_finish_thb": null,
+      "tax_shipping_thb": null,
+      "total_thb": null,
+      "quote_file": null
+    }
+  ],
+  "contingency_thb": 300,
+  "budget_thb": 6000
+}
