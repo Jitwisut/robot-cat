@@ -1,0 +1,450 @@
+{
+ "model": "V4 collision primitives; r3 configs take mass/centroid/inertia, axles, part masses, lid roof and electrical constants from the R3 build via print_revision/simulate.configure()",
+ "note": "centre_wedge adds its 25 g on top of the R3 CAD mass (configure replaces the chassis inertial)",
+ "results": {
+  "baseline": {
+   "angle|now|R3_front": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 17.1,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 1.7
+   },
+   "angle|now|R3_rear": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 17.0,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 1.7
+   },
+   "angle|now|R3_side": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 18.7,
+    "p_inverted": 0.08,
+    "opp_lifted_s_mean": 0.02,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 2.0
+   },
+   "angle|now|V2_front": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 31.7,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.01,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 20.4
+   },
+   "angle|now|V2_rear": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 51.0,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 27.7
+   },
+   "angle|now|V2_side": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 38.9,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 14.2
+   },
+   "headon|now|R3|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.12,
+    "opp_max_com_z_mm_median": 26.7,
+    "p_inverted": 0.06,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 31.0
+   },
+   "headon|now|R3|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 18.4,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 1.7
+   },
+   "headon|now|V2|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.69,
+    "opp_max_com_z_mm_median": 129.0,
+    "p_inverted": 0.31,
+    "opp_lifted_s_mean": 0.38,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 104.7
+   },
+   "headon|now|V2|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 32.1,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 15.4
+   },
+   "spinup|now": {
+    "rotor_floor_contact_steps": 0,
+    "rpm": 13782
+   }
+  },
+  "r3": {
+   "angle|now|R3_front": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 18.5,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 2.1
+   },
+   "angle|now|R3_rear": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 17.0,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 4.3
+   },
+   "angle|now|R3_side": {
+    "n": 24,
+    "p_launched_over_10cm": 0.21,
+    "opp_max_com_z_mm_median": 22.4,
+    "p_inverted": 0.08,
+    "opp_lifted_s_mean": 0.05,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 13.0
+   },
+   "angle|now|V2_front": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 31.9,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.02,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 26.7
+   },
+   "angle|now|V2_rear": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 59.0,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.01,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 38.2
+   },
+   "angle|now|V2_side": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 43.1,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 21.7
+   },
+   "headon|belt_1.5to1|R3|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.06,
+    "opp_max_com_z_mm_median": 28.0,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.01,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 54.3
+   },
+   "headon|belt_1.5to1|R3|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 19.5,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 20.2
+   },
+   "headon|belt_1.5to1|V2|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.94,
+    "opp_max_com_z_mm_median": 229.1,
+    "p_inverted": 0.44,
+    "opp_lifted_s_mean": 0.64,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 220.6
+   },
+   "headon|belt_1.5to1|V2|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 33.3,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.02,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 36.2
+   },
+   "headon|centre_wedge|R3|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.19,
+    "opp_max_com_z_mm_median": 27.9,
+    "p_inverted": 0.06,
+    "opp_lifted_s_mean": 0.05,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 45.7
+   },
+   "headon|centre_wedge|R3|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 19.3,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 10.5
+   },
+   "headon|centre_wedge|V2|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.81,
+    "opp_max_com_z_mm_median": 146.4,
+    "p_inverted": 0.31,
+    "opp_lifted_s_mean": 0.45,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 156.0
+   },
+   "headon|centre_wedge|V2|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 32.0,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 22.0
+   },
+   "headon|now|R3|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.06,
+    "opp_max_com_z_mm_median": 27.6,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.02,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 43.4
+   },
+   "headon|now|R3|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 19.5,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 10.3
+   },
+   "headon|now|V2|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.62,
+    "opp_max_com_z_mm_median": 147.8,
+    "p_inverted": 0.25,
+    "opp_lifted_s_mean": 0.48,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 151.0
+   },
+   "headon|now|V2|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 34.9,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.01,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 18.4
+   },
+   "headon|tip1.5_skid0.5|R3|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.19,
+    "opp_max_com_z_mm_median": 27.6,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.03,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 41.5
+   },
+   "headon|tip1.5_skid0.5|R3|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.06,
+    "opp_max_com_z_mm_median": 19.6,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.01,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 18.7
+   },
+   "headon|tip1.5_skid0.5|V2|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.12,
+    "opp_max_com_z_mm_median": 47.0,
+    "p_inverted": 0.06,
+    "opp_lifted_s_mean": 0.08,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 101.6
+   },
+   "headon|tip1.5_skid0.5|V2|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 31.7,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 26.5
+   },
+   "spinup|now": {
+    "rotor_floor_contact_steps": 0,
+    "rpm": 16292
+   },
+   "spinup|tip1.5_skid0.5": {
+    "rotor_floor_contact_steps": 0,
+    "rpm": 16292
+   }
+  },
+  "r3_cap40": {
+   "angle|now|R3_front": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 18.5,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 2.1
+   },
+   "angle|now|R3_rear": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 17.0,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 4.3
+   },
+   "angle|now|R3_side": {
+    "n": 24,
+    "p_launched_over_10cm": 0.17,
+    "opp_max_com_z_mm_median": 22.4,
+    "p_inverted": 0.12,
+    "opp_lifted_s_mean": 0.04,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 13.0
+   },
+   "angle|now|V2_front": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 31.9,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.02,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 26.7
+   },
+   "angle|now|V2_rear": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 59.0,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.01,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 38.2
+   },
+   "angle|now|V2_side": {
+    "n": 24,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 43.1,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.01,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 21.7
+   },
+   "headon|now|R3|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.06,
+    "opp_max_com_z_mm_median": 30.4,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.03,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 40.0
+   },
+   "headon|now|R3|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 19.5,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.0,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 10.3
+   },
+   "headon|now|V2|charging": {
+    "n": 16,
+    "p_launched_over_10cm": 0.62,
+    "opp_max_com_z_mm_median": 144.2,
+    "p_inverted": 0.12,
+    "opp_lifted_s_mean": 0.37,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 40.0
+   },
+   "headon|now|V2|parked": {
+    "n": 16,
+    "p_launched_over_10cm": 0.0,
+    "opp_max_com_z_mm_median": 34.9,
+    "p_inverted": 0.0,
+    "opp_lifted_s_mean": 0.01,
+    "v4_lifted_s_mean": 0.0,
+    "v4_peak_amps_median": 18.4
+   },
+   "spinup|now": {
+    "rotor_floor_contact_steps": 0,
+    "rpm": 16292
+   }
+  }
+ },
+ "probes": {
+  "baseline": [
+   {
+    "KE": 0.007639437268410976,
+    "V_PACK": 11.1,
+    "amp_cap": null,
+    "ratio": 1.0,
+    "v4_mass_kg": 1.8886
+   }
+  ],
+  "r3": [
+   {
+    "KE": 0.007345612758087478,
+    "V_PACK": 12.6,
+    "amp_cap": null,
+    "ratio": 1.5,
+    "v4_mass_kg": 1.97548
+   },
+   {
+    "KE": 0.007345612758087478,
+    "V_PACK": 12.6,
+    "amp_cap": null,
+    "ratio": 1.0,
+    "v4_mass_kg": 1.97548
+   },
+   {
+    "KE": 0.007345612758087478,
+    "V_PACK": 12.6,
+    "amp_cap": null,
+    "ratio": 1.0,
+    "v4_mass_kg": 2.00048
+   }
+  ],
+  "r3_cap40": [
+   {
+    "KE": 0.007345612758087478,
+    "V_PACK": 12.6,
+    "amp_cap": 40.0,
+    "ratio": 1.0,
+    "v4_mass_kg": 1.97548
+   }
+  ]
+ },
+ "wall_s": 101.5
+}

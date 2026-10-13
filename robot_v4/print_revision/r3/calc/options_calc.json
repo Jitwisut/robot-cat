@@ -1,0 +1,141 @@
+{
+ "sources": {
+  "plate_width_mm": [
+   61.0,
+   "CAD"
+  ],
+  "R3_lifter_tip_N": [
+   111.35841925618637,
+   "SIM model servo 4 N*m"
+  ],
+  "yield_MPa": [
+   {
+    "mild_S275": 275,
+    "spring_or_AR_1000": 1000
+   },
+   "ASSUMED handbook"
+  ],
+  "pry_lever": [
+   "full plate length from the carrier",
+   "ASSUMED conservative"
+  ]
+ },
+ "wedgelet_plates": {
+  "now": {
+   "angle_deg": 35.54,
+   "t_mm": 2.0,
+   "length_mm": 34.40930106817051,
+   "tip_y_mm": 128.0,
+   "tip_ahead_of_teeth_mm": 3.5,
+   "plate_g_each": 26.5836,
+   "delta_mass_g_pair": 0.0,
+   "delta_moment_gmm_pair": 0.0,
+   "within_front_allowance": true,
+   "pry_yield_tip_N": {
+    "mild_S275": 325.0090233212614,
+    "spring_or_AR_1000": 1181.850993895496
+   },
+   "R3_lifter_tip_N": 111.35841925618637,
+   "survives_R3_lifter": {
+    "mild_S275": true,
+    "spring_or_AR_1000": true
+   }
+  },
+  "w25_short": {
+   "angle_deg": 25.0,
+   "t_mm": 2.0,
+   "length_mm": 30.89601268772396,
+   "tip_y_mm": 128.0,
+   "tip_ahead_of_teeth_mm": 3.5,
+   "plate_g_each": 23.869338155349155,
+   "delta_mass_g_pair": -5.4285236893016915,
+   "delta_moment_gmm_pair": -618.8517005803933,
+   "within_front_allowance": true,
+   "pry_yield_tip_N": {
+    "mild_S275": 361.9668805281418,
+    "spring_or_AR_1000": 1316.2432019205157
+   },
+   "R3_lifter_tip_N": 111.35841925618637,
+   "survives_R3_lifter": {
+    "mild_S275": true,
+    "spring_or_AR_1000": true
+   }
+  },
+  "w25_long_t1.5": {
+   "angle_deg": 25.0,
+   "t_mm": 1.5,
+   "length_mm": 47.32403166304998,
+   "tip_y_mm": 142.89013841019118,
+   "tip_ahead_of_teeth_mm": 18.390138410191184,
+   "plate_g_each": 27.420851827797907,
+   "delta_mass_g_pair": 1.6745036555958137,
+   "delta_moment_gmm_pair": 599.1936957791777,
+   "within_front_allowance": true,
+   "pry_yield_tip_N": {
+    "mild_S275": 132.92665013812933,
+    "spring_or_AR_1000": 483.3696368659249
+   },
+   "R3_lifter_tip_N": 111.35841925618637,
+   "survives_R3_lifter": {
+    "mild_S275": true,
+    "spring_or_AR_1000": true
+   }
+  },
+  "w20_long_t1.2": {
+   "angle_deg": 20.0,
+   "t_mm": 1.2,
+   "length_mm": 58.47608800326176,
+   "tip_y_mm": 154.94954838909246,
+   "tip_ahead_of_teeth_mm": 30.449548389092456,
+   "plate_g_each": 27.106129182289024,
+   "delta_mass_g_pair": 1.045058364578047,
+   "delta_moment_gmm_pair": 849.6345936009866,
+   "within_front_allowance": true,
+   "pry_yield_tip_N": {
+    "mild_S275": 68.8486548514571,
+    "spring_or_AR_1000": 250.35874491438946
+   },
+   "R3_lifter_tip_N": 111.35841925618637,
+   "survives_R3_lifter": {
+    "mild_S275": false,
+    "spring_or_AR_1000": true
+   }
+  }
+ },
+ "big_slow_rotor": {
+  "ratio_1.0": {
+   "rotor_rpm": 16291.080000000002,
+   "energy_J": 130.0057422099216,
+   "tip_speed_m_s": 68.23991632939148,
+   "gyro_lift_yaw_rad_s": 8.727547649361881,
+   "bite_mm_at_2m_s": 8.184437946000715,
+   "unbalance_force_per_disc_N": 2108.471964952636,
+   "bearing_load_from_couple_N_if_discs_180deg": 2939.0821329642804
+  },
+  "ratio_1.5": {
+   "rotor_rpm": 10860.720000000003,
+   "energy_J": 57.780329871076276,
+   "tip_speed_m_s": 45.49327755292766,
+   "gyro_lift_yaw_rad_s": 13.091321474042818,
+   "bite_mm_at_2m_s": 12.276656919001072,
+   "unbalance_force_per_disc_N": 937.0986510900606,
+   "bearing_load_from_couple_N_if_discs_180deg": 1306.2587257619027
+  },
+  "disc_t_equal_mass_mm": 5.369103854912765,
+  "disc_mass_g": 81.35547350552147,
+  "rotor_I_kgm2": 8.93378593561061e-05,
+  "I_ratio_vs_now": 1.3401242533390814,
+  "tooth_height_mm": 17.0,
+  "tooth_root_bending_cap_N": {
+   "mild_S275": 7657.552777386612,
+   "spring_or_AR_1000": 27845.64646322405
+  },
+  "tooth_root_bending_cap_N_now": {
+   "mild_S275": 22380.76923076923,
+   "spring_or_AR_1000": 81384.61538461539
+  },
+  "disc_unbalance_kg_m": 0.0007244540458723513,
+  "note": "axle z 42.5 mm (tip 2.5 mm off the floor): taller uprights, new belt/motor position, rotor top z 82.5 mm above the 63 mm lid; not mass-checked in CAD"
+ },
+ "front_mass_allowance_g_at_y110": 8.348754761904766
+}
