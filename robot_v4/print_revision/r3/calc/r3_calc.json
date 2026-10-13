@@ -1,0 +1,896 @@
+{
+ "build_sha256": "319857d1a9f0a57815e203bf037db3a52d2c40b1a51fe7ead140aa4becb78534",
+ "sources": {
+  "robot_mass_kg": {
+   "value": 1.9754800000000001,
+   "source": "CAD"
+  },
+  "cg_mm": {
+   "value": [
+    -1.362,
+    8.774,
+    30.5917
+   ],
+   "source": "CAD"
+  },
+  "rotor_I_kgm2": {
+   "value": 6.666386279743093e-05,
+   "source": "CAD"
+  },
+  "weapon_kv": {
+   "value": 1300,
+   "source": "CATALOG",
+   "note": "SURPASS C3536-V2 manual, R3-08"
+  },
+  "weapon_R_ohm": {
+   "value": 0.038,
+   "source": "CATALOG",
+   "note": "R3-08"
+  },
+  "weapon_I0_A": {
+   "value": 1.8,
+   "source": "CATALOG",
+   "note": "R3-08"
+  },
+  "esc_continuous_A": {
+   "value": 40,
+   "source": "CATALOG",
+   "note": "Skywalker 40A, TH03; burst rating not found"
+  },
+  "weapon_motor_max_A": {
+   "value": 50,
+   "source": "CATALOG",
+   "note": "SURPASS table \"50A ESC\" (sources.json), not a measured limit"
+  },
+  "battery_mAh": {
+   "value": 850,
+   "source": "CATALOG",
+   "note": "GNB8503S80A, R3-02"
+  },
+  "battery_C": {
+   "value": 80,
+   "source": "CATALOG",
+   "note": "label value; real continuous capability is usually lower"
+  },
+  "battery_IR_ohm_cases": {
+   "value": [
+    0.0,
+    0.015,
+    0.03
+   ],
+   "source": "ASSUMED",
+   "note": "pack internal resistance, measure with charger"
+  },
+  "belt_efficiency": {
+   "value": 0.92,
+   "source": "ASSUMED",
+   "note": "same as sim.py"
+  },
+  "firmware_ramp_us_per_s": {
+   "value": 1600.0,
+   "source": "CAD",
+   "note": "v4_controller.ino WEAPON_RAMP_US_PER_S"
+  },
+  "firmware_yaw_limit_rad_s": {
+   "value": 12.042771838760874,
+   "source": "CAD",
+   "note": "v4_controller.ino YAW_LIMIT_DPS"
+  },
+  "drive_stall_Nm_12V": {
+   "value": 0.121644,
+   "source": "NOMINAL",
+   "note": "JGA25-370 400 rpm, interpolated"
+  },
+  "drive_rpm_12V": {
+   "value": 400,
+   "source": "NOMINAL"
+  },
+  "drive_stall_A_each": {
+   "value": 1.3,
+   "source": "NOMINAL",
+   "note": "design_v4.py, PMD table"
+  },
+  "drv8871_peak_A": {
+   "value": 3.6,
+   "source": "CATALOG",
+   "note": "datasheet peak; continuous is thermal-limited, not confirmed"
+  },
+  "rest_wheel_loads_N": {
+   "value": [
+    8.5365,
+    8.1793,
+    1.2002,
+    1.1813
+   ],
+   "source": "SIM",
+   "note": "FL, FR, RL, RR"
+  },
+  "sim_turn_peak_yaw_rad_s": {
+   "value": 7.073203386350043,
+   "source": "SIM",
+   "note": "spin in place, full stick"
+  },
+  "geometry_mm": {
+   "value": {
+    "axle_z": 32.0,
+    "rotor_y": 95.0,
+    "tip_r": 29.5,
+    "base_r": 23.0,
+    "disc_x": [
+     20.0,
+     26.0
+    ],
+    "bearing_x": 16.5,
+    "upright_x": 30.0,
+    "disc_screw_r": 13.0,
+    "axles_y": [
+     18,
+     -70
+    ],
+    "half_track": 70.0
+   },
+   "source": "CAD",
+   "note": "legacy_geometry.py / revision.py"
+  },
+  "materials_MPa": {
+   "value": {
+    "disc_steel_S275_yield": 275,
+    "disc_steel_hardened_AR400_yield": 1000,
+    "al6061T6_yield": 276,
+    "al6061T6_bearing_yield": 386,
+    "al6061T6_shear_yield": 159,
+    "bolt_8.8_yield": 640,
+    "bolt_10.9_yield": 940,
+    "bolt_12.9_yield": 1080,
+    "A2-70_yield": 450,
+    "tpu95a_bearing_allow": [
+     5,
+     10
+    ],
+    "bearing_608_C0_N": 1370
+   },
+   "source": "ASSUMED",
+   "note": "typical handbook values; disc steel grade, bolt grades and 608 C0 not confirmed for the bought parts"
+  }
+ },
+ "1_rotor": {
+  "rotor_mass_g": 225.09539999999998,
+  "disc_mass_g_calc": 81.35547350552147,
+  "disc_mass_g_cad": 80.4165,
+  "disc_I_kgm2": 3.0480662762277415e-05,
+  "disc_share_of_rotor_I": 0.45722917159628,
+  "tip_effective_mass_kg": 0.07660311726220159,
+  "12.6V_full": {
+   "rpm_no_load": 16291.080000000002,
+   "energy_J_no_load": 97.01021519907322,
+   "energy_J_at_90pct": 78.5782743112493,
+   "tip_speed_m_s": 50.326938292926215,
+   "angular_momentum_Nms": 0.113728410487268
+  },
+  "11.1V_nominal": {
+   "rpm_no_load": 14341.08,
+   "energy_J_no_load": 75.17638399824718,
+   "energy_J_at_90pct": 60.89287103858022,
+   "tip_speed_m_s": 44.30293437966779,
+   "angular_momentum_Nms": 0.10011541488168675
+  }
+ },
+ "2_spinup": {
+  "check_vs_sim": {
+   "calc": {
+    "t90_s": 0.6138600000003324,
+    "rpm_end": 16291.07999999723,
+    "peak_motor_A": 28.872907215750452,
+    "peak_battery_A": 28.872907215750452,
+    "peak_rotor_torque_Nm": 0.18295772523113224,
+    "battery_energy_J": 172.09901052788805,
+    "battery_mAh": 3.794069896999295,
+    "rotor_energy_J": 97.01021519904022
+   },
+   "sim_rpm": 16291.080000010868,
+   "sim_peak_A": 28.87293779541304
+  },
+  "Rb0mOhm|ramp1600": {
+   "t90_s": 0.6138600000003324,
+   "rpm_end": 16291.07999999723,
+   "peak_motor_A": 28.872907215750452,
+   "peak_battery_A": 28.872907215750452,
+   "peak_rotor_torque_Nm": 0.18295772523113224,
+   "battery_energy_J": 183.43855692824744,
+   "battery_mAh": 4.044059897007218,
+   "rotor_energy_J": 97.01021519904022
+  },
+  "Rb0mOhm|ramp800": {
+   "t90_s": 1.1766999999999144,
+   "rpm_end": 16291.07999999723,
+   "peak_motor_A": 15.336522837548033,
+   "peak_battery_A": 15.336522837326129,
+   "peak_rotor_torque_Nm": 0.09147933046718451,
+   "battery_energy_J": 168.7617093464243,
+   "battery_mAh": 3.72049623779595,
+   "rotor_energy_J": 97.01021519904022
+  },
+  "Rb0mOhm|ramp3200": {
+   "t90_s": 0.33768000000005616,
+   "rpm_end": 16291.07999999723,
+   "peak_motor_A": 55.82364083102739,
+   "peak_battery_A": 55.82364083100943,
+   "peak_rotor_torque_Nm": 0.365089805700592,
+   "battery_energy_J": 200.0426023602683,
+   "battery_mAh": 4.410110281311028,
+   "rotor_energy_J": 97.01021519904022
+  },
+  "Rb0mOhm|no_ramp": {
+   "t90_s": 0.11748000000001463,
+   "rpm_end": 16291.07999999723,
+   "peak_motor_A": 331.5789473684211,
+   "peak_battery_A": 331.5789473684211,
+   "peak_rotor_torque_Nm": 2.2286341676870824,
+   "battery_energy_J": 280.0828619952012,
+   "battery_mAh": 6.174666269735475,
+   "rotor_energy_J": 97.01021519904022
+  },
+  "Rb0mOhm|no_ramp_cap40": {
+   "t90_s": 0.3970200000001155,
+   "rpm_end": 16291.07999999723,
+   "peak_motor_A": 40.0,
+   "peak_battery_A": 40.0,
+   "peak_rotor_torque_Nm": 0.2581542147702263,
+   "battery_energy_J": 280.08286199492693,
+   "battery_mAh": 6.174666269729428,
+   "rotor_energy_J": 97.01021519904022
+  },
+  "Rb15mOhm|ramp1600": {
+   "t90_s": 0.6319000000003504,
+   "rpm_end": 16255.979999996138,
+   "peak_motor_A": 28.08580987013607,
+   "peak_battery_A": 27.293796451314257,
+   "peak_rotor_torque_Nm": 0.1776385499116346,
+   "battery_energy_J": 181.89180219727436,
+   "battery_mAh": 4.00996036590111,
+   "rotor_energy_J": 96.59263817363254
+  },
+  "Rb15mOhm|ramp800": {
+   "t90_s": 1.1953399999998295,
+   "rpm_end": 16255.979999981171,
+   "peak_motor_A": 15.202945305359727,
+   "peak_battery_A": 14.882635175076338,
+   "peak_rotor_torque_Nm": 0.09057661834851916,
+   "battery_energy_J": 167.7994710065262,
+   "battery_mAh": 3.6992828705142458,
+   "rotor_energy_J": 96.59263817345467
+  },
+  "Rb15mOhm|ramp3200": {
+   "t90_s": 0.36546000000008394,
+   "rpm_end": 16255.979999996138,
+   "peak_motor_A": 51.58433573888521,
+   "peak_battery_A": 50.493690114792834,
+   "peak_rotor_torque_Nm": 0.33644073561594834,
+   "battery_energy_J": 196.73624957278008,
+   "battery_mAh": 4.337218905925487,
+   "rotor_energy_J": 96.59263817363254
+  },
+  "Rb15mOhm|no_ramp": {
+   "t90_s": 0.16526000000000132,
+   "rpm_end": 16255.979999996138,
+   "peak_motor_A": 237.7358490566038,
+   "peak_battery_A": 237.7358490566038,
+   "peak_rotor_torque_Nm": 1.5944459122867591,
+   "battery_energy_J": 248.85451525173653,
+   "battery_mAh": 5.486210653697895,
+   "rotor_energy_J": 96.59263817363254
+  },
+  "Rb15mOhm|no_ramp_cap40": {
+   "t90_s": 0.4041200000001226,
+   "rpm_end": 16255.979999996138,
+   "peak_motor_A": 40.0,
+   "peak_battery_A": 40.0,
+   "peak_rotor_torque_Nm": 0.2581542147702263,
+   "battery_energy_J": 269.7301238482003,
+   "battery_mAh": 5.946431301768084,
+   "rotor_energy_J": 96.59263817363254
+  },
+  "Rb30mOhm|ramp1600": {
+   "t90_s": 0.6536200000003721,
+   "rpm_end": 16220.879999988492,
+   "peak_motor_A": 27.521576869736688,
+   "peak_battery_A": 25.93130587054116,
+   "peak_rotor_torque_Nm": 0.17382548375546833,
+   "battery_energy_J": 180.42015724989346,
+   "battery_mAh": 3.9775166942216367,
+   "rotor_energy_J": 96.17596181036316
+  },
+  "Rb30mOhm|ramp800": {
+   "t90_s": 1.2141999999997437,
+   "rpm_end": 16220.879994687444,
+   "peak_motor_A": 15.098073440510284,
+   "peak_battery_A": 14.46509185873492,
+   "peak_rotor_torque_Nm": 0.08986789808878885,
+   "battery_energy_J": 166.84725812170447,
+   "battery_mAh": 3.678290522965266,
+   "rotor_energy_J": 96.17596174750176
+  },
+  "Rb30mOhm|ramp3200": {
+   "t90_s": 0.3970000000001155,
+   "rpm_end": 16220.879999995044,
+   "peak_motor_A": 48.95666656355558,
+   "peak_battery_A": 46.30131459835024,
+   "peak_rotor_torque_Nm": 0.31868304261508057,
+   "battery_energy_J": 193.85721540498506,
+   "battery_mAh": 4.273748135030535,
+   "rotor_energy_J": 96.17596181044084
+  },
+  "Rb30mOhm|no_ramp": {
+   "t90_s": 0.21387999999998247,
+   "rpm_end": 16220.879999995044,
+   "peak_motor_A": 185.29411764705884,
+   "peak_battery_A": 185.29411764705884,
+   "peak_rotor_torque_Nm": 1.240046593092461,
+   "battery_energy_J": 230.94263094566253,
+   "battery_mAh": 5.091327842717427,
+   "rotor_energy_J": 96.17596181044084
+  },
+  "Rb30mOhm|no_ramp_cap40": {
+   "t90_s": 0.4179200000001364,
+   "rpm_end": 16220.879999995044,
+   "peak_motor_A": 40.0,
+   "peak_battery_A": 40.0,
+   "peak_rotor_torque_Nm": 0.2581542147702263,
+   "battery_energy_J": 259.86376991157357,
+   "battery_mAh": 5.728919089761321,
+   "rotor_energy_J": 96.17596181044084
+  },
+  "after_hit_to_50%|Rb0mOhm": {
+   "t90_s": 0.0821200000000038,
+   "rpm_end": 16291.07999999723,
+   "peak_motor_A": 166.68947368421055,
+   "peak_battery_A": 166.68947368421055,
+   "peak_rotor_torque_Nm": 1.1143170838435412,
+   "battery_energy_J": 151.38188459743296,
+   "battery_mAh": 3.337343134864042,
+   "rotor_energy_J": 97.01021519904022
+  },
+  "after_hit_to_50%|Rb15mOhm": {
+   "t90_s": 0.11578000000001411,
+   "rpm_end": 16255.97999999496,
+   "peak_motor_A": 119.51320754716983,
+   "peak_battery_A": 119.51320754716983,
+   "peak_rotor_torque_Nm": 0.7955015880215788,
+   "battery_energy_J": 142.9777333528731,
+   "battery_mAh": 3.152066431941646,
+   "rotor_energy_J": 96.59263817361852
+  },
+  "after_hit_to_50%|Rb30mOhm": {
+   "t90_s": 0.15020000000000716,
+   "rpm_end": 16220.879997520798,
+   "peak_motor_A": 93.15,
+   "peak_battery_A": 93.15,
+   "peak_rotor_torque_Nm": 0.6173399874151879,
+   "battery_energy_J": 137.94112810860997,
+   "battery_mAh": 3.0410301611245583,
+   "rotor_energy_J": 96.17596178110053
+  },
+  "after_hit_to_0%|Rb0mOhm": {
+   "t90_s": 0.11748000000001463,
+   "rpm_end": 16291.07999999723,
+   "peak_motor_A": 331.5789473684211,
+   "peak_battery_A": 331.5789473684211,
+   "peak_rotor_torque_Nm": 2.2286341676870824,
+   "battery_energy_J": 257.4033155944824,
+   "battery_mAh": 5.67467626971963,
+   "rotor_energy_J": 97.01021519904022
+  },
+  "after_hit_to_0%|Rb15mOhm": {
+   "t90_s": 0.16526000000000132,
+   "rpm_end": 16255.979999989588,
+   "peak_motor_A": 237.7358490566038,
+   "peak_battery_A": 237.7358490566038,
+   "peak_rotor_torque_Nm": 1.5944459122867591,
+   "battery_energy_J": 226.22356787941897,
+   "battery_mAh": 4.987292060833751,
+   "rotor_energy_J": 96.59263817355468
+  },
+  "after_hit_to_0%|Rb30mOhm": {
+   "t90_s": 0.21387999999998247,
+   "rpm_end": 16220.879995020081,
+   "peak_motor_A": 185.29411764705884,
+   "peak_battery_A": 185.29411764705884,
+   "peak_rotor_torque_Nm": 1.240046593092461,
+   "battery_energy_J": 208.3602825370093,
+   "battery_mAh": 4.593480655577807,
+   "rotor_energy_J": 96.17596175144627
+  },
+  "after_hit_to_50%|cap40_rpm_limiter|Rb15mOhm": {
+   "t90_s": 0.18383999999999412,
+   "rpm_end": 16255.97999998673,
+   "peak_motor_A": 40.0,
+   "peak_battery_A": 40.0,
+   "peak_rotor_torque_Nm": 0.2581542147702263,
+   "battery_energy_J": 146.35357384270205,
+   "battery_mAh": 3.226489723163625,
+   "rotor_energy_J": 96.59263817352074
+  },
+  "after_hit_to_0%|cap40_rpm_limiter|Rb15mOhm": {
+   "t90_s": 0.4041200000001226,
+   "rpm_end": 16255.979999709529,
+   "peak_motor_A": 40.0,
+   "peak_battery_A": 40.0,
+   "peak_rotor_torque_Nm": 0.2581542147702263,
+   "battery_energy_J": 247.09917647230944,
+   "battery_mAh": 5.447512708825164,
+   "rotor_energy_J": 96.5926381702265
+  }
+ },
+ "3_gyro": {
+  "12.6V": {
+   "yaw_rate_lifting_weak_side_wheel_rad_s": 11.695998277082346,
+   "yaw_rate_lifting_strong_side_wheel_rad_s": 12.160171174118567
+  },
+  "11.1V": {
+   "yaw_rate_lifting_weak_side_wheel_rad_s": 13.286338519261497,
+   "yaw_rate_lifting_strong_side_wheel_rad_s": 13.813626408280234
+  },
+  "firmware_limit_rad_s": 12.042771838760874,
+  "sim_spin_in_place_peak_rad_s": 7.073203386350043
+ },
+ "3_spinup_pitch": {
+  "restoring_moment_about_front_axle_Nm": 0.17879488688880002,
+  "rear_static_load_N": 2.3815,
+  "wheelbase_m": 0.088,
+  "Rb0mOhm|ramp1600": {
+   "reaction_Nm": 0.19886709264253505,
+   "rear_wheels_unload_N": 2.259853325483353,
+   "nose_tips_onto_skid": true
+  },
+  "Rb30mOhm|ramp1600": {
+   "reaction_Nm": 0.18894074321246557,
+   "rear_wheels_unload_N": 2.147053900141654,
+   "nose_tips_onto_skid": true
+  },
+  "Rb0mOhm|no_ramp": {
+   "reaction_Nm": 2.422428443138133,
+   "rear_wheels_unload_N": 27.52759594475151,
+   "nose_tips_onto_skid": true
+  },
+  "Rb0mOhm|no_ramp_cap40": {
+   "reaction_Nm": 0.28060240735894165,
+   "rear_wheels_unload_N": 3.1886637199879737,
+   "nose_tips_onto_skid": true
+  },
+  "max_ramp_keeping_rear_wheels_down_us_per_s": 1476.4461066573858,
+  "t90_at_that_ramp_s": 0.6787600000003973
+ },
+ "4_bite_mm": {
+  "12.6V_90pct": {
+   "0.5_m_s": 1.0230547432500894,
+   "1.0_m_s": 2.0461094865001788,
+   "2.0_m_s": 4.0922189730003575,
+   "3.0_m_s": 6.138328459500536
+  },
+  "11.1V_90pct": {
+   "0.5_m_s": 1.1621625893354384,
+   "1.0_m_s": 2.3243251786708767,
+   "2.0_m_s": 4.6486503573417535,
+   "3.0_m_s": 6.97297553601263
+  },
+  "tooth_height_mm": 6.5,
+  "tip_floor_clearance_mm": 2.5,
+  "note": "2 teeth per disc, both discs in phase (same profile in CAD)"
+ },
+ "5_wedge_contact": {
+  "faces_deg": {
+   "R3_plow_wings": 25.3,
+   "R3_centre_lifter": 16.16449915225692,
+   "V2_spatula": 30.288812229733654,
+   "V2_side_wedges": 57.33908727832619,
+   "vertical_wall": 90.0
+  },
+  "min_face_angle_to_lift_deg": {
+   "0.2": 78.69006752597979,
+   "0.3": 73.30075576600638,
+   "0.45": 65.77225468204583,
+   "0.6": 59.03624346792648
+  },
+  "vertical_impulse_per_unit_normal": {
+   "R3_plow_wings": {
+    "0.3": -0.7758751906446206,
+    "0.6": -0.647667831628463
+   },
+   "R3_centre_lifter": {
+    "0.3": -0.8769475516424677,
+    "0.6": -0.7934287372003279
+   },
+   "V2_spatula": {
+    "0.3": -0.7121863425522517,
+    "0.6": -0.5608786351651516
+   },
+   "V2_side_wedges": {
+    "0.3": -0.2871023730312699,
+    "0.6": -0.03453863134210777
+   },
+   "vertical_wall": {
+    "0.3": 0.29999999999999993,
+    "0.6": 0.5999999999999999
+   }
+  },
+  "tooth_lowest_point_mm": 2.5,
+  "tooth_front_reach_y_mm": 124.5
+ },
+ "6_impact": {
+  "tip_speed_m_s_90pct_12.6V": 45.294244463633596,
+  "rotor_tip_effective_mass_kg": 0.07660311726220159,
+  "V2_1.087kg|e0.0": {
+   "impulse_Ns": 3.2412619490571406,
+   "opp_dv_m_s": 2.981841719463791,
+   "opp_rise_if_all_vertical_mm": 453.17941080197636,
+   "opp_energy_J": 4.832465051704551,
+   "share_of_rotor_energy_to_opp_motion": 0.06149874242036812,
+   "rotor_tip_speed_after_fraction": 0.06583268480960935,
+   "v4_recoil_m_s": 1.6407465269489645
+  },
+  "V2_1.087kg|e0.3": {
+   "impulse_Ns": 4.213640533774282,
+   "opp_dv_m_s": 3.8763942353029277,
+   "opp_rise_if_all_vertical_mm": 765.8732042553399,
+   "opp_energy_J": 8.16686593738069,
+   "share_of_rotor_energy_to_opp_motion": 0.10393287469042212,
+   "rotor_tip_speed_after_fraction": -0.21441750974750784,
+   "v4_recoil_m_s": 2.1329704850336535
+  },
+  "V2_1.087kg|e0.5": {
+   "impulse_Ns": 4.86189292358571,
+   "opp_dv_m_s": 4.4727625791956855,
+   "opp_rise_if_all_vertical_mm": 1019.6536743044464,
+   "opp_energy_J": 10.873046366335238,
+   "share_of_rotor_energy_to_opp_motion": 0.13837217044582825,
+   "rotor_tip_speed_after_fraction": -0.40125097278558575,
+   "v4_recoil_m_s": 2.4611197904234463
+  },
+  "R3_1.237kg|e0.0": {
+   "impulse_Ns": 3.2673449837148385,
+   "opp_dv_m_s": 2.6413459852181393,
+   "opp_rise_if_all_vertical_mm": 355.5916724581031,
+   "opp_energy_J": 4.315094277528908,
+   "share_of_rotor_energy_to_opp_motion": 0.05491459713707604,
+   "rotor_tip_speed_after_fraction": 0.05831526756868333,
+   "v4_recoil_m_s": 1.6539499178502635
+  },
+  "R3_1.237kg|e0.3": {
+   "impulse_Ns": 4.247548478829291,
+   "opp_dv_m_s": 3.433749780783582,
+   "opp_rise_if_all_vertical_mm": 600.9499264541945,
+   "opp_energy_J": 7.292509329023857,
+   "share_of_rotor_energy_to_opp_motion": 0.09280566916165855,
+   "rotor_tip_speed_after_fraction": -0.22419015216071192,
+   "v4_recoil_m_s": 2.150134893205343
+  },
+  "R3_1.237kg|e0.5": {
+   "impulse_Ns": 4.901017475572258,
+   "opp_dv_m_s": 3.9620189778272095,
+   "opp_rise_if_all_vertical_mm": 800.0812630307322,
+   "opp_energy_J": 9.708962124440045,
+   "share_of_rotor_energy_to_opp_motion": 0.12355784355842114,
+   "rotor_tip_speed_after_fraction": -0.41252709864697534,
+   "v4_recoil_m_s": 2.4809248767753953
+  },
+  "heavy_2.0kg|e0.0": {
+   "impulse_Ns": 3.3416884440826458,
+   "opp_dv_m_s": 1.6708442220413229,
+   "opp_rise_if_all_vertical_mm": 142.28952162736357,
+   "opp_energy_J": 2.7917204143288736,
+   "share_of_rotor_energy_to_opp_motion": 0.03552789163160852,
+   "rotor_tip_speed_after_fraction": 0.036888665255976005,
+   "v4_recoil_m_s": 1.6915830299889878
+  },
+  "heavy_2.0kg|e0.3": {
+   "impulse_Ns": 4.34419497730744,
+   "opp_dv_m_s": 2.17209748865372,
+   "opp_rise_if_all_vertical_mm": 240.46929155024452,
+   "opp_energy_J": 4.718007500215798,
+   "share_of_rotor_energy_to_opp_motion": 0.060042136857418424,
+   "rotor_tip_speed_after_fraction": -0.25204473516723125,
+   "v4_recoil_m_s": 2.1990579389856846
+  },
+  "heavy_2.0kg|e0.5": {
+   "impulse_Ns": 5.012532666123969,
+   "opp_dv_m_s": 2.5062663330619843,
+   "opp_rise_if_all_vertical_mm": 320.151423661568,
+   "opp_energy_J": 6.281370932239965,
+   "share_of_rotor_energy_to_opp_motion": 0.07993775617111917,
+   "rotor_tip_speed_after_fraction": -0.44466700211603594,
+   "v4_recoil_m_s": 2.5373745449834817
+  },
+  "sim_calibration": {
+   "V2_median_com_peak_mm": 147.8,
+   "rise_mm": 117.30000000000001,
+   "vertical_impulse_implied_Ns": 1.6490280826577821,
+   "calc_impulse_e0.3_Ns": 4.213640533774282,
+   "sim_over_calc": 0.39135471320822396
+  },
+  "tooth_force_demand": {
+   "calc_e0.3_vs_V2": {
+    "0.3ms": {
+     "avg_N": 14045.468445914275,
+     "peak_halfsine_N": 22062.570242955768
+    },
+    "0.5ms": {
+     "avg_N": 8427.281067548565,
+     "peak_halfsine_N": 13237.54214577346
+    },
+    "1.0ms": {
+     "avg_N": 4213.640533774283,
+     "peak_halfsine_N": 6618.77107288673
+    },
+    "2.0ms": {
+     "avg_N": 2106.8202668871413,
+     "peak_halfsine_N": 3309.385536443365
+    }
+   },
+   "sim_calibrated_vs_V2": {
+    "0.3ms": {
+     "avg_N": 5496.76027552594,
+     "peak_halfsine_N": 8634.290850068252
+    },
+    "0.5ms": {
+     "avg_N": 3298.056165315564,
+     "peak_halfsine_N": 5180.57451004095
+    },
+    "1.0ms": {
+     "avg_N": 1649.028082657782,
+     "peak_halfsine_N": 2590.287255020475
+    },
+    "2.0ms": {
+     "avg_N": 824.514041328891,
+     "peak_halfsine_N": 1295.1436275102376
+    }
+   }
+  }
+ },
+ "7_capacity_N_at_tooth": {
+  "tooth_root_bending|disc_steel_S275_yield": 22380.769230769223,
+  "tooth_root_shear|disc_steel_S275_yield": 21897.149999999994,
+  "tooth_root_bending|disc_steel_hardened_AR400_yield": 81384.61538461538,
+  "tooth_root_shear|disc_steel_hardened_AR400_yield": 79625.99999999999,
+  "disc_screws_shear|bolt_8.8_yield": 4683.178663770969,
+  "disc_screws_shear|bolt_10.9_yield": 6878.418662413612,
+  "disc_screws_shear|A2-70_yield": 3292.8599979639625,
+  "disc_screws_friction_slip_mu0.15_8.8": 616.3412127904818,
+  "disc_screws_note": "per-screw shear factor 0.397 x F; rest-of-rotor inertia share 0.54; friction slip is not a failure - after slip the screws carry it in shear",
+  "bearing_608_static_C0": 1144.5569620253164,
+  "bearing_load_factor_near": 1.196969696969697,
+  "dead_shaft_M8_simply_supported|bolt_8.8_yield": 2697.686270252367,
+  "dead_shaft_M8_simply_supported|bolt_12.9_yield": 4552.345581050869,
+  "dead_shaft_M8_fixed|bolt_8.8_yield": 3480.885510003054,
+  "dead_shaft_M8_fixed|bolt_12.9_yield": 5873.994298130154,
+  "upright_hole_bearing_6061": 20975.09433962264,
+  "upright_mount_TPU_block_bearing_5MPa": 1086.7924528301885,
+  "upright_mount_TPU_block_bearing_10MPa": 2173.584905660377,
+  "upright_reaction_factor": 0.8833333333333334,
+  "hinge_pin_3mm_double_shear_A2-70_N": 3670.7153962706534
+ },
+ "7_ranked_weakest_first": [
+  [
+   "upright_mount_TPU_block_bearing_5MPa",
+   1086.7924528301885
+  ],
+  [
+   "bearing_608_static_C0",
+   1144.5569620253164
+  ],
+  [
+   "upright_mount_TPU_block_bearing_10MPa",
+   2173.584905660377
+  ],
+  [
+   "dead_shaft_M8_simply_supported|bolt_8.8_yield",
+   2697.686270252367
+  ],
+  [
+   "disc_screws_shear|A2-70_yield",
+   3292.8599979639625
+  ],
+  [
+   "dead_shaft_M8_fixed|bolt_8.8_yield",
+   3480.885510003054
+  ],
+  [
+   "dead_shaft_M8_simply_supported|bolt_12.9_yield",
+   4552.345581050869
+  ],
+  [
+   "disc_screws_shear|bolt_8.8_yield",
+   4683.178663770969
+  ],
+  [
+   "dead_shaft_M8_fixed|bolt_12.9_yield",
+   5873.994298130154
+  ],
+  [
+   "disc_screws_shear|bolt_10.9_yield",
+   6878.418662413612
+  ],
+  [
+   "upright_hole_bearing_6061",
+   20975.09433962264
+  ],
+  [
+   "tooth_root_shear|disc_steel_S275_yield",
+   21897.149999999994
+  ]
+ ],
+ "8_electrical": {
+  "esc_continuous_A": 40,
+  "motor_table_max_A": 50,
+  "battery_label_continuous_A": 68.0,
+  "sag_V_at_40A|Rb0mOhm": 0.0,
+  "sag_V_at_100A|Rb0mOhm": 0.0,
+  "sag_V_at_40A|Rb15mOhm": 0.6,
+  "sag_V_at_100A|Rb15mOhm": 1.5,
+  "sag_V_at_40A|Rb30mOhm": 1.2,
+  "sag_V_at_100A|Rb30mOhm": 3.0,
+  "match_budget": {
+   "2min|10hits|drive1.5A": {
+    "total_mAh": 134.77029252560934,
+    "pct_of_80pct_usable": 19.819160665530784,
+    "parts_mAh": {
+     "first_spinup": 4.00996036590111,
+     "respins": 15.76033215970823,
+     "weapon_idle": 60.0,
+     "drive": 50.0,
+     "logic": 5.0
+    }
+   },
+   "2min|30hits|drive3.0A": {
+    "total_mAh": 216.2909568450258,
+    "pct_of_80pct_usable": 31.807493653680265,
+    "parts_mAh": {
+     "first_spinup": 4.00996036590111,
+     "respins": 47.28099647912469,
+     "weapon_idle": 60.0,
+     "drive": 100.0,
+     "logic": 5.0
+    }
+   },
+   "3min|10hits|drive1.5A": {
+    "total_mAh": 192.27029252560934,
+    "pct_of_80pct_usable": 28.275043018471962,
+    "parts_mAh": {
+     "first_spinup": 4.00996036590111,
+     "respins": 15.76033215970823,
+     "weapon_idle": 90.0,
+     "drive": 75.0,
+     "logic": 7.499999999999999
+    }
+   },
+   "3min|30hits|drive3.0A": {
+    "total_mAh": 298.7909568450258,
+    "pct_of_80pct_usable": 43.93984659485673,
+    "parts_mAh": {
+     "first_spinup": 4.00996036590111,
+     "respins": 47.28099647912469,
+     "weapon_idle": 90.0,
+     "drive": 150.0,
+     "logic": 7.499999999999999
+    }
+   }
+  },
+  "match_budget_note": "re-spin per hit = half of a 50%->full recovery (ASSUMED average); drive average current ASSUMED; match length not in the known rules - confirm with the organiser",
+  "drv8871_two_motors_stall_A": 2.6,
+  "drv8871_peak_A": 3.6
+ },
+ "9_drive": {
+  "12.6V|mu0.4": {
+   "push_N_R3_loads": 7.638920000000001,
+   "push_N_even_25pct": 7.751783520000002,
+   "push_N_if_rear_15pct": 7.75178352,
+   "per_wheel_N": [
+    3.41,
+    3.27,
+    0.48,
+    0.47
+   ],
+   "motor_limit_per_wheel_N": 3.99144375,
+   "loss_vs_even_pct": 1.4559684195102673
+  },
+  "12.6V|mu0.6": {
+   "push_N_R3_loads": 9.411787499999999,
+   "push_N_even_25pct": 11.627675280000002,
+   "push_N_if_rear_15pct": 9.727038792000002,
+   "per_wheel_N": [
+    3.99,
+    3.99,
+    0.72,
+    0.71
+   ],
+   "motor_limit_per_wheel_N": 3.99144375,
+   "loss_vs_even_pct": 19.05701463654911
+  },
+  "12.6V|mu0.8": {
+   "push_N_R3_loads": 9.888087500000001,
+   "push_N_even_25pct": 15.503567040000004,
+   "push_N_if_rear_15pct": 10.308422556,
+   "per_wheel_N": [
+    3.99,
+    3.99,
+    0.96,
+    0.95
+   ],
+   "motor_limit_per_wheel_N": 3.99144375,
+   "loss_vs_even_pct": 36.22056476107579
+  },
+  "12.6V|top_speed_no_load_m_s": 1.4074335088082273,
+  "11.1V|mu0.4": {
+   "push_N_R3_loads": 7.638920000000001,
+   "push_N_even_25pct": 7.751783520000002,
+   "push_N_if_rear_15pct": 7.75178352,
+   "per_wheel_N": [
+    3.41,
+    3.27,
+    0.48,
+    0.47
+   ],
+   "motor_limit_per_wheel_N": 3.5162718750000006,
+   "loss_vs_even_pct": 1.4559684195102673
+  },
+  "11.1V|mu0.6": {
+   "push_N_R3_loads": 8.46144375,
+   "push_N_even_25pct": 11.627675280000002,
+   "push_N_if_rear_15pct": 8.776695042000002,
+   "per_wheel_N": [
+    3.52,
+    3.52,
+    0.72,
+    0.71
+   ],
+   "motor_limit_per_wheel_N": 3.5162718750000006,
+   "loss_vs_even_pct": 27.230133743466567
+  },
+  "11.1V|mu0.8": {
+   "push_N_R3_loads": 8.937743750000001,
+   "push_N_even_25pct": 14.065087500000002,
+   "push_N_if_rear_15pct": 9.358078806000002,
+   "per_wheel_N": [
+    3.52,
+    3.52,
+    0.96,
+    0.95
+   ],
+   "motor_limit_per_wheel_N": 3.5162718750000006,
+   "loss_vs_even_pct": 36.45440350086696
+  },
+  "11.1V|top_speed_no_load_m_s": 1.2398819006167718,
+  "sim_measured_wall_push_N": {
+   "V4_old": 8.5,
+   "V2": 6.1,
+   "R3": 7.5,
+   "source": "mujoco_sim/REPORT.md validation"
+  }
+ },
+ "10_mass_balance": {
+  "mass_g": 1975.48,
+  "margin_to_2000_g": 24.519999999999982,
+  "cg_y_mm": 8.774,
+  "rear_load_from_cg": 0.1048409090909091,
+  "rear_load_build": 0.10484,
+  "target_10%": {
+   "cg_y_needed_mm": 9.2,
+   "cg_shift_needed_mm": -0.42600000000000016,
+   "moment_to_remove_gmm": -841.5544800000004,
+   "max_add_at_y110_g": 8.348754761904766,
+   "max_add_at_y95_g": 9.808327272727277,
+   "remove_at_y100_g": 0.0,
+   "rear_ballast_at_y-100_g": 0.0,
+   "battery_move_back_mm": 0.0
+  },
+  "target_15%": {
+   "cg_y_needed_mm": 4.800000000000001,
+   "cg_shift_needed_mm": 3.9739999999999984,
+   "moment_to_remove_gmm": 7850.557519999997,
+   "max_add_at_y110_g": 0.0,
+   "max_add_at_y95_g": 0.0,
+   "remove_at_y100_g": 82.46383949579828,
+   "rear_ballast_at_y-100_g": 74.90989999999996,
+   "battery_move_back_mm": 98.13196899999996
+  }
+ }
+}
