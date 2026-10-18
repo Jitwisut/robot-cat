@@ -791,7 +791,61 @@
         ]
       ]
     },
-    "insert_trial_hole_diameter_mm": 4.6
+    "insert_trial_hole_diameter_mm": 4.6,
+    "wedgelet": {
+      "note": "R3 RFQ fix 2026-10-18, user chose option A: flat plate, thickness perpendicular to its faces. Underside = carrier top on the 35.54 deg slope; rear end square (laser cut), front end ground vertical. See r3/calc/wedgelet_tap_fix_calc.json",
+      "thickness_mm": 1.6,
+      "underside_rear_yz_mm": [
+        100,
+        20.5
+      ],
+      "underside_tip_yz_mm": [
+        128,
+        0.5
+      ],
+      "span_x_mm": [
+        27,
+        88
+      ],
+      "hole_x_mm": [
+        49,
+        75
+      ],
+      "hole_underside_y_mm": 109.05,
+      "hole_diameter_mm": 3.4,
+      "countersink_diameter_mm": 5.5,
+      "countersink_angle_deg": 90,
+      "min_countersink_land_mm": 0.5,
+      "fastener": "M3x5 cross-recess flat head ISO 7046 / JIS B1111, head dk <= 5.5 mm; cut the countersink to the measured head"
+    },
+    "upright_side_screws_yz_mm": [
+      [
+        75,
+        14
+      ],
+      [
+        75,
+        50
+      ],
+      [
+        90,
+        14
+      ],
+      [
+        90,
+        46
+      ]
+    ],
+    "upright_edge_tap": {
+      "note": "Brace screws into the uprights' top/bottom edges at x +-30. Side taps moved y 70 -> 75 so these do not break into them.",
+      "y_mm": 69,
+      "drill_diameter_mm": 2.5,
+      "drill_depth_mm": 8,
+      "drill_point_deg": 118,
+      "thread": "M3",
+      "thread_depth_mm": 6,
+      "min_wall_mm": 2.0
+    }
   },
   "fit": {
     "verified": false,

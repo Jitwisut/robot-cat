@@ -1,6 +1,6 @@
 # ตรวจ R3 ร่าง — 10 ต.ค. 2026
 
-สถานะ DRAFT_NOT_RELEASED / ASSEMBLY_PENDING; build `319857d1a9f0a57815e203bf037db3a52d2c40b1a51fe7ead140aa4becb78534`. ใช้SURPASS1300KVและแบตGNBตามข้อมูลเว็บที่ยืนยันใน[WEB_CONFIRMED.md](../WEB_CONFIRMED.md); ไม่มีRELEASED ไม่อนุมัติผลิตชุดใหญ่ เก็บR1/R2เดิมไว้
+สถานะ DRAFT_NOT_RELEASED / ASSEMBLY_PENDING; build `5dfa96dcd76ec8505db7b12d26a1aad9cfd1e0a312cb58c4c2baec8a45bcc975` (18 ต.ค. 2026 สร้างใหม่หลังแก้ wedgelet 1.6 มม.ตั้งฉากผิว และรูต๊าปขอบ/ข้างแผ่นตั้ง; ดู r3/calc/wedgelet_tap_fix_calc.json). ใช้SURPASS1300KVและแบตGNBตามข้อมูลเว็บที่ยืนยันใน[WEB_CONFIRMED.md](../WEB_CONFIRMED.md); ไม่มีRELEASED ไม่อนุมัติผลิตชุดใหญ่ เก็บR1/R2เดิมไว้
 
 | ตรวจ | ผล |
 |---|---|
@@ -11,10 +11,11 @@
 | STL | 17แบบ/26ชิ้น closed/manifold/winding/duplicates/Z0ผ่าน |
 | Trial STL | 41ไฟล์ผ่านmesh; tyreIDทีละ.1mm ไม่ใช่ผลสวมจริง |
 | เพลาอาวุธ | SURPASSØ4ยื่น20mmในCAD สวมรอก13mm; screwx6อยู่บนเพลา |
-| MuJoCo | latestSHAตรงกัน passed=True; mass/CGตรงใน0.0109mm |
-| พัก/เร่ง/เลี้ยว/กลับหัว | rearloadจำลอง12.289%; ฟันต่ำสุด2.075mm; ไม่มีfloorcontacts;กลับหัว1.369m |
+| MuJoCo | latestSHAตรงกัน passed=True; mass/CGตรงใน0.0075mm |
+| พัก/เร่ง/เลี้ยว/กลับหัว | rearloadจำลอง12.369%; ฟันต่ำสุด2.075mm; ไม่มีfloorcontacts;กลับหัว1.369m |
 | ไฟฟ้าในmodel | weaponKV1300/R.038/I01.8จากคู่มือ; drive torqueยังnominal; predictedpeak28.87Aไม่ใช่กระแสวัดจริง |
-| มวล/สมดุล | 1975.48g/rearstatic10.484%; hardlimitsผ่านเฉพาะค่าประมาณ ยังพลาด1900g/15% |
+| มวล/สมดุล | 1973.05g/rearstatic10.615%; hardlimitsผ่านเฉพาะค่าประมาณ ยังพลาด1900g/15% |
+| Wedgelet / รูต๊าปแผ่นตั้ง | แผ่น1.6มม.ตั้งฉากผิว วัดใน STEP ได้1.600; เนื้อใต้countersink0.55≥0.5; รูต๊าปขอบØ2.5×8อยู่ในSTEP เนื้อกั้นถึงรูข้าง3.5≥2.0 (dimension check ใหม่ใน checks.py) |
 | Tests | 46testsผ่าน; release/profile/evidence/budget/current/mesh/ย้อนหลัง |
 | Release | --releaseปฏิเสธexit2เพราะยังขาดหลักฐานจริง; ไม่มีRELEASED |
 
