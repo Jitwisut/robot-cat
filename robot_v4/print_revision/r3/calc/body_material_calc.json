@@ -1,0 +1,281 @@
+{
+ "body_now_g": 440.2,
+ "body_now_centroid_y_mm": -12.0,
+ "allowed_body_g_for_2kg": 464.7,
+ "panel_area_mm2": 102570,
+ "panel_centroid_y_mm": -15.5,
+ "bracket_area_mm2": 16112,
+ "max_uniform_thickness_mm_within_2kg": {
+  "steel_mild_SPCC": 0.26,
+  "stainless_304": 0.24,
+  "steel_spring_65Mn": 0.26,
+  "aluminium_5052_H32": 1.35,
+  "aluminium_6061_T6": 1.34,
+  "titanium_gr2": 0.68
+ },
+ "options": {
+  "steel_mild_SPCC|0.5mm": {
+   "shell_g": 402.6,
+   "brackets_g": 253.0,
+   "body_g": 661.5,
+   "delta_vs_TPU_body_g": 221.4,
+   "robot_total_g": 2196.9,
+   "margin_to_2000_g": -196.9,
+   "fits_2kg": false,
+   "rear_load_pct": 10.69,
+   "panel_bending_stiffness_vs_TPU4mm": 8.0,
+   "panel_yield_moment_Nmm_per_mm": 10.4
+  },
+  "steel_mild_SPCC|0.8mm": {
+   "shell_g": 644.1,
+   "brackets_g": 253.0,
+   "body_g": 903.1,
+   "delta_vs_TPU_body_g": 462.9,
+   "robot_total_g": 2438.4,
+   "margin_to_2000_g": -438.4,
+   "fits_2kg": false,
+   "rear_load_pct": 13.4,
+   "panel_bending_stiffness_vs_TPU4mm": 32.0,
+   "panel_yield_moment_Nmm_per_mm": 26.7
+  },
+  "steel_mild_SPCC|1.0mm": {
+   "shell_g": 805.2,
+   "brackets_g": 253.0,
+   "body_g": 1064.1,
+   "delta_vs_TPU_body_g": 624.0,
+   "robot_total_g": 2599.5,
+   "margin_to_2000_g": -599.5,
+   "fits_2kg": false,
+   "rear_load_pct": 14.93,
+   "panel_bending_stiffness_vs_TPU4mm": 62.0,
+   "panel_yield_moment_Nmm_per_mm": 41.7
+  },
+  "steel_mild_SPCC|1.5mm": {
+   "shell_g": 1207.8,
+   "brackets_g": 253.0,
+   "body_g": 1466.7,
+   "delta_vs_TPU_body_g": 1026.6,
+   "robot_total_g": 3002.0,
+   "margin_to_2000_g": -1002.0,
+   "fits_2kg": false,
+   "rear_load_pct": 18.03,
+   "panel_bending_stiffness_vs_TPU4mm": 211.0,
+   "panel_yield_moment_Nmm_per_mm": 93.8
+  },
+  "stainless_304|0.5mm": {
+   "shell_g": 410.3,
+   "brackets_g": 257.8,
+   "body_g": 674.1,
+   "delta_vs_TPU_body_g": 233.9,
+   "robot_total_g": 2209.4,
+   "margin_to_2000_g": -209.4,
+   "fits_2kg": false,
+   "rear_load_pct": 10.79,
+   "panel_bending_stiffness_vs_TPU4mm": 8.0,
+   "panel_yield_moment_Nmm_per_mm": 9.0
+  },
+  "stainless_304|0.8mm": {
+   "shell_g": 656.4,
+   "brackets_g": 257.8,
+   "body_g": 920.2,
+   "delta_vs_TPU_body_g": 480.1,
+   "robot_total_g": 2455.6,
+   "margin_to_2000_g": -455.6,
+   "fits_2kg": false,
+   "rear_load_pct": 13.52,
+   "panel_bending_stiffness_vs_TPU4mm": 31.0,
+   "panel_yield_moment_Nmm_per_mm": 22.9
+  },
+  "stainless_304|1.0mm": {
+   "shell_g": 820.6,
+   "brackets_g": 257.8,
+   "body_g": 1084.4,
+   "delta_vs_TPU_body_g": 644.2,
+   "robot_total_g": 2619.7,
+   "margin_to_2000_g": -619.7,
+   "fits_2kg": false,
+   "rear_load_pct": 15.05,
+   "panel_bending_stiffness_vs_TPU4mm": 60.0,
+   "panel_yield_moment_Nmm_per_mm": 35.8
+  },
+  "steel_spring_65Mn|0.5mm": {
+   "shell_g": 402.6,
+   "brackets_g": 253.0,
+   "body_g": 661.5,
+   "delta_vs_TPU_body_g": 221.4,
+   "robot_total_g": 2196.9,
+   "margin_to_2000_g": -196.9,
+   "fits_2kg": false,
+   "rear_load_pct": 10.69,
+   "panel_bending_stiffness_vs_TPU4mm": 8.0,
+   "panel_yield_moment_Nmm_per_mm": 33.3
+  },
+  "steel_spring_65Mn|0.8mm": {
+   "shell_g": 644.1,
+   "brackets_g": 253.0,
+   "body_g": 903.1,
+   "delta_vs_TPU_body_g": 462.9,
+   "robot_total_g": 2438.4,
+   "margin_to_2000_g": -438.4,
+   "fits_2kg": false,
+   "rear_load_pct": 13.4,
+   "panel_bending_stiffness_vs_TPU4mm": 32.0,
+   "panel_yield_moment_Nmm_per_mm": 85.3
+  },
+  "aluminium_5052_H32|1.0mm": {
+   "shell_g": 274.9,
+   "brackets_g": 86.4,
+   "body_g": 367.2,
+   "delta_vs_TPU_body_g": -72.9,
+   "robot_total_g": 1902.6,
+   "margin_to_2000_g": 97.4,
+   "fits_2kg": true,
+   "rear_load_pct": 9.02,
+   "panel_bending_stiffness_vs_TPU4mm": 22.0,
+   "panel_yield_moment_Nmm_per_mm": 32.2
+  },
+  "aluminium_5052_H32|1.5mm": {
+   "shell_g": 412.3,
+   "brackets_g": 86.4,
+   "body_g": 504.7,
+   "delta_vs_TPU_body_g": 64.5,
+   "robot_total_g": 2040.0,
+   "margin_to_2000_g": -40.0,
+   "fits_2kg": false,
+   "rear_load_pct": 10.98,
+   "panel_bending_stiffness_vs_TPU4mm": 74.0,
+   "panel_yield_moment_Nmm_per_mm": 72.4
+  },
+  "aluminium_5052_H32|2.0mm": {
+   "shell_g": 549.8,
+   "brackets_g": 86.4,
+   "body_g": 642.1,
+   "delta_vs_TPU_body_g": 202.0,
+   "robot_total_g": 2177.5,
+   "margin_to_2000_g": -177.5,
+   "fits_2kg": false,
+   "rear_load_pct": 12.68,
+   "panel_bending_stiffness_vs_TPU4mm": 175.0,
+   "panel_yield_moment_Nmm_per_mm": 128.7
+  },
+  "aluminium_6061_T6|1.5mm": {
+   "shell_g": 415.4,
+   "brackets_g": 87.0,
+   "body_g": 508.4,
+   "delta_vs_TPU_body_g": 68.3,
+   "robot_total_g": 2043.7,
+   "margin_to_2000_g": -43.7,
+   "fits_2kg": false,
+   "rear_load_pct": 11.02,
+   "panel_bending_stiffness_vs_TPU4mm": 73.0,
+   "panel_yield_moment_Nmm_per_mm": 103.5
+  },
+  "aluminium_6061_T6|2.0mm": {
+   "shell_g": 553.9,
+   "brackets_g": 87.0,
+   "body_g": 646.9,
+   "delta_vs_TPU_body_g": 206.7,
+   "robot_total_g": 2182.2,
+   "margin_to_2000_g": -182.2,
+   "fits_2kg": false,
+   "rear_load_pct": 12.73,
+   "panel_bending_stiffness_vs_TPU4mm": 172.0,
+   "panel_yield_moment_Nmm_per_mm": 184.0
+  },
+  "aluminium_6061_T6|3.0mm": {
+   "shell_g": 830.8,
+   "brackets_g": 87.0,
+   "body_g": 923.8,
+   "delta_vs_TPU_body_g": 483.7,
+   "robot_total_g": 2459.1,
+   "margin_to_2000_g": -459.1,
+   "fits_2kg": false,
+   "rear_load_pct": 15.58,
+   "panel_bending_stiffness_vs_TPU4mm": 582.0,
+   "panel_yield_moment_Nmm_per_mm": 414.0
+  },
+  "titanium_gr2|0.8mm": {
+   "shell_g": 370.1,
+   "brackets_g": 145.3,
+   "body_g": 521.4,
+   "delta_vs_TPU_body_g": 81.2,
+   "robot_total_g": 2056.7,
+   "margin_to_2000_g": -56.7,
+   "fits_2kg": false,
+   "rear_load_pct": 10.36,
+   "panel_bending_stiffness_vs_TPU4mm": 17.0,
+   "panel_yield_moment_Nmm_per_mm": 29.3
+  },
+  "titanium_gr2|1.0mm": {
+   "shell_g": 462.6,
+   "brackets_g": 145.3,
+   "body_g": 613.9,
+   "delta_vs_TPU_body_g": 173.8,
+   "robot_total_g": 2149.2,
+   "margin_to_2000_g": -149.2,
+   "fits_2kg": false,
+   "rear_load_pct": 11.55,
+   "panel_bending_stiffness_vs_TPU4mm": 33.0,
+   "panel_yield_moment_Nmm_per_mm": 45.8
+  },
+  "polycarbonate|2.0mm": {
+   "shell_g": 246.2,
+   "brackets_g": 58.0,
+   "body_g": 310.2,
+   "delta_vs_TPU_body_g": -130.0,
+   "robot_total_g": 1845.5,
+   "margin_to_2000_g": 154.5,
+   "fits_2kg": true,
+   "rear_load_pct": 8.57,
+   "panel_bending_stiffness_vs_TPU4mm": 6.0,
+   "panel_yield_moment_Nmm_per_mm": 41.3
+  },
+  "polycarbonate|3.0mm": {
+   "shell_g": 369.3,
+   "brackets_g": 58.0,
+   "body_g": 433.3,
+   "delta_vs_TPU_body_g": -6.9,
+   "robot_total_g": 1968.6,
+   "margin_to_2000_g": 31.4,
+   "fits_2kg": true,
+   "rear_load_pct": 10.41,
+   "panel_bending_stiffness_vs_TPU4mm": 19.0,
+   "panel_yield_moment_Nmm_per_mm": 93.0
+  },
+  "polycarbonate|4.0mm": {
+   "shell_g": 492.3,
+   "brackets_g": 58.0,
+   "body_g": 556.3,
+   "delta_vs_TPU_body_g": 116.2,
+   "robot_total_g": 2091.7,
+   "margin_to_2000_g": -91.7,
+   "fits_2kg": false,
+   "rear_load_pct": 12.04,
+   "panel_bending_stiffness_vs_TPU4mm": 46.0,
+   "panel_yield_moment_Nmm_per_mm": 165.3
+  }
+ },
+ "armour_on_tpu": {
+  "steel_mild_SPCC|0.8mm_sides+front": {
+   "added_g": 183.8,
+   "robot_total_g": 2159.3,
+   "fits_2kg": false
+  },
+  "aluminium_6061_T6|1.5mm_sides+front": {
+   "added_g": 118.6,
+   "robot_total_g": 2094.0,
+   "fits_2kg": false
+  },
+  "titanium_gr2|0.8mm_sides+front": {
+   "added_g": 105.6,
+   "robot_total_g": 2081.1,
+   "fits_2kg": false
+  }
+ },
+ "assumptions": [
+  "flat panels on the R3 outline; bends, flanges and fastener tabs add ~5-10 %",
+  "brackets 2 mm metal (3 mm for polymer) replacing TPU motor walls / upright blocks",
+  "TPU flexural modulus 50 MPa ASSUMED; material grades not confirmed",
+  "no cost: needs a laser-cut + bending quote"
+ ]
+}
