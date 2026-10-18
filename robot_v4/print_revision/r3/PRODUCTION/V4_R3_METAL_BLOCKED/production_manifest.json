@@ -1,0 +1,555 @@
+{
+  "status": "BLOCKED",
+  "revision": "V4_PRINT_R3",
+  "build_sha256": "5dfa96dcd76ec8505db7b12d26a1aad9cfd1e0a312cb58c4c2baec8a45bcc975",
+  "date": "2026-10-18",
+  "blockers": [
+    "M02 Upright_6061_6mm_L: ใช้ค่า weapon_motor.diameter_mm ที่ยังไม่ได้วัดจริง",
+    "M02 Upright_6061_6mm_L: ใช้ค่า dead_shaft.diameter_mm ที่ยังไม่ได้วัดจริง",
+    "M03 Upright_6061_6mm_R: ใช้ค่า dead_shaft.diameter_mm ที่ยังไม่ได้วัดจริง",
+    "M06 Weapon_Motor_Mount_3mm: ใช้ค่า weapon_motor.mount_holes_yz_mm ที่ยังไม่ได้วัดจริง",
+    "M06 Weapon_Motor_Mount_3mm: ใช้ค่า weapon_motor.mount_thread_diameter_mm ที่ยังไม่ได้วัดจริง",
+    "M06 Weapon_Motor_Mount_3mm: ใช้ค่า weapon_motor.boss_diameter_mm ที่ยังไม่ได้วัดจริง",
+    "M06 Weapon_Motor_Mount_3mm: ใช้ค่า drive_Front_L.diameter_mm ที่ยังไม่ได้วัดจริง",
+    "M06 Weapon_Motor_Mount_3mm: ใช้ค่า drive_Front_R.diameter_mm ที่ยังไม่ได้วัดจริง"
+  ],
+  "mass_total_g": 1973.05,
+  "rear_load": 0.10615,
+  "parts": [
+    {
+      "id": "M01",
+      "file": "Beater_Disc_L",
+      "name": "จานอาวุธ (beater disc)",
+      "material": "เหล็ก 4140 ชุบแข็ง 45±2 HRC หลังเจาะ หรือ Hardox 450 (ความแข็งใกล้เคียงกัน)",
+      "qty": 2,
+      "thickness": 6.0,
+      "cad_thickness": 6.0,
+      "min_wall": 4.3,
+      "mass_g": 80.42,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 32.19,
+          "y": 20.31,
+          "d": 3.4,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø3.4 → countersink 90° Ø6.3"
+        },
+        {
+          "id": "H2",
+          "x": 13.81,
+          "y": 20.31,
+          "d": 3.4,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø3.4 → countersink 90° Ø6.3"
+        },
+        {
+          "id": "H3",
+          "x": 40.5,
+          "y": 29.5,
+          "d": 8.0,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H4",
+          "x": 32.19,
+          "y": 38.69,
+          "d": 3.4,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø3.4 → countersink 90° Ø6.3"
+        },
+        {
+          "id": "H5",
+          "x": 23.0,
+          "y": 29.5,
+          "d": 14.0,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H6",
+          "x": 5.5,
+          "y": 29.5,
+          "d": 8.0,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H7",
+          "x": 13.81,
+          "y": 38.69,
+          "d": 3.4,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø3.4 → countersink 90° Ø6.3"
+        }
+      ],
+      "edge_holes": []
+    },
+    {
+      "id": "M02",
+      "file": "Upright_6061_6mm_L",
+      "name": "แผ่นตั้งซ้าย (upright L)",
+      "material": "อลูมิเนียม 6061-T6",
+      "qty": 1,
+      "thickness": 6.0,
+      "cad_thickness": 6.0,
+      "min_wall": 2.77,
+      "mass_g": 32.98,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 11.0,
+          "y": 22.0,
+          "d": 2.5,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø2.5 → ต๊าป M3-6H ทะลุ"
+        },
+        {
+          "id": "H2",
+          "x": 25.0,
+          "y": 17.0,
+          "d": 8.2,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H3",
+          "x": 43.0,
+          "y": 22.0,
+          "d": 2.5,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø2.5 → ต๊าป M3-6H ทะลุ"
+        },
+        {
+          "id": "H4",
+          "x": 7.0,
+          "y": 37.0,
+          "d": 2.5,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø2.5 → ต๊าป M3-6H ทะลุ"
+        },
+        {
+          "id": "H5",
+          "x": 43.0,
+          "y": 37.0,
+          "d": 2.5,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø2.5 → ต๊าป M3-6H ทะลุ"
+        }
+      ],
+      "edge_holes": [
+        {
+          "id": "E1",
+          "x": 50.0,
+          "y": 43.0,
+          "d": 2.5,
+          "depth": 8.0,
+          "op": "เจาะ Ø2.5 ลึก 8 (ปลายดอก 118°) → ต๊าป M3-6H ลึก 6"
+        },
+        {
+          "id": "E2",
+          "x": 0.0,
+          "y": 43.0,
+          "d": 2.5,
+          "depth": 8.0,
+          "op": "เจาะ Ø2.5 ลึก 8 (ปลายดอก 118°) → ต๊าป M3-6H ลึก 6"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "file": "Upright_6061_6mm_R",
+      "name": "แผ่นตั้งขวา (upright R)",
+      "material": "อลูมิเนียม 6061-T6",
+      "qty": 1,
+      "thickness": 6.0,
+      "cad_thickness": 6.0,
+      "min_wall": 3.5,
+      "mass_g": 33.35,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 11.0,
+          "y": 22.0,
+          "d": 2.5,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø2.5 → ต๊าป M3-6H ทะลุ"
+        },
+        {
+          "id": "H2",
+          "x": 25.0,
+          "y": 17.0,
+          "d": 8.2,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H3",
+          "x": 43.0,
+          "y": 22.0,
+          "d": 2.5,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø2.5 → ต๊าป M3-6H ทะลุ"
+        },
+        {
+          "id": "H4",
+          "x": 7.0,
+          "y": 37.0,
+          "d": 2.5,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø2.5 → ต๊าป M3-6H ทะลุ"
+        },
+        {
+          "id": "H5",
+          "x": 43.0,
+          "y": 37.0,
+          "d": 2.5,
+          "op": "มาร์กด้วยเลเซอร์ → เจาะ Ø2.5 → ต๊าป M3-6H ทะลุ"
+        }
+      ],
+      "edge_holes": [
+        {
+          "id": "E1",
+          "x": 50.0,
+          "y": 43.0,
+          "d": 2.5,
+          "depth": 8.0,
+          "op": "เจาะ Ø2.5 ลึก 8 (ปลายดอก 118°) → ต๊าป M3-6H ลึก 6"
+        },
+        {
+          "id": "E2",
+          "x": 0.0,
+          "y": 43.0,
+          "d": 2.5,
+          "depth": 8.0,
+          "op": "เจาะ Ø2.5 ลึก 8 (ปลายดอก 118°) → ต๊าป M3-6H ลึก 6"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "file": "Weapon_Top_Brace_3mm",
+      "name": "คานยึดบน (top brace)",
+      "material": "อลูมิเนียม 6061-T6",
+      "qty": 1,
+      "thickness": 3.0,
+      "cad_thickness": 3.0,
+      "min_wall": 11.6,
+      "mass_g": 6.17,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 3.0,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H2",
+          "x": 18.0,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H3",
+          "x": 48.0,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H4",
+          "x": 63.0,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        }
+      ],
+      "edge_holes": []
+    },
+    {
+      "id": "M05",
+      "file": "Weapon_Bottom_Brace_3mm",
+      "name": "คานยึดล่าง (bottom brace)",
+      "material": "อลูมิเนียม 6061-T6",
+      "qty": 1,
+      "thickness": 3.0,
+      "cad_thickness": 3.0,
+      "min_wall": 11.6,
+      "mass_g": 5.05,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 3.0,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H2",
+          "x": 18.0,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H3",
+          "x": 48.0,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H4",
+          "x": 63.0,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        }
+      ],
+      "edge_holes": []
+    },
+    {
+      "id": "M06",
+      "file": "Weapon_Motor_Mount_3mm",
+      "name": "แผ่นยึดมอเตอร์อาวุธ",
+      "material": "อลูมิเนียม 6061-T6",
+      "qty": 1,
+      "thickness": 3.0,
+      "cad_thickness": 3.0,
+      "min_wall": 2.55,
+      "mass_g": 12.95,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 43.0,
+          "y": 9.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H2",
+          "x": 28.0,
+          "y": 14.5,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H3",
+          "x": 15.5,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H4",
+          "x": 15.5,
+          "y": 14.5,
+          "d": 10.5,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H5",
+          "x": 3.0,
+          "y": 14.5,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H6",
+          "x": 43.0,
+          "y": 31.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H7",
+          "x": 15.5,
+          "y": 24.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        }
+      ],
+      "edge_holes": []
+    },
+    {
+      "id": "M07",
+      "file": "Wedgelet_L",
+      "name": "แผ่นลิ่ม (wedgelet) ซ้าย 1 + ขวา 1",
+      "material": "เหล็กสปริง 65Mn หรือ SK5 (ชุบแข็งแล้ว)",
+      "qty": 2,
+      "thickness": 1.6,
+      "cad_thickness": 1.6,
+      "min_wall": 22.6,
+      "mass_g": 26.13,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 23.29,
+          "y": 22.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์ → countersink 90° Ø5.5"
+        },
+        {
+          "id": "H2",
+          "x": 23.29,
+          "y": 48.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์ → countersink 90° Ø5.5"
+        }
+      ],
+      "edge_holes": []
+    },
+    {
+      "id": "M08",
+      "file": "Skirt_Plate_08mm_R",
+      "name": "แผ่นกันข้าง (side skirt) ซ้าย + ขวา",
+      "material": "อลูมิเนียม 5052-H32",
+      "qty": 2,
+      "thickness": 0.8,
+      "cad_thickness": 0.8,
+      "min_wall": 27.8,
+      "mass_g": 8.47,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 2.5,
+          "y": 34.5,
+          "d": 2.2,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H2",
+          "x": 2.5,
+          "y": 64.5,
+          "d": 2.2,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H3",
+          "x": 2.5,
+          "y": 124.5,
+          "d": 2.2,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H4",
+          "x": 2.5,
+          "y": 179.5,
+          "d": 2.2,
+          "op": "ตัดเลเซอร์"
+        }
+      ],
+      "edge_holes": []
+    },
+    {
+      "id": "M09",
+      "file": "Skirt_Plate_08mm_Rear",
+      "name": "แผ่นกันท้าย (rear skirt)",
+      "material": "อลูมิเนียม 5052-H32",
+      "qty": 1,
+      "thickness": 0.8,
+      "cad_thickness": 0.8,
+      "min_wall": 55.3,
+      "mass_g": 7.2,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 16.51,
+          "y": 145.5,
+          "d": 2.2,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H2",
+          "x": 16.51,
+          "y": 88.0,
+          "d": 2.2,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H3",
+          "x": 16.51,
+          "y": 30.5,
+          "d": 2.2,
+          "op": "ตัดเลเซอร์"
+        }
+      ],
+      "edge_holes": []
+    }
+  ],
+  "files": [
+    {
+      "file": "DXF/Beater_Disc_L.dxf",
+      "sha256": "3f46791b958a7a8f35c00e001d96efae57f9266dfe7844d33cb8f6c8d4562124"
+    },
+    {
+      "file": "STEP/Beater_Disc_L.step",
+      "sha256": "a8b24a010b8ac7e2b9d923e62214fd99adc769a7c417152204439f6853e4c7fb"
+    },
+    {
+      "file": "DXF/Upright_6061_6mm_L.dxf",
+      "sha256": "6a604b3de35bd5401c00b010ce809c1e64662fd04a18a4d6bcf19fd454872328"
+    },
+    {
+      "file": "STEP/Upright_6061_6mm_L.step",
+      "sha256": "ba9617175fce0db7e329b3a305dde241682074b5abb37a9b52e13ce870889d6b"
+    },
+    {
+      "file": "DXF/Upright_6061_6mm_R.dxf",
+      "sha256": "8ab2fabac555620f4b48b22b496a6def6b4e5c90f7f11ce55ef0478e60a03f32"
+    },
+    {
+      "file": "STEP/Upright_6061_6mm_R.step",
+      "sha256": "7a902908bf726b7ab74a36ae399b615c6a79566e40ed4d9cfcfbdb1441ed3ec5"
+    },
+    {
+      "file": "DXF/Weapon_Top_Brace_3mm.dxf",
+      "sha256": "d5a702515946e5bce5c32f11e0b5e99f1efdab605f06e05f6b5b68e8e75dfcf5"
+    },
+    {
+      "file": "STEP/Weapon_Top_Brace_3mm.step",
+      "sha256": "bad2946a3b7720efd73ab1b3d1c50975147bf8501fa1ae8d70e84ba6309b6777"
+    },
+    {
+      "file": "DXF/Weapon_Bottom_Brace_3mm.dxf",
+      "sha256": "e3f7bc403b5a598b08c7b86378cab5ea56c623f5094b30a9cdc927afa9618f62"
+    },
+    {
+      "file": "STEP/Weapon_Bottom_Brace_3mm.step",
+      "sha256": "ad1363829f4deb998ee40381228747a02ed59fcc4e78e6790b279dfcf4ec64f2"
+    },
+    {
+      "file": "DXF/Weapon_Motor_Mount_3mm.dxf",
+      "sha256": "5fdd2af07093f917973123de6925d3a0e7542a6bd1f3ae37fa4d6dfbc4746b8d"
+    },
+    {
+      "file": "STEP/Weapon_Motor_Mount_3mm.step",
+      "sha256": "bd1650582544e18e5679c4340e708cf2cc0791717d5a1f1717cbcba13f0e559f"
+    },
+    {
+      "file": "DXF/Wedgelet_L.dxf",
+      "sha256": "dc81a7e4f8ae2dac483e905e8659310f1cef79fd487122016360a00d79a75aca"
+    },
+    {
+      "file": "STEP/Wedgelet_L.step",
+      "sha256": "5b4134fae589114f022d841b4aa4e85aee71218b7f6aadd136fe5fd674190863"
+    },
+    {
+      "file": "DXF/Skirt_Plate_08mm_R.dxf",
+      "sha256": "e2fd99e9616afea9238740b226e6f066f060bfc2eaee81c6c8eda08a1c873b30"
+    },
+    {
+      "file": "STEP/Skirt_Plate_08mm_R.step",
+      "sha256": "9b2e6a3a325bb73d0ef786c99de947d9eab2f9205ef8aa411f48cf8cef9cd452"
+    },
+    {
+      "file": "DXF/Skirt_Plate_08mm_Rear.dxf",
+      "sha256": "f9bbc0937d15539eae181c62e462074e8d649c7175b2ba6619c6c27d535c2b88"
+    },
+    {
+      "file": "STEP/Skirt_Plate_08mm_Rear.step",
+      "sha256": "e613213f3eabc73e27bd7e2d9c543f8b5977905729bc382f794f91519ca96f7c"
+    },
+    {
+      "file": "STEP/DERIVED_Wedgelet_R_mirror_of_Wedgelet_L.step",
+      "sha256": "da08ed45dcc316fd013bc98f35a7c2f7da497f23204907f6fc45f52c7f3c875d",
+      "derived": true
+    },
+    {
+      "file": "STEP/DERIVED_Skirt_Plate_08mm_L_mirror_of_Skirt_Plate_08mm_R.step",
+      "sha256": "2f00e1516f2d935a170e1cb41b0a312c71fb64baeef9831618709d82c0919451",
+      "derived": true
+    },
+    {
+      "file": "WORK_ORDER_PRODUCTION_TH.pdf",
+      "sha256": "d116b9e7e52f1602d3b8c5fccadc02000849c7b4098965000a0c7ec1d3404e25"
+    }
+  ]
+}
