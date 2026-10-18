@@ -4,12 +4,15 @@ Reads the current output_R3/DRAFT/metal files and inputs_R3.json/build_report.js
 and writes PRODUCTION/V4_R3_METAL_<STATUS>/ with copied DXF/STEP (SHA-checked), one dimensioned drawing per part
 (hole table, edge taps found in STEP, tolerances, title block) and a Thai production work order PDF.
 STATUS is RELEASED only when no gate fails; otherwise every page is stamped BLOCKED and the blockers are listed.
+If PRODUCTION/RELEASE_DECISION.json exists (a partial release the user recorded for this exact build), the parts it
+releases go to V4_R3_METAL_RELEASED with its accepted risks listed, and every other part stays in V4_R3_METAL_BLOCKED.
 Run from the repository: .venv-v4-print/bin/python robot_v4/print_revision/r3/RFQ/make_metal_production_package.py
 """
 import html
 import itertools
 import json
 import math
+import os
 import shutil
 import subprocess
 import zipfile
@@ -27,7 +30,14 @@ SRC = R3 / 'output_R3' / 'DRAFT' / 'metal'
 INPUTS = json.loads((R3 / 'inputs_R3.json').read_text())
 REPORT = json.loads((R3 / 'output_R3' / 'build_report.json').read_text())
 DATE = '2026-10-18'
-CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+CHROME = os.environ.get('CHROME', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
+DECISION_PATH = R3 / 'PRODUCTION' / 'RELEASE_DECISION.json'
+DECISION = json.loads(DECISION_PATH.read_text()) if DECISION_PATH.exists() else None
+if DECISION and not REPORT['build_sha256'].startswith(DECISION['basis']['r3_build_sha256_prefix']):
+    raise SystemExit('RELEASE_DECISION.json was made for build %s, current build is %s: re-decide or delete it' % (
+        DECISION['basis']['r3_build_sha256_prefix'], REPORT['build_sha256'][:8]))
+# unmeasured hardware values the user accepted for the released parts: 'part.key' -> reason
+ACCEPTED = DECISION['accepted_risks'] if DECISION else {}
 
 
 def sha(path):
@@ -193,7 +203,7 @@ def svg_drawing(g, edge_holes):
     return '\n'.join(s)
 
 
-def analyse(part, blockers):
+def analyse(part, blockers, accepted):
     dxf, step = SRC / (part['file'] + '.dxf'), SRC / (part['file'] + '.step')
     shape = cq.importers.importStep(str(step)).val()
     face, plane = plate_frame(shape)
@@ -234,7 +244,9 @@ def analyse(part, blockers):
     if faces and len(faces) > 1 and wall < MIN_HOLE_WALL:
         blockers.append('%s %s: ผนังระหว่างรู Ø%g กับ Ø%g บางสุด %.2f มม. (ต้อง ≥ %g)' % (part['id'], part['file'], pair[0], pair[1], wall, MIN_HOLE_WALL))
     for hw, key in DEPENDS.get(part['file'], []):
-        if hardware_actual(hw, key) is None:
+        if hardware_actual(hw, key) is None and '%s.%s' % (hw, key) in ACCEPTED:
+            accepted.append('%s %s: %s.%s — %s' % (part['id'], part['file'], hw, key, ACCEPTED['%s.%s' % (hw, key)]))
+        elif hardware_actual(hw, key) is None:
             blockers.append('%s %s: ใช้ค่า %s.%s ที่ยังไม่ได้วัดจริง' % (part['id'], part['file'], hw, key))
     mass = face.Area() * std * part['density']
     return dict(part, thickness=std, cad_thickness=round(thickness, 3), rows=rows, edge_rows=edge_rows, g=g,
@@ -242,19 +254,46 @@ def analyse(part, blockers):
 
 
 def main():
-    blockers = []
-    parts = [analyse(p, blockers) for p in PARTS]
+    per_part, accepted, parts = {}, [], []
+    for p in PARTS:
+        per_part[p['id']] = []
+        parts.append(analyse(p, per_part[p['id']], accepted))
     mass = REPORT['mass']
+    common = []
     if mass['total_g'] > INPUTS['design']['mass_limit_g']:
-        blockers.append('build ล่าสุดหนัก %.2f g เกิน %d g' % (mass['total_g'], INPUTS['design']['mass_limit_g']))
+        common.append('build ล่าสุดหนัก %.2f g เกิน %d g' % (mass['total_g'], INPUTS['design']['mass_limit_g']))
     if mass['rear_static_load_fraction'] < INPUTS['design']['rear_load_min']:
-        blockers.append('build ล่าสุดล้อหลังรับ %.2f%% ต่ำกว่า %g%%' % (100 * mass['rear_static_load_fraction'], 100 * INPUTS['design']['rear_load_min']))
-    blockers = list(dict.fromkeys(blockers))
-    status = 'BLOCKED' if blockers else 'RELEASED'
-    stamp = 'ใช้ขอราคาได้ — ห้ามผลิตจนกว่าเงื่อนไขหน้าแรกจะผ่าน (BLOCKED)' if blockers else 'อนุมัติผลิต (RELEASED)'
-    out = R3 / 'PRODUCTION' / ('V4_R3_METAL_' + status)
+        common.append('build ล่าสุดล้อหลังรับ %.2f%% ต่ำกว่า %g%%' % (100 * mass['rear_static_load_fraction'], 100 * INPUTS['design']['rear_load_min']))
     for old in (R3 / 'PRODUCTION').glob('V4_R3_METAL_*'):
         shutil.rmtree(old) if old.is_dir() else old.unlink()
+    released = set(DECISION['released']['laser_metal']) if DECISION else set()
+    unknown = released - set(per_part)
+    if unknown:
+        raise SystemExit('RELEASE_DECISION.json releases unknown parts: %s' % sorted(unknown))
+    still = {i: per_part[i] for i in released if per_part[i]}
+    if released and (common or still):
+        raise SystemExit('RELEASE_DECISION.json releases parts that still fail a gate: %s' % (common + sum(still.values(), [])))
+    results = []
+    if released:
+        results.append(package('RELEASED', [p for p in parts if p['id'] in released], [],
+                               [a for a in accepted if a.split()[0] in released], 'WORK_ORDER_PRODUCTION_TH.pdf'))
+    held = [p for p in parts if p['id'] not in released]
+    if held:
+        blockers = list(dict.fromkeys(sum((per_part[p['id']] for p in held), []) + common))
+        if not blockers and DECISION:
+            blockers = ['%s: ผู้สั่งยังไม่อนุมัติใน RELEASE_DECISION.json' % p['id'] for p in held]
+        status = 'BLOCKED' if blockers else 'RELEASED'
+        results.append(package(status, held, blockers, [a for a in accepted if a.split()[0] not in released],
+                               'WORK_ORDER_HOLD_TH.pdf' if released else 'WORK_ORDER_PRODUCTION_TH.pdf'))
+    print(json.dumps(results, ensure_ascii=False, indent=1))
+
+
+def package(status, parts, blockers, notes, pdf_name):
+    stamp = 'ใช้ขอราคาได้ — ห้ามผลิตจนกว่าเงื่อนไขหน้าแรกจะผ่าน (BLOCKED)' if blockers else 'อนุมัติผลิต (RELEASED)'
+    if status == 'RELEASED' and DECISION:
+        stamp = 'อนุมัติผลิต (RELEASED) %s — เฉพาะชิ้นในใบนี้' % DECISION['date']
+    mass = REPORT['mass']
+    out = R3 / 'PRODUCTION' / ('V4_R3_METAL_' + status)
     (out / 'DXF').mkdir(parents=True)
     (out / 'STEP').mkdir()
     files = []
@@ -267,19 +306,23 @@ def main():
             files.append({'file': '%s/%s' % (sub, dst.name), 'sha256': sha(dst)})
     for name in ('DERIVED_Wedgelet_R_mirror_of_Wedgelet_L', 'DERIVED_Skirt_Plate_08mm_L_mirror_of_Skirt_Plate_08mm_R'):
         src_name, axis_part = name.split('_mirror_of_')[1], name[len('DERIVED_'):].split('_mirror_of_')[0]
+        if src_name not in {p['file'] for p in parts}:
+            continue
         shape = cq.importers.importStep(str(SRC / (src_name + '.step'))).val().mirror('YZ', (0, 0, 0))
         ref = next(r for r in mass['parts'] if r['part'] == axis_part)
         if max(abs(a - b) for a, b in zip(shape.Center().toTuple(), ref['centroid_mm'])) > 0.01:
             raise RuntimeError(name + ' does not match the build')
         shape.exportStep(str(out / 'STEP' / (name + '.step')))
         files.append({'file': 'STEP/%s.step' % name, 'sha256': sha(out / 'STEP' / (name + '.step')), 'derived': True})
-    write_pdf(out, parts, blockers, status, stamp, files)
+    write_pdf(out, parts, blockers, status, stamp, files, notes, pdf_name)
     manifest = {'status': status, 'revision': REPORT['revision'], 'build_sha256': REPORT['build_sha256'], 'date': DATE,
-                'blockers': blockers, 'mass_total_g': mass['total_g'], 'rear_load': mass['rear_static_load_fraction'],
+                'blockers': blockers, 'accepted_risks': notes, 'mass_total_g': mass['total_g'], 'rear_load': mass['rear_static_load_fraction'],
                 'parts': [{k: p[k] for k in ('id', 'file', 'name', 'material', 'qty', 'thickness', 'cad_thickness', 'min_wall')} |
                           {'mass_g': round(p['mass'], 2), 'holes': [{k: (round(v, 2) if isinstance(v, float) else v) for k, v in r.items()} for r in p['rows']],
                            'edge_holes': [{k: (round(v, 2) if isinstance(v, float) else v) for k, v in r.items()} for r in p['edge_rows']]} for p in parts],
                 'files': files}
+    if DECISION:
+        manifest['release_decision'] = {'file': str(DECISION_PATH.relative_to(R3)), 'sha256': sha(DECISION_PATH)}
     (out / 'production_manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     (out / 'SHA256SUMS.txt').write_text(''.join('%s  %s\n' % (f['sha256'], f['file']) for f in files))
     zip_path = out.with_suffix('.zip')
@@ -287,16 +330,17 @@ def main():
         for path in sorted(out.rglob('*')):
             if path.is_file():
                 z.write(path, Path(out.name) / path.relative_to(out))
-    print(json.dumps({'status': status, 'out': str(out.relative_to(R3)), 'blockers': blockers}, ensure_ascii=False, indent=1))
+    return {'status': status, 'out': str(out.relative_to(R3)), 'parts': [p['id'] for p in parts], 'blockers': blockers, 'accepted_risks': notes}
 
 
-def write_pdf(out, parts, blockers, status, stamp, files):
+def write_pdf(out, parts, blockers, status, stamp, files, notes=None, pdf_name='WORK_ORDER_PRODUCTION_TH.pdf'):
     e = html.escape
     build_short = REPORT['build_sha256'][:12]
     color = '#b00' if blockers else '#070'
     bom = ''.join('<tr><td>%s</td><td class="m">%s.dxf</td><td>%s</td><td>%s</td><td class="n">%g</td><td class="n">%d</td><td class="n">%.1f</td></tr>' % (
         p['id'], e(p['file']), e(p['name']), e(p['material']), p['thickness'], p['qty'], p['mass']) for p in parts)
     block = ''.join('<li>%s</li>' % e(b) for b in blockers) or '<li>ไม่มี — ผ่านทุกเงื่อนไข</li>'
+    block += ''.join('<li>ผู้สั่งยอมรับ: %s</li>' % e(n) for n in (notes or []))
     pages = []
     for p in parts:
         holes = ''.join('<tr><td>%s</td><td class="n">%.2f</td><td class="n">%.2f</td><td class="n">Ø%g</td><td>%s</td></tr>' % (
@@ -339,9 +383,9 @@ table{border-collapse:collapse}td,th{border:1px solid #999;padding:2px 5px;text-
 <p class="small">ไม่รวม: ชิ้นกลึง (ดุม รอก spacer) ส่งร้านกลึงตาม MACHINING.md · สกรู insert แกนบานพับ ผู้ใช้ซื้อเอง · หน้าถัดไปเป็นแบบของแต่ละชิ้น</p></section>
 %(pages)s</body></html>''' % dict(c=color, stamp=e(stamp), build=REPORT['build_sha256'], date=DATE, pieces=sum(p['qty'] for p in parts), n=len(parts),
                                       block=block, bom=bom, pages=''.join(pages))
-    html_path = out / 'WORK_ORDER_PRODUCTION_TH.html'
+    html_path = out / (pdf_name[:-4] + '.html')
     html_path.write_text(doc)
-    pdf = out / 'WORK_ORDER_PRODUCTION_TH.pdf'
+    pdf = out / pdf_name
     subprocess.run([CHROME, '--headless=new', '--disable-gpu', '--no-pdf-header-footer', '--print-to-pdf=' + str(pdf), html_path.as_uri()],
                    check=True, capture_output=True, timeout=120)
     html_path.unlink()

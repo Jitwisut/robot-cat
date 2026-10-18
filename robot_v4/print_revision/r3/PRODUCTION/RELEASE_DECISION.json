@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-18",
+  "decided_by": "user, in chat: release only the parts that do not depend on unmeasured motors",
+  "basis": {
+    "r3_build_sha256_prefix": "5dfa96dc",
+    "body": "PC 3 mm body rev 3 (r3/pc_body)"
+  },
+  "released": {
+    "laser_metal": ["M01", "M02", "M03", "M04", "M05", "M07", "M08", "M09"],
+    "cnc_pc_panels": ["PC3_Floor", "PC3_Side_Wall_L", "PC3_Side_Wall_R", "PC3_Rear_Wall", "PC2_Bulkhead_L", "PC2_Bulkhead_R", "PC3_Lid"],
+    "lathe": ["Beater_Hub_6061_D30", "Spacer_Inner_ID8.2_OD11", "Spacer_Outer_L_ID8.2_OD11", "Spacer_Outer_R_ID8.2_OD11", "Hinge_Pin_D3x57"],
+    "print": ["insert coupons only (M3 and M2.5)"]
+  },
+  "accepted_risks": {
+    "weapon_motor.diameter_mm": "Upright L rear relief uses the SURPASS C3536 catalogue diameter 35 mm + 1 mm clearance. A larger real can needs the relief filed.",
+    "dead_shaft.diameter_mm": "Upright bore 8.2 mm is the ISO clearance for an M8 bolt; the bolt is a standard part."
+  },
+  "pc_sheet_thickness_acceptance_mm": {"3.0": [2.9, 3.1], "2.0": [1.9, 2.1]},
+  "held": {
+    "M06 Weapon_Motor_Mount_3mm": "weapon motor hole pattern, thread and boss not measured",
+    "Motor_Pulley_D30_1to1": "weapon motor shaft diameter, projection and set-screw seat not measured",
+    "PETG motor cradles x4, twin saddles x2, lid bars x2": "drive motor face holes, boss, diameter and length not measured",
+    "PETG wheel hubs x4": "drive motor D-shaft diameter and flat depth not measured",
+    "all other PETG parts": "insert hole size not chosen: print the coupons first, then the parts are regenerated with the chosen size",
+    "PETG battery tray, electronics deck, disconnect collar, hall post": "battery, electronics, disconnect and hall sensor dimensions not measured",
+    "TPU tyres x4": "tyre inner diameter is chosen from the tyre-ring coupons in output_R3/TRIAL_ONLY"
+  }
+}
