@@ -1,0 +1,5455 @@
+{
+ "status": "DRAFT_NOT_RELEASED",
+ "revision": "V4_PRINT_R3 + PC 3 mm body variant",
+ "orientation": "Z-up, ground XY at Z=0, nose +Y, mm",
+ "r3_inputs": "robot_v4/print_revision/r3/inputs_R3.json",
+ "r3_check": {
+  "total_g": 1973.05,
+  "rear_load_pct": 10.615,
+  "tpu_tub_plus_lid_g": 440.16
+ },
+ "body_allowance_g": 467.11,
+ "body_breakdown_g": {
+  "PC panels": 311.25,
+  "new PETG parts (80 % rule)": 79.89,
+  "new fasteners": 43.36,
+  "re-issued R3 prints, delta": -0.34,
+  "total": 434.16
+ },
+ "balance": {
+  "r3_tpu": {
+   "total_g": 1973.05,
+   "cg_y_mm": 8.659,
+   "rear_load_pct": 10.615,
+   "margin_to_2000_g": 26.95,
+   "margin_to_1900_g": -73.05,
+   "rear_margin_to_10_pct_points": 0.615,
+   "rear_gap_to_15_pct_points": 4.385,
+   "passes_hard_2000g_10pct": true,
+   "passes_targets_1900g_15pct": false
+  },
+  "pc_body": {
+   "total_g": 1967.05,
+   "cg_y_mm": 8.552,
+   "rear_load_pct": 10.736,
+   "margin_to_2000_g": 32.95,
+   "margin_to_1900_g": -67.05,
+   "rear_margin_to_10_pct_points": 0.736,
+   "rear_gap_to_15_pct_points": 4.264,
+   "passes_hard_2000g_10pct": true,
+   "passes_targets_1900g_15pct": false
+  },
+  "cg_mm": [
+   -1.297,
+   8.552,
+   30.559
+  ],
+  "moment_to_reach_15pct_g_mm": 7380.6,
+  "expected_small_parts_solid": {
+   "total_g": 1977.64,
+   "cg_y_mm": 8.396,
+   "rear_load_pct": 10.913,
+   "margin_to_2000_g": 22.36,
+   "margin_to_1900_g": -77.64,
+   "rear_margin_to_10_pct_points": 0.913,
+   "rear_gap_to_15_pct_points": 4.087,
+   "passes_hard_2000g_10pct": true,
+   "passes_targets_1900g_15pct": false
+  },
+  "sensitivity": {
+   "small parts solid (cleats, skirt brackets, twin saddles, lid bars), cradles/side blocks 80 % (expected case)": {
+    "total_g": 1977.64,
+    "cg_y_mm": 8.396,
+    "rear_load_pct": 10.913,
+    "margin_to_2000_g": 22.36,
+    "margin_to_1900_g": -77.64,
+    "rear_margin_to_10_pct_points": 0.913,
+    "rear_gap_to_15_pct_points": 4.087,
+    "passes_hard_2000g_10pct": true,
+    "passes_targets_1900g_15pct": false
+   },
+   "new PETG printed 100 % instead of the R3 80 % rule": {
+    "total_g": 1987.02,
+    "cg_y_mm": 8.516,
+    "rear_load_pct": 10.777,
+    "margin_to_2000_g": 12.98,
+    "margin_to_1900_g": -87.02,
+    "rear_margin_to_10_pct_points": 0.777,
+    "rear_gap_to_15_pct_points": 4.223,
+    "passes_hard_2000g_10pct": true,
+    "passes_targets_1900g_15pct": false
+   },
+   "PC sheet 3.3 mm (+10 % thickness tolerance)": {
+    "total_g": 1998.17,
+    "cg_y_mm": 8.123,
+    "rear_load_pct": 11.224,
+    "margin_to_2000_g": 1.83,
+    "margin_to_1900_g": -98.17,
+    "rear_margin_to_10_pct_points": 1.224,
+    "rear_gap_to_15_pct_points": 3.776,
+    "passes_hard_2000g_10pct": true,
+    "passes_targets_1900g_15pct": false
+   },
+   "PC density 1.22 g/cm^3": {
+    "total_g": 1972.24,
+    "cg_y_mm": 8.48,
+    "rear_load_pct": 10.819,
+    "margin_to_2000_g": 27.76,
+    "margin_to_1900_g": -72.24,
+    "rear_margin_to_10_pct_points": 0.819,
+    "rear_gap_to_15_pct_points": 4.181,
+    "passes_hard_2000g_10pct": true,
+    "passes_targets_1900g_15pct": false
+   },
+   "fasteners +25 %": {
+    "total_g": 1977.89,
+    "cg_y_mm": 8.507,
+    "rear_load_pct": 10.788,
+    "margin_to_2000_g": 22.11,
+    "margin_to_1900_g": -77.89,
+    "rear_margin_to_10_pct_points": 0.788,
+    "rear_gap_to_15_pct_points": 4.212,
+    "passes_hard_2000g_10pct": true,
+    "passes_targets_1900g_15pct": false
+   },
+   "all four together": {
+    "total_g": 2034.69,
+    "cg_y_mm": 7.974,
+    "rear_load_pct": 11.393,
+    "margin_to_2000_g": -34.69,
+    "margin_to_1900_g": -134.69,
+    "rear_margin_to_10_pct_points": 1.393,
+    "rear_gap_to_15_pct_points": 3.607,
+    "passes_hard_2000g_10pct": false,
+    "passes_targets_1900g_15pct": false
+   }
+  }
+ },
+ "stiffness": {
+  "D_PC3_N_mm": 6126.2,
+  "D_PC2_N_mm": 1815.2,
+  "PC_yield_moment_N_mm_per_mm": {
+   "3mm": 93.0,
+   "2mm": 41.3
+  },
+  "vs_R3_TPU": {
+   "floor": {
+    "tpu_t_mm": 3.0,
+    "pc_t_mm": 3.0,
+    "D_TPU_N_mm": 141.1,
+    "stiffness_ratio_PC/TPU": 43.4
+   },
+   "side walls": {
+    "tpu_t_mm": 8.0,
+    "pc_t_mm": 3.0,
+    "D_TPU_N_mm": 2675.0,
+    "stiffness_ratio_PC/TPU": 2.3
+   },
+   "rear wall": {
+    "tpu_t_mm": 6.0,
+    "pc_t_mm": 3.0,
+    "D_TPU_N_mm": 1128.5,
+    "stiffness_ratio_PC/TPU": 5.4
+   },
+   "bulkhead": {
+    "tpu_t_mm": 2.0,
+    "pc_t_mm": 2.0,
+    "D_TPU_N_mm": 41.8,
+    "stiffness_ratio_PC/TPU": 43.4
+   },
+   "lid": {
+    "tpu_t_mm": 2.0,
+    "pc_t_mm": 3.0,
+    "D_TPU_N_mm": 41.8,
+    "stiffness_ratio_PC/TPU": 146.6
+   }
+  },
+  "lid_centre_point_load": {
+   "plate_mm": [
+    160.0,
+    169.0
+   ],
+   "alpha": 0.01219,
+   "deflection_per_100N_mm": 5.09,
+   "gap_to_highest_electronics_mm": 4.4,
+   "load_to_touch_electronics_N": 86.0,
+   "R3_TPU_2mm_deflection_per_100N_mm": 747.0
+  },
+  "screw_bearing_on_PC": {
+   "button D5.7": {
+    "area_mm2": 16.4,
+    "stress_MPa_at_0.3Nm": 30.4,
+    "stress_MPa_at_0.5Nm": 50.7
+   },
+   "csk 90deg D6.3": {
+    "area_mm2": 31.2,
+    "stress_MPa_at_0.3Nm": 16.0,
+    "stress_MPa_at_0.5Nm": 26.7
+   }
+  },
+  "upright_joint_tooth_force_kN": {
+   "R3_TPU_block": [
+    1.1,
+    2.2
+   ],
+   "PETG_web_6mm": [
+    3.3,
+    4.1
+   ],
+   "next_weakest_R3_item": "608 bearing nearest the struck disc, 1.1 kN (CALC_R3 section 7)"
+  },
+  "impact": {
+   "N_drop_g": 250.0,
+   "drop_mm": 500.0,
+   "stop_mm": 2.0,
+   "n_g_for_stop_mm": {
+    "1.0": 500.0,
+    "2.0": 250.0,
+    "4.0": 125.0
+   },
+   "shaft": {
+    "Zel_mm3": 6.15,
+    "Zpl_mm3": 10.21,
+    "lever_mm": 14.0,
+    "F_yield_N": [
+     155.9,
+     281.0
+    ],
+    "F_collapse_upper_N": 466.7,
+    "static_front_wheel_N": 8.61
+   },
+   "cradle": {
+    "W_motor_N": 269.8,
+    "M_face_Nmm": 13548.0,
+    "R_support_N": 276.5,
+    "V_wall_N": 473.4,
+    "k_wall_N_per_mm": 6.08,
+    "k_pad_N_per_mm": 900.0,
+    "wall_share": 0.0067
+   },
+   "side_block": {
+    "m_weapon_kg": 0.3663,
+    "f_front_on_skid": 0.565,
+    "per_side_DT1_N": 914.0,
+    "per_side_DT2_N": 449.1,
+    "per_side_DT3_N": 1057.9,
+    "per_side_DT3_check_N": 2115.9
+   },
+   "cleat": {
+    "m_floor_system_kg": 0.4814,
+    "shear_screws": 10,
+    "per_screw_N": 118.1
+   },
+   "skirt": {
+    "plastic_moment_Nmm_per_mm": 30.88,
+    "lever_mm": 16.51,
+    "per_bracket_N": 109.7
+   },
+   "capacities_ASSUMED": {
+    "M3_insert_pullout_N": 500.0,
+    "M2.5_insert_pullout_N": 300.0,
+    "M2_selftap_PETG_pullout_N": 200.0,
+    "PETG_bearing_MPa": 40.0,
+    "PETG_shear_MPa": 25.0,
+    "PC_bearing_MPa": 62.0,
+    "PC_shear_MPa": 40.0,
+    "EPDM_E_MPa": 5.0,
+    "shaft_yield_MPa": [
+     355.0,
+     640.0
+    ],
+    "Al5052_yield_MPa": 193.0
+   },
+   "sf_required": 1.5,
+   "rows": [
+    {
+     "path": "Drive shaft (R3 bought part) elastic limit",
+     "case": "DT1/DT2",
+     "load": 466.7,
+     "capacity": 155.9,
+     "sf": 0.33,
+     "note": "weak link by design: bends first",
+     "design": false
+    },
+    {
+     "path": "Cradle floor inserts M3 x2, tension",
+     "case": "DT1",
+     "load": 236.7,
+     "capacity": 500.0,
+     "sf": 2.11,
+     "note": "insert pull-out ASSUMED",
+     "design": true
+    },
+    {
+     "path": "PC floor under cradle screw heads, pull-through",
+     "case": "DT1",
+     "load": 236.7,
+     "capacity": 1019.2,
+     "sf": 4.31,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Motor face screws M3 x2, bearing in 4 mm PETG wall",
+     "case": "DT1/DT2",
+     "load": 236.7,
+     "capacity": 480.0,
+     "sf": 2.03,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Cradle wall shear (26 x 4)",
+     "case": "DT1/DT2",
+     "load": 473.4,
+     "capacity": 2600.0,
+     "sf": 5.49,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Cradle wall root bending (stress -> force-equivalent)",
+     "case": "DT1/DT2",
+     "load": 1.3,
+     "capacity": 40.0,
+     "sf": 30.51,
+     "note": "MPa vs MPa",
+     "design": true
+    },
+    {
+     "path": "Twin saddle / lid bar contact (pad, per motor)",
+     "case": "DT1/DT2",
+     "load": 3.1,
+     "capacity": 40.0,
+     "sf": 13.02,
+     "note": "MPa vs MPa; then floor/lid ground-backed",
+     "design": true
+    },
+    {
+     "path": "Side block web: 4 M3 into upright, PETG bearing, per side",
+     "case": "DT1",
+     "load": 914.0,
+     "capacity": 2880.0,
+     "sf": 3.15,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Side block floor inserts M3 x4 per side, tension",
+     "case": "DT1",
+     "load": 228.5,
+     "capacity": 500.0,
+     "sf": 2.19,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "PC floor under side-block screw heads, pull-through",
+     "case": "DT1",
+     "load": 228.5,
+     "capacity": 1019.2,
+     "sf": 4.46,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Side block web, per side",
+     "case": "DT2",
+     "load": 449.1,
+     "capacity": 2880.0,
+     "sf": 6.41,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Side block floor inserts, per insert",
+     "case": "DT2",
+     "load": 112.3,
+     "capacity": 500.0,
+     "sf": 4.45,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Side block web, per side",
+     "case": "DT3 2.6 kN",
+     "load": 1057.9,
+     "capacity": 2880.0,
+     "sf": 2.72,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Side block floor inserts, per insert (uplift)",
+     "case": "DT3 2.6 kN",
+     "load": 264.5,
+     "capacity": 500.0,
+     "sf": 1.89,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Side block floor screws M3 x4, PC 3 mm bearing (fore-aft shear)",
+     "case": "DT3 2.6 kN",
+     "load": 264.5,
+     "capacity": 632.4,
+     "sf": 2.39,
+     "note": "rearward push goes into the bulkhead in compression",
+     "design": true
+    },
+    {
+     "path": "Low cleat wall screws M2.5, PC 3 mm bearing",
+     "case": "DT2",
+     "load": 118.1,
+     "capacity": 539.4,
+     "sf": 4.57,
+     "note": "floor + floor-mounted parts",
+     "design": true
+    },
+    {
+     "path": "Low cleat bulkhead screw M2.5, PC 2 mm bearing",
+     "case": "DT2",
+     "load": 118.1,
+     "capacity": 359.6,
+     "sf": 3.05,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Low cleat M2.5 insert, PETG bearing (OD3.6 x 4)",
+     "case": "DT2",
+     "load": 118.1,
+     "capacity": 576.0,
+     "sf": 4.88,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Skirt bracket M2.5 insert (skirt plate collapse-limited)",
+     "case": "DT1",
+     "load": 109.7,
+     "capacity": 300.0,
+     "sf": 2.73,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Skirt plate M2 self-tapping screw into PETG bracket",
+     "case": "DT1",
+     "load": 109.7,
+     "capacity": 200.0,
+     "sf": 1.82,
+     "note": "",
+     "design": true
+    },
+    {
+     "path": "Wedgelet rail floor + wall screws, per screw",
+     "case": "DT1",
+     "load": 22.8,
+     "capacity": 500.0,
+     "sf": 21.97,
+     "note": "plates swing up freely",
+     "design": true
+    },
+    {
+     "path": "Lid screws / lid-bar screws",
+     "case": "DT1/DT2",
+     "load": 0.0,
+     "capacity": 1.0,
+     "sf": null,
+     "note": "compression only: lid presses onto walls / ground",
+     "design": true
+    },
+    {
+     "path": "Side block web, per side",
+     "case": "DT3 5.2 kN check",
+     "load": 2115.9,
+     "capacity": 2880.0,
+     "sf": 1.36,
+     "note": "",
+     "design": false
+    },
+    {
+     "path": "Side block floor inserts, per insert",
+     "case": "DT3 5.2 kN check",
+     "load": 529.0,
+     "capacity": 500.0,
+     "sf": 0.95,
+     "note": "",
+     "design": false
+    }
+   ],
+   "min_design_sf": 1.82,
+   "min_design_path": "Skirt plate M2 self-tapping screw into PETG bracket / DT1"
+  }
+ },
+ "fastener_counts": {
+  "M3x6_button_ISO7380": 24,
+  "M3_heatset_insert_L4_OD5": 24,
+  "M2.5x6_button": 35,
+  "M2.5_heatset_insert_L4_OD3.6": 53,
+  "M2.5x6_csk_ISO10642": 18,
+  "EPDM_pad_0.5mm": 8,
+  "M3x10_button_ISO7380": 8
+ },
+ "fastener_mass_g_each_ASSUMED": {
+  "M3x6_button_ISO7380": 0.42,
+  "M3x10_button_ISO7380": 0.59,
+  "M3x6_csk_ISO10642": 0.36,
+  "M2.5x6_button": 0.3,
+  "M2.5x6_csk_ISO10642": 0.26,
+  "M3_heatset_insert_L4_OD5": 0.33,
+  "M2.5_heatset_insert_L4_OD3.6": 0.18,
+  "EPDM_pad_0.5mm": 0.08
+ },
+ "mass_audit_vs_R3": [],
+ "mass_check": {
+  "rows_total": 1967.05,
+  "pc": 311.248,
+  "petg_new": 79.893,
+  "fast": 43.36,
+  "variants": 10.622,
+  "r3_rest_in_rows": 1521.926,
+  "other_rows": [],
+  "r3_rest_expected": 1521.929,
+  "r3_parts_not_in_rows": [
+   [
+    "Wedgelet_Block_PETG_L",
+    5.4801
+   ],
+   [
+    "Wedgelet_Block_PETG_R",
+    5.4801
+   ]
+  ],
+  "r3_parts_sum": 1973.047,
+  "r3_total": 1973.05,
+  "r3_in_rows_detail": [
+   [
+    "Upright_6061_6mm_L",
+    32.7644,
+    32.7644
+   ],
+   [
+    "Upright_6061_6mm_R",
+    33.1299,
+    33.1299
+   ],
+   [
+    "Weapon_Top_Brace_3mm",
+    6.1737,
+    6.1737
+   ],
+   [
+    "Weapon_Bottom_Brace_3mm",
+    5.0518,
+    5.0518
+   ],
+   [
+    "Nose_Skid_UHMW_3mm",
+    3,
+    3
+   ]
+  ],
+  "r3_multiplicity": {}
+ },
+ "interference": [],
+ "screw_envelope_hits": [],
+ "insert_spacing": [
+  {
+   "cleat": "Cleat_Rear_Low_PETG_L",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_L",
+   "pair": [
+    0,
+    2
+   ],
+   "gap_mm": 1.84
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_L",
+   "pair": [
+    1,
+    2
+   ],
+   "gap_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_L",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_L",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_L",
+   "insert": 2,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_R",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_R",
+   "pair": [
+    0,
+    2
+   ],
+   "gap_mm": 1.84
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_R",
+   "pair": [
+    1,
+    2
+   ],
+   "gap_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_R",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_R",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Low_PETG_R",
+   "insert": 2,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_L",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_L",
+   "pair": [
+    0,
+    2
+   ],
+   "gap_mm": 1.84
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_L",
+   "pair": [
+    1,
+    2
+   ],
+   "gap_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_L",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_L",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_L",
+   "insert": 2,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_R",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_R",
+   "pair": [
+    0,
+    2
+   ],
+   "gap_mm": 1.84
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_R",
+   "pair": [
+    1,
+    2
+   ],
+   "gap_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_R",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_R",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_High_PETG_R",
+   "insert": 2,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Mid_Low_PETG_L",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 2.71
+  },
+  {
+   "cleat": "Cleat_Mid_Low_PETG_L",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Mid_Low_PETG_L",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Mid_Low_PETG_R",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 2.71
+  },
+  {
+   "cleat": "Cleat_Mid_Low_PETG_R",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Mid_Low_PETG_R",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Mid_High_PETG_L",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 3.37
+  },
+  {
+   "cleat": "Cleat_Mid_High_PETG_L",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Mid_High_PETG_L",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Mid_High_PETG_R",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 3.37
+  },
+  {
+   "cleat": "Cleat_Mid_High_PETG_R",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Mid_High_PETG_R",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Front_Low_PETG_L",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 1.75
+  },
+  {
+   "cleat": "Cleat_Front_Low_PETG_L",
+   "insert": 0,
+   "min_outer_wall_mm": 1.8
+  },
+  {
+   "cleat": "Cleat_Front_Low_PETG_L",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Front_Low_PETG_R",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 1.75
+  },
+  {
+   "cleat": "Cleat_Front_Low_PETG_R",
+   "insert": 0,
+   "min_outer_wall_mm": 1.8
+  },
+  {
+   "cleat": "Cleat_Front_Low_PETG_R",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_L",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 2.02
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_L",
+   "pair": [
+    0,
+    2
+   ],
+   "gap_mm": 1.84
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_L",
+   "pair": [
+    1,
+    2
+   ],
+   "gap_mm": 2.02
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_L",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_L",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_L",
+   "insert": 2,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_R",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 2.02
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_R",
+   "pair": [
+    0,
+    2
+   ],
+   "gap_mm": 1.84
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_R",
+   "pair": [
+    1,
+    2
+   ],
+   "gap_mm": 2.02
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_R",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_R",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Front_High_PETG_R",
+   "insert": 2,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Centre_Low_PETG",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 2.76
+  },
+  {
+   "cleat": "Cleat_Rear_Centre_Low_PETG",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Rear_Centre_Low_PETG",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Bulkhead_Centre_Low_PETG",
+   "pair": [
+    0,
+    1
+   ],
+   "gap_mm": 3.74
+  },
+  {
+   "cleat": "Cleat_Bulkhead_Centre_Low_PETG",
+   "insert": 0,
+   "min_outer_wall_mm": 1.3
+  },
+  {
+   "cleat": "Cleat_Bulkhead_Centre_Low_PETG",
+   "insert": 1,
+   "min_outer_wall_mm": 1.3
+  }
+ ],
+ "panels": [
+  {
+   "file": "PC3_Floor.dxf",
+   "step": "PC3_Floor.step",
+   "quantity": 1,
+   "material": "PC solid sheet 3.0 mm",
+   "thickness_mm": 3.0,
+   "flat_size_mm": [
+    160.0,
+    207.0
+   ],
+   "face_up": "top (inside the robot)",
+   "holes": 43,
+   "countersinks": 0,
+   "pockets": 0,
+   "mass_g": 95.1,
+   "note": "wheel notches at the sides; centre gap |x|<35 in front of y 64 is for the bottom brace (x +-33)",
+   "sha256": "040a8b7f35a9a064ccc959c739a0324957492c5cebd46f14c33fc8fc9de671e9",
+   "dxf_audit_errors": 0,
+   "id": "PC01"
+  },
+  {
+   "file": "PC3_Side_Wall_L.dxf",
+   "step": "PC3_Side_Wall_L.step",
+   "quantity": 1,
+   "material": "PC solid sheet 3.0 mm",
+   "thickness_mm": 3.0,
+   "flat_size_mm": [
+    207.0,
+    55.0
+   ],
+   "face_up": "inner face (countersinks)",
+   "holes": 12,
+   "countersinks": 4,
+   "pockets": 0,
+   "mass_g": 40.6,
+   "note": "",
+   "sha256": "a28851f847cc5dad0ad5d66dd4662ee1d2620df4bda7bccbead8334d87d058cc",
+   "dxf_audit_errors": 0,
+   "id": "PC02"
+  },
+  {
+   "file": "PC3_Side_Wall_R.dxf",
+   "step": "PC3_Side_Wall_R.step",
+   "quantity": 1,
+   "material": "PC solid sheet 3.0 mm",
+   "thickness_mm": 3.0,
+   "flat_size_mm": [
+    207.0,
+    55.0
+   ],
+   "face_up": "inner face (countersinks)",
+   "holes": 14,
+   "countersinks": 4,
+   "pockets": 0,
+   "mass_g": 40.2,
+   "note": "",
+   "sha256": "e5ef0b2a9f65ee5cc82b353013b2c69b78ace7872f85f66e20959f5a45329e60",
+   "dxf_audit_errors": 0,
+   "id": "PC03"
+  },
+  {
+   "file": "PC3_Rear_Wall.dxf",
+   "step": "PC3_Rear_Wall.step",
+   "quantity": 1,
+   "material": "PC solid sheet 3.0 mm",
+   "thickness_mm": 3.0,
+   "flat_size_mm": [
+    160.0,
+    55.0
+   ],
+   "face_up": "outer face (rear)",
+   "holes": 8,
+   "countersinks": 0,
+   "pockets": 0,
+   "mass_g": 31.5,
+   "note": "",
+   "sha256": "236fb59eeac7eb4e64ded94a2fb5eb1b26ff190359e00d93c0f1b8b3d12cd36b",
+   "dxf_audit_errors": 0,
+   "id": "PC04"
+  },
+  {
+   "file": "PC2_Bulkhead_L.dxf",
+   "step": "PC2_Bulkhead_L.step",
+   "quantity": 1,
+   "material": "PC solid sheet 2.0 mm",
+   "thickness_mm": 2.0,
+   "flat_size_mm": [
+    34.5,
+    52.0
+   ],
+   "face_up": "front face (toward the weapon)",
+   "holes": 3,
+   "countersinks": 0,
+   "pockets": 0,
+   "mass_g": 4.2,
+   "note": "",
+   "sha256": "96f934d551847ae92023980ce5ea37b4c246768d4e1fda52ef59b14427ffb820",
+   "dxf_audit_errors": 0,
+   "id": "PC05"
+  },
+  {
+   "file": "PC2_Bulkhead_R.dxf",
+   "step": "PC2_Bulkhead_R.step",
+   "quantity": 1,
+   "material": "PC solid sheet 2.0 mm",
+   "thickness_mm": 2.0,
+   "flat_size_mm": [
+    121.5,
+    52.0
+   ],
+   "face_up": "front face (toward the weapon)",
+   "holes": 4,
+   "countersinks": 0,
+   "pockets": 0,
+   "mass_g": 11.2,
+   "note": "",
+   "sha256": "1c148ffc464a830caf12430857d9774be41f8ecaea77cff69ce8dd3748403348",
+   "dxf_audit_errors": 0,
+   "id": "PC06"
+  },
+  {
+   "file": "PC3_Lid.dxf",
+   "step": "PC3_Lid.step",
+   "quantity": 1,
+   "material": "PC solid sheet 3.0 mm",
+   "thickness_mm": 3.0,
+   "flat_size_mm": [
+    166.0,
+    174.0
+   ],
+   "face_up": "top (countersinks); motor pocket on the underside",
+   "holes": 10,
+   "countersinks": 10,
+   "pockets": 1,
+   "mass_g": 88.3,
+   "note": "belt slot x +-3.5 open at the front edge; 2.0 mm deep pocket from the underside over the weapon motor",
+   "sha256": "d76348f2d2b2c11d2c850bda2f49ab6978a4f663d968f06735bd3a7ceeca2a7c",
+   "dxf_audit_errors": 0,
+   "id": "PC07"
+  }
+ ],
+ "nest_sheet_mm": {
+  "3.0": [
+   432.0,
+   365.0
+  ],
+  "2.0": [
+   174.0,
+   72.0
+  ]
+ },
+ "petg_parts": [
+  {
+   "file": "V4_R3PC_Motor_Cradle_PETG_Front_L.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    10.0,
+    26.0,
+    33.0
+   ],
+   "mass_g_80pct_rule": 3.55,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "91c9f0f7b568edd88d4ae5f74810de0b9c39ba5f82911777dba5ace4b2a8bcae",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Motor_Cradle_PETG_Front_R.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    10.0,
+    26.0,
+    33.0
+   ],
+   "mass_g_80pct_rule": 3.89,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "467b76a3820bd50e5b691e7873e745b73b1a6a76c365b0b9e8af9eb59bcb76c7",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Motor_Twin_Saddle_PETG_Front.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    20.0,
+    22.0,
+    18.07
+   ],
+   "mass_g_80pct_rule": 5.04,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "22f1ea67f0e1e4276eff1ecebe88bdd3c386d443b14b608292b1ba508ebfb808",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Motor_Lid_Bar_PETG_Front.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    20.0,
+    8.0,
+    14.63
+   ],
+   "mass_g_80pct_rule": 1.75,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "214232dee170da6a54e813d935bb43763d54e7c6ab5b5a2a45725491ab4fdca6",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Motor_Cradle_PETG_Rear_L.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    10.0,
+    26.0,
+    33.0
+   ],
+   "mass_g_80pct_rule": 3.89,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "ae295805ee332da5085ff1e3b764e1516cbbfd3d0a1af19516feddd7a5b136f6",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Motor_Cradle_PETG_Rear_R.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    10.0,
+    26.0,
+    33.0
+   ],
+   "mass_g_80pct_rule": 3.89,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "e5300857a5d743867aead5a7caf6fc3cd3c8306c6418876890868961c17db77b",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Motor_Twin_Saddle_PETG_Rear.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    20.0,
+    22.0,
+    18.07
+   ],
+   "mass_g_80pct_rule": 5.04,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "a0c6b104c5d99cdf1a2d4dccd9b9359741ad9d8fa9f9ecbe9a6d0d2ed51a0fa8",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Motor_Lid_Bar_PETG_Rear.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    20.0,
+    8.0,
+    14.63
+   ],
+   "mass_g_80pct_rule": 1.75,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "c0c1b0658c31ecb1b479598604ebd522f8f65efe9deb4dcc12eaf300945c2b61",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Weapon_Side_Block_PETG_L.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    43.0,
+    32.0,
+    21.0
+   ],
+   "mass_g_80pct_rule": 11.05,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "50f83402b1a7a1cdc172dc2a830d21696ad7691bad3498126093eed4cd8103db",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Weapon_Side_Block_PETG_R.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    43.0,
+    32.0,
+    21.0
+   ],
+   "mass_g_80pct_rule": 11.23,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "003f7581b7e905826fc1f744d8ef203b069d379e9343fd8a17c0e0df1668b3c7",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Rear_Low_PETG_L.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    11.0,
+    6.5,
+    11.0
+   ],
+   "mass_g_80pct_rule": 0.66,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "214b8922882833b3a5d97618afed3af0dea334466f50a6a266dd3a7ae9e0663f",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Rear_Low_PETG_R.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    11.0,
+    6.5,
+    11.0
+   ],
+   "mass_g_80pct_rule": 0.66,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "1898d2ef81fcc205ce16dbda31fa808eff933f0d73b93f9ce81ae2aaa25eb135",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Rear_High_PETG_L.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    11.0,
+    6.5,
+    11.0
+   ],
+   "mass_g_80pct_rule": 0.66,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "2723600367f07e184bebf5d9b8277f7c2b39c519692e3da7021f888202e2f557",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Rear_High_PETG_R.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    11.0,
+    6.5,
+    11.0
+   ],
+   "mass_g_80pct_rule": 0.66,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "8277920274d35d76cfa08128ff310b07532de3fc1368d8e09c3a66322c94a112",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Mid_Low_PETG_L.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    9.0,
+    12.0,
+    9.0
+   ],
+   "mass_g_80pct_rule": 0.9,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "098c2dad3ae115d165fa36f735550395ec29b1fc5c9ff0834758542d4040ed59",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Mid_Low_PETG_R.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    9.0,
+    12.0,
+    9.0
+   ],
+   "mass_g_80pct_rule": 0.9,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "cf13d011fb5e67daea7c15fc212a4f7598d6d0f9e32b381d19701cfdd4da4942",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Mid_High_PETG_L.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    9.0,
+    12.0,
+    11.0
+   ],
+   "mass_g_80pct_rule": 1.11,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "268753c5b26f88fcec769110dde78213d4e5d9551d654c7b2ce67596591fb4a0",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Mid_High_PETG_R.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    9.0,
+    12.0,
+    11.0
+   ],
+   "mass_g_80pct_rule": 1.11,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "4e360a51e2dd6d35c5bd310e1b7c70d8bd592c939b390caa274b7a2e2f02e7fd",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Front_Low_PETG_L.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    9.0,
+    11.5,
+    9.0
+   ],
+   "mass_g_80pct_rule": 0.85,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "8e64d3ae6bf32245d9f4f5995b187e764fc0f6d266017f7afe65e7759107c471",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Front_Low_PETG_R.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    9.0,
+    11.5,
+    9.0
+   ],
+   "mass_g_80pct_rule": 0.85,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "489c2e80213523645b78cc9d5b19a2b56821f635f19802963c9ad74345d42deb",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Front_High_PETG_L.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    11.0,
+    11.5,
+    11.0
+   ],
+   "mass_g_80pct_rule": 1.28,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "2453c05aee609ecb3f8d2ef7889ff4d06ea04212d221fe1ef99971cbf8b779cf",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Front_High_PETG_R.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    11.0,
+    11.5,
+    11.0
+   ],
+   "mass_g_80pct_rule": 1.28,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "11347cdcc8ce5134b1d91be4c571664d6e28368f6513c2bd0200110c6d90e5f5",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Rear_Centre_Low_PETG.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    11.0,
+    6.5,
+    11.0
+   ],
+   "mass_g_80pct_rule": 0.71,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "07423659a269178b8f863b6f1e05047ed7f368f21cf586a75d07158eadbfb43b",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Cleat_Bulkhead_Centre_Low_PETG.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    11.0,
+    11.5,
+    11.0
+   ],
+   "mass_g_80pct_rule": 1.32,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "d18f90a16a4759df4467b5190f4d045cd38462f888a8e98e8e68c2951c7cc1a3",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_L_y-82.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    12.26,
+    16.0,
+    15.0
+   ],
+   "mass_g_80pct_rule": 1.67,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "1121249cb76886352397339363bfccf6b1b60cfe04c081a2f11b6402b8dd4c93",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_L_y-28.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    12.26,
+    16.0,
+    15.0
+   ],
+   "mass_g_80pct_rule": 1.67,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "582dd02dd8e9e352514e4bb41483940bb888faec157596b59154e60229867e4e",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_L_y+32.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    12.26,
+    16.0,
+    15.0
+   ],
+   "mass_g_80pct_rule": 1.67,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "f7bc70907101845499d51374cad92a0188e8827911898fa3b0aaf563cbee752d",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_L_y+62.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    12.26,
+    16.0,
+    13.0
+   ],
+   "mass_g_80pct_rule": 1.44,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "25647b6d85a2e0623fbc08abeeeff8df7a6b5d756498bde2eba163e9a5edb264",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_R_y-82.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    12.26,
+    16.0,
+    15.0
+   ],
+   "mass_g_80pct_rule": 1.67,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "a91406357b53e85be8380b3203eb79cbbba06f2c0c38a3f38eb533eab57aa2bf",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_R_y-28.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    12.26,
+    16.0,
+    15.0
+   ],
+   "mass_g_80pct_rule": 1.67,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "a56403c3e961a85354c35d14159151beff3c521ac375500f70304a290abf5fbc",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_R_y+32.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    12.26,
+    16.0,
+    15.0
+   ],
+   "mass_g_80pct_rule": 1.67,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "a5b62df93cde8daf442aeba3b2658c1d69b5643cdce6179fff9534144fa9707e",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_R_y+62.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    12.26,
+    16.0,
+    13.0
+   ],
+   "mass_g_80pct_rule": 1.44,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "8ee4a4adbd83a5ac8c4caf36e9a518c1652efcf5505bba7f5d24b15448cb6da1",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_Rear_x-58.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    13.5,
+    7.26,
+    15.0
+   ],
+   "mass_g_80pct_rule": 0.96,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "d491a9e9d2bde905490f84ec5c746a71f724b0e83a192147187ae698b98ed64f",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_Rear_x+0.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    13.5,
+    7.26,
+    16.0
+   ],
+   "mass_g_80pct_rule": 1.03,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "9b049f581cd774c09890fac6f8c699de0f6c1f6bd64f966cae6402c1aa5b6030",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Skirt_Bracket_PETG_Rear_x+58.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    13.5,
+    7.26,
+    15.0
+   ],
+   "mass_g_80pct_rule": 0.96,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "ce40403b394ad0ed038ee762653660cfec8eaf2bfb736ee2e57adddaab5b6a8f",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Wedgelet_Block_PETG_L_PCbody.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    54.0,
+    41.2,
+    14.0
+   ],
+   "mass_g_80pct_rule": 5.31,
+   "reissued_R3_part": true,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "aa3df144286f2563ce1ed5ffa3d92ba37778adc034cc022736d3e71981b7f14a",
+   "watertight": true
+  },
+  {
+   "file": "V4_R3PC_Wedgelet_Block_PETG_R_PCbody.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    54.0,
+    41.2,
+    14.0
+   ],
+   "mass_g_80pct_rule": 5.31,
+   "reissued_R3_part": true,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "07d14e7deed361f10304bf49fbaf151f526c0b149f4bc250f3a104e1c8438f1e",
+   "watertight": true
+  }
+ ],
+ "pc_rows": [
+  {
+   "part": "PC3_Floor",
+   "material": "PC",
+   "mass_g": 95.0637,
+   "volume_mm3": 79219.8,
+   "centroid_mm": [
+    0.030693082519881138,
+    -8.562906413101665,
+    5.499999999999999
+   ],
+   "method": "CAD volume x 1.20 g/cm^3 (solid sheet, full density)"
+  },
+  {
+   "part": "PC3_Side_Wall_L",
+   "material": "PC",
+   "mass_g": 40.6389,
+   "volume_mm3": 33865.7,
+   "centroid_mm": [
+    -81.50119762567363,
+    -6.604048056468219,
+    31.57155943248662
+   ],
+   "method": "CAD volume x 1.20 g/cm^3 (solid sheet, full density)"
+  },
+  {
+   "part": "PC3_Side_Wall_R",
+   "material": "PC",
+   "mass_g": 40.2419,
+   "volume_mm3": 33534.9,
+   "centroid_mm": [
+    81.50120944079909,
+    -6.373236280884897,
+    31.63639087446531
+   ],
+   "method": "CAD volume x 1.20 g/cm^3 (solid sheet, full density)"
+  },
+  {
+   "part": "PC3_Rear_Wall",
+   "material": "PC",
+   "mass_g": 31.4898,
+   "volume_mm3": 26241.5,
+   "centroid_mm": [
+    -0.012082001021842786,
+    -108.49999999999994,
+    31.532847940278128
+   ],
+   "method": "CAD volume x 1.20 g/cm^3 (solid sheet, full density)"
+  },
+  {
+   "part": "PC2_Bulkhead_L",
+   "material": "PC",
+   "mass_g": 4.2462,
+   "volume_mm3": 3538.5,
+   "centroid_mm": [
+    -62.836061522809835,
+    62.999999999999986,
+    32.89687754910581
+   ],
+   "method": "CAD volume x 1.20 g/cm^3 (solid sheet, full density)"
+  },
+  {
+   "part": "PC2_Bulkhead_R",
+   "material": "PC",
+   "mass_g": 11.2232,
+   "volume_mm3": 9352.7,
+   "centroid_mm": [
+    31.039502465966084,
+    62.999999999999986,
+    30.16123001597805
+   ],
+   "method": "CAD volume x 1.20 g/cm^3 (solid sheet, full density)"
+  },
+  {
+   "part": "PC3_Lid",
+   "material": "PC",
+   "mass_g": 88.3439,
+   "volume_mm3": 73619.9,
+   "centroid_mm": [
+    0.417648768283645,
+    -24.23277351664097,
+    60.50750885148355
+   ],
+   "method": "CAD volume x 1.20 g/cm^3 (solid sheet, full density)"
+  }
+ ],
+ "new_petg_rows": [
+  {
+   "part": "Wedgelet_Block_PETG_L_PCbody",
+   "material": "PETG",
+   "mass_g": 5.3112,
+   "centroid_mm": [
+    -70.02575571651971,
+    88.51821681417255,
+    11.179154664554646
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Wedgelet_Block_PETG_R_PCbody",
+   "material": "PETG",
+   "mass_g": 5.3112,
+   "centroid_mm": [
+    70.0257557165197,
+    88.5182168141725,
+    11.179154664554645
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Motor_Cradle_PETG_Front_L",
+   "material": "PETG",
+   "mass_g": 3.5458,
+   "centroid_mm": [
+    -57.309301065514575,
+    17.405832220441365,
+    20.968266312205056
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Motor_Cradle_PETG_Front_R",
+   "material": "PETG",
+   "mass_g": 3.8933,
+   "centroid_mm": [
+    56.924702408664906,
+    18.0,
+    19.989364994448124
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Motor_Twin_Saddle_PETG_Front",
+   "material": "PETG",
+   "mass_g": 5.0363,
+   "centroid_mm": [
+    -9.048440788168055e-18,
+    18.0,
+    13.230298729188029
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Motor_Lid_Bar_PETG_Front",
+   "material": "PETG",
+   "mass_g": 1.7487,
+   "centroid_mm": [
+    -5.284104491476938e-16,
+    18.0,
+    52.59017215274357
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Motor_Cradle_PETG_Rear_L",
+   "material": "PETG",
+   "mass_g": 3.8933,
+   "centroid_mm": [
+    -56.92470240866493,
+    -70.00000000000001,
+    19.98936499444813
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Motor_Cradle_PETG_Rear_R",
+   "material": "PETG",
+   "mass_g": 3.8933,
+   "centroid_mm": [
+    56.924702408664906,
+    -70.0,
+    19.989364994448124
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Motor_Twin_Saddle_PETG_Rear",
+   "material": "PETG",
+   "mass_g": 5.0363,
+   "centroid_mm": [
+    -7.265629187330982e-17,
+    -69.99999999999996,
+    13.230298729188029
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Motor_Lid_Bar_PETG_Rear",
+   "material": "PETG",
+   "mass_g": 1.7487,
+   "centroid_mm": [
+    -5.118976226118284e-16,
+    -70.00000000000001,
+    52.59017215274357
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Weapon_Side_Block_PETG_L",
+   "material": "PETG",
+   "mass_g": 11.0528,
+   "centroid_mm": [
+    -40.79171234817039,
+    75.51364098687847,
+    25.64250890954358
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Weapon_Side_Block_PETG_R",
+   "material": "PETG",
+   "mass_g": 11.2347,
+   "centroid_mm": [
+    40.746507572762894,
+    75.34031013430344,
+    25.914446007695343
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Rear_Low_PETG_L",
+   "material": "PETG",
+   "mass_g": 0.6607,
+   "centroid_mm": [
+    -74.63961303726103,
+    -103.69764511102707,
+    12.360386962738946
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Rear_Low_PETG_R",
+   "material": "PETG",
+   "mass_g": 0.6607,
+   "centroid_mm": [
+    74.63961303726106,
+    -103.69764511102711,
+    12.36038696273895
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Rear_High_PETG_L",
+   "material": "PETG",
+   "mass_g": 0.6607,
+   "centroid_mm": [
+    -74.63961303726106,
+    -103.69764511102711,
+    53.639613037261064
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Rear_High_PETG_R",
+   "material": "PETG",
+   "mass_g": 0.6607,
+   "centroid_mm": [
+    74.63961303726104,
+    -103.69764511102709,
+    53.63961303726107
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Mid_Low_PETG_L",
+   "material": "PETG",
+   "mass_g": 0.8953,
+   "centroid_mm": [
+    -75.47424216798376,
+    -20.000000000000007,
+    11.60303132806506
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Mid_Low_PETG_R",
+   "material": "PETG",
+   "mass_g": 0.8953,
+   "centroid_mm": [
+    75.47424216798372,
+    -20.000000000000004,
+    11.60303132806506
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Mid_High_PETG_L",
+   "material": "PETG",
+   "mass_g": 1.1148,
+   "centroid_mm": [
+    -75.47931294021281,
+    -20.000000000000004,
+    53.458625880425636
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Mid_High_PETG_R",
+   "material": "PETG",
+   "mass_g": 1.1148,
+   "centroid_mm": [
+    75.47931294021282,
+    -20.000000000000004,
+    53.45862588042561
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Front_Low_PETG_L",
+   "material": "PETG",
+   "mass_g": 0.8542,
+   "centroid_mm": [
+    -75.47300131832966,
+    56.22300131832962,
+    11.607994726681541
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Front_Low_PETG_R",
+   "material": "PETG",
+   "mass_g": 0.8542,
+   "centroid_mm": [
+    75.47300131832962,
+    56.22300131832961,
+    11.607994726681541
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Front_High_PETG_L",
+   "material": "PETG",
+   "mass_g": 1.2754,
+   "centroid_mm": [
+    -74.57232626685055,
+    56.31328548349421,
+    53.572326266850524
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Front_High_PETG_R",
+   "material": "PETG",
+   "mass_g": 1.2754,
+   "centroid_mm": [
+    74.57232626685051,
+    56.31328548349423,
+    53.572326266850524
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Rear_Centre_Low_PETG",
+   "material": "PETG",
+   "mass_g": 0.7068,
+   "centroid_mm": [
+    13.500000000000002,
+    -103.70106134795297,
+    12.53262576803135
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Cleat_Bulkhead_Centre_Low_PETG",
+   "material": "PETG",
+   "mass_g": 1.3215,
+   "centroid_mm": [
+    -11.499999999999998,
+    56.223824247173035,
+    12.517450501884642
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_L_y-82",
+   "material": "PETG",
+   "mass_g": 1.6707,
+   "centroid_mm": [
+    -87.02659887350595,
+    -82.49999999999999,
+    15.087921463229407
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_L_y-28",
+   "material": "PETG",
+   "mass_g": 1.6707,
+   "centroid_mm": [
+    -87.02659887350593,
+    -27.403377111331768,
+    15.294970510375604
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_L_y+32",
+   "material": "PETG",
+   "mass_g": 1.6707,
+   "centroid_mm": [
+    -87.02659887350595,
+    32.499999999999986,
+    15.087921463229405
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_L_y+62",
+   "material": "PETG",
+   "mass_g": 1.4407,
+   "centroid_mm": [
+    -87.02999242983394,
+    65.45298741238592,
+    15.066492517977277
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_R_y-82",
+   "material": "PETG",
+   "mass_g": 1.6707,
+   "centroid_mm": [
+    87.02659887350598,
+    -82.5,
+    15.087921463229403
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_R_y-28",
+   "material": "PETG",
+   "mass_g": 1.6707,
+   "centroid_mm": [
+    87.0265988735059,
+    -27.40337711133175,
+    15.29497051037561
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_R_y+32",
+   "material": "PETG",
+   "mass_g": 1.6707,
+   "centroid_mm": [
+    87.02659887350598,
+    32.5,
+    15.087921463229407
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_R_y+62",
+   "material": "PETG",
+   "mass_g": 1.4407,
+   "centroid_mm": [
+    87.02999242983392,
+    65.4529874123859,
+    15.066492517977277
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_Rear_x-58",
+   "material": "PETG",
+   "mass_g": 0.962,
+   "centroid_mm": [
+    -57.5,
+    -112.56482434917216,
+    16.88374142687677
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_Rear_x+0",
+   "material": "PETG",
+   "mass_g": 1.0298,
+   "centroid_mm": [
+    4.5371786590405804e-17,
+    -112.56494351482806,
+    16.89241912901554
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Bracket_PETG_Rear_x+58",
+   "material": "PETG",
+   "mass_g": 0.962,
+   "centroid_mm": [
+    57.5,
+    -112.56482434917216,
+    16.88374142687677
+   ],
+   "method": "estimated CAD volume/density"
+  }
+ ],
+ "fasteners": [
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "wedgelet rail L floor",
+   "pos": [
+    -75.0,
+    70.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -75.0,
+    70.0,
+    4.0
+   ],
+   "host": "Wedgelet_Block_PETG_L_PCbody",
+   "panel": "floor",
+   "group": "rail_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "wedgelet rail L floor",
+   "pos": [
+    -75.0,
+    70.0,
+    9.0
+   ],
+   "host": "Wedgelet_Block_PETG_L_PCbody",
+   "group": "rail_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "wedgelet rail L floor",
+   "pos": [
+    -75.0,
+    86.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -75.0,
+    86.0,
+    4.0
+   ],
+   "host": "Wedgelet_Block_PETG_L_PCbody",
+   "panel": "floor",
+   "group": "rail_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "wedgelet rail L floor",
+   "pos": [
+    -75.0,
+    86.0,
+    9.0
+   ],
+   "host": "Wedgelet_Block_PETG_L_PCbody",
+   "group": "rail_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "wedgelet rail R floor",
+   "pos": [
+    75.0,
+    70.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    75.0,
+    70.0,
+    4.0
+   ],
+   "host": "Wedgelet_Block_PETG_R_PCbody",
+   "panel": "floor",
+   "group": "rail_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "wedgelet rail R floor",
+   "pos": [
+    75.0,
+    70.0,
+    9.0
+   ],
+   "host": "Wedgelet_Block_PETG_R_PCbody",
+   "group": "rail_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "wedgelet rail R floor",
+   "pos": [
+    75.0,
+    86.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    75.0,
+    86.0,
+    4.0
+   ],
+   "host": "Wedgelet_Block_PETG_R_PCbody",
+   "panel": "floor",
+   "group": "rail_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "wedgelet rail R floor",
+   "pos": [
+    75.0,
+    86.0,
+    9.0
+   ],
+   "host": "Wedgelet_Block_PETG_R_PCbody",
+   "group": "rail_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "cradle Front L",
+   "pos": [
+    -54.0,
+    9.5,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -54.0,
+    9.5,
+    4.0
+   ],
+   "host": "Motor_Cradle_PETG_Front_L",
+   "panel": "floor",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "cradle Front L",
+   "pos": [
+    -54.0,
+    9.5,
+    9.0
+   ],
+   "host": "Motor_Cradle_PETG_Front_L",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "cradle Front L",
+   "pos": [
+    -54.0,
+    17.5,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -54.0,
+    17.5,
+    4.0
+   ],
+   "host": "Motor_Cradle_PETG_Front_L",
+   "panel": "floor",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "cradle Front L",
+   "pos": [
+    -54.0,
+    17.5,
+    9.0
+   ],
+   "host": "Motor_Cradle_PETG_Front_L",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "cradle Front R",
+   "pos": [
+    54.0,
+    10.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    54.0,
+    10.0,
+    4.0
+   ],
+   "host": "Motor_Cradle_PETG_Front_R",
+   "panel": "floor",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "cradle Front R",
+   "pos": [
+    54.0,
+    10.0,
+    9.0
+   ],
+   "host": "Motor_Cradle_PETG_Front_R",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "cradle Front R",
+   "pos": [
+    54.0,
+    26.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    54.0,
+    26.0,
+    4.0
+   ],
+   "host": "Motor_Cradle_PETG_Front_R",
+   "panel": "floor",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "cradle Front R",
+   "pos": [
+    54.0,
+    26.0,
+    9.0
+   ],
+   "host": "Motor_Cradle_PETG_Front_R",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "twin saddle Front",
+   "pos": [
+    0.0,
+    12.0,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    0.0,
+    12.0,
+    4.0
+   ],
+   "host": "Motor_Twin_Saddle_PETG_Front",
+   "panel": "floor",
+   "group": "saddle_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "twin saddle Front",
+   "pos": [
+    0.0,
+    12.0,
+    9.0
+   ],
+   "host": "Motor_Twin_Saddle_PETG_Front",
+   "group": "saddle_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "twin saddle Front",
+   "pos": [
+    0.0,
+    24.0,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    0.0,
+    24.0,
+    4.0
+   ],
+   "host": "Motor_Twin_Saddle_PETG_Front",
+   "panel": "floor",
+   "group": "saddle_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "twin saddle Front",
+   "pos": [
+    0.0,
+    24.0,
+    9.0
+   ],
+   "host": "Motor_Twin_Saddle_PETG_Front",
+   "group": "saddle_floor"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "lid bar Front",
+   "pos": [
+    -7.0,
+    18.0,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    -7.0,
+    18.0,
+    62.0
+   ],
+   "host": "Motor_Lid_Bar_PETG_Front",
+   "panel": "lid",
+   "group": "lid_bar"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "lid bar Front",
+   "pos": [
+    -7.0,
+    18.0,
+    57.0
+   ],
+   "host": "Motor_Lid_Bar_PETG_Front",
+   "group": "lid_bar"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "lid bar Front",
+   "pos": [
+    7.0,
+    18.0,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    7.0,
+    18.0,
+    62.0
+   ],
+   "host": "Motor_Lid_Bar_PETG_Front",
+   "panel": "lid",
+   "group": "lid_bar"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "lid bar Front",
+   "pos": [
+    7.0,
+    18.0,
+    57.0
+   ],
+   "host": "Motor_Lid_Bar_PETG_Front",
+   "group": "lid_bar"
+  },
+  {
+   "kind": "EPDM_pad_0.5mm",
+   "label": "saddle pad Front",
+   "pos": [
+    -7.0,
+    18.0,
+    19.5
+   ]
+  },
+  {
+   "kind": "EPDM_pad_0.5mm",
+   "label": "lid bar pad Front",
+   "pos": [
+    -7.0,
+    18.0,
+    44.5
+   ]
+  },
+  {
+   "kind": "EPDM_pad_0.5mm",
+   "label": "saddle pad Front",
+   "pos": [
+    7.0,
+    18.0,
+    19.5
+   ]
+  },
+  {
+   "kind": "EPDM_pad_0.5mm",
+   "label": "lid bar pad Front",
+   "pos": [
+    7.0,
+    18.0,
+    44.5
+   ]
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "cradle Rear L",
+   "pos": [
+    -54.0,
+    -78.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -54.0,
+    -78.0,
+    4.0
+   ],
+   "host": "Motor_Cradle_PETG_Rear_L",
+   "panel": "floor",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "cradle Rear L",
+   "pos": [
+    -54.0,
+    -78.0,
+    9.0
+   ],
+   "host": "Motor_Cradle_PETG_Rear_L",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "cradle Rear L",
+   "pos": [
+    -54.0,
+    -62.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -54.0,
+    -62.0,
+    4.0
+   ],
+   "host": "Motor_Cradle_PETG_Rear_L",
+   "panel": "floor",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "cradle Rear L",
+   "pos": [
+    -54.0,
+    -62.0,
+    9.0
+   ],
+   "host": "Motor_Cradle_PETG_Rear_L",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "cradle Rear R",
+   "pos": [
+    54.0,
+    -78.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    54.0,
+    -78.0,
+    4.0
+   ],
+   "host": "Motor_Cradle_PETG_Rear_R",
+   "panel": "floor",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "cradle Rear R",
+   "pos": [
+    54.0,
+    -78.0,
+    9.0
+   ],
+   "host": "Motor_Cradle_PETG_Rear_R",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "cradle Rear R",
+   "pos": [
+    54.0,
+    -62.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    54.0,
+    -62.0,
+    4.0
+   ],
+   "host": "Motor_Cradle_PETG_Rear_R",
+   "panel": "floor",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "cradle Rear R",
+   "pos": [
+    54.0,
+    -62.0,
+    9.0
+   ],
+   "host": "Motor_Cradle_PETG_Rear_R",
+   "group": "cradle_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "twin saddle Rear",
+   "pos": [
+    0.0,
+    -76.0,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    0.0,
+    -76.0,
+    4.0
+   ],
+   "host": "Motor_Twin_Saddle_PETG_Rear",
+   "panel": "floor",
+   "group": "saddle_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "twin saddle Rear",
+   "pos": [
+    0.0,
+    -76.0,
+    9.0
+   ],
+   "host": "Motor_Twin_Saddle_PETG_Rear",
+   "group": "saddle_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "twin saddle Rear",
+   "pos": [
+    0.0,
+    -64.0,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    0.0,
+    -64.0,
+    4.0
+   ],
+   "host": "Motor_Twin_Saddle_PETG_Rear",
+   "panel": "floor",
+   "group": "saddle_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "twin saddle Rear",
+   "pos": [
+    0.0,
+    -64.0,
+    9.0
+   ],
+   "host": "Motor_Twin_Saddle_PETG_Rear",
+   "group": "saddle_floor"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "lid bar Rear",
+   "pos": [
+    -7.0,
+    -70.0,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    -7.0,
+    -70.0,
+    62.0
+   ],
+   "host": "Motor_Lid_Bar_PETG_Rear",
+   "panel": "lid",
+   "group": "lid_bar"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "lid bar Rear",
+   "pos": [
+    -7.0,
+    -70.0,
+    57.0
+   ],
+   "host": "Motor_Lid_Bar_PETG_Rear",
+   "group": "lid_bar"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "lid bar Rear",
+   "pos": [
+    7.0,
+    -70.0,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    7.0,
+    -70.0,
+    62.0
+   ],
+   "host": "Motor_Lid_Bar_PETG_Rear",
+   "panel": "lid",
+   "group": "lid_bar"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "lid bar Rear",
+   "pos": [
+    7.0,
+    -70.0,
+    57.0
+   ],
+   "host": "Motor_Lid_Bar_PETG_Rear",
+   "group": "lid_bar"
+  },
+  {
+   "kind": "EPDM_pad_0.5mm",
+   "label": "saddle pad Rear",
+   "pos": [
+    -7.0,
+    -70.0,
+    19.5
+   ]
+  },
+  {
+   "kind": "EPDM_pad_0.5mm",
+   "label": "lid bar pad Rear",
+   "pos": [
+    -7.0,
+    -70.0,
+    44.5
+   ]
+  },
+  {
+   "kind": "EPDM_pad_0.5mm",
+   "label": "saddle pad Rear",
+   "pos": [
+    7.0,
+    -70.0,
+    19.5
+   ]
+  },
+  {
+   "kind": "EPDM_pad_0.5mm",
+   "label": "lid bar pad Rear",
+   "pos": [
+    7.0,
+    -70.0,
+    44.5
+   ]
+  },
+  {
+   "kind": "M3x10_button_ISO7380",
+   "label": "upright L y75 z14",
+   "pos": [
+    -33,
+    75.0,
+    14.0
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "head_point": [
+    -38,
+    75.0,
+    14.0
+   ],
+   "host": "Upright_6061_6mm_L",
+   "group": "upright_web",
+   "counted_in_R3_allowance": true
+  },
+  {
+   "kind": "M3x10_button_ISO7380",
+   "label": "upright L y75 z50",
+   "pos": [
+    -33,
+    75.0,
+    50.0
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "head_point": [
+    -38,
+    75.0,
+    50.0
+   ],
+   "host": "Upright_6061_6mm_L",
+   "group": "upright_web",
+   "counted_in_R3_allowance": true
+  },
+  {
+   "kind": "M3x10_button_ISO7380",
+   "label": "upright L y90 z14",
+   "pos": [
+    -33,
+    90.0,
+    14.0
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "head_point": [
+    -38,
+    90.0,
+    14.0
+   ],
+   "host": "Upright_6061_6mm_L",
+   "group": "upright_web",
+   "counted_in_R3_allowance": true
+  },
+  {
+   "kind": "M3x10_button_ISO7380",
+   "label": "upright L y90 z46",
+   "pos": [
+    -33,
+    90.0,
+    46.0
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "head_point": [
+    -38,
+    90.0,
+    46.0
+   ],
+   "host": "Upright_6061_6mm_L",
+   "group": "upright_web",
+   "counted_in_R3_allowance": true
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block L floor",
+   "pos": [
+    -45.0,
+    67.5,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -45.0,
+    67.5,
+    4.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "panel": "floor",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block L floor",
+   "pos": [
+    -45.0,
+    67.5,
+    9.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block L floor",
+   "pos": [
+    -45.0,
+    76.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -45.0,
+    76.0,
+    4.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "panel": "floor",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block L floor",
+   "pos": [
+    -45.0,
+    76.0,
+    9.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block L floor",
+   "pos": [
+    -45.0,
+    84.5,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -45.0,
+    84.5,
+    4.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "panel": "floor",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block L floor",
+   "pos": [
+    -45.0,
+    84.5,
+    9.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block L floor",
+   "pos": [
+    -45.0,
+    92.5,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -45.0,
+    92.5,
+    4.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "panel": "floor",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block L floor",
+   "pos": [
+    -45.0,
+    92.5,
+    9.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block L bulkhead",
+   "pos": [
+    -51.0,
+    64.0,
+    28.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "head_point": [
+    -51.0,
+    62.0,
+    28.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "panel": "bulk_L",
+   "group": "side_block_bulkhead"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block L bulkhead",
+   "pos": [
+    -51.0,
+    66.0,
+    28.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "group": "side_block_bulkhead"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block L bulkhead",
+   "pos": [
+    -51.0,
+    64.0,
+    45.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "head_point": [
+    -51.0,
+    62.0,
+    45.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "panel": "bulk_L",
+   "group": "side_block_bulkhead"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block L bulkhead",
+   "pos": [
+    -51.0,
+    66.0,
+    45.0
+   ],
+   "host": "Weapon_Side_Block_PETG_L",
+   "group": "side_block_bulkhead"
+  },
+  {
+   "kind": "M3x10_button_ISO7380",
+   "label": "upright R y75 z14",
+   "pos": [
+    33,
+    75.0,
+    14.0
+   ],
+   "axis": [
+    -1,
+    0,
+    0
+   ],
+   "head_point": [
+    38,
+    75.0,
+    14.0
+   ],
+   "host": "Upright_6061_6mm_R",
+   "group": "upright_web",
+   "counted_in_R3_allowance": true
+  },
+  {
+   "kind": "M3x10_button_ISO7380",
+   "label": "upright R y75 z50",
+   "pos": [
+    33,
+    75.0,
+    50.0
+   ],
+   "axis": [
+    -1,
+    0,
+    0
+   ],
+   "head_point": [
+    38,
+    75.0,
+    50.0
+   ],
+   "host": "Upright_6061_6mm_R",
+   "group": "upright_web",
+   "counted_in_R3_allowance": true
+  },
+  {
+   "kind": "M3x10_button_ISO7380",
+   "label": "upright R y90 z14",
+   "pos": [
+    33,
+    90.0,
+    14.0
+   ],
+   "axis": [
+    -1,
+    0,
+    0
+   ],
+   "head_point": [
+    38,
+    90.0,
+    14.0
+   ],
+   "host": "Upright_6061_6mm_R",
+   "group": "upright_web",
+   "counted_in_R3_allowance": true
+  },
+  {
+   "kind": "M3x10_button_ISO7380",
+   "label": "upright R y90 z46",
+   "pos": [
+    33,
+    90.0,
+    46.0
+   ],
+   "axis": [
+    -1,
+    0,
+    0
+   ],
+   "head_point": [
+    38,
+    90.0,
+    46.0
+   ],
+   "host": "Upright_6061_6mm_R",
+   "group": "upright_web",
+   "counted_in_R3_allowance": true
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block R floor",
+   "pos": [
+    45.0,
+    67.5,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    45.0,
+    67.5,
+    4.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "panel": "floor",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block R floor",
+   "pos": [
+    45.0,
+    67.5,
+    9.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block R floor",
+   "pos": [
+    45.0,
+    76.0,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    45.0,
+    76.0,
+    4.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "panel": "floor",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block R floor",
+   "pos": [
+    45.0,
+    76.0,
+    9.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block R floor",
+   "pos": [
+    45.0,
+    84.5,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    45.0,
+    84.5,
+    4.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "panel": "floor",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block R floor",
+   "pos": [
+    45.0,
+    84.5,
+    9.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block R floor",
+   "pos": [
+    45.0,
+    92.5,
+    6.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    45.0,
+    92.5,
+    4.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "panel": "floor",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block R floor",
+   "pos": [
+    45.0,
+    92.5,
+    9.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "group": "side_block_floor"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block R bulkhead",
+   "pos": [
+    51.0,
+    64.0,
+    28.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "head_point": [
+    51.0,
+    62.0,
+    28.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "panel": "bulk_R",
+   "group": "side_block_bulkhead"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block R bulkhead",
+   "pos": [
+    51.0,
+    66.0,
+    28.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "group": "side_block_bulkhead"
+  },
+  {
+   "kind": "M3x6_button_ISO7380",
+   "label": "side block R bulkhead",
+   "pos": [
+    51.0,
+    64.0,
+    45.0
+   ],
+   "size": "M3",
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "head_point": [
+    51.0,
+    62.0,
+    45.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "panel": "bulk_R",
+   "group": "side_block_bulkhead"
+  },
+  {
+   "kind": "M3_heatset_insert_L4_OD5",
+   "label": "side block R bulkhead",
+   "pos": [
+    51.0,
+    66.0,
+    45.0
+   ],
+   "host": "Weapon_Side_Block_PETG_R",
+   "group": "side_block_bulkhead"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_Low L",
+   "pos": [
+    -81.0,
+    -103.75,
+    15.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -83.0,
+    -103.75,
+    15.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_L",
+   "panel": "wall_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_Low L",
+   "pos": [
+    -78.0,
+    -103.75,
+    15.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_Low L",
+   "pos": [
+    -72.0,
+    -108.0,
+    15.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "head_point": [
+    -72.0,
+    -110.0,
+    15.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_L",
+   "panel": "rear",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_Low L",
+   "pos": [
+    -72.0,
+    -105.0,
+    15.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_L",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_Low L",
+   "pos": [
+    -72.0,
+    -103.75,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -72.0,
+    -103.75,
+    4.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_L",
+   "panel": "floor",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_Low L",
+   "pos": [
+    -72.0,
+    -103.75,
+    9.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_L",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_Low R",
+   "pos": [
+    81.0,
+    -103.75,
+    15.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    83.0,
+    -103.75,
+    15.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_R",
+   "panel": "wall_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_Low R",
+   "pos": [
+    78.0,
+    -103.75,
+    15.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_Low R",
+   "pos": [
+    72.0,
+    -108.0,
+    15.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "head_point": [
+    72.0,
+    -110.0,
+    15.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_R",
+   "panel": "rear",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_Low R",
+   "pos": [
+    72.0,
+    -105.0,
+    15.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_R",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_Low R",
+   "pos": [
+    72.0,
+    -103.75,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    72.0,
+    -103.75,
+    4.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_R",
+   "panel": "floor",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_Low R",
+   "pos": [
+    72.0,
+    -103.75,
+    9.0
+   ],
+   "host": "Cleat_Rear_Low_PETG_R",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_High L",
+   "pos": [
+    -81.0,
+    -103.75,
+    51.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -83.0,
+    -103.75,
+    51.0
+   ],
+   "host": "Cleat_Rear_High_PETG_L",
+   "panel": "wall_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_High L",
+   "pos": [
+    -78.0,
+    -103.75,
+    51.0
+   ],
+   "host": "Cleat_Rear_High_PETG_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_High L",
+   "pos": [
+    -72.0,
+    -108.0,
+    51.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "head_point": [
+    -72.0,
+    -110.0,
+    51.0
+   ],
+   "host": "Cleat_Rear_High_PETG_L",
+   "panel": "rear",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_High L",
+   "pos": [
+    -72.0,
+    -105.0,
+    51.0
+   ],
+   "host": "Cleat_Rear_High_PETG_L",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "cleat Rear_High L",
+   "pos": [
+    -72.0,
+    -103.75,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    -72.0,
+    -103.75,
+    62.0
+   ],
+   "host": "Cleat_Rear_High_PETG_L",
+   "panel": "lid",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_High L",
+   "pos": [
+    -72.0,
+    -103.75,
+    57.0
+   ],
+   "host": "Cleat_Rear_High_PETG_L",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_High R",
+   "pos": [
+    81.0,
+    -103.75,
+    51.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    83.0,
+    -103.75,
+    51.0
+   ],
+   "host": "Cleat_Rear_High_PETG_R",
+   "panel": "wall_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_High R",
+   "pos": [
+    78.0,
+    -103.75,
+    51.0
+   ],
+   "host": "Cleat_Rear_High_PETG_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_High R",
+   "pos": [
+    72.0,
+    -108.0,
+    51.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "head_point": [
+    72.0,
+    -110.0,
+    51.0
+   ],
+   "host": "Cleat_Rear_High_PETG_R",
+   "panel": "rear",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_High R",
+   "pos": [
+    72.0,
+    -105.0,
+    51.0
+   ],
+   "host": "Cleat_Rear_High_PETG_R",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "cleat Rear_High R",
+   "pos": [
+    72.0,
+    -103.75,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    72.0,
+    -103.75,
+    62.0
+   ],
+   "host": "Cleat_Rear_High_PETG_R",
+   "panel": "lid",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_High R",
+   "pos": [
+    72.0,
+    -103.75,
+    57.0
+   ],
+   "host": "Cleat_Rear_High_PETG_R",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Mid_Low L",
+   "pos": [
+    -81.0,
+    -17.0,
+    11.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -83.0,
+    -17.0,
+    11.5
+   ],
+   "host": "Cleat_Mid_Low_PETG_L",
+   "panel": "wall_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Mid_Low L",
+   "pos": [
+    -78.0,
+    -17.0,
+    11.5
+   ],
+   "host": "Cleat_Mid_Low_PETG_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Mid_Low L",
+   "pos": [
+    -74.0,
+    -23.0,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -74.0,
+    -23.0,
+    4.0
+   ],
+   "host": "Cleat_Mid_Low_PETG_L",
+   "panel": "floor",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Mid_Low L",
+   "pos": [
+    -74.0,
+    -23.0,
+    9.0
+   ],
+   "host": "Cleat_Mid_Low_PETG_L",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Mid_Low R",
+   "pos": [
+    81.0,
+    -17.0,
+    11.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    83.0,
+    -17.0,
+    11.5
+   ],
+   "host": "Cleat_Mid_Low_PETG_R",
+   "panel": "wall_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Mid_Low R",
+   "pos": [
+    78.0,
+    -17.0,
+    11.5
+   ],
+   "host": "Cleat_Mid_Low_PETG_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Mid_Low R",
+   "pos": [
+    74.0,
+    -23.0,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    74.0,
+    -23.0,
+    4.0
+   ],
+   "host": "Cleat_Mid_Low_PETG_R",
+   "panel": "floor",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Mid_Low R",
+   "pos": [
+    74.0,
+    -23.0,
+    9.0
+   ],
+   "host": "Cleat_Mid_Low_PETG_R",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Mid_High L",
+   "pos": [
+    -81.0,
+    -17.0,
+    51.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -83.0,
+    -17.0,
+    51.5
+   ],
+   "host": "Cleat_Mid_High_PETG_L",
+   "panel": "wall_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Mid_High L",
+   "pos": [
+    -78.0,
+    -17.0,
+    51.5
+   ],
+   "host": "Cleat_Mid_High_PETG_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "cleat Mid_High L",
+   "pos": [
+    -74.0,
+    -23.0,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    -74.0,
+    -23.0,
+    62.0
+   ],
+   "host": "Cleat_Mid_High_PETG_L",
+   "panel": "lid",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Mid_High L",
+   "pos": [
+    -74.0,
+    -23.0,
+    57.0
+   ],
+   "host": "Cleat_Mid_High_PETG_L",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Mid_High R",
+   "pos": [
+    81.0,
+    -17.0,
+    51.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    83.0,
+    -17.0,
+    51.5
+   ],
+   "host": "Cleat_Mid_High_PETG_R",
+   "panel": "wall_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Mid_High R",
+   "pos": [
+    78.0,
+    -17.0,
+    51.5
+   ],
+   "host": "Cleat_Mid_High_PETG_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "cleat Mid_High R",
+   "pos": [
+    74.0,
+    -23.0,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    74.0,
+    -23.0,
+    62.0
+   ],
+   "host": "Cleat_Mid_High_PETG_R",
+   "panel": "lid",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Mid_High R",
+   "pos": [
+    74.0,
+    -23.0,
+    57.0
+   ],
+   "host": "Cleat_Mid_High_PETG_R",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Front_Low L",
+   "pos": [
+    -81.0,
+    54.0,
+    11.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -83.0,
+    54.0,
+    11.5
+   ],
+   "host": "Cleat_Front_Low_PETG_L",
+   "panel": "wall_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_Low L",
+   "pos": [
+    -78.0,
+    54.0,
+    11.5
+   ],
+   "host": "Cleat_Front_Low_PETG_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Front_Low L",
+   "pos": [
+    -74.0,
+    59.0,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -74.0,
+    59.0,
+    4.0
+   ],
+   "host": "Cleat_Front_Low_PETG_L",
+   "panel": "floor",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_Low L",
+   "pos": [
+    -74.0,
+    59.0,
+    9.0
+   ],
+   "host": "Cleat_Front_Low_PETG_L",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Front_Low R",
+   "pos": [
+    81.0,
+    54.0,
+    11.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    83.0,
+    54.0,
+    11.5
+   ],
+   "host": "Cleat_Front_Low_PETG_R",
+   "panel": "wall_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_Low R",
+   "pos": [
+    78.0,
+    54.0,
+    11.5
+   ],
+   "host": "Cleat_Front_Low_PETG_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Front_Low R",
+   "pos": [
+    74.0,
+    59.0,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    74.0,
+    59.0,
+    4.0
+   ],
+   "host": "Cleat_Front_Low_PETG_R",
+   "panel": "floor",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_Low R",
+   "pos": [
+    74.0,
+    59.0,
+    9.0
+   ],
+   "host": "Cleat_Front_Low_PETG_R",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Front_High L",
+   "pos": [
+    -81.0,
+    53.75,
+    51.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -83.0,
+    53.75,
+    51.0
+   ],
+   "host": "Cleat_Front_High_PETG_L",
+   "panel": "wall_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_High L",
+   "pos": [
+    -78.0,
+    53.75,
+    51.0
+   ],
+   "host": "Cleat_Front_High_PETG_L",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Front_High L",
+   "pos": [
+    -72.0,
+    62.0,
+    51.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "head_point": [
+    -72.0,
+    64.0,
+    51.0
+   ],
+   "host": "Cleat_Front_High_PETG_L",
+   "panel": "bulk_L",
+   "group": "cleat_bulk"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_High L",
+   "pos": [
+    -72.0,
+    60.0,
+    51.0
+   ],
+   "host": "Cleat_Front_High_PETG_L",
+   "group": "cleat_bulk"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "cleat Front_High L",
+   "pos": [
+    -72.0,
+    53.75,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    -72.0,
+    53.75,
+    62.0
+   ],
+   "host": "Cleat_Front_High_PETG_L",
+   "panel": "lid",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_High L",
+   "pos": [
+    -72.0,
+    53.75,
+    57.0
+   ],
+   "host": "Cleat_Front_High_PETG_L",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Front_High R",
+   "pos": [
+    81.0,
+    53.75,
+    51.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    83.0,
+    53.75,
+    51.0
+   ],
+   "host": "Cleat_Front_High_PETG_R",
+   "panel": "wall_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_High R",
+   "pos": [
+    78.0,
+    53.75,
+    51.0
+   ],
+   "host": "Cleat_Front_High_PETG_R",
+   "group": "cleat_wall"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Front_High R",
+   "pos": [
+    72.0,
+    62.0,
+    51.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "head_point": [
+    72.0,
+    64.0,
+    51.0
+   ],
+   "host": "Cleat_Front_High_PETG_R",
+   "panel": "bulk_R",
+   "group": "cleat_bulk"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_High R",
+   "pos": [
+    72.0,
+    60.0,
+    51.0
+   ],
+   "host": "Cleat_Front_High_PETG_R",
+   "group": "cleat_bulk"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "cleat Front_High R",
+   "pos": [
+    72.0,
+    53.75,
+    60.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "head_point": [
+    72.0,
+    53.75,
+    62.0
+   ],
+   "host": "Cleat_Front_High_PETG_R",
+   "panel": "lid",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Front_High R",
+   "pos": [
+    72.0,
+    53.75,
+    57.0
+   ],
+   "host": "Cleat_Front_High_PETG_R",
+   "group": "cleat_lid"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_Centre_Low",
+   "pos": [
+    16.0,
+    -108.0,
+    15.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "head_point": [
+    16.0,
+    -110.0,
+    15.0
+   ],
+   "host": "Cleat_Rear_Centre_Low_PETG",
+   "panel": "rear",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_Centre_Low",
+   "pos": [
+    16.0,
+    -105.0,
+    15.0
+   ],
+   "host": "Cleat_Rear_Centre_Low_PETG",
+   "group": "cleat_rear"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Rear_Centre_Low",
+   "pos": [
+    11.0,
+    -103.75,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    11.0,
+    -103.75,
+    4.0
+   ],
+   "host": "Cleat_Rear_Centre_Low_PETG",
+   "panel": "floor",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Rear_Centre_Low",
+   "pos": [
+    11.0,
+    -103.75,
+    9.0
+   ],
+   "host": "Cleat_Rear_Centre_Low_PETG",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Bulkhead_Centre_Low",
+   "pos": [
+    -9.0,
+    62.0,
+    15.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "head_point": [
+    -9.0,
+    64.0,
+    15.0
+   ],
+   "host": "Cleat_Bulkhead_Centre_Low_PETG",
+   "panel": "bulk_R",
+   "group": "cleat_bulk"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Bulkhead_Centre_Low",
+   "pos": [
+    -9.0,
+    60.0,
+    15.0
+   ],
+   "host": "Cleat_Bulkhead_Centre_Low_PETG",
+   "group": "cleat_bulk"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "cleat Bulkhead_Centre_Low",
+   "pos": [
+    -14.0,
+    53.75,
+    6.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "head_point": [
+    -14.0,
+    53.75,
+    4.0
+   ],
+   "host": "Cleat_Bulkhead_Centre_Low_PETG",
+   "panel": "floor",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "cleat Bulkhead_Centre_Low",
+   "pos": [
+    -14.0,
+    53.75,
+    9.0
+   ],
+   "host": "Cleat_Bulkhead_Centre_Low_PETG",
+   "group": "cleat_floor"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "skirt bracket L",
+   "pos": [
+    -82.0,
+    -82.5,
+    20.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -80.0,
+    -82.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_L_y-82",
+   "panel": "wall_L",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket L",
+   "pos": [
+    -85.0,
+    -82.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_L_y-82",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "skirt bracket L",
+   "pos": [
+    -82.0,
+    -31.0,
+    13.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -80.0,
+    -31.0,
+    13.0
+   ],
+   "host": "Skirt_Bracket_PETG_L_y-28",
+   "panel": "wall_L",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket L",
+   "pos": [
+    -85.0,
+    -31.0,
+    13.0
+   ],
+   "host": "Skirt_Bracket_PETG_L_y-28",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "skirt bracket L",
+   "pos": [
+    -82.0,
+    32.5,
+    20.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -80.0,
+    32.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_L_y+32",
+   "panel": "wall_L",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket L",
+   "pos": [
+    -85.0,
+    32.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_L_y+32",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "skirt bracket L",
+   "pos": [
+    -82.0,
+    67.5,
+    20.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    -80.0,
+    67.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_L_y+62",
+   "panel": "wall_L",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket L",
+   "pos": [
+    -85.0,
+    67.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_L_y+62",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "skirt bracket R",
+   "pos": [
+    82.0,
+    -82.5,
+    20.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    80.0,
+    -82.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_R_y-82",
+   "panel": "wall_R",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket R",
+   "pos": [
+    85.0,
+    -82.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_R_y-82",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "skirt bracket R",
+   "pos": [
+    82.0,
+    -31.0,
+    13.0
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    80.0,
+    -31.0,
+    13.0
+   ],
+   "host": "Skirt_Bracket_PETG_R_y-28",
+   "panel": "wall_R",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket R",
+   "pos": [
+    85.0,
+    -31.0,
+    13.0
+   ],
+   "host": "Skirt_Bracket_PETG_R_y-28",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "skirt bracket R",
+   "pos": [
+    82.0,
+    32.5,
+    20.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    80.0,
+    32.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_R_y+32",
+   "panel": "wall_R",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket R",
+   "pos": [
+    85.0,
+    32.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_R_y+32",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_csk_ISO10642",
+   "label": "skirt bracket R",
+   "pos": [
+    82.0,
+    67.5,
+    20.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "head_point": [
+    80.0,
+    67.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_R_y+62",
+   "panel": "wall_R",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket R",
+   "pos": [
+    85.0,
+    67.5,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_R_y+62",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "skirt bracket rear",
+   "pos": [
+    -57.5,
+    -109.0,
+    20.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "head_point": [
+    -57.5,
+    -107.0,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_Rear_x-58",
+   "panel": "rear",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket rear",
+   "pos": [
+    -57.5,
+    -112.0,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_Rear_x-58",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "skirt bracket rear",
+   "pos": [
+    0.0,
+    -109.0,
+    20.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "head_point": [
+    0.0,
+    -107.0,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_Rear_x+0",
+   "panel": "rear",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket rear",
+   "pos": [
+    0.0,
+    -112.0,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_Rear_x+0",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5x6_button",
+   "label": "skirt bracket rear",
+   "pos": [
+    57.5,
+    -109.0,
+    20.5
+   ],
+   "size": "M2.5",
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "head_point": [
+    57.5,
+    -107.0,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_Rear_x+58",
+   "panel": "rear",
+   "group": "skirt"
+  },
+  {
+   "kind": "M2.5_heatset_insert_L4_OD3.6",
+   "label": "skirt bracket rear",
+   "pos": [
+    57.5,
+    -112.0,
+    20.5
+   ],
+   "host": "Skirt_Bracket_PETG_Rear_x+58",
+   "group": "skirt"
+  }
+ ],
+ "lid_top_mm": 62.0,
+ "inverted_wheel_plane_mm": 64.0,
+ "highest_electronics_mm": 54.6,
+ "production": {
+  "drawings": [
+   {
+    "id": "PC01",
+    "name": "PC3_Floor",
+    "file": "PRODUCTION/drawings/PC01_PC3_Floor.pdf",
+    "sha256": "32d422188ea54bad4e0fdf54732ed38f40e86bc279117a2d4d57d7812ee0b580"
+   },
+   {
+    "id": "PC02",
+    "name": "PC3_Side_Wall_L",
+    "file": "PRODUCTION/drawings/PC02_PC3_Side_Wall_L.pdf",
+    "sha256": "07fb64b5dcb243dbed12d5028ba9c4c71d3f0154b799567dcdb8f0b363060a86"
+   },
+   {
+    "id": "PC03",
+    "name": "PC3_Side_Wall_R",
+    "file": "PRODUCTION/drawings/PC03_PC3_Side_Wall_R.pdf",
+    "sha256": "ad45f5c60a01d1b46252f7b64c61edf2789a7a218adade938f31ea1b27347acd"
+   },
+   {
+    "id": "PC04",
+    "name": "PC3_Rear_Wall",
+    "file": "PRODUCTION/drawings/PC04_PC3_Rear_Wall.pdf",
+    "sha256": "ead239daf2048ce27e78a00c5f7fa5e9d3d988c23f6dbe9a2ca72b58d1c82938"
+   },
+   {
+    "id": "PC05",
+    "name": "PC2_Bulkhead_L",
+    "file": "PRODUCTION/drawings/PC05_PC2_Bulkhead_L.pdf",
+    "sha256": "57fbaa959dcf531d14882f618cd22985027de3344b1e23790b51ee300bedd8b9"
+   },
+   {
+    "id": "PC06",
+    "name": "PC2_Bulkhead_R",
+    "file": "PRODUCTION/drawings/PC06_PC2_Bulkhead_R.pdf",
+    "sha256": "c749a7d1d8a68521954cc448ee4f9a2f2dd6a45a36a8256614cc023e2d41c166"
+   },
+   {
+    "id": "PC07",
+    "name": "PC3_Lid",
+    "file": "PRODUCTION/drawings/PC07_PC3_Lid.pdf",
+    "sha256": "695d33387a4fad1fc31a9ebfb3cb53000aea9d04fa3bb21dff53e219dc7deab6"
+   },
+   {
+    "id": "P01",
+    "name": "Motor_Cradle_Front_L",
+    "file": "PRODUCTION/drawings/P01_Motor_Cradle_Front_L.pdf",
+    "sha256": "2e3de27e517a523571976be523458d4e11524918732a3c2dc8b9f4816bc72b45"
+   },
+   {
+    "id": "P02",
+    "name": "Motor_Cradle Front_R / Rear_L / Rear_R",
+    "file": "PRODUCTION/drawings/P02_Motor_Cradle_Front_R_Rear_L_Rear_R.pdf",
+    "sha256": "bdc779a644c57a7d3c9d01b6945d84f03937b1c2e1a10914bb7dc346917f9dd8"
+   },
+   {
+    "id": "P03",
+    "name": "Motor_Twin_Saddle Front / Rear",
+    "file": "PRODUCTION/drawings/P03_Motor_Twin_Saddle_Front_Rear.pdf",
+    "sha256": "1823ec7f8418701a3f8f6b7ee50334562a90671e6f8b38a38913cc3ee4c05a03"
+   },
+   {
+    "id": "P04",
+    "name": "Motor_Lid_Bar Front / Rear",
+    "file": "PRODUCTION/drawings/P04_Motor_Lid_Bar_Front_Rear.pdf",
+    "sha256": "333b7bc14eb3a3c92465aa9d2b6f59e0220ad0cc77f009b774dbe16b2149fdd0"
+   },
+   {
+    "id": "P05",
+    "name": "Weapon_Side_Block_L",
+    "file": "PRODUCTION/drawings/P05_Weapon_Side_Block_L.pdf",
+    "sha256": "fb539dcbebf503396408988971ed557f362a89d942e62a1eb1bc2db82e86bd8f"
+   },
+   {
+    "id": "P06",
+    "name": "Weapon_Side_Block_R",
+    "file": "PRODUCTION/drawings/P06_Weapon_Side_Block_R.pdf",
+    "sha256": "24b916d55488e26e0bcf55d010e599f27db0e1e5a23bef3565d70d5200ab1480"
+   },
+   {
+    "id": "P07",
+    "name": "Cleat_Rear_Low L / R",
+    "file": "PRODUCTION/drawings/P07_Cleat_Rear_Low_L_R.pdf",
+    "sha256": "7d65ee9855264b162996a3b4e781c2a3592706619c54bee63793919ba9d1bd76"
+   },
+   {
+    "id": "P08",
+    "name": "Cleat_Rear_High L / R",
+    "file": "PRODUCTION/drawings/P08_Cleat_Rear_High_L_R.pdf",
+    "sha256": "c84bab50d031c7e56268bff1d8dfd525440f1f4f630673e4bbe8364291efcb9a"
+   },
+   {
+    "id": "P09",
+    "name": "Cleat_Mid_Low L / R",
+    "file": "PRODUCTION/drawings/P09_Cleat_Mid_Low_L_R.pdf",
+    "sha256": "4295db5e6484fca8f61eea2322cba361972a6879ba0263b07fee4ab0385970aa"
+   },
+   {
+    "id": "P10",
+    "name": "Cleat_Mid_High L / R",
+    "file": "PRODUCTION/drawings/P10_Cleat_Mid_High_L_R.pdf",
+    "sha256": "8cfd95f806fd1eafba9abefbbf955fcd474970215404997b1bb9491df3932235"
+   },
+   {
+    "id": "P11",
+    "name": "Cleat_Front_Low L / R",
+    "file": "PRODUCTION/drawings/P11_Cleat_Front_Low_L_R.pdf",
+    "sha256": "f28f5e36d08232d52d971798c710691abc57d892f1ae9a4505872f9683d079b2"
+   },
+   {
+    "id": "P12",
+    "name": "Cleat_Front_High L / R",
+    "file": "PRODUCTION/drawings/P12_Cleat_Front_High_L_R.pdf",
+    "sha256": "a41d91e359baeec22178ae2340a1458dff137e1b1d135e04e5e5eb60953b2d61"
+   },
+   {
+    "id": "P13",
+    "name": "Cleat_Rear_Centre_Low",
+    "file": "PRODUCTION/drawings/P13_Cleat_Rear_Centre_Low.pdf",
+    "sha256": "afff80201458c8f570d31113805e065e4ec4b2314070a235565c2833e22e850f"
+   },
+   {
+    "id": "P14",
+    "name": "Cleat_Bulkhead_Centre_Low",
+    "file": "PRODUCTION/drawings/P14_Cleat_Bulkhead_Centre_Low.pdf",
+    "sha256": "8786ad56d084f5edb8b665174e58ec50231026cdf7cf04f298ec8f6114057829"
+   },
+   {
+    "id": "P15",
+    "name": "Skirt_Bracket L_y+32 / L_y-82 / R_y+32 / R_y-82",
+    "file": "PRODUCTION/drawings/P15_Skirt_Bracket_L_y+32_L_y-82_R_y+32_R_y-82.pdf",
+    "sha256": "9ded674869afca0e3d5c8eeef40cd8b949064359bb9fe079a8842b2baf20f780"
+   },
+   {
+    "id": "P16",
+    "name": "Skirt_Bracket L_y-28 / R_y-28",
+    "file": "PRODUCTION/drawings/P16_Skirt_Bracket_L_y-28_R_y-28.pdf",
+    "sha256": "6e86a37660d53c600051ccae8c62ab0e8a909b99fc9152ac47a1b993e8e6d3eb"
+   },
+   {
+    "id": "P17",
+    "name": "Skirt_Bracket L_y+62 / R_y+62",
+    "file": "PRODUCTION/drawings/P17_Skirt_Bracket_L_y+62_R_y+62.pdf",
+    "sha256": "74468e99ba5d37bc9eaf2a8e273660795beceb8af37843a9505b78e08cb3b878"
+   },
+   {
+    "id": "P18",
+    "name": "Skirt_Bracket_Rear x+58 / x-58",
+    "file": "PRODUCTION/drawings/P18_Skirt_Bracket_Rear_x+58_x-58.pdf",
+    "sha256": "327f9f791d20a49ed3fe7c8807bf3dcb9a861762fb397a09c2f43ba720c2991b"
+   },
+   {
+    "id": "P19",
+    "name": "Skirt_Bracket_Rear_x+0",
+    "file": "PRODUCTION/drawings/P19_Skirt_Bracket_Rear_x+0.pdf",
+    "sha256": "217fbab9f14922d9dcfa2aaafbe448d36788ca135ed680ec2777a4802d8f379d"
+   },
+   {
+    "id": "P20",
+    "name": "Wedgelet_Block L / R",
+    "file": "PRODUCTION/drawings/P20_Wedgelet_Block_L_R.pdf",
+    "sha256": "66f733de962c83b985b84b3166fa9c2f58d95312a0dded78ec3affab76677350"
+   }
+  ],
+  "combined": "PRODUCTION/DRAWINGS_PC_BODY.pdf",
+  "work_order": "PRODUCTION/WORK_ORDER_PC_BODY_TH.pdf",
+  "sha256": {
+   "DRAWINGS_PC_BODY.pdf": "ae43ac737d167112cad0d8f8134ff94f0e0a1d3955137fe12cd786d33c36cb4a",
+   "WORK_ORDER_PC_BODY_TH.pdf": "f18f0650b2d529049d28b68e4e329e1f8524a974c91bed51bafba6f6c0cbf2b1"
+  }
+ },
+ "release_blockers": [
+  "มอเตอร์ขับ 4 ตัว (drive_Front_L, drive_Front_R, drive_Rear_L, drive_Rear_R) ยังไม่ได้วัดจริง: ระยะรูยึดหน้ามอเตอร์, บ่า Ø/ความยื่น, Ø ตัวมอเตอร์, ความยาวรวม+ขั้ว, ความยื่นเพลา, มวล (รูยึด/บ่า → ผนัง cradle; Ø → cup ของ twin saddle / lid bar; ความยาว → ช่องขั้วที่ x ±4)",
+  "ยังไม่ได้เลือกขนาดรู insert M3 จาก coupon R3 (ค่าทดลอง Ø4.6) และ M2.5 จาก coupon ใหม่ใน output/TRIAL_ONLY (ค่าทดลอง Ø3.4)",
+  "ทดสอบดึง insert จริง: M3 ≥ 500 N, M2.5 ≥ 300 N, สกรู M2 เกลียวปล่อยใน PETG ≥ 200 N (ค่าที่ใช้คำนวณ SF ข้อ 3)",
+  "วัดความหนาแผ่น PC 3 มม. และ 2 มม. ที่ร้านจะใช้ (4 จุด) และชั่งแผ่นหลังตัด แล้วรันสคริปต์ใหม่",
+  "ชั่งสกรู insert และแผ่น EPDM จริงอย่างละ 10 ชิ้น แล้วแก้ FASTENER_G และรันใหม่",
+  "น้ำหนักจาก slicer ของชิ้น PETG ทุกไฟล์ (แท่นมอเตอร์/บล็อกอาวุธ ≤80%) แล้วรันใหม่: ต้องเหลือเผื่อ ≥20 g",
+  "การแก้ R3 ที่ build นี้ใช้ (wedgelet 1.6 มม., รูต๊าปข้างแผ่นตั้ง y 75) ยังไม่ commit/ปล่อย: ต้องปล่อย R3 ฉบับนั้นก่อน แล้ว build ตัวถัง PC ใหม่ (สคริปต์อ่านตำแหน่งรูจาก CAD อัตโนมัติ)",
+  "รัน MuJoCo/การจำลองดวลใหม่ด้วยมวลและ inertia ของตัวถัง PC",
+  "ใบเสนอราคาครบทุกหมวด รวมทั้งโครงการ ≤ 6,000 บาท (รวมเงินเผื่อ 300)"
+ ],
+ "petg_groups": [
+  {
+   "title": "Motor_Cradle_Front_L",
+   "qty": 1,
+   "files": [
+    "V4_R3PC_Motor_Cradle_PETG_Front_L.stl"
+   ],
+   "mass": 3.55,
+   "inserts": "M3_L4_OD5 ×2",
+   "infill": "infill ≤80% (คิดมวลไว้ 80%)",
+   "note": "ผนังรับหน้ามอเตอร์ขับ: รู Ø8.5 เพลา/บ่า, Ø3.4 สกรูหน้ามอเตอร์, Ø7.5 ช่องหัวสกรู ลึก 1 · insert ใต้ฐาน",
+   "id": "P01"
+  },
+  {
+   "title": "Motor_Cradle Front_R / Rear_L / Rear_R",
+   "qty": 3,
+   "files": [
+    "V4_R3PC_Motor_Cradle_PETG_Front_R.stl",
+    "V4_R3PC_Motor_Cradle_PETG_Rear_L.stl",
+    "V4_R3PC_Motor_Cradle_PETG_Rear_R.stl"
+   ],
+   "mass": 3.89,
+   "inserts": "M3_L4_OD5 ×2",
+   "infill": "infill ≤80% (คิดมวลไว้ 80%)",
+   "note": "ผนังรับหน้ามอเตอร์ขับ: รู Ø8.5 เพลา/บ่า, Ø3.4 สกรูหน้ามอเตอร์, Ø7.5 ช่องหัวสกรู ลึก 1 · insert ใต้ฐาน",
+   "id": "P02"
+  },
+  {
+   "title": "Motor_Twin_Saddle Front / Rear",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Motor_Twin_Saddle_PETG_Front.stl",
+    "V4_R3PC_Motor_Twin_Saddle_PETG_Rear.stl"
+   ],
+   "mass": 5.04,
+   "inserts": "M2.5_L4_OD3.6 ×2",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "รองปลายในของมอเตอร์ขับ 2 ตัว: cup R13.0 ใส่ EPDM 0.5 มม. · ช่อง x ±4 สำหรับขั้วและสาย",
+   "id": "P03"
+  },
+  {
+   "title": "Motor_Lid_Bar Front / Rear",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Motor_Lid_Bar_PETG_Front.stl",
+    "V4_R3PC_Motor_Lid_Bar_PETG_Rear.stl"
+   ],
+   "mass": 1.75,
+   "inserts": "M2.5_L4_OD3.6 ×2",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ยึดใต้ฝาด้วย M2.5 หัวจม 2 ตัว: cup R13.0 ใส่ EPDM 0.5 มม. · เว้น 0 มม. เมื่อประกอบ",
+   "id": "P04"
+  },
+  {
+   "title": "Weapon_Side_Block_L",
+   "qty": 1,
+   "files": [
+    "V4_R3PC_Weapon_Side_Block_PETG_L.stl"
+   ],
+   "mass": 11.05,
+   "inserts": "M3_L4_OD5 ×6",
+   "infill": "infill ≤80% (คิดมวลไว้ 80%)",
+   "note": "ผนัง 6 มม. รับแผ่นตั้งอาวุธ: M3×10 4 ตัว หัวจมที่ |x| 38 · ช่อง Ø21 สำหรับประแจ M8",
+   "id": "P05"
+  },
+  {
+   "title": "Weapon_Side_Block_R",
+   "qty": 1,
+   "files": [
+    "V4_R3PC_Weapon_Side_Block_PETG_R.stl"
+   ],
+   "mass": 11.23,
+   "inserts": "M3_L4_OD5 ×6",
+   "infill": "infill ≤80% (คิดมวลไว้ 80%)",
+   "note": "ผนัง 6 มม. รับแผ่นตั้งอาวุธ: M3×10 4 ตัว หัวจมที่ |x| 38 · ช่อง Ø21 สำหรับประแจ M8",
+   "id": "P06"
+  },
+  {
+   "title": "Cleat_Rear_Low L / R",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Cleat_Rear_Low_PETG_L.stl",
+    "V4_R3PC_Cleat_Rear_Low_PETG_R.stl"
+   ],
+   "mass": 0.66,
+   "inserts": "M2.5_L4_OD3.6 ×3",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ตัวยึดมุมระหว่างแผ่น PC: insert M2.5 ทุกหน้าที่แนบแผ่น",
+   "id": "P07"
+  },
+  {
+   "title": "Cleat_Rear_High L / R",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Cleat_Rear_High_PETG_L.stl",
+    "V4_R3PC_Cleat_Rear_High_PETG_R.stl"
+   ],
+   "mass": 0.66,
+   "inserts": "M2.5_L4_OD3.6 ×3",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ตัวยึดมุมระหว่างแผ่น PC: insert M2.5 ทุกหน้าที่แนบแผ่น",
+   "id": "P08"
+  },
+  {
+   "title": "Cleat_Mid_Low L / R",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Cleat_Mid_Low_PETG_L.stl",
+    "V4_R3PC_Cleat_Mid_Low_PETG_R.stl"
+   ],
+   "mass": 0.9,
+   "inserts": "M2.5_L4_OD3.6 ×2",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ตัวยึดมุมระหว่างแผ่น PC: insert M2.5 ทุกหน้าที่แนบแผ่น",
+   "id": "P09"
+  },
+  {
+   "title": "Cleat_Mid_High L / R",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Cleat_Mid_High_PETG_L.stl",
+    "V4_R3PC_Cleat_Mid_High_PETG_R.stl"
+   ],
+   "mass": 1.11,
+   "inserts": "M2.5_L4_OD3.6 ×2",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ตัวยึดมุมระหว่างแผ่น PC: insert M2.5 ทุกหน้าที่แนบแผ่น",
+   "id": "P10"
+  },
+  {
+   "title": "Cleat_Front_Low L / R",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Cleat_Front_Low_PETG_L.stl",
+    "V4_R3PC_Cleat_Front_Low_PETG_R.stl"
+   ],
+   "mass": 0.85,
+   "inserts": "M2.5_L4_OD3.6 ×2",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ตัวยึดมุมระหว่างแผ่น PC: insert M2.5 ทุกหน้าที่แนบแผ่น",
+   "id": "P11"
+  },
+  {
+   "title": "Cleat_Front_High L / R",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Cleat_Front_High_PETG_L.stl",
+    "V4_R3PC_Cleat_Front_High_PETG_R.stl"
+   ],
+   "mass": 1.28,
+   "inserts": "M2.5_L4_OD3.6 ×3",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ตัวยึดมุมระหว่างแผ่น PC: insert M2.5 ทุกหน้าที่แนบแผ่น",
+   "id": "P12"
+  },
+  {
+   "title": "Cleat_Rear_Centre_Low",
+   "qty": 1,
+   "files": [
+    "V4_R3PC_Cleat_Rear_Centre_Low_PETG.stl"
+   ],
+   "mass": 0.71,
+   "inserts": "M2.5_L4_OD3.6 ×2",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ตัวยึดมุมระหว่างแผ่น PC: insert M2.5 ทุกหน้าที่แนบแผ่น",
+   "id": "P13"
+  },
+  {
+   "title": "Cleat_Bulkhead_Centre_Low",
+   "qty": 1,
+   "files": [
+    "V4_R3PC_Cleat_Bulkhead_Centre_Low_PETG.stl"
+   ],
+   "mass": 1.32,
+   "inserts": "M2.5_L4_OD3.6 ×2",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ตัวยึดมุมระหว่างแผ่น PC: insert M2.5 ทุกหน้าที่แนบแผ่น",
+   "id": "P14"
+  },
+  {
+   "title": "Skirt_Bracket L_y+32 / L_y-82 / R_y+32 / R_y-82",
+   "qty": 4,
+   "files": [
+    "V4_R3PC_Skirt_Bracket_PETG_L_y-82.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_L_y+32.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_R_y-82.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_R_y+32.stl"
+   ],
+   "mass": 1.67,
+   "inserts": "M2.5_L4_OD3.6 ×1",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "บ่า 35° รับแผ่น skirt R3 (รู M2 Ø1.6 เกลียวปล่อย) + insert M2.5 ยึดผนัง",
+   "id": "P15"
+  },
+  {
+   "title": "Skirt_Bracket L_y-28 / R_y-28",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Skirt_Bracket_PETG_L_y-28.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_R_y-28.stl"
+   ],
+   "mass": 1.67,
+   "inserts": "M2.5_L4_OD3.6 ×1",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "บ่า 35° รับแผ่น skirt R3 (รู M2 Ø1.6 เกลียวปล่อย) + insert M2.5 ยึดผนัง",
+   "id": "P16"
+  },
+  {
+   "title": "Skirt_Bracket L_y+62 / R_y+62",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Skirt_Bracket_PETG_L_y+62.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_R_y+62.stl"
+   ],
+   "mass": 1.44,
+   "inserts": "M2.5_L4_OD3.6 ×1",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "บ่า 35° รับแผ่น skirt R3 (รู M2 Ø1.6 เกลียวปล่อย) + insert M2.5 ยึดผนัง",
+   "id": "P17"
+  },
+  {
+   "title": "Skirt_Bracket_Rear x+58 / x-58",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Skirt_Bracket_PETG_Rear_x-58.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_Rear_x+58.stl"
+   ],
+   "mass": 0.96,
+   "inserts": "M2.5_L4_OD3.6 ×1",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "บ่า 35° รับแผ่น skirt R3 (รู M2 Ø1.6 เกลียวปล่อย) + insert M2.5 ยึดผนัง",
+   "id": "P18"
+  },
+  {
+   "title": "Skirt_Bracket_Rear_x+0",
+   "qty": 1,
+   "files": [
+    "V4_R3PC_Skirt_Bracket_PETG_Rear_x+0.stl"
+   ],
+   "mass": 1.03,
+   "inserts": "M2.5_L4_OD3.6 ×1",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "บ่า 35° รับแผ่น skirt R3 (รู M2 Ø1.6 เกลียวปล่อย) + insert M2.5 ยึดผนัง",
+   "id": "P19"
+  },
+  {
+   "title": "Wedgelet_Block L / R",
+   "qty": 2,
+   "files": [
+    "V4_R3PC_Wedgelet_Block_PETG_L_PCbody.stl",
+    "V4_R3PC_Wedgelet_Block_PETG_R_PCbody.stl"
+   ],
+   "mass": 5.31,
+   "inserts": "M3_L4_OD5 ×2",
+   "infill": "ตามข้อกำหนด R3 (บานพับ ≥1.6 มม.)",
+   "note": "R3 wedgelet block + insert M3 ใต้ราง 2 ตัว (ยึดพื้น)",
+   "id": "P20"
+  }
+ ]
+}
