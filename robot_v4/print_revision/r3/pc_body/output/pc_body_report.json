@@ -952,7 +952,7 @@
    "pockets": 0,
    "mass_g": 95.1,
    "note": "wheel notches at the sides; centre gap |x|<35 in front of y 64 is for the bottom brace (x +-33)",
-   "sha256": "040a8b7f35a9a064ccc959c739a0324957492c5cebd46f14c33fc8fc9de671e9",
+   "sha256": "24d0dfbcff543f27473c97d30dda57bfd4443e44f611eebfcab73359bfc1abab",
    "dxf_audit_errors": 0,
    "id": "PC01"
   },
@@ -972,7 +972,7 @@
    "pockets": 0,
    "mass_g": 40.6,
    "note": "",
-   "sha256": "a28851f847cc5dad0ad5d66dd4662ee1d2620df4bda7bccbead8334d87d058cc",
+   "sha256": "962cbe56be8a078b6bbab085d5b8fc038e53e5f5fc8984263992178bb2742942",
    "dxf_audit_errors": 0,
    "id": "PC02"
   },
@@ -992,7 +992,7 @@
    "pockets": 0,
    "mass_g": 40.2,
    "note": "",
-   "sha256": "e5ef0b2a9f65ee5cc82b353013b2c69b78ace7872f85f66e20959f5a45329e60",
+   "sha256": "bb91c65bd2dd14fe6a7a91e2558f9e2078c1180790fe0f1a76a50d5f2f9542ba",
    "dxf_audit_errors": 0,
    "id": "PC03"
   },
@@ -1012,7 +1012,7 @@
    "pockets": 0,
    "mass_g": 31.5,
    "note": "",
-   "sha256": "236fb59eeac7eb4e64ded94a2fb5eb1b26ff190359e00d93c0f1b8b3d12cd36b",
+   "sha256": "c7109918414d32b29ee4793406ecdc04aab7fe270bc93dcfcd7ce03f5df1b5fc",
    "dxf_audit_errors": 0,
    "id": "PC04"
   },
@@ -1032,7 +1032,7 @@
    "pockets": 0,
    "mass_g": 4.2,
    "note": "",
-   "sha256": "96f934d551847ae92023980ce5ea37b4c246768d4e1fda52ef59b14427ffb820",
+   "sha256": "a3f52e9d55108661b18bf2041946c2a7e4fe797b5757570606a47f082bc9013e",
    "dxf_audit_errors": 0,
    "id": "PC05"
   },
@@ -1052,7 +1052,7 @@
    "pockets": 0,
    "mass_g": 11.2,
    "note": "",
-   "sha256": "1c148ffc464a830caf12430857d9774be41f8ecaea77cff69ce8dd3748403348",
+   "sha256": "dcb8a206ffbb5bf40742401423aca69f07ddce25972ceaf0a6105b503997cf51",
    "dxf_audit_errors": 0,
    "id": "PC06"
   },
@@ -1072,7 +1072,7 @@
    "pockets": 1,
    "mass_g": 88.3,
    "note": "belt slot x +-3.5 open at the front edge; 2.0 mm deep pocket from the underside over the weapon motor",
-   "sha256": "d76348f2d2b2c11d2c850bda2f49ab6978a4f663d968f06735bd3a7ceeca2a7c",
+   "sha256": "d8127a5edf7fd7aca046bb43ea19fadffe01b1126dcd15ab709c5464d6fee2cf",
    "dxf_audit_errors": 0,
    "id": "PC07"
   }
@@ -5016,170 +5016,170 @@
     "id": "PC01",
     "name": "PC3_Floor",
     "file": "PRODUCTION/drawings/PC01_PC3_Floor.pdf",
-    "sha256": "32d422188ea54bad4e0fdf54732ed38f40e86bc279117a2d4d57d7812ee0b580"
+    "sha256": "d1b2b078a41b2779ee5be562dd4607e93e64d976d2e1a1906350b652d75467cc"
    },
    {
     "id": "PC02",
     "name": "PC3_Side_Wall_L",
     "file": "PRODUCTION/drawings/PC02_PC3_Side_Wall_L.pdf",
-    "sha256": "07fb64b5dcb243dbed12d5028ba9c4c71d3f0154b799567dcdb8f0b363060a86"
+    "sha256": "1a398d0349aa8811417e5204daf74b5ea1d9e8c082d8f377718681e279958bd5"
    },
    {
     "id": "PC03",
     "name": "PC3_Side_Wall_R",
     "file": "PRODUCTION/drawings/PC03_PC3_Side_Wall_R.pdf",
-    "sha256": "ad45f5c60a01d1b46252f7b64c61edf2789a7a218adade938f31ea1b27347acd"
+    "sha256": "940eadf62c4233a0ad27621cdd2f6a8cfd55404b258399157d2049e5baffc3ef"
    },
    {
     "id": "PC04",
     "name": "PC3_Rear_Wall",
     "file": "PRODUCTION/drawings/PC04_PC3_Rear_Wall.pdf",
-    "sha256": "ead239daf2048ce27e78a00c5f7fa5e9d3d988c23f6dbe9a2ca72b58d1c82938"
+    "sha256": "252b14d82c3251b9ebafa296f2d91c79c3d20c7f17546cecf703ea05390c6ca1"
    },
    {
     "id": "PC05",
     "name": "PC2_Bulkhead_L",
     "file": "PRODUCTION/drawings/PC05_PC2_Bulkhead_L.pdf",
-    "sha256": "57fbaa959dcf531d14882f618cd22985027de3344b1e23790b51ee300bedd8b9"
+    "sha256": "c9ff259dfaf008e0b0f08143812e9c6154adb55304cbc0616257c296900daec0"
    },
    {
     "id": "PC06",
     "name": "PC2_Bulkhead_R",
     "file": "PRODUCTION/drawings/PC06_PC2_Bulkhead_R.pdf",
-    "sha256": "c749a7d1d8a68521954cc448ee4f9a2f2dd6a45a36a8256614cc023e2d41c166"
+    "sha256": "582034e3a7174124f50b70064651987c50d3e73d92a34a8591063efc821f89f4"
    },
    {
     "id": "PC07",
     "name": "PC3_Lid",
     "file": "PRODUCTION/drawings/PC07_PC3_Lid.pdf",
-    "sha256": "695d33387a4fad1fc31a9ebfb3cb53000aea9d04fa3bb21dff53e219dc7deab6"
+    "sha256": "dcd299eaa92da54df2d5818ecfff200608753332a4c5e5daa6099c1bb04ea984"
    },
    {
     "id": "P01",
     "name": "Motor_Cradle_Front_L",
     "file": "PRODUCTION/drawings/P01_Motor_Cradle_Front_L.pdf",
-    "sha256": "2e3de27e517a523571976be523458d4e11524918732a3c2dc8b9f4816bc72b45"
+    "sha256": "528a3dfccfa2fce6a1356609066d5c24da641daf233121817a580324c08e1784"
    },
    {
     "id": "P02",
     "name": "Motor_Cradle Front_R / Rear_L / Rear_R",
     "file": "PRODUCTION/drawings/P02_Motor_Cradle_Front_R_Rear_L_Rear_R.pdf",
-    "sha256": "bdc779a644c57a7d3c9d01b6945d84f03937b1c2e1a10914bb7dc346917f9dd8"
+    "sha256": "8b68a983a1dcbd6d6827e12faac243f10989eb7f7b33ccfc8e6b30325d3da158"
    },
    {
     "id": "P03",
     "name": "Motor_Twin_Saddle Front / Rear",
     "file": "PRODUCTION/drawings/P03_Motor_Twin_Saddle_Front_Rear.pdf",
-    "sha256": "1823ec7f8418701a3f8f6b7ee50334562a90671e6f8b38a38913cc3ee4c05a03"
+    "sha256": "619574edf15b40bb715725df2e40658a867b6c0a90586efdcd416f2db5886435"
    },
    {
     "id": "P04",
     "name": "Motor_Lid_Bar Front / Rear",
     "file": "PRODUCTION/drawings/P04_Motor_Lid_Bar_Front_Rear.pdf",
-    "sha256": "333b7bc14eb3a3c92465aa9d2b6f59e0220ad0cc77f009b774dbe16b2149fdd0"
+    "sha256": "42a3de69931d6eb2caba14e780c26da1d9f8ca617a5abb67ab7d4e3d5c607dc8"
    },
    {
     "id": "P05",
     "name": "Weapon_Side_Block_L",
     "file": "PRODUCTION/drawings/P05_Weapon_Side_Block_L.pdf",
-    "sha256": "fb539dcbebf503396408988971ed557f362a89d942e62a1eb1bc2db82e86bd8f"
+    "sha256": "f1fadabc7588d064332be6a2f8a70512134ebb9f14453c434be2943f923a989c"
    },
    {
     "id": "P06",
     "name": "Weapon_Side_Block_R",
     "file": "PRODUCTION/drawings/P06_Weapon_Side_Block_R.pdf",
-    "sha256": "24b916d55488e26e0bcf55d010e599f27db0e1e5a23bef3565d70d5200ab1480"
+    "sha256": "67c9154d4f538f5ee45b1906148da9d08aae551035653524ce48ac1cd10b97ab"
    },
    {
     "id": "P07",
     "name": "Cleat_Rear_Low L / R",
     "file": "PRODUCTION/drawings/P07_Cleat_Rear_Low_L_R.pdf",
-    "sha256": "7d65ee9855264b162996a3b4e781c2a3592706619c54bee63793919ba9d1bd76"
+    "sha256": "00d6c195f81fbde5428e682b8e4c439017c485b3c4d8a279a3ebe50bade4a2d7"
    },
    {
     "id": "P08",
     "name": "Cleat_Rear_High L / R",
     "file": "PRODUCTION/drawings/P08_Cleat_Rear_High_L_R.pdf",
-    "sha256": "c84bab50d031c7e56268bff1d8dfd525440f1f4f630673e4bbe8364291efcb9a"
+    "sha256": "ea80a26e139123147d150ba93c94f91e31d39875d14a094040a2471a0c428fed"
    },
    {
     "id": "P09",
     "name": "Cleat_Mid_Low L / R",
     "file": "PRODUCTION/drawings/P09_Cleat_Mid_Low_L_R.pdf",
-    "sha256": "4295db5e6484fca8f61eea2322cba361972a6879ba0263b07fee4ab0385970aa"
+    "sha256": "7c0031ffbf60cd0ebd28b680cbf52b3b8e761520b3b68f2f0aa2cf059179dcb1"
    },
    {
     "id": "P10",
     "name": "Cleat_Mid_High L / R",
     "file": "PRODUCTION/drawings/P10_Cleat_Mid_High_L_R.pdf",
-    "sha256": "8cfd95f806fd1eafba9abefbbf955fcd474970215404997b1bb9491df3932235"
+    "sha256": "6e4e444ecac0c10b25e399b495f922543f0e94355af02f7e6ff8b979e39df40f"
    },
    {
     "id": "P11",
     "name": "Cleat_Front_Low L / R",
     "file": "PRODUCTION/drawings/P11_Cleat_Front_Low_L_R.pdf",
-    "sha256": "f28f5e36d08232d52d971798c710691abc57d892f1ae9a4505872f9683d079b2"
+    "sha256": "d4947f809eb4b23ffe6b153c6842b391f93b13f1e374433d6e4526dd3ecf727f"
    },
    {
     "id": "P12",
     "name": "Cleat_Front_High L / R",
     "file": "PRODUCTION/drawings/P12_Cleat_Front_High_L_R.pdf",
-    "sha256": "a41d91e359baeec22178ae2340a1458dff137e1b1d135e04e5e5eb60953b2d61"
+    "sha256": "e26bd929d68744da66c641409b98fa517ef702a1c79d89d44bd10484c5c71153"
    },
    {
     "id": "P13",
     "name": "Cleat_Rear_Centre_Low",
     "file": "PRODUCTION/drawings/P13_Cleat_Rear_Centre_Low.pdf",
-    "sha256": "afff80201458c8f570d31113805e065e4ec4b2314070a235565c2833e22e850f"
+    "sha256": "7b1a1af814c8e8c9121a615e67992150bcc55038c1356155d65e40901b2169cd"
    },
    {
     "id": "P14",
     "name": "Cleat_Bulkhead_Centre_Low",
     "file": "PRODUCTION/drawings/P14_Cleat_Bulkhead_Centre_Low.pdf",
-    "sha256": "8786ad56d084f5edb8b665174e58ec50231026cdf7cf04f298ec8f6114057829"
+    "sha256": "aa4d6c7f5425d1928d20cde5cf0b75db40469284142331a666fccaa7c12ea223"
    },
    {
     "id": "P15",
     "name": "Skirt_Bracket L_y+32 / L_y-82 / R_y+32 / R_y-82",
     "file": "PRODUCTION/drawings/P15_Skirt_Bracket_L_y+32_L_y-82_R_y+32_R_y-82.pdf",
-    "sha256": "9ded674869afca0e3d5c8eeef40cd8b949064359bb9fe079a8842b2baf20f780"
+    "sha256": "3698ffc72d7f980489891cbfcc5942d690de13235632e38f09ad5561344b3e07"
    },
    {
     "id": "P16",
     "name": "Skirt_Bracket L_y-28 / R_y-28",
     "file": "PRODUCTION/drawings/P16_Skirt_Bracket_L_y-28_R_y-28.pdf",
-    "sha256": "6e86a37660d53c600051ccae8c62ab0e8a909b99fc9152ac47a1b993e8e6d3eb"
+    "sha256": "f3d586be429a26c94ccc485aef64742577dc856c6ca69e047ae501daa85e0d54"
    },
    {
     "id": "P17",
     "name": "Skirt_Bracket L_y+62 / R_y+62",
     "file": "PRODUCTION/drawings/P17_Skirt_Bracket_L_y+62_R_y+62.pdf",
-    "sha256": "74468e99ba5d37bc9eaf2a8e273660795beceb8af37843a9505b78e08cb3b878"
+    "sha256": "890310c72fd9fa8450858ee3ef53adbafc1f0fc972f5a90cb9d5d9d6b2945409"
    },
    {
     "id": "P18",
     "name": "Skirt_Bracket_Rear x+58 / x-58",
     "file": "PRODUCTION/drawings/P18_Skirt_Bracket_Rear_x+58_x-58.pdf",
-    "sha256": "327f9f791d20a49ed3fe7c8807bf3dcb9a861762fb397a09c2f43ba720c2991b"
+    "sha256": "c6b53e53dfee59eba5f495a18396d1ff82477c059aa1e4e62ec43732aaa25a91"
    },
    {
     "id": "P19",
     "name": "Skirt_Bracket_Rear_x+0",
     "file": "PRODUCTION/drawings/P19_Skirt_Bracket_Rear_x+0.pdf",
-    "sha256": "217fbab9f14922d9dcfa2aaafbe448d36788ca135ed680ec2777a4802d8f379d"
+    "sha256": "e79b22ebdbcba96aaa6f088ecb55513fe3c3d93ea87984e395379df6c250adfd"
    },
    {
     "id": "P20",
     "name": "Wedgelet_Block L / R",
     "file": "PRODUCTION/drawings/P20_Wedgelet_Block_L_R.pdf",
-    "sha256": "66f733de962c83b985b84b3166fa9c2f58d95312a0dded78ec3affab76677350"
+    "sha256": "90dd144fa396d8b30f8d98f16776928c30464bdb4764e49cea7451313cdce94f"
    }
   ],
   "combined": "PRODUCTION/DRAWINGS_PC_BODY.pdf",
   "work_order": "PRODUCTION/WORK_ORDER_PC_BODY_TH.pdf",
   "sha256": {
-   "DRAWINGS_PC_BODY.pdf": "ae43ac737d167112cad0d8f8134ff94f0e0a1d3955137fe12cd786d33c36cb4a",
-   "WORK_ORDER_PC_BODY_TH.pdf": "f18f0650b2d529049d28b68e4e329e1f8524a974c91bed51bafba6f6c0cbf2b1"
+   "DRAWINGS_PC_BODY.pdf": "2c9ba34870f08f56e1ff0fc74aee45ebc8fffef104c77853db9d866c9af8f4f0",
+   "WORK_ORDER_PC_BODY_TH.pdf": "33f5c79aa8735476674112b4f05021ecd27f0f691b3afa5235bf1451feacaf89"
   }
  },
  "release_blockers": [
