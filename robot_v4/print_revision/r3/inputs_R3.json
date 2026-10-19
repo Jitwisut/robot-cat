@@ -16,7 +16,8 @@
         "boss_projection_mm": null,
         "mount_holes_yz_mm": null,
         "mount_thread_diameter_mm": null,
-        "mount_thread_depth_mm": null
+        "mount_thread_depth_mm": null,
+        "shaft_flat_length_mm": null
       },
       "nominal": {
         "length_mm": 52,
@@ -38,15 +39,34 @@
           ]
         ],
         "mount_thread_diameter_mm": 3,
-        "mount_thread_depth_mm": 5
+        "mount_thread_depth_mm": 5,
+        "shaft_flat_length_mm": 8
       },
       "catalog": {
-        "model": "JGA25-370 12V 400 rpm / DCM068",
-        "url": "https://www.fromfactory.net/product/6096/ดีซีมอเตอร์-พร้อมเกียร์ทด-jga25-370-gear-dc-motor-12v-high-torque-5-10-30-60-400-rpm-ขนาด-25mm",
-        "checked_date": "2026-10-08",
-        "source_id": "TH01",
+        "model": "ORTECH JB361 25GA-370 12V 400 rpm / SKU-00378",
+        "url": "https://www.ortech-online.com/p/378",
+        "checked_date": "2026-10-10",
+        "source_id": "R3-10",
         "values": {
-          "diameter_mm": 25
+          "diameter_mm": 25,
+          "length_mm": 49.8,
+          "shaft_diameter_mm": 4,
+          "shaft_flat_depth_mm": 0.5,
+          "shaft_flat_length_mm": 8,
+          "shaft_projection_mm": 11.5,
+          "boss_diameter_mm": 7,
+          "boss_projection_mm": 2.5,
+          "mount_holes_yz_mm": [
+            [
+              -8.5,
+              0
+            ],
+            [
+              8.5,
+              0
+            ]
+          ],
+          "mount_thread_diameter_mm": 3
         }
       }
     },
@@ -64,7 +84,8 @@
         "boss_projection_mm": null,
         "mount_holes_yz_mm": null,
         "mount_thread_diameter_mm": null,
-        "mount_thread_depth_mm": null
+        "mount_thread_depth_mm": null,
+        "shaft_flat_length_mm": null
       },
       "nominal": {
         "length_mm": 52,
@@ -86,15 +107,34 @@
           ]
         ],
         "mount_thread_diameter_mm": 3,
-        "mount_thread_depth_mm": 5
+        "mount_thread_depth_mm": 5,
+        "shaft_flat_length_mm": 8
       },
       "catalog": {
-        "model": "JGA25-370 12V 400 rpm / DCM068",
-        "url": "https://www.fromfactory.net/product/6096/ดีซีมอเตอร์-พร้อมเกียร์ทด-jga25-370-gear-dc-motor-12v-high-torque-5-10-30-60-400-rpm-ขนาด-25mm",
-        "checked_date": "2026-10-08",
-        "source_id": "TH01",
+        "model": "ORTECH JB361 25GA-370 12V 400 rpm / SKU-00378",
+        "url": "https://www.ortech-online.com/p/378",
+        "checked_date": "2026-10-10",
+        "source_id": "R3-10",
         "values": {
-          "diameter_mm": 25
+          "diameter_mm": 25,
+          "length_mm": 49.8,
+          "shaft_diameter_mm": 4,
+          "shaft_flat_depth_mm": 0.5,
+          "shaft_flat_length_mm": 8,
+          "shaft_projection_mm": 11.5,
+          "boss_diameter_mm": 7,
+          "boss_projection_mm": 2.5,
+          "mount_holes_yz_mm": [
+            [
+              -8.5,
+              0
+            ],
+            [
+              8.5,
+              0
+            ]
+          ],
+          "mount_thread_diameter_mm": 3
         }
       }
     },
@@ -112,7 +152,8 @@
         "boss_projection_mm": null,
         "mount_holes_yz_mm": null,
         "mount_thread_diameter_mm": null,
-        "mount_thread_depth_mm": null
+        "mount_thread_depth_mm": null,
+        "shaft_flat_length_mm": null
       },
       "nominal": {
         "length_mm": 52,
@@ -134,15 +175,34 @@
           ]
         ],
         "mount_thread_diameter_mm": 3,
-        "mount_thread_depth_mm": 5
+        "mount_thread_depth_mm": 5,
+        "shaft_flat_length_mm": 8
       },
       "catalog": {
-        "model": "JGA25-370 12V 400 rpm / DCM068",
-        "url": "https://www.fromfactory.net/product/6096/ดีซีมอเตอร์-พร้อมเกียร์ทด-jga25-370-gear-dc-motor-12v-high-torque-5-10-30-60-400-rpm-ขนาด-25mm",
-        "checked_date": "2026-10-08",
-        "source_id": "TH01",
+        "model": "ORTECH JB361 25GA-370 12V 400 rpm / SKU-00378",
+        "url": "https://www.ortech-online.com/p/378",
+        "checked_date": "2026-10-10",
+        "source_id": "R3-10",
         "values": {
-          "diameter_mm": 25
+          "diameter_mm": 25,
+          "length_mm": 49.8,
+          "shaft_diameter_mm": 4,
+          "shaft_flat_depth_mm": 0.5,
+          "shaft_flat_length_mm": 8,
+          "shaft_projection_mm": 11.5,
+          "boss_diameter_mm": 7,
+          "boss_projection_mm": 2.5,
+          "mount_holes_yz_mm": [
+            [
+              -8.5,
+              0
+            ],
+            [
+              8.5,
+              0
+            ]
+          ],
+          "mount_thread_diameter_mm": 3
         }
       }
     },
@@ -160,7 +220,8 @@
         "boss_projection_mm": null,
         "mount_holes_yz_mm": null,
         "mount_thread_diameter_mm": null,
-        "mount_thread_depth_mm": null
+        "mount_thread_depth_mm": null,
+        "shaft_flat_length_mm": null
       },
       "nominal": {
         "length_mm": 52,
@@ -182,15 +243,34 @@
           ]
         ],
         "mount_thread_diameter_mm": 3,
-        "mount_thread_depth_mm": 5
+        "mount_thread_depth_mm": 5,
+        "shaft_flat_length_mm": 8
       },
       "catalog": {
-        "model": "JGA25-370 12V 400 rpm / DCM068",
-        "url": "https://www.fromfactory.net/product/6096/ดีซีมอเตอร์-พร้อมเกียร์ทด-jga25-370-gear-dc-motor-12v-high-torque-5-10-30-60-400-rpm-ขนาด-25mm",
-        "checked_date": "2026-10-08",
-        "source_id": "TH01",
+        "model": "ORTECH JB361 25GA-370 12V 400 rpm / SKU-00378",
+        "url": "https://www.ortech-online.com/p/378",
+        "checked_date": "2026-10-10",
+        "source_id": "R3-10",
         "values": {
-          "diameter_mm": 25
+          "diameter_mm": 25,
+          "length_mm": 49.8,
+          "shaft_diameter_mm": 4,
+          "shaft_flat_depth_mm": 0.5,
+          "shaft_flat_length_mm": 8,
+          "shaft_projection_mm": 11.5,
+          "boss_diameter_mm": 7,
+          "boss_projection_mm": 2.5,
+          "mount_holes_yz_mm": [
+            [
+              -8.5,
+              0
+            ],
+            [
+              8.5,
+              0
+            ]
+          ],
+          "mount_thread_diameter_mm": 3
         }
       }
     },
@@ -851,12 +931,12 @@
     "verified": false,
     "evidence": null,
     "sha256_build": null,
-    "d_bore_diametral_clearance_mm": null,
-    "d_bore_flat_clearance_mm": null,
-    "hinge_diametral_clearance_mm": null,
-    "insert_hole_diameter_mm": null,
-    "tyre_inner_diameter_mm": null,
-    "nut_pocket_clearance_mm": null,
+    "d_bore_diametral_clearance_mm": 0.1,
+    "d_bore_flat_clearance_mm": 0.05,
+    "hinge_diametral_clearance_mm": 0.2,
+    "insert_hole_diameter_mm": 4.4,
+    "tyre_inner_diameter_mm": 43.8,
+    "nut_pocket_clearance_mm": 0.2,
     "results": {
       "shaft_slides": null,
       "hub_locks_rotation": null,
@@ -872,7 +952,8 @@
     "round2_evidence": null,
     "round2_sha256_build": null,
     "lid_cycles": null,
-    "tested_drive_shafts": []
+    "tested_drive_shafts": [],
+    "basis": "Chosen 2026-10-19 without coupons, at the user's request: PETG print defaults for the D-bore, hinge and nut allowances; M3x4x5 (OD 5) insert hole 4.4 = smallest R3 coupon; tyre ID 43.8 = R3 design value. Not verified: print the coupons to confirm."
   },
   "shop": {
     "name": null,
@@ -1051,10 +1132,9 @@
       "Domestic stock of weapon motor unresolved",
       "Connector keepouts are provisional engineering allowances",
       "No physical verification substituted by catalog values",
-      "DCM068 stock conflicts across linked vendor sites; four units not confirmed",
-      "Backup AEI.th listing does not expose exact 12V400 variant",
       "No shop quotes or physical evidence received",
-      "GNB8503S80A web dimensions used for draft CAD only; Thai variant price/stock/actual measurements pending"
+      "GNB8503S80A web dimensions used for draft CAD only; Thai variant price/stock/actual measurements pending",
+      "Drive motors switched to ORTECH JB361 (R3-10) on 2026-10-19: drawing values, four-unit stock not confirmed"
     ]
   },
   "readiness_version": 2,

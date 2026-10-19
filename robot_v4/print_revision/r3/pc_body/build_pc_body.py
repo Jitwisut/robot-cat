@@ -26,9 +26,9 @@ from OCP.BRepAdaptor import BRepAdaptor_Surface
 import ezdxf
 import numpy as np
 from cad_backend import Body, part, group, block, bore, prism, find_body
-from revision import build, value, fit
+from revision import build, value, fit, HUB_NOSE_R
 from legacy_geometry import SKIRT_T
-from checks import mass_properties
+from checks import mass_properties, build_signature
 
 INPUTS = PR / 'r3' / 'inputs_R3.json'
 OUT = HERE / 'output'
@@ -70,8 +70,8 @@ SIZES = {
     'M3': {'clear_r': 1.7, 'insert_r': fit(config, 'insert_hole_diameter_mm', design['insert_trial_hole_diameter_mm']) / 2,
            'insert_depth': value(config, 'insert_m3', 'length_mm') + 1, 'csk_d': 6.3, 'head_d': 5.7, 'head_k': 1.65,
            'insert': 'M3_heatset_insert_L4_OD5'},
-    'M2.5': {'clear_r': 1.45, 'insert_r': 1.7, 'insert_depth': 5.0, 'csk_d': 5.4, 'head_d': 4.7, 'head_k': 1.4,
-             'insert': 'M2.5_heatset_insert_L4_OD3.6'},     # insert hole D3.4 is a trial value: needs its own coupon
+    'M2.5': {'clear_r': 1.45, 'insert_r': 1.6, 'insert_depth': 5.0, 'csk_d': 5.4, 'head_d': 4.7, 'head_k': 1.4,
+             'insert': 'M2.5_heatset_insert_L4_OD3.6'},     # insert hole D3.2 chosen 2026-10-19 (0.2 mm bite per side on OD 3.6), not coupon-tested
 }
 INSERT_R = SIZES['M3']['insert_r']
 INSERT_DEPTH = SIZES['M3']['insert_depth']
@@ -258,6 +258,11 @@ for loc, wy in (('Front', FRONT_Y), ('Rear', REAR_Y)):
         c = add_body('Motor_Cradle_PETG_%s_%s' % (loc, side), shape)
         xa, xb = sorted((sgn * 55, sgn * 61))
         bore(c, (xa, wy, 32), (1, 0, 0), max(value(config, name, 'boss_diameter_mm') / 2 + 0.25, 4.0), 0, xb - xa)
+        # counterbore for the wheel-hub nose (revision.py: the nose starts where the shaft's D-flat starts)
+        nose = 56 + max(value(config, name, 'boss_projection_mm') + 0.3,
+                        value(config, name, 'shaft_projection_mm') - value(config, name, 'shaft_flat_length_mm') + 0.2)
+        ca, cb = sorted((sgn * (nose - 0.3), sgn * 61))
+        bore(c, (ca, wy, 32), (1, 0, 0), HUB_NOSE_R + 0.5, 0, cb - ca)
         for dy, dz in value(config, name, 'mount_holes_yz_mm'):
             bore(c, (xa, wy + dy, 32 + dz), (1, 0, 0), value(config, name, 'mount_thread_diameter_mm') / 2 + 0.2, 0, xb - xa)
             ha, hb = sorted((sgn * 59, sgn * 61))
@@ -321,7 +326,7 @@ for side, sgn in (('L', -1), ('R', 1)):
     for z in (28, 45):
         joint(c, 'bulk_' + side, (sgn * 51, 64, z), (0, 1, 0), 'side block %s bulkhead' % side, group='side_block_bulkhead')
 
-# 3) joining cleats with M2.5 inserts (D3.4 holes, >= 1.2 mm PETG everywhere). R side given, L mirrored. Low
+# 3) joining cleats with M2.5 inserts (D3.2 holes, >= 1.2 mm PETG everywhere). R side given, L mirrored. Low
 #    cleats stay under z 19 and high ones above z 47: the tyre band. Faces: (panel, point on the face, direction).
 CLEATS = [
     ('Rear_Low', (69, 80, -107, -100.5, 7, 18), [('wall', (80, -103.75, 15), (-1, 0, 0)), ('rear', (72, -107, 15), (0, 1, 0)), ('floor', (72, -103.75, 7), (0, 0, 1))]),
@@ -926,7 +931,7 @@ for b in new_bodies + variant_bodies:
         by_sig[sig] = {'title': name.replace('_PETG', '').replace('_PCbody', ''), 'shape': s3, 'qty': 0, 'files': [], 'mass': row['mass_g_80pct_rule'],
                        'inserts': ', '.join('%s ×%d' % (k.replace('_heatset_insert', ''), n) for k, n in ins.items()) or '-',
                        'infill': 'เนื้อเต็ม (4 walls + 100%)' if solid else ('ตามข้อกำหนด R3 (บานพับ ≥1.6 มม.)' if 'Wedgelet' in name else 'infill ≤80% (คิดมวลไว้ 80%)'),
-                       'note': {'Motor_Cradle': 'ผนังรับหน้ามอเตอร์ขับ: รู Ø8.5 เพลา/บ่า, Ø3.4 สกรูหน้ามอเตอร์, Ø7.5 ช่องหัวสกรู ลึก 1 · insert ใต้ฐาน',
+                       'note': {'Motor_Cradle': 'ผนังรับหน้ามอเตอร์ขับ JB361: รู Ø8 บ่า, counterbore Ø10 ลึก 0.6 รับจมูกดุมล้อ, Ø3.4 สกรูหน้ามอเตอร์ 2 รู, Ø7.5 ช่องหัวสกรู ลึก 1 · insert ใต้ฐาน',
                                 'Motor_Twin_Saddle': 'รองปลายในของมอเตอร์ขับ 2 ตัว: cup R13.0 ใส่ EPDM 0.5 มม. · ช่อง x ±4 สำหรับขั้วและสาย',
                                 'Motor_Lid_Bar': 'ยึดใต้ฝาด้วย M2.5 หัวจม 2 ตัว: cup R13.0 ใส่ EPDM 0.5 มม. · เว้น 0 มม. เมื่อประกอบ',
                                 'Weapon_Side_Block': 'ผนัง 6 มม. รับแผ่นตั้งอาวุธ: M3×10 4 ตัว หัวจมที่ |x| 38 · ช่อง Ø21 สำหรับประแจ M8',
@@ -961,7 +966,6 @@ blockers += ['ทดสอบดึง insert จริง: M3 ≥ 500 N, M2.5 �
              'วัดความหนาแผ่น PC 3 มม. และ 2 มม. ที่ร้านจะใช้ (4 จุด) และชั่งแผ่นหลังตัด แล้วรันสคริปต์ใหม่',
              'ชั่งสกรู insert และแผ่น EPDM จริงอย่างละ 10 ชิ้น แล้วแก้ FASTENER_G และรันใหม่',
              'น้ำหนักจาก slicer ของชิ้น PETG ทุกไฟล์ (แท่นมอเตอร์/บล็อกอาวุธ ≤80%) แล้วรันใหม่: ต้องเหลือเผื่อ ≥20 g',
-             'การแก้ R3 ที่ build นี้ใช้ (wedgelet 1.6 มม., รูต๊าปข้างแผ่นตั้ง y 75) ยังไม่ commit/ปล่อย: ต้องปล่อย R3 ฉบับนั้นก่อน แล้ว build ตัวถัง PC ใหม่ (สคริปต์อ่านตำแหน่งรูจาก CAD อัตโนมัติ)',
              'รัน MuJoCo/การจำลองดวลใหม่ด้วยมวลและ inertia ของตัวถัง PC',
              'ใบเสนอราคาครบทุกหมวด รวมทั้งโครงการ ≤ 6,000 บาท (รวมเงินเผื่อ 300)']
 use = {'M3x6_button_ISO7380': 'cradle, บล็อกอาวุธ, ราง wedgelet → พื้น/bulkhead', 'M3_heatset_insert_L4_OD5': 'cradle, บล็อกอาวุธ, ราง wedgelet',
@@ -974,17 +978,22 @@ ctx = {'report': report, 'status': 'BLOCKED — รอผลวัด/ทดส�
 decision_path = PR / 'r3' / 'PRODUCTION' / 'RELEASE_DECISION.json'
 if decision_path.exists():
     decision = json.loads(decision_path.read_text())
+    if not build_signature(config).startswith(decision['basis']['r3_build_sha256_prefix']):
+        raise SystemExit('RELEASE_DECISION.json was made for another R3 build: re-decide or delete it')
     released_panels = set(decision['released']['cnc_pc_panels'])
+    released_petg = decision['released'].get('pc_body_petg') == 'all'
 
     def status_of(kind, name):
-        if kind == 'panel' and name in released_panels:
-            return 'RELEASED — อนุมัติผลิต %s' % decision['date']
+        if (kind == 'panel' and name in released_panels) or (kind == 'petg' and released_petg):
+            return 'RELEASED — อนุมัติผลิต %s (รับความเสี่ยงตาม RELEASE_DECISION.json)' % decision['date']
         if kind == 'petg' and name.startswith(('Motor_Cradle', 'Motor_Twin_Saddle', 'Motor_Lid_Bar')):
             return 'HOLD — รอวัดมอเตอร์ขับ และผล coupon insert'
         if kind == 'petg':
             return 'HOLD — รอผล coupon insert'
         return ctx['status']
     ctx['status_of'] = status_of
+    if released_petg and released_panels == {pn.name for pn in panels.values()}:
+        ctx['status'] = 'RELEASED — อนุมัติผลิต %s: ผู้สั่งรับความเสี่ยงตาม RELEASE_DECISION.json' % decision['date']
 report['production'] = production_docs.make(OUT, panels, panel_manifest, groups, ctx, filleted)
 report['release_blockers'] = blockers
 report['petg_groups'] = [{k: v for k, v in gr.items() if k != 'shape'} for gr in groups]

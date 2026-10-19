@@ -1,7 +1,7 @@
 {
   "status": "RELEASED",
   "revision": "V4_PRINT_R3",
-  "build_sha256": "5dfa96dcd76ec8505db7b12d26a1aad9cfd1e0a312cb58c4c2baec8a45bcc975",
+  "build_sha256": "99dc74819510d3f6489f41ca0cdcbf05890156753b4b5854a93f5ce8de9d2c63",
   "date": "2026-10-19",
   "blockers": [],
   "accepted_risks": [
@@ -14,8 +14,8 @@
     "M06 Weapon_Motor_Mount_3mm: drive_Front_L.diameter_mm — M06 outline clears the catalogue Ø25 mm front drive motor.",
     "M06 Weapon_Motor_Mount_3mm: drive_Front_R.diameter_mm — M06 outline clears the catalogue Ø25 mm front drive motor."
   ],
-  "mass_total_g": 1973.05,
-  "rear_load": 0.10615,
+  "mass_total_g": 1976.1,
+  "rear_load": 0.1067,
   "parts": [
     {
       "id": "M01",
@@ -468,93 +468,93 @@
   "files": [
     {
       "file": "DXF/Beater_Disc_L.dxf",
-      "sha256": "3f46791b958a7a8f35c00e001d96efae57f9266dfe7844d33cb8f6c8d4562124"
+      "sha256": "523d9eefffe1d9d76543c3cb83d23f019ca1daac93b31644cd6f5aeca03e2dcc"
     },
     {
       "file": "STEP/Beater_Disc_L.step",
-      "sha256": "a8b24a010b8ac7e2b9d923e62214fd99adc769a7c417152204439f6853e4c7fb"
+      "sha256": "123f61935e312a9f7193636dd2d8ba26b6ed340c3c3ae2dd7d2792452c7e0232"
     },
     {
       "file": "DXF/Upright_6061_6mm_L.dxf",
-      "sha256": "6a604b3de35bd5401c00b010ce809c1e64662fd04a18a4d6bcf19fd454872328"
+      "sha256": "bcdf71553721c68659df763249d7183d2fe8e837ef8881b97b8d2246f07fd145"
     },
     {
       "file": "STEP/Upright_6061_6mm_L.step",
-      "sha256": "ba9617175fce0db7e329b3a305dde241682074b5abb37a9b52e13ce870889d6b"
+      "sha256": "8f67aa9c91924ff299f99ebba4744a2dc54a56a38df1841052d324ba4ff5f19b"
     },
     {
       "file": "DXF/Upright_6061_6mm_R.dxf",
-      "sha256": "8ab2fabac555620f4b48b22b496a6def6b4e5c90f7f11ce55ef0478e60a03f32"
+      "sha256": "36b6ef0754d2e629f33b1ff54fe4e3ec71fbdd0baced14ae22ece17e5e0ebf1e"
     },
     {
       "file": "STEP/Upright_6061_6mm_R.step",
-      "sha256": "7a902908bf726b7ab74a36ae399b615c6a79566e40ed4d9cfcfbdb1441ed3ec5"
+      "sha256": "766a49303d8f6302a99c36e80420cc0f468dcc88b41671e1cfed3acbabf51de2"
     },
     {
       "file": "DXF/Weapon_Top_Brace_3mm.dxf",
-      "sha256": "d5a702515946e5bce5c32f11e0b5e99f1efdab605f06e05f6b5b68e8e75dfcf5"
+      "sha256": "ad5190fbe2f7b3076f34d7d30eebecda51df9b59ff44fb29c6125dbf9db8c788"
     },
     {
       "file": "STEP/Weapon_Top_Brace_3mm.step",
-      "sha256": "bad2946a3b7720efd73ab1b3d1c50975147bf8501fa1ae8d70e84ba6309b6777"
+      "sha256": "ad3a029dba61bf7b7c4e1e2ea16e33d345c3b9905f422b26e12444dc5246474a"
     },
     {
       "file": "DXF/Weapon_Bottom_Brace_3mm.dxf",
-      "sha256": "e3f7bc403b5a598b08c7b86378cab5ea56c623f5094b30a9cdc927afa9618f62"
+      "sha256": "6c68f19ad21ba1f325489b3bcf2d1e043a1c14f0d0d5e9e169471b6048445fca"
     },
     {
       "file": "STEP/Weapon_Bottom_Brace_3mm.step",
-      "sha256": "ad1363829f4deb998ee40381228747a02ed59fcc4e78e6790b279dfcf4ec64f2"
+      "sha256": "d4259b1ce15748f5cfc78f5668c9ae8b0cb1f3cd5ea4cbfb91b8572077a81211"
     },
     {
       "file": "DXF/Weapon_Motor_Mount_3mm.dxf",
-      "sha256": "5fdd2af07093f917973123de6925d3a0e7542a6bd1f3ae37fa4d6dfbc4746b8d"
+      "sha256": "b558e3868e6e74015aed4cee356d1014d14203cd2dedbbbc22adea9c5c47c568"
     },
     {
       "file": "STEP/Weapon_Motor_Mount_3mm.step",
-      "sha256": "bd1650582544e18e5679c4340e708cf2cc0791717d5a1f1717cbcba13f0e559f"
+      "sha256": "f08c55a4730b71826a145db24b51ae8af58689f3e94af60d75ac8936bce9b808"
     },
     {
       "file": "DXF/Wedgelet_L.dxf",
-      "sha256": "dc81a7e4f8ae2dac483e905e8659310f1cef79fd487122016360a00d79a75aca"
+      "sha256": "47447110fa0bc5019cb871220fe1d98390b5e07e37f3ef5255446c486c711ae3"
     },
     {
       "file": "STEP/Wedgelet_L.step",
-      "sha256": "5b4134fae589114f022d841b4aa4e85aee71218b7f6aadd136fe5fd674190863"
+      "sha256": "32039323a4c248bd9677bd8a36e14e784f8fb35e34f4138b35a75622e5229e8d"
     },
     {
       "file": "DXF/Skirt_Plate_08mm_R.dxf",
-      "sha256": "e2fd99e9616afea9238740b226e6f066f060bfc2eaee81c6c8eda08a1c873b30"
+      "sha256": "d1adc769316f7e38e6f859c8dc6b4199a72bd7f03736775274e84acf97bc1185"
     },
     {
       "file": "STEP/Skirt_Plate_08mm_R.step",
-      "sha256": "9b2e6a3a325bb73d0ef786c99de947d9eab2f9205ef8aa411f48cf8cef9cd452"
+      "sha256": "3359ecc7c76716a8b2c761965bf50ef7c1bafb040f4e16a2f3e7e1852c123aa5"
     },
     {
       "file": "DXF/Skirt_Plate_08mm_Rear.dxf",
-      "sha256": "f9bbc0937d15539eae181c62e462074e8d649c7175b2ba6619c6c27d535c2b88"
+      "sha256": "2e1dccbd67a99443c7eed811ea81791face751f7db5600beffd74762be3e5fbb"
     },
     {
       "file": "STEP/Skirt_Plate_08mm_Rear.step",
-      "sha256": "e613213f3eabc73e27bd7e2d9c543f8b5977905729bc382f794f91519ca96f7c"
+      "sha256": "21b00f00336600830d3ae5970086fc28708a6308a9e6f00e219147d05e4c3049"
     },
     {
       "file": "STEP/DERIVED_Wedgelet_R_mirror_of_Wedgelet_L.step",
-      "sha256": "d9094dae8705f3733cab34603d07340a6c243c65e51a0e725de3c2ac53717029",
+      "sha256": "80b04b02cc466aa3267d18ff315313188a866cd476d0136e77b6e2b66790312d",
       "derived": true
     },
     {
       "file": "STEP/DERIVED_Skirt_Plate_08mm_L_mirror_of_Skirt_Plate_08mm_R.step",
-      "sha256": "b1575ce9b1516ac93e3e3c5f8f41f42bfc34d64f58dcc29ac6862b31dac70722",
+      "sha256": "1cb38fc430aa1ed4daa9aaea4a57d34fd4c0fc9d336d5764142b6f7ef1c0b0e7",
       "derived": true
     },
     {
       "file": "WORK_ORDER_PRODUCTION_TH.pdf",
-      "sha256": "c39a9702c9cb6438e64a134ffe0d70b62872586b070733f850469e2362ee8e2f"
+      "sha256": "4b2c2549ea5c7de095d925da3635e6b5ae82fa447a69bc7642a0bc3b02d72237"
     }
   ],
   "release_decision": {
     "file": "PRODUCTION/RELEASE_DECISION.json",
-    "sha256": "b9a4b0a380b7750e384cf38e20bd073633e2619d183646cc951488ab7261d2fb"
+    "sha256": "9d04c425b0ce93121cf236ae4242c97159d280275830ba81f2c6e74379cf7a9d"
   }
 }
