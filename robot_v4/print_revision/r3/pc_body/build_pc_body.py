@@ -80,7 +80,8 @@ INSERT_DEPTH = SIZES['M3']['insert_depth']
 # All still to be weighed: release blocker in the work order.
 FASTENER_G = {'M3x6_button_ISO7380': 0.42, 'M3x10_button_ISO7380': 0.59, 'M3x6_csk_ISO10642': 0.36,
               'M2.5x6_button': 0.30, 'M2.5x6_csk_ISO10642': 0.26,
-              'M3_heatset_insert_L4_OD5': 0.33, 'M2.5_heatset_insert_L4_OD3.6': 0.18, 'EPDM_pad_0.5mm': 0.08}
+              'M3_heatset_insert_L4_OD5': 0.33, 'M2.5_heatset_insert_L4_OD3.6': 0.18, 'EPDM_pad_0.5mm': 0.08,
+              'EPDM_strip_1mm_10x110': 1.4}
 SCREW_GEOM = {'M3x6_button_ISO7380': (6.0, 'button', 'M3'), 'M3x10_button_ISO7380': (10.0, 'button', 'M3'), 'M3x6_csk_ISO10642': (6.0, 'csk', 'M3'),
               'M2.5x6_button': (6.0, 'button', 'M2.5'), 'M2.5x6_csk_ISO10642': (6.0, 'csk', 'M2.5')}
 
@@ -372,6 +373,43 @@ for (c0, c1), cx in REAR_CLIPS:
     bore(c, (cx, -(HOLE_UZ[0] + 22), HOLE_UZ[1]), (0, -C35, S35), 0.8, 4.0, 4.0)
     joint(c, 'rear', (cx, REAR_OUT, 20.5), (0, -1, 0), 'skirt bracket rear', size='M2.5', group='skirt')
 
+# 4) electronics splash cover (water-weapon opponents). The wheel wells are open through the floor and the lid, so
+#    water reaches the inside of the body; this PETG box keeps it off the boards on the electronics platform.
+#    It sits on the platform top, wraps the platform's front/rear edge (locates in y) and has two side lips in the
+#    tyre-free gap (locates in x). The lid holds it down through a 1 mm EPDM strip on its roof. Wires leave through
+#    open-bottom notches in the skirt: seal them with foam or RTV after wiring. ESC heat stays inside: short fights only.
+COVER_W = 1.0                                   # wall and roof: splash only, 2-3 perimeters
+COVER_TOP = TOP_Z - 1.0                         # roof top z 58: 1 mm EPDM strip to the lid underside
+deck_top = find_body(root, 'Electronics_Platform_PETG').shape.BoundingBox().zmin + 2.0     # 39.6
+deck_bot = deck_top - 2.0
+cx0, cx1, cy0, cy1 = -60.0, 60.0, -56.7, 0.2   # ESC rear face y -55.0, ESP32 front overhang y -1.5, hubs |x| >= 61.5
+outer = block(cx0, cx1, cy0, cy1, deck_top, COVER_TOP)
+inner = block(cx0 + COVER_W, cx1 - COVER_W, cy0 + COVER_W, cy1 - COVER_W, deck_top - 1, COVER_TOP - COVER_W)
+cover = outer.cut(inner)
+cover = cover.fuse(block(cx0, cx1, -2.9, cy1, deck_bot, deck_top),          # front lip in front of the platform edge (y -3)
+                   block(cx0, cx1, cy0, -56.1, deck_bot, deck_top))          # rear lip behind it (y -56)
+for sgn, (ly0, ly1) in ((1, (-36.0, -16.0)), (-1, (-19.0, -15.0))):          # side lips outside the platform edge (|x| 61)
+    a, b = sorted((sgn * 60.0, sgn * 62.0))
+    la, lb = sorted((sgn * 61.1, sgn * 62.0))
+    cover = cover.fuse(block(a, b, ly0, ly1, deck_top + 2.0, deck_top + 2.0 + COVER_W), block(la, lb, ly0, ly1, deck_bot, deck_top + 2.0))
+COVER_NOTCHES = [  # (name, x0, x1, y0, y1, z top): open-bottom wire exits
+    ('ESC power/motor, left', cx0 - 1, cx0 + COVER_W + 1, -48.0, -19.5, 49.2),
+    ('switch, right', cx1 - COVER_W - 1, cx1 + 1, -34.0, -26.0, deck_top + 6),
+    ('front-left motor', -48.0, -28.0, -3.0, cy1 + 1, deck_top + 6),
+    ('front-right motor', 28.0, 48.0, -3.0, cy1 + 1, deck_top + 6),
+    ('rear-right motor', 15.0, 30.0, cy0 - 1, -55.0, deck_top + 6),
+    ('ESP32 USB/connector keep-out', -4.0, 4.0, -3.0, cy1 + 1, 46.6),
+    ('IMU connector keep-out', 38.5, 45.5, cy0 - 1, -55.0, 46.6)]
+for _, x0, x1, y0, y1, zt in COVER_NOTCHES:
+    cover = cover.cut(block(x0, x1, y0, y1, deck_bot - 1, zt))
+add_body('Electronics_Splash_Cover_PETG', cover)
+fasteners.append({'kind': 'EPDM_strip_1mm_10x110', 'label': 'splash cover roof strip', 'pos': [0.0, (cy0 + cy1) / 2, COVER_TOP + 0.5]})
+
+# Floor drains, drilled by hand (the released PC3_Floor DXF is unchanged): D5 where nothing sits on the floor.
+DRAIN_R = 2.5
+drain_candidates = [(-40, -100), (40, -100), (-46, -30), (46, -30), (-25, 50), (25, 50), (0, -100), (-46, -2), (46, -2)]
+
+
 # ---------------------------------------------------------------- PC panels
 batt = value(config, 'battery', 'dimensions_mm')
 battery_y = -55.5 + batt[1] / 2
@@ -447,6 +485,14 @@ for i, a in enumerate(checked):
         v = a.shape.intersect(o.shape).Volume()
         if v > 0.01:
             interference.append({'a': a.name, 'b': o.name, 'volume_mm3': round(v, 3), 'b_material': o.material})
+
+drains = []
+for x, y in drain_candidates:
+    probe = cq.Solid.makeCylinder(DRAIN_R + 1.0, 8.0, cq.Vector(x, y, FLOOR_Z0 + T), cq.Vector(0, 0, 1))
+    hits = [o.name for o in all_bodies if o.material not in ('keepout',) and o is not pc_bodies['floor']
+            and bbox_overlap(probe, o.shape) and probe.intersect(o.shape).Volume() > 0.01]
+    near = min(math.dist((x, y), (p[0][0], p[0][1])) for p in r3_floor_holes + [(h[0], h[1]) for h in panel_holes['floor']])
+    drains.append({'x': x, 'y': y, 'diameter_mm': 2 * DRAIN_R, 'clear': not hits and near > 6, 'hits': hits, 'nearest_floor_hole_mm': round(near, 1)})
 
 # Screw envelopes: shank D3 over the full length + button head D5.7 x 1.65. Zero overlap with any body means the
 # panel holes and insert holes line up and every head has room.
@@ -533,7 +579,7 @@ def scenario(scale):
     m['petg_small'] = scale.get('petg_small', m['petg'])
     tot, mom = 0.0, 0.0
     for r in rows:
-        small = r['part'].startswith(('Cleat_', 'Skirt_Bracket', 'Motor_Twin_Saddle', 'Motor_Lid_Bar'))
+        small = r['part'].startswith(('Cleat_', 'Skirt_Bracket', 'Motor_Twin_Saddle', 'Motor_Lid_Bar', 'Electronics_Splash_Cover'))
         k = 'pc' if r in pc_rows else 'fast' if r in fast_rows else ('petg_small' if small else 'petg') if r['part'] in new_names else None
         w = r['mass_g'] * (m[k] if k else 1)
         tot += w; mom += w * r['centroid_mm'][1]
@@ -547,10 +593,11 @@ balance = {
     'pc_body': summary(total, cg[1]),
     'cg_mm': cg.round(3).tolist(),
     'moment_to_reach_15pct_g_mm': round(total * (cg[1] - cg15), 1),
-    # Cleats, skirt brackets, twin saddles and lid bars are small blocks around insert bosses: they print essentially solid.
+    # Cleats, skirt brackets, twin saddles and lid bars are small blocks around insert bosses, and the splash cover is all
+    # perimeters: they print essentially solid.
     'expected_small_parts_solid': scenario({'petg_small': 1 / 0.8}),
     'sensitivity': {
-        'small parts solid (cleats, skirt brackets, twin saddles, lid bars), cradles/side blocks 80 % (expected case)': scenario({'petg_small': 1 / 0.8}),
+        'small parts solid (cleats, skirt brackets, twin saddles, lid bars, splash cover), cradles/side blocks 80 % (expected case)': scenario({'petg_small': 1 / 0.8}),
         'new PETG printed 100 % instead of the R3 80 % rule': scenario({'petg': 1 / 0.8}),
         'PC sheet 3.3 mm (+10 % thickness tolerance)': scenario({'pc': 1.1}),
         'PC density 1.22 g/cm^3': scenario({'pc': 1.22 / 1.20}),
@@ -808,6 +855,7 @@ def print_shape(b):
         web_out = sgn < 0
         s = s.rotate((0, 0, 0), (0, 1, 0), 90 if web_out else -90)                              # web face on the bed
     elif n.startswith('Hall_Post'): s = s.rotate((0, 0, 0), (0, 1, 0), -90)                      # as R3 build.print_shape
+    elif n.startswith('Electronics_Splash_Cover'): s = s.rotate((0, 0, 0), (1, 0, 0), 180)        # roof on the bed
     bb = s.BoundingBox()
     return s.translate((-bb.xmin, -bb.ymin, -bb.zmin))
 
@@ -898,7 +946,7 @@ report = {
                    'r3_parts_sum': round(sum(r['mass_g'] for r in r3_mass['parts']), 3), 'r3_total': r3_mass['total_g'],
                    'r3_in_rows_detail': sorted([(q['part'], r3_by[q['part']], q['mass_g']) for q in rows if q['part'] in r3_by], key=lambda t: -abs(t[1]-t[2]))[:5],
                    'r3_multiplicity': {n: c for n, c in __import__('collections').Counter(r['part'] for r in r3_mass['parts']).items() if c > 1}},
-    'interference': interference, 'screw_envelope_hits': envelope_hits, 'insert_spacing': insert_gaps,
+    'interference': interference, 'floor_drains': drains, 'splash_cover_notches': COVER_NOTCHES, 'screw_envelope_hits': envelope_hits, 'insert_spacing': insert_gaps,
     'panels': panel_manifest, 'nest_sheet_mm': sheet, 'petg_parts': petg_manifest,
     'pc_rows': pc_rows, 'new_petg_rows': [r for r in rows if r['part'] in new_names or r['part'] in variant_names],
     'fasteners': fasteners,
@@ -927,7 +975,7 @@ for b in new_bodies + variant_bodies:
         if f.get('host') == b.name and 'insert' in f['kind']: ins[f['kind']] = ins.get(f['kind'], 0) + 1
     if sig not in by_sig:
         name = b.name
-        solid = name.startswith(('Cleat', 'Skirt', 'Motor_Twin', 'Motor_Lid'))
+        solid = name.startswith(('Cleat', 'Skirt', 'Motor_Twin', 'Motor_Lid', 'Electronics_Splash'))
         by_sig[sig] = {'title': name.replace('_PETG', '').replace('_PCbody', ''), 'shape': s3, 'qty': 0, 'files': [], 'mass': row['mass_g_80pct_rule'],
                        'inserts': ', '.join('%s ×%d' % (k.replace('_heatset_insert', ''), n) for k, n in ins.items()) or '-',
                        'infill': 'เนื้อเต็ม (4 walls + 100%)' if solid else ('ตามข้อกำหนด R3 (บานพับ ≥1.6 มม.)' if 'Wedgelet' in name else 'infill ≤80% (คิดมวลไว้ 80%)'),
@@ -937,7 +985,8 @@ for b in new_bodies + variant_bodies:
                                 'Weapon_Side_Block': 'ผนัง 6 มม. รับแผ่นตั้งอาวุธ: M3×10 4 ตัว หัวจมที่ |x| 38 · ช่อง Ø21 สำหรับประแจ M8',
                                 'Cleat': 'ตัวยึดมุมระหว่างแผ่น PC: insert M2.5 ทุกหน้าที่แนบแผ่น',
                                 'Skirt_Bracket': 'บ่า 35° รับแผ่น skirt R3 (รู M2 Ø1.6 เกลียวปล่อย) + insert M2.5 ยึดผนัง',
-                                'Wedgelet_Block': 'R3 wedgelet block + insert M3 ใต้ราง 2 ตัว (ยึดพื้น)'}.get(next((k for k in ('Motor_Cradle', 'Motor_Twin_Saddle', 'Motor_Lid_Bar', 'Weapon_Side_Block', 'Cleat', 'Skirt_Bracket', 'Wedgelet_Block') if name.startswith(k)), ''), '')}
+                                'Wedgelet_Block': 'R3 wedgelet block + insert M3 ใต้ราง 2 ตัว (ยึดพื้น)',
+                                'Electronics_Splash_Cover': 'ครอบกันน้ำบนแท่นบอร์ด: ฝาถูกกดด้วยฝาตัวถังผ่านแถบ EPDM 1 มม. · ช่องสาย 7 ช่องอุดด้วยโฟม/RTV หลังเดินสาย · พิมพ์คว่ำ หลังคาลงฐาน'}.get(next((k for k in ('Motor_Cradle', 'Motor_Twin_Saddle', 'Motor_Lid_Bar', 'Weapon_Side_Block', 'Cleat', 'Skirt_Bracket', 'Wedgelet_Block', 'Electronics_Splash_Cover') if name.startswith(k)), ''), '')}
         groups.append(by_sig[sig])
     by_sig[sig]['qty'] += 1
     by_sig[sig]['files'].append(row['file'])
@@ -971,7 +1020,8 @@ blockers += ['ทดสอบดึง insert จริง: M3 ≥ 500 N, M2.5 �
 use = {'M3x6_button_ISO7380': 'cradle, บล็อกอาวุธ, ราง wedgelet → พื้น/bulkhead', 'M3_heatset_insert_L4_OD5': 'cradle, บล็อกอาวุธ, ราง wedgelet',
        'M2.5x6_button': 'ตัวยึดมุม (ผนัง/พื้น/ผนังหลัง/bulkhead), twin saddle, ขายึด skirt หลัง', 'M2.5x6_csk_ISO10642': 'ฝา→ตัวยึดมุม 6, ฝา→lid bar 4, ขายึด skirt ข้าง 8 (จากด้านใน)',
        'M2.5_heatset_insert_L4_OD3.6': 'ตัวยึดมุม, twin saddle, lid bar, ขายึด skirt', 'M3x10_button_ISO7380': 'บล็อกอาวุธ → แผ่นตั้ง (แทน M3×20 ของ R3; มวลอยู่ในค่าเผื่อ R3)',
-       'EPDM_pad_0.5mm': 'รองใน cup ของ twin saddle และ lid bar (กาวในตัว)'}
+       'EPDM_pad_0.5mm': 'รองใน cup ของ twin saddle และ lid bar (กาวในตัว)',
+       'EPDM_strip_1mm_10x110': 'แถบโฟม EPDM บนหลังคาครอบกันน้ำ ให้ฝาตัวถังกดครอบไว้'}
 ctx = {'report': report, 'status': 'BLOCKED — รอผลวัด/ทดสอบ ห้ามผลิตชุดจริง', 'blockers': blockers, 'fastener_counts': counts,
        'fastener_g': FASTENER_G, 'fastener_use': use}
 # Partial release recorded by the user (r3/PRODUCTION/RELEASE_DECISION.json): stamp each sheet with its own status.

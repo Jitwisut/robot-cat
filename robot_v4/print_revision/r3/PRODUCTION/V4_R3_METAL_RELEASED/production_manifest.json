@@ -540,21 +540,21 @@
     },
     {
       "file": "STEP/DERIVED_Wedgelet_R_mirror_of_Wedgelet_L.step",
-      "sha256": "80b04b02cc466aa3267d18ff315313188a866cd476d0136e77b6e2b66790312d",
+      "sha256": "8f19cb6e8d989e5796bacd8b55ec5863ec5d5de917bc0b0694a4338b281c561c",
       "derived": true
     },
     {
       "file": "STEP/DERIVED_Skirt_Plate_08mm_L_mirror_of_Skirt_Plate_08mm_R.step",
-      "sha256": "1cb38fc430aa1ed4daa9aaea4a57d34fd4c0fc9d336d5764142b6f7ef1c0b0e7",
+      "sha256": "e6539d10b4cd4be2175b5735d1d7e6f830d375d336ad241fa56723b1f92ade43",
       "derived": true
     },
     {
       "file": "WORK_ORDER_PRODUCTION_TH.pdf",
-      "sha256": "4b2c2549ea5c7de095d925da3635e6b5ae82fa447a69bc7642a0bc3b02d72237"
+      "sha256": "85a3f36310af417bb135bb82869e73c9a8e8f795e80a2ebb1876c9e40f0b5f93"
     }
   ],
   "release_decision": {
     "file": "PRODUCTION/RELEASE_DECISION.json",
-    "sha256": "9d04c425b0ce93121cf236ae4242c97159d280275830ba81f2c6e74379cf7a9d"
+    "sha256": "faf1b3be3004157ff2c9f731029d55bc21e394e1c945477ec7352c44a798d71f"
   }
 }

@@ -11,10 +11,10 @@
  "body_allowance_g": 464.14,
  "body_breakdown_g": {
   "PC panels": 311.25,
-  "new PETG parts (80 % rule)": 80.35,
-  "new fasteners": 43.36,
+  "new PETG parts (80 % rule)": 93.41,
+  "new fasteners": 44.76,
   "re-issued R3 prints, delta": -0.31,
-  "total": 434.65
+  "total": 449.11
  },
  "balance": {
   "r3_tpu": {
@@ -29,97 +29,97 @@
    "passes_targets_1900g_15pct": false
   },
   "pc_body": {
-   "total_g": 1970.51,
-   "cg_y_mm": 8.502,
-   "rear_load_pct": 10.793,
-   "margin_to_2000_g": 29.49,
-   "margin_to_1900_g": -70.51,
-   "rear_margin_to_10_pct_points": 0.793,
-   "rear_gap_to_15_pct_points": 4.207,
+   "total_g": 1984.96,
+   "cg_y_mm": 8.237,
+   "rear_load_pct": 11.094,
+   "margin_to_2000_g": 15.04,
+   "margin_to_1900_g": -84.96,
+   "rear_margin_to_10_pct_points": 1.094,
+   "rear_gap_to_15_pct_points": 3.906,
    "passes_hard_2000g_10pct": true,
    "passes_targets_1900g_15pct": false
   },
   "cg_mm": [
-   -1.294,
-   8.502,
-   30.559
+   -1.278,
+   8.237,
+   30.726
   ],
-  "moment_to_reach_15pct_g_mm": 7294.3,
+  "moment_to_reach_15pct_g_mm": 6823.2,
   "expected_small_parts_solid": {
-   "total_g": 1981.17,
-   "cg_y_mm": 8.345,
-   "rear_load_pct": 10.971,
-   "margin_to_2000_g": 18.83,
-   "margin_to_1900_g": -81.17,
-   "rear_margin_to_10_pct_points": 0.971,
-   "rear_gap_to_15_pct_points": 4.029,
+   "total_g": 1998.89,
+   "cg_y_mm": 8.025,
+   "rear_load_pct": 11.335,
+   "margin_to_2000_g": 1.11,
+   "margin_to_1900_g": -98.89,
+   "rear_margin_to_10_pct_points": 1.335,
+   "rear_gap_to_15_pct_points": 3.665,
    "passes_hard_2000g_10pct": true,
    "passes_targets_1900g_15pct": false
   },
   "sensitivity": {
-   "small parts solid (cleats, skirt brackets, twin saddles, lid bars), cradles/side blocks 80 % (expected case)": {
-    "total_g": 1981.17,
-    "cg_y_mm": 8.345,
-    "rear_load_pct": 10.971,
-    "margin_to_2000_g": 18.83,
-    "margin_to_1900_g": -81.17,
-    "rear_margin_to_10_pct_points": 0.971,
-    "rear_gap_to_15_pct_points": 4.029,
+   "small parts solid (cleats, skirt brackets, twin saddles, lid bars, splash cover), cradles/side blocks 80 % (expected case)": {
+    "total_g": 1998.89,
+    "cg_y_mm": 8.025,
+    "rear_load_pct": 11.335,
+    "margin_to_2000_g": 1.11,
+    "margin_to_1900_g": -98.89,
+    "rear_margin_to_10_pct_points": 1.335,
+    "rear_gap_to_15_pct_points": 3.665,
     "passes_hard_2000g_10pct": true,
     "passes_targets_1900g_15pct": false
    },
    "new PETG printed 100 % instead of the R3 80 % rule": {
-    "total_g": 1990.6,
-    "cg_y_mm": 8.466,
-    "rear_load_pct": 10.835,
-    "margin_to_2000_g": 9.4,
-    "margin_to_1900_g": -90.6,
-    "rear_margin_to_10_pct_points": 0.835,
-    "rear_gap_to_15_pct_points": 4.165,
-    "passes_hard_2000g_10pct": true,
+    "total_g": 2008.31,
+    "cg_y_mm": 8.146,
+    "rear_load_pct": 11.198,
+    "margin_to_2000_g": -8.31,
+    "margin_to_1900_g": -108.31,
+    "rear_margin_to_10_pct_points": 1.198,
+    "rear_gap_to_15_pct_points": 3.802,
+    "passes_hard_2000g_10pct": false,
     "passes_targets_1900g_15pct": false
    },
    "PC sheet 3.3 mm (+10 % thickness tolerance)": {
-    "total_g": 2001.63,
-    "cg_y_mm": 8.074,
-    "rear_load_pct": 11.28,
-    "margin_to_2000_g": -1.63,
-    "margin_to_1900_g": -101.63,
-    "rear_margin_to_10_pct_points": 1.28,
-    "rear_gap_to_15_pct_points": 3.72,
+    "total_g": 2016.09,
+    "cg_y_mm": 7.817,
+    "rear_load_pct": 11.572,
+    "margin_to_2000_g": -16.09,
+    "margin_to_1900_g": -116.09,
+    "rear_margin_to_10_pct_points": 1.572,
+    "rear_gap_to_15_pct_points": 3.428,
     "passes_hard_2000g_10pct": false,
     "passes_targets_1900g_15pct": false
    },
    "PC density 1.22 g/cm^3": {
-    "total_g": 1975.7,
-    "cg_y_mm": 8.429,
-    "rear_load_pct": 10.876,
-    "margin_to_2000_g": 24.3,
-    "margin_to_1900_g": -75.7,
-    "rear_margin_to_10_pct_points": 0.876,
-    "rear_gap_to_15_pct_points": 4.124,
+    "total_g": 1990.15,
+    "cg_y_mm": 8.166,
+    "rear_load_pct": 11.175,
+    "margin_to_2000_g": 9.85,
+    "margin_to_1900_g": -90.15,
+    "rear_margin_to_10_pct_points": 1.175,
+    "rear_gap_to_15_pct_points": 3.825,
     "passes_hard_2000g_10pct": true,
     "passes_targets_1900g_15pct": false
    },
    "fasteners +25 %": {
-    "total_g": 1981.35,
-    "cg_y_mm": 8.457,
-    "rear_load_pct": 10.844,
-    "margin_to_2000_g": 18.65,
-    "margin_to_1900_g": -81.35,
-    "rear_margin_to_10_pct_points": 0.844,
-    "rear_gap_to_15_pct_points": 4.156,
+    "total_g": 1996.15,
+    "cg_y_mm": 8.188,
+    "rear_load_pct": 11.15,
+    "margin_to_2000_g": 3.85,
+    "margin_to_1900_g": -96.15,
+    "rear_margin_to_10_pct_points": 1.15,
+    "rear_gap_to_15_pct_points": 3.85,
     "passes_hard_2000g_10pct": true,
     "passes_targets_1900g_15pct": false
    },
    "all four together": {
-    "total_g": 2038.27,
-    "cg_y_mm": 7.925,
-    "rear_load_pct": 11.448,
-    "margin_to_2000_g": -38.27,
-    "margin_to_1900_g": -138.27,
-    "rear_margin_to_10_pct_points": 1.448,
-    "rear_gap_to_15_pct_points": 3.552,
+    "total_g": 2056.34,
+    "cg_y_mm": 7.612,
+    "rear_load_pct": 11.805,
+    "margin_to_2000_g": -56.34,
+    "margin_to_1900_g": -156.34,
+    "rear_margin_to_10_pct_points": 1.805,
+    "rear_gap_to_15_pct_points": 3.195,
     "passes_hard_2000g_10pct": false,
     "passes_targets_1900g_15pct": false
    }
@@ -216,7 +216,7 @@
      281.0
     ],
     "F_collapse_upper_N": 466.7,
-    "static_front_wheel_N": 8.62
+    "static_front_wheel_N": 8.66
    },
    "cradle": {
     "W_motor_N": 269.8,
@@ -229,16 +229,16 @@
    },
    "side_block": {
     "m_weapon_kg": 0.3663,
-    "f_front_on_skid": 0.565,
-    "per_side_DT1_N": 915.5,
+    "f_front_on_skid": 0.563,
+    "per_side_DT1_N": 920.9,
     "per_side_DT2_N": 449.1,
-    "per_side_DT3_N": 1058.4,
-    "per_side_DT3_check_N": 2116.7
+    "per_side_DT3_N": 1060.1,
+    "per_side_DT3_check_N": 2120.2
    },
    "cleat": {
-    "m_floor_system_kg": 0.4814,
+    "m_floor_system_kg": 0.4945,
     "shear_screws": 10,
-    "per_screw_N": 118.1
+    "per_screw_N": 121.3
    },
    "skirt": {
     "plastic_moment_Nmm_per_mm": 30.88,
@@ -328,27 +328,27 @@
     {
      "path": "Side block web: 4 M3 into upright, PETG bearing, per side",
      "case": "DT1",
-     "load": 915.5,
+     "load": 920.9,
      "capacity": 2880.0,
-     "sf": 3.15,
+     "sf": 3.13,
      "note": "",
      "design": true
     },
     {
      "path": "Side block floor inserts M3 x4 per side, tension",
      "case": "DT1",
-     "load": 228.9,
+     "load": 230.2,
      "capacity": 500.0,
-     "sf": 2.18,
+     "sf": 2.17,
      "note": "",
      "design": true
     },
     {
      "path": "PC floor under side-block screw heads, pull-through",
      "case": "DT1",
-     "load": 228.9,
+     "load": 230.2,
      "capacity": 1019.2,
-     "sf": 4.45,
+     "sf": 4.43,
      "note": "",
      "design": true
     },
@@ -373,7 +373,7 @@
     {
      "path": "Side block web, per side",
      "case": "DT3 2.6 kN",
-     "load": 1058.4,
+     "load": 1060.1,
      "capacity": 2880.0,
      "sf": 2.72,
      "note": "",
@@ -382,7 +382,7 @@
     {
      "path": "Side block floor inserts, per insert (uplift)",
      "case": "DT3 2.6 kN",
-     "load": 264.6,
+     "load": 265.0,
      "capacity": 500.0,
      "sf": 1.89,
      "note": "",
@@ -391,7 +391,7 @@
     {
      "path": "Side block floor screws M3 x4, PC 3 mm bearing (fore-aft shear)",
      "case": "DT3 2.6 kN",
-     "load": 264.6,
+     "load": 265.0,
      "capacity": 632.4,
      "sf": 2.39,
      "note": "rearward push goes into the bulkhead in compression",
@@ -400,27 +400,27 @@
     {
      "path": "Low cleat wall screws M2.5, PC 3 mm bearing",
      "case": "DT2",
-     "load": 118.1,
+     "load": 121.3,
      "capacity": 539.4,
-     "sf": 4.57,
+     "sf": 4.45,
      "note": "floor + floor-mounted parts",
      "design": true
     },
     {
      "path": "Low cleat bulkhead screw M2.5, PC 2 mm bearing",
      "case": "DT2",
-     "load": 118.1,
+     "load": 121.3,
      "capacity": 359.6,
-     "sf": 3.05,
+     "sf": 2.97,
      "note": "",
      "design": true
     },
     {
      "path": "Low cleat M2.5 insert, PETG bearing (OD3.6 x 4)",
      "case": "DT2",
-     "load": 118.1,
+     "load": 121.3,
      "capacity": 576.0,
-     "sf": 4.88,
+     "sf": 4.75,
      "note": "",
      "design": true
     },
@@ -463,7 +463,7 @@
     {
      "path": "Side block web, per side",
      "case": "DT3 5.2 kN check",
-     "load": 2116.7,
+     "load": 2120.2,
      "capacity": 2880.0,
      "sf": 1.36,
      "note": "",
@@ -472,7 +472,7 @@
     {
      "path": "Side block floor inserts, per insert",
      "case": "DT3 5.2 kN check",
-     "load": 529.2,
+     "load": 530.1,
      "capacity": 500.0,
      "sf": 0.94,
      "note": "",
@@ -490,7 +490,8 @@
   "M2.5_heatset_insert_L4_OD3.6": 53,
   "M2.5x6_csk_ISO10642": 18,
   "EPDM_pad_0.5mm": 8,
-  "M3x10_button_ISO7380": 8
+  "M3x10_button_ISO7380": 8,
+  "EPDM_strip_1mm_10x110": 1
  },
  "fastener_mass_g_each_ASSUMED": {
   "M3x6_button_ISO7380": 0.42,
@@ -500,14 +501,15 @@
   "M2.5x6_csk_ISO10642": 0.26,
   "M3_heatset_insert_L4_OD5": 0.33,
   "M2.5_heatset_insert_L4_OD3.6": 0.18,
-  "EPDM_pad_0.5mm": 0.08
+  "EPDM_pad_0.5mm": 0.08,
+  "EPDM_strip_1mm_10x110": 1.4
  },
  "mass_audit_vs_R3": [],
  "mass_check": {
-  "rows_total": 1970.508,
+  "rows_total": 1984.962,
   "pc": 311.248,
-  "petg_new": 80.354,
-  "fast": 43.36,
+  "petg_new": 93.408,
+  "fast": 44.76,
   "variants": 10.697,
   "r3_rest_in_rows": 1524.849,
   "other_rows": [],
@@ -554,6 +556,138 @@
   "r3_multiplicity": {}
  },
  "interference": [],
+ "floor_drains": [
+  {
+   "x": -40,
+   "y": -100,
+   "diameter_mm": 5.0,
+   "clear": true,
+   "hits": [],
+   "nearest_floor_hole_mm": 26.1
+  },
+  {
+   "x": 40,
+   "y": -100,
+   "diameter_mm": 5.0,
+   "clear": true,
+   "hits": [],
+   "nearest_floor_hole_mm": 26.1
+  },
+  {
+   "x": -46,
+   "y": -30,
+   "diameter_mm": 5.0,
+   "clear": true,
+   "hits": [],
+   "nearest_floor_hole_mm": 12.1
+  },
+  {
+   "x": 46,
+   "y": -30,
+   "diameter_mm": 5.0,
+   "clear": true,
+   "hits": [],
+   "nearest_floor_hole_mm": 12.1
+  },
+  {
+   "x": -25,
+   "y": 50,
+   "diameter_mm": 5.0,
+   "clear": true,
+   "hits": [],
+   "nearest_floor_hole_mm": 11.6
+  },
+  {
+   "x": 25,
+   "y": 50,
+   "diameter_mm": 5.0,
+   "clear": true,
+   "hits": [],
+   "nearest_floor_hole_mm": 13.1
+  },
+  {
+   "x": 0,
+   "y": -100,
+   "diameter_mm": 5.0,
+   "clear": true,
+   "hits": [],
+   "nearest_floor_hole_mm": 11.6
+  },
+  {
+   "x": -46,
+   "y": -2,
+   "diameter_mm": 5.0,
+   "clear": true,
+   "hits": [],
+   "nearest_floor_hole_mm": 12.5
+  },
+  {
+   "x": 46,
+   "y": -2,
+   "diameter_mm": 5.0,
+   "clear": true,
+   "hits": [],
+   "nearest_floor_hole_mm": 12.5
+  }
+ ],
+ "splash_cover_notches": [
+  [
+   "ESC power/motor, left",
+   -61.0,
+   -58.0,
+   -48.0,
+   -19.5,
+   49.2
+  ],
+  [
+   "switch, right",
+   58.0,
+   61.0,
+   -34.0,
+   -26.0,
+   45.6
+  ],
+  [
+   "front-left motor",
+   -48.0,
+   -28.0,
+   -3.0,
+   1.2,
+   45.6
+  ],
+  [
+   "front-right motor",
+   28.0,
+   48.0,
+   -3.0,
+   1.2,
+   45.6
+  ],
+  [
+   "rear-right motor",
+   15.0,
+   30.0,
+   -57.7,
+   -55.0,
+   45.6
+  ],
+  [
+   "ESP32 USB/connector keep-out",
+   -4.0,
+   4.0,
+   -3.0,
+   1.2,
+   46.6
+  ],
+  [
+   "IMU connector keep-out",
+   38.5,
+   45.5,
+   -57.7,
+   -55.0,
+   46.6
+  ]
+ ],
  "screw_envelope_hits": [],
  "insert_spacing": [
   {
@@ -952,7 +1086,7 @@
    "pockets": 0,
    "mass_g": 95.1,
    "note": "wheel notches at the sides; centre gap |x|<35 in front of y 64 is for the bottom brace (x +-33)",
-   "sha256": "b1ec3a59f0a19d5cb125afb4626339a0f556ef0806bb1286e65aa57e7598a5a9",
+   "sha256": "d1c2b4fc8155e94e3f2011fac876cf13d18169ef9cb4c45b3d9750b571c911ee",
    "dxf_audit_errors": 0,
    "id": "PC01"
   },
@@ -972,7 +1106,7 @@
    "pockets": 0,
    "mass_g": 40.6,
    "note": "",
-   "sha256": "b0ae00e913a54751e053c5082f2bcf30524525e340f3d45863c366c412dd6766",
+   "sha256": "84f0fba6199839741876ee73d398469f059a704d2b1ef14361e4a5525745a279",
    "dxf_audit_errors": 0,
    "id": "PC02"
   },
@@ -992,7 +1126,7 @@
    "pockets": 0,
    "mass_g": 40.2,
    "note": "",
-   "sha256": "bbc6b2b856cf6bf433a1281c201a1f4399102d52211cafa8604d5779ef700333",
+   "sha256": "20bcd7690a062462faa92be6c8f3a57240156784b8002c8f00e02e89c81258b8",
    "dxf_audit_errors": 0,
    "id": "PC03"
   },
@@ -1012,7 +1146,7 @@
    "pockets": 0,
    "mass_g": 31.5,
    "note": "",
-   "sha256": "30be9eac81ec8fe262bb90af189ba0a781377abb5bebbca36f7e96f557da4346",
+   "sha256": "4871f803fefcf7b1ad95fd5f6026365d691b6044fee8b4bdd0aeb4328c412f83",
    "dxf_audit_errors": 0,
    "id": "PC04"
   },
@@ -1032,7 +1166,7 @@
    "pockets": 0,
    "mass_g": 4.2,
    "note": "",
-   "sha256": "084bb530cf036925cce3647acc6286e26854183f2ee17d1e457e1f3822acffac",
+   "sha256": "ea57f7d057190c3d7e63a688b4e10ea6bed736a32617de2dc9989259334dd2f7",
    "dxf_audit_errors": 0,
    "id": "PC05"
   },
@@ -1052,7 +1186,7 @@
    "pockets": 0,
    "mass_g": 11.2,
    "note": "",
-   "sha256": "c72555e774c05b26911b1490f9b2b2bb6505588d09b39b6655eb0d8af9cf5f16",
+   "sha256": "e2e775a8e5d9ad481d272ed828bff1a306473f3c7bb80bd601499a108bf34408",
    "dxf_audit_errors": 0,
    "id": "PC06"
   },
@@ -1072,7 +1206,7 @@
    "pockets": 1,
    "mass_g": 88.3,
    "note": "belt slot x +-3.5 open at the front edge; 2.0 mm deep pocket from the underside over the weapon motor",
-   "sha256": "f13814b305178d0bf23943009a70ece3df6cf080bee053e9121355e7b3ba6667",
+   "sha256": "eb2cfd41609144b7c45a18be4548e4602c591140bf61338e773b4cfb82a5e060",
    "dxf_audit_errors": 0,
    "id": "PC07"
   }
@@ -1614,6 +1748,21 @@
    "watertight": true
   },
   {
+   "file": "V4_R3PC_Electronics_Splash_Cover_PETG.stl",
+   "quantity": 1,
+   "material": "PETG",
+   "dimensions_mm": [
+    124.0,
+    56.9,
+    20.4
+   ],
+   "mass_g_80pct_rule": 13.05,
+   "reissued_R3_part": false,
+   "orientation": "Z-up, bed Z=0",
+   "sha256": "bb4995e8102ac11db20db68090f57dffdd1a6d216d0f05999db1dddfc935e85c",
+   "watertight": true
+  },
+  {
    "file": "V4_R3PC_Wedgelet_Block_PETG_L_PCbody.stl",
    "quantity": 1,
    "material": "PETG",
@@ -2135,6 +2284,17 @@
     57.5,
     -112.56447141000403,
     16.903430313981442
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Electronics_Splash_Cover_PETG",
+   "material": "PETG",
+   "mass_g": 13.0539,
+   "centroid_mm": [
+    1.0581679161166337,
+    -27.750606304948818,
+    52.97880314313476
    ],
    "method": "estimated CAD volume/density"
   }
@@ -5005,6 +5165,15 @@
    ],
    "host": "Skirt_Bracket_PETG_Rear_x+58",
    "group": "skirt"
+  },
+  {
+   "kind": "EPDM_strip_1mm_10x110",
+   "label": "splash cover roof strip",
+   "pos": [
+    0.0,
+    -28.25,
+    58.5
+   ]
   }
  ],
  "lid_top_mm": 62.0,
@@ -5016,170 +5185,176 @@
     "id": "PC01",
     "name": "PC3_Floor",
     "file": "PRODUCTION/drawings/PC01_PC3_Floor.pdf",
-    "sha256": "6bea52c9992a561ca1cf4f5efc2d31729b0d6bcbd6409c698efefcafe13facd1"
+    "sha256": "07d1b8829a7abdba08bb2f33d38acb375f3da7217ade50a6957e130a34ec0c2f"
    },
    {
     "id": "PC02",
     "name": "PC3_Side_Wall_L",
     "file": "PRODUCTION/drawings/PC02_PC3_Side_Wall_L.pdf",
-    "sha256": "c9269b47107fdccb495745c4b91d6331c30d044533a96d0e6f7505bb654be6c6"
+    "sha256": "15df3fd84a3fe997d592c30d93f820a197157cb7a0ab9eb78edebbb80a759e2a"
    },
    {
     "id": "PC03",
     "name": "PC3_Side_Wall_R",
     "file": "PRODUCTION/drawings/PC03_PC3_Side_Wall_R.pdf",
-    "sha256": "a04b958eeb10bb44171d67b5783a0a065fb543fc807c67792b9c61db9a89ad9f"
+    "sha256": "ed3402ebc795bcfe83eb7b1c79d9edbb83e1b31f8e3089b9ce46c022871706fc"
    },
    {
     "id": "PC04",
     "name": "PC3_Rear_Wall",
     "file": "PRODUCTION/drawings/PC04_PC3_Rear_Wall.pdf",
-    "sha256": "fb47958dd881cbdccbb537e95edfb9359c74bd283f7c1d9b415f481f3bc44094"
+    "sha256": "b7e31b9694b2217ae023b91fab305990ab5fce976fb2ae8db4d42741aec6a96a"
    },
    {
     "id": "PC05",
     "name": "PC2_Bulkhead_L",
     "file": "PRODUCTION/drawings/PC05_PC2_Bulkhead_L.pdf",
-    "sha256": "1810c4006a6dc80b34108d3ae4c7f80ca63b488afb9bb1cb1046fd41daa58215"
+    "sha256": "edd1688b1ad7c333398ea51e0754ea4b05c423a3ebda2f3b9ec9c8a4203c6fe8"
    },
    {
     "id": "PC06",
     "name": "PC2_Bulkhead_R",
     "file": "PRODUCTION/drawings/PC06_PC2_Bulkhead_R.pdf",
-    "sha256": "2a4e50a96a00bb0827dcc5e3d61c4d4fe968eadb57636c514bd2501005483a38"
+    "sha256": "4008a8e249a71b0aa4102f7d2e5cab3df7e1dbe24ce17038751bd264fdd0ec92"
    },
    {
     "id": "PC07",
     "name": "PC3_Lid",
     "file": "PRODUCTION/drawings/PC07_PC3_Lid.pdf",
-    "sha256": "db4ef95363029ae00259087fec57f574d36bf0727f5638d06cc63b164064bdb7"
+    "sha256": "abdfbdba65e8a9c8bae9f7a0889f76bc094753b1d0faeade6d9d96275212312d"
    },
    {
     "id": "P01",
     "name": "Motor_Cradle_Front_L",
     "file": "PRODUCTION/drawings/P01_Motor_Cradle_Front_L.pdf",
-    "sha256": "2d09b581d7615204dc531f696d0911e686be50b8392a1eee36d66220a609d017"
+    "sha256": "031ba0b506f4399575fa55879bd6c4412fc4568f8ee0e3ac025714340105a91d"
    },
    {
     "id": "P02",
     "name": "Motor_Cradle Front_R / Rear_L / Rear_R",
     "file": "PRODUCTION/drawings/P02_Motor_Cradle_Front_R_Rear_L_Rear_R.pdf",
-    "sha256": "9e04fdade2f6aab6bcb5bb413c1362c43828dc52f0399e71dc6d90f9f6fac6f0"
+    "sha256": "c5f291d020575c130cf97c9cd3f1efe116225296d69c7e6d9bbe2dd731c415ce"
    },
    {
     "id": "P03",
     "name": "Motor_Twin_Saddle Front / Rear",
     "file": "PRODUCTION/drawings/P03_Motor_Twin_Saddle_Front_Rear.pdf",
-    "sha256": "9c0d094c2e80619993615bb7e9ff91d783b8a762e2c96c34299232edcd7d3c60"
+    "sha256": "69e7856174e6c965f0c5adfd6e2c739718c50af930fec2da3f0d7cf9bfa5d468"
    },
    {
     "id": "P04",
     "name": "Motor_Lid_Bar Front / Rear",
     "file": "PRODUCTION/drawings/P04_Motor_Lid_Bar_Front_Rear.pdf",
-    "sha256": "58ca99778bf7d4b58e3d48901731468f5d29208b1779c68fca33c20406dfba87"
+    "sha256": "732f1356545b91009dc05921589015919e490579f93be7005a01f79144c1ab80"
    },
    {
     "id": "P05",
     "name": "Weapon_Side_Block_L",
     "file": "PRODUCTION/drawings/P05_Weapon_Side_Block_L.pdf",
-    "sha256": "f740ed487615061e410ef16e79103685349489c8b19ef6a876f6a2034c633e43"
+    "sha256": "43e31bfc14df5f292bbc28c25efc1ece836c1135210d65b2997ca96a74764fad"
    },
    {
     "id": "P06",
     "name": "Weapon_Side_Block_R",
     "file": "PRODUCTION/drawings/P06_Weapon_Side_Block_R.pdf",
-    "sha256": "9f00f4252b08207df720a541fd477dec6adf9edbe83ff32419d38c6fe0596715"
+    "sha256": "fc6c49be40be7a8f6686d3af030660392ce484880bb35bb907b5f4b7b3b2c39e"
    },
    {
     "id": "P07",
     "name": "Cleat_Rear_Low L / R",
     "file": "PRODUCTION/drawings/P07_Cleat_Rear_Low_L_R.pdf",
-    "sha256": "f6e06c33f69c0e517e4b0873d73db5c2ccdf1c88a9171e2c29f834e1f94aac45"
+    "sha256": "4b5ae0777ab9bb8875f6dfd13c1022091d8f20ecdd1d4dd8fb78e4d0819fa9a2"
    },
    {
     "id": "P08",
     "name": "Cleat_Rear_High L / R",
     "file": "PRODUCTION/drawings/P08_Cleat_Rear_High_L_R.pdf",
-    "sha256": "40b3bdde855db95820bb45d6817cd201413851d1ee31e7c6d73805bef95a004f"
+    "sha256": "8195e347b7140df22b2eb9c102e50e1b13da18970de2dcdd6a8ec9f405a8a69c"
    },
    {
     "id": "P09",
     "name": "Cleat_Mid_Low L / R",
     "file": "PRODUCTION/drawings/P09_Cleat_Mid_Low_L_R.pdf",
-    "sha256": "6d54b229f4e91d5555e32832a6f1d5951f0bdbbd7572a197f5f3340cc6d3d87c"
+    "sha256": "202d0f2520a732155cc834dff39cf72f9166598c33337268940105047a72e5fa"
    },
    {
     "id": "P10",
     "name": "Cleat_Mid_High L / R",
     "file": "PRODUCTION/drawings/P10_Cleat_Mid_High_L_R.pdf",
-    "sha256": "374a5217ec9e05bdda27a28f33ae78a472c88bc54a9f73e58cd580ba2ab42b48"
+    "sha256": "5dad564a155c276c531c6f4d4d9a5ed16ed4e02df2929bbc541012ad5cd287db"
    },
    {
     "id": "P11",
     "name": "Cleat_Front_Low L / R",
     "file": "PRODUCTION/drawings/P11_Cleat_Front_Low_L_R.pdf",
-    "sha256": "02557e81b6c9ae6bb9a4814fee7b9223f28fb5cc16194aed7d8a69ff6fbc87b5"
+    "sha256": "f73eb2fc42b5e28795fa77e7c8ad60e2490c4ff19e19ffb1b1266ed5561f5b20"
    },
    {
     "id": "P12",
     "name": "Cleat_Front_High L / R",
     "file": "PRODUCTION/drawings/P12_Cleat_Front_High_L_R.pdf",
-    "sha256": "a254b39afd0b1ee68fb9ef140b56990bfa0a3315d18c01053a5c900a1b53f802"
+    "sha256": "dce4679e259fbc4dc615d7f54a115ad55bb2627eb5374b6b7e802bbc810bc134"
    },
    {
     "id": "P13",
     "name": "Cleat_Rear_Centre_Low",
     "file": "PRODUCTION/drawings/P13_Cleat_Rear_Centre_Low.pdf",
-    "sha256": "c201aa822188b276155633e67ce6229d82ed9d9b71cb77f3c205b592a9ee743a"
+    "sha256": "bc47d5130bbbfc9e5ed23e3494b43b84d480f8489bd0fb0749e60be891548d1e"
    },
    {
     "id": "P14",
     "name": "Cleat_Bulkhead_Centre_Low",
     "file": "PRODUCTION/drawings/P14_Cleat_Bulkhead_Centre_Low.pdf",
-    "sha256": "bbe59b7175e6df04b459561e69b49f3930fa5c790f3afb7e6a185cdc437860d1"
+    "sha256": "e6071a022937627fb534f78f134b77f541e797706f24890c86ef493ffc7a8dd1"
    },
    {
     "id": "P15",
     "name": "Skirt_Bracket L_y+32 / L_y-82 / R_y+32 / R_y-82",
     "file": "PRODUCTION/drawings/P15_Skirt_Bracket_L_y+32_L_y-82_R_y+32_R_y-82.pdf",
-    "sha256": "8d22e7064b9407c6b7f889c0c3bd60d860102651e314c18b43507e6511d9118b"
+    "sha256": "fd337935817cecaa6223fbccbd33d74cbf66c863623228ba34061ba2b54cbd57"
    },
    {
     "id": "P16",
     "name": "Skirt_Bracket L_y-28 / R_y-28",
     "file": "PRODUCTION/drawings/P16_Skirt_Bracket_L_y-28_R_y-28.pdf",
-    "sha256": "87071bf885198d2b93f487d43f0b9b98ccb34d27c581478b1a9acd5f68f91052"
+    "sha256": "6566c35977419dcbcfd6126c94f0dde1021b43498ef789e5f7a2abc05ea70dbd"
    },
    {
     "id": "P17",
     "name": "Skirt_Bracket L_y+62 / R_y+62",
     "file": "PRODUCTION/drawings/P17_Skirt_Bracket_L_y+62_R_y+62.pdf",
-    "sha256": "e4eca8593ba0793fa75057843ee6c64cdeed6b29fc89ddb58baa1b0059526e2e"
+    "sha256": "b0a6cd9a2e7a1a20af1a772f29205f6146633257f550fda1b7de4015c819a07c"
    },
    {
     "id": "P18",
     "name": "Skirt_Bracket_Rear x+58 / x-58",
     "file": "PRODUCTION/drawings/P18_Skirt_Bracket_Rear_x+58_x-58.pdf",
-    "sha256": "94293783b243aa516a240b6a2a69fd12d90f6e53e0909a550d7e9c93ce6286d6"
+    "sha256": "4152ee760d025622ae5a6d34e173853e5fc7f05762f30288eeab75e28d7c8ec2"
    },
    {
     "id": "P19",
     "name": "Skirt_Bracket_Rear_x+0",
     "file": "PRODUCTION/drawings/P19_Skirt_Bracket_Rear_x+0.pdf",
-    "sha256": "ceb170fab7c2ac1d038afd91e8046386f3ebd1e5ea272177f624bededc88bdcf"
+    "sha256": "4df1a3497fdfd5e57a30c4a1d1814f3fabd41e134d120eebc4f9f5752a115cdf"
    },
    {
     "id": "P20",
+    "name": "Electronics_Splash_Cover",
+    "file": "PRODUCTION/drawings/P20_Electronics_Splash_Cover.pdf",
+    "sha256": "1f0e577f50d448b90bc8eccb1e1236e85c71baba9bd2bb8788f31cb725f74198"
+   },
+   {
+    "id": "P21",
     "name": "Wedgelet_Block L / R",
-    "file": "PRODUCTION/drawings/P20_Wedgelet_Block_L_R.pdf",
-    "sha256": "ad092c2e4f9914d2c2c79a2ca29a1a9f1de88325deaf59b65c209b2aee3ac325"
+    "file": "PRODUCTION/drawings/P21_Wedgelet_Block_L_R.pdf",
+    "sha256": "2bed711e28d01ed13b60847e8e817dfba9819c14d752491f21489b5419882d90"
    }
   ],
   "combined": "PRODUCTION/DRAWINGS_PC_BODY.pdf",
   "work_order": "PRODUCTION/WORK_ORDER_PC_BODY_TH.pdf",
   "sha256": {
-   "DRAWINGS_PC_BODY.pdf": "98e166c577a0d048db0618d0568676ed4ad46aef0902b4777b142b65cd2c22a7",
-   "WORK_ORDER_PC_BODY_TH.pdf": "c49b380a2bb375ad93a09017cfb4c50c4dde41425fd99e7eeede50ee5e0fb43c"
+   "DRAWINGS_PC_BODY.pdf": "1cca72b4f12e295f00aec60fe88263bee0d98acf23294a4ac222588d956897d7",
+   "WORK_ORDER_PC_BODY_TH.pdf": "71aa1e7199471bfd76d81f3e8470990dea60fa3b1251b84476fed105bc258808"
   }
  },
  "release_blockers": [
@@ -5437,6 +5612,18 @@
    "id": "P19"
   },
   {
+   "title": "Electronics_Splash_Cover",
+   "qty": 1,
+   "files": [
+    "V4_R3PC_Electronics_Splash_Cover_PETG.stl"
+   ],
+   "mass": 13.05,
+   "inserts": "-",
+   "infill": "เนื้อเต็ม (4 walls + 100%)",
+   "note": "ครอบกันน้ำบนแท่นบอร์ด: ฝาถูกกดด้วยฝาตัวถังผ่านแถบ EPDM 1 มม. · ช่องสาย 7 ช่องอุดด้วยโฟม/RTV หลังเดินสาย · พิมพ์คว่ำ หลังคาลงฐาน",
+   "id": "P20"
+  },
+  {
    "title": "Wedgelet_Block L / R",
    "qty": 2,
    "files": [
@@ -5447,7 +5634,7 @@
    "inserts": "M3_L4_OD5 ×2",
    "infill": "ตามข้อกำหนด R3 (บานพับ ≥1.6 มม.)",
    "note": "R3 wedgelet block + insert M3 ใต้ราง 2 ตัว (ยึดพื้น)",
-   "id": "P20"
+   "id": "P21"
   }
  ]
 }

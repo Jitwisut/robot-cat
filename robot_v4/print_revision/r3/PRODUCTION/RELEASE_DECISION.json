@@ -1,6 +1,6 @@
 {
   "date": "2026-10-19",
-  "decided_by": "user, in chat 2026-10-18: release only the parts that do not depend on unmeasured motors; user, in chat 2026-10-19: also release M06 complete, on catalogue values; user, in chat 2026-10-19: switch the drive motors to ORTECH JB361, redesign for it and release everything with values chosen by Claude",
+  "decided_by": "user, in chat 2026-10-18: release only the parts that do not depend on unmeasured motors; user, in chat 2026-10-19: also release M06 complete, on catalogue values; user, in chat 2026-10-19: switch the drive motors to ORTECH JB361, redesign for it and release everything with values chosen by Claude; user, in chat 2026-10-19: add waterproofing for water-weapon opponents, weight not a concern",
   "basis": {
     "r3_build_sha256_prefix": "99dc7481",
     "body": "PC 3 mm body rev 3 (r3/pc_body)",
@@ -53,7 +53,8 @@
     "weapon_motor.shaft_projection_mm": "Pulley position uses the catalogue 20 mm shaft projection.",
     "drive motors (all 4)": "JB361 drawing values: face holes 2×M3 17 mm apart, boss Ø7×2.5, Ø25 × 49.8 can, shaft Ø4 D-flat 0.5 deep on the outer 8 mm of an 11.5 mm projection. Hub engagement 7.8 mm (min 7.5): a shaft shorter than 11.2 mm fails. Mass kept at 110 g each (ORTECH 100 g is shipping weight).",
     "battery, ESC, ESP32, IMU": "Catalogue outlines (GNB8503S80A 63×30×24, Skywalker 40A, ESP32 30-pin, GY-521). DRV8871 boards, disconnect and hall sensor use the R3 design envelopes.",
-    "fit values": "Chosen without coupons: insert M3 hole Ø4.4 (OD 5 insert), M2.5 hole Ø3.2 (OD 3.6), tyre ID 43.8, D-bore +0.10/+0.05, hinge +0.2, nut pocket +0.2. If an insert spins or a tyre slips, reprint that part."
+    "fit values": "Chosen without coupons: insert M3 hole Ø4.4 (OD 5 insert), M2.5 hole Ø3.2 (OD 3.6), tyre ID 43.8, D-bore +0.10/+0.05, hinge +0.2, nut pocket +0.2. If an insert spins or a tyre slips, reprint that part.",
+    "mass with splash cover": "Expected case 1998.9 g (1.1 g under 2000 g); nominal 1985.0 g. A 3.1 mm PC sheet or denser prints exceed 2000 g: weigh the robot; the splash cover (13 g + 1.4 g strip) is removable."
   },
   "pc_sheet_thickness_acceptance_mm": {
     "3.0": [
