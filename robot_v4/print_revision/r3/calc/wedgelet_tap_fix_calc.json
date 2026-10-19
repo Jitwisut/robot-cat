@@ -1,0 +1,938 @@
+{
+ "baseline": {
+  "build_sha256": "319857d1a9f0a57815e203bf037db3a52d2c40b1a51fe7ead140aa4becb78534",
+  "total_g": 1975.48,
+  "rear_load_pct": 10.484
+ },
+ "as_built_R3": {
+  "slope_deg": 35.538,
+  "vertical_offset_mm": 2.0,
+  "perpendicular_t_mm": 1.6275,
+  "cad_mass_each_g": 26.5836
+ },
+ "wedgelet_options": {
+  "A_1.6_M3_DIN7991": {
+   "angle_deg": 35.54,
+   "t_mm": 1.6,
+   "fastener": "M3 DIN 7991 hex socket",
+   "plate_length_mm": 34.41,
+   "tip_y_mm": 128.0,
+   "mass_each_g": 25.52,
+   "centroid_y_mm": 114.3,
+   "delta_pair_g": -2.13,
+   "delta_moment_pair_gmm": -229.2,
+   "land_mm_theoretical_head": 0.3,
+   "land_mm_actual_head": 0.3,
+   "land_fraction_actual": 0.188,
+   "new_inserts_and_carrier_holes": false,
+   "head_height_k_mm": 1.7,
+   "bending_stiffness_vs_R3": 0.95,
+   "pry_yield_tip_N": {
+    "mild_SS400": 208.0,
+    "spring_65Mn_SK5_hardened": 756.4
+   },
+   "pry_margin_vs_R3_lifter": {
+    "mild_SS400": 1.87,
+    "spring_65Mn_SK5_hardened": 6.79
+   },
+   "total_g": 1973.35,
+   "cg_y_mm": 8.667,
+   "rear_load_pct": 10.605,
+   "rear_ok": true,
+   "mass_ok": true,
+   "margin_to_2000_g": 26.65
+  },
+  "A_1.6_M3_ISO10642": {
+   "angle_deg": 35.54,
+   "t_mm": 1.6,
+   "fastener": "M3 ISO 10642 hex socket",
+   "plate_length_mm": 34.41,
+   "tip_y_mm": 128.0,
+   "mass_each_g": 25.39,
+   "centroid_y_mm": 114.33,
+   "delta_pair_g": -2.38,
+   "delta_moment_pair_gmm": -257.3,
+   "land_mm_theoretical_head": -0.06,
+   "land_mm_actual_head": -0.06,
+   "land_fraction_actual": -0.037,
+   "new_inserts_and_carrier_holes": false,
+   "head_height_k_mm": 1.86,
+   "bending_stiffness_vs_R3": 0.95,
+   "pry_yield_tip_N": {
+    "mild_SS400": 208.0,
+    "spring_65Mn_SK5_hardened": 756.4
+   },
+   "pry_margin_vs_R3_lifter": {
+    "mild_SS400": 1.87,
+    "spring_65Mn_SK5_hardened": 6.79
+   },
+   "total_g": 1973.1,
+   "cg_y_mm": 8.654,
+   "rear_load_pct": 10.62,
+   "rear_ok": true,
+   "mass_ok": true,
+   "margin_to_2000_g": 26.9
+  },
+  "A_1.6_M3_ISO14581": {
+   "angle_deg": 35.54,
+   "t_mm": 1.6,
+   "fastener": "M3 ISO 14581 / ISO 7046 / JIS B1111 flat",
+   "plate_length_mm": 34.41,
+   "tip_y_mm": 128.0,
+   "mass_each_g": 25.59,
+   "centroid_y_mm": 114.29,
+   "delta_pair_g": -2.0,
+   "delta_moment_pair_gmm": -214.6,
+   "land_mm_theoretical_head": 0.15,
+   "land_mm_actual_head": 0.55,
+   "land_fraction_actual": 0.344,
+   "new_inserts_and_carrier_holes": false,
+   "head_height_k_mm": 1.65,
+   "bending_stiffness_vs_R3": 0.95,
+   "pry_yield_tip_N": {
+    "mild_SS400": 208.0,
+    "spring_65Mn_SK5_hardened": 756.4
+   },
+   "pry_margin_vs_R3_lifter": {
+    "mild_SS400": 1.87,
+    "spring_65Mn_SK5_hardened": 6.79
+   },
+   "total_g": 1973.48,
+   "cg_y_mm": 8.674,
+   "rear_load_pct": 10.598,
+   "rear_ok": true,
+   "mass_ok": true,
+   "margin_to_2000_g": 26.52
+  },
+  "A_1.6_M2.5_ISO14581": {
+   "angle_deg": 35.54,
+   "t_mm": 1.6,
+   "fastener": "M2.5 ISO 14581 / ISO 7046",
+   "plate_length_mm": 34.41,
+   "tip_y_mm": 128.0,
+   "mass_each_g": 25.69,
+   "centroid_y_mm": 114.27,
+   "delta_pair_g": -1.79,
+   "delta_moment_pair_gmm": -191.9,
+   "land_mm_theoretical_head": 0.3,
+   "land_mm_actual_head": 0.7,
+   "land_fraction_actual": 0.437,
+   "new_inserts_and_carrier_holes": true,
+   "head_height_k_mm": 1.5,
+   "bending_stiffness_vs_R3": 0.95,
+   "pry_yield_tip_N": {
+    "mild_SS400": 208.0,
+    "spring_65Mn_SK5_hardened": 756.4
+   },
+   "pry_margin_vs_R3_lifter": {
+    "mild_SS400": 1.87,
+    "spring_65Mn_SK5_hardened": 6.79
+   },
+   "total_g": 1973.69,
+   "cg_y_mm": 8.685,
+   "rear_load_pct": 10.586,
+   "rear_ok": true,
+   "mass_ok": true,
+   "margin_to_2000_g": 26.31
+  },
+  "B_2.0_M3_ISO14581": {
+   "angle_deg": 35.54,
+   "t_mm": 2.0,
+   "fastener": "M3 ISO 14581 / ISO 7046 / JIS B1111 flat",
+   "plate_length_mm": 34.41,
+   "tip_y_mm": 128.0,
+   "mass_each_g": 31.87,
+   "centroid_y_mm": 114.35,
+   "delta_pair_g": 10.58,
+   "delta_moment_pair_gmm": 1225.9,
+   "land_mm_theoretical_head": 0.55,
+   "land_mm_actual_head": 0.95,
+   "land_fraction_actual": 0.475,
+   "new_inserts_and_carrier_holes": false,
+   "head_height_k_mm": 1.65,
+   "bending_stiffness_vs_R3": 1.86,
+   "pry_yield_tip_N": {
+    "mild_SS400": 325.0,
+    "spring_65Mn_SK5_hardened": 1181.9
+   },
+   "pry_margin_vs_R3_lifter": {
+    "mild_SS400": 2.92,
+    "spring_65Mn_SK5_hardened": 10.61
+   },
+   "total_g": 1986.06,
+   "cg_y_mm": 9.345,
+   "rear_load_pct": 9.836,
+   "rear_ok": false,
+   "mass_ok": true,
+   "margin_to_2000_g": 13.94,
+   "rear_ballast_needed": {
+    "10.00%": {
+     "rear_ballast_at_y-105_g": 2.52,
+     "total_g": 1988.58,
+     "margin_to_2000_g": 11.42
+    },
+    "10.48%": {
+     "rear_ballast_at_y-105_g": 9.9,
+     "total_g": 1995.96,
+     "margin_to_2000_g": 4.04
+    }
+   }
+  },
+  "B_2.0_M3_DIN7991": {
+   "angle_deg": 35.54,
+   "t_mm": 2.0,
+   "fastener": "M3 DIN 7991 hex socket",
+   "plate_length_mm": 34.41,
+   "tip_y_mm": 128.0,
+   "mass_each_g": 31.81,
+   "centroid_y_mm": 114.35,
+   "delta_pair_g": 10.45,
+   "delta_moment_pair_gmm": 1211.4,
+   "land_mm_theoretical_head": 0.7,
+   "land_mm_actual_head": 0.7,
+   "land_fraction_actual": 0.35,
+   "new_inserts_and_carrier_holes": false,
+   "head_height_k_mm": 1.7,
+   "bending_stiffness_vs_R3": 1.86,
+   "pry_yield_tip_N": {
+    "mild_SS400": 325.0,
+    "spring_65Mn_SK5_hardened": 1181.9
+   },
+   "pry_margin_vs_R3_lifter": {
+    "mild_SS400": 2.92,
+    "spring_65Mn_SK5_hardened": 10.61
+   },
+   "total_g": 1985.93,
+   "cg_y_mm": 9.338,
+   "rear_load_pct": 9.843,
+   "rear_ok": false,
+   "mass_ok": true,
+   "margin_to_2000_g": 14.07,
+   "rear_ballast_needed": {
+    "10.00%": {
+     "rear_ballast_at_y-105_g": 2.4,
+     "total_g": 1988.33,
+     "margin_to_2000_g": 11.67
+    },
+    "10.48%": {
+     "rear_ballast_at_y-105_g": 9.78,
+     "total_g": 1995.71,
+     "margin_to_2000_g": 4.29
+    }
+   }
+  },
+  "C_25deg_1.5_M3_DIN7991": {
+   "angle_deg": 25.0,
+   "t_mm": 1.5,
+   "fastener": "M3 DIN 7991 hex socket",
+   "plate_length_mm": 47.32,
+   "tip_y_mm": 142.89,
+   "mass_each_g": 33.35,
+   "centroid_y_mm": 121.75,
+   "delta_pair_g": 13.53,
+   "delta_moment_pair_gmm": 2057.0,
+   "land_mm_theoretical_head": 0.2,
+   "land_mm_actual_head": 0.2,
+   "land_fraction_actual": 0.133,
+   "new_inserts_and_carrier_holes": false,
+   "head_height_k_mm": 1.7,
+   "bending_stiffness_vs_R3": 0.78,
+   "pry_yield_tip_N": {
+    "mild_SS400": 132.9,
+    "spring_65Mn_SK5_hardened": 483.4
+   },
+   "pry_margin_vs_R3_lifter": {
+    "mild_SS400": 1.19,
+    "spring_65Mn_SK5_hardened": 4.34
+   },
+   "total_g": 1989.01,
+   "cg_y_mm": 9.748,
+   "rear_load_pct": 9.377,
+   "rear_ok": false,
+   "mass_ok": true,
+   "margin_to_2000_g": 10.99,
+   "rear_ballast_needed": {
+    "10.00%": {
+     "rear_ballast_at_y-105_g": 9.54,
+     "total_g": 1998.55,
+     "margin_to_2000_g": 1.45
+    },
+    "10.48%": {
+     "rear_ballast_at_y-105_g": 16.96,
+     "total_g": 2005.97,
+     "margin_to_2000_g": -5.97
+    }
+   }
+  }
+ },
+ "options_calc_correction": {
+  "options_calc_mass_each_g": 27.42,
+  "cad_mass_each_g": 33.35,
+  "options_calc_delta_pair_g": 1.67,
+  "cad_delta_pair_g": 13.53,
+  "cause": "options_calc assumed the R3 plate was 2.0 mm; it is 1.627 mm, so every scaled mass is 2.0/1.627 = 1.229x low",
+  "carriers_note": "25 deg also needs new carrier/insert geometry; not modelled here"
+ },
+ "upright_taps": {
+  "R3_side_y70_drill8_thread6": {
+   "min_drill_wall_mm": -1.0,
+   "rows": [
+    {
+     "side_tap_yz": [
+      70,
+      14
+     ],
+     "edge": "top",
+     "drill_wall_mm": 33.01,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 35.5
+    },
+    {
+     "side_tap_yz": [
+      70,
+      14
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": -1.0,
+     "drill_overlap_mm3": 5.926,
+     "thread_wall_mm": 0.0
+    },
+    {
+     "side_tap_yz": [
+      70,
+      50
+     ],
+     "edge": "top",
+     "drill_wall_mm": -1.0,
+     "drill_overlap_mm3": 5.926,
+     "thread_wall_mm": 0.0
+    },
+    {
+     "side_tap_yz": [
+      70,
+      50
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 33.01,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 35.5
+    },
+    {
+     "side_tap_yz": [
+      90,
+      14
+     ],
+     "edge": "top",
+     "drill_wall_mm": 38.92,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 40.32
+    },
+    {
+     "side_tap_yz": [
+      90,
+      14
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 18.5,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 18.03
+    },
+    {
+     "side_tap_yz": [
+      90,
+      46
+     ],
+     "edge": "top",
+     "drill_wall_mm": 18.73,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 18.63
+    },
+    {
+     "side_tap_yz": [
+      90,
+      46
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 35.51,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 36.83
+    }
+   ]
+  },
+  "R3_side_y70_drill5_thread4": {
+   "min_drill_wall_mm": 0.34,
+   "rows": [
+    {
+     "side_tap_yz": [
+      70,
+      14
+     ],
+     "edge": "top",
+     "drill_wall_mm": 36.01,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 37.5
+    },
+    {
+     "side_tap_yz": [
+      70,
+      14
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 0.34,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 1.5
+    },
+    {
+     "side_tap_yz": [
+      70,
+      50
+     ],
+     "edge": "top",
+     "drill_wall_mm": 0.34,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 1.5
+    },
+    {
+     "side_tap_yz": [
+      70,
+      50
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 36.01,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 37.5
+    },
+    {
+     "side_tap_yz": [
+      90,
+      14
+     ],
+     "edge": "top",
+     "drill_wall_mm": 41.51,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 42.1
+    },
+    {
+     "side_tap_yz": [
+      90,
+      14
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 18.6,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 18.23
+    },
+    {
+     "side_tap_yz": [
+      90,
+      46
+     ],
+     "edge": "top",
+     "drill_wall_mm": 19.39,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 19.22
+    },
+    {
+     "side_tap_yz": [
+      90,
+      46
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 38.07,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 38.57
+    }
+   ]
+  },
+  "new_side_y75_drill8_thread6": {
+   "min_drill_wall_mm": 3.5,
+   "rows": [
+    {
+     "side_tap_yz": [
+      75,
+      14
+     ],
+     "edge": "top",
+     "drill_wall_mm": 33.52,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 35.77
+    },
+    {
+     "side_tap_yz": [
+      75,
+      14
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 3.5,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 3.11
+    },
+    {
+     "side_tap_yz": [
+      75,
+      50
+     ],
+     "edge": "top",
+     "drill_wall_mm": 3.5,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 3.11
+    },
+    {
+     "side_tap_yz": [
+      75,
+      50
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 33.52,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 35.77
+    },
+    {
+     "side_tap_yz": [
+      90,
+      14
+     ],
+     "edge": "top",
+     "drill_wall_mm": 38.92,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 40.32
+    },
+    {
+     "side_tap_yz": [
+      90,
+      14
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 18.5,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 18.03
+    },
+    {
+     "side_tap_yz": [
+      90,
+      46
+     ],
+     "edge": "top",
+     "drill_wall_mm": 18.73,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 18.63
+    },
+    {
+     "side_tap_yz": [
+      90,
+      46
+     ],
+     "edge": "bottom",
+     "drill_wall_mm": 35.51,
+     "drill_overlap_mm3": 0.0,
+     "thread_wall_mm": 36.83
+    }
+   ]
+  },
+  "new_layout_other_walls": {
+   "edge_tap_to_rear_edge_y64_mm": 3.75,
+   "edge_tap_to_plate_faces_x_mm": 1.75,
+   "edge_tap_to_left_motor_relief_mm": 2.77,
+   "side_y75_to_axle_bore_mm": 21.56,
+   "side_y75_to_left_motor_relief_mm": 8.75,
+   "side_y75_to_side_y90_drill_wall_mm": 12.5,
+   "side_y75_to_rear_edge_mm": 9.75,
+   "side_y75_axis_to_axle_mm": 26.91,
+   "side_y70_axis_to_axle_mm": 30.81,
+   "tooth_tip_radius_mm": 29.5,
+   "side_screw_max_length_mm": 22,
+   "side_screw_length_note": "head on the TPU block face x +-50; upright inner face x +-27 is 23 mm away; disc face at x +-26. y 75 is inside the tooth circle like y 90, so the screw tip must stay inside the upright (<= M3x22; R3 uses M3x20).",
+   "brace_hole_y69_edge_distance_mm": {
+    "to_y64": 3.3,
+    "top_brace_to_y77": 6.3,
+    "bottom_brace_to_y74": 3.3
+   },
+   "why_not_move_braces": "top-brace front edge y 77 is 1.3 mm from the tooth circle at z 57 (rotor y95 z32 r29.5); a brace hole far enough from the y70 side tap (>= 5 mm) needs y <= 65 (1.3 mm to the y64 edge) or y >= 75 (into the rotor sweep)."
+  }
+ },
+ "upright_hole_walls": {
+  "required_mm": 1.5,
+  "hole_to_hole_mm": {
+   "axle D8.2 | motor relief (L only)": 26.05,
+   "axle D8.2 | edge tap top": 25.93,
+   "axle D8.2 | edge tap bottom": 25.93,
+   "axle D8.2 | side tap y75 z14": 21.56,
+   "axle D8.2 | side tap y75 z50": 21.56,
+   "axle D8.2 | side tap y90 z14": 13.33,
+   "axle D8.2 | side tap y90 z46": 9.52,
+   "motor relief (L only) | edge tap top": 2.77,
+   "motor relief (L only) | edge tap bottom": 15.65,
+   "motor relief (L only) | side tap y75 z14": 19.85,
+   "motor relief (L only) | side tap y75 z50": 8.75,
+   "motor relief (L only) | side tap y90 z14": 31.42,
+   "motor relief (L only) | side tap y90 z46": 22.89,
+   "edge tap top | edge tap bottom": 32.5,
+   "edge tap top | side tap y75 z14": 33.52,
+   "edge tap top | side tap y75 z50": 3.5,
+   "edge tap top | side tap y90 z14": 38.92,
+   "edge tap top | side tap y90 z46": 18.73,
+   "edge tap bottom | side tap y75 z14": 3.5,
+   "edge tap bottom | side tap y75 z50": 33.52,
+   "edge tap bottom | side tap y90 z14": 18.5,
+   "edge tap bottom | side tap y90 z46": 35.51,
+   "side tap y75 z14 | side tap y75 z50": 33.5,
+   "side tap y75 z14 | side tap y90 z14": 12.5,
+   "side tap y75 z14 | side tap y90 z46": 32.84,
+   "side tap y75 z50 | side tap y90 z14": 36.5,
+   "side tap y75 z50 | side tap y90 z46": 13.02,
+   "side tap y90 z14 | side tap y90 z46": 29.5
+  },
+  "min_hole_to_hole_mm": 2.77,
+  "hole_to_outline_mm": {
+   "axle D8.2": 3.52,
+   "edge tap top": 3.75,
+   "edge tap bottom": 3.75,
+   "side tap y75 z14": 5.75,
+   "side tap y75 z50": 5.75,
+   "side tap y90 z14": 5.75,
+   "side tap y90 z46": 9.75
+  },
+  "edge_tap_to_sheet_faces_mm": {
+   "drill": 1.75,
+   "thread_major": 1.5
+  }
+ },
+ "fasteners": {
+  "Le_needed_to_strip_after_bolt_breaks_mm": {
+   "8.8": 3.06,
+   "A2-70": 2.68
+  },
+  "brace_to_upright_edge": {
+   "screw": "M3x8 (button or socket)",
+   "clamped_mm": 3.0,
+   "engagement_mm": 5.0,
+   "thread_depth_mm": 6.0,
+   "thread_left_below_tip_mm": 1.0,
+   "drill_left_below_tip_mm": 3.0,
+   "strip_capacity_kN": 6.57,
+   "bolt_8.8_break_kN": 4.02,
+   "note": "M3x10 would reach 7 mm, past the 6 mm thread: do not use"
+  },
+  "side_block_to_upright": {
+   "screw": "M3x20 + 0.5 washer (R3 TPU tub)",
+   "stack_mm": "0.5 washer + 16 TPU block + 1 gap",
+   "engagement_mm": 2.5,
+   "strip_capacity_kN": 3.29,
+   "tip_x_mm": 29.5,
+   "upright_inner_face_x_mm": 27.0,
+   "option_M3x22": {
+    "engagement_mm": 4.5,
+    "tip_x_mm": 27.5,
+    "strip_capacity_kN": 5.92
+   },
+   "max_length_mm": 22,
+   "note": "y75 is inside the 29.5 mm tooth circle; the tip must stay inside the upright (disc face x 26)"
+  },
+  "wedgelet_to_carrier": {
+   "screw": "M3x5 flat head ISO 7046 / JIS B1111",
+   "plate_mm": 1.6,
+   "tip_below_underside_mm": 3.4,
+   "insert_length_mm": 4.0
+  }
+ },
+ "both_bodies": {
+  "pc_body_report_r3_total_g": 1973.05,
+  "delta_basis": "option minus A_1.6_M3_ISO14581 (built)",
+  "options": {
+   "A_1.6_M3_DIN7991": {
+    "TPU tub R3 (built)": {
+     "total_g": 1972.92,
+     "rear_load_pct": 10.623,
+     "passes_2000g_10pct": true
+    },
+    "PC body nominal": {
+     "total_g": 1966.92,
+     "rear_load_pct": 10.744,
+     "passes_2000g_10pct": true
+    },
+    "PC cleats + skirt brackets solid, cradles/side blocks 80 % (expected case)": {
+     "total_g": 1974.12,
+     "rear_load_pct": 10.853,
+     "passes_2000g_10pct": true
+    },
+    "PC new PETG printed 100 % instead of the R3 80 % rule": {
+     "total_g": 1986.89,
+     "rear_load_pct": 10.785,
+     "passes_2000g_10pct": true
+    },
+    "PC PC sheet 3.3 mm (+10 % thickness tolerance)": {
+     "total_g": 1998.04,
+     "rear_load_pct": 11.232,
+     "passes_2000g_10pct": true
+    },
+    "PC PC density 1.22 g/cm^3": {
+     "total_g": 1972.11,
+     "rear_load_pct": 10.826,
+     "passes_2000g_10pct": true
+    },
+    "PC fasteners +25 %": {
+     "total_g": 1977.76,
+     "rear_load_pct": 10.795,
+     "passes_2000g_10pct": true
+    },
+    "PC all four together": {
+     "total_g": 2034.56,
+     "rear_load_pct": 11.401,
+     "passes_2000g_10pct": false
+    }
+   },
+   "A_1.6_M3_ISO10642": {
+    "TPU tub R3 (built)": {
+     "total_g": 1972.67,
+     "rear_load_pct": 10.637,
+     "passes_2000g_10pct": true
+    },
+    "PC body nominal": {
+     "total_g": 1966.67,
+     "rear_load_pct": 10.759,
+     "passes_2000g_10pct": true
+    },
+    "PC cleats + skirt brackets solid, cradles/side blocks 80 % (expected case)": {
+     "total_g": 1973.87,
+     "rear_load_pct": 10.868,
+     "passes_2000g_10pct": true
+    },
+    "PC new PETG printed 100 % instead of the R3 80 % rule": {
+     "total_g": 1986.64,
+     "rear_load_pct": 10.8,
+     "passes_2000g_10pct": true
+    },
+    "PC PC sheet 3.3 mm (+10 % thickness tolerance)": {
+     "total_g": 1997.79,
+     "rear_load_pct": 11.246,
+     "passes_2000g_10pct": true
+    },
+    "PC PC density 1.22 g/cm^3": {
+     "total_g": 1971.86,
+     "rear_load_pct": 10.841,
+     "passes_2000g_10pct": true
+    },
+    "PC fasteners +25 %": {
+     "total_g": 1977.51,
+     "rear_load_pct": 10.81,
+     "passes_2000g_10pct": true
+    },
+    "PC all four together": {
+     "total_g": 2034.31,
+     "rear_load_pct": 11.415,
+     "passes_2000g_10pct": false
+    }
+   },
+   "A_1.6_M3_ISO14581": {
+    "TPU tub R3 (built)": {
+     "total_g": 1973.05,
+     "rear_load_pct": 10.615,
+     "passes_2000g_10pct": true
+    },
+    "PC body nominal": {
+     "total_g": 1967.05,
+     "rear_load_pct": 10.736,
+     "passes_2000g_10pct": true
+    },
+    "PC cleats + skirt brackets solid, cradles/side blocks 80 % (expected case)": {
+     "total_g": 1974.25,
+     "rear_load_pct": 10.845,
+     "passes_2000g_10pct": true
+    },
+    "PC new PETG printed 100 % instead of the R3 80 % rule": {
+     "total_g": 1987.02,
+     "rear_load_pct": 10.777,
+     "passes_2000g_10pct": true
+    },
+    "PC PC sheet 3.3 mm (+10 % thickness tolerance)": {
+     "total_g": 1998.17,
+     "rear_load_pct": 11.224,
+     "passes_2000g_10pct": true
+    },
+    "PC PC density 1.22 g/cm^3": {
+     "total_g": 1972.24,
+     "rear_load_pct": 10.818,
+     "passes_2000g_10pct": true
+    },
+    "PC fasteners +25 %": {
+     "total_g": 1977.89,
+     "rear_load_pct": 10.787,
+     "passes_2000g_10pct": true
+    },
+    "PC all four together": {
+     "total_g": 2034.69,
+     "rear_load_pct": 11.393,
+     "passes_2000g_10pct": false
+    }
+   },
+   "A_1.6_M2.5_ISO14581": {
+    "TPU tub R3 (built)": {
+     "total_g": 1973.26,
+     "rear_load_pct": 10.603,
+     "passes_2000g_10pct": true
+    },
+    "PC body nominal": {
+     "total_g": 1967.26,
+     "rear_load_pct": 10.724,
+     "passes_2000g_10pct": true
+    },
+    "PC cleats + skirt brackets solid, cradles/side blocks 80 % (expected case)": {
+     "total_g": 1974.46,
+     "rear_load_pct": 10.833,
+     "passes_2000g_10pct": true
+    },
+    "PC new PETG printed 100 % instead of the R3 80 % rule": {
+     "total_g": 1987.23,
+     "rear_load_pct": 10.765,
+     "passes_2000g_10pct": true
+    },
+    "PC PC sheet 3.3 mm (+10 % thickness tolerance)": {
+     "total_g": 1998.38,
+     "rear_load_pct": 11.212,
+     "passes_2000g_10pct": true
+    },
+    "PC PC density 1.22 g/cm^3": {
+     "total_g": 1972.45,
+     "rear_load_pct": 10.806,
+     "passes_2000g_10pct": true
+    },
+    "PC fasteners +25 %": {
+     "total_g": 1978.1,
+     "rear_load_pct": 10.775,
+     "passes_2000g_10pct": true
+    },
+    "PC all four together": {
+     "total_g": 2034.9,
+     "rear_load_pct": 11.381,
+     "passes_2000g_10pct": false
+    }
+   },
+   "B_2.0_M3_ISO14581": {
+    "TPU tub R3 (built)": {
+     "total_g": 1985.63,
+     "rear_load_pct": 9.853,
+     "passes_2000g_10pct": false
+    },
+    "PC body nominal": {
+     "total_g": 1979.63,
+     "rear_load_pct": 9.971,
+     "passes_2000g_10pct": false
+    },
+    "PC cleats + skirt brackets solid, cradles/side blocks 80 % (expected case)": {
+     "total_g": 1986.83,
+     "rear_load_pct": 10.082,
+     "passes_2000g_10pct": true
+    },
+    "PC new PETG printed 100 % instead of the R3 80 % rule": {
+     "total_g": 1999.6,
+     "rear_load_pct": 10.02,
+     "passes_2000g_10pct": true
+    },
+    "PC PC sheet 3.3 mm (+10 % thickness tolerance)": {
+     "total_g": 2010.75,
+     "rear_load_pct": 10.468,
+     "passes_2000g_10pct": false
+    },
+    "PC PC density 1.22 g/cm^3": {
+     "total_g": 1984.82,
+     "rear_load_pct": 10.055,
+     "passes_2000g_10pct": true
+    },
+    "PC fasteners +25 %": {
+     "total_g": 1990.47,
+     "rear_load_pct": 10.026,
+     "passes_2000g_10pct": true
+    },
+    "PC all four together": {
+     "total_g": 2047.27,
+     "rear_load_pct": 10.649,
+     "passes_2000g_10pct": false
+    }
+   },
+   "B_2.0_M3_DIN7991": {
+    "TPU tub R3 (built)": {
+     "total_g": 1985.5,
+     "rear_load_pct": 9.86,
+     "passes_2000g_10pct": false
+    },
+    "PC body nominal": {
+     "total_g": 1979.5,
+     "rear_load_pct": 9.979,
+     "passes_2000g_10pct": false
+    },
+    "PC cleats + skirt brackets solid, cradles/side blocks 80 % (expected case)": {
+     "total_g": 1986.7,
+     "rear_load_pct": 10.09,
+     "passes_2000g_10pct": true
+    },
+    "PC new PETG printed 100 % instead of the R3 80 % rule": {
+     "total_g": 1999.47,
+     "rear_load_pct": 10.027,
+     "passes_2000g_10pct": true
+    },
+    "PC PC sheet 3.3 mm (+10 % thickness tolerance)": {
+     "total_g": 2010.62,
+     "rear_load_pct": 10.475,
+     "passes_2000g_10pct": false
+    },
+    "PC PC density 1.22 g/cm^3": {
+     "total_g": 1984.69,
+     "rear_load_pct": 10.062,
+     "passes_2000g_10pct": true
+    },
+    "PC fasteners +25 %": {
+     "total_g": 1990.34,
+     "rear_load_pct": 10.034,
+     "passes_2000g_10pct": true
+    },
+    "PC all four together": {
+     "total_g": 2047.14,
+     "rear_load_pct": 10.657,
+     "passes_2000g_10pct": false
+    }
+   },
+   "C_25deg_1.5_M3_DIN7991": {
+    "TPU tub R3 (built)": {
+     "total_g": 1988.58,
+     "rear_load_pct": 9.394,
+     "passes_2000g_10pct": false
+    },
+    "PC body nominal": {
+     "total_g": 1982.58,
+     "rear_load_pct": 9.51,
+     "passes_2000g_10pct": false
+    },
+    "PC cleats + skirt brackets solid, cradles/side blocks 80 % (expected case)": {
+     "total_g": 1989.78,
+     "rear_load_pct": 9.623,
+     "passes_2000g_10pct": false
+    },
+    "PC new PETG printed 100 % instead of the R3 80 % rule": {
+     "total_g": 2002.55,
+     "rear_load_pct": 9.563,
+     "passes_2000g_10pct": false
+    },
+    "PC PC sheet 3.3 mm (+10 % thickness tolerance)": {
+     "total_g": 2013.7,
+     "rear_load_pct": 10.013,
+     "passes_2000g_10pct": false
+    },
+    "PC PC density 1.22 g/cm^3": {
+     "total_g": 1987.77,
+     "rear_load_pct": 9.595,
+     "passes_2000g_10pct": false
+    },
+    "PC fasteners +25 %": {
+     "total_g": 1993.42,
+     "rear_load_pct": 9.568,
+     "passes_2000g_10pct": false
+    },
+    "PC all four together": {
+     "total_g": 2050.22,
+     "rear_load_pct": 10.203,
+     "passes_2000g_10pct": false
+    }
+   }
+  }
+ }
+}

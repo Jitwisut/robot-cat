@@ -96,6 +96,8 @@ def cad_checks(root,config,constraints):
     if constraints['hinge_wall_mm']<1.6:dimension_errors.append('Hinge wall below 1.6 mm')
     if not constraints['axle_nut_full_thread']:dimension_errors.append('M8 bolt does not engage the full locking nut plus 2 mm')
     if constraints['front_drive_to_weapon_motor_clearance_mm']<1:dimension_errors.append('Drive/weapon motors leave less than 1 mm clearance')
+    if constraints.get('wedgelet_countersink_land_mm',1)<constraints.get('wedgelet_min_countersink_land_mm',0):dimension_errors.append('Wedgelet countersink land below minimum')
+    if constraints.get('upright_edge_tap_min_wall_mm',99)<constraints.get('upright_edge_tap_required_wall_mm',0):dimension_errors.append('Upright edge tap breaks into or nearly meets a side tap')
     if config.get('readiness_version') == 2:
         if constraints['weapon_shaft_engagement_mm']<10:dimension_errors.append('Weapon shaft engages less than 10 mm of pulley')
         if not constraints['weapon_set_screw_on_shaft']:dimension_errors.append('Weapon pulley set screw misses shaft')

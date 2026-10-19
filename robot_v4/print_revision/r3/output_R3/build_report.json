@@ -1,34 +1,46 @@
 {
   "schema_version": 1,
   "revision": "V4_PRINT_R3",
-  "input_sha256": "0d85eb2adbd8c2853dd3a3e24e9ef6f2df3b4e6f31d0cd7b3964cda69ee241dc",
-  "build_sha256": "319857d1a9f0a57815e203bf037db3a52d2c40b1a51fe7ead140aa4becb78534",
+  "input_sha256": "cbca3d94810344088de238aa37ad77bda1cd4fe91a6f6a449c02b39866274792",
+  "build_sha256": "99dc74819510d3f6489f41ca0cdcbf05890156753b4b5854a93f5ce8de9d2c63",
   "status": "DRAFT_NOT_RELEASED",
   "constraints": {
     "shaft_engagement": [
       {
         "motor": "drive_Front_L",
-        "shaft_min_engagement_mm": 10,
-        "needed_projection_mm": 16,
-        "available_projection_mm": 22
+        "shaft_min_engagement_mm": 7.5,
+        "engagement_mm": 7.8,
+        "needed_projection_mm": 11.2,
+        "available_projection_mm": 11.5,
+        "set_screw_x_mm": 65.0,
+        "nose_x_mm": 59.7
       },
       {
         "motor": "drive_Front_R",
-        "shaft_min_engagement_mm": 10,
-        "needed_projection_mm": 16,
-        "available_projection_mm": 22
+        "shaft_min_engagement_mm": 7.5,
+        "engagement_mm": 7.8,
+        "needed_projection_mm": 11.2,
+        "available_projection_mm": 11.5,
+        "set_screw_x_mm": 65.0,
+        "nose_x_mm": 59.7
       },
       {
         "motor": "drive_Rear_L",
-        "shaft_min_engagement_mm": 10,
-        "needed_projection_mm": 16,
-        "available_projection_mm": 22
+        "shaft_min_engagement_mm": 7.5,
+        "engagement_mm": 7.8,
+        "needed_projection_mm": 11.2,
+        "available_projection_mm": 11.5,
+        "set_screw_x_mm": 65.0,
+        "nose_x_mm": 59.7
       },
       {
         "motor": "drive_Rear_R",
-        "shaft_min_engagement_mm": 10,
-        "needed_projection_mm": 16,
-        "available_projection_mm": 22
+        "shaft_min_engagement_mm": 7.5,
+        "engagement_mm": 7.8,
+        "needed_projection_mm": 11.2,
+        "available_projection_mm": 11.5,
+        "set_screw_x_mm": 65.0,
+        "nose_x_mm": 59.7
       }
     ],
     "hinge_outer_radius_mm": 3.2,
@@ -44,6 +56,11 @@
     "weapon_shaft_engagement_mm": 13,
     "weapon_set_screw_on_shaft": true,
     "axle_socket_clearance_mm": 21,
+    "wedgelet_thickness_mm": 1.6,
+    "wedgelet_countersink_land_mm": 0.5499999999999998,
+    "wedgelet_min_countersink_land_mm": 0.5,
+    "upright_edge_tap_min_wall_mm": 3.5000000000001745,
+    "upright_edge_tap_required_wall_mm": 2.0,
     "front_drive_to_weapon_motor_clearance_mm": 1.3129366237023525
   },
   "manifest": [
@@ -59,7 +76,7 @@
         217.261,
         54.001
       ],
-      "sha256": "2dce2f59f48156a30bc214020ceea5d7189304383036404ff9d24214199739be",
+      "sha256": "c1dfc7b8f2105b08de808f41157e31f35726442db1607d05378013caa970478b",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -75,7 +92,7 @@
         174.004,
         5.005
       ],
-      "sha256": "ef1ed065c4e56bc50e2d8701809efda2a410af2fcf9db0bdd05def6b3a4ddcbd",
+      "sha256": "5f40c9f4eb5a1a1ce7897f6f1e7504e90ac19ce9cdbf53d2aba11241c965d74f",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -91,7 +108,7 @@
         41.2,
         14.0
       ],
-      "sha256": "7295315c57ffe0aad5012984b3bf2930343516793275e71efa8bc1b95ebdf5be",
+      "sha256": "3449ba668d3e4fc6aaf02c3cfa1d1ebcb3c1c19b1547f61bbc6ba4b26eca9611",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -107,7 +124,7 @@
         15.2,
         20.0
       ],
-      "sha256": "45489756d1a5857b7d1e2664afa78183f7d993d27e594244102cd7fd443e9a23",
+      "sha256": "9fad19935af3e72c7755e6f8e87c07ffdf3420b67c782a3c876430794e779513",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -123,7 +140,7 @@
         15.2,
         16.0
       ],
-      "sha256": "deb32b1f6f4a7982a447dcd704d0b4b0e762ebe6ec6dedea03d40be231b705b1",
+      "sha256": "a5ac245d09733eace6ac60dcc5b5037aaeeb5a79a54c53e83ffa4cb5c3601acb",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -139,7 +156,7 @@
         41.2,
         14.0
       ],
-      "sha256": "358cbb7fc12395e2760463ed1bece1a3f1e5731da59c03ee2c8d1cbc2529c4f0",
+      "sha256": "2d749a6e89fc07d4501bc333c18255f7ba75491fdbd6f3f70b27dccddca6553c",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -155,7 +172,7 @@
         15.2,
         20.0
       ],
-      "sha256": "ddedbcaab821b9f69162c4cfcd591d8323c9c46999861a798325262193b664fe",
+      "sha256": "31ec42d6f76c9e600bc87bc7826d2a40264819befd5f4f27827d59cd2ccea55a",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -171,26 +188,24 @@
         15.2,
         16.0
       ],
-      "sha256": "bcd55e5785fa3728566edc90a16001b694d1146d17e9a8ce2600dcf59810e7eb",
+      "sha256": "f247aa954b011b46b0131f143eebc4c5d1ec86016987023607084f74067ebe47",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
     {
       "file": "V4_R3_Wheel_Hub_PETG.stl",
-      "quantity": 4,
+      "quantity": 2,
       "material": "PETG",
       "bodies": [
         "Wheel_Hub_PETG_Front_L",
-        "Wheel_Hub_PETG_Front_R",
-        "Wheel_Hub_PETG_Rear_L",
-        "Wheel_Hub_PETG_Rear_R"
+        "Wheel_Hub_PETG_Rear_L"
       ],
       "dimensions_mm": [
         44.003,
         44.003,
-        16.003
+        18.302
       ],
-      "sha256": "6d55d7c0c1d3c60a7d2f67d7df003c1e0b4358954209105a0add96853ef3270f",
+      "sha256": "e4f5c8f473b27cab55dfc52d5c24aed8d10b9db6e6378140cbd313997b6d3b0e",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -209,7 +224,24 @@
         64.005,
         16.005
       ],
-      "sha256": "68d14f4a77d8db62f034cab77616cd9d5acf0e15eac67d2bc7358dec2a3a1459",
+      "sha256": "715a7ee329e63a6f981cd1eff7fa831dea7df7e3350f14b13956bab4f4748041",
+      "orientation": "Z-up, bed Z=0",
+      "status": "DRAFT_NOT_RELEASED"
+    },
+    {
+      "file": "V4_R3_Wheel_Hub_PETG_variant1.stl",
+      "quantity": 2,
+      "material": "PETG",
+      "bodies": [
+        "Wheel_Hub_PETG_Front_R",
+        "Wheel_Hub_PETG_Rear_R"
+      ],
+      "dimensions_mm": [
+        44.003,
+        44.003,
+        18.302
+      ],
+      "sha256": "2a080dad98c231cf265f45a94e7567fa1e47ebfbb9dd2fd5393b6d49d0201fbd",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -225,7 +257,7 @@
         16.0,
         10.0
       ],
-      "sha256": "28303ea398a360af6091e4ada38c19f1398432583c2af106e1aabc51f427596d",
+      "sha256": "cc898d675b0d375204d6916bb197cf96b846e3092359e7a0fadf4f0896aaeb6b",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -241,7 +273,7 @@
         13.0,
         13.0
       ],
-      "sha256": "1c481a83599cf38cb8bf676a8769af5335324b3c2ee8425935c3867c07bef79f",
+      "sha256": "1c133183f900d23174f4b5eea778c06487602a058b0b49401931ca7c4aa6b165",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -257,7 +289,7 @@
         11.0,
         13.0
       ],
-      "sha256": "15ae835f3795a6ec58a3eaa18f0b88a836d24f2d765ac652bf26d93194028529",
+      "sha256": "5472a700c526c8d78a0c32cc5ebff6dc84446340028210b3f80c107b7cbc43a0",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -273,7 +305,7 @@
         33.0,
         5.001
       ],
-      "sha256": "b90aa48a365bff5075a139ca906763d43c4742e24cdbc8d9af3a8e7bd4352715",
+      "sha256": "b9e3eaffc0cf70c3dab9cc8d4133564474f30455f57c2ce5b22226cfdc4804e5",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -289,7 +321,7 @@
         54.5,
         4.0
       ],
-      "sha256": "067157214c131304b578bc08e445f8d3988f21e80df64d749a6252a1342e2ec5",
+      "sha256": "d87f63854e1812a08c419b2408cb3e7eb1b9b1a97cb752bcb4e4902002b8ad6d",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -308,7 +340,7 @@
         8.001,
         30.601
       ],
-      "sha256": "ccb8b0231df9204a586e4555f8f307e415390bc2a2c8ff0510e48a592082bbca",
+      "sha256": "9e8b690cf4fceffeff2a6bbc72672c877239ca827d8b3e9e6b87009489933355",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     },
@@ -324,7 +356,7 @@
         16.0,
         16.0
       ],
-      "sha256": "c635be1935acda51a19cea41165de5eb15b5c9dffb631499d1dadf8e237f17a8",
+      "sha256": "7a89fc308bba5338fd68fc16130489191d846b652a203d4395b828521b35bbbc",
       "orientation": "Z-up, bed Z=0",
       "status": "DRAFT_NOT_RELEASED"
     }
@@ -1146,8 +1178,8 @@
   "mesh": [
     {
       "file": "V4_R3_Tub_TPU.stl",
-      "sha256": "2dce2f59f48156a30bc214020ceea5d7189304383036404ff9d24214199739be",
-      "triangles": 69584,
+      "sha256": "c1dfc7b8f2105b08de808f41157e31f35726442db1607d05378013caa970478b",
+      "triangles": 73120,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
       "winding_errors": 0,
@@ -1166,7 +1198,7 @@
     },
     {
       "file": "V4_R3_Lid_TPU_2mm.stl",
-      "sha256": "ef1ed065c4e56bc50e2d8701809efda2a410af2fcf9db0bdd05def6b3a4ddcbd",
+      "sha256": "5f40c9f4eb5a1a1ce7897f6f1e7504e90ac19ce9cdbf53d2aba11241c965d74f",
       "triangles": 7156,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1186,7 +1218,7 @@
     },
     {
       "file": "V4_R3_Wedgelet_Block_PETG_L.stl",
-      "sha256": "7295315c57ffe0aad5012984b3bf2930343516793275e71efa8bc1b95ebdf5be",
+      "sha256": "3449ba668d3e4fc6aaf02c3cfa1d1ebcb3c1c19b1547f61bbc6ba4b26eca9611",
       "triangles": 7836,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1206,7 +1238,7 @@
     },
     {
       "file": "V4_R3_Wedgelet_Carrier_PETG_L1.stl",
-      "sha256": "45489756d1a5857b7d1e2664afa78183f7d993d27e594244102cd7fd443e9a23",
+      "sha256": "9fad19935af3e72c7755e6f8e87c07ffdf3420b67c782a3c876430794e779513",
       "triangles": 2452,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1226,7 +1258,7 @@
     },
     {
       "file": "V4_R3_Wedgelet_Carrier_PETG_L2.stl",
-      "sha256": "deb32b1f6f4a7982a447dcd704d0b4b0e762ebe6ec6dedea03d40be231b705b1",
+      "sha256": "a5ac245d09733eace6ac60dcc5b5037aaeeb5a79a54c53e83ffa4cb5c3601acb",
       "triangles": 2452,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1246,7 +1278,7 @@
     },
     {
       "file": "V4_R3_Wedgelet_Block_PETG_R.stl",
-      "sha256": "358cbb7fc12395e2760463ed1bece1a3f1e5731da59c03ee2c8d1cbc2529c4f0",
+      "sha256": "2d749a6e89fc07d4501bc333c18255f7ba75491fdbd6f3f70b27dccddca6553c",
       "triangles": 7836,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1266,7 +1298,7 @@
     },
     {
       "file": "V4_R3_Wedgelet_Carrier_PETG_R1.stl",
-      "sha256": "ddedbcaab821b9f69162c4cfcd591d8323c9c46999861a798325262193b664fe",
+      "sha256": "31ec42d6f76c9e600bc87bc7826d2a40264819befd5f4f27827d59cd2ccea55a",
       "triangles": 2452,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1286,7 +1318,7 @@
     },
     {
       "file": "V4_R3_Wedgelet_Carrier_PETG_R2.stl",
-      "sha256": "bcd55e5785fa3728566edc90a16001b694d1146d17e9a8ce2600dcf59810e7eb",
+      "sha256": "f247aa954b011b46b0131f143eebc4c5d1ec86016987023607084f74067ebe47",
       "triangles": 2452,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1306,8 +1338,8 @@
     },
     {
       "file": "V4_R3_Wheel_Hub_PETG.stl",
-      "sha256": "6d55d7c0c1d3c60a7d2f67d7df003c1e0b4358954209105a0add96853ef3270f",
-      "triangles": 8696,
+      "sha256": "e4f5c8f473b27cab55dfc52d5c24aed8d10b9db6e6378140cbd313997b6d3b0e",
+      "triangles": 9704,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
       "winding_errors": 0,
@@ -1319,14 +1351,14 @@
       "dimensions_mm": [
         44.0,
         44.0,
-        16.0
+        18.3
       ],
       "min_z_mm": 0.0,
       "passed": true
     },
     {
       "file": "V4_R3_Wheel_Tyre_TPU95A.stl",
-      "sha256": "68d14f4a77d8db62f034cab77616cd9d5acf0e15eac67d2bc7358dec2a3a1459",
+      "sha256": "715a7ee329e63a6f981cd1eff7fa831dea7df7e3350f14b13956bab4f4748041",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1345,8 +1377,28 @@
       "passed": true
     },
     {
+      "file": "V4_R3_Wheel_Hub_PETG_variant1.stl",
+      "sha256": "2a080dad98c231cf265f45a94e7567fa1e47ebfbb9dd2fd5393b6d49d0201fbd",
+      "triangles": 9704,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "winding_errors": 0,
+      "degenerate_faces": 0,
+      "duplicate_faces": 0,
+      "components": 1,
+      "positive_volume": true,
+      "manifold_status": "Error.NoError",
+      "dimensions_mm": [
+        44.0,
+        44.0,
+        18.3
+      ],
+      "min_z_mm": 0.0,
+      "passed": true
+    },
+    {
       "file": "V4_R3_Hall_Post_PETG.stl",
-      "sha256": "28303ea398a360af6091e4ada38c19f1398432583c2af106e1aabc51f427596d",
+      "sha256": "cc898d675b0d375204d6916bb197cf96b846e3092359e7a0fadf4f0896aaeb6b",
       "triangles": 1040,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1366,7 +1418,7 @@
     },
     {
       "file": "V4_R3_Weapon_Mount_Foot_PETG_1.stl",
-      "sha256": "1c481a83599cf38cb8bf676a8769af5335324b3c2ee8425935c3867c07bef79f",
+      "sha256": "1c133183f900d23174f4b5eea778c06487602a058b0b49401931ca7c4aa6b165",
       "triangles": 2060,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1386,7 +1438,7 @@
     },
     {
       "file": "V4_R3_Weapon_Mount_Foot_PETG_2.stl",
-      "sha256": "15ae835f3795a6ec58a3eaa18f0b88a836d24f2d765ac652bf26d93194028529",
+      "sha256": "5472a700c526c8d78a0c32cc5ebff6dc84446340028210b3f80c107b7cbc43a0",
       "triangles": 2060,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1406,7 +1458,7 @@
     },
     {
       "file": "V4_R3_Battery_Tray_PETG.stl",
-      "sha256": "b90aa48a365bff5075a139ca906763d43c4742e24cdbc8d9af3a8e7bd4352715",
+      "sha256": "b9e3eaffc0cf70c3dab9cc8d4133564474f30455f57c2ce5b22226cfdc4804e5",
       "triangles": 2364,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1426,7 +1478,7 @@
     },
     {
       "file": "V4_R3_Electronics_Platform_PETG.stl",
-      "sha256": "067157214c131304b578bc08e445f8d3988f21e80df64d749a6252a1342e2ec5",
+      "sha256": "d87f63854e1812a08c419b2408cb3e7eb1b9b1a97cb752bcb4e4902002b8ad6d",
       "triangles": 5828,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1446,7 +1498,7 @@
     },
     {
       "file": "V4_R3_Electronics_Standoff_PETG.stl",
-      "sha256": "ccb8b0231df9204a586e4555f8f307e415390bc2a2c8ff0510e48a592082bbca",
+      "sha256": "9e8b690cf4fceffeff2a6bbc72672c877239ca827d8b3e9e6b87009489933355",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1466,7 +1518,7 @@
     },
     {
       "file": "V4_R3_Disconnect_Collar_PETG.stl",
-      "sha256": "c635be1935acda51a19cea41165de5eb15b5c9dffb631499d1dadf8e237f17a8",
+      "sha256": "7a89fc308bba5338fd68fc16130489191d846b652a203d4395b828521b35bbbc",
       "triangles": 2056,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1488,7 +1540,7 @@
   "trial_mesh": [
     {
       "file": "D_Shaft_Clearance_000_PETG.stl",
-      "sha256": "3799ce9a534561e99f6971d9a0ba16c8717de6a43734a19d9bbc17b5dabd8944",
+      "sha256": "db931a82a4e550f7ba185b62878327eef710384eb1f071901fa2f8d312b872f9",
       "triangles": 468,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1508,7 +1560,7 @@
     },
     {
       "file": "Pin_Vertical_Clearance_000_PETG.stl",
-      "sha256": "5fe4e928923ad3d9558dd084b0b87c4394eba9a2b89133faec895148386954bd",
+      "sha256": "b2bbe08eef1430e826852fd1c936bf7c41fd29cf2b14135cc5ac13d240f8eccd",
       "triangles": 1024,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1528,7 +1580,7 @@
     },
     {
       "file": "Pin_Horizontal_Clearance_000_PETG.stl",
-      "sha256": "ee36779a2433115565b6eedfa4f8a34d4193e69467cd4fbd70f09a5ada405053",
+      "sha256": "a29b5f923787c0008f153c782cb89892d969c63f6a501f409bc854102684ff37",
       "triangles": 1024,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1548,7 +1600,7 @@
     },
     {
       "file": "D_Shaft_Clearance_010_PETG.stl",
-      "sha256": "efa59121970a364ba7a0579c0898c09a2cc99d7660bc26abc94a00ac7e363689",
+      "sha256": "0e9266c8dc52221ff702463b334ea08994d2f5f38572beef82ce93220ba2ffc7",
       "triangles": 468,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1568,7 +1620,7 @@
     },
     {
       "file": "Pin_Vertical_Clearance_010_PETG.stl",
-      "sha256": "276016c3f73eb1c2d46bf0250ac5d35a469afac85ea4a15e43fccf35f81bdcd0",
+      "sha256": "58db98628f480aa1ac935e86e99210222ec308b9bbbd550c3050bb87debe0b39",
       "triangles": 1024,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1588,7 +1640,7 @@
     },
     {
       "file": "Pin_Horizontal_Clearance_010_PETG.stl",
-      "sha256": "65c7d2086f799dcd45b4c846a40a813d8d8a3b49e81c142aca15a86d0b03facb",
+      "sha256": "80912f5e10d8c53d3931f6a320b3f2aafb6760dfd147389f538f566e220c3d89",
       "triangles": 1024,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1608,7 +1660,7 @@
     },
     {
       "file": "D_Shaft_Clearance_020_PETG.stl",
-      "sha256": "c7420ca563aeb1aca59e6eaae56cb3863ba5861487cfed437bdfc9dc34ef3c8d",
+      "sha256": "43a06106a7332ae02c755bf4ff265c76b8dbb70b5b11ec67ba9168e76b13b054",
       "triangles": 468,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1628,7 +1680,7 @@
     },
     {
       "file": "Pin_Vertical_Clearance_020_PETG.stl",
-      "sha256": "7dd7073d878917afa64b72a0ff34a5cbf18cf559eaecf652046b2d32de83496a",
+      "sha256": "88b5f2bc3f99d0cc1fdcf02270c224b0fc181a67ba35780b8cb8214be06bb37b",
       "triangles": 1024,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1648,7 +1700,7 @@
     },
     {
       "file": "Pin_Horizontal_Clearance_020_PETG.stl",
-      "sha256": "bbe8ba9b5fe1c83eb01f2d0f8c016fa3902d2b9ec3f0b948f310c5b7429573e5",
+      "sha256": "9cebf19a5f23f61a7cad7f7afcab594606188a2286823ed61771ae663e09727f",
       "triangles": 1024,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1668,7 +1720,7 @@
     },
     {
       "file": "D_Shaft_Clearance_030_PETG.stl",
-      "sha256": "fd03ded133272c6daa6490c8e0d500c3d2ada93ad397c72ea09a692d2bf663f7",
+      "sha256": "f16f0ea22518b7edecab196ac688f295dafa20e07464126b7600168f6c9249aa",
       "triangles": 476,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1688,7 +1740,7 @@
     },
     {
       "file": "Pin_Vertical_Clearance_030_PETG.stl",
-      "sha256": "0a6e75911477ec130f317be92eadf545268b2408211497a18cfbfc044be4167c",
+      "sha256": "4f1ffb32e32fe5ad4c5ee342965867e5290129404fbae58235e0df0c3d4a0ddb",
       "triangles": 1024,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1708,7 +1760,7 @@
     },
     {
       "file": "Pin_Horizontal_Clearance_030_PETG.stl",
-      "sha256": "1121a8b74a62a175b46cd53a1c4576bcd3ee3995a22e18ccbe270692dd95051f",
+      "sha256": "79d1c23619e76d211eed9152749cb11e3d41b3d603c6fadfff959145bf25a9b6",
       "triangles": 1024,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1728,7 +1780,7 @@
     },
     {
       "file": "Insert_Hole_D4.4_PETG.stl",
-      "sha256": "0c0966759113479ad74df6d58d089ca6edf0d15cef2c10af52912d78158a2550",
+      "sha256": "d55653f6bcd4956b498ee7630c2f469b0b7d8a13616db5e18269f4f9a3da512a",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1748,7 +1800,7 @@
     },
     {
       "file": "Insert_Hole_D4.4_TPU95A.stl",
-      "sha256": "0c0966759113479ad74df6d58d089ca6edf0d15cef2c10af52912d78158a2550",
+      "sha256": "d55653f6bcd4956b498ee7630c2f469b0b7d8a13616db5e18269f4f9a3da512a",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1768,7 +1820,7 @@
     },
     {
       "file": "Insert_Horizontal_D4.4_PETG.stl",
-      "sha256": "b47417dd434fdb0a09546d7cc947e07ed52017a437f393ae6e5c9d6ed8f97966",
+      "sha256": "05d6475f56d012207c8f444f21214403bb94d0750d80c3b05284e73b7799780f",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1788,7 +1840,7 @@
     },
     {
       "file": "Insert_Hole_D4.5_PETG.stl",
-      "sha256": "2a7567d159e94f39f04f9463347725782f31f0826950aceb3c0bd86b91c4cd26",
+      "sha256": "3d58724368994729399216a28da17b234bc48484387e5d2ad3ed18ac5e7de79c",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1808,7 +1860,7 @@
     },
     {
       "file": "Insert_Hole_D4.5_TPU95A.stl",
-      "sha256": "2a7567d159e94f39f04f9463347725782f31f0826950aceb3c0bd86b91c4cd26",
+      "sha256": "3d58724368994729399216a28da17b234bc48484387e5d2ad3ed18ac5e7de79c",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1828,7 +1880,7 @@
     },
     {
       "file": "Insert_Horizontal_D4.5_PETG.stl",
-      "sha256": "d982c7310a09027ac6a0e9cba1b066606095695855bd318ca32f762a86bdd21f",
+      "sha256": "747505d81cda4d6071c15e604b99f6f1da545f0d39202a971cd3b21c9fe35e2d",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1848,7 +1900,7 @@
     },
     {
       "file": "Insert_Hole_D4.6_PETG.stl",
-      "sha256": "d9a81e21bc9a4e199babbdb880af6cabda1e21f4111ac917e3c0052ab5eaffbe",
+      "sha256": "ab943f0e0e4347b172a3c115853aa7f3bdf7e36ead888718731d9dca7efc6210",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1868,7 +1920,7 @@
     },
     {
       "file": "Insert_Hole_D4.6_TPU95A.stl",
-      "sha256": "d9a81e21bc9a4e199babbdb880af6cabda1e21f4111ac917e3c0052ab5eaffbe",
+      "sha256": "ab943f0e0e4347b172a3c115853aa7f3bdf7e36ead888718731d9dca7efc6210",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1888,7 +1940,7 @@
     },
     {
       "file": "Insert_Horizontal_D4.6_PETG.stl",
-      "sha256": "6380ab59772bf50b057a13ea5b77a8581d8987c093be09d65bac03bf95fbefb1",
+      "sha256": "e42a532010509b2a6d76964f50fc7378df5f7e6f70adc1c25f2cce97be4667e7",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1908,7 +1960,7 @@
     },
     {
       "file": "Insert_Hole_D4.7_PETG.stl",
-      "sha256": "6ae7fe20a3ce2e84848305225d0a8bab9b127334d08c884973c6d7810415f457",
+      "sha256": "ee89426f253feb4a1e94fbc70d2954014d09d25786f8be6c2d03501e3d8a2976",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1928,7 +1980,7 @@
     },
     {
       "file": "Insert_Hole_D4.7_TPU95A.stl",
-      "sha256": "6ae7fe20a3ce2e84848305225d0a8bab9b127334d08c884973c6d7810415f457",
+      "sha256": "ee89426f253feb4a1e94fbc70d2954014d09d25786f8be6c2d03501e3d8a2976",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1948,7 +2000,7 @@
     },
     {
       "file": "Insert_Horizontal_D4.7_PETG.stl",
-      "sha256": "bc034077425f13dc840eae9f2cce4e436aa029f3f8e4f8c6de54538776409b2d",
+      "sha256": "40d0ff06021800ed173767f7db6a0be2e28cbd9983fd11aecd183adc66141d4f",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1968,7 +2020,7 @@
     },
     {
       "file": "Insert_Hole_D4.8_PETG.stl",
-      "sha256": "ea7b4e81d32a0957be150fdf5482639542397e2a459369645afe8b625fc5af7d",
+      "sha256": "6ad99325e79c2caf8df1c38cb5c29265021463d70cbe1cbaaa4a140bfb2ef8d5",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -1988,7 +2040,7 @@
     },
     {
       "file": "Insert_Hole_D4.8_TPU95A.stl",
-      "sha256": "ea7b4e81d32a0957be150fdf5482639542397e2a459369645afe8b625fc5af7d",
+      "sha256": "6ad99325e79c2caf8df1c38cb5c29265021463d70cbe1cbaaa4a140bfb2ef8d5",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2008,7 +2060,7 @@
     },
     {
       "file": "Insert_Horizontal_D4.8_PETG.stl",
-      "sha256": "84b62dc9859da78590f6ad90c3b88c161b4df5249fb72681df3b894c0869425a",
+      "sha256": "c33d0f1ade8f0325ab049e1d7bb16147e2a595004d97f56bffb9cd4c99baec3b",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2028,7 +2080,7 @@
     },
     {
       "file": "Tyre_Ring_ID43.4_TPU95A.stl",
-      "sha256": "3f4c2d3371fb9dfa8f0145aeeb90ada3fd03fa47d14f2ef31fa7cdadd20dce5d",
+      "sha256": "d7fc0687aa043c5a5ed16b8468f53bb41f24a71b4ef709fa7540c6a0a91615b2",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2048,7 +2100,7 @@
     },
     {
       "file": "Tyre_Ring_ID43.5_TPU95A.stl",
-      "sha256": "a3fe83d4f3a1026469cfaab13356278ef19b0201ae65175dff6a63606552bf9c",
+      "sha256": "96333647c53eb2602a6668a54395b120ab788c2a2a9ab3035b6042af261ef4de",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2068,7 +2120,7 @@
     },
     {
       "file": "Tyre_Ring_ID43.6_TPU95A.stl",
-      "sha256": "ca3d2330db310f6b7f784da69c9f6647e087a520624cd8ac0f050697750678d6",
+      "sha256": "4c4b3d8f54fbc8c95658e73685522717621743abb3051d08a7c87a7fea04761b",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2088,7 +2140,7 @@
     },
     {
       "file": "Tyre_Ring_ID43.7_TPU95A.stl",
-      "sha256": "544a883ef0ae4cb997f2b86ad47b80aac792868ca9216df2fb9ae3539de38489",
+      "sha256": "22e01da6771b64a1bf4bdc44b7d855367604aabf16605f468c4e86e2fc3081e9",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2108,7 +2160,7 @@
     },
     {
       "file": "Tyre_Ring_ID43.8_TPU95A.stl",
-      "sha256": "2f7b3e745117a5ddb5ad7c53a4c9b32baff3537bab9eb2c0ce2eae00305eac01",
+      "sha256": "679b68358808b4d9e8bad317e528b2de4ed05b60d01df958fd4a468214c542f6",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2128,7 +2180,7 @@
     },
     {
       "file": "Tyre_Ring_ID43.9_TPU95A.stl",
-      "sha256": "02fb39c01e20123b97940a910aab436d879d7703c636afaac0f12eb0c3d0cc3b",
+      "sha256": "e71d237e6fc27ba85e6f8069d24dccf48de31e4f007788231b59e0f27a80e3c5",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2148,7 +2200,7 @@
     },
     {
       "file": "Tyre_Ring_ID44.0_TPU95A.stl",
-      "sha256": "5ae7c6aa55272c83873331b2f06cdd008be795c6df878a437f9d906c4c37670b",
+      "sha256": "d119d8ce5c29a2db98c3bfe7d5894bc15d5c5f30055306e090b77f58ca6dc707",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2168,7 +2220,7 @@
     },
     {
       "file": "Lid_Insert_Wall_TPU95A.stl",
-      "sha256": "b9d3e37fcb0fb4127c1b6a94a2bc227a69a1e5940ffe87b4469d78edb153e6c0",
+      "sha256": "0d2dc575029877a3976aeca35eb10a4f278f306a4f9d8abb74f36a103a09a578",
       "triangles": 1020,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2188,7 +2240,7 @@
     },
     {
       "file": "Lid_Fastener_TPU95A.stl",
-      "sha256": "646424b759eccc8967b5d2a3f518ad734dd7e6dc84f7725e6934921c02c45ed9",
+      "sha256": "f3238a4ea8ddc60e05a4b144906a51076a82aa89f05c998f51d2065308efb131",
       "triangles": 1024,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2208,7 +2260,7 @@
     },
     {
       "file": "Trial_Wedgelet_Block_PETG_R.stl",
-      "sha256": "358cbb7fc12395e2760463ed1bece1a3f1e5731da59c03ee2c8d1cbc2529c4f0",
+      "sha256": "2d749a6e89fc07d4501bc333c18255f7ba75491fdbd6f3f70b27dccddca6553c",
       "triangles": 7836,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2228,7 +2280,7 @@
     },
     {
       "file": "Trial_Wedgelet_Carrier_PETG_R1.stl",
-      "sha256": "ab1d4a9660536a1c87d90e0d7b5c270c38b65c0915b844ffa85ddfeb5946a5be",
+      "sha256": "fc24523336988ee5d204f7270c7e1df923d419bf855b6634a9996822197cd9f0",
       "triangles": 2452,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2248,7 +2300,7 @@
     },
     {
       "file": "Trial_Wedgelet_Carrier_PETG_R2.stl",
-      "sha256": "6e72f54429d474914354130af2dbd88c0d017cb42850ad6c18b6e2c85a7b67c7",
+      "sha256": "916c70d3cab40430c49bee8f3bcd8eceea65135127ca917cd0d8910ea20438a8",
       "triangles": 2452,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2268,8 +2320,8 @@
     },
     {
       "file": "Trial_Wheel_Hub_PETG_Front_L.stl",
-      "sha256": "4900c6c1f2dfe5d818c8ad7760cbd268f72a9ab18eaa0d06b8a0bfd90273e677",
-      "triangles": 8696,
+      "sha256": "00ddd073902a44a652bce0933afab84c81d0081dd3d801829e1059317b37b414",
+      "triangles": 9704,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
       "winding_errors": 0,
@@ -2281,14 +2333,14 @@
       "dimensions_mm": [
         44.0,
         44.0,
-        16.0
+        18.3
       ],
       "min_z_mm": 0.0,
       "passed": true
     },
     {
       "file": "Trial_Wheel_Tyre_TPU_Front_L.stl",
-      "sha256": "17df6205d7887b687b5765b989d003bb3ab6e8d85b6890f1d4ec744f9487bf5a",
+      "sha256": "0d2ec30523c98bdba9a42c36de68c3870962b8b34472dc109594cc3856847262",
       "triangles": 2016,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
@@ -2308,50 +2360,50 @@
     }
   ],
   "mass": {
-    "rotor_inertia_kg_m2": 6.666386279743093e-05,
+    "rotor_inertia_kg_m2": 6.666386279743039e-05,
     "estimated": true,
-    "total_g": 1975.48,
+    "total_g": 1976.1,
     "centroid_mm": [
-      -1.362,
-      8.774,
-      30.5917
+      -1.3616,
+      8.6101,
+      30.6074
     ],
-    "rear_static_load_fraction": 0.10484,
+    "rear_static_load_fraction": 0.1067,
     "rear_load_passed": true,
     "mass_target_passed": false,
     "mass_limit_passed": true,
     "chassis_centroid_mm": [
-      -1.8167,
-      -3.3731,
+      -1.817,
+      -3.3954,
       31.3311
     ],
-    "chassis_mass_g": 1481.0885,
+    "chassis_mass_g": 1480.7791,
     "chassis_inertia_kg_m2": [
       [
-        0.005360914361269207,
-        0.00014324529371902397,
-        4.4260521541582714e-05
+        0.005358524162852884,
+        0.00014330510921548668,
+        4.426057436362734e-05
       ],
       [
-        0.00014324529371902397,
-        0.003099827065850954,
-        -3.422949158092533e-05
+        0.00014330510921548668,
+        0.0031213291083092573,
+        -3.413043994933236e-05
       ],
       [
-        4.4260521541582714e-05,
-        -3.422949158092533e-05,
-        0.0079099223011976
+        4.426057436362734e-05,
+        -3.413043994933236e-05,
+        0.00792933972139727
       ]
     ],
     "parts": [
       {
         "part": "Tub_TPU",
         "material": "TPU95A",
-        "mass_g": 388.8705,
+        "mass_g": 388.9527,
         "centroid_mm": [
-          -0.073066293905694,
-          -10.594257225995134,
-          25.551842060222725
+          -0.07305086161025567,
+          -10.602413174718565,
+          25.555839448182024
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2360,31 +2412,31 @@
         "material": "TPU95A",
         "mass_g": 51.2902,
         "centroid_mm": [
-          -0.022686246267847956,
-          -22.456196929248186,
-          59.06248588262599
+          -0.022686246267847925,
+          -22.456196929248215,
+          59.062485882626
         ],
         "method": "estimated CAD volume/density"
       },
       {
         "part": "Upright_6061_6mm_L",
         "material": "6061",
-        "mass_g": 32.9831,
+        "mass_g": 32.7644,
         "centroid_mm": [
           -29.999999999999996,
-          85.8369930328073,
-          32.981609259375965
+          85.92510494522827,
+          32.98816125253891
         ],
         "method": "estimated CAD volume/density"
       },
       {
         "part": "Upright_6061_6mm_R",
         "material": "6061",
-        "mass_g": 33.3486,
+        "mass_g": 33.1299,
         "centroid_mm": [
-          30.000000000000007,
-          85.60644794793484,
-          33.08594058691144
+          30.000000000000004,
+          85.69206583653056,
+          33.09310899114016
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2393,7 +2445,7 @@
         "material": "6061",
         "mass_g": 6.1737,
         "centroid_mm": [
-          -3.4803875481879757e-16,
+          -4.474783990527398e-16,
           70.74711935312952,
           58.5
         ],
@@ -2404,8 +2456,8 @@
         "material": "6061",
         "mass_g": 5.0518,
         "centroid_mm": [
-          2.4304398929989026e-16,
-          69.00000000000001,
+          1.8835909170741494e-15,
+          69.0,
           5.5
         ],
         "method": "estimated CAD volume/density"
@@ -2415,7 +2467,7 @@
         "material": "TPU95A",
         "mass_g": 3,
         "centroid_mm": [
-          -6.94710298365174e-16,
+          1.48866492506823e-16,
           69.0,
           2.500000000000001
         ],
@@ -2448,8 +2500,8 @@
         "material": "6061",
         "mass_g": 32.2624,
         "centroid_mm": [
-          3.472719915118539e-16,
-          94.99999999999997,
+          3.6630059378647614e-16,
+          94.99999999999996,
           31.999999999999996
         ],
         "method": "estimated CAD volume/density"
@@ -2492,7 +2544,7 @@
         "material": "6061",
         "mass_g": 2.9641,
         "centroid_mm": [
-          -1.0517707279971932e-16,
+          1.650470988549442e-16,
           95.00000000000003,
           32.0
         ],
@@ -2514,9 +2566,9 @@
         "material": "steel",
         "mass_g": 37.4786,
         "centroid_mm": [
-          -1.4968086503575437,
+          -1.4968086503575453,
           95.0,
-          32.0
+          31.999999999999993
         ],
         "method": "whole axle set measured/nominal, volume apportioned"
       },
@@ -2536,9 +2588,9 @@
         "material": "6061",
         "mass_g": 13.5947,
         "centroid_mm": [
-          0.3910749037734511,
-          47.48976309158733,
-          42.49999997807663
+          0.3910749037732211,
+          47.48976309158673,
+          42.499999978076545
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2558,9 +2610,9 @@
         "material": "belt",
         "mass_g": 5.25,
         "centroid_mm": [
-          3.8337850370920274e-17,
+          -5.831748896137434e-17,
           74.70347270082314,
-          52.8728526941999
+          52.872852694199906
         ],
         "method": "belt measured/nominal"
       },
@@ -2569,7 +2621,7 @@
         "material": "belt",
         "mass_g": 5.25,
         "centroid_mm": [
-          4.1876943532040823e-17,
+          -4.4214754671560186e-17,
           67.79652729917687,
           21.627147305800094
         ],
@@ -2578,55 +2630,55 @@
       {
         "part": "Wedgelet_L",
         "material": "steel",
-        "mass_g": 26.5836,
+        "mass_g": 25.5857,
         "centroid_mm": [
-          -57.46073026091989,
-          114.03903388479134,
-          11.472118653720466
+          -57.44028081870579,
+          114.29259741497451,
+          11.266027787508818
         ],
         "method": "estimated CAD volume/density"
       },
       {
         "part": "Wedgelet_R",
         "material": "steel",
-        "mass_g": 26.5836,
+        "mass_g": 25.5857,
         "centroid_mm": [
-          57.46073026091989,
-          114.03903388479134,
-          11.472118653720466
+          57.44028081870578,
+          114.29259741497451,
+          11.266027787508818
         ],
         "method": "estimated CAD volume/density"
       },
       {
         "part": "Wedgelet_Block_PETG_L",
         "material": "PETG",
-        "mass_g": 5.4801,
+        "mass_g": 5.503,
         "centroid_mm": [
-          -70.17902002375119,
-          88.19413397435531,
-          11.127417262503002
+          -70.20332915183677,
+          88.18497100110388,
+          11.137325459730059
         ],
         "method": "estimated CAD volume/density"
       },
       {
         "part": "Wedgelet_Carrier_PETG_L1",
         "material": "PETG",
-        "mass_g": 1.6557,
+        "mass_g": 1.6614,
         "centroid_mm": [
-          -48.99999999999999,
-          105.99374885170903,
-          12.721822892001086
+          -49.00000000000001,
+          106.00031002466666,
+          12.720724019063884
         ],
         "method": "estimated CAD volume/density"
       },
       {
         "part": "Wedgelet_Carrier_PETG_L2",
         "material": "PETG",
-        "mass_g": 1.311,
+        "mass_g": 1.3168,
         "centroid_mm": [
           -74.99999999999999,
-          105.97419970272917,
-          12.72509700638552
+          105.98256363324006,
+          12.723696205500296
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2637,7 +2689,7 @@
         "centroid_mm": [
           -61.881024092847326,
           102.00000000000001,
-          14.500000000000002
+          14.5
         ],
         "method": "pin measured/nominal"
       },
@@ -2655,33 +2707,33 @@
       {
         "part": "Wedgelet_Block_PETG_R",
         "material": "PETG",
-        "mass_g": 5.4801,
+        "mass_g": 5.503,
         "centroid_mm": [
-          70.17902002375119,
-          88.19413397435531,
-          11.127417262503002
+          70.2033291518368,
+          88.18497100110392,
+          11.137325459730063
         ],
         "method": "estimated CAD volume/density"
       },
       {
         "part": "Wedgelet_Carrier_PETG_R1",
         "material": "PETG",
-        "mass_g": 1.6557,
+        "mass_g": 1.6614,
         "centroid_mm": [
-          49.000000000000014,
-          105.99374885170903,
-          12.721822892001086
+          49.00000000000001,
+          106.00031002466666,
+          12.720724019063884
         ],
         "method": "estimated CAD volume/density"
       },
       {
         "part": "Wedgelet_Carrier_PETG_R2",
         "material": "PETG",
-        "mass_g": 1.311,
+        "mass_g": 1.3168,
         "centroid_mm": [
-          75.00000000000001,
-          105.97419970272914,
-          12.725097006385521
+          74.99999999999999,
+          105.98256363324006,
+          12.723696205500294
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2690,9 +2742,9 @@
         "material": "steel",
         "mass_g": 3.25,
         "centroid_mm": [
-          61.881024092847326,
+          61.88102409284733,
           101.99999999999999,
-          14.499999999999996
+          14.5
         ],
         "method": "pin measured/nominal"
       },
@@ -2712,9 +2764,9 @@
         "material": "6061",
         "mass_g": 8.4665,
         "centroid_mm": [
-          -97.15517178292565,
-          -6.510667913527395,
-          8.49280840193683
+          -97.15517178292566,
+          -6.510667913527417,
+          8.492808401936832
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2725,7 +2777,7 @@
         "centroid_mm": [
           97.15517178292565,
           -6.510667913527396,
-          8.49280840193684
+          8.492808401936838
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2734,7 +2786,7 @@
         "material": "6061",
         "mass_g": 7.2018,
         "centroid_mm": [
-          -1.0243861260032196e-14,
+          -2.7171339189267553e-16,
           -119.15332802472112,
           8.495441561541584
         ],
@@ -2745,8 +2797,8 @@
         "material": "purchased",
         "mass_g": 110,
         "centroid_mm": [
-          -30.000000000000004,
-          18.000000000000004,
+          -31.1,
+          17.999999999999996,
           32.0
         ],
         "method": "nominal, unverified"
@@ -2754,11 +2806,11 @@
       {
         "part": "Wheel_Hub_PETG_Front_L",
         "material": "PETG",
-        "mass_g": 20.0269,
+        "mass_g": 20.7518,
         "centroid_mm": [
-          -69.9999998293064,
-          18.33105820130266,
-          31.999999988162124
+          -69.74630798399481,
+          18.332660569600726,
+          31.999999988397505
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2767,8 +2819,8 @@
         "material": "TPU95A",
         "mass_g": 26.4884,
         "centroid_mm": [
-          -70.0,
-          17.99999999999999,
+          -69.99999999999999,
+          17.999999999999986,
           32.0
         ],
         "method": "estimated CAD volume/density"
@@ -2778,8 +2830,8 @@
         "material": "purchased",
         "mass_g": 110,
         "centroid_mm": [
-          30.0,
-          18.0,
+          31.099999999999998,
+          17.999999999999996,
           32.0
         ],
         "method": "nominal, unverified"
@@ -2787,11 +2839,11 @@
       {
         "part": "Wheel_Hub_PETG_Front_R",
         "material": "PETG",
-        "mass_g": 20.0269,
+        "mass_g": 20.7518,
         "centroid_mm": [
-          70.00000017069364,
-          18.331058201302664,
-          31.999999988162124
+          69.7463083126023,
+          18.3326605732156,
+          31.9999999885813
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2800,8 +2852,8 @@
         "material": "TPU95A",
         "mass_g": 26.4884,
         "centroid_mm": [
-          70.0,
-          17.99999999999999,
+          70.00000000000003,
+          17.999999999999996,
           32.0
         ],
         "method": "estimated CAD volume/density"
@@ -2811,7 +2863,7 @@
         "material": "purchased",
         "mass_g": 110,
         "centroid_mm": [
-          -30.0,
+          -31.1,
           -70.0,
           32.0
         ],
@@ -2820,11 +2872,11 @@
       {
         "part": "Wheel_Hub_PETG_Rear_L",
         "material": "PETG",
-        "mass_g": 20.0269,
+        "mass_g": 20.7518,
         "centroid_mm": [
-          -69.99999982930625,
-          -69.66894179869745,
-          31.999999988162095
+          -69.74630798399458,
+          -69.66733943039921,
+          31.999999988397423
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2833,8 +2885,8 @@
         "material": "TPU95A",
         "mass_g": 26.4884,
         "centroid_mm": [
-          -70.0,
-          -70.00000000000001,
+          -69.99999999999999,
+          -70.00000000000003,
           32.0
         ],
         "method": "estimated CAD volume/density"
@@ -2844,7 +2896,7 @@
         "material": "purchased",
         "mass_g": 110,
         "centroid_mm": [
-          30.0,
+          31.099999999999998,
           -70.0,
           32.0
         ],
@@ -2853,11 +2905,11 @@
       {
         "part": "Wheel_Hub_PETG_Rear_R",
         "material": "PETG",
-        "mass_g": 20.0269,
+        "mass_g": 20.7518,
         "centroid_mm": [
-          70.00000017069367,
-          -69.66894179869738,
-          31.999999988162106
+          69.74630831260234,
+          -69.66733942678441,
+          31.9999999885813
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2866,7 +2918,7 @@
         "material": "TPU95A",
         "mass_g": 26.4884,
         "centroid_mm": [
-          70.0,
+          70.00000000000003,
           -70.00000000000001,
           32.0
         ],
@@ -2877,7 +2929,7 @@
         "material": "purchased",
         "mass_g": 80,
         "centroid_mm": [
-          5.01580408390489e-16,
+          -2.012279232133096e-16,
           -40.50000000000001,
           21.6
         ],
@@ -2899,7 +2951,7 @@
         "material": "purchased",
         "mass_g": 10,
         "centroid_mm": [
-          -4.66866171973944e-16,
+          -1.8225465692468108e-16,
           -15.75,
           47.6
         ],
@@ -2956,7 +3008,7 @@
         "centroid_mm": [
           10.255464461243154,
           57.99222362127017,
-          30.525436200810272
+          30.525436200810287
         ],
         "method": "estimated CAD volume/density"
       },
@@ -2987,9 +3039,9 @@
         "material": "steel",
         "mass_g": 4.88,
         "centroid_mm": [
-          37.85000000000001,
+          37.849999999999994,
           94.99999999999996,
-          31.99999999999999
+          32.000000000000014
         ],
         "method": "whole axle set measured/nominal, volume apportioned"
       },
@@ -2999,7 +3051,7 @@
         "mass_g": 1.8207,
         "centroid_mm": [
           -33.800000000000004,
-          95.00000000000001,
+          95.0,
           32.0
         ],
         "method": "whole axle set measured/nominal, volume apportioned"
@@ -3009,8 +3061,8 @@
         "material": "steel",
         "mass_g": 1.8207,
         "centroid_mm": [
-          33.800000000000004,
-          95.0,
+          33.8,
+          94.99999999999997,
           32.0
         ],
         "method": "whole axle set measured/nominal, volume apportioned"
@@ -3042,9 +3094,9 @@
         "material": "PETG",
         "mass_g": 4.7332,
         "centroid_mm": [
-          3.4799275312886146e-14,
-          -40.500000000000135,
-          8.363799536700926
+          4.651291637192216e-14,
+          -40.500000000000114,
+          8.363799536700919
         ],
         "method": "estimated CAD volume/density"
       },
@@ -3053,7 +3105,7 @@
         "material": "PETG",
         "mass_g": 13.0795,
         "centroid_mm": [
-          -0.021682338576972195,
+          -0.021682338576970075,
           -29.452422501857356,
           38.641354412540586
         ],
@@ -3065,8 +3117,8 @@
         "mass_g": 1.2805,
         "centroid_mm": [
           -56.99999999999999,
-          -51.99999999999999,
-          22.299999999999997
+          -52.00000000000001,
+          22.3
         ],
         "method": "estimated CAD volume/density"
       },
@@ -3075,9 +3127,9 @@
         "material": "PETG",
         "mass_g": 1.2805,
         "centroid_mm": [
-          -56.99999999999999,
+          -57.0,
           -8.0,
-          22.299999999999997
+          22.3
         ],
         "method": "estimated CAD volume/density"
       },
@@ -3086,9 +3138,9 @@
         "material": "PETG",
         "mass_g": 1.2805,
         "centroid_mm": [
-          56.99999999999999,
-          -51.99999999999999,
-          22.299999999999997
+          57.00000000000001,
+          -52.00000000000001,
+          22.3
         ],
         "method": "estimated CAD volume/density"
       },
@@ -3099,7 +3151,7 @@
         "centroid_mm": [
           57.0,
           -8.0,
-          22.299999999999997
+          22.3
         ],
         "method": "estimated CAD volume/density"
       },
@@ -3177,7 +3229,7 @@
     ]
   },
   "simulation": {
-    "build_sha256": "319857d1a9f0a57815e203bf037db3a52d2c40b1a51fe7ead140aa4becb78534",
+    "build_sha256": "99dc74819510d3f6489f41ca0cdcbf05890156753b4b5854a93f5ce8de9d2c63",
     "model": "MuJoCo primitives + CAD mass/centroid/inertia, unverified purchased masses",
     "limitations": [
       "Rigid-body contacts do not predict breakage",
@@ -3198,33 +3250,33 @@
       "drive_stall_torque_nm": 0.121644
     },
     "electrical_parameters_verified": false,
-    "mass_kg": 1.9754816,
-    "cad_mass_kg": 1.9754800000000001,
+    "mass_kg": 1.9760984000000001,
+    "cad_mass_kg": 1.9761,
     "initial_cg_mm": [
-      -1.362,
-      8.7848,
-      30.5928
+      -1.3616,
+      8.6134,
+      30.614
     ],
-    "cg_error_mm": 0.010897833983456949,
+    "cg_error_mm": 0.007340123786252318,
     "rest_wheel_loads_N": [
-      8.5365,
-      8.1793,
-      1.2002,
-      1.1813
+      8.5306,
+      8.174,
+      1.2138,
+      1.1944
     ],
-    "rear_load_fraction": 0.12289015609615093,
-    "rest_wheel_weight_fraction": 0.9854432316722409,
+    "rear_load_fraction": 0.12422652880430683,
+    "rest_wheel_weight_fraction": 0.9859335315231723,
     "spinup": {
-      "rotor_rpm": 16291.080000010868,
-      "predicted_peak_current_a": 28.87293779541304,
-      "minimum_tooth_floor_gap_mm": 2.0754963525155885,
+      "rotor_rpm": 16291.080000011145,
+      "predicted_peak_current_a": 28.87293779541019,
+      "minimum_tooth_floor_gap_mm": 2.07551329318521,
       "tooth_floor_contacts": 0
     },
     "turn": {
-      "peak_yaw_rad_s": 7.073203386350043,
+      "peak_yaw_rad_s": 7.066361767970172,
       "finite_state": true
     },
-    "inverted_drive_m": 1.3686749755627439,
+    "inverted_drive_m": 1.3687121613566426,
     "checks": {
       "mass_matches": true,
       "cg_matches": true,
@@ -3266,7 +3318,6 @@
     "Unconfirmed hardware: straps",
     "Missing/current-build failed evidence: fit",
     "Missing/current-build failed evidence: preflight",
-    "Calibrated fit dimensions missing",
     "Shop/printer/material profile unconfirmed",
     "Usable build volume/brim missing or invalid",
     "Slicer project/review/masses missing or stale",

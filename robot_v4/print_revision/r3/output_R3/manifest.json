@@ -11,7 +11,7 @@
       217.261,
       54.001
     ],
-    "sha256": "2dce2f59f48156a30bc214020ceea5d7189304383036404ff9d24214199739be",
+    "sha256": "c1dfc7b8f2105b08de808f41157e31f35726442db1607d05378013caa970478b",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -27,7 +27,7 @@
       174.004,
       5.005
     ],
-    "sha256": "ef1ed065c4e56bc50e2d8701809efda2a410af2fcf9db0bdd05def6b3a4ddcbd",
+    "sha256": "5f40c9f4eb5a1a1ce7897f6f1e7504e90ac19ce9cdbf53d2aba11241c965d74f",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -43,7 +43,7 @@
       41.2,
       14.0
     ],
-    "sha256": "7295315c57ffe0aad5012984b3bf2930343516793275e71efa8bc1b95ebdf5be",
+    "sha256": "3449ba668d3e4fc6aaf02c3cfa1d1ebcb3c1c19b1547f61bbc6ba4b26eca9611",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -59,7 +59,7 @@
       15.2,
       20.0
     ],
-    "sha256": "45489756d1a5857b7d1e2664afa78183f7d993d27e594244102cd7fd443e9a23",
+    "sha256": "9fad19935af3e72c7755e6f8e87c07ffdf3420b67c782a3c876430794e779513",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -75,7 +75,7 @@
       15.2,
       16.0
     ],
-    "sha256": "deb32b1f6f4a7982a447dcd704d0b4b0e762ebe6ec6dedea03d40be231b705b1",
+    "sha256": "a5ac245d09733eace6ac60dcc5b5037aaeeb5a79a54c53e83ffa4cb5c3601acb",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -91,7 +91,7 @@
       41.2,
       14.0
     ],
-    "sha256": "358cbb7fc12395e2760463ed1bece1a3f1e5731da59c03ee2c8d1cbc2529c4f0",
+    "sha256": "2d749a6e89fc07d4501bc333c18255f7ba75491fdbd6f3f70b27dccddca6553c",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -107,7 +107,7 @@
       15.2,
       20.0
     ],
-    "sha256": "ddedbcaab821b9f69162c4cfcd591d8323c9c46999861a798325262193b664fe",
+    "sha256": "31ec42d6f76c9e600bc87bc7826d2a40264819befd5f4f27827d59cd2ccea55a",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -123,26 +123,24 @@
       15.2,
       16.0
     ],
-    "sha256": "bcd55e5785fa3728566edc90a16001b694d1146d17e9a8ce2600dcf59810e7eb",
+    "sha256": "f247aa954b011b46b0131f143eebc4c5d1ec86016987023607084f74067ebe47",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
   {
     "file": "V4_R3_Wheel_Hub_PETG.stl",
-    "quantity": 4,
+    "quantity": 2,
     "material": "PETG",
     "bodies": [
       "Wheel_Hub_PETG_Front_L",
-      "Wheel_Hub_PETG_Front_R",
-      "Wheel_Hub_PETG_Rear_L",
-      "Wheel_Hub_PETG_Rear_R"
+      "Wheel_Hub_PETG_Rear_L"
     ],
     "dimensions_mm": [
       44.003,
       44.003,
-      16.003
+      18.302
     ],
-    "sha256": "6d55d7c0c1d3c60a7d2f67d7df003c1e0b4358954209105a0add96853ef3270f",
+    "sha256": "e4f5c8f473b27cab55dfc52d5c24aed8d10b9db6e6378140cbd313997b6d3b0e",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -161,7 +159,24 @@
       64.005,
       16.005
     ],
-    "sha256": "68d14f4a77d8db62f034cab77616cd9d5acf0e15eac67d2bc7358dec2a3a1459",
+    "sha256": "715a7ee329e63a6f981cd1eff7fa831dea7df7e3350f14b13956bab4f4748041",
+    "orientation": "Z-up, bed Z=0",
+    "status": "DRAFT_NOT_RELEASED"
+  },
+  {
+    "file": "V4_R3_Wheel_Hub_PETG_variant1.stl",
+    "quantity": 2,
+    "material": "PETG",
+    "bodies": [
+      "Wheel_Hub_PETG_Front_R",
+      "Wheel_Hub_PETG_Rear_R"
+    ],
+    "dimensions_mm": [
+      44.003,
+      44.003,
+      18.302
+    ],
+    "sha256": "2a080dad98c231cf265f45a94e7567fa1e47ebfbb9dd2fd5393b6d49d0201fbd",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -177,7 +192,7 @@
       16.0,
       10.0
     ],
-    "sha256": "28303ea398a360af6091e4ada38c19f1398432583c2af106e1aabc51f427596d",
+    "sha256": "cc898d675b0d375204d6916bb197cf96b846e3092359e7a0fadf4f0896aaeb6b",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -193,7 +208,7 @@
       13.0,
       13.0
     ],
-    "sha256": "1c481a83599cf38cb8bf676a8769af5335324b3c2ee8425935c3867c07bef79f",
+    "sha256": "1c133183f900d23174f4b5eea778c06487602a058b0b49401931ca7c4aa6b165",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -209,7 +224,7 @@
       11.0,
       13.0
     ],
-    "sha256": "15ae835f3795a6ec58a3eaa18f0b88a836d24f2d765ac652bf26d93194028529",
+    "sha256": "5472a700c526c8d78a0c32cc5ebff6dc84446340028210b3f80c107b7cbc43a0",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -225,7 +240,7 @@
       33.0,
       5.001
     ],
-    "sha256": "b90aa48a365bff5075a139ca906763d43c4742e24cdbc8d9af3a8e7bd4352715",
+    "sha256": "b9e3eaffc0cf70c3dab9cc8d4133564474f30455f57c2ce5b22226cfdc4804e5",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -241,7 +256,7 @@
       54.5,
       4.0
     ],
-    "sha256": "067157214c131304b578bc08e445f8d3988f21e80df64d749a6252a1342e2ec5",
+    "sha256": "d87f63854e1812a08c419b2408cb3e7eb1b9b1a97cb752bcb4e4902002b8ad6d",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -260,7 +275,7 @@
       8.001,
       30.601
     ],
-    "sha256": "ccb8b0231df9204a586e4555f8f307e415390bc2a2c8ff0510e48a592082bbca",
+    "sha256": "9e8b690cf4fceffeff2a6bbc72672c877239ca827d8b3e9e6b87009489933355",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   },
@@ -276,7 +291,7 @@
       16.0,
       16.0
     ],
-    "sha256": "c635be1935acda51a19cea41165de5eb15b5c9dffb631499d1dadf8e237f17a8",
+    "sha256": "7a89fc308bba5338fd68fc16130489191d846b652a203d4395b828521b35bbbc",
     "orientation": "Z-up, bed Z=0",
     "status": "DRAFT_NOT_RELEASED"
   }

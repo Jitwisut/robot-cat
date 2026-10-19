@@ -1,7 +1,7 @@
 """Parametric R1 features, applied to the archived geometry, never its exports."""
 import math
 from cad_backend import *
-from legacy_geometry import build_baseline, d_bore, CARRIER
+from legacy_geometry import build_baseline, d_bore, CARRIER, UPRIGHT_SCREWS
 
 
 def value(config, part_name, key):
@@ -24,6 +24,37 @@ def rectangular_part(root,name,x0,x1,y0,y1,z0,z1,material='PETG'):
 def replace_box(body, centre, dimensions):
     x,y,z=centre; dx,dy,dz=dimensions
     body.shape=block(x-dx/2,x+dx/2,y-dy/2,y+dy/2,z,z+dz)
+
+
+def drilled_hole(centre, direction, diameter, depth, point_deg=118):
+    """Blind drilled hole from a surface point: full diameter to depth, then the drill point."""
+    d=cq.Vector(*direction).normalized();o=cq.Vector(*centre)-d*0.5
+    point=diameter/2/math.tan(math.radians(point_deg/2))
+    return cq.Solid.makeCylinder(diameter/2,depth+0.5,o,d).fuse(cq.Solid.makeCone(diameter/2,0,point,o+d*(depth+0.5),d)).clean()
+
+
+def wedgelet_plate(spec, sgn):
+    """Flat plate, thickness perpendicular to its faces (the archive used a vertical offset)."""
+    (ry,rz),(ty,tz)=spec['underside_rear_yz_mm'],spec['underside_tip_yz_mm'];t=spec['thickness_mm']
+    length=math.hypot(ty-ry,tz-rz);u=((ty-ry)/length,(tz-rz)/length);n=(-u[1],u[0])
+    # Rear end square as laser-cut; front end ground vertical so the tip edge stays at the floor.
+    poly=[(ry,rz),(ty,tz),(ty,tz+t/u[0]),(ry+n[0]*t,rz+n[1]*t)]
+    x0,x1=sorted(sgn*v for v in spec['span_x_mm'])
+    shape=prism([('poly',poly)],'x',x0,x1)
+    hy=spec['hole_underside_y_mm'];hz=rz+(hy-ry)*u[1]/u[0]
+    hole=spec['hole_diameter_mm'];csk=spec['countersink_diameter_mm']
+    depth=(csk-hole)/2/math.tan(math.radians(spec['countersink_angle_deg']/2))
+    axis=cq.Vector(0,n[0],n[1])
+    for hx in spec['hole_x_mm']:
+        under=cq.Vector(sgn*hx,hy,hz);top=under+axis*t
+        shape=shape.cut(cq.Solid.makeCylinder(hole/2,t+2,under-axis,axis))
+        # 90 deg countersink on the top (ramp) face, coaxial with the carrier insert.
+        shape=shape.cut(cq.Solid.makeCone(hole/2,csk/2+0.5*math.tan(math.radians(spec['countersink_angle_deg']/2)),depth+0.5,top-axis*depth,axis)).clean()
+    return shape.clean(),t-depth
+
+
+HUB_NOSE_R=4.5          # wheel-hub nose through the motor wall: D9, 2.45 mm PETG around the D-bore
+HUB_MIN_ENGAGEMENT=7.5  # D-bore on the shaft, set screw included
 
 
 def build(config):
@@ -52,16 +83,26 @@ def build(config):
                 # Button head + washer must clear the 2 mm hub-to-wall gap.
                 head_a,head_b=sorted((sgn*59,sgn*61))
                 bore(tub,(head_a,wy+dy,32+dz),(1,0,0),3.75,0,head_b-head_a)
-            wx0,wx1=sorted((sgn*62,sgn*78))
+            # Short-shaft motor (JB361: 11.5 mm from the face incl. a 2.5 mm boss, D-flat on the outer 8 mm).
+            # The hub face comes in to 1.5 mm from the motor wall (face-screw heads stand 0.65 mm proud), and a
+            # D9 nose through a D10 counterbore in the wall carries the D-bore to where the flat starts.
+            projection=value(config,name,'shaft_projection_mm')
+            nose=56+max(value(config,name,'boss_projection_mm')+0.3,projection-value(config,name,'shaft_flat_length_mm')+0.2)
+            shaft_end=56+projection
+            wx0,wx1=sorted((sgn*61.5,sgn*78))
             d=value(config,name,'shaft_diameter_mm')+fit(config,'d_bore_diametral_clearance_mm',0.10)
             flat=value(config,name,'shaft_diameter_mm')/2-value(config,name,'shaft_flat_depth_mm')+fit(config,'d_bore_flat_clearance_mm',0.05)
             hub=find_body(root,'Wheel_Hub_PETG_'+loc+'_'+side)
             # Keep a solid spoke towards the D-flat; put the five holes elsewhere.
             loops=[('circle',(wy,32,22)),('poly',d_bore(wy,32,d/2,flat,144))]
             loops += [('circle',(wy+13*math.cos(math.radians(a)),32+13*math.sin(math.radians(a)),4)) for a in (60,120,180,240,300)]
-            hub.shape=prism(loops,'x',wx0,wx1);hub.material='PETG'
-            # Radial M3 set screw from the accessible outer rim, captive steel hex nut.
-            xc=(wx0+wx1)/2
+            hub.shape=prism(loops,'x',wx0,wx1)
+            hub.shape=hub.shape.fuse(prism([('circle',(wy,32,HUB_NOSE_R)),('poly',d_bore(wy,32,d/2,flat,144))],'x',*sorted((sgn*nose,sgn*61.5)))).clean()
+            hub.material='PETG'
+            ca,cb=sorted((sgn*(nose-0.3),sgn*61))
+            bore(tub,(ca,wy,32),(1,0,0),HUB_NOSE_R+0.5,0,cb-ca)
+            # Radial M3 set screw on the D-flat, 2.5 mm in from the shaft tip; captive steel hex nut.
+            xc=sgn*(shaft_end-2.5)
             nut_af=value(config,'nut_m3','across_flats_mm')+fit(config,'nut_pocket_clearance_mm',0.2)
             nut_h=value(config,'nut_m3','height_mm')+0.2
             nut_r=nut_af/math.sqrt(3)
@@ -74,8 +115,10 @@ def build(config):
             bore(hub,(xc,wy+flat-0.2,32),(0,1,0),1.7,0,22-flat+0.4)
             tyre=find_body(root,'Wheel_Tyre_TPU_'+loc+'_'+side)
             tyre_id=fit(config,'tyre_inner_diameter_mm',43.8)
-            tyre.shape=prism([('circle',(wy,32,32)),('circle',(wy,32,tyre_id/2))],'x',wx0,wx1)
-            wheel_dims.append({'motor':name,'shaft_min_engagement_mm':10,'needed_projection_mm':16,'available_projection_mm':value(config,name,'shaft_projection_mm')})
+            tyre.shape=prism([('circle',(wy,32,32)),('circle',(wy,32,tyre_id/2))],'x',*sorted((sgn*62,sgn*78)))
+            wheel_dims.append({'motor':name,'shaft_min_engagement_mm':HUB_MIN_ENGAGEMENT,'engagement_mm':round(shaft_end-nose,2),
+                               'needed_projection_mm':round(nose-56+HUB_MIN_ENGAGEMENT,2),'available_projection_mm':projection,
+                               'set_screw_x_mm':round(abs(xc),2),'nose_x_mm':round(nose,2)})
     # Rebuild fixed hinge blocks. Bore grows with calibration; minimum wall is invariant.
     pin_d=value(config,'hinge_pin','diameter_mm')
     pin_bore=pin_d+fit(config,'hinge_diametral_clearance_mm',0.2)
@@ -110,6 +153,10 @@ def build(config):
         pin.shape=prism([('circle',(102,14.5,pin_d/2))],'x',a,b)
         ga,gb=xr(89,89.6)
         pin.shape=pin.shape.cut(prism([('circle',(102,14.5,pin_d/2+0.1)),('circle',(102,14.5,1.15))],'x',ga,gb)).clean()
+    wedgelet=design.get('wedgelet')
+    if wedgelet:
+        for side,sgn in [('L',-1),('R',1)]:
+            find_body(root,'Wedgelet_'+side).shape,land=wedgelet_plate(wedgelet,sgn)
     # Lid insert geometry follows the actual insert/calibration, not the archived Ø4.
     for x in (-84,84):
         for y in (-95,-15,55): bore(tub,(x,y,58),(0,0,1),insert_d/2,insert_l+1,1)
@@ -144,6 +191,29 @@ def build(config):
     bore(tub,(-42,motor_y,motor_z),(1,0,0),mr+1,0,value(config,'weapon_motor','length_mm')+2)
     # Small circular relief at the rear edge, away from all four upright screws.
     bore(find_body(root,'Upright_6061_6mm_L'),(-34,motor_y,motor_z),(1,0,0),mr+1,0,8)
+    side_screws=[tuple(p) for p in design.get('upright_side_screws_yz_mm',UPRIGHT_SCREWS)]
+    edge_tap=design.get('upright_edge_tap')
+    edge_walls=[]
+    for side,sgn in [('L',-1),('R',1)]:
+        upright=find_body(root,'Upright_6061_6mm_'+side)
+        ux0,ux1=sorted((sgn*27,sgn*33));bx0,bx1=sorted((sgn*34,sgn*50))
+        # Moved side taps: plug the archived holes in the upright and the TPU side block, then re-drill.
+        for y,z in UPRIGHT_SCREWS:
+            if (y,z) in side_screws:continue
+            upright.shape=upright.shape.fuse(block(ux0,ux1,y-1.8,y+1.8,z-1.8,z+1.8)).clean()
+            tub.shape=tub.shape.fuse(block(bx0,bx1,y-1.8,y+1.8,z-1.8,min(z+1.8,50))).clean()
+        for y,z in side_screws:
+            if (y,z) in UPRIGHT_SCREWS:continue
+            bore(upright,(ux0-1,y,z),(1,0,0),1.25,0,8)
+            bore(tub,(bx0-1,y,z),(1,0,0),1.7,0,18)
+        if edge_tap:
+            # M3 taps in the top and bottom edges for the brace screws (x +-30), modelled so they reach the STEP.
+            for z0,dz in [(57,-1),(7,1)]:
+                hole=drilled_hole((sgn*30,edge_tap['y_mm'],z0),(0,0,dz),edge_tap['drill_diameter_mm'],edge_tap['drill_depth_mm'],edge_tap['drill_point_deg'])
+                upright.shape=upright.shape.cut(hole).clean()
+                for y,z in side_screws:
+                    tap=cq.Solid.makeCylinder(1.25,6,cq.Vector(ux0,y,z),cq.Vector(1,0,0))
+                    edge_walls.append(hole.distance(tap) if hole.intersect(tap).Volume()<1e-6 else -1.0)
     # Arched 2 mm TPU lid roof; 1 mm bell clearance, top below the inverted wheel plane.
     mx1=-41+value(config,'weapon_motor','length_mm')
     if config.get('readiness_version') == 2:
@@ -289,5 +359,12 @@ def build(config):
         constraints['weapon_shaft_engagement_mm']=max(0,min(9,shaft_end)-max(-4,mx1))
         constraints['weapon_set_screw_on_shaft']=mx1<=6<=shaft_end
     constraints['axle_socket_clearance_mm']=21
+    if wedgelet:
+        constraints['wedgelet_thickness_mm']=wedgelet['thickness_mm']
+        constraints['wedgelet_countersink_land_mm']=land
+        constraints['wedgelet_min_countersink_land_mm']=wedgelet['min_countersink_land_mm']
+    if edge_tap:
+        constraints['upright_edge_tap_min_wall_mm']=min(edge_walls)
+        constraints['upright_edge_tap_required_wall_mm']=edge_tap['min_wall_mm']
     constraints['front_drive_to_weapon_motor_clearance_mm']=math.hypot(motor_y-front,motor_z-32)-mr-max(value(config,'drive_Front_L','diameter_mm'),value(config,'drive_Front_R','diameter_mm'))/2
     return root,constraints
