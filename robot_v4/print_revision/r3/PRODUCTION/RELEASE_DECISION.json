@@ -1,23 +1,62 @@
 {
-  "date": "2026-10-18",
-  "decided_by": "user, in chat: release only the parts that do not depend on unmeasured motors",
+  "date": "2026-10-19",
+  "decided_by": "user, in chat 2026-10-18: release only the parts that do not depend on unmeasured motors; user, in chat 2026-10-19: also release M06 complete, on catalogue values",
   "basis": {
     "r3_build_sha256_prefix": "5dfa96dc",
     "body": "PC 3 mm body rev 3 (r3/pc_body)"
   },
   "released": {
-    "laser_metal": ["M01", "M02", "M03", "M04", "M05", "M07", "M08", "M09"],
-    "cnc_pc_panels": ["PC3_Floor", "PC3_Side_Wall_L", "PC3_Side_Wall_R", "PC3_Rear_Wall", "PC2_Bulkhead_L", "PC2_Bulkhead_R", "PC3_Lid"],
-    "lathe": ["Beater_Hub_6061_D30", "Spacer_Inner_ID8.2_OD11", "Spacer_Outer_L_ID8.2_OD11", "Spacer_Outer_R_ID8.2_OD11", "Hinge_Pin_D3x57"],
-    "print": ["insert coupons only (M3 and M2.5)"]
+    "laser_metal": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09"
+    ],
+    "cnc_pc_panels": [
+      "PC3_Floor",
+      "PC3_Side_Wall_L",
+      "PC3_Side_Wall_R",
+      "PC3_Rear_Wall",
+      "PC2_Bulkhead_L",
+      "PC2_Bulkhead_R",
+      "PC3_Lid"
+    ],
+    "lathe": [
+      "Beater_Hub_6061_D30",
+      "Spacer_Inner_ID8.2_OD11",
+      "Spacer_Outer_L_ID8.2_OD11",
+      "Spacer_Outer_R_ID8.2_OD11",
+      "Hinge_Pin_D3x57"
+    ],
+    "print": [
+      "insert coupons only (M3 and M2.5)"
+    ]
   },
   "accepted_risks": {
     "weapon_motor.diameter_mm": "Upright L rear relief uses the SURPASS C3536 catalogue diameter 35 mm + 1 mm clearance. A larger real can needs the relief filed.",
-    "dead_shaft.diameter_mm": "Upright bore 8.2 mm is the ISO clearance for an M8 bolt; the bolt is a standard part."
+    "dead_shaft.diameter_mm": "Upright bore 8.2 mm is the ISO clearance for an M8 bolt; the bolt is a standard part.",
+    "weapon_motor.mount_holes_yz_mm": "M06 motor holes use the SURPASS C3536 catalogue cross pattern 19 x 25 mm (±9.5, ±12.5 from the shaft). A different real pattern needs a new plate or hand-drilled holes.",
+    "weapon_motor.mount_thread_diameter_mm": "M06 motor holes are Ø3.4 clearance for the catalogue M3 thread.",
+    "weapon_motor.boss_diameter_mm": "M06 boss hole Ø10.5 is for a guessed 10 mm boss (not in the catalogue). A larger real boss needs the hole filed or reamed.",
+    "drive_Front_L.diameter_mm": "M06 outline clears the catalogue Ø25 mm front drive motor.",
+    "drive_Front_R.diameter_mm": "M06 outline clears the catalogue Ø25 mm front drive motor."
   },
-  "pc_sheet_thickness_acceptance_mm": {"3.0": [2.9, 3.1], "2.0": [1.9, 2.1]},
+  "pc_sheet_thickness_acceptance_mm": {
+    "3.0": [
+      2.9,
+      3.1
+    ],
+    "2.0": [
+      1.9,
+      2.1
+    ]
+  },
   "held": {
-    "M06 Weapon_Motor_Mount_3mm": "weapon motor hole pattern, thread and boss not measured",
     "Motor_Pulley_D30_1to1": "weapon motor shaft diameter, projection and set-screw seat not measured",
     "PETG motor cradles x4, twin saddles x2, lid bars x2": "drive motor face holes, boss, diameter and length not measured",
     "PETG wheel hubs x4": "drive motor D-shaft diameter and flat depth not measured",

@@ -2,12 +2,17 @@
   "status": "RELEASED",
   "revision": "V4_PRINT_R3",
   "build_sha256": "5dfa96dcd76ec8505db7b12d26a1aad9cfd1e0a312cb58c4c2baec8a45bcc975",
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "blockers": [],
   "accepted_risks": [
     "M02 Upright_6061_6mm_L: weapon_motor.diameter_mm — Upright L rear relief uses the SURPASS C3536 catalogue diameter 35 mm + 1 mm clearance. A larger real can needs the relief filed.",
     "M02 Upright_6061_6mm_L: dead_shaft.diameter_mm — Upright bore 8.2 mm is the ISO clearance for an M8 bolt; the bolt is a standard part.",
-    "M03 Upright_6061_6mm_R: dead_shaft.diameter_mm — Upright bore 8.2 mm is the ISO clearance for an M8 bolt; the bolt is a standard part."
+    "M03 Upright_6061_6mm_R: dead_shaft.diameter_mm — Upright bore 8.2 mm is the ISO clearance for an M8 bolt; the bolt is a standard part.",
+    "M06 Weapon_Motor_Mount_3mm: weapon_motor.mount_holes_yz_mm — M06 motor holes use the SURPASS C3536 catalogue cross pattern 19 x 25 mm (±9.5, ±12.5 from the shaft). A different real pattern needs a new plate or hand-drilled holes.",
+    "M06 Weapon_Motor_Mount_3mm: weapon_motor.mount_thread_diameter_mm — M06 motor holes are Ø3.4 clearance for the catalogue M3 thread.",
+    "M06 Weapon_Motor_Mount_3mm: weapon_motor.boss_diameter_mm — M06 boss hole Ø10.5 is for a guessed 10 mm boss (not in the catalogue). A larger real boss needs the hole filed or reamed.",
+    "M06 Weapon_Motor_Mount_3mm: drive_Front_L.diameter_mm — M06 outline clears the catalogue Ø25 mm front drive motor.",
+    "M06 Weapon_Motor_Mount_3mm: drive_Front_R.diameter_mm — M06 outline clears the catalogue Ø25 mm front drive motor."
   ],
   "mass_total_g": 1973.05,
   "rear_load": 0.10615,
@@ -292,6 +297,69 @@
       "edge_holes": []
     },
     {
+      "id": "M06",
+      "file": "Weapon_Motor_Mount_3mm",
+      "name": "แผ่นยึดมอเตอร์อาวุธ",
+      "material": "อลูมิเนียม 6061-T6",
+      "qty": 1,
+      "thickness": 3.0,
+      "cad_thickness": 3.0,
+      "min_wall": 2.55,
+      "mass_g": 12.95,
+      "holes": [
+        {
+          "id": "H1",
+          "x": 43.0,
+          "y": 9.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H2",
+          "x": 28.0,
+          "y": 14.5,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H3",
+          "x": 15.5,
+          "y": 5.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H4",
+          "x": 15.5,
+          "y": 14.5,
+          "d": 10.5,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H5",
+          "x": 3.0,
+          "y": 14.5,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H6",
+          "x": 43.0,
+          "y": 31.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        },
+        {
+          "id": "H7",
+          "x": 15.5,
+          "y": 24.0,
+          "d": 3.4,
+          "op": "ตัดเลเซอร์"
+        }
+      ],
+      "edge_holes": []
+    },
+    {
       "id": "M07",
       "file": "Wedgelet_L",
       "name": "แผ่นลิ่ม (wedgelet) ซ้าย 1 + ขวา 1",
@@ -439,6 +507,14 @@
       "sha256": "ad1363829f4deb998ee40381228747a02ed59fcc4e78e6790b279dfcf4ec64f2"
     },
     {
+      "file": "DXF/Weapon_Motor_Mount_3mm.dxf",
+      "sha256": "5fdd2af07093f917973123de6925d3a0e7542a6bd1f3ae37fa4d6dfbc4746b8d"
+    },
+    {
+      "file": "STEP/Weapon_Motor_Mount_3mm.step",
+      "sha256": "bd1650582544e18e5679c4340e708cf2cc0791717d5a1f1717cbcba13f0e559f"
+    },
+    {
       "file": "DXF/Wedgelet_L.dxf",
       "sha256": "dc81a7e4f8ae2dac483e905e8659310f1cef79fd487122016360a00d79a75aca"
     },
@@ -464,21 +540,21 @@
     },
     {
       "file": "STEP/DERIVED_Wedgelet_R_mirror_of_Wedgelet_L.step",
-      "sha256": "d0a31d58a2701027607144ccdfe54a02a0360ae51b23da382651f071c20eaf64",
+      "sha256": "d9094dae8705f3733cab34603d07340a6c243c65e51a0e725de3c2ac53717029",
       "derived": true
     },
     {
       "file": "STEP/DERIVED_Skirt_Plate_08mm_L_mirror_of_Skirt_Plate_08mm_R.step",
-      "sha256": "8ddd35d1ce4ad4291c25ee1c9b7aff7dee149652a15f68ea22d2612bf8b84bf8",
+      "sha256": "b1575ce9b1516ac93e3e3c5f8f41f42bfc34d64f58dcc29ac6862b31dac70722",
       "derived": true
     },
     {
       "file": "WORK_ORDER_PRODUCTION_TH.pdf",
-      "sha256": "e73d1a06c6c91640da27d124cfd9af1d9eae246bdd4d7129509daabfbb0ba1f4"
+      "sha256": "c39a9702c9cb6438e64a134ffe0d70b62872586b070733f850469e2362ee8e2f"
     }
   ],
   "release_decision": {
     "file": "PRODUCTION/RELEASE_DECISION.json",
-    "sha256": "cb8a85a2a6a3f8a740b58b6ec9b6d934c0fe6dc26c1b603d64367bbefc7a4220"
+    "sha256": "b9a4b0a380b7750e384cf38e20bd073633e2619d183646cc951488ab7261d2fb"
   }
 }
