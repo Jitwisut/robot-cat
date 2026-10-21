@@ -57,7 +57,7 @@
  "limit_g": 2000.0,
  "target_g": 1950.0,
  "fixed_r3_g": 1303.2,
- "printed_removed_g": 229.7,
+ "printed_removed_g": 232.7,
  "printed_removed": [
   "Battery_Tray_PETG",
   "Disconnect_Collar_PETG",
@@ -3164,7 +3164,7 @@
   }
  },
  "r3_reference": {
-  "total_g": 1973.05,
+  "total_g": 1976.1,
   "energy_J": 97.01021519907322,
   "push_N_mu0.6": 9.411787499999999
  }

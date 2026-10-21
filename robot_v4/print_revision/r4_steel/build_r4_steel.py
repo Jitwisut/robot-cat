@@ -44,11 +44,14 @@ LID_Z0 = 61.0               # lid z 61..63: 1 mm over the weapon motor can (top 
 WALL_X = 83.0               # outer face of the side walls (R3 PC body)
 REAR_Y = -110.0             # outer face of the rear wall (R3)
 CROSS_Y = (52.0, 62.0)      # bulkhead cross: 2 mm ahead of the front tyre (y 50), behind the uprights (y 64)
-RAIL_X = (50.0, 60.0)       # |x|: inboard of the wheels (62), under the drive motors (z 19.5)
+RAIL_X = (48.0, 58.0)       # |x|: inboard of the wheels (59.5), under the drive motors (z 19.5)
 ARM_X = (37.0, 47.0)        # |x|: fork arm 2.5 mm outside the upright tab: room for the M3 heads on the z 14 taps
 BEAM_Y = (88.0, 98.0)       # hinge beam behind the wedgelet hinge pins (y 100.5)
 HINGE_TAB_X = ((37.0, 38.5), (62.0, 63.5), (85.0, 86.5))   # |x| gaps between the wedgelet carriers on the pin
-WHEEL_R, WHEEL_X = 32.0, (62.0, 78.0)                     # bought wheel envelope = R3 wheel (keeps ground at z 0)
+# Bought wheel envelope, D64 keeps the ground at z 0. ORTECH JB361 (main's R3 drive motor): gearbox face at |x| 56,
+# boss D7 x 2.5, shaft D4 x 11.5 with the D flat on the outer 8 mm -> the hub's inner face at |x| 59.5 gives 8 mm on the flat
+WHEEL_R, WHEEL_X = 32.0, (59.5, 75.5)
+MOTOR_HOLES_YZ = [(-8.5, 0.0), (8.5, 0.0)]                # JB361 face: 2 x M3 at +-8.5 about the shaft (catalogue R3-10)
 BATTERY = (57.0, 31.0, 24.0)                              # 3S 650 mAh envelope, ASSUMED until the pack is chosen
 RHO = {'steel_tube': 0.00785, 'steel_tab': 0.00785, 'PC': 0.00120, 'UHMW': 0.00094, 'EPDM': 0.00130}
 EXPLICIT_G = {'wheel_bought': 45.0, 'battery_650': 58.0, 'nylon_standoff': 0.6}   # ASSUMED, see calc/steel_r4_calc.py
@@ -150,7 +153,10 @@ for side, s in (('L', -1), ('R', 1)):
     # drive motor face plate: gearbox face at |x| 56, wheel hub from 62; D8.5 boss hole on the axle
     x0 = 56.0 if s > 0 else -56.0 - TAB
     t = block(x0, x0 + TAB, FRONT_Y - 16, FRONT_Y + 16, RAIL_Z1, RAIL_Z1 + 32)
-    add('Tab_Drive_Motor_' + side, hole_x(t, FRONT_Y, 32.0, 4.25), 'steel_tab')
+    t = hole_x(t, FRONT_Y, 32.0, 4.25)                    # D8.5 over the D7 boss
+    for dy, dz in MOTOR_HOLES_YZ:
+        t = hole_x(t, FRONT_Y + dy, 32.0 + dz, 1.7)      # M3 clearance D3.4
+    add('Tab_Drive_Motor_' + side, t, 'steel_tab')
     # upright plate on the upright outer face (|x| 33..34.5), M3 clearance holes on the 4 R3 upright taps; starts at
     # y 66 (weapon motor can reaches y 65), notched around the axle washer (y 95, z 32); its bottom flange runs out to
     # the fork arm and back to the bulkhead cross, under the screw heads
@@ -190,7 +196,7 @@ floor = block(-WALL_X, WALL_X, REAR_Y + SKIN, CROSS_Y[1], FLOOR_Z0, RAIL_Z0)
 for s in (-1, 1):
     x0, x1 = (ARM_X[0], WALL_X) if s > 0 else (-WALL_X, -ARM_X[0])
     floor = floor.fuse(block(x0, x1, CROSS_Y[1] - 1, BEAM_Y[1], FLOOR_Z0, RAIL_Z0))
-    floor = floor.cut(block(*((61.0, 79.0) if s > 0 else (-79.0, -61.0)), FRONT_Y - 21, FRONT_Y + 21, 0, 10))
+    floor = floor.cut(block(*((WHEEL_X[0] - 1, WHEEL_X[1] + 1) if s > 0 else (-WHEEL_X[1] - 1, -WHEEL_X[0] + 1)), FRONT_Y - 21, FRONT_Y + 21, 0, 10))
 add('Skin_PC2_Floor', floor, 'PC')
 add('Skin_PC2_Rear_Wall', block(-WALL_X, WALL_X, REAR_Y, REAR_Y + SKIN, FLOOR_Z0, LID_Z0), 'PC')
 for side, s in (('L', -1), ('R', 1)):
@@ -198,9 +204,9 @@ for side, s in (('L', -1), ('R', 1)):
     add('Skin_PC2_Side_Wall_' + side, block(x0, x0 + SKIN, REAR_Y + SKIN, BEAM_Y[0], RAIL_Z0, LID_Z0), 'PC')
 lid = block(-WALL_X, WALL_X, REAR_Y, CROSS_Y[1], LID_Z0, LID_Z0 + SKIN)
 for s in (-1, 1):
-    lid = lid.cut(block(*((61.0, 79.0) if s > 0 else (-79.0, -61.0)), FRONT_Y - 23, FRONT_Y + 23, 0, 80))
+    lid = lid.cut(block(*((WHEEL_X[0] - 1, WHEEL_X[1] + 1) if s > 0 else (-WHEEL_X[1] - 1, -WHEEL_X[0] + 1)), FRONT_Y - 23, FRONT_Y + 23, 0, 80))
 add('Skin_PC2_Lid', lid, 'PC')
-add('Electronics_Plate_PC2', block(-61, 61, -56, -1.5, 37.6, 39.6), 'PC')      # IMU foam sits on it (z 39.6)
+add('Electronics_Plate_PC2', block(-58, 58, -56, -1.5, 37.6, 39.6), 'PC')      # IMU foam sits on it (z 39.6); |x| 58 clears the wheels (59.5)
 
 # bought / other parts
 for side, s in (('L', -1), ('R', 1)):

@@ -37,7 +37,7 @@
    "b": "Frame_Rail_L",
    "contact_area_mm2": 36.0,
    "contact_centre_mm": [
-    -55.0,
+    -53.0,
     -98.0,
     11.0
    ],
@@ -65,7 +65,7 @@
    "b": "Frame_Rail_R",
    "contact_area_mm2": 36.0,
    "contact_centre_mm": [
-    55.0,
+    53.0,
     -98.0,
     11.0
    ],
@@ -93,7 +93,7 @@
    "b": "Frame_Rail_L",
    "contact_area_mm2": 36.0,
    "contact_centre_mm": [
-    -55.0,
+    -53.0,
     52.0,
     11.0
    ],
@@ -135,7 +135,7 @@
    "b": "Frame_Rail_R",
    "contact_area_mm2": 36.0,
    "contact_centre_mm": [
-    55.0,
+    53.0,
     52.0,
     11.0
    ],
@@ -219,7 +219,7 @@
    "b": "Tab_Battery_Strap_L_50",
    "contact_area_mm2": 80.0,
    "contact_centre_mm": [
-    -50.0,
+    -48.0,
     -50.0,
     11.0
    ],
@@ -233,7 +233,7 @@
    "b": "Tab_Battery_Strap_L_31",
    "contact_area_mm2": 80.0,
    "contact_centre_mm": [
-    -50.0,
+    -48.0,
     -31.0,
     11.0
    ],
@@ -247,7 +247,7 @@
    "b": "Tab_Weapon_Mount_1",
    "contact_area_mm2": 15.0,
    "contact_centre_mm": [
-    -50.0,
+    -48.0,
     29.0,
     6.8
    ],
@@ -261,7 +261,7 @@
    "b": "Tab_Weapon_Mount_2",
    "contact_area_mm2": 15.0,
    "contact_centre_mm": [
-    -50.0,
+    -48.0,
     45.0,
     6.8
    ],
@@ -275,7 +275,7 @@
    "b": "Strap_Drive_Motor",
    "contact_area_mm2": 16.5,
    "contact_centre_mm": [
-    -50.0,
+    -48.0,
     15.5,
     15.3
    ],
@@ -415,7 +415,7 @@
    "b": "Tab_Battery_Strap_R_50",
    "contact_area_mm2": 80.0,
    "contact_centre_mm": [
-    50.0,
+    48.0,
     -50.0,
     11.0
    ],
@@ -429,7 +429,7 @@
    "b": "Tab_Battery_Strap_R_31",
    "contact_area_mm2": 80.0,
    "contact_centre_mm": [
-    50.0,
+    48.0,
     -31.0,
     11.0
    ],
@@ -443,7 +443,7 @@
    "b": "Strap_Drive_Motor",
    "contact_area_mm2": 16.5,
    "contact_centre_mm": [
-    50.0,
+    48.0,
     15.5,
     15.2
    ],
@@ -586,20 +586,20 @@
   ]
  ],
  "mass": {
-  "total_g": 1857.3,
-  "margin_to_2000_g": 142.7,
-  "margin_to_1950_target_g": 92.7,
+  "total_g": 1855.1,
+  "margin_to_2000_g": 144.9,
+  "margin_to_1950_target_g": 94.9,
   "cg_mm": [
-   -1.38,
-   20.15,
-   29.21
+   -1.37,
+   20.17,
+   29.22
   ],
   "groups_g": {
    "R3 parts kept + bought": 1210.4,
    "frame tubes": 322.8,
-   "frame tabs/strap": 81.1,
-   "PC skins": 227.1,
-   "weld beads + paint": 16.2
+   "frame tabs/strap": 79.7,
+   "PC skins": 226.3,
+   "weld beads + paint": 16.1
   }
  },
  "support_2wd": {
@@ -914,22 +914,22 @@
   {
    "part": "Wedgelet_Carrier_PETG_L1",
    "material": "6061",
-   "mass_g": 4.3999,
+   "mass_g": 4.4152,
    "centroid_mm": [
-    -48.99999999999999,
-    105.99374885170903,
-    12.721822892001086
+    -49.0,
+    106.00031002466665,
+    12.720724019063884
    ],
    "method": "estimated CAD volume/density"
   },
   {
    "part": "Wedgelet_Carrier_PETG_L2",
    "material": "6061",
-   "mass_g": 3.484,
+   "mass_g": 3.4993,
    "centroid_mm": [
     -74.99999999999999,
-    105.97419970272917,
-    12.72509700638552
+    105.98256363324006,
+    12.7236962055003
    ],
    "method": "estimated CAD volume/density"
   },
@@ -958,22 +958,22 @@
   {
    "part": "Wedgelet_Carrier_PETG_R1",
    "material": "6061",
-   "mass_g": 4.3999,
+   "mass_g": 4.4152,
    "centroid_mm": [
-    49.000000000000014,
-    105.99374885170903,
-    12.721822892001086
+    49.0,
+    106.00031002466665,
+    12.720724019063884
    ],
    "method": "estimated CAD volume/density"
   },
   {
    "part": "Wedgelet_Carrier_PETG_R2",
    "material": "6061",
-   "mass_g": 3.484,
+   "mass_g": 3.4993,
    "centroid_mm": [
-    75.00000000000001,
-    105.97419970272914,
-    12.725097006385521
+    74.99999999999999,
+    105.98256363324006,
+    12.7236962055003
    ],
    "method": "estimated CAD volume/density"
   },
@@ -1037,8 +1037,8 @@
    "material": "purchased",
    "mass_g": 110,
    "centroid_mm": [
-    -30.000000000000004,
-    18.000000000000004,
+    -31.100000000000012,
+    18.0,
     32.0
    ],
    "method": "nominal, unverified"
@@ -1048,8 +1048,8 @@
    "material": "purchased",
    "mass_g": 110,
    "centroid_mm": [
-    30.0,
-    18.0,
+    31.1,
+    17.999999999999996,
     32.0
    ],
    "method": "nominal, unverified"
@@ -1273,7 +1273,7 @@
    "material": "steel_tube",
    "mass_g": 42.39,
    "centroid_mm": [
-    -55.0,
+    -52.99999999999999,
     -23.000000000000007,
     11.000000000000004
    ],
@@ -1339,7 +1339,7 @@
    "material": "steel_tube",
    "mass_g": 42.39,
    "centroid_mm": [
-    55.0,
+    52.99999999999999,
     -23.000000000000007,
     11.000000000000004
    ],
@@ -1414,11 +1414,11 @@
   {
    "part": "Tab_Drive_Motor_L",
    "material": "steel_tab",
-   "mass_g": 11.389,
+   "mass_g": 11.176,
    "centroid_mm": [
-    -56.74999999999999,
+    -56.75000000000001,
     18.0,
-    31.999999999999996
+    32.0
    ],
    "method": "CAD volume x density"
   },
@@ -1471,7 +1471,7 @@
    "material": "steel_tab",
    "mass_g": 0.942,
    "centroid_mm": [
-    -49.24999999999999,
+    -47.25,
     -49.99999999999999,
     11.0
    ],
@@ -1482,7 +1482,7 @@
    "material": "steel_tab",
    "mass_g": 0.942,
    "centroid_mm": [
-    -49.24999999999999,
+    -47.25,
     -31.0,
     11.0
    ],
@@ -1491,11 +1491,11 @@
   {
    "part": "Tab_Drive_Motor_R",
    "material": "steel_tab",
-   "mass_g": 11.389,
+   "mass_g": 11.176,
    "centroid_mm": [
     56.74999999999999,
     18.0,
-    31.999999999999996
+    32.0
    ],
    "method": "CAD volume x density"
   },
@@ -1548,7 +1548,7 @@
    "material": "steel_tab",
    "mass_g": 0.942,
    "centroid_mm": [
-    49.24999999999999,
+    47.25,
     -49.99999999999999,
     11.0
    ],
@@ -1559,7 +1559,7 @@
    "material": "steel_tab",
    "mass_g": 0.942,
    "centroid_mm": [
-    49.24999999999999,
+    47.25,
     -31.0,
     11.0
    ],
@@ -1568,31 +1568,31 @@
   {
    "part": "Tab_Weapon_Mount_1",
    "material": "steel_tab",
-   "mass_g": 1.943,
+   "mass_g": 1.707,
    "centroid_mm": [
-    -46.280303030303024,
-    28.999999999999996,
-    11.28030303030303
+    -45.9051724137931,
+    29.0,
+    11.905172413793103
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Tab_Weapon_Mount_2",
    "material": "steel_tab",
-   "mass_g": 3.238,
+   "mass_g": 3.003,
    "centroid_mm": [
-    -46.06818181818183,
-    45.00000000000001,
-    16.56818181818182
+    -45.838235294117645,
+    45.0,
+    17.33823529411765
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Strap_Drive_Motor",
    "material": "steel_tab",
-   "mass_g": 12.952,
+   "mass_g": 12.434,
    "centroid_mm": [
-    -6.35288297259856e-16,
+    7.704694767123913e-16,
     15.5,
     15.25
    ],
@@ -1626,7 +1626,7 @@
    "mass_g": 72.048,
    "centroid_mm": [
     0.0,
-    -13.701399067288468,
+    -13.701399067288472,
     5.0
    ],
    "method": "CAD volume x density"
@@ -1669,7 +1669,7 @@
    "material": "PC",
    "mass_g": 64.55,
    "centroid_mm": [
-    0.0,
+    2.705219220026556e-16,
     -26.585960737656162,
     62.00000000000001
    ],
@@ -1678,11 +1678,11 @@
   {
    "part": "Electronics_Plate_PC2",
    "material": "PC",
-   "mass_g": 15.958,
+   "mass_g": 15.173,
    "centroid_mm": [
-    4.343529460629876e-16,
-    -28.749999999999996,
-    38.60000000000001
+    1.2299034969837101e-15,
+    -28.74999999999999,
+    38.599999999999994
    ],
    "method": "CAD volume x density"
   },
@@ -1691,7 +1691,7 @@
    "material": "wheel_bought",
    "mass_g": 45.0,
    "centroid_mm": [
-    -69.99999999999999,
+    -67.5,
     18.0,
     32.00000000000001
    ],
@@ -1724,7 +1724,7 @@
    "material": "wheel_bought",
    "mass_g": 45.0,
    "centroid_mm": [
-    69.99999999999999,
+    67.5,
     18.0,
     32.00000000000001
    ],
@@ -1776,7 +1776,7 @@
   },
   {
    "part": "weld beads + paint",
-   "mass_g": 16.16,
+   "mass_g": 16.11,
    "centroid_mm": [
     0,
     -6.5,

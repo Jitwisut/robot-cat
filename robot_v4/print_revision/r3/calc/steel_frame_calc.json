@@ -1,11 +1,11 @@
 {
- "start_total_g": 1977.64,
- "margin_to_2000_g": 22.36,
- "petg_replaced_g": 90.85,
+ "start_total_g": 1981.17,
+ "margin_to_2000_g": 18.83,
+ "petg_replaced_g": 91.36,
  "pc_walls_replaced_g": 127.7,
  "budget_g": {
-  "S1": 113.2,
-  "S2": 240.9
+  "S1": 110.2,
+  "S2": 237.9
  },
  "tabs": {
   "area_mm2": 7384,
@@ -22,9 +22,9 @@
    "scenario": "S1",
    "members_only_g": 210.8,
    "frame_plus_tabs_g": 326.7,
-   "budget_g": 113.2,
-   "margin_g": -213.5,
-   "robot_total_g": 2213.5,
+   "budget_g": 110.2,
+   "margin_g": -216.5,
+   "robot_total_g": 2216.5,
    "fits_2kg": false
   },
   {
@@ -35,9 +35,9 @@
    "scenario": "S2",
    "members_only_g": 210.8,
    "frame_plus_tabs_g": 326.7,
-   "budget_g": 240.9,
-   "margin_g": -85.8,
-   "robot_total_g": 2085.8,
+   "budget_g": 237.9,
+   "margin_g": -88.8,
+   "robot_total_g": 2088.8,
    "fits_2kg": false
   },
   {
@@ -48,9 +48,9 @@
    "scenario": "S1",
    "members_only_g": 475.1,
    "frame_plus_tabs_g": 591.1,
-   "budget_g": 113.2,
-   "margin_g": -477.9,
-   "robot_total_g": 2477.9,
+   "budget_g": 110.2,
+   "margin_g": -480.9,
+   "robot_total_g": 2480.9,
    "fits_2kg": false
   },
   {
@@ -61,9 +61,9 @@
    "scenario": "S2",
    "members_only_g": 475.1,
    "frame_plus_tabs_g": 591.1,
-   "budget_g": 240.9,
-   "margin_g": -350.2,
-   "robot_total_g": 2350.2,
+   "budget_g": 237.9,
+   "margin_g": -353.2,
+   "robot_total_g": 2353.2,
    "fits_2kg": false
   },
   {
@@ -74,9 +74,9 @@
    "scenario": "S1",
    "members_only_g": 257.7,
    "frame_plus_tabs_g": 373.7,
-   "budget_g": 113.2,
-   "margin_g": -260.4,
-   "robot_total_g": 2260.4,
+   "budget_g": 110.2,
+   "margin_g": -263.5,
+   "robot_total_g": 2263.5,
    "fits_2kg": false
   },
   {
@@ -87,9 +87,9 @@
    "scenario": "S2",
    "members_only_g": 257.7,
    "frame_plus_tabs_g": 373.7,
-   "budget_g": 240.9,
-   "margin_g": -132.7,
-   "robot_total_g": 2132.7,
+   "budget_g": 237.9,
+   "margin_g": -135.8,
+   "robot_total_g": 2135.8,
    "fits_2kg": false
   },
   {
@@ -100,9 +100,9 @@
    "scenario": "S1",
    "members_only_g": 581.0,
    "frame_plus_tabs_g": 697.0,
-   "budget_g": 113.2,
-   "margin_g": -583.7,
-   "robot_total_g": 2583.7,
+   "budget_g": 110.2,
+   "margin_g": -586.8,
+   "robot_total_g": 2586.8,
    "fits_2kg": false
   },
   {
@@ -113,9 +113,9 @@
    "scenario": "S2",
    "members_only_g": 581.0,
    "frame_plus_tabs_g": 697.0,
-   "budget_g": 240.9,
-   "margin_g": -456.0,
-   "robot_total_g": 2456.0,
+   "budget_g": 237.9,
+   "margin_g": -459.1,
+   "robot_total_g": 2459.1,
    "fits_2kg": false
   },
   {
@@ -126,9 +126,9 @@
    "scenario": "S1",
    "members_only_g": 315.0,
    "frame_plus_tabs_g": 430.9,
-   "budget_g": 113.2,
-   "margin_g": -317.7,
-   "robot_total_g": 2317.7,
+   "budget_g": 110.2,
+   "margin_g": -320.7,
+   "robot_total_g": 2320.7,
    "fits_2kg": false
   },
   {
@@ -139,9 +139,9 @@
    "scenario": "S2",
    "members_only_g": 315.0,
    "frame_plus_tabs_g": 430.9,
-   "budget_g": 240.9,
-   "margin_g": -190.0,
-   "robot_total_g": 2190.0,
+   "budget_g": 237.9,
+   "margin_g": -193.0,
+   "robot_total_g": 2193.0,
    "fits_2kg": false
   },
   {
@@ -152,9 +152,9 @@
    "scenario": "S1",
    "members_only_g": 710.1,
    "frame_plus_tabs_g": 826.1,
-   "budget_g": 113.2,
-   "margin_g": -712.9,
-   "robot_total_g": 2712.9,
+   "budget_g": 110.2,
+   "margin_g": -715.9,
+   "robot_total_g": 2715.9,
    "fits_2kg": false
   },
   {
@@ -165,9 +165,9 @@
    "scenario": "S2",
    "members_only_g": 710.1,
    "frame_plus_tabs_g": 826.1,
-   "budget_g": 240.9,
-   "margin_g": -585.2,
-   "robot_total_g": 2585.2,
+   "budget_g": 237.9,
+   "margin_g": -588.2,
+   "robot_total_g": 2588.2,
    "fits_2kg": false
   },
   {
@@ -178,9 +178,9 @@
    "scenario": "S1",
    "members_only_g": 463.1,
    "frame_plus_tabs_g": 579.0,
-   "budget_g": 113.2,
-   "margin_g": -465.8,
-   "robot_total_g": 2465.8,
+   "budget_g": 110.2,
+   "margin_g": -468.9,
+   "robot_total_g": 2468.9,
    "fits_2kg": false
   },
   {
@@ -191,9 +191,9 @@
    "scenario": "S1",
    "members_only_g": 143.2,
    "frame_plus_tabs_g": 259.1,
-   "budget_g": 113.2,
-   "margin_g": -145.9,
-   "robot_total_g": 2145.9,
+   "budget_g": 110.2,
+   "margin_g": -148.9,
+   "robot_total_g": 2148.9,
    "fits_2kg": false
   },
   {
@@ -204,9 +204,9 @@
    "scenario": "S2",
    "members_only_g": 143.2,
    "frame_plus_tabs_g": 259.1,
-   "budget_g": 240.9,
-   "margin_g": -18.2,
-   "robot_total_g": 2018.2,
+   "budget_g": 237.9,
+   "margin_g": -21.2,
+   "robot_total_g": 2021.2,
    "fits_2kg": false
   },
   {
@@ -217,9 +217,9 @@
    "scenario": "S1",
    "members_only_g": 322.8,
    "frame_plus_tabs_g": 438.7,
-   "budget_g": 113.2,
-   "margin_g": -325.5,
-   "robot_total_g": 2325.5,
+   "budget_g": 110.2,
+   "margin_g": -328.5,
+   "robot_total_g": 2328.5,
    "fits_2kg": false
   },
   {
@@ -230,9 +230,9 @@
    "scenario": "S2",
    "members_only_g": 322.8,
    "frame_plus_tabs_g": 438.7,
-   "budget_g": 240.9,
-   "margin_g": -197.8,
-   "robot_total_g": 2197.8,
+   "budget_g": 237.9,
+   "margin_g": -200.8,
+   "robot_total_g": 2200.8,
    "fits_2kg": false
   },
   {
@@ -243,9 +243,9 @@
    "scenario": "S1",
    "members_only_g": 202.4,
    "frame_plus_tabs_g": 318.4,
-   "budget_g": 113.2,
-   "margin_g": -205.1,
-   "robot_total_g": 2205.1,
+   "budget_g": 110.2,
+   "margin_g": -208.2,
+   "robot_total_g": 2208.2,
    "fits_2kg": false
   },
   {
@@ -256,9 +256,9 @@
    "scenario": "S2",
    "members_only_g": 202.4,
    "frame_plus_tabs_g": 318.4,
-   "budget_g": 240.9,
-   "margin_g": -77.4,
-   "robot_total_g": 2077.4,
+   "budget_g": 237.9,
+   "margin_g": -80.5,
+   "robot_total_g": 2080.5,
    "fits_2kg": false
   },
   {
@@ -269,9 +269,9 @@
    "scenario": "S1",
    "members_only_g": 456.3,
    "frame_plus_tabs_g": 572.3,
-   "budget_g": 113.2,
-   "margin_g": -459.1,
-   "robot_total_g": 2459.1,
+   "budget_g": 110.2,
+   "margin_g": -462.1,
+   "robot_total_g": 2462.1,
    "fits_2kg": false
   },
   {
@@ -282,9 +282,9 @@
    "scenario": "S2",
    "members_only_g": 456.3,
    "frame_plus_tabs_g": 572.3,
-   "budget_g": 240.9,
-   "margin_g": -331.4,
-   "robot_total_g": 2331.4,
+   "budget_g": 237.9,
+   "margin_g": -334.4,
+   "robot_total_g": 2334.4,
    "fits_2kg": false
   },
   {
@@ -295,9 +295,9 @@
    "scenario": "S1",
    "members_only_g": 70.8,
    "frame_plus_tabs_g": 130.6,
-   "budget_g": 113.2,
-   "margin_g": -17.4,
-   "robot_total_g": 2017.4,
+   "budget_g": 110.2,
+   "margin_g": -20.4,
+   "robot_total_g": 2020.4,
    "fits_2kg": false
   },
   {
@@ -308,9 +308,9 @@
    "scenario": "S1",
    "members_only_g": 159.3,
    "frame_plus_tabs_g": 219.1,
-   "budget_g": 113.2,
-   "margin_g": -105.9,
-   "robot_total_g": 2105.9,
+   "budget_g": 110.2,
+   "margin_g": -108.9,
+   "robot_total_g": 2108.9,
    "fits_2kg": false
   }
  ],
