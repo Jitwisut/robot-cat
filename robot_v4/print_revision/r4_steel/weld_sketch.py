@@ -1,4 +1,4 @@
-"""Simple dimensioned sketch of the R4-steel frame for the welder (WELD_SKETCH_TH.pdf, 5 A4 landscape pages).
+"""Simple dimensioned sketch of the R4-steel frame for the welder (WELD_SKETCH_TH.pdf, 6 A4 landscape pages).
 
 The full drawing (WELD_DRAWING_TH.pdf) lists every part by coordinate; the shop found it hard to read. This sketch
 shows the same CAD as plain views with chained dimensions from the rear-left corner (DATUM):
@@ -6,6 +6,7 @@ shows the same CAD as plain views with chained dimensions from the rear-left cor
   2. rear view (posts, top cross) + section at the drive-motor cross (motor plates, clamp post, clamp bar)
   3. front tabs (weapon-upright plates, hinge tabs) + the small tabs on the rails
   4-5. shaded 3D views from the four top corners, then from low and from underneath (labelled F/T ids)
+  6. the frame inside the assembled robot (rest of the robot grey, one view with see-through PC skins)
 Every number comes from build_r4_steel.py (bounding boxes of the as-welded parts), not typed by hand.
 Called by make_weld_package.py.
 """
@@ -120,9 +121,23 @@ def table(pg, x, y, rows, widths, size=3.2, head=True):
     return y + len(rows) * rh
 
 
-def render_3d(B, ID, DATUM, path, elev, azim, title, zoom=1.3):
-    """One shaded view of the as-welded frame (datum coordinates, Z up, nose +Y). Faces are lit by their normal so the
-    10 mm tubes read as boxes without drawing every tessellation edge."""
+FRAME_RGB = {'steel_tube': (0.80, 0.36, 0.30), 'steel_tab': (0.95, 0.66, 0.28)}
+# everything that is not the welded frame, in greys so the frame stands out in the assembly views
+OTHER_RGB = {'steel': (0.42, 0.44, 0.47), '6061': (0.74, 0.76, 0.79), 'al6061_hub': (0.74, 0.76, 0.79),
+             'al5052_bracket': (0.66, 0.69, 0.72), 'purchased': (0.30, 0.32, 0.35), 'NBR': (0.16, 0.16, 0.16),
+             'TPU95A': (0.85, 0.85, 0.85), 'UHMW': (0.88, 0.88, 0.88), 'EPDM': (0.16, 0.16, 0.16), 'belt': (0.2, 0.2, 0.2),
+             'foam': (0.5, 0.5, 0.5), 'battery_650': (0.34, 0.42, 0.64), 'nylon_standoff': (0.9, 0.9, 0.9)}
+# component name -> (Thai label, offset from the top centre of its box). Parts that share a Y station (wheel and drive
+# motor, disc and upright) are pushed apart along Y so their labels do not stack in the side view.
+PART_TH = {'JGA25_370_400rpm_Front_L': ('มอเตอร์ขับ', (0, -14, 4)), 'Wheel_Hub_6061_Front_R': ('ล้อ', (0, 30, 8)),
+           'Beater_Disc_L': ('จานอาวุธ', (0, 26, 4)), 'D3536_1250kV_Can_ENVELOPE': ('มอเตอร์อาวุธ', (0, -6, 4)),
+           'Upright_6061_6mm_R': ('แผ่นตั้งอาวุธ', (0, -20, 6)), 'Wedgelet_R': ('ลิ่มหน้า', (0, 12, 4)),
+           '3S_650mAh_LiPo_ENVELOPE': ('แบต', (0, 0, 4)), 'ESP32_DevKit_51.5x28.3': ('บอร์ด', (0, 0, 4))}
+
+
+def _view(DATUM, path, elev, azim, title, zoom, solids, overlay, labels, lim):
+    """Shade solids [(shape, rgb, tol)] lit by face normal, draw overlay [(shape, rgb, alpha)] see-through on top, add
+    labels [(xyz, text, colour)], save. Datum coordinates, Z up, nose +Y."""
     import numpy as np
     import matplotlib
     matplotlib.use('Agg')
@@ -130,13 +145,12 @@ def render_3d(B, ID, DATUM, path, elev, azim, title, zoom=1.3):
     from mpl_toolkits.mplot3d.art3d import Poly3DCollection
     light = np.array([0.35, -0.55, 0.76])
     light /= np.linalg.norm(light)
-    base = {'steel_tube': np.array([0.80, 0.36, 0.30]), 'steel_tab': np.array([0.95, 0.66, 0.28])}
-    fig = plt.figure(figsize=(6.8, 4.25), facecolor='white')
-    ax = fig.add_axes([0, 0, 1, 0.93], projection='3d', computed_zorder=False)   # whole figure, so nothing is clipped
-    tris, cols = [], []
-    for m in B.steel:
-        v, t = B.AS_WELDED.get(m.name, m.shape).tessellate(0.05, 0.3)
-        v = np.array([p.toTuple() for p in v]) - np.array(DATUM)
+    d0 = np.array(DATUM)
+
+    def tris_of(shape, rgb, tol):
+        v, t = shape.tessellate(tol, 0.3)
+        v = np.array([p.toTuple() for p in v]) - d0
+        out, cols = [], []
         for a, b, c in t:
             tri = v[[a, b, c]]
             n = np.cross(tri[1] - tri[0], tri[2] - tri[0])
@@ -144,29 +158,72 @@ def render_3d(B, ID, DATUM, path, elev, azim, title, zoom=1.3):
             if nn < 1e-9:
                 continue
             k = 0.45 + 0.55 * abs(np.dot(n / nn, light))
-            tris.append(tri); cols.append(np.clip(base[m.material] * k + 0.08, 0, 1))
+            out.append(tri); cols.append(np.clip(np.array(rgb) * k + 0.08, 0, 1))
+        return out, cols
+
+    fig = plt.figure(figsize=(6.8, 4.25), facecolor='white')
+    ax = fig.add_axes([0, 0, 1, 0.93], projection='3d', computed_zorder=False)   # whole figure, so nothing is clipped
+    tris, cols = [], []
+    for shape, rgb, tol in solids:
+        a, b = tris_of(shape, rgb, tol); tris += a; cols += b
     pc = Poly3DCollection(tris, facecolors=cols, edgecolors=cols, linewidths=0.15)
     pc.set_clip_on(False)
     ax.add_collection3d(pc)
-    big_tabs = ('T01', 'T11', 'T02', 'T12', 'T23')      # small tabs are on page 3; labelling them here only clutters
-    for m in B.steel:
-        tube = m.material == 'steel_tube'
-        if not tube and ID[m.name] not in big_tabs:
-            continue
-        bb = B.AS_WELDED.get(m.name, m.shape).BoundingBox()
-        c = (np.array([bb.center.x, bb.center.y, bb.zmax]) - np.array(DATUM))
-        ax.text(c[0], c[1], c[2] + 3, ID[m.name], fontsize=8, ha='center', zorder=10,
-                color='#000' if tube else '#6b3500', fontweight='bold',
+    for shape, rgb, alpha in overlay:
+        a, b = tris_of(shape, rgb, 0.3)
+        oc = Poly3DCollection(a, facecolors=[(*c, alpha) for c in b], edgecolors='none')
+        oc.set_clip_on(False)
+        ax.add_collection3d(oc)
+    for (x, y, z), text, colour in labels:
+        ax.text(x, y, z, text, fontsize=8, ha='center', zorder=10, color=colour, fontweight='bold',
                 bbox=dict(boxstyle='round,pad=0.12', fc='white', ec='none', alpha=0.75), clip_on=False)
-    ax.quiver(81, 214, 0, 0, 22, 0, color='#0a4fa3', linewidth=1.4, arrow_length_ratio=0.35, zorder=11)
-    ax.text(81, 240, 0, 'หัวรถ', color='#0a4fa3', fontsize=8, ha='center', fontweight='bold', zorder=11)
-    ax.set_xlim(-10, 172); ax.set_ylim(-5, 245); ax.set_zlim(-5, 60)
-    ax.set_box_aspect((182, 250, 65), zoom=zoom)
+    xl, yl, zl = lim
+    ax.quiver(81, yl[1] - 30, 0, 0, 22, 0, color='#0a4fa3', linewidth=1.4, arrow_length_ratio=0.35, zorder=11)
+    ax.text(81, yl[1] - 4, 0, 'หัวรถ', color='#0a4fa3', fontsize=8, ha='center', fontweight='bold', zorder=11)
+    ax.set_xlim(*xl); ax.set_ylim(*yl); ax.set_zlim(*zl)
+    ax.set_box_aspect((xl[1] - xl[0], yl[1] - yl[0], zl[1] - zl[0]), zoom=zoom)
     ax.view_init(elev=elev, azim=azim)
     ax.set_axis_off()
     fig.suptitle(title, fontsize=11, fontweight='bold', y=0.985)
     fig.savefig(path, dpi=230)
     plt.close(fig)
+
+
+def _top(shape, DATUM, dz=3.0):
+    bb = shape.BoundingBox()
+    return bb.center.x - DATUM[0], bb.center.y - DATUM[1], bb.zmax - DATUM[2] + dz
+
+
+def render_3d(B, ID, DATUM, path, elev, azim, title, zoom=1.3):
+    """The as-welded frame alone, every tube and the big tabs labelled."""
+    big_tabs = ('T01', 'T11', 'T02', 'T12', 'T23')      # small tabs are on page 3; labelling them here only clutters
+    solids = [(B.AS_WELDED.get(m.name, m.shape), FRAME_RGB[m.material], 0.05) for m in B.steel]
+    labels = [(_top(B.AS_WELDED.get(m.name, m.shape), DATUM), ID[m.name], '#000' if m.material == 'steel_tube' else '#6b3500')
+              for m in B.steel if m.material == 'steel_tube' or ID[m.name] in big_tabs]
+    _view(DATUM, path, elev, azim, title, zoom, solids, [], labels, ((-10, 172), (-5, 245), (-5, 60)))
+
+
+def render_assembly(B, DATUM, path, elev, azim, title, skins=False, zoom=1.3, only=None):
+    """The finished frame (holes drilled) inside the whole robot: frame in colour, the rest grey, PC skins see-through
+    when asked (otherwise left out so the frame shows)."""
+    solids, overlay, labels = [], [], []
+    for b in B.bodies:
+        if b.material == 'keepout':
+            continue
+        if b.material in FRAME_RGB:
+            solids.append((b.shape, FRAME_RGB[b.material], 0.08))
+        elif b.material == 'PC':
+            if skins and b.name.startswith('Skin'):
+                overlay.append((b.shape, (0.55, 0.75, 0.95), 0.16))
+        else:
+            solids.append((b.shape, OTHER_RGB.get(b.material, (0.6, 0.6, 0.6)), 0.15))
+        if b.name in PART_TH and (only is None or PART_TH[b.name][0] in only):
+            text, (dx, dy, dz) = PART_TH[b.name]
+            x, y, z = _top(b.shape, DATUM, 0.0)
+            labels.append(((x + dx, y + dy, z + dz), text, '#222'))
+    rail = next(b for b in B.steel if b.name == 'Frame_Rail_L')
+    labels.append((_top(rail.shape, DATUM, 2.0), 'โครงเหล็ก', '#8b1a0e'))
+    _view(DATUM, path, elev, azim, title, zoom, solids, overlay, labels, ((-25, 187), (-20, 262), (-8, 66)))
 
 
 def build(B, ID, DATUM, out_pdf, chrome):
@@ -324,6 +381,16 @@ def build(B, ID, DATUM, out_pdf, chrome):
             render_3d(B, ID, DATUM, img / fn, elev, azim, name)
             pg.image(2 + (k % 2) * 138, 12 + (k // 2) * 87, 135, 84.4, 'images/' + fn)
         pages.append(pg)
+    pg = Page('6) โครงเหล็กเมื่อประกอบเป็นรถ (สีแดง/ส้ม = งานร้านเชื่อม · สีเทา = ชิ้นที่ผู้สั่งประกอบเอง)')
+    side_labels = ('ล้อ', 'จานอาวุธ', 'แบต', 'ลิ่มหน้า')   # parts in line along X stack their labels in the side view
+    for k, (elev, azim, name, skins, only) in enumerate([(28, 135, 'หน้า-ซ้าย (ไม่มีผนัง)', False, None),
+                                                          (28, -45, 'หลัง-ขวา (ไม่มีผนัง)', False, None),
+                                                          (10, 0, 'ด้านขวา (ไม่มีผนัง)', False, side_labels),
+                                                          (28, 135, 'ประกอบเสร็จ (ผนังโปร่งใส)', True, None)]):
+        fn = 'view3d_robot_%d.png' % (k + 1)
+        render_assembly(B, DATUM, img / fn, elev, azim, name, skins, only=only)
+        pg.image(2 + (k % 2) * 138, 12 + (k // 2) * 87, 135, 84.4, 'images/' + fn)
+    pages.append(pg)
 
     css = ('@page{size:A4 landscape;margin:10mm}body{margin:0}.pg{page-break-after:always}.pg:last-child{page-break-after:auto}')
     doc = '<!doctype html><html lang="th"><head><meta charset="utf-8"><style>%s</style></head><body>%s</body></html>' % (
