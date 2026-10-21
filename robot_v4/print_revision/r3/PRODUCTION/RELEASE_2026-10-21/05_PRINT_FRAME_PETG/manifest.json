@@ -1,0 +1,326 @@
+{
+  "status": "RELEASED_WITH_COUPON_HOLD_POINT",
+  "date": "2026-10-21",
+  "decided_by": "user, in chat: wants the production files for the frame now (after being told the insert holes are trial values)",
+  "r3_build_sha256": "5dfa96dcd76ec8505db7b12d26a1aad9cfd1e0a312cb58c4c2baec8a45bcc975",
+  "shop": "3D print PETG (frame)",
+  "trial_holes_mm": {
+    "M2.5_insert": 3.4,
+    "M3_insert": 4.6,
+    "hinge_pin_clearance": 0.2
+  },
+  "frame_parts": [
+    "V4_R3PC_Cleat_Bulkhead_Centre_Low_PETG.stl",
+    "V4_R3PC_Cleat_Front_High_PETG_L.stl",
+    "V4_R3PC_Cleat_Front_High_PETG_R.stl",
+    "V4_R3PC_Cleat_Front_Low_PETG_L.stl",
+    "V4_R3PC_Cleat_Front_Low_PETG_R.stl",
+    "V4_R3PC_Cleat_Mid_High_PETG_L.stl",
+    "V4_R3PC_Cleat_Mid_High_PETG_R.stl",
+    "V4_R3PC_Cleat_Mid_Low_PETG_L.stl",
+    "V4_R3PC_Cleat_Mid_Low_PETG_R.stl",
+    "V4_R3PC_Cleat_Rear_Centre_Low_PETG.stl",
+    "V4_R3PC_Cleat_Rear_High_PETG_L.stl",
+    "V4_R3PC_Cleat_Rear_High_PETG_R.stl",
+    "V4_R3PC_Cleat_Rear_Low_PETG_L.stl",
+    "V4_R3PC_Cleat_Rear_Low_PETG_R.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_L_y+32.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_L_y+62.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_L_y-28.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_L_y-82.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_R_y+32.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_R_y+62.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_R_y-28.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_R_y-82.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_Rear_x+0.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_Rear_x+58.stl",
+    "V4_R3PC_Skirt_Bracket_PETG_Rear_x-58.stl",
+    "V4_R3PC_Weapon_Side_Block_PETG_L.stl",
+    "V4_R3PC_Weapon_Side_Block_PETG_R.stl",
+    "V4_R3PC_Wedgelet_Block_PETG_L_PCbody.stl",
+    "V4_R3PC_Wedgelet_Block_PETG_R_PCbody.stl"
+  ],
+  "coupons": [
+    "Insert_M2.5_Hole_D3.2_PETG.stl",
+    "Insert_M2.5_Hole_D3.3_PETG.stl",
+    "Insert_M2.5_Hole_D3.4_PETG.stl",
+    "Insert_M2.5_Hole_D3.5_PETG.stl",
+    "Insert_M2.5_Hole_D3.6_PETG.stl",
+    "Insert_Hole_D4.4_PETG.stl",
+    "Insert_Hole_D4.5_PETG.stl",
+    "Insert_Hole_D4.6_PETG.stl",
+    "Insert_Hole_D4.7_PETG.stl",
+    "Insert_Hole_D4.8_PETG.stl",
+    "Insert_Horizontal_D4.4_PETG.stl",
+    "Insert_Horizontal_D4.5_PETG.stl",
+    "Insert_Horizontal_D4.6_PETG.stl",
+    "Insert_Horizontal_D4.7_PETG.stl",
+    "Insert_Horizontal_D4.8_PETG.stl",
+    "Pin_Horizontal_Clearance_000_PETG.stl",
+    "Pin_Horizontal_Clearance_010_PETG.stl",
+    "Pin_Horizontal_Clearance_020_PETG.stl",
+    "Pin_Horizontal_Clearance_030_PETG.stl"
+  ],
+  "held": [
+    "V4_R3PC_Motor_Cradle_PETG_Front_L.stl",
+    "V4_R3PC_Motor_Cradle_PETG_Front_R.stl",
+    "V4_R3PC_Motor_Cradle_PETG_Rear_L.stl",
+    "V4_R3PC_Motor_Cradle_PETG_Rear_R.stl",
+    "V4_R3PC_Motor_Lid_Bar_PETG_Front.stl",
+    "V4_R3PC_Motor_Lid_Bar_PETG_Rear.stl",
+    "V4_R3PC_Motor_Twin_Saddle_PETG_Front.stl",
+    "V4_R3PC_Motor_Twin_Saddle_PETG_Rear.stl"
+  ],
+  "inserts_needed": {
+    "M3_L4_OD5": 16,
+    "M2.5_L4_OD3.6": 45
+  },
+  "design_mass_g": 61.7,
+  "files": [
+    {
+      "file": "STL/V4_R3PC_Cleat_Bulkhead_Centre_Low_PETG.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Bulkhead_Centre_Low_PETG.stl",
+      "sha256": "d18f90a16a4759df4467b5190f4d045cd38462f888a8e98e8e68c2951c7cc1a3"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Front_High_PETG_L.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Front_High_PETG_L.stl",
+      "sha256": "2453c05aee609ecb3f8d2ef7889ff4d06ea04212d221fe1ef99971cbf8b779cf"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Front_High_PETG_R.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Front_High_PETG_R.stl",
+      "sha256": "11347cdcc8ce5134b1d91be4c571664d6e28368f6513c2bd0200110c6d90e5f5"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Front_Low_PETG_L.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Front_Low_PETG_L.stl",
+      "sha256": "8e64d3ae6bf32245d9f4f5995b187e764fc0f6d266017f7afe65e7759107c471"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Front_Low_PETG_R.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Front_Low_PETG_R.stl",
+      "sha256": "489c2e80213523645b78cc9d5b19a2b56821f635f19802963c9ad74345d42deb"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Mid_High_PETG_L.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Mid_High_PETG_L.stl",
+      "sha256": "268753c5b26f88fcec769110dde78213d4e5d9551d654c7b2ce67596591fb4a0"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Mid_High_PETG_R.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Mid_High_PETG_R.stl",
+      "sha256": "4e360a51e2dd6d35c5bd310e1b7c70d8bd592c939b390caa274b7a2e2f02e7fd"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Mid_Low_PETG_L.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Mid_Low_PETG_L.stl",
+      "sha256": "098c2dad3ae115d165fa36f735550395ec29b1fc5c9ff0834758542d4040ed59"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Mid_Low_PETG_R.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Mid_Low_PETG_R.stl",
+      "sha256": "cf13d011fb5e67daea7c15fc212a4f7598d6d0f9e32b381d19701cfdd4da4942"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Rear_Centre_Low_PETG.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Rear_Centre_Low_PETG.stl",
+      "sha256": "07423659a269178b8f863b6f1e05047ed7f368f21cf586a75d07158eadbfb43b"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Rear_High_PETG_L.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Rear_High_PETG_L.stl",
+      "sha256": "2723600367f07e184bebf5d9b8277f7c2b39c519692e3da7021f888202e2f557"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Rear_High_PETG_R.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Rear_High_PETG_R.stl",
+      "sha256": "8277920274d35d76cfa08128ff310b07532de3fc1368d8e09c3a66322c94a112"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Rear_Low_PETG_L.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Rear_Low_PETG_L.stl",
+      "sha256": "214b8922882833b3a5d97618afed3af0dea334466f50a6a266dd3a7ae9e0663f"
+    },
+    {
+      "file": "STL/V4_R3PC_Cleat_Rear_Low_PETG_R.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Cleat_Rear_Low_PETG_R.stl",
+      "sha256": "1898d2ef81fcc205ce16dbda31fa808eff933f0d73b93f9ce81ae2aaa25eb135"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_L_y+32.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_L_y+32.stl",
+      "sha256": "f7bc70907101845499d51374cad92a0188e8827911898fa3b0aaf563cbee752d"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_L_y+62.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_L_y+62.stl",
+      "sha256": "25647b6d85a2e0623fbc08abeeeff8df7a6b5d756498bde2eba163e9a5edb264"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_L_y-28.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_L_y-28.stl",
+      "sha256": "582dd02dd8e9e352514e4bb41483940bb888faec157596b59154e60229867e4e"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_L_y-82.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_L_y-82.stl",
+      "sha256": "1121249cb76886352397339363bfccf6b1b60cfe04c081a2f11b6402b8dd4c93"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_R_y+32.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_R_y+32.stl",
+      "sha256": "a5b62df93cde8daf442aeba3b2658c1d69b5643cdce6179fff9534144fa9707e"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_R_y+62.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_R_y+62.stl",
+      "sha256": "8ee4a4adbd83a5ac8c4caf36e9a518c1652efcf5505bba7f5d24b15448cb6da1"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_R_y-28.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_R_y-28.stl",
+      "sha256": "a56403c3e961a85354c35d14159151beff3c521ac375500f70304a290abf5fbc"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_R_y-82.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_R_y-82.stl",
+      "sha256": "a91406357b53e85be8380b3203eb79cbbba06f2c0c38a3f38eb533eab57aa2bf"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_Rear_x+0.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_Rear_x+0.stl",
+      "sha256": "9b049f581cd774c09890fac6f8c699de0f6c1f6bd64f966cae6402c1aa5b6030"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_Rear_x+58.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_Rear_x+58.stl",
+      "sha256": "ce40403b394ad0ed038ee762653660cfec8eaf2bfb736ee2e57adddaab5b6a8f"
+    },
+    {
+      "file": "STL/V4_R3PC_Skirt_Bracket_PETG_Rear_x-58.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Skirt_Bracket_PETG_Rear_x-58.stl",
+      "sha256": "d491a9e9d2bde905490f84ec5c746a71f724b0e83a192147187ae698b98ed64f"
+    },
+    {
+      "file": "STL/V4_R3PC_Weapon_Side_Block_PETG_L.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Weapon_Side_Block_PETG_L.stl",
+      "sha256": "50f83402b1a7a1cdc172dc2a830d21696ad7691bad3498126093eed4cd8103db"
+    },
+    {
+      "file": "STL/V4_R3PC_Weapon_Side_Block_PETG_R.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Weapon_Side_Block_PETG_R.stl",
+      "sha256": "003f7581b7e905826fc1f744d8ef203b069d379e9343fd8a17c0e0df1668b3c7"
+    },
+    {
+      "file": "STL/V4_R3PC_Wedgelet_Block_PETG_L_PCbody.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Wedgelet_Block_PETG_L_PCbody.stl",
+      "sha256": "aa3df144286f2563ce1ed5ffa3d92ba37778adc034cc022736d3e71981b7f14a"
+    },
+    {
+      "file": "STL/V4_R3PC_Wedgelet_Block_PETG_R_PCbody.stl",
+      "source": "pc_body/output/PETG_STL/V4_R3PC_Wedgelet_Block_PETG_R_PCbody.stl",
+      "sha256": "07d14e7deed361f10304bf49fbaf151f526c0b149f4bc250f3a104e1c8438f1e"
+    },
+    {
+      "file": "COUPONS/Insert_M2.5_Hole_D3.2_PETG.stl",
+      "source": "pc_body/output/TRIAL_ONLY/Insert_M2.5_Hole_D3.2_PETG.stl",
+      "sha256": "468255aeb5e4ad7b38ad2668a018d5c13acb93b334b9b900459c4ca8f3ef511b"
+    },
+    {
+      "file": "COUPONS/Insert_M2.5_Hole_D3.3_PETG.stl",
+      "source": "pc_body/output/TRIAL_ONLY/Insert_M2.5_Hole_D3.3_PETG.stl",
+      "sha256": "d4355266fd18e58984e29d4882da79594513954dd15f76177a90af9fd45a5224"
+    },
+    {
+      "file": "COUPONS/Insert_M2.5_Hole_D3.4_PETG.stl",
+      "source": "pc_body/output/TRIAL_ONLY/Insert_M2.5_Hole_D3.4_PETG.stl",
+      "sha256": "7fce1d100e2f35fbfec5966744ab793bf5eac8f7df56b7e43885deed67b308c4"
+    },
+    {
+      "file": "COUPONS/Insert_M2.5_Hole_D3.5_PETG.stl",
+      "source": "pc_body/output/TRIAL_ONLY/Insert_M2.5_Hole_D3.5_PETG.stl",
+      "sha256": "d03c7a2bd9ac1363a3d2817cd861debacf07a8381344de9ff6d4f0353d1d19b1"
+    },
+    {
+      "file": "COUPONS/Insert_M2.5_Hole_D3.6_PETG.stl",
+      "source": "pc_body/output/TRIAL_ONLY/Insert_M2.5_Hole_D3.6_PETG.stl",
+      "sha256": "ea7e34da3708792bf1e6a8ca5c4a594e65358dc5aa0a6e76f2c716acabef7c09"
+    },
+    {
+      "file": "COUPONS/Insert_Hole_D4.4_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Hole_D4.4_PETG.stl",
+      "sha256": "0c0966759113479ad74df6d58d089ca6edf0d15cef2c10af52912d78158a2550"
+    },
+    {
+      "file": "COUPONS/Insert_Hole_D4.5_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Hole_D4.5_PETG.stl",
+      "sha256": "2a7567d159e94f39f04f9463347725782f31f0826950aceb3c0bd86b91c4cd26"
+    },
+    {
+      "file": "COUPONS/Insert_Hole_D4.6_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Hole_D4.6_PETG.stl",
+      "sha256": "d9a81e21bc9a4e199babbdb880af6cabda1e21f4111ac917e3c0052ab5eaffbe"
+    },
+    {
+      "file": "COUPONS/Insert_Hole_D4.7_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Hole_D4.7_PETG.stl",
+      "sha256": "6ae7fe20a3ce2e84848305225d0a8bab9b127334d08c884973c6d7810415f457"
+    },
+    {
+      "file": "COUPONS/Insert_Hole_D4.8_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Hole_D4.8_PETG.stl",
+      "sha256": "ea7b4e81d32a0957be150fdf5482639542397e2a459369645afe8b625fc5af7d"
+    },
+    {
+      "file": "COUPONS/Insert_Horizontal_D4.4_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Horizontal_D4.4_PETG.stl",
+      "sha256": "b47417dd434fdb0a09546d7cc947e07ed52017a437f393ae6e5c9d6ed8f97966"
+    },
+    {
+      "file": "COUPONS/Insert_Horizontal_D4.5_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Horizontal_D4.5_PETG.stl",
+      "sha256": "d982c7310a09027ac6a0e9cba1b066606095695855bd318ca32f762a86bdd21f"
+    },
+    {
+      "file": "COUPONS/Insert_Horizontal_D4.6_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Horizontal_D4.6_PETG.stl",
+      "sha256": "6380ab59772bf50b057a13ea5b77a8581d8987c093be09d65bac03bf95fbefb1"
+    },
+    {
+      "file": "COUPONS/Insert_Horizontal_D4.7_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Horizontal_D4.7_PETG.stl",
+      "sha256": "bc034077425f13dc840eae9f2cce4e436aa029f3f8e4f8c6de54538776409b2d"
+    },
+    {
+      "file": "COUPONS/Insert_Horizontal_D4.8_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Insert_Horizontal_D4.8_PETG.stl",
+      "sha256": "84b62dc9859da78590f6ad90c3b88c161b4df5249fb72681df3b894c0869425a"
+    },
+    {
+      "file": "COUPONS/Pin_Horizontal_Clearance_000_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Pin_Horizontal_Clearance_000_PETG.stl",
+      "sha256": "ee36779a2433115565b6eedfa4f8a34d4193e69467cd4fbd70f09a5ada405053"
+    },
+    {
+      "file": "COUPONS/Pin_Horizontal_Clearance_010_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Pin_Horizontal_Clearance_010_PETG.stl",
+      "sha256": "65c7d2086f799dcd45b4c846a40a813d8d8a3b49e81c142aca15a86d0b03facb"
+    },
+    {
+      "file": "COUPONS/Pin_Horizontal_Clearance_020_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Pin_Horizontal_Clearance_020_PETG.stl",
+      "sha256": "bbe8ba9b5fe1c83eb01f2d0f8c016fa3902d2b9ec3f0b948f310c5b7429573e5"
+    },
+    {
+      "file": "COUPONS/Pin_Horizontal_Clearance_030_PETG.stl",
+      "source": "output_R3/TRIAL_ONLY/Pin_Horizontal_Clearance_030_PETG.stl",
+      "sha256": "1121a8b74a62a175b46cd53a1c4576bcd3ee3995a22e18ccbe270692dd95051f"
+    },
+    {
+      "file": "ORDER_FRAME_PETG_TH.pdf",
+      "source": "generated",
+      "sha256": "755e2f8cc297f5942bf5019f3106f8e15c4945d70ebdf2de8fdbb4bfc0af3a99"
+    }
+  ]
+}
