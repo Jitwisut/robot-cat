@@ -131,10 +131,10 @@ for side, s in (('L', -1), ('R', 1)):
     xp = WALL_X - SKIN - TUBE if s > 0 else -(WALL_X - SKIN)
     for loc, y0 in (('Rear', REAR_CROSS_Y), ('Front', CROSS_Y[0])):
         tube_z('Frame_Post_%s_%s' % (loc, side), xp, y0, RAIL_Z1, LID_Z0 - TUBE)
-    # top front stub: post to |x| 50, clear of the weapon motor can (x -41..13.5) and the belt
-    x0, x1 = (50.0, WALL_X - SKIN - TUBE) if s > 0 else (-(WALL_X - SKIN - TUBE), -50.0)
+    # top front stub: from |x| 50 (clear of the weapon motor can x -41..13.5 and the belt) over the post top
+    x0, x1 = (50.0, WALL_X - SKIN) if s > 0 else (-(WALL_X - SKIN), -50.0)
     tube_x('Frame_Top_Front_Stub_' + side, x0, x1, CROSS_Y[0], LID_Z0 - TUBE)
-tube_x('Frame_Top_Rear_Cross', -(WALL_X - SKIN - TUBE), WALL_X - SKIN - TUBE, REAR_CROSS_Y, LID_Z0 - TUBE)
+tube_x('Frame_Top_Rear_Cross', -(WALL_X - SKIN), WALL_X - SKIN, REAR_CROSS_Y, LID_Z0 - TUBE)   # rests on both rear posts
 
 # Tabs (1.5 mm mild steel, welded)
 upr = find_body(root, 'Upright_6061_6mm_R')
@@ -230,8 +230,29 @@ for i, a in enumerate(new + [hall, m06]):
 invalid = [b.name for b in new if not b.shape.isValid() or len(b.shape.Solids()) != 1]
 
 # every tube and tab must touch another frame member (a weld needs contact); straps/tabs touching only skins fail
+# Weld list: every pair of frame members that share a face. Contact area = common volume after a 0.05 mm shift
+# toward the other member / 0.05. A pair that only touches along an edge (area < 5 mm^2) cannot be welded properly.
 steel = [b for b in new if b.material.startswith('steel')]
-floating = [a.name for a in steel if min(a.shape.distance(o.shape) for o in steel if o is not a) > 0.01]
+SHIFT = 0.05
+welds, edge_only = [], []
+for i, a in enumerate(steel):
+    for o in steel[i + 1:]:
+        if a.shape.distance(o.shape) > 0.01: continue
+        best = (0.0, None)
+        for d in ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)):
+            c = a.shape.intersect(o.shape.translate(cq.Vector(*d) * SHIFT))
+            v = c.Volume()
+            if v > best[0]: best = (v, c)
+        area = best[0] / SHIFT
+        if area < 5.0:
+            edge_only.append({'a': a.name, 'b': o.name, 'area_mm2': round(area, 2)})
+            continue
+        bb = best[1].BoundingBox()
+        welds.append({'a': a.name, 'b': o.name, 'contact_area_mm2': round(area, 1),
+                      'contact_centre_mm': [round(v, 1) for v in best[1].Center().toTuple()],
+                      'contact_size_mm': sorted((round(bb.xlen, 1), round(bb.ylen, 1), round(bb.zlen, 1)), reverse=True)[:2]})
+welded = {w['a'] for w in welds} | {w['b'] for w in welds}
+floating = [b.name for b in steel if b.name not in welded]
 
 # upright screws: M3 button head D5.7 x 1.65 outside the tab must clear the fork arm
 screw_hits = []
@@ -278,7 +299,7 @@ cut_list = [{'part': b.name, 'length_mm': round(max(b.shape.BoundingBox().xlen, 
             for b in new if b.material == 'steel_tube']
 report = {
     'status': 'CONCEPT_CAD', 'revision': 'V4 R4-steel set A (2WD + PC 2 mm + 3S 650)', 'orientation': 'Z-up, nose +Y, mm',
-    'removed_from_r3': sorted(removed), 'invalid_bodies': invalid, 'frame_members_not_touching': floating, 'interference': interference, 'upright_screw_head_hits': screw_hits,
+    'removed_from_r3': sorted(removed), 'invalid_bodies': invalid, 'frame_members_not_touching': floating, 'edge_only_contacts': edge_only, 'welds': welds, 'interference': interference, 'upright_screw_head_hits': screw_hits,
     'upright_taps_yz': taps,
     'mass': {'total_g': round(total, 1), 'margin_to_2000_g': round(2000 - total, 1), 'margin_to_1950_target_g': round(1950 - total, 1),
              'cg_mm': cg.round(2).tolist(), 'groups_g': groups},
@@ -315,5 +336,5 @@ fig.suptitle('V4 R4-steel set A — CONCEPT CAD · %.1f g · CG y %.1f' % (total
 fig.text(0.5, 0.03, 'steel tube: red | steel tabs: orange | PC 2 mm: teal | 6061: grey | bought: blue/black', ha='center')
 fig.tight_layout(rect=(0, 0.05, 1, 0.93)); fig.savefig(OUT / 'assembly_preview.png', dpi=150); plt.close(fig)
 
-print(json.dumps({k: report[k] for k in ('invalid_bodies', 'frame_members_not_touching', 'interference', 'upright_screw_head_hits', 'mass', 'support_2wd', 'tube_total_mm', 'bounds_mm')},
+print(json.dumps({k: report[k] for k in ('invalid_bodies', 'frame_members_not_touching', 'edge_only_contacts', 'interference', 'upright_screw_head_hits', 'mass', 'support_2wd', 'tube_total_mm', 'bounds_mm')},
                  ensure_ascii=False, indent=1))

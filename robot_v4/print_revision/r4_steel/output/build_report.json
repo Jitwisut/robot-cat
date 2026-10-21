@@ -30,6 +30,541 @@
  ],
  "invalid_bodies": [],
  "frame_members_not_touching": [],
+ "edge_only_contacts": [],
+ "welds": [
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Frame_Rail_L",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    -55.0,
+    -98.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Frame_Post_Rear_L",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    -76.0,
+    -103.0,
+    16.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Frame_Rail_R",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    55.0,
+    -98.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Frame_Post_Rear_R",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    76.0,
+    -103.0,
+    16.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Rail_L",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    -55.0,
+    52.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Fork_Arm_L",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    -42.0,
+    62.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Post_Front_L",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    -76.0,
+    57.0,
+    16.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Rail_R",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    55.0,
+    52.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Fork_Arm_R",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    42.0,
+    62.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Post_Front_R",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    76.0,
+    57.0,
+    16.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Tab_Upright_L",
+   "contact_area_mm2": 6.0,
+   "contact_centre_mm": [
+    -35.0,
+    62.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    4.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Tab_Upright_R",
+   "contact_area_mm2": 6.0,
+   "contact_centre_mm": [
+    35.0,
+    62.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    4.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Drive_Motor_L",
+   "contact_area_mm2": 48.0,
+   "contact_centre_mm": [
+    -56.7,
+    18.0,
+    16.0
+   ],
+   "contact_size_mm": [
+    32.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Battery_Strap_L_50",
+   "contact_area_mm2": 80.0,
+   "contact_centre_mm": [
+    -50.0,
+    -50.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Battery_Strap_L_31",
+   "contact_area_mm2": 80.0,
+   "contact_centre_mm": [
+    -50.0,
+    -31.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Weapon_Mount_1",
+   "contact_area_mm2": 15.0,
+   "contact_centre_mm": [
+    -50.0,
+    29.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    10.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Weapon_Mount_2",
+   "contact_area_mm2": 15.0,
+   "contact_centre_mm": [
+    -50.0,
+    45.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    10.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Strap_Drive_Motor",
+   "contact_area_mm2": 16.5,
+   "contact_centre_mm": [
+    -50.0,
+    15.5,
+    15.3
+   ],
+   "contact_size_mm": [
+    11.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Fork_Arm_L",
+   "b": "Frame_Hinge_Beam_L",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    -42.0,
+    88.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Fork_Arm_L",
+   "b": "Tab_Upright_L",
+   "contact_area_mm2": 39.0,
+   "contact_centre_mm": [
+    -37.0,
+    75.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    26.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Upright_L",
+   "contact_area_mm2": 8.5,
+   "contact_centre_mm": [
+    -37.0,
+    91.8,
+    6.5
+   ],
+   "contact_size_mm": [
+    8.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Hinge_L1",
+   "contact_area_mm2": 12.0,
+   "contact_centre_mm": [
+    -37.7,
+    98.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    8.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Hinge_L2",
+   "contact_area_mm2": 12.0,
+   "contact_centre_mm": [
+    -62.8,
+    98.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    8.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Hinge_L3",
+   "contact_area_mm2": 12.0,
+   "contact_centre_mm": [
+    -85.8,
+    98.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    8.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Post_Rear_L",
+   "b": "Frame_Top_Rear_Cross",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    -76.0,
+    -103.0,
+    51.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Post_Front_L",
+   "b": "Frame_Top_Front_Stub_L",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    -76.0,
+    57.0,
+    51.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Tab_Drive_Motor_R",
+   "contact_area_mm2": 48.0,
+   "contact_centre_mm": [
+    56.7,
+    18.0,
+    16.0
+   ],
+   "contact_size_mm": [
+    32.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Tab_Battery_Strap_R_50",
+   "contact_area_mm2": 80.0,
+   "contact_centre_mm": [
+    50.0,
+    -50.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Tab_Battery_Strap_R_31",
+   "contact_area_mm2": 80.0,
+   "contact_centre_mm": [
+    50.0,
+    -31.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Strap_Drive_Motor",
+   "contact_area_mm2": 16.5,
+   "contact_centre_mm": [
+    50.0,
+    15.5,
+    15.2
+   ],
+   "contact_size_mm": [
+    11.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Fork_Arm_R",
+   "b": "Frame_Hinge_Beam_R",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    42.0,
+    88.0,
+    11.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Fork_Arm_R",
+   "b": "Tab_Upright_R",
+   "contact_area_mm2": 39.0,
+   "contact_centre_mm": [
+    37.0,
+    75.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    26.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Upright_R",
+   "contact_area_mm2": 8.5,
+   "contact_centre_mm": [
+    37.0,
+    91.8,
+    6.5
+   ],
+   "contact_size_mm": [
+    8.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Hinge_R1",
+   "contact_area_mm2": 12.0,
+   "contact_centre_mm": [
+    37.8,
+    98.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    8.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Hinge_R2",
+   "contact_area_mm2": 12.0,
+   "contact_centre_mm": [
+    62.8,
+    98.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    8.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Hinge_R3",
+   "contact_area_mm2": 12.0,
+   "contact_centre_mm": [
+    85.8,
+    98.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    8.0,
+    1.5
+   ]
+  },
+  {
+   "a": "Frame_Post_Rear_R",
+   "b": "Frame_Top_Rear_Cross",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    76.0,
+    -103.0,
+    51.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Post_Front_R",
+   "b": "Frame_Top_Front_Stub_R",
+   "contact_area_mm2": 36.0,
+   "contact_centre_mm": [
+    76.0,
+    57.0,
+    51.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  }
+ ],
  "interference": [],
  "upright_screw_head_hits": [],
  "upright_taps_yz": [
@@ -51,27 +586,27 @@
   ]
  ],
  "mass": {
-  "total_g": 1845.6,
-  "margin_to_2000_g": 154.4,
-  "margin_to_1950_target_g": 104.4,
+  "total_g": 1857.3,
+  "margin_to_2000_g": 142.7,
+  "margin_to_1950_target_g": 92.7,
   "cg_mm": [
-   -1.39,
-   20.42,
-   29.05
+   -1.38,
+   20.15,
+   29.21
   ],
   "groups_g": {
    "R3 parts kept + bought": 1210.4,
-   "frame tubes": 311.3,
+   "frame tubes": 322.8,
    "frame tabs/strap": 81.1,
    "PC skins": 227.1,
-   "weld beads + paint": 15.7
+   "weld beads + paint": 16.2
   }
  },
  "support_2wd": {
   "drive_axle_y": 18,
   "other_support": "nose skid y 69",
-  "drive_wheel_load_pct": 95.3,
-  "push_N_mu0.6": 7.81
+  "drive_wheel_load_pct": 95.8,
+  "push_N_mu0.6": 7.83
  },
  "tube_cut_list_mm": [
   {
@@ -104,7 +639,7 @@
   },
   {
    "part": "Frame_Top_Front_Stub_L",
-   "length_mm": 21.0
+   "length_mm": 31.0
   },
   {
    "part": "Frame_Rail_R",
@@ -128,14 +663,14 @@
   },
   {
    "part": "Frame_Top_Front_Stub_R",
-   "length_mm": 21.0
+   "length_mm": 31.0
   },
   {
    "part": "Frame_Top_Rear_Cross",
-   "length_mm": 142.0
+   "length_mm": 162.0
   }
  ],
- "tube_total_mm": 1102.0,
+ "tube_total_mm": 1142.0,
  "bounds_mm": {
   "xmin": -102.92,
   "xmax": 102.92,
@@ -791,10 +1326,10 @@
   {
    "part": "Frame_Top_Front_Stub_L",
    "material": "steel_tube",
-   "mass_g": 5.935,
+   "mass_g": 8.761,
    "centroid_mm": [
-    -60.5,
-    57.0,
+    -65.50000000000001,
+    57.00000000000001,
     56.0
    ],
    "method": "CAD volume x density"
@@ -857,10 +1392,10 @@
   {
    "part": "Frame_Top_Front_Stub_R",
    "material": "steel_tube",
-   "mass_g": 5.935,
+   "mass_g": 8.761,
    "centroid_mm": [
-    60.5,
-    57.0,
+    65.50000000000004,
+    57.00000000000001,
     56.0
    ],
    "method": "CAD volume x density"
@@ -868,10 +1403,10 @@
   {
    "part": "Frame_Top_Rear_Cross",
    "material": "steel_tube",
-   "mass_g": 40.129,
+   "mass_g": 45.781,
    "centroid_mm": [
-    -1.4233093924458971e-15,
-    -103.0,
+    0.0,
+    -103.00000000000001,
     56.0
    ],
    "method": "CAD volume x density"
@@ -1241,7 +1776,7 @@
   },
   {
    "part": "weld beads + paint",
-   "mass_g": 15.71,
+   "mass_g": 16.16,
    "centroid_mm": [
     0,
     -6.5,
