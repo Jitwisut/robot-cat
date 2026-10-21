@@ -1,0 +1,126 @@
+{
+  "status": "RELEASED",
+  "date": "2026-10-19",
+  "r3_build_sha256": "5dfa96dcd76ec8505db7b12d26a1aad9cfd1e0a312cb58c4c2baec8a45bcc975",
+  "shop": "laser metal",
+  "released": [
+    "M01 Beater_Disc_L",
+    "M02 Upright_6061_6mm_L",
+    "M03 Upright_6061_6mm_R",
+    "M04 Weapon_Top_Brace_3mm",
+    "M05 Weapon_Bottom_Brace_3mm",
+    "M07 Wedgelet_L",
+    "M08 Skirt_Plate_08mm_R",
+    "M09 Skirt_Plate_08mm_Rear"
+  ],
+  "held": [
+    {
+      "id": "M06",
+      "file": "Weapon_Motor_Mount_3mm",
+      "blockers": [
+        "M06 Weapon_Motor_Mount_3mm: ใช้ค่า weapon_motor.mount_holes_yz_mm ที่ยังไม่ได้วัดจริง",
+        "M06 Weapon_Motor_Mount_3mm: ใช้ค่า weapon_motor.mount_thread_diameter_mm ที่ยังไม่ได้วัดจริง",
+        "M06 Weapon_Motor_Mount_3mm: ใช้ค่า weapon_motor.boss_diameter_mm ที่ยังไม่ได้วัดจริง",
+        "M06 Weapon_Motor_Mount_3mm: ใช้ค่า drive_Front_L.diameter_mm ที่ยังไม่ได้วัดจริง",
+        "M06 Weapon_Motor_Mount_3mm: ใช้ค่า drive_Front_R.diameter_mm ที่ยังไม่ได้วัดจริง"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "file": "DXF/Beater_Disc_L.dxf",
+      "source": "output_R3/DRAFT/metal/Beater_Disc_L.dxf",
+      "sha256": "3f46791b958a7a8f35c00e001d96efae57f9266dfe7844d33cb8f6c8d4562124"
+    },
+    {
+      "file": "STEP/Beater_Disc_L.step",
+      "source": "output_R3/DRAFT/metal/Beater_Disc_L.step",
+      "sha256": "a8b24a010b8ac7e2b9d923e62214fd99adc769a7c417152204439f6853e4c7fb"
+    },
+    {
+      "file": "DXF/Upright_6061_6mm_L.dxf",
+      "source": "output_R3/DRAFT/metal/Upright_6061_6mm_L.dxf",
+      "sha256": "6a604b3de35bd5401c00b010ce809c1e64662fd04a18a4d6bcf19fd454872328"
+    },
+    {
+      "file": "STEP/Upright_6061_6mm_L.step",
+      "source": "output_R3/DRAFT/metal/Upright_6061_6mm_L.step",
+      "sha256": "ba9617175fce0db7e329b3a305dde241682074b5abb37a9b52e13ce870889d6b"
+    },
+    {
+      "file": "DXF/Upright_6061_6mm_R.dxf",
+      "source": "output_R3/DRAFT/metal/Upright_6061_6mm_R.dxf",
+      "sha256": "8ab2fabac555620f4b48b22b496a6def6b4e5c90f7f11ce55ef0478e60a03f32"
+    },
+    {
+      "file": "STEP/Upright_6061_6mm_R.step",
+      "source": "output_R3/DRAFT/metal/Upright_6061_6mm_R.step",
+      "sha256": "7a902908bf726b7ab74a36ae399b615c6a79566e40ed4d9cfcfbdb1441ed3ec5"
+    },
+    {
+      "file": "DXF/Weapon_Top_Brace_3mm.dxf",
+      "source": "output_R3/DRAFT/metal/Weapon_Top_Brace_3mm.dxf",
+      "sha256": "d5a702515946e5bce5c32f11e0b5e99f1efdab605f06e05f6b5b68e8e75dfcf5"
+    },
+    {
+      "file": "STEP/Weapon_Top_Brace_3mm.step",
+      "source": "output_R3/DRAFT/metal/Weapon_Top_Brace_3mm.step",
+      "sha256": "bad2946a3b7720efd73ab1b3d1c50975147bf8501fa1ae8d70e84ba6309b6777"
+    },
+    {
+      "file": "DXF/Weapon_Bottom_Brace_3mm.dxf",
+      "source": "output_R3/DRAFT/metal/Weapon_Bottom_Brace_3mm.dxf",
+      "sha256": "e3f7bc403b5a598b08c7b86378cab5ea56c623f5094b30a9cdc927afa9618f62"
+    },
+    {
+      "file": "STEP/Weapon_Bottom_Brace_3mm.step",
+      "source": "output_R3/DRAFT/metal/Weapon_Bottom_Brace_3mm.step",
+      "sha256": "ad1363829f4deb998ee40381228747a02ed59fcc4e78e6790b279dfcf4ec64f2"
+    },
+    {
+      "file": "DXF/Wedgelet_L.dxf",
+      "source": "output_R3/DRAFT/metal/Wedgelet_L.dxf",
+      "sha256": "dc81a7e4f8ae2dac483e905e8659310f1cef79fd487122016360a00d79a75aca"
+    },
+    {
+      "file": "STEP/Wedgelet_L.step",
+      "source": "output_R3/DRAFT/metal/Wedgelet_L.step",
+      "sha256": "5b4134fae589114f022d841b4aa4e85aee71218b7f6aadd136fe5fd674190863"
+    },
+    {
+      "file": "DXF/Skirt_Plate_08mm_R.dxf",
+      "source": "output_R3/DRAFT/metal/Skirt_Plate_08mm_R.dxf",
+      "sha256": "e2fd99e9616afea9238740b226e6f066f060bfc2eaee81c6c8eda08a1c873b30"
+    },
+    {
+      "file": "STEP/Skirt_Plate_08mm_R.step",
+      "source": "output_R3/DRAFT/metal/Skirt_Plate_08mm_R.step",
+      "sha256": "9b2e6a3a325bb73d0ef786c99de947d9eab2f9205ef8aa411f48cf8cef9cd452"
+    },
+    {
+      "file": "DXF/Skirt_Plate_08mm_Rear.dxf",
+      "source": "output_R3/DRAFT/metal/Skirt_Plate_08mm_Rear.dxf",
+      "sha256": "f9bbc0937d15539eae181c62e462074e8d649c7175b2ba6619c6c27d535c2b88"
+    },
+    {
+      "file": "STEP/Skirt_Plate_08mm_Rear.step",
+      "source": "output_R3/DRAFT/metal/Skirt_Plate_08mm_Rear.step",
+      "sha256": "e613213f3eabc73e27bd7e2d9c543f8b5977905729bc382f794f91519ca96f7c"
+    },
+    {
+      "file": "STEP/DERIVED_Wedgelet_R_mirror_of_Wedgelet_L.step",
+      "source": "mirror of Wedgelet_L.step across x=0",
+      "sha256": "f4945593ec13d0d3f95b4e4ee957102d25545b4ffddf1dc1308596d737b277e1"
+    },
+    {
+      "file": "STEP/DERIVED_Skirt_Plate_08mm_L_mirror_of_Skirt_Plate_08mm_R.step",
+      "source": "mirror of Skirt_Plate_08mm_R.step across x=0",
+      "sha256": "22a1f7fce3e4d4bc2a32a8ed82a24ff4258e0602b68fec541775552aeebe5a93"
+    },
+    {
+      "file": "WORK_ORDER_LASER_TH.pdf",
+      "sha256": "c6a5f5a7469a53c313efc9b894db01cb50ca32a18ed394245c13d0e638b5226f",
+      "source": "generated"
+    }
+  ]
+}

@@ -290,13 +290,14 @@ def main():
     print(json.dumps({'status': status, 'out': str(out.relative_to(R3)), 'blockers': blockers}, ensure_ascii=False, indent=1))
 
 
-def write_pdf(out, parts, blockers, status, stamp, files):
+def write_pdf(out, parts, blockers, status, stamp, files, notes=None, pdf_name='WORK_ORDER_PRODUCTION_TH.pdf'):
     e = html.escape
     build_short = REPORT['build_sha256'][:12]
     color = '#b00' if blockers else '#070'
     bom = ''.join('<tr><td>%s</td><td class="m">%s.dxf</td><td>%s</td><td>%s</td><td class="n">%g</td><td class="n">%d</td><td class="n">%.1f</td></tr>' % (
         p['id'], e(p['file']), e(p['name']), e(p['material']), p['thickness'], p['qty'], p['mass']) for p in parts)
     block = ''.join('<li>%s</li>' % e(b) for b in blockers) or '<li>ไม่มี — ผ่านทุกเงื่อนไข</li>'
+    block += ''.join('<li>ผู้สั่งยอมรับ: %s</li>' % e(n) for n in (notes or []))
     pages = []
     for p in parts:
         holes = ''.join('<tr><td>%s</td><td class="n">%.2f</td><td class="n">%.2f</td><td class="n">Ø%g</td><td>%s</td></tr>' % (
@@ -339,9 +340,9 @@ table{border-collapse:collapse}td,th{border:1px solid #999;padding:2px 5px;text-
 <p class="small">ไม่รวม: ชิ้นกลึง (ดุม รอก spacer) ส่งร้านกลึงตาม MACHINING.md · สกรู insert แกนบานพับ ผู้ใช้ซื้อเอง · หน้าถัดไปเป็นแบบของแต่ละชิ้น</p></section>
 %(pages)s</body></html>''' % dict(c=color, stamp=e(stamp), build=REPORT['build_sha256'], date=DATE, pieces=sum(p['qty'] for p in parts), n=len(parts),
                                       block=block, bom=bom, pages=''.join(pages))
-    html_path = out / 'WORK_ORDER_PRODUCTION_TH.html'
+    html_path = out / (pdf_name[:-4] + '.html')
     html_path.write_text(doc)
-    pdf = out / 'WORK_ORDER_PRODUCTION_TH.pdf'
+    pdf = out / pdf_name
     subprocess.run([CHROME, '--headless=new', '--disable-gpu', '--no-pdf-header-footer', '--print-to-pdf=' + str(pdf), html_path.as_uri()],
                    check=True, capture_output=True, timeout=120)
     html_path.unlink()

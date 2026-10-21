@@ -970,6 +970,21 @@ use = {'M3x6_button_ISO7380': 'cradle, บล็อกอาวุธ, ราง
        'EPDM_pad_0.5mm': 'รองใน cup ของ twin saddle และ lid bar (กาวในตัว)'}
 ctx = {'report': report, 'status': 'BLOCKED — รอผลวัด/ทดสอบ ห้ามผลิตชุดจริง', 'blockers': blockers, 'fastener_counts': counts,
        'fastener_g': FASTENER_G, 'fastener_use': use}
+# Partial release recorded by the user (r3/PRODUCTION/RELEASE_DECISION.json): stamp each sheet with its own status.
+decision_path = PR / 'r3' / 'PRODUCTION' / 'RELEASE_DECISION.json'
+if decision_path.exists():
+    decision = json.loads(decision_path.read_text())
+    released_panels = set(decision['released']['cnc_pc_panels'])
+
+    def status_of(kind, name):
+        if kind == 'panel' and name in released_panels:
+            return 'RELEASED — อนุมัติผลิต %s' % decision['date']
+        if kind == 'petg' and name.startswith(('Motor_Cradle', 'Motor_Twin_Saddle', 'Motor_Lid_Bar')):
+            return 'HOLD — รอวัดมอเตอร์ขับ และผล coupon insert'
+        if kind == 'petg':
+            return 'HOLD — รอผล coupon insert'
+        return ctx['status']
+    ctx['status_of'] = status_of
 report['production'] = production_docs.make(OUT, panels, panel_manifest, groups, ctx, filleted)
 report['release_blockers'] = blockers
 report['petg_groups'] = [{k: v for k, v in gr.items() if k != 'shape'} for gr in groups]

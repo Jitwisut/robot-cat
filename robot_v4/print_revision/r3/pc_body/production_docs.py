@@ -23,6 +23,7 @@ body{font-family:"Sukhumvit Set","Thonburi",sans-serif;font-size:8.5pt;color:#11
 .m{font-family:Menlo,monospace;font-size:7.5pt}.n{text-align:right;font-variant-numeric:tabular-nums}
 table{border-collapse:collapse}td,th{border:1px solid #999;padding:1.5px 4px;text-align:left;vertical-align:top}th{background:#eee}
 .stamp{border:2px solid #b00;color:#b00;font-weight:700;padding:2px 8px;display:inline-block;font-size:10.5pt}
+.stamp.rel{border-color:#070;color:#070}.stamp.hold{border-color:#a60;color:#a60}
 .sheet{page-break-before:always;height:192mm;display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:auto 1fr auto;gap:3px 8px}
 .sheet:first-child{page-break-before:auto}
 .hdr{grid-column:1/3;display:flex;gap:10px;align-items:center}
@@ -56,8 +57,12 @@ def title_block(part_id, name, material, thickness, qty, files, mass, status):
     return ('<table class="tb"><tr><th>ID</th><td>%s</td><th>ชิ้นงาน</th><td>%s</td><th>จำนวน/คัน</th><td>%s</td></tr>'
             '<tr><th>วัสดุ</th><td colspan="3">%s</td><th>หนา</th><td>%s</td></tr>'
             '<tr><th>ไฟล์</th><td class="m" colspan="3">%s</td><th>มวล</th><td>%s</td></tr>'
-            '<tr><th>แบบ</th><td colspan="3">Robot V4 R3 · ตัวถัง PC · %s · %s · Z ขึ้น, หัวรถ +Y</td><th>สถานะ</th><td class="bad">%s</td></tr></table>') % (
-        e(part_id), e(name), e(str(qty)), e(material), e(thickness), e(files), e(mass), REV, DATE, e(status))
+            '<tr><th>แบบ</th><td colspan="3">Robot V4 R3 · ตัวถัง PC · %s · %s · Z ขึ้น, หัวรถ +Y</td><th>สถานะ</th><td class="%s">%s</td></tr></table>') % (
+        e(part_id), e(name), e(str(qty)), e(material), e(thickness), e(files), e(mass), REV, DATE, 'ok' if status.startswith('RELEASED') else 'bad', e(status))
+
+
+def stamp_class(status):
+    return 'stamp rel' if status.startswith('RELEASED') else 'stamp hold' if status.startswith('HOLD') else 'stamp'
 
 
 def panel_svg(p, filleted):
@@ -129,8 +134,8 @@ def panel_sheet(p, filleted, mass, files, status, part_id):
             '<p class="small">พิกัดวัดจากจุด 0,0 = มุมล่างซ้ายของกรอบชิ้นงาน มองจาก FACE UP: %s</p><p class="small">%s</p>'
             '<p class="small">ห้ามตัดเลเซอร์ · CNC router ดอก O-flute Ø3 · ลบคมทุกขอบ · ห้ามตัวทำละลาย/น้ำยาล็อกเกลียวกับ PC · ห้าม mirror</p>') % (
         table, verts, e(p.face_up), TOL)
-    return ('<section class="sheet"><div class="hdr"><span class="stamp">%s</span><b>%s</b></div><div class="draw">%s</div><div class="side">%s</div>%s</section>' % (
-        e(status), e(p.name), svg, side, title_block(part_id, p.name, 'แผ่นโพลีคาร์บอเนตตัน (solid PC) Makrolon GP / Lexan 9030 หรือเทียบเท่า', '%.1f มม.' % p.t, 1, files, '%.1f g' % mass, status)))
+    return ('<section class="sheet"><div class="hdr"><span class="%s">%s</span><b>%s</b></div><div class="draw">%s</div><div class="side">%s</div>%s</section>' % (
+        stamp_class(status), e(status), e(p.name), svg, side, title_block(part_id, p.name, 'แผ่นโพลีคาร์บอเนตตัน (solid PC) Makrolon GP / Lexan 9030 หรือเทียบเท่า', '%.1f มม.' % p.t, 1, files, '%.1f g' % mass, status)))
 
 
 def cyl_holes(shape):
@@ -163,8 +168,8 @@ def part_sheet(group, status, part_id, notes):
             '<p class="small">%s</p><p class="small">PETG · 4 walls · %s · ท่าพิมพ์ตามไฟล์ (Z ขึ้น ฐานพิมพ์ Z=0) · รู insert เป็นค่าทดลอง ต้องยืนยันด้วย coupon · '
             'ตรวจขนาดรวม ±0.3 และรู ±0.1 หลังพิมพ์ · ห้าม mirror: ซ้าย/ขวาใช้ไฟล์แยก</p>') % (
         bb.xlen, bb.ylen, bb.zlen, e('<br>'.join(group['files'])).replace('&lt;br&gt;', '<br>'), e(group['inserts']), hrows, e(group['note']), e(group['infill']))
-    return ('<section class="sheet"><div class="hdr"><span class="stamp">%s</span><b>%s</b></div><div class="draw"><div class="views">%s</div></div><div class="side">%s</div>%s</section>' % (
-        e(status), e(group['title']), ''.join(views), side,
+    return ('<section class="sheet"><div class="hdr"><span class="%s">%s</span><b>%s</b></div><div class="draw"><div class="views">%s</div></div><div class="side">%s</div>%s</section>' % (
+        stamp_class(status), e(status), e(group['title']), ''.join(views), side,
         title_block(part_id, group['title'], 'PETG (พิมพ์ 3D)', '-', group['qty'], ', '.join(group['files']), '%.2f g/ชิ้น (80%%)' % group['mass'], status)))
 
 
@@ -224,13 +229,14 @@ def make(out, panels, panel_rows, groups, ctx, filleted):
     for old in list(prod.glob('*.pdf')) + list((prod / 'drawings').glob('*.pdf')):
         old.unlink()
     status = ctx['status']
+    status_of = ctx.get('status_of') or (lambda kind, name: status)
     sheets = []
     for k, (key, p) in enumerate(panels.items(), 1):
         row = next(r for r in panel_rows if r['file'] == p.name + '.dxf')
         row['id'] = 'PC%02d' % k
-        sheets.append((row['id'], p.name, panel_sheet(p, filleted, row['mass_g'], p.name + '.dxf / .step', status, row['id'])))
+        sheets.append((row['id'], p.name, panel_sheet(p, filleted, row['mass_g'], p.name + '.dxf / .step', status_of('panel', p.name), row['id'])))
     for g in groups:
-        sheets.append((g['id'], g['title'], part_sheet(g, status, g['id'], g.get('notes', {}))))
+        sheets.append((g['id'], g['title'], part_sheet(g, status_of('petg', g['title']), g['id'], g.get('notes', {}))))
     index = []
     for pid, name, html_sheet in sheets:
         f = prod / 'drawings' / ('%s_%s.pdf' % (pid, re.sub(r'[^A-Za-z0-9+-]+', '_', name).strip('_')))

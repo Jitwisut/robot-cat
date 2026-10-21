@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-19",
+  "decided_by": "user, in chat: release only the parts that do not depend on unmeasured motors",
+  "basis": {
+    "r3_build_sha256_prefix": "5dfa96dc",
+    "body": "PC 3 mm body rev 3 (r3/pc_body)"
+  },
+  "released": {
+    "laser_metal": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M07",
+      "M08",
+      "M09"
+    ],
+    "cnc_pc_panels": [
+      "PC3_Floor",
+      "PC3_Side_Wall_L",
+      "PC3_Side_Wall_R",
+      "PC3_Rear_Wall",
+      "PC2_Bulkhead_L",
+      "PC2_Bulkhead_R",
+      "PC3_Lid"
+    ],
+    "lathe": [
+      "Beater_Hub_6061_D30",
+      "Spacer_Inner_ID8.2_OD11",
+      "Spacer_Outer_L_ID8.2_OD11",
+      "Spacer_Outer_R_ID8.2_OD11",
+      "Hinge_Pin_D3x57"
+    ],
+    "print": [
+      "insert coupons only (M3 and M2.5)"
+    ]
+  },
+  "accepted_risks": {
+    "weapon_motor.diameter_mm": "ส่วนเว้าด้านหลังของแผ่นตั้งซ้ายใช้ Ø35 มม. ของมอเตอร์ SURPASS C3536 ตามแคตตาล็อก + ระยะเผื่อ 1 มม. ถ้ามอเตอร์จริงใหญ่กว่า ต้องตะไบส่วนเว้าเพิ่ม",
+    "dead_shaft.diameter_mm": "รูแกน Ø8.2 ของแผ่นตั้งเป็นรูเผื่อมาตรฐาน ISO ของสกรู M8 ซึ่งเป็นชิ้นมาตรฐาน"
+  },
+  "pc_sheet_thickness_acceptance_mm": {
+    "3.0": [
+      2.9,
+      3.1
+    ],
+    "2.0": [
+      1.9,
+      2.1
+    ]
+  },
+  "held": {
+    "M06 แผ่นยึดมอเตอร์อาวุธ (Weapon_Motor_Mount_3mm)": "วัดรูยึด ขนาดเกลียว และบ่าของมอเตอร์อาวุธจริง",
+    "รอกมอเตอร์ (Motor_Pulley_D30_1to1)": "วัดเพลามอเตอร์อาวุธจริง: Ø, ความยื่น และตำแหน่งสกรูตัวหนอน",
+    "PETG แท่นมอเตอร์ ×4, twin saddle ×2, lid bar ×2": "วัดมอเตอร์ขับจริง 4 ตัว: รูยึดหน้า บ่า Ø ตัวมอเตอร์ และความยาว + ผล coupon insert",
+    "PETG ดุมล้อ ×4": "วัดเพลา D ของมอเตอร์ขับจริง (Ø และความลึกด้านแบน) + ผล coupon D_Shaft",
+    "PETG ชิ้นอื่นทั้งหมด": "เลือกขนาดรู insert จาก coupon แล้วสร้างไฟล์ชิ้นจริงใหม่",
+    "PETG ถาดแบต, แท่นอุปกรณ์ไฟฟ้า, collar สวิตช์, เสา Hall": "วัดแบต อุปกรณ์ไฟฟ้า สวิตช์ และเซนเซอร์ Hall จริง",
+    "ยาง TPU ×4": "เลือกรูในยางจาก coupon Tyre_Ring"
+  }
+}
