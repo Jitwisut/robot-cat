@@ -1,10 +1,11 @@
-"""Simple dimensioned sketch of the R4-steel frame for the welder (WELD_SKETCH_TH.pdf, 3 A4 landscape pages).
+"""Simple dimensioned sketch of the R4-steel frame for the welder (WELD_SKETCH_TH.pdf, 5 A4 landscape pages).
 
 The full drawing (WELD_DRAWING_TH.pdf) lists every part by coordinate; the shop found it hard to read. This sketch
-shows the same CAD as three plain views with chained dimensions from the rear-left corner (DATUM):
+shows the same CAD as plain views with chained dimensions from the rear-left corner (DATUM):
   1. bottom frame from above + tube cut list
   2. rear view (posts, top cross) + section at the drive-motor cross (motor plates, clamp post, clamp bar)
   3. front tabs (weapon-upright plates, hinge tabs) + the small tabs on the rails
+  4-5. shaded 3D views from the four top corners, then from low and from underneath (labelled F/T ids)
 Every number comes from build_r4_steel.py (bounding boxes of the as-welded parts), not typed by hand.
 Called by make_weld_package.py.
 """
@@ -95,6 +96,11 @@ class Page:
             left = xd < self.p(uf[0], 0)[0]
             self.chain_v([vs[0], vs[-1]], [uf[0], uf[-1]], u_dim + (-1 if left else 1) * 9 / self.k, size, False)
 
+    def image(self, x, y, w, h, href):
+        self.out.append('<image x="%.2f" y="%.2f" width="%.2f" height="%.2f" href="%s" preserveAspectRatio="xMidYMid meet"/>' % (
+            x, y, w, h, e(href)))
+        self.out.append('<rect x="%.2f" y="%.2f" width="%.2f" height="%.2f" fill="none" stroke="#bbb" stroke-width="0.25"/>' % (x, y, w, h))
+
     def svg(self):
         head = '<text x="0" y="7" font-size="6" font-weight="700" fill="%s">%s</text>' % (INK, e(self.title))
         return ('<svg xmlns="http://www.w3.org/2000/svg" style="display:block" width="%gmm" height="%gmm" viewBox="0 0 %g %g" '
@@ -112,6 +118,55 @@ def table(pg, x, y, rows, widths, size=3.2, head=True):
                     anchor='end' if j > 1 else 'start')
             cx += w
     return y + len(rows) * rh
+
+
+def render_3d(B, ID, DATUM, path, elev, azim, title, zoom=1.3):
+    """One shaded view of the as-welded frame (datum coordinates, Z up, nose +Y). Faces are lit by their normal so the
+    10 mm tubes read as boxes without drawing every tessellation edge."""
+    import numpy as np
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+    light = np.array([0.35, -0.55, 0.76])
+    light /= np.linalg.norm(light)
+    base = {'steel_tube': np.array([0.80, 0.36, 0.30]), 'steel_tab': np.array([0.95, 0.66, 0.28])}
+    fig = plt.figure(figsize=(6.8, 4.25), facecolor='white')
+    ax = fig.add_axes([0, 0, 1, 0.93], projection='3d', computed_zorder=False)   # whole figure, so nothing is clipped
+    tris, cols = [], []
+    for m in B.steel:
+        v, t = B.AS_WELDED.get(m.name, m.shape).tessellate(0.05, 0.3)
+        v = np.array([p.toTuple() for p in v]) - np.array(DATUM)
+        for a, b, c in t:
+            tri = v[[a, b, c]]
+            n = np.cross(tri[1] - tri[0], tri[2] - tri[0])
+            nn = np.linalg.norm(n)
+            if nn < 1e-9:
+                continue
+            k = 0.45 + 0.55 * abs(np.dot(n / nn, light))
+            tris.append(tri); cols.append(np.clip(base[m.material] * k + 0.08, 0, 1))
+    pc = Poly3DCollection(tris, facecolors=cols, edgecolors=cols, linewidths=0.15)
+    pc.set_clip_on(False)
+    ax.add_collection3d(pc)
+    big_tabs = ('T01', 'T11', 'T02', 'T12', 'T23')      # small tabs are on page 3; labelling them here only clutters
+    for m in B.steel:
+        tube = m.material == 'steel_tube'
+        if not tube and ID[m.name] not in big_tabs:
+            continue
+        bb = B.AS_WELDED.get(m.name, m.shape).BoundingBox()
+        c = (np.array([bb.center.x, bb.center.y, bb.zmax]) - np.array(DATUM))
+        ax.text(c[0], c[1], c[2] + 3, ID[m.name], fontsize=8, ha='center', zorder=10,
+                color='#000' if tube else '#6b3500', fontweight='bold',
+                bbox=dict(boxstyle='round,pad=0.12', fc='white', ec='none', alpha=0.75), clip_on=False)
+    ax.quiver(81, 214, 0, 0, 22, 0, color='#0a4fa3', linewidth=1.4, arrow_length_ratio=0.35, zorder=11)
+    ax.text(81, 240, 0, 'หัวรถ', color='#0a4fa3', fontsize=8, ha='center', fontweight='bold', zorder=11)
+    ax.set_xlim(-10, 172); ax.set_ylim(-5, 245); ax.set_zlim(-5, 60)
+    ax.set_box_aspect((182, 250, 65), zoom=zoom)
+    ax.view_init(elev=elev, azim=azim)
+    ax.set_axis_off()
+    fig.suptitle(title, fontsize=11, fontweight='bold', y=0.985)
+    fig.savefig(path, dpi=230)
+    plt.close(fig)
 
 
 def build(B, ID, DATUM, out_pdf, chrome):
@@ -252,6 +307,23 @@ def build(B, ID, DATUM, out_pdf, chrome):
     pg.text(208, 22, 'หูสายรัดแบต (แผ่นตั้งชิดด้านในราง)', 3.4, bold=True, anchor='start')
     table(pg, 208, 25, rows, [12, 25, 20, 12], size=3.0)
     pages.append(pg)
+
+    # ------------------------------------------------------------ pages 4-5: 3D views all round
+    import matplotlib
+    matplotlib.rcParams['font.family'] = ['Sukhumvit Set', 'Tahoma']
+    img = out_pdf.parent / 'images'
+    img.mkdir(exist_ok=True)
+    sets = [('4) ภาพ 3 มิติ มองจากด้านบน 4 มุม (สีแดง = ท่อ, สีส้ม = แผ่นยึด)',
+             [(28, 135, 'หน้า-ซ้าย'), (28, 45, 'หน้า-ขวา'), (28, -135, 'หลัง-ซ้าย'), (28, -45, 'หลัง-ขวา')]),
+            ('5) ภาพ 3 มิติ มุมต่ำ และมองจากใต้ท้อง',
+             [(10, 90, 'ตรงหน้า (มุมต่ำ)'), (10, 0, 'ด้านขวา (มุมต่ำ)'), (-35, 135, 'ใต้ท้อง หน้า-ซ้าย'), (-35, -45, 'ใต้ท้อง หลัง-ขวา')])]
+    for title, views in sets:
+        pg = Page(title)
+        for k, (elev, azim, name) in enumerate(views):
+            fn = 'view3d_%s_%d.png' % ('top' if title.startswith('4') else 'low', k + 1)
+            render_3d(B, ID, DATUM, img / fn, elev, azim, name)
+            pg.image(2 + (k % 2) * 138, 12 + (k // 2) * 87, 135, 84.4, 'images/' + fn)
+        pages.append(pg)
 
     css = ('@page{size:A4 landscape;margin:10mm}body{margin:0}.pg{page-break-after:always}.pg:last-child{page-break-after:auto}')
     doc = '<!doctype html><html lang="th"><head><meta charset="utf-8"><style>%s</style></head><body>%s</body></html>' % (
