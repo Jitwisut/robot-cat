@@ -1,0 +1,3171 @@
+{
+ "sources": {
+  "bought_wheel_g": {
+   "value": 45.0,
+   "tag": "ASSUMED",
+   "note": "65 mm rubber wheel + 4 mm D hex coupler for JGA25; no Thai listing with mass found; sensitivity +-15 g"
+  },
+  "bought_wheel_dia_mm": {
+   "value": 65.0,
+   "tag": "ASSUMED",
+   "note": "R3 wheel is 64 mm; same push model"
+  },
+  "replacements": {
+   "value": [
+    "wheel_bought_Front_L",
+    "wheel_bought_Front_R",
+    "wheel_bought_Rear_L",
+    "wheel_bought_Rear_R",
+    "electronics_plate_PC2mm_CNC 122x54.5",
+    "nylon_standoffs_M3x20 x4",
+    "hall_bracket_al_1.5mm",
+    "switch_panel_mount_bought",
+    "rear_skid_UHMW_3mm (4WD: none)"
+   ],
+   "tag": "ASSUMED",
+   "note": "battery tray, wedgelet blocks/carriers and weapon mount feet become frame tabs"
+  },
+  "tube_10x10_wall_mm": {
+   "value": 1.0,
+   "tag": "ASSUMED",
+   "note": "minimum wall for MIG on thin tube; confirm with the welding shop (0.8 only with TIG)"
+  },
+  "tab_thickness_mm": {
+   "value": 1.5,
+   "tag": "ASSUMED",
+   "note": "mild steel plate, laser cut, welded to the tubes"
+  },
+  "rivnut_M3_plus_screw_g": {
+   "value": [
+    24,
+    1.4
+   ],
+   "tag": "ASSUMED",
+   "note": "24 M3 steel rivnuts (0.9 g) + screws (0.5 g) hold the PC skins; tube too thin to tap"
+  },
+  "weld_bead_paint_fraction": {
+   "value": 0.04,
+   "tag": "ASSUMED",
+   "note": "of frame + tabs"
+  },
+  "battery_650_g": {
+   "value": 58.0,
+   "tag": "ASSUMED",
+   "note": "3S 650 mAh 75-80C pack; 40 A firmware cap needs >= 62C on 650 mAh"
+  }
+ },
+ "limit_g": 2000.0,
+ "target_g": 1950.0,
+ "fixed_r3_g": 1303.2,
+ "printed_removed_g": 229.7,
+ "printed_removed": [
+  "Battery_Tray_PETG",
+  "Disconnect_Collar_PETG",
+  "Electronics_Platform_PETG",
+  "Electronics_Standoff_PETG_1",
+  "Electronics_Standoff_PETG_2",
+  "Electronics_Standoff_PETG_3",
+  "Electronics_Standoff_PETG_4",
+  "Hall_Post_PETG",
+  "Weapon_Mount_Foot_PETG_1",
+  "Weapon_Mount_Foot_PETG_2",
+  "Wedgelet_Block_PETG_L",
+  "Wedgelet_Block_PETG_R",
+  "Wedgelet_Carrier_PETG_L1",
+  "Wedgelet_Carrier_PETG_L2",
+  "Wedgelet_Carrier_PETG_R1",
+  "Wedgelet_Carrier_PETG_R2",
+  "Wheel_Hub_PETG_Front_L",
+  "Wheel_Hub_PETG_Front_R",
+  "Wheel_Hub_PETG_Rear_L",
+  "Wheel_Hub_PETG_Rear_R",
+  "Wheel_Tyre_TPU_Front_L",
+  "Wheel_Tyre_TPU_Front_R",
+  "Wheel_Tyre_TPU_Rear_L",
+  "Wheel_Tyre_TPU_Rear_R"
+ ],
+ "replacements_g": 203.4,
+ "frame_breakdown_g": {
+  "frame side_rails 2x207 (y -110..97)": 117.0,
+  "frame rear_cross 160": 45.2,
+  "frame bulkhead_cross 160 (y 62)": 45.2,
+  "frame posts 4x48 (rear corners + bulkhead)": 54.3,
+  "frame top_rear_cross + top_bulkhead_cross (lid clamp)": 90.4,
+  "tab drive_motor_face_plates 32x32 - D8.5 (JGA25 gearbox face) F": 22.8,
+  "tab drive_motor_face_plates 32x32 - D8.5 (JGA25 gearbox face) R": 22.8,
+  "tab upright_plates 40x45 (bolt the 6061 uprights)": 42.4,
+  "tab weapon_motor_mount_tabs 20x25 (M06 bolts on)": 11.8,
+  "tab wedgelet_hinge_tabs 15x20": 14.1,
+  "tab battery/electronics/skin tabs 12x15": 21.2,
+  "weld beads + paint": 19.5,
+  "rivnuts + screws": 33.6,
+  "skin PC3_Floor": 95.1,
+  "skin PC3_Side_Wall_L": 40.6,
+  "skin PC3_Side_Wall_R": 40.2,
+  "skin PC3_Rear_Wall": 31.5,
+  "skin PC2_Bulkhead_L": 4.2,
+  "skin PC2_Bulkhead_R": 11.2,
+  "skin PC3_Lid": 88.3
+ },
+ "frame_steel_g": 506.6,
+ "skins_g": 311.1,
+ "allowed_body_cross_check": {
+  "r3_body_material_calc_allowed_body_g": 464.7,
+  "here_body_budget_g": 493.4
+ },
+ "baseline_no_cuts": {
+  "total_g": 2357.9,
+  "margin_to_2000_g": -357.9,
+  "margin_to_target_g": -407.9,
+  "cg_y_mm": 5.39,
+  "cg_behind_front_axle_mm": 12.61,
+  "front_axle_load_pct": 85.7,
+  "other_support_load_pct": 14.3,
+  "rests_on": "4 wheels",
+  "push_N_mu0.6": 9.97,
+  "fits_2000": false,
+  "fits_target": false,
+  "stable": true,
+  "options": [],
+  "weapon": {
+   "disc_thickness_mm": 6,
+   "discs": 2,
+   "inertia_vs_R3": 1.0,
+   "energy_J_12.6V_no_load": 97.01021519907322,
+   "spinup_time_vs_R3": 1.0,
+   "bite_vs_R3": 1.0
+  }
+ },
+ "single_options": {
+  "D5": {
+   "total_g": 2331.0,
+   "margin_to_2000_g": -331.0,
+   "margin_to_target_g": -381.0,
+   "cg_y_mm": 4.36,
+   "cg_behind_front_axle_mm": 13.64,
+   "front_axle_load_pct": 84.5,
+   "other_support_load_pct": 15.5,
+   "rests_on": "4 wheels",
+   "push_N_mu0.6": 10.11,
+   "fits_2000": false,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "D5"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4": {
+   "total_g": 2304.2,
+   "margin_to_2000_g": -304.2,
+   "margin_to_target_g": -354.2,
+   "cg_y_mm": 3.3,
+   "cg_behind_front_axle_mm": 14.7,
+   "front_axle_load_pct": 83.3,
+   "other_support_load_pct": 16.7,
+   "rests_on": "4 wheels",
+   "push_N_mu0.6": 10.25,
+   "fits_2000": false,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "D4"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1": {
+   "total_g": 2277.4,
+   "margin_to_2000_g": -277.4,
+   "margin_to_target_g": -327.4,
+   "cg_y_mm": 2.22,
+   "cg_behind_front_axle_mm": 15.78,
+   "front_axle_load_pct": 82.1,
+   "other_support_load_pct": 17.9,
+   "rests_on": "4 wheels",
+   "push_N_mu0.6": 10.39,
+   "fits_2000": false,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "D1"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD": {
+   "total_g": 2032.2,
+   "margin_to_2000_g": -32.2,
+   "margin_to_target_g": -82.2,
+   "cg_y_mm": 17.29,
+   "cg_behind_front_axle_mm": 0.71,
+   "front_axle_load_pct": 99.4,
+   "other_support_load_pct": 0.6,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.96,
+   "fits_2000": false,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "2WD"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "B650": {
+   "total_g": 2335.9,
+   "margin_to_2000_g": -335.9,
+   "margin_to_target_g": -385.9,
+   "cg_y_mm": 5.83,
+   "cg_behind_front_axle_mm": 12.17,
+   "front_axle_load_pct": 86.2,
+   "other_support_load_pct": 13.8,
+   "rests_on": "4 wheels",
+   "push_N_mu0.6": 9.88,
+   "fits_2000": false,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "B650"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "S2": {
+   "total_g": 2259.3,
+   "margin_to_2000_g": -259.3,
+   "margin_to_target_g": -309.3,
+   "cg_y_mm": 6.6,
+   "cg_behind_front_axle_mm": 11.4,
+   "front_axle_load_pct": 87.0,
+   "other_support_load_pct": 13.0,
+   "rests_on": "4 wheels",
+   "push_N_mu0.6": 9.71,
+   "fits_2000": false,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "NoSkirt": {
+   "total_g": 2333.7,
+   "margin_to_2000_g": -333.7,
+   "margin_to_target_g": -383.7,
+   "cg_y_mm": 5.86,
+   "cg_behind_front_axle_mm": 12.14,
+   "front_axle_load_pct": 86.2,
+   "other_support_load_pct": 13.8,
+   "rests_on": "4 wheels",
+   "push_N_mu0.6": 9.88,
+   "fits_2000": false,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "NoCage": {
+   "total_g": 2225.2,
+   "margin_to_2000_g": -225.2,
+   "margin_to_target_g": -275.2,
+   "cg_y_mm": 6.99,
+   "cg_behind_front_axle_mm": 11.01,
+   "front_axle_load_pct": 87.5,
+   "other_support_load_pct": 12.5,
+   "rests_on": "4 wheels",
+   "push_N_mu0.6": 9.62,
+   "fits_2000": false,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "T08": {
+   "total_g": 2291.1,
+   "margin_to_2000_g": -291.1,
+   "margin_to_target_g": -341.1,
+   "cg_y_mm": 6.02,
+   "cg_behind_front_axle_mm": 11.98,
+   "front_axle_load_pct": 86.4,
+   "other_support_load_pct": 13.6,
+   "rests_on": "4 wheels",
+   "push_N_mu0.6": 9.82,
+   "fits_2000": false,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  }
+ },
+ "combos_fitting_target": {
+  "2WD+B650+T08": {
+   "total_g": 1943.4,
+   "margin_to_2000_g": 56.6,
+   "margin_to_target_g": 6.6,
+   "cg_y_mm": 19.09,
+   "cg_behind_front_axle_mm": -1.09,
+   "front_axle_load_pct": 97.9,
+   "other_support_load_pct": 2.1,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.9,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+NoSkirt+T08": {
+   "total_g": 1941.3,
+   "margin_to_2000_g": 58.7,
+   "margin_to_target_g": 8.7,
+   "cg_y_mm": 19.15,
+   "cg_behind_front_axle_mm": -1.15,
+   "front_axle_load_pct": 97.7,
+   "other_support_load_pct": 2.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.9,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+S2": {
+   "total_g": 1933.6,
+   "margin_to_2000_g": 66.4,
+   "margin_to_target_g": 16.4,
+   "cg_y_mm": 19.31,
+   "cg_behind_front_axle_mm": -1.31,
+   "front_axle_load_pct": 97.4,
+   "other_support_load_pct": 2.6,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.89,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+NoSkirt+T08": {
+   "total_g": 1919.3,
+   "margin_to_2000_g": 80.7,
+   "margin_to_target_g": 30.7,
+   "cg_y_mm": 19.84,
+   "cg_behind_front_axle_mm": -1.84,
+   "front_axle_load_pct": 96.4,
+   "other_support_load_pct": 3.6,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.85,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+NoCage": {
+   "total_g": 1899.5,
+   "margin_to_2000_g": 100.5,
+   "margin_to_target_g": 50.5,
+   "cg_y_mm": 19.99,
+   "cg_behind_front_axle_mm": -1.99,
+   "front_axle_load_pct": 96.1,
+   "other_support_load_pct": 3.9,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.84,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+S2": {
+   "total_g": 1911.6,
+   "margin_to_2000_g": 88.4,
+   "margin_to_target_g": 38.4,
+   "cg_y_mm": 19.99,
+   "cg_behind_front_axle_mm": -1.99,
+   "front_axle_load_pct": 96.1,
+   "other_support_load_pct": 3.9,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.84,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+S2+NoSkirt": {
+   "total_g": 1909.5,
+   "margin_to_2000_g": 90.5,
+   "margin_to_target_g": 40.5,
+   "cg_y_mm": 20.06,
+   "cg_behind_front_axle_mm": -2.06,
+   "front_axle_load_pct": 96.0,
+   "other_support_load_pct": 4.0,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.83,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "S2",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+S2+T08": {
+   "total_g": 1866.9,
+   "margin_to_2000_g": 133.1,
+   "margin_to_target_g": 83.1,
+   "cg_y_mm": 20.57,
+   "cg_behind_front_axle_mm": -2.57,
+   "front_axle_load_pct": 95.0,
+   "other_support_load_pct": 5.0,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.8,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "S2",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+NoCage+T08": {
+   "total_g": 1859.1,
+   "margin_to_2000_g": 140.9,
+   "margin_to_target_g": 90.9,
+   "cg_y_mm": 20.7,
+   "cg_behind_front_axle_mm": -2.7,
+   "front_axle_load_pct": 94.7,
+   "other_support_load_pct": 5.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.79,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+NoCage": {
+   "total_g": 1877.5,
+   "margin_to_2000_g": 122.5,
+   "margin_to_target_g": 72.5,
+   "cg_y_mm": 20.7,
+   "cg_behind_front_axle_mm": -2.7,
+   "front_axle_load_pct": 94.7,
+   "other_support_load_pct": 5.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.79,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+NoSkirt+NoCage": {
+   "total_g": 1875.3,
+   "margin_to_2000_g": 124.7,
+   "margin_to_target_g": 74.7,
+   "cg_y_mm": 20.76,
+   "cg_behind_front_axle_mm": -2.76,
+   "front_axle_load_pct": 94.6,
+   "other_support_load_pct": 5.4,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.78,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+S2+NoSkirt": {
+   "total_g": 1887.5,
+   "margin_to_2000_g": 112.5,
+   "margin_to_target_g": 62.5,
+   "cg_y_mm": 20.76,
+   "cg_behind_front_axle_mm": -2.76,
+   "front_axle_load_pct": 94.6,
+   "other_support_load_pct": 5.4,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.78,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "S2",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+S2+T08": {
+   "total_g": 1844.9,
+   "margin_to_2000_g": 155.1,
+   "margin_to_target_g": 105.1,
+   "cg_y_mm": 21.3,
+   "cg_behind_front_axle_mm": -3.3,
+   "front_axle_load_pct": 93.5,
+   "other_support_load_pct": 6.5,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.75,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "S2",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+S2+NoSkirt+T08": {
+   "total_g": 1842.7,
+   "margin_to_2000_g": 157.3,
+   "margin_to_target_g": 107.3,
+   "cg_y_mm": 21.37,
+   "cg_behind_front_axle_mm": -3.37,
+   "front_axle_load_pct": 93.4,
+   "other_support_load_pct": 6.6,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.74,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "S2",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+NoCage+T08": {
+   "total_g": 1837.1,
+   "margin_to_2000_g": 162.9,
+   "margin_to_target_g": 112.9,
+   "cg_y_mm": 21.43,
+   "cg_behind_front_axle_mm": -3.43,
+   "front_axle_load_pct": 93.3,
+   "other_support_load_pct": 6.7,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.74,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+NoSkirt+NoCage+T08": {
+   "total_g": 1835.0,
+   "margin_to_2000_g": 165.0,
+   "margin_to_target_g": 115.0,
+   "cg_y_mm": 21.5,
+   "cg_behind_front_axle_mm": -3.5,
+   "front_axle_load_pct": 93.1,
+   "other_support_load_pct": 6.9,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.74,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "NoSkirt",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+NoSkirt+NoCage": {
+   "total_g": 1853.3,
+   "margin_to_2000_g": 146.7,
+   "margin_to_target_g": 96.7,
+   "cg_y_mm": 21.49,
+   "cg_behind_front_axle_mm": -3.49,
+   "front_axle_load_pct": 93.2,
+   "other_support_load_pct": 6.8,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.73,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+S2+NoSkirt+T08": {
+   "total_g": 1820.7,
+   "margin_to_2000_g": 179.3,
+   "margin_to_target_g": 129.3,
+   "cg_y_mm": 22.11,
+   "cg_behind_front_axle_mm": -4.11,
+   "front_axle_load_pct": 91.9,
+   "other_support_load_pct": 8.1,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.69,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "S2",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+NoSkirt+NoCage+T08": {
+   "total_g": 1813.0,
+   "margin_to_2000_g": 187.0,
+   "margin_to_target_g": 137.0,
+   "cg_y_mm": 22.25,
+   "cg_behind_front_axle_mm": -4.25,
+   "front_axle_load_pct": 91.7,
+   "other_support_load_pct": 8.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.69,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "NoSkirt",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+S2+NoCage": {
+   "total_g": 1800.9,
+   "margin_to_2000_g": 199.1,
+   "margin_to_target_g": 149.1,
+   "cg_y_mm": 22.3,
+   "cg_behind_front_axle_mm": -4.3,
+   "front_axle_load_pct": 91.6,
+   "other_support_load_pct": 8.4,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.68,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "S2",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+S2+NoCage+T08": {
+   "total_g": 1760.5,
+   "margin_to_2000_g": 239.5,
+   "margin_to_target_g": 189.5,
+   "cg_y_mm": 23.1,
+   "cg_behind_front_axle_mm": -5.1,
+   "front_axle_load_pct": 90.0,
+   "other_support_load_pct": 10.0,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.64,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "S2",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+S2+NoCage": {
+   "total_g": 1778.9,
+   "margin_to_2000_g": 221.1,
+   "margin_to_target_g": 171.1,
+   "cg_y_mm": 23.08,
+   "cg_behind_front_axle_mm": -5.08,
+   "front_axle_load_pct": 90.0,
+   "other_support_load_pct": 10.0,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.64,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "S2",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+S2+NoSkirt+NoCage": {
+   "total_g": 1776.8,
+   "margin_to_2000_g": 223.2,
+   "margin_to_target_g": 173.2,
+   "cg_y_mm": 23.15,
+   "cg_behind_front_axle_mm": -5.15,
+   "front_axle_load_pct": 89.9,
+   "other_support_load_pct": 10.1,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.63,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "S2",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+S2+NoCage+T08": {
+   "total_g": 1738.5,
+   "margin_to_2000_g": 261.5,
+   "margin_to_target_g": 211.5,
+   "cg_y_mm": 23.91,
+   "cg_behind_front_axle_mm": -5.91,
+   "front_axle_load_pct": 88.4,
+   "other_support_load_pct": 11.6,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.59,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "S2",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+S2+NoSkirt+NoCage+T08": {
+   "total_g": 1736.4,
+   "margin_to_2000_g": 263.6,
+   "margin_to_target_g": 213.6,
+   "cg_y_mm": 23.98,
+   "cg_behind_front_axle_mm": -5.98,
+   "front_axle_load_pct": 88.3,
+   "other_support_load_pct": 11.7,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.58,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "S2",
+    "NoSkirt",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "2WD+B650+S2+NoSkirt+NoCage": {
+   "total_g": 1754.8,
+   "margin_to_2000_g": 245.2,
+   "margin_to_target_g": 195.2,
+   "cg_y_mm": 23.95,
+   "cg_behind_front_axle_mm": -5.95,
+   "front_axle_load_pct": 88.3,
+   "other_support_load_pct": 11.7,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.58,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "S2",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+B650+T08": {
+   "total_g": 1916.6,
+   "margin_to_2000_g": 83.4,
+   "margin_to_target_g": 33.4,
+   "cg_y_mm": 18.03,
+   "cg_behind_front_axle_mm": -0.03,
+   "front_axle_load_pct": 99.9,
+   "other_support_load_pct": 0.1,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.98,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "B650",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+NoSkirt+T08": {
+   "total_g": 1914.5,
+   "margin_to_2000_g": 85.5,
+   "margin_to_target_g": 35.5,
+   "cg_y_mm": 18.09,
+   "cg_behind_front_axle_mm": -0.09,
+   "front_axle_load_pct": 99.8,
+   "other_support_load_pct": 0.2,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.98,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+S2": {
+   "total_g": 1906.8,
+   "margin_to_2000_g": 93.2,
+   "margin_to_target_g": 43.2,
+   "cg_y_mm": 18.24,
+   "cg_behind_front_axle_mm": -0.24,
+   "front_axle_load_pct": 99.5,
+   "other_support_load_pct": 0.5,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.97,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+T08": {
+   "total_g": 1938.6,
+   "margin_to_2000_g": 61.4,
+   "margin_to_target_g": 11.4,
+   "cg_y_mm": 17.36,
+   "cg_behind_front_axle_mm": 0.64,
+   "front_axle_load_pct": 99.5,
+   "other_support_load_pct": 0.5,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.96,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+B650+NoSkirt+T08": {
+   "total_g": 1892.5,
+   "margin_to_2000_g": 107.5,
+   "margin_to_target_g": 57.5,
+   "cg_y_mm": 18.77,
+   "cg_behind_front_axle_mm": -0.77,
+   "front_axle_load_pct": 98.5,
+   "other_support_load_pct": 1.5,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.93,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "B650",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+NoCage": {
+   "total_g": 1872.7,
+   "margin_to_2000_g": 127.3,
+   "margin_to_target_g": 77.3,
+   "cg_y_mm": 18.91,
+   "cg_behind_front_axle_mm": -0.91,
+   "front_axle_load_pct": 98.2,
+   "other_support_load_pct": 1.8,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.92,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+B650+S2": {
+   "total_g": 1884.8,
+   "margin_to_2000_g": 115.2,
+   "margin_to_target_g": 65.2,
+   "cg_y_mm": 18.92,
+   "cg_behind_front_axle_mm": -0.92,
+   "front_axle_load_pct": 98.2,
+   "other_support_load_pct": 1.8,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.92,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "B650",
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+S2+NoSkirt": {
+   "total_g": 1882.7,
+   "margin_to_2000_g": 117.3,
+   "margin_to_target_g": 67.3,
+   "cg_y_mm": 18.99,
+   "cg_behind_front_axle_mm": -0.99,
+   "front_axle_load_pct": 98.1,
+   "other_support_load_pct": 1.9,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.91,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "S2",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+S2+T08": {
+   "total_g": 1840.1,
+   "margin_to_2000_g": 159.9,
+   "margin_to_target_g": 109.9,
+   "cg_y_mm": 19.49,
+   "cg_behind_front_axle_mm": -1.49,
+   "front_axle_load_pct": 97.1,
+   "other_support_load_pct": 2.9,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.88,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "S2",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+NoCage+T08": {
+   "total_g": 1832.3,
+   "margin_to_2000_g": 167.7,
+   "margin_to_target_g": 117.7,
+   "cg_y_mm": 19.61,
+   "cg_behind_front_axle_mm": -1.61,
+   "front_axle_load_pct": 96.8,
+   "other_support_load_pct": 3.2,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.87,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+B650+NoCage": {
+   "total_g": 1850.7,
+   "margin_to_2000_g": 149.3,
+   "margin_to_target_g": 99.3,
+   "cg_y_mm": 19.62,
+   "cg_behind_front_axle_mm": -1.62,
+   "front_axle_load_pct": 96.8,
+   "other_support_load_pct": 3.2,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.87,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "B650",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+NoSkirt+NoCage": {
+   "total_g": 1848.5,
+   "margin_to_2000_g": 151.5,
+   "margin_to_target_g": 101.5,
+   "cg_y_mm": 19.69,
+   "cg_behind_front_axle_mm": -1.69,
+   "front_axle_load_pct": 96.7,
+   "other_support_load_pct": 3.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.86,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+B650+S2+NoSkirt": {
+   "total_g": 1860.7,
+   "margin_to_2000_g": 139.3,
+   "margin_to_target_g": 89.3,
+   "cg_y_mm": 19.69,
+   "cg_behind_front_axle_mm": -1.69,
+   "front_axle_load_pct": 96.7,
+   "other_support_load_pct": 3.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.86,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "B650",
+    "S2",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+B650+S2+T08": {
+   "total_g": 1818.1,
+   "margin_to_2000_g": 181.9,
+   "margin_to_target_g": 131.9,
+   "cg_y_mm": 20.21,
+   "cg_behind_front_axle_mm": -2.21,
+   "front_axle_load_pct": 95.7,
+   "other_support_load_pct": 4.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.83,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "B650",
+    "S2",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+S2+NoSkirt+T08": {
+   "total_g": 1815.9,
+   "margin_to_2000_g": 184.1,
+   "margin_to_target_g": 134.1,
+   "cg_y_mm": 20.28,
+   "cg_behind_front_axle_mm": -2.28,
+   "front_axle_load_pct": 95.5,
+   "other_support_load_pct": 4.5,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.82,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "S2",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+B650+NoCage+T08": {
+   "total_g": 1810.3,
+   "margin_to_2000_g": 189.7,
+   "margin_to_target_g": 139.7,
+   "cg_y_mm": 20.34,
+   "cg_behind_front_axle_mm": -2.34,
+   "front_axle_load_pct": 95.4,
+   "other_support_load_pct": 4.6,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.82,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "B650",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+NoSkirt+NoCage+T08": {
+   "total_g": 1808.2,
+   "margin_to_2000_g": 191.8,
+   "margin_to_target_g": 141.8,
+   "cg_y_mm": 20.41,
+   "cg_behind_front_axle_mm": -2.41,
+   "front_axle_load_pct": 95.3,
+   "other_support_load_pct": 4.7,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.82,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "NoSkirt",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+B650+NoSkirt+NoCage": {
+   "total_g": 1826.5,
+   "margin_to_2000_g": 173.5,
+   "margin_to_target_g": 123.5,
+   "cg_y_mm": 20.41,
+   "cg_behind_front_axle_mm": -2.41,
+   "front_axle_load_pct": 95.3,
+   "other_support_load_pct": 4.7,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.81,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "B650",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+S2+NoCage": {
+   "total_g": 1774.1,
+   "margin_to_2000_g": 225.9,
+   "margin_to_target_g": 175.9,
+   "cg_y_mm": 21.2,
+   "cg_behind_front_axle_mm": -3.2,
+   "front_axle_load_pct": 93.7,
+   "other_support_load_pct": 6.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.76,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "S2",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+S2+NoCage+T08": {
+   "total_g": 1733.7,
+   "margin_to_2000_g": 266.3,
+   "margin_to_target_g": 216.3,
+   "cg_y_mm": 21.99,
+   "cg_behind_front_axle_mm": -3.99,
+   "front_axle_load_pct": 92.2,
+   "other_support_load_pct": 7.8,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.72,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "S2",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+B650+S2+NoCage": {
+   "total_g": 1752.1,
+   "margin_to_2000_g": 247.9,
+   "margin_to_target_g": 197.9,
+   "cg_y_mm": 21.98,
+   "cg_behind_front_axle_mm": -3.98,
+   "front_axle_load_pct": 92.2,
+   "other_support_load_pct": 7.8,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.71,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "B650",
+    "S2",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D5+2WD+S2+NoSkirt+NoCage": {
+   "total_g": 1750.0,
+   "margin_to_2000_g": 250.0,
+   "margin_to_target_g": 200.0,
+   "cg_y_mm": 22.05,
+   "cg_behind_front_axle_mm": -4.05,
+   "front_axle_load_pct": 92.1,
+   "other_support_load_pct": 7.9,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.71,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D5",
+    "2WD",
+    "S2",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 5,
+    "discs": 2,
+    "inertia_vs_R3": 0.8475902761345734,
+    "energy_J_12.6V_no_load": 82.22491508845685,
+    "spinup_time_vs_R3": 0.8475902761345734,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+NoCage": {
+   "total_g": 1845.9,
+   "margin_to_2000_g": 154.1,
+   "margin_to_target_g": 104.1,
+   "cg_y_mm": 17.81,
+   "cg_behind_front_axle_mm": 0.19,
+   "front_axle_load_pct": 99.8,
+   "other_support_load_pct": 0.2,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.98,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+S2": {
+   "total_g": 1858.0,
+   "margin_to_2000_g": 142.0,
+   "margin_to_target_g": 92.0,
+   "cg_y_mm": 17.82,
+   "cg_behind_front_axle_mm": 0.18,
+   "front_axle_load_pct": 99.9,
+   "other_support_load_pct": 0.1,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.98,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+S2+NoSkirt": {
+   "total_g": 1855.9,
+   "margin_to_2000_g": 144.1,
+   "margin_to_target_g": 94.1,
+   "cg_y_mm": 17.89,
+   "cg_behind_front_axle_mm": 0.11,
+   "front_axle_load_pct": 99.9,
+   "other_support_load_pct": 0.1,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.98,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "S2",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+NoSkirt+T08": {
+   "total_g": 1865.7,
+   "margin_to_2000_g": 134.3,
+   "margin_to_target_g": 84.3,
+   "cg_y_mm": 17.67,
+   "cg_behind_front_axle_mm": 0.33,
+   "front_axle_load_pct": 99.7,
+   "other_support_load_pct": 0.3,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.97,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+S2": {
+   "total_g": 1880.0,
+   "margin_to_2000_g": 120.0,
+   "margin_to_target_g": 70.0,
+   "cg_y_mm": 17.14,
+   "cg_behind_front_axle_mm": 0.86,
+   "front_axle_load_pct": 99.3,
+   "other_support_load_pct": 0.7,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.96,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+S2+T08": {
+   "total_g": 1813.3,
+   "margin_to_2000_g": 186.7,
+   "margin_to_target_g": 136.7,
+   "cg_y_mm": 18.37,
+   "cg_behind_front_axle_mm": -0.37,
+   "front_axle_load_pct": 99.3,
+   "other_support_load_pct": 0.7,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.96,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "S2",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+T08": {
+   "total_g": 1889.8,
+   "margin_to_2000_g": 110.2,
+   "margin_to_target_g": 60.2,
+   "cg_y_mm": 16.93,
+   "cg_behind_front_axle_mm": 1.07,
+   "front_axle_load_pct": 99.2,
+   "other_support_load_pct": 0.8,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.95,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+NoCage+T08": {
+   "total_g": 1805.5,
+   "margin_to_2000_g": 194.5,
+   "margin_to_target_g": 144.5,
+   "cg_y_mm": 18.49,
+   "cg_behind_front_axle_mm": -0.49,
+   "front_axle_load_pct": 99.0,
+   "other_support_load_pct": 1.0,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.95,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+NoCage": {
+   "total_g": 1823.9,
+   "margin_to_2000_g": 176.1,
+   "margin_to_target_g": 126.1,
+   "cg_y_mm": 18.51,
+   "cg_behind_front_axle_mm": -0.51,
+   "front_axle_load_pct": 99.0,
+   "other_support_load_pct": 1.0,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.95,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+NoSkirt+T08": {
+   "total_g": 1887.7,
+   "margin_to_2000_g": 112.3,
+   "margin_to_target_g": 62.3,
+   "cg_y_mm": 16.99,
+   "cg_behind_front_axle_mm": 1.01,
+   "front_axle_load_pct": 99.2,
+   "other_support_load_pct": 0.8,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.95,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+NoSkirt": {
+   "total_g": 1932.4,
+   "margin_to_2000_g": 67.6,
+   "margin_to_target_g": 17.6,
+   "cg_y_mm": 16.5,
+   "cg_behind_front_axle_mm": 1.5,
+   "front_axle_load_pct": 98.8,
+   "other_support_load_pct": 1.2,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.94,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+NoSkirt+NoCage": {
+   "total_g": 1821.7,
+   "margin_to_2000_g": 178.3,
+   "margin_to_target_g": 128.3,
+   "cg_y_mm": 18.57,
+   "cg_behind_front_axle_mm": -0.57,
+   "front_axle_load_pct": 98.9,
+   "other_support_load_pct": 1.1,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.94,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+S2+NoSkirt": {
+   "total_g": 1833.9,
+   "margin_to_2000_g": 166.1,
+   "margin_to_target_g": 116.1,
+   "cg_y_mm": 18.59,
+   "cg_behind_front_axle_mm": -0.59,
+   "front_axle_load_pct": 98.8,
+   "other_support_load_pct": 1.2,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.94,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "S2",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+T08": {
+   "total_g": 1911.8,
+   "margin_to_2000_g": 88.2,
+   "margin_to_target_g": 38.2,
+   "cg_y_mm": 16.27,
+   "cg_behind_front_axle_mm": 1.73,
+   "front_axle_load_pct": 98.7,
+   "other_support_load_pct": 1.3,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.93,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+S2+T08": {
+   "total_g": 1791.3,
+   "margin_to_2000_g": 208.7,
+   "margin_to_target_g": 158.7,
+   "cg_y_mm": 19.09,
+   "cg_behind_front_axle_mm": -1.09,
+   "front_axle_load_pct": 97.9,
+   "other_support_load_pct": 2.1,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.91,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "S2",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+S2+NoSkirt+T08": {
+   "total_g": 1789.1,
+   "margin_to_2000_g": 210.9,
+   "margin_to_target_g": 160.9,
+   "cg_y_mm": 19.15,
+   "cg_behind_front_axle_mm": -1.15,
+   "front_axle_load_pct": 97.7,
+   "other_support_load_pct": 2.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.9,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "S2",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+NoCage+T08": {
+   "total_g": 1783.5,
+   "margin_to_2000_g": 216.5,
+   "margin_to_target_g": 166.5,
+   "cg_y_mm": 19.21,
+   "cg_behind_front_axle_mm": -1.21,
+   "front_axle_load_pct": 97.6,
+   "other_support_load_pct": 2.4,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.9,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+NoSkirt+NoCage+T08": {
+   "total_g": 1781.4,
+   "margin_to_2000_g": 218.6,
+   "margin_to_target_g": 168.6,
+   "cg_y_mm": 19.28,
+   "cg_behind_front_axle_mm": -1.28,
+   "front_axle_load_pct": 97.5,
+   "other_support_load_pct": 2.5,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.9,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "NoSkirt",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+NoSkirt+NoCage": {
+   "total_g": 1799.7,
+   "margin_to_2000_g": 200.3,
+   "margin_to_target_g": 150.3,
+   "cg_y_mm": 19.3,
+   "cg_behind_front_axle_mm": -1.3,
+   "front_axle_load_pct": 97.5,
+   "other_support_load_pct": 2.5,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.89,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+S2+NoCage": {
+   "total_g": 1747.3,
+   "margin_to_2000_g": 252.7,
+   "margin_to_target_g": 202.7,
+   "cg_y_mm": 20.07,
+   "cg_behind_front_axle_mm": -2.07,
+   "front_axle_load_pct": 95.9,
+   "other_support_load_pct": 4.1,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.84,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "S2",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+S2+NoCage+T08": {
+   "total_g": 1706.9,
+   "margin_to_2000_g": 293.1,
+   "margin_to_target_g": 243.1,
+   "cg_y_mm": 20.84,
+   "cg_behind_front_axle_mm": -2.84,
+   "front_axle_load_pct": 94.4,
+   "other_support_load_pct": 5.6,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.8,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "S2",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+B650+S2+NoCage": {
+   "total_g": 1725.3,
+   "margin_to_2000_g": 274.7,
+   "margin_to_target_g": 224.7,
+   "cg_y_mm": 20.84,
+   "cg_behind_front_axle_mm": -2.84,
+   "front_axle_load_pct": 94.4,
+   "other_support_load_pct": 5.6,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.79,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "B650",
+    "S2",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D4+2WD+S2+NoSkirt+NoCage": {
+   "total_g": 1723.2,
+   "margin_to_2000_g": 276.8,
+   "margin_to_target_g": 226.8,
+   "cg_y_mm": 20.91,
+   "cg_behind_front_axle_mm": -2.91,
+   "front_axle_load_pct": 94.3,
+   "other_support_load_pct": 5.7,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.79,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D4",
+    "2WD",
+    "S2",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 4,
+    "discs": 2,
+    "inertia_vs_R3": 0.6951805522691465,
+    "energy_J_12.6V_no_load": 67.43961497784048,
+    "spinup_time_vs_R3": 0.6951805522691465,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+S2+T08": {
+   "total_g": 1764.5,
+   "margin_to_2000_g": 235.5,
+   "margin_to_target_g": 185.5,
+   "cg_y_mm": 17.93,
+   "cg_behind_front_axle_mm": 0.07,
+   "front_axle_load_pct": 99.9,
+   "other_support_load_pct": 0.1,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.98,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "S2",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+S2+NoSkirt+T08": {
+   "total_g": 1762.3,
+   "margin_to_2000_g": 237.7,
+   "margin_to_target_g": 187.7,
+   "cg_y_mm": 18.0,
+   "cg_behind_front_axle_mm": 0.0,
+   "front_axle_load_pct": 100.0,
+   "other_support_load_pct": 0.0,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.98,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "S2",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+NoCage+T08": {
+   "total_g": 1756.7,
+   "margin_to_2000_g": 243.3,
+   "margin_to_target_g": 193.3,
+   "cg_y_mm": 18.06,
+   "cg_behind_front_axle_mm": -0.06,
+   "front_axle_load_pct": 99.9,
+   "other_support_load_pct": 0.1,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.98,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+NoCage": {
+   "total_g": 1797.1,
+   "margin_to_2000_g": 202.9,
+   "margin_to_target_g": 152.9,
+   "cg_y_mm": 17.37,
+   "cg_behind_front_axle_mm": 0.63,
+   "front_axle_load_pct": 99.5,
+   "other_support_load_pct": 0.5,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.97,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+NoSkirt+NoCage": {
+   "total_g": 1794.9,
+   "margin_to_2000_g": 205.1,
+   "margin_to_target_g": 155.1,
+   "cg_y_mm": 17.43,
+   "cg_behind_front_axle_mm": 0.57,
+   "front_axle_load_pct": 99.6,
+   "other_support_load_pct": 0.4,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.97,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+S2+NoSkirt": {
+   "total_g": 1807.1,
+   "margin_to_2000_g": 192.9,
+   "margin_to_target_g": 142.9,
+   "cg_y_mm": 17.45,
+   "cg_behind_front_axle_mm": 0.55,
+   "front_axle_load_pct": 99.6,
+   "other_support_load_pct": 0.4,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.97,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "S2",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+NoSkirt+NoCage+T08": {
+   "total_g": 1754.6,
+   "margin_to_2000_g": 245.4,
+   "margin_to_target_g": 195.4,
+   "cg_y_mm": 18.12,
+   "cg_behind_front_axle_mm": -0.12,
+   "front_axle_load_pct": 99.8,
+   "other_support_load_pct": 0.2,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.97,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "NoSkirt",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+NoSkirt+NoCage": {
+   "total_g": 1772.9,
+   "margin_to_2000_g": 227.1,
+   "margin_to_target_g": 177.1,
+   "cg_y_mm": 18.15,
+   "cg_behind_front_axle_mm": -0.15,
+   "front_axle_load_pct": 99.7,
+   "other_support_load_pct": 0.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.97,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+S2+T08": {
+   "total_g": 1786.5,
+   "margin_to_2000_g": 213.5,
+   "margin_to_target_g": 163.5,
+   "cg_y_mm": 17.21,
+   "cg_behind_front_axle_mm": 0.79,
+   "front_axle_load_pct": 99.4,
+   "other_support_load_pct": 0.6,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.96,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "S2",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+NoCage+T08": {
+   "total_g": 1778.7,
+   "margin_to_2000_g": 221.3,
+   "margin_to_target_g": 171.3,
+   "cg_y_mm": 17.33,
+   "cg_behind_front_axle_mm": 0.67,
+   "front_axle_load_pct": 99.5,
+   "other_support_load_pct": 0.5,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.96,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+NoCage": {
+   "total_g": 1819.1,
+   "margin_to_2000_g": 180.9,
+   "margin_to_target_g": 130.9,
+   "cg_y_mm": 16.67,
+   "cg_behind_front_axle_mm": 1.33,
+   "front_axle_load_pct": 99.0,
+   "other_support_load_pct": 1.0,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.95,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+S2": {
+   "total_g": 1831.2,
+   "margin_to_2000_g": 168.8,
+   "margin_to_target_g": 118.8,
+   "cg_y_mm": 16.69,
+   "cg_behind_front_axle_mm": 1.31,
+   "front_axle_load_pct": 99.0,
+   "other_support_load_pct": 1.0,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.95,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+S2+NoSkirt": {
+   "total_g": 1829.1,
+   "margin_to_2000_g": 170.9,
+   "margin_to_target_g": 120.9,
+   "cg_y_mm": 16.75,
+   "cg_behind_front_axle_mm": 1.25,
+   "front_axle_load_pct": 99.0,
+   "other_support_load_pct": 1.0,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.95,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "S2",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+NoSkirt+T08": {
+   "total_g": 1838.9,
+   "margin_to_2000_g": 161.1,
+   "margin_to_target_g": 111.1,
+   "cg_y_mm": 16.54,
+   "cg_behind_front_axle_mm": 1.46,
+   "front_axle_load_pct": 98.9,
+   "other_support_load_pct": 1.1,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.94,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+S2": {
+   "total_g": 1853.2,
+   "margin_to_2000_g": 146.8,
+   "margin_to_target_g": 96.8,
+   "cg_y_mm": 16.01,
+   "cg_behind_front_axle_mm": 1.99,
+   "front_axle_load_pct": 98.4,
+   "other_support_load_pct": 1.6,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.93,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+T08": {
+   "total_g": 1863.0,
+   "margin_to_2000_g": 137.0,
+   "margin_to_target_g": 87.0,
+   "cg_y_mm": 15.81,
+   "cg_behind_front_axle_mm": 2.19,
+   "front_axle_load_pct": 98.3,
+   "other_support_load_pct": 1.7,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.92,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+S2+NoCage": {
+   "total_g": 1720.5,
+   "margin_to_2000_g": 279.5,
+   "margin_to_target_g": 229.5,
+   "cg_y_mm": 18.89,
+   "cg_behind_front_axle_mm": -0.89,
+   "front_axle_load_pct": 98.2,
+   "other_support_load_pct": 1.8,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.92,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "S2",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+NoSkirt+T08": {
+   "total_g": 1860.9,
+   "margin_to_2000_g": 139.1,
+   "margin_to_target_g": 89.1,
+   "cg_y_mm": 15.87,
+   "cg_behind_front_axle_mm": 2.13,
+   "front_axle_load_pct": 98.3,
+   "other_support_load_pct": 1.7,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.92,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "NoSkirt",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+NoSkirt": {
+   "total_g": 1905.6,
+   "margin_to_2000_g": 94.4,
+   "margin_to_target_g": 44.4,
+   "cg_y_mm": 15.4,
+   "cg_behind_front_axle_mm": 2.6,
+   "front_axle_load_pct": 98.0,
+   "other_support_load_pct": 2.0,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.91,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+T08": {
+   "total_g": 1885.0,
+   "margin_to_2000_g": 115.0,
+   "margin_to_target_g": 65.0,
+   "cg_y_mm": 15.15,
+   "cg_behind_front_axle_mm": 2.85,
+   "front_axle_load_pct": 97.8,
+   "other_support_load_pct": 2.2,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.9,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650": {
+   "total_g": 1929.8,
+   "margin_to_2000_g": 70.2,
+   "margin_to_target_g": 20.2,
+   "cg_y_mm": 14.7,
+   "cg_behind_front_axle_mm": 3.3,
+   "front_axle_load_pct": 97.4,
+   "other_support_load_pct": 2.6,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.89,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+NoSkirt": {
+   "total_g": 1927.6,
+   "margin_to_2000_g": 72.4,
+   "margin_to_target_g": 22.4,
+   "cg_y_mm": 14.76,
+   "cg_behind_front_axle_mm": 3.24,
+   "front_axle_load_pct": 97.5,
+   "other_support_load_pct": 2.5,
+   "rests_on": "wheels + rear skid",
+   "push_N_mu0.6": 7.89,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+S2+NoCage+T08": {
+   "total_g": 1680.1,
+   "margin_to_2000_g": 319.9,
+   "margin_to_target_g": 269.9,
+   "cg_y_mm": 19.65,
+   "cg_behind_front_axle_mm": -1.65,
+   "front_axle_load_pct": 96.8,
+   "other_support_load_pct": 3.2,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.88,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "S2",
+    "NoCage",
+    "T08"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+B650+S2+NoCage": {
+   "total_g": 1698.5,
+   "margin_to_2000_g": 301.5,
+   "margin_to_target_g": 251.5,
+   "cg_y_mm": 19.66,
+   "cg_behind_front_axle_mm": -1.66,
+   "front_axle_load_pct": 96.7,
+   "other_support_load_pct": 3.3,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.87,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "B650",
+    "S2",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  },
+  "D1+2WD+S2+NoSkirt+NoCage": {
+   "total_g": 1696.4,
+   "margin_to_2000_g": 303.6,
+   "margin_to_target_g": 253.6,
+   "cg_y_mm": 19.73,
+   "cg_behind_front_axle_mm": -1.73,
+   "front_axle_load_pct": 96.6,
+   "other_support_load_pct": 3.4,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.87,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "D1",
+    "2WD",
+    "S2",
+    "NoSkirt",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   }
+  }
+ },
+ "recommended_sets": {
+  "A_keep_weapon_2WD": {
+   "total_g": 1911.6,
+   "margin_to_2000_g": 88.4,
+   "margin_to_target_g": 38.4,
+   "cg_y_mm": 19.99,
+   "cg_behind_front_axle_mm": -1.99,
+   "front_axle_load_pct": 96.1,
+   "other_support_load_pct": 3.9,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.84,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "S2"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   },
+   "wheel_sensitivity": {
+    "-15 g/wheel": 1881.6,
+    "+15 g/wheel": 1941.6
+   }
+  },
+  "B_keep_4WD_best": {
+   "total_g": 1959.7,
+   "margin_to_2000_g": 40.3,
+   "margin_to_target_g": -9.7,
+   "cg_y_mm": 6.36,
+   "cg_behind_front_axle_mm": 11.64,
+   "front_axle_load_pct": 86.8,
+   "other_support_load_pct": 13.2,
+   "rests_on": "4 wheels",
+   "push_N_mu0.6": 9.51,
+   "fits_2000": true,
+   "fits_target": false,
+   "stable": true,
+   "options": [
+    "D1",
+    "B650",
+    "S2",
+    "NoCage",
+    "T08",
+    "NoSkirt"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 1,
+    "inertia_vs_R3": 0.54277082840372,
+    "energy_J_12.6V_no_load": 52.65431486722412,
+    "spinup_time_vs_R3": 0.54277082840372,
+    "bite_vs_R3": 1.0
+   },
+   "wheel_sensitivity": {
+    "-15 g/wheel": 1899.7,
+    "+15 g/wheel": 2019.7
+   }
+  },
+  "C_2WD_more_margin": {
+   "total_g": 1778.9,
+   "margin_to_2000_g": 221.1,
+   "margin_to_target_g": 171.1,
+   "cg_y_mm": 23.08,
+   "cg_behind_front_axle_mm": -5.08,
+   "front_axle_load_pct": 90.0,
+   "other_support_load_pct": 10.0,
+   "rests_on": "wheels + nose skid (y 69)",
+   "push_N_mu0.6": 7.64,
+   "fits_2000": true,
+   "fits_target": true,
+   "stable": true,
+   "options": [
+    "2WD",
+    "B650",
+    "S2",
+    "NoCage"
+   ],
+   "weapon": {
+    "disc_thickness_mm": 6,
+    "discs": 2,
+    "inertia_vs_R3": 1.0,
+    "energy_J_12.6V_no_load": 97.01021519907322,
+    "spinup_time_vs_R3": 1.0,
+    "bite_vs_R3": 1.0
+   },
+   "wheel_sensitivity": {
+    "-15 g/wheel": 1748.9,
+    "+15 g/wheel": 1808.9
+   }
+  }
+ },
+ "r3_reference": {
+  "total_g": 1973.05,
+  "energy_J": 97.01021519907322,
+  "push_N_mu0.6": 9.411787499999999
+ }
+}
