@@ -53,6 +53,10 @@ def wedgelet_plate(spec, sgn):
     return shape.clean(),t-depth
 
 
+HUB_NOSE_R=4.5          # wheel-hub nose through the motor wall: D9, 2.45 mm PETG around the D-bore
+HUB_MIN_ENGAGEMENT=7.5  # D-bore on the shaft, set screw included
+
+
 def build(config):
     design=config['design']
     front,rear,motor_y=(design[k] for k in ('front_axle_y_mm','rear_axle_y_mm','weapon_motor_y_mm'))
@@ -79,16 +83,26 @@ def build(config):
                 # Button head + washer must clear the 2 mm hub-to-wall gap.
                 head_a,head_b=sorted((sgn*59,sgn*61))
                 bore(tub,(head_a,wy+dy,32+dz),(1,0,0),3.75,0,head_b-head_a)
-            wx0,wx1=sorted((sgn*62,sgn*78))
+            # Short-shaft motor (JB361: 11.5 mm from the face incl. a 2.5 mm boss, D-flat on the outer 8 mm).
+            # The hub face comes in to 1.5 mm from the motor wall (face-screw heads stand 0.65 mm proud), and a
+            # D9 nose through a D10 counterbore in the wall carries the D-bore to where the flat starts.
+            projection=value(config,name,'shaft_projection_mm')
+            nose=56+max(value(config,name,'boss_projection_mm')+0.3,projection-value(config,name,'shaft_flat_length_mm')+0.2)
+            shaft_end=56+projection
+            wx0,wx1=sorted((sgn*61.5,sgn*78))
             d=value(config,name,'shaft_diameter_mm')+fit(config,'d_bore_diametral_clearance_mm',0.10)
             flat=value(config,name,'shaft_diameter_mm')/2-value(config,name,'shaft_flat_depth_mm')+fit(config,'d_bore_flat_clearance_mm',0.05)
             hub=find_body(root,'Wheel_Hub_PETG_'+loc+'_'+side)
             # Keep a solid spoke towards the D-flat; put the five holes elsewhere.
             loops=[('circle',(wy,32,22)),('poly',d_bore(wy,32,d/2,flat,144))]
             loops += [('circle',(wy+13*math.cos(math.radians(a)),32+13*math.sin(math.radians(a)),4)) for a in (60,120,180,240,300)]
-            hub.shape=prism(loops,'x',wx0,wx1);hub.material='PETG'
-            # Radial M3 set screw from the accessible outer rim, captive steel hex nut.
-            xc=(wx0+wx1)/2
+            hub.shape=prism(loops,'x',wx0,wx1)
+            hub.shape=hub.shape.fuse(prism([('circle',(wy,32,HUB_NOSE_R)),('poly',d_bore(wy,32,d/2,flat,144))],'x',*sorted((sgn*nose,sgn*61.5)))).clean()
+            hub.material='PETG'
+            ca,cb=sorted((sgn*(nose-0.3),sgn*61))
+            bore(tub,(ca,wy,32),(1,0,0),HUB_NOSE_R+0.5,0,cb-ca)
+            # Radial M3 set screw on the D-flat, 2.5 mm in from the shaft tip; captive steel hex nut.
+            xc=sgn*(shaft_end-2.5)
             nut_af=value(config,'nut_m3','across_flats_mm')+fit(config,'nut_pocket_clearance_mm',0.2)
             nut_h=value(config,'nut_m3','height_mm')+0.2
             nut_r=nut_af/math.sqrt(3)
@@ -101,8 +115,10 @@ def build(config):
             bore(hub,(xc,wy+flat-0.2,32),(0,1,0),1.7,0,22-flat+0.4)
             tyre=find_body(root,'Wheel_Tyre_TPU_'+loc+'_'+side)
             tyre_id=fit(config,'tyre_inner_diameter_mm',43.8)
-            tyre.shape=prism([('circle',(wy,32,32)),('circle',(wy,32,tyre_id/2))],'x',wx0,wx1)
-            wheel_dims.append({'motor':name,'shaft_min_engagement_mm':10,'needed_projection_mm':16,'available_projection_mm':value(config,name,'shaft_projection_mm')})
+            tyre.shape=prism([('circle',(wy,32,32)),('circle',(wy,32,tyre_id/2))],'x',*sorted((sgn*62,sgn*78)))
+            wheel_dims.append({'motor':name,'shaft_min_engagement_mm':HUB_MIN_ENGAGEMENT,'engagement_mm':round(shaft_end-nose,2),
+                               'needed_projection_mm':round(nose-56+HUB_MIN_ENGAGEMENT,2),'available_projection_mm':projection,
+                               'set_screw_x_mm':round(abs(xc),2),'nose_x_mm':round(nose,2)})
     # Rebuild fixed hinge blocks. Bore grows with calibration; minimum wall is invariant.
     pin_d=value(config,'hinge_pin','diameter_mm')
     pin_bore=pin_d+fit(config,'hinge_diametral_clearance_mm',0.2)

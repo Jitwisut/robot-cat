@@ -196,8 +196,9 @@
     "drive_motors": {
       "model": "ORTECH JB361 SKU00378",
       "source": "R3-10",
-      "direct_fit": false,
-      "reason": "11.5-12mm shaft projection versus16mm current requirement; redesign needed, stall/current/mass unknown"
+      "direct_fit": true,
+      "reason": "Selected 2026-10-19: hub redesigned for the 11.5 mm shaft (nose to the D-flat, 7.8 mm engagement); stall current and mass still unmeasured",
+      "selected": true
     },
     "drive_drivers": {
       "model": "Cytron MDD3A x2 one channel per motor",

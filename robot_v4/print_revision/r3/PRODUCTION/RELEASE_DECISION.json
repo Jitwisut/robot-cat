@@ -1,9 +1,10 @@
 {
   "date": "2026-10-19",
-  "decided_by": "user, in chat: release only the parts that do not depend on unmeasured motors",
+  "decided_by": "user, in chat 2026-10-18: release only the parts that do not depend on unmeasured motors; user, in chat 2026-10-19: also release M06 complete, on catalogue values; user, in chat 2026-10-19: switch the drive motors to ORTECH JB361, redesign for it and release everything with values chosen by Claude",
   "basis": {
-    "r3_build_sha256_prefix": "5dfa96dc",
-    "body": "PC 3 mm body rev 3 (r3/pc_body)"
+    "r3_build_sha256_prefix": "99dc7481",
+    "body": "PC 3 mm body rev 3 (r3/pc_body)",
+    "drive_motor": "ORTECH JB361 25GA-370 12V 400 rpm (sources.json R3-10)"
   },
   "released": {
     "laser_metal": [
@@ -12,6 +13,7 @@
       "M03",
       "M04",
       "M05",
+      "M06",
       "M07",
       "M08",
       "M09"
@@ -26,6 +28,7 @@
       "PC3_Lid"
     ],
     "lathe": [
+      "Motor_Pulley_D30_1to1",
       "Beater_Hub_6061_D30",
       "Spacer_Inner_ID8.2_OD11",
       "Spacer_Outer_L_ID8.2_OD11",
@@ -33,12 +36,24 @@
       "Hinge_Pin_D3x57"
     ],
     "print": [
-      "insert coupons only (M3 and M2.5)"
-    ]
+      "all R3 PETG/TPU prints in output_R3/DRAFT/STL except V4_R3_Tub_TPU and V4_R3_Lid_TPU_2mm (replaced by the PC body) and V4_R3_Wedgelet_Block_PETG_L/R (replaced by their _PCbody variants)",
+      "all files in pc_body/output/PETG_STL"
+    ],
+    "pc_body_petg": "all"
   },
   "accepted_risks": {
-    "weapon_motor.diameter_mm": "ส่วนเว้าด้านหลังของแผ่นตั้งซ้ายใช้ Ø35 มม. ของมอเตอร์ SURPASS C3536 ตามแคตตาล็อก + ระยะเผื่อ 1 มม. ถ้ามอเตอร์จริงใหญ่กว่า ต้องตะไบส่วนเว้าเพิ่ม",
-    "dead_shaft.diameter_mm": "รูแกน Ø8.2 ของแผ่นตั้งเป็นรูเผื่อมาตรฐาน ISO ของสกรู M8 ซึ่งเป็นชิ้นมาตรฐาน"
+    "weapon_motor.diameter_mm": "Upright L rear relief uses the SURPASS C3536 catalogue diameter 35 mm + 1 mm clearance. A larger real can needs the relief filed.",
+    "dead_shaft.diameter_mm": "Upright bore 8.2 mm is the ISO clearance for an M8 bolt; the bolt is a standard part.",
+    "weapon_motor.mount_holes_yz_mm": "M06 motor holes use the SURPASS C3536 catalogue cross pattern 19 x 25 mm (±9.5, ±12.5 from the shaft). A different real pattern needs a new plate or hand-drilled holes.",
+    "weapon_motor.mount_thread_diameter_mm": "M06 motor holes are Ø3.4 clearance for the catalogue M3 thread.",
+    "weapon_motor.boss_diameter_mm": "M06 boss hole Ø10.5 is for a guessed 10 mm boss (not in the catalogue). A larger real boss needs the hole filed or reamed.",
+    "drive_Front_L.diameter_mm": "M06 outline clears the catalogue Ø25 mm front drive motor.",
+    "drive_Front_R.diameter_mm": "M06 outline clears the catalogue Ø25 mm front drive motor.",
+    "weapon_motor.shaft_diameter_mm": "Motor pulley bore Ø4 from the SURPASS manual; set-screw seat at the catalogue 20 mm projection.",
+    "weapon_motor.shaft_projection_mm": "Pulley position uses the catalogue 20 mm shaft projection.",
+    "drive motors (all 4)": "JB361 drawing values: face holes 2×M3 17 mm apart, boss Ø7×2.5, Ø25 × 49.8 can, shaft Ø4 D-flat 0.5 deep on the outer 8 mm of an 11.5 mm projection. Hub engagement 7.8 mm (min 7.5): a shaft shorter than 11.2 mm fails. Mass kept at 110 g each (ORTECH 100 g is shipping weight).",
+    "battery, ESC, ESP32, IMU": "Catalogue outlines (GNB8503S80A 63×30×24, Skywalker 40A, ESP32 30-pin, GY-521). DRV8871 boards, disconnect and hall sensor use the R3 design envelopes.",
+    "fit values": "Chosen without coupons: insert M3 hole Ø4.4 (OD 5 insert), M2.5 hole Ø3.2 (OD 3.6), tyre ID 43.8, D-bore +0.10/+0.05, hinge +0.2, nut pocket +0.2. If an insert spins or a tyre slips, reprint that part."
   },
   "pc_sheet_thickness_acceptance_mm": {
     "3.0": [
@@ -50,13 +65,5 @@
       2.1
     ]
   },
-  "held": {
-    "M06 แผ่นยึดมอเตอร์อาวุธ (Weapon_Motor_Mount_3mm)": "วัดรูยึด ขนาดเกลียว และบ่าของมอเตอร์อาวุธจริง",
-    "รอกมอเตอร์ (Motor_Pulley_D30_1to1)": "วัดเพลามอเตอร์อาวุธจริง: Ø, ความยื่น และตำแหน่งสกรูตัวหนอน",
-    "PETG แท่นมอเตอร์ ×4, twin saddle ×2, lid bar ×2": "วัดมอเตอร์ขับจริง 4 ตัว: รูยึดหน้า บ่า Ø ตัวมอเตอร์ และความยาว + ผล coupon insert",
-    "PETG ดุมล้อ ×4": "วัดเพลา D ของมอเตอร์ขับจริง (Ø และความลึกด้านแบน) + ผล coupon D_Shaft",
-    "PETG ชิ้นอื่นทั้งหมด": "เลือกขนาดรู insert จาก coupon แล้วสร้างไฟล์ชิ้นจริงใหม่",
-    "PETG ถาดแบต, แท่นอุปกรณ์ไฟฟ้า, collar สวิตช์, เสา Hall": "วัดแบต อุปกรณ์ไฟฟ้า สวิตช์ และเซนเซอร์ Hall จริง",
-    "ยาง TPU ×4": "เลือกรูในยางจาก coupon Tyre_Ring"
-  }
+  "held": {}
 }

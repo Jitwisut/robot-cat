@@ -18,7 +18,10 @@ HERE=Path(__file__).resolve().parent
 
 def print_shape(body):
     shape=body.shape
-    if body.name.startswith(('Wheel_','Wedgelet_Carrier','Hall_Post')):
+    if body.name.startswith('Wheel_Hub') and shape.BoundingBox().center.x>0:
+        # outer face on the bed for both sides: the hub nose (inner face) must point up
+        shape=shape.rotate((0,0,0),(0,1,0),90)
+    elif body.name.startswith(('Wheel_','Wedgelet_Carrier','Hall_Post')):
         shape=shape.rotate((0,0,0),(0,1,0),-90)
     bb=shape.BoundingBox()
     return shape.translate((-bb.xmin,-bb.ymin,-bb.zmin))

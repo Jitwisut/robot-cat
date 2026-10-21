@@ -3,6 +3,7 @@
 Called at the end of build_pc_body.py with the in-memory CAD, so every number comes from the same geometry as the
 DXF/STEP/STL files. HTML + SVG rendered to PDF with headless Chrome (same route as RFQ/make_metal_production_package.py).
 """
+import os
 import hashlib
 import re
 import html
@@ -13,9 +14,9 @@ from pathlib import Path
 from cadquery.occ_impl.exporters.svg import getSVG
 from OCP.BRepAdaptor import BRepAdaptor_Surface
 
-CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+CHROME = os.environ.get('CHROME', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
 REV = 'PC-R3 rev 3'
-DATE = '2026-10-18'
+DATE = '2026-10-19'
 e = html.escape
 
 CSS = '''@page{size:A4 landscape;margin:8mm}
@@ -175,7 +176,8 @@ def part_sheet(group, status, part_id, notes):
 
 def work_order(ctx):
     r = ctx['report']; b = r['balance']; imp = r['stiffness']['impact']
-    blk = ''.join('<li class="bad">%s</li>' % e(x) for x in ctx['blockers'])
+    released = ctx['status'].startswith('RELEASED')
+    blk = ''.join('<li class="bad">%s%s</li>' % ('ผู้สั่งยอมรับความเสี่ยง (ยังไม่ได้ทำ): ' if released else '', e(x)) for x in ctx['blockers'])
     pan = ''.join('<tr><td>%s</td><td class="m">%s</td><td class="n">%.1f</td><td class="n">%s</td><td class="n">%d</td><td class="n">%d</td><td class="n">%.1f</td></tr>' % (
         p['id'], e(p['file']), p['thickness_mm'], ' × '.join('%g' % v for v in p['flat_size_mm']), p['holes'], p['countersinks'], p['mass_g']) for p in ctx['panels'])
     prt = ''.join('<tr><td>%s</td><td>%s</td><td class="n">%d</td><td class="m">%s</td><td>%s</td><td class="n">%.2f</td></tr>' % (
@@ -189,7 +191,7 @@ def work_order(ctx):
     sens = ''.join('<tr><td>%s</td><td class="n">%.2f</td><td class="n">%.3f</td><td class="%s">%s</td></tr>' % (
         e(th.get(k, k)), v['total_g'], v['rear_load_pct'], 'ok' if v['passes_hard_2000g_10pct'] else 'bad', 'ผ่าน' if v['passes_hard_2000g_10pct'] else 'ไม่ผ่าน') for k, v in b['sensitivity'].items())
     ex = b['expected_small_parts_solid']; nom = b['pc_body']
-    return '''<section class="doc"><span class="stamp">%(status)s</span>
+    return '''<section class="doc"><span class="%(stamp)s">%(status)s</span>
 <h1>ใบสั่งผลิต — ตัวถังโพลีคาร์บอเนต (PC) Robot V4 R3 · %(rev)s</h1>
 <p>%(date)s · แนวแกน Z ขึ้น พื้น XY ที่ Z=0 หัวรถชี้ +Y · หน่วย มม. · ไฟล์ทั้งหมดอยู่ใน <span class="m">robot_v4/print_revision/r3/pc_body/output/</span> · แบบ 2D อยู่ใน <span class="m">PRODUCTION/DRAWINGS_PC_BODY.pdf</span></p>
 <h2>1. เงื่อนไขก่อนผลิต (ต้องปิดทุกข้อ ห้ามตัด/พิมพ์ชุดจริงก่อน)</h2><ol>%(blk)s</ol>
@@ -218,7 +220,7 @@ def work_order(ctx):
 <li>ติดแผ่น EPDM 0.5 มม. ใน cup ของ twin saddle และ lid bar; ใส่มอเตอร์ขับ ตรวจว่ามอเตอร์แนบ pad ทั้งสองปลาย</li>
 <li>ใส่ล้อ ชุดอาวุธ (M3×10 เข้าแผ่นตั้ง) อุปกรณ์ไฟฟ้า skirt และฝา (lid bar ยึดใต้ฝาด้วย M2.5 หัวจม 2 ตัว)</li>
 <li>ชั่งทั้งคันและวัดโหลดล้อหลังจริง: ต้อง ≤2000 g และ ≥10%%; บันทึกผล</li></ol>
-</section>''' % dict(status=e(ctx['status']), rev=REV, date=DATE, blk=blk, ext=ex['total_g'], exm=ex['margin_to_2000_g'], exr=ex['rear_load_pct'],
+</section>''' % dict(status=e(ctx['status']), stamp=stamp_class(ctx['status']), rev=REV, date=DATE, blk=blk, ext=ex['total_g'], exm=ex['margin_to_2000_g'], exr=ex['rear_load_pct'],
                     nt=nom['total_g'], nm=nom['margin_to_2000_g'], nr=nom['rear_load_pct'], sens=sens, n=imp['N_drop_g'], minsf=imp['min_design_sf'],
                     minp=e(imp['min_design_path']), fy=imp['shaft']['F_yield_N'][0], fy2=imp['shaft']['F_yield_N'][1], sfr=sfr, pan=pan, tol=TOL, prt=prt, fas=fas)
 

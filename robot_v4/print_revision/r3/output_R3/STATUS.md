@@ -2,16 +2,16 @@
 
 ไฟล์ชุดนี้มีค่าขนาดต้นแบบที่ยังไม่วัดจริง ห้ามส่งพิมพ์ชุดใหญ่จากสถานะนี้
 
-Build SHA256: `5dfa96dcd76ec8505db7b12d26a1aad9cfd1e0a312cb58c4c2baec8a45bcc975`
+Build SHA256: `99dc74819510d3f6489f41ca0cdcbf05890156753b4b5854a93f5ce8de9d2c63`
 
 CAD ผ่าน: True · mesh ผ่าน: True
-มวลประมาณ: 1973.05 g · โหลดล้อหลังประมาณ: 10.6%
+มวลประมาณ: 1976.1 g · โหลดล้อหลังประมาณ: 10.7%
 MuJoCo ผ่าน: True · โหลดล้อหลังจำลอง: 12.4% · ระยะฟันต่ำสุดตอนเร่งใบ: 2.08 mm
 
 
 ## งานที่ต้องยืนยันก่อนปล่อยชุดผลิต
 
-- มวลประมาณยังเกินเป้าหมาย 1900 g; เหลือเผื่อถึง 2000 g เพียง 26.95 g ต้องแทนด้วยน้ำหนัก slicer และอะไหล่จริงก่อนตัดสินใจ
+- มวลประมาณยังเกินเป้าหมาย 1900 g; เหลือเผื่อถึง 2000 g เพียง 23.90 g ต้องแทนด้วยน้ำหนัก slicer และอะไหล่จริงก่อนตัดสินใจ
 - โหลดล้อหลังเชิงสถิตผ่านขั้นต่ำ 10% แต่ยังไม่ถึงเป้าหมาย 15%
 - Unconfirmed hardware: drive_Front_L
 - Unconfirmed hardware: drive_Front_R
@@ -42,7 +42,6 @@ MuJoCo ผ่าน: True · โหลดล้อหลังจำลอง: 1
 - Unconfirmed hardware: straps
 - Missing/current-build failed evidence: fit
 - Missing/current-build failed evidence: preflight
-- Calibrated fit dimensions missing
 - Shop/printer/material profile unconfirmed
 - Usable build volume/brim missing or invalid
 - Slicer project/review/masses missing or stale
@@ -69,8 +68,9 @@ MuJoCo ผ่าน: True · โหลดล้อหลังจำลอง: 1
 | V4_R3_Wedgelet_Block_PETG_R.stl | PETG | 1 | 54.0 × 41.2 × 14.0 |
 | V4_R3_Wedgelet_Carrier_PETG_R1.stl | PETG | 1 | 12.5 × 15.2 × 20.0 |
 | V4_R3_Wedgelet_Carrier_PETG_R2.stl | PETG | 1 | 12.5 × 15.2 × 16.0 |
-| V4_R3_Wheel_Hub_PETG.stl | PETG | 4 | 44.003 × 44.003 × 16.003 |
+| V4_R3_Wheel_Hub_PETG.stl | PETG | 2 | 44.003 × 44.003 × 18.302 |
 | V4_R3_Wheel_Tyre_TPU95A.stl | TPU95A | 4 | 64.005 × 64.005 × 16.005 |
+| V4_R3_Wheel_Hub_PETG_variant1.stl | PETG | 2 | 44.003 × 44.003 × 18.302 |
 | V4_R3_Hall_Post_PETG.stl | PETG | 1 | 46.5 × 16.0 × 10.0 |
 | V4_R3_Weapon_Mount_Foot_PETG_1.stl | PETG | 1 | 8.0 × 13.0 × 13.0 |
 | V4_R3_Weapon_Mount_Foot_PETG_2.stl | PETG | 1 | 8.0 × 11.0 × 13.0 |

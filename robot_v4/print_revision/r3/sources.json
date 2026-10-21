@@ -556,9 +556,9 @@
         "rated_voltage_v": 12,
         "no_load_rpm": 400
       },
-      "notes": "Same SKU photo says~50mm can/~12mm projection/~2mm boss, drawing says L~19+30.8=49.8,11.5,2.5. Measurements remain approximate. Shipping-weight100g is not installed motor mass. Shaft is shorter than current hub requirement16mm; cannot substitute without mount/hub redesign. No torque/current curve; do not transfer ASLONG/generic 25GA specs.",
+      "notes": "Same SKU photo says~50mm can/~12mm projection/~2mm boss, drawing says L~19+30.8=49.8,11.5,2.5. Measurements remain approximate. Shipping-weight100g is not installed motor mass. Shaft is shorter than current hub requirement16mm; cannot substitute without mount/hub redesign. No torque/current curve; do not transfer ASLONG/generic 25GA specs. 2026-10-19: selected by the user; R3 hub now has a nose to the start of the D-flat (7.8 mm engagement) and the set screw 2.5 mm from the tip.",
       "evidence": "evidence/ORTECH_JB361_dimensions.jpg",
-      "status": "catalogue_candidate_rejected_direct_fit",
+      "status": "selected_2026-10-19_hub_redesigned",
       "checked_date": "2026-10-10"
     },
     {
