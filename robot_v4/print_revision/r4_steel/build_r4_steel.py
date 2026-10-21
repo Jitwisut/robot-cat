@@ -45,15 +45,17 @@ WALL_X = 83.0               # outer face of the side walls (R3 PC body)
 REAR_Y = -110.0             # outer face of the rear wall (R3)
 CROSS_Y = (52.0, 62.0)      # bulkhead cross: 2 mm ahead of the front tyre (y 50), behind the uprights (y 64)
 RAIL_X = (48.0, 58.0)       # |x|: inboard of the wheels (59.5), under the drive motors (z 19.5)
-ARM_X = (37.0, 47.0)        # |x|: fork arm 2.5 mm outside the upright tab: room for the M3 heads on the z 14 taps
+RAIL_WALL = 1.5             # rails run unbroken from the rear cross to the hinge beam and carry the weapon-hit moment;
+                            # wall from calc/frame_strength_calc.py (thinnest stock wall with SF >= 1.5 fore-aft)
 BEAM_Y = (88.0, 98.0)       # hinge beam behind the wedgelet hinge pins (y 100.5)
 HINGE_TAB_X = ((37.0, 38.5), (62.0, 63.5), (85.0, 86.5))   # |x| gaps between the wedgelet carriers on the pin
 # Bought wheel envelope, D64 keeps the ground at z 0. ORTECH JB361 (main's R3 drive motor): gearbox face at |x| 56,
 # boss D7 x 2.5, shaft D4 x 11.5 with the D flat on the outer 8 mm -> the hub's inner face at |x| 59.5 gives 8 mm on the flat
 WHEEL_R, WHEEL_X = 32.0, (59.5, 75.5)
 MOTOR_HOLES_YZ = [(-8.5, 0.0), (8.5, 0.0)]                # JB361 face: 2 x M3 at +-8.5 about the shaft (catalogue R3-10)
+GEARBOX_SCREWS_YZ = [(0.0, -8.5), (0.0, 8.5)]             # the two gearbox screw heads, 90 deg to the M3 holes (R3-10 drawing)
 BATTERY = (57.0, 31.0, 24.0)                              # 3S 650 mAh envelope, ASSUMED until the pack is chosen
-RHO = {'steel_tube': 0.00785, 'steel_tab': 0.00785, 'PC': 0.00120, 'UHMW': 0.00094, 'EPDM': 0.00130}
+RHO = {'steel_tube': 0.00785, 'steel_tab': 0.00785, 'PC': 0.00120, 'UHMW': 0.00094, 'EPDM': 0.00130, 'al5052_bracket': 0.00268}
 EXPLICIT_G = {'wheel_bought': 45.0, 'battery_650': 58.0, 'nylon_standoff': 0.6}   # ASSUMED, see calc/steel_r4_calc.py
 RIVNUTS = 24                # M3 steel rivnut 0.9 g + screw 0.5 g
 SWITCH_MOUNT_G = 3.0        # bought panel mount replacing the PETG collar
@@ -107,8 +109,12 @@ def tube_x(name, x0, x1, y0, z0):
     return add(name, s, 'steel_tube')
 
 
-def tube_y(name, x0, y0, y1, z0):
-    s = block(x0, x0 + TUBE, y0, y1, z0, z0 + TUBE).cut(block(x0 + WALL, x0 + TUBE - WALL, y0 - 1, y1 + 1, z0 + WALL, z0 + TUBE - WALL))
+TUBE_WALL = {}
+
+
+def tube_y(name, x0, y0, y1, z0, wall=WALL):
+    s = block(x0, x0 + TUBE, y0, y1, z0, z0 + TUBE).cut(block(x0 + wall, x0 + TUBE - wall, y0 - 1, y1 + 1, z0 + wall, z0 + TUBE - wall))
+    TUBE_WALL[name] = wall
     return add(name, s, 'steel_tube')
 
 
@@ -123,20 +129,19 @@ def hole_x(shape, y, z, r):
 
 REAR_CROSS_Y = REAR_Y + SKIN                           # -108..-98
 tube_x('Frame_Rear_Cross', -(WALL_X - SKIN), WALL_X - SKIN, REAR_CROSS_Y, RAIL_Z0)
-tube_x('Frame_Bulkhead_Cross', -(WALL_X - SKIN), WALL_X - SKIN, CROSS_Y[0], RAIL_Z0)
+# bulkhead cross in three pieces butting the unbroken rails: centre between the rails, outer stubs to the walls
+tube_x('Frame_Bulkhead_Cross', -RAIL_X[0], RAIL_X[0], CROSS_Y[0], RAIL_Z0)
 for side, s in (('L', -1), ('R', 1)):
+    x0, x1 = (RAIL_X[1], WALL_X - SKIN) if s > 0 else (-(WALL_X - SKIN), -RAIL_X[1])
+    tube_x('Frame_Bulkhead_Stub_' + side, x0, x1, CROSS_Y[0], RAIL_Z0)
     xr = RAIL_X[0] if s > 0 else -RAIL_X[1]
-    tube_y('Frame_Rail_' + side, xr, REAR_CROSS_Y + TUBE, CROSS_Y[0], RAIL_Z0)
-    xa = ARM_X[0] if s > 0 else -ARM_X[1]
-    tube_y('Frame_Fork_Arm_' + side, xa, CROSS_Y[1], BEAM_Y[0], RAIL_Z0)
-    x_in, x_out = (ARM_X[0], 88.0) if s > 0 else (-88.0, -ARM_X[0])
+    tube_y('Frame_Rail_' + side, xr, REAR_CROSS_Y + TUBE, BEAM_Y[0], RAIL_Z0, wall=RAIL_WALL)
+    x_in, x_out = (HINGE_TAB_X[0][0], 88.0) if s > 0 else (-88.0, -HINGE_TAB_X[0][0])
     tube_x('Frame_Hinge_Beam_' + side, x_in, x_out, BEAM_Y[0], RAIL_Z0)
     xp = WALL_X - SKIN - TUBE if s > 0 else -(WALL_X - SKIN)
-    for loc, y0 in (('Rear', REAR_CROSS_Y), ('Front', CROSS_Y[0])):
-        tube_z('Frame_Post_%s_%s' % (loc, side), xp, y0, RAIL_Z1, LID_Z0 - TUBE)
-    # top front stub: from |x| 50 (clear of the weapon motor can x -41..13.5 and the belt) over the post top
-    x0, x1 = (50.0, WALL_X - SKIN) if s > 0 else (-(WALL_X - SKIN), -50.0)
-    tube_x('Frame_Top_Front_Stub_' + side, x0, x1, CROSS_Y[0], LID_Z0 - TUBE)
+    # rear posts only: the front posts and top stubs carried no hit or drop load and their 34 g pays for the 1.5 mm
+    # rails; the lid's front corners sit on bought aluminium angles screwed to the PC walls
+    tube_z('Frame_Post_Rear_' + side, xp, REAR_CROSS_Y, RAIL_Z1, LID_Z0 - TUBE)
 tube_x('Frame_Top_Rear_Cross', -(WALL_X - SKIN), WALL_X - SKIN, REAR_CROSS_Y, LID_Z0 - TUBE)   # rests on both rear posts
 
 # Tabs (1.5 mm mild steel, welded)
@@ -156,18 +161,24 @@ for side, s in (('L', -1), ('R', 1)):
     t = hole_x(t, FRONT_Y, 32.0, 4.25)                    # D8.5 over the D7 boss
     for dy, dz in MOTOR_HOLES_YZ:
         t = hole_x(t, FRONT_Y + dy, 32.0 + dz, 1.7)      # M3 clearance D3.4
+    for dy, dz in GEARBOX_SCREWS_YZ:
+        t = hole_x(t, FRONT_Y + dy, 32.0 + dz, 2.75)     # D5.5 clearance for the gearbox screw heads
     add('Tab_Drive_Motor_' + side, t, 'steel_tab')
-    # upright plate on the upright outer face (|x| 33..34.5), M3 clearance holes on the 4 R3 upright taps; starts at
-    # y 66 (weapon motor can reaches y 65), notched around the axle washer (y 95, z 32); its bottom flange runs out to
-    # the fork arm and back to the bulkhead cross, under the screw heads
+    # upright web on the upright outer face (|x| 33..34.5), M3 clearance holes on the 4 R3 upright taps; starts at
+    # y 66 (weapon motor can reaches y 65), notched around the axle washer (y 95, z 32). It stands on a floor flange
+    # that runs to the rail's inner face (|x| 48) and is tied to the rail by two vertical rungs (y 68.5, 81), so the
+    # hit moment goes into the rail as a couple instead of bending a thin plate.
     x0 = 33.0 if s > 0 else -33.0 - TAB
-    t = block(x0, x0 + TAB, 66.0, 96.0, RAIL_Z0, 55.0)
+    t = block(x0, x0 + TAB, 66.0, 96.0, RAIL_Z0 + TAB, 55.0)
     t = t.cut(cq.Solid.makeCylinder(9.0, 4, cq.Vector(x0 - 1, 95.0, 32.0), cq.Vector(1, 0, 0)))
     for y, z in taps:
         t = hole_x(t, y, z, 1.7)
-    fx0, fx1 = (33.0, ARM_X[0]) if s > 0 else (-ARM_X[0], -33.0)
-    t = t.fuse(block(fx0, fx1, CROSS_Y[1], 96.0, RAIL_Z0, RAIL_Z0 + TAB))
-    add('Tab_Upright_' + side, t, 'steel_tab')
+    add('Tab_Upright_Web_' + side, t, 'steel_tab')
+    fx0, fx1 = (33.0, RAIL_X[0]) if s > 0 else (-RAIL_X[0], -33.0)
+    add('Tab_Upright_Flange_' + side, block(fx0, fx1, CROSS_Y[1], BEAM_Y[0], RAIL_Z0, RAIL_Z0 + TAB), 'steel_tab')
+    rx0, rx1 = (33.0 + TAB, RAIL_X[0]) if s > 0 else (-RAIL_X[0], -33.0 - TAB)
+    for k, yr in enumerate((68.5, 81.0)):          # clear of the M3 heads at y 75 / 90 and the axle nut (y >= 87.5)
+        add('Tab_Upright_Rung%d_%s' % (k + 1, side), block(rx0, rx1, yr, yr + TAB, RAIL_Z0 + TAB, 28.0), 'steel_tab')
     # wedgelet hinge tabs on the beam front, D3.2 for the D3 pin at (y 102, z 14.5)
     for i, (a, b) in enumerate(HINGE_TAB_X):
         x0, x1 = (a, b) if s > 0 else (-b, -a)
@@ -185,16 +196,83 @@ for i, (y0, ztop) in enumerate(((24.0, 19.0), (40.0, 30.0))):
     base = block(-RAIL_X[0], -45.0, y0, y0 + 10, RAIL_Z0, RAIL_Z0 + TAB)
     leg = block(-45.0 - TAB, -45.0, y0, y0 + 10, RAIL_Z0 + TAB, ztop)
     add('Tab_Weapon_Mount_%d' % (i + 1), base.fuse(leg), 'steel_tab')
-# drive motor support strap between the rails, EPDM pads up to the motor underside (z 19.5) at the inner ends
-add('Strap_Drive_Motor', block(-RAIL_X[0], RAIL_X[0], 10.0, 21.0, RAIL_Z1 - TAB, RAIL_Z1), 'steel_tab')
+# drive motor cross between the rails under the motors' inner ends (a 1.5 mm strap fails in the 250 g drop:
+# calc/frame_strength_calc.py), EPDM pads up to the motor underside (z 19.5)
+tube_x('Frame_Motor_Cross', -RAIL_X[0], RAIL_X[0], 10.0, RAIL_Z0)
 for side, s in (('L', -1), ('R', 1)):
-    x0, x1 = (4.0, 14.0) if s > 0 else (-14.0, -4.0)
-    add('Pad_Drive_Motor_EPDM_' + side, block(x0, x1, 12.0, 20.0, RAIL_Z1, 19.5), 'EPDM')
+    x0, x1 = (6.2, 14.0) if s > 0 else (-14.0, -6.2)
+    add('Pad_Drive_Motor_EPDM_' + side, block(x0, x1, 11.0, 19.0, RAIL_Z1, 19.5), 'EPDM')
+# clamp over the inner motor ends (R3's lid bar): a centre plate between the motor ends (|x| < 6.2) up from the strap,
+# a top bar across both motors and EPDM pads, so an inverted drop does not hang the motors off their face plates
+add('Clamp_Drive_Motor_Post', block(-TAB / 2, TAB / 2, 10.0, 20.0, RAIL_Z1, 45.0), 'steel_tab')
+tube_x('Frame_Clamp_Bar', -14.0, 14.0, 10.0, 45.0)
+for side, s in (('L', -1), ('R', 1)):
+    x0, x1 = (6.2, 14.0) if s > 0 else (-14.0, -6.2)
+    add('Pad_Drive_Motor_Top_EPDM_' + side, block(x0, x1, 11.0, 19.0, 44.5, 45.0), 'EPDM')
+
+# Skirt brackets: 1.5 mm 5052, laser cut + one bend, bolted (not welded). The released R3 skirts keep their M2 holes
+# (side y -82.5/-27.5/32.5/62.5, rear x -57.5/0/57.5). Each bracket = a wall leg on the PC wall's outer face (one M3)
+# + a seat leg in the skirt's inner-face plane with a D2.4 hole for the skirt's M2 screw. Side brackets bolt through
+# the PC wall (nut inside); rear brackets bolt through the rear wall into a rivnut in the rear cross.
+SKIRT_N = (-0.819, -0.574)          # skirt inner-face normal in (u outward, z), from the R3 skirt CAD
+SKIRT_FACE = {'side': (96.83, 8.26), 'rear': (118.83, 8.27)}      # a point on each skirt's inner face, (u, z)
+SKIRT_HOLE = {'side': (94.43, 15.17), 'rear': (116.43, 15.17)}    # skirt M2 hole axis point, (u, z)
+WALL_OUT = {'side': WALL_X, 'rear': -REAR_Y}
+BRACKET_W = 15.0
+skirt_brackets = []
+
+
+def skirt_bracket(kind, sgn, station, bolt_dt=0.0, bolt_z=16.0):
+    """kind 'side' (u = sgn*x, t = y) or 'rear' (u = -y, t = x). Returns the world solid and its flat data."""
+    n = np.array(SKIRT_N); n /= np.linalg.norm(n)
+    face = np.array(SKIRT_FACE[kind]); hole = np.array(SKIRT_HOLE[kind])
+    u_leg = WALL_OUT[kind] + TAB
+    z_top = face[1] + n[0] * (u_leg - face[0]) / -n[1]            # seat plane at the wall leg's outer face
+    p0 = hole - np.dot(hole - face, n) * n                         # skirt hole on the inner face
+    s_dir = np.array([n[1], -n[0]]) * (-1 if n[1] * 1 < 0 else 1)  # in-plane, pointing outward/down
+    if s_dir[0] < 0: s_dir = -s_dir
+    a = np.array([u_leg, z_top]) + n * 0.1; b = p0 + s_dir * 4.0 + n * 0.1      # 0.1 mm off the skirt (rounded normal)
+    z_low = min(bolt_z - 4.0, z_top - 8.0)
+    prof_leg = [(WALL_OUT[kind], z_low), (u_leg, z_low), (u_leg, z_top), (WALL_OUT[kind], z_top)]
+    prof_seat = [tuple(a), tuple(b), tuple(b + n * TAB), tuple(a + n * TAB)]
+
+    def solid(prof, t0, t1):   # (u, z) polygon extruded along t
+        wp = cq.Workplane('XZ').polyline([(u, z) for u, z in prof]).close().extrude(-(t1 - t0))
+        return wp.val().translate(cq.Vector(0, t0, 0))
+    t0, t1 = station - BRACKET_W / 2, station + BRACKET_W / 2
+    sh = solid(prof_leg, t0, t1).fuse(solid(prof_seat, t0, t1)).clean()
+    # holes in local (u, t, z): M3 through the wall leg along u, D2.4 through the seat along n
+    sh = sh.cut(cq.Solid.makeCylinder(1.7, 10, cq.Vector(WALL_OUT[kind] - 2, station + bolt_dt, bolt_z), cq.Vector(1, 0, 0)))
+    sh = sh.cut(cq.Solid.makeCylinder(1.2, 10, cq.Vector(p0[0] - 5 * n[0], station, p0[1] - 5 * n[1]), cq.Vector(n[0], 0, n[1])))
+    # local frame: x = u, y = t, z = z  ->  world
+    if kind == 'side':
+        world = sh if sgn > 0 else sh.mirror('YZ')
+    else:
+        world = sh.rotate(cq.Vector(), cq.Vector(0, 0, 1), -90)    # (u, t) -> (t, -u)
+    leg_len = z_top - z_low
+    seat_len = float(np.linalg.norm(b - a))
+    flat = {'width': BRACKET_W, 'wall_leg': round(leg_len, 2), 'seat_leg': round(seat_len, 2),
+            'bend_deg_from_flat': round(float(np.degrees(np.arctan2(s_dir[0], -s_dir[1]))), 1),
+            'm3_hole_from_leg_end': round(bolt_z - z_low, 2), 'm3_hole_offset_from_centre': bolt_dt,
+            'm2_hole_from_bend': round(float(np.linalg.norm(p0 - a)), 2)}
+    return world, flat
+
+
+for side, s in (('L', -1), ('R', 1)):
+    for y in (-82.5, -27.5, 32.5, 62.5):
+        dt = 0.0
+        sh, flat = skirt_bracket('side', s, y, bolt_dt=dt)
+        b = add('Skirt_Bracket_%s_y%+.0f' % (side, y), sh, 'al5052_bracket')
+        skirt_brackets.append((b.name, flat))
+for x in (-57.5, 0.0, 57.5):
+    sh, flat = skirt_bracket('rear', 1, x, bolt_z=11.0)                # M3 into a rivnut in the rear cross (z 6..16)
+    b = add('Skirt_Bracket_Rear_x%+.0f' % x, sh, 'al5052_bracket')
+    skirt_brackets.append((b.name, flat))
 
 # PC 2 mm skins
 floor = block(-WALL_X, WALL_X, REAR_Y + SKIN, CROSS_Y[1], FLOOR_Z0, RAIL_Z0)
 for s in (-1, 1):
-    x0, x1 = (ARM_X[0], WALL_X) if s > 0 else (-WALL_X, -ARM_X[0])
+    x0, x1 = (34.0, WALL_X) if s > 0 else (-WALL_X, -34.0)
     floor = floor.fuse(block(x0, x1, CROSS_Y[1] - 1, BEAM_Y[1], FLOOR_Z0, RAIL_Z0))
     floor = floor.cut(block(*((WHEEL_X[0] - 1, WHEEL_X[1] + 1) if s > 0 else (-WHEEL_X[1] - 1, -WHEEL_X[0] + 1)), FRONT_Y - 21, FRONT_Y + 21, 0, 10))
 add('Skin_PC2_Floor', floor, 'PC')
@@ -234,6 +312,37 @@ for i, a in enumerate(new + [hall, m06]):
         if v > 0.01:
             interference.append({'a': a.name, 'b': o.name, 'volume_mm3': round(v, 3)})
 invalid = [b.name for b in new if not b.shape.isValid() or len(b.shape.Solids()) != 1]
+
+# Wedgelet swing: rotate each wedgelet + its two carriers about the hinge pin axis (y 102, z 14.5) and find the free
+# range before anything (frame, tabs, skirt brackets, floor plane z 0 excluded) is hit. MuJoCo uses -2..+14 deg.
+def rotated(shape, deg):
+    return shape.rotate(cq.Vector(0, 102.0, 14.5), cq.Vector(1, 102.0, 14.5), deg)
+
+
+swing = {}
+for side in ('L', 'R'):
+    moving = [find_body(root, n) for n in ('Wedgelet_' + side, 'Wedgelet_Carrier_PETG_%s1' % side, 'Wedgelet_Carrier_PETG_%s2' % side)]
+    others = [o for o in bodies if o not in moving and not o.name.startswith(('Hinge_Pin', 'Eclip')) and o.material != 'keepout']
+    res = {}
+    for direction, steps in (('up', range(1, 61)), ('down', range(-1, -21, -1))):
+        free = 0
+        for deg in steps:
+            hit = None
+            for m_ in moving:
+                r = rotated(m_.shape, deg)
+                for o in others:
+                    if bbox_overlap(r, o.shape) and r.intersect(o.shape).Volume() > 0.05:
+                        hit = o.name; break
+                if hit: break
+            if hit:
+                res[direction] = {'free_deg': free, 'first_contact': hit, 'at_deg': deg}
+                break
+            free = deg
+        else:
+            res[direction] = {'free_deg': free, 'first_contact': None}
+    res['sim_range_deg'] = [-2.0, 14.0]
+    res['ok'] = res['up']['free_deg'] >= 14 and abs(res['down']['free_deg']) >= 2
+    swing[side] = res
 
 # every tube and tab must touch another frame member (a weld needs contact); straps/tabs touching only skins fail
 # Weld list: every pair of frame members that share a face. Contact area = common volume after a 0.05 mm shift
@@ -287,6 +396,7 @@ for b in new:
 rows.append({'part': 'weld beads + paint', 'mass_g': round(WELD * steel_g, 2), 'centroid_mm': [0, -6.5, 12], 'method': '%.0f %% of steel' % (WELD * 100)})
 rows.append({'part': 'rivnuts M3 + screws x%d' % RIVNUTS, 'mass_g': RIVNUTS * 1.4, 'centroid_mm': [0, -20, 33], 'method': 'ASSUMED 0.9 + 0.5 g'})
 rows.append({'part': 'switch panel mount (bought)', 'mass_g': SWITCH_MOUNT_G, 'centroid_mm': [80, -30, 25], 'method': 'ASSUMED'})
+rows.append({'part': 'lid front corner angles, bought Al x2', 'mass_g': 3.0, 'centroid_mm': [0, 57, 58], 'method': 'ASSUMED'})
 total = sum(r['mass_g'] for r in rows)
 cg = sum(np.array(r['centroid_mm']) * r['mass_g'] for r in rows) / total
 NOSE_SKID_Y, REAR_SKID_Y = 69.0, REAR_Y + 8
@@ -301,12 +411,12 @@ for r in rows:
     key = ('frame tubes' if r.get('material') == 'steel_tube' else 'frame tabs/strap' if r.get('material') == 'steel_tab'
            else 'PC skins' if r.get('material') == 'PC' else r['part'] if r['part'] in ('weld beads + paint',) else 'R3 parts kept + bought')
     groups[key] = round(groups.get(key, 0) + r['mass_g'], 1)
-cut_list = [{'part': b.name, 'length_mm': round(max(b.shape.BoundingBox().xlen, b.shape.BoundingBox().ylen, b.shape.BoundingBox().zlen), 1)}
+cut_list = [{'part': b.name, 'wall_mm': TUBE_WALL.get(b.name, WALL), 'length_mm': round(max(b.shape.BoundingBox().xlen, b.shape.BoundingBox().ylen, b.shape.BoundingBox().zlen), 1)}
             for b in new if b.material == 'steel_tube']
 report = {
     'status': 'CONCEPT_CAD', 'revision': 'V4 R4-steel set A (2WD + PC 2 mm + 3S 650)', 'orientation': 'Z-up, nose +Y, mm',
     'removed_from_r3': sorted(removed), 'invalid_bodies': invalid, 'frame_members_not_touching': floating, 'edge_only_contacts': edge_only, 'welds': welds, 'interference': interference, 'upright_screw_head_hits': screw_hits,
-    'upright_taps_yz': taps,
+    'upright_taps_yz': taps, 'skirt_brackets_flat': dict(skirt_brackets), 'wedgelet_swing': swing,
     'mass': {'total_g': round(total, 1), 'margin_to_2000_g': round(2000 - total, 1), 'margin_to_1950_target_g': round(1950 - total, 1),
              'cg_mm': cg.round(2).tolist(), 'groups_g': groups},
     'support_2wd': {'drive_axle_y': FRONT_Y, 'other_support': 'nose skid y 69' if other == NOSE_SKID_Y else 'rear skid y %.0f' % REAR_SKID_Y,
@@ -326,7 +436,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 colors = {'steel_tube': '#c0392b', 'steel_tab': '#e67e22', 'PC': '#56b2b0', '6061': '#a6b4c5', 'steel': '#667381', 'purchased': '#566ca3',
-          'wheel_bought': '#2c2c2c', 'battery_650': '#566ca3', 'belt': '#343b45', 'UHMW': '#eeeeee', 'EPDM': '#222', 'nylon_standoff': '#ddd'}
+          'wheel_bought': '#2c2c2c', 'al5052_bracket': '#7f8c8d', 'battery_650': '#566ca3', 'belt': '#343b45', 'UHMW': '#eeeeee', 'EPDM': '#222', 'nylon_standoff': '#ddd'}
 fig = plt.figure(figsize=(14, 7), facecolor='#fafafa')
 for index, title, skins in ((1, 'Assembly (PC skins translucent)', True), (2, 'Welded frame + internals (no skins)', False)):
     ax = fig.add_subplot(1, 2, index, projection='3d')
@@ -342,5 +452,5 @@ fig.suptitle('V4 R4-steel set A — CONCEPT CAD · %.1f g · CG y %.1f' % (total
 fig.text(0.5, 0.03, 'steel tube: red | steel tabs: orange | PC 2 mm: teal | 6061: grey | bought: blue/black', ha='center')
 fig.tight_layout(rect=(0, 0.05, 1, 0.93)); fig.savefig(OUT / 'assembly_preview.png', dpi=150); plt.close(fig)
 
-print(json.dumps({k: report[k] for k in ('invalid_bodies', 'frame_members_not_touching', 'edge_only_contacts', 'interference', 'upright_screw_head_hits', 'mass', 'support_2wd', 'tube_total_mm', 'bounds_mm')},
+print(json.dumps({k: report[k] for k in ('invalid_bodies', 'frame_members_not_touching', 'edge_only_contacts', 'wedgelet_swing', 'interference', 'upright_screw_head_hits', 'mass', 'support_2wd', 'tube_total_mm', 'bounds_mm')},
                  ensure_ascii=False, indent=1))

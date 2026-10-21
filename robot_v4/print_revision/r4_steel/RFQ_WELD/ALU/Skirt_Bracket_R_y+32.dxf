@@ -5,11 +5,11 @@ HEADER
   9
 $ACADVER
   1
-AC1027
+AC1024
   9
 $ACADMAINTVER
  70
-105
+6
   9
 $DWGCODEPAGE
   3
@@ -18,10 +18,6 @@ ANSI_1252
 $LASTSAVEDBY
   1
 ezdxf
-  9
-$REQUIREDVERSIONS
-160
-0
   9
 $INSBASE
  10
@@ -493,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461335.4636689816
+2461335.484166667
   9
 $TDUCREATE
  40
@@ -501,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461335.4636689816
+2461335.484166667
   9
 $TDUUPDATE
  40
@@ -909,7 +905,7 @@ $LWDISPLAY
   9
 $INSUNITS
  70
-4
+6
   9
 $HYPERLINKBASE
   1
@@ -933,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{70C14421-1774-4C87-9A15-5D25C2FBEC7B}
+{D6AB86FC-70A3-40F4-9830-2E593B7B3EBB}
   9
 $VERSIONGUID
   2
-{125BBA13-CF9C-4A9F-AA01-7DFC7EB1BE1B}
+{33A36484-C039-4396-9F3A-6EB43B43EFE0}
   9
 $EXTNAMES
 290
@@ -1327,9 +1323,9 @@ ISM
   0
 CLASS
   1
-ACDBPLACEHOLDER
+LAYOUT
   2
-AcDbPlaceHolder
+AcDbLayout
   3
 ObjectDBX Classes
  90
@@ -1343,9 +1339,9 @@ ObjectDBX Classes
   0
 CLASS
   1
-LAYOUT
+ACDBPLACEHOLDER
   2
-AcDbLayout
+AcDbPlaceHolder
   3
 ObjectDBX Classes
  90
@@ -1377,7 +1373,7 @@ AcDbSymbolTable
   0
 VPORT
   5
-36
+23
 330
 8
 100
@@ -1425,7 +1421,7 @@ AcDbViewportTableRecord
  37
 0.0
  40
-32.0
+1000.0
  41
 1.34
  42
@@ -1457,26 +1453,6 @@ AcDbViewportTableRecord
 281
 0
  65
-1
-110
-0.0
-120
-0.0
-130
-0.0
-111
-1.0
-121
-0.0
-131
-0.0
-112
-0.0
-122
-1.0
-132
-0.0
- 79
 0
 146
 0.0
@@ -1573,7 +1549,7 @@ LAYER
 100
 AcDbSymbolTable
  70
-2
+5
   0
 LAYER
   5
@@ -1618,6 +1594,78 @@ Defpoints
 Continuous
 290
 0
+370
+-3
+390
+13
+347
+21
+  0
+LAYER
+  5
+2F
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbLayerTableRecord
+  2
+CUT
+ 70
+0
+ 62
+7
+  6
+Continuous
+370
+-3
+390
+13
+347
+21
+  0
+LAYER
+  5
+30
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbLayerTableRecord
+  2
+BEND
+ 70
+0
+ 62
+7
+  6
+Continuous
+370
+-3
+390
+13
+347
+21
+  0
+LAYER
+  5
+31
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbLayerTableRecord
+  2
+NOTES
+ 70
+0
+ 62
+7
+  6
+Continuous
 370
 -3
 390
@@ -2047,79 +2095,7 @@ SECTION
   2
 ENTITIES
   0
-LINE
-  5
-2F
-330
-17
-100
-AcDbEntity
-  8
-0
-100
-AcDbLine
- 10
--16.0
- 20
-16.0
- 30
-0.0
- 11
--16.0
- 21
--16.0
- 31
-0.0
-  0
-LINE
-  5
-30
-330
-17
-100
-AcDbEntity
-  8
-0
-100
-AcDbLine
- 10
--16.0
- 20
--16.0
- 30
-0.0
- 11
-16.0
- 21
--16.0
- 31
-0.0
-  0
-LINE
-  5
-31
-330
-17
-100
-AcDbEntity
-  8
-0
-100
-AcDbLine
- 10
-16.0
- 20
-16.0
- 30
-0.0
- 11
-16.0
- 21
--16.0
- 31
-0.0
-  0
-LINE
+LWPOLYLINE
   5
 32
 330
@@ -2127,23 +2103,31 @@ LINE
 100
 AcDbEntity
   8
-0
+CUT
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+1
  10
--16.0
+0.0
  20
-16.0
- 30
 0.0
- 11
-16.0
- 21
-16.0
- 31
+ 10
+15.0
+ 20
 0.0
+ 10
+15.0
+ 20
+32.3
+ 10
+0.0
+ 20
+32.3
   0
-CIRCLE
+LINE
   5
 33
 330
@@ -2151,17 +2135,21 @@ CIRCLE
 100
 AcDbEntity
   8
-0
+BEND
 100
-AcDbCircle
+AcDbLine
  10
 0.0
  20
--8.5
+13.85
  30
 0.0
- 40
-1.7
+ 11
+15.0
+ 21
+13.85
+ 31
+0.0
   0
 CIRCLE
   5
@@ -2171,17 +2159,17 @@ CIRCLE
 100
 AcDbEntity
   8
-0
+CUT
 100
 AcDbCircle
  10
-0.0
+7.5
  20
-0.0
+4.0
  30
 0.0
  40
-4.25
+1.7
   0
 CIRCLE
   5
@@ -2191,17 +2179,47 @@ CIRCLE
 100
 AcDbEntity
   8
-0
+CUT
 100
 AcDbCircle
  10
-0.0
+7.5
  20
-8.5
+28.299999999999997
  30
 0.0
  40
-1.7
+1.2
+  0
+TEXT
+  5
+36
+330
+17
+100
+AcDbEntity
+  8
+NOTES
+100
+AcDbText
+ 10
+0.0
+ 20
+-4.0
+ 30
+0.0
+ 40
+1.5
+  1
+5052 t1.5 - bend 35.0 deg at BEND (wall leg below)
+ 11
+0.0
+ 21
+-4.0
+ 31
+0.0
+100
+AcDbText
   0
 ENDSEC
   0
@@ -3205,7 +3223,7 @@ DictionaryVariables
 280
 0
   1
-1.4.4 @ 2026-10-21T04:07:41.553335+00:00
+1.4.4 @ 2026-10-21T04:37:12.511715+00:00
   0
 DICTIONARYVAR
   5
@@ -3217,7 +3235,7 @@ DictionaryVariables
 280
 0
   1
-1.4.4 @ 2026-10-21T04:07:41.557145+00:00
+1.4.4 @ 2026-10-21T04:37:12.512013+00:00
   0
 ENDSEC
   0

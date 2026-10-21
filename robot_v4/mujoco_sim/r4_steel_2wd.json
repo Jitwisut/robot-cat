@@ -1,0 +1,237 @@
+{
+ "mass_kg": 1.9287,
+ "cg_mm": [
+  -1.32,
+  18.98,
+  28.2
+ ],
+ "rotor_I": 6.666386279743093e-05,
+ "rotor_rad_s": 1705.997908234787,
+ "stall_Nm": 0.12768,
+ "w0": 43.982297150257104,
+ "tests": {
+  "rest": {
+   "max_pitch_nose_up_deg": 0.204,
+   "max_pitch_nose_down_deg": -0.01,
+   "max_roll_deg": 0.0,
+   "min_tip_z_mm": 2.359,
+   "touched": [
+    "skirtB",
+    "w0_g",
+    "w1_g"
+   ],
+   "top_speed_m_s": 0.003,
+   "max_yaw_rate": 0.0,
+   "min_50ms_wheel_load_pct": {
+    "left": 50.1,
+    "right": 48.3
+   },
+   "last_0.5s_mean_load_pct": {
+    "w0_g": 50.1,
+    "w1_g": 48.3,
+    "wedgeL_g": 0.6,
+    "wedgeR_g": 0.6
+   }
+  },
+  "launch": {
+   "max_pitch_nose_up_deg": 0.201,
+   "max_pitch_nose_down_deg": 0.0,
+   "max_roll_deg": 0.004,
+   "min_tip_z_mm": 2.465,
+   "touched": [
+    "skirtB",
+    "w0_g",
+    "w1_g",
+    "wedgeL_g",
+    "wedgeR_g"
+   ],
+   "top_speed_m_s": 1.14,
+   "max_yaw_rate": 0.099,
+   "min_50ms_wheel_load_pct": {
+    "left": 43.7,
+    "right": 44.7
+   },
+   "last_0.5s_mean_load_pct": {
+    "skirtB": 0.8,
+    "w0_g": 50.5,
+    "w1_g": 46.8,
+    "wedgeL_g": 0.6,
+    "wedgeR_g": 1.3
+   }
+  },
+  "brake": {
+   "max_pitch_nose_up_deg": 0.201,
+   "max_pitch_nose_down_deg": -0.424,
+   "max_roll_deg": 0.025,
+   "min_tip_z_mm": 2.012,
+   "touched": [
+    "skirtB",
+    "skirtL",
+    "skirtR",
+    "w0_g",
+    "w1_g",
+    "wedgeL_g",
+    "wedgeR_g"
+   ],
+   "top_speed_m_s": 1.14,
+   "max_yaw_rate": 0.138,
+   "min_50ms_wheel_load_pct": {
+    "left": 37.3,
+    "right": 38.4
+   },
+   "last_0.5s_mean_load_pct": {
+    "skirtL": 3.6,
+    "skirtR": 2.8,
+    "w0_g": 47.6,
+    "w1_g": 47.7
+   }
+  },
+  "reverse_launch": {
+   "max_pitch_nose_up_deg": 0.0,
+   "max_pitch_nose_down_deg": -0.376,
+   "max_roll_deg": 0.003,
+   "min_tip_z_mm": 1.997,
+   "touched": [
+    "skirtL",
+    "skirtR",
+    "w0_g",
+    "w1_g",
+    "wedgeL_g",
+    "wedgeR_g"
+   ],
+   "top_speed_m_s": 1.164,
+   "max_yaw_rate": 0.114,
+   "min_50ms_wheel_load_pct": {
+    "left": 44.6,
+    "right": 42.5
+   },
+   "last_0.5s_mean_load_pct": {
+    "w0_g": 50.3,
+    "w1_g": 48.3
+   }
+  },
+  "spin_rotor_on": {
+   "max_pitch_nose_up_deg": 0.204,
+   "max_pitch_nose_down_deg": -0.363,
+   "max_roll_deg": 1.036,
+   "min_tip_z_mm": 2.013,
+   "touched": [
+    "skirtB",
+    "skirtL",
+    "w0_g",
+    "w1_g",
+    "wedgeL_g",
+    "wedgeR_g"
+   ],
+   "top_speed_m_s": 0.218,
+   "max_yaw_rate": 11.273,
+   "min_50ms_wheel_load_pct": {
+    "left": 52.8,
+    "right": 0.0
+   },
+   "last_0.5s_mean_load_pct": {
+    "skirtL": 3.9,
+    "w0_g": 96.6,
+    "wedgeL_g": 0.5
+   }
+  },
+  "spin_rotor_off": {
+   "max_pitch_nose_up_deg": 0.204,
+   "max_pitch_nose_down_deg": -0.209,
+   "max_roll_deg": 0.001,
+   "min_tip_z_mm": 2.219,
+   "touched": [
+    "skirtB",
+    "w0_g",
+    "w1_g",
+    "wedgeL_g",
+    "wedgeR_g"
+   ],
+   "top_speed_m_s": 0.026,
+   "max_yaw_rate": 12.447,
+   "min_50ms_wheel_load_pct": {
+    "left": 26.2,
+    "right": 34.7
+   },
+   "last_0.5s_mean_load_pct": {
+    "w0_g": 55.2,
+    "w1_g": 49.5,
+    "wedgeR_g": 0.9
+   }
+  },
+  "spin_rotor_on_yawlimit_10": {
+   "max_pitch_nose_up_deg": 0.204,
+   "max_pitch_nose_down_deg": -0.363,
+   "max_roll_deg": 0.024,
+   "min_tip_z_mm": 2.013,
+   "touched": [
+    "skirtB",
+    "w0_g",
+    "w1_g",
+    "wedgeL_g",
+    "wedgeR_g"
+   ],
+   "top_speed_m_s": 0.195,
+   "max_yaw_rate": 11.106,
+   "min_50ms_wheel_load_pct": {
+    "left": 52.8,
+    "right": 0.0
+   },
+   "last_0.5s_mean_load_pct": {
+    "w0_g": 97.2,
+    "w1_g": 1.2
+   }
+  },
+  "spin_rotor_on_yawlimit_8": {
+   "max_pitch_nose_up_deg": 0.204,
+   "max_pitch_nose_down_deg": -0.363,
+   "max_roll_deg": 0.004,
+   "min_tip_z_mm": 2.013,
+   "touched": [
+    "skirtB",
+    "w0_g",
+    "w1_g",
+    "wedgeL_g",
+    "wedgeR_g"
+   ],
+   "top_speed_m_s": 0.134,
+   "max_yaw_rate": 9.892,
+   "min_50ms_wheel_load_pct": {
+    "left": 52.8,
+    "right": 2.0
+   },
+   "last_0.5s_mean_load_pct": {
+    "w0_g": 92.6,
+    "w1_g": 6.1,
+    "wedgeR_g": 0.7
+   }
+  },
+  "spin_rotor_on_yawlimit_6": {
+   "max_pitch_nose_up_deg": 0.204,
+   "max_pitch_nose_down_deg": -0.363,
+   "max_roll_deg": 0.002,
+   "min_tip_z_mm": 2.012,
+   "touched": [
+    "skirtB",
+    "w0_g",
+    "w1_g",
+    "wedgeL_g",
+    "wedgeR_g"
+   ],
+   "top_speed_m_s": 0.082,
+   "max_yaw_rate": 8.424,
+   "min_50ms_wheel_load_pct": {
+    "left": 52.8,
+    "right": 5.6
+   },
+   "last_0.5s_mean_load_pct": {
+    "w0_g": 87.1,
+    "w1_g": 12.7
+   }
+  }
+ },
+ "gyro": {
+  "H_Nms": 0.113728410487268,
+  "tipping_yaw_rate_rad_s": 11.229708715949888
+ }
+}

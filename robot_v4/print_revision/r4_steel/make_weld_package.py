@@ -36,10 +36,11 @@ if B.report['interference'] or B.report['frame_members_not_touching'] or B.repor
     raise RuntimeError('CAD checks failed; fix build_r4_steel.py first')
 
 TH = {'Frame_Rear_Cross': 'คานท้ายล่าง', 'Frame_Bulkhead_Cross': 'คานขวางหน้าล่าง', 'Frame_Rail': 'รางข้าง',
-      'Frame_Fork_Arm': 'แขนหน้า', 'Frame_Hinge_Beam': 'คานบานพับ', 'Frame_Post_Rear': 'เสาท้าย', 'Frame_Post_Front': 'เสาหน้า',
+      'Frame_Bulkhead_Stub': 'ท่อนขวางหน้านอก', 'Frame_Hinge_Beam': 'คานบานพับ', 'Frame_Post_Rear': 'เสาท้าย', 'Frame_Post_Front': 'เสาหน้า',
       'Frame_Top_Rear_Cross': 'คานบนท้าย', 'Frame_Top_Front_Stub': 'ท่อนบนหน้า', 'Tab_Drive_Motor': 'แผ่นยึดมอเตอร์ขับ',
-      'Tab_Upright': 'แผ่นยึดแผ่นตั้งอาวุธ', 'Tab_Hinge': 'หูบานพับ wedgelet', 'Tab_Battery_Strap': 'หูสายรัดแบต',
-      'Tab_Weapon_Mount': 'หูยึดแผ่นมอเตอร์อาวุธ', 'Strap_Drive_Motor': 'แผ่นรองมอเตอร์ขับ'}
+      'Tab_Upright_Web': 'แผ่นยึดแผ่นตั้งอาวุธ', 'Tab_Upright_Flange': 'แผ่นพื้นใต้แผ่นยึดแผ่นตั้ง', 'Tab_Upright_Rung': 'แผ่นค้ำแผ่นยึดแผ่นตั้ง',
+      'Clamp_Drive_Motor_Post': 'เสาตัวกดมอเตอร์ขับ', 'Frame_Clamp_Bar': 'คานกดมอเตอร์ขับ', 'Frame_Motor_Cross': 'คานรองมอเตอร์ขับ', 'Tab_Hinge': 'หูบานพับ wedgelet', 'Tab_Battery_Strap': 'หูสายรัดแบต',
+      'Tab_Weapon_Mount': 'หูยึดแผ่นมอเตอร์อาวุธ', 'Skirt_Bracket': 'ขายึดแผ่นกัน'}
 
 
 def thai(name):
@@ -62,23 +63,20 @@ def rel(bb):
 def plates_of(b):
     """(suffix, shape) planar plates. L tabs are split into two plates that the shop welds at 90 deg."""
     s = b.shape
-    if b.name.startswith('Tab_Upright'):
-        x0 = 33.0 if b.shape.BoundingBox().xmin > 0 else -34.5
-        web = s.intersect(B.block(x0, x0 + B.TAB, -200, 200, B.RAIL_Z0 + B.TAB, 100))
-        return [('a', web), ('b', s.cut(web))]
     if b.name.startswith('Tab_Weapon_Mount'):
         base = s.intersect(B.block(-200, 200, -200, 200, B.RAIL_Z0, B.RAIL_Z0 + B.TAB))
         return [('a', base), ('b', s.cut(base))]
     return [('', s)]
 
 
-def flat(shape):
+def flat(shape, thickness=None):
     """Rotate a plate so its thin axis is Z, move it to z 0..t, return (workplane section at mid-thickness, size, holes)."""
     bb = shape.BoundingBox()
     dims = {'x': bb.xlen, 'y': bb.ylen, 'z': bb.zlen}
     thin = min(dims, key=dims.get)
-    if abs(dims[thin] - B.TAB) > 0.05:          # OCC boxes are loose by ~0.02
-        raise RuntimeError('not a %.1f mm plate: %s' % (B.TAB, dims))
+    want = thickness or B.TAB
+    if abs(dims[thin] - want) > 0.1:           # OCC boxes are loose (more on curved faces)
+        raise RuntimeError('not a %.1f mm plate: %s' % (want, dims))
     s = shape.translate(cq.Vector(-bb.center.x, -bb.center.y, -bb.center.z))
     if thin == 'x':
         s = s.rotate(cq.Vector(), cq.Vector(0, 1, 0), 90)
@@ -151,6 +149,26 @@ ortho(PKG / 'images' / 'side.png', 'y', 'z', 'มองจากด้านข�
 ortho(PKG / 'images' / 'rear.png', 'x', 'z', 'มองจากท้ายรถไปหัวรถ', 'X (มม.)', 'Z (มม.)')
 shutil.copy2(B.OUT / 'FRAME_WELDMENT.step', PKG / 'FRAME_WELDMENT.step')
 
+# ---------------------------------------------------------------- aluminium parts (laser/bend shop, not welded)
+import ezdxf                                            # noqa: E402
+(PKG / 'ALU').mkdir()
+for name, fl in B.report['skirt_brackets_flat'].items():
+    doc = ezdxf.new('R2010'); msp = doc.modelspace()
+    for layer in ('CUT', 'BEND', 'NOTES'):
+        doc.layers.add(layer)
+    W, L1, L2 = fl['width'], fl['wall_leg'], fl['seat_leg']
+    msp.add_lwpolyline([(0, 0), (W, 0), (W, L1 + L2), (0, L1 + L2)], close=True, dxfattribs={'layer': 'CUT'})
+    msp.add_line((0, L1), (W, L1), dxfattribs={'layer': 'BEND'})
+    msp.add_circle((W / 2 + fl['m3_hole_offset_from_centre'], fl['m3_hole_from_leg_end']), 1.7, dxfattribs={'layer': 'CUT'})
+    msp.add_circle((W / 2, L1 + fl['m2_hole_from_bend']), 1.2, dxfattribs={'layer': 'CUT'})
+    msp.add_text('5052 t1.5 - bend %.1f deg at BEND (wall leg below)' % fl['bend_deg_from_flat'],
+                 dxfattribs={'layer': 'NOTES', 'height': 1.5}).set_placement((0, -4))
+    doc.saveas(PKG / 'ALU' / ('%s.dxf' % name))
+m06_sec, m06_size, m06_holes, _ = flat(B.m06.shape, thickness=3.0)
+cq.exporters.exportDXF(m06_sec, str(PKG / 'ALU' / 'M06_Weapon_Motor_Mount_3mm_R4_notched.dxf'))
+subprocess.run([sys.executable, str(HERE / 'calc' / 'frame_strength_calc.py')], check=True, capture_output=True)   # on this build
+STRENGTH = json.loads((HERE / 'calc' / 'frame_strength_calc.json').read_text())
+
 # ---------------------------------------------------------------- PDF
 def axis_of(bb):
     return max((('X', bb.xlen), ('Y', bb.ylen), ('Z', bb.zlen)), key=lambda t: t[1])
@@ -159,8 +177,9 @@ def axis_of(bb):
 tube_rows = ''
 for m in tubes:
     bb = m.shape.BoundingBox(); ax_, L = axis_of(bb); p = rel(bb)
-    tube_rows += '<tr><td><b>%s</b></td><td>%s</td><td class="n">%.1f</td><td>%s</td><td class="n">%.1f, %.1f, %.1f</td></tr>' % (
-        ID[m.name], e(thai(m.name)), L, ax_, *p)
+    wall = B.TUBE_WALL.get(m.name, B.WALL)
+    tube_rows += '<tr><td><b>%s</b></td><td>%s</td><td class="n">%.1f</td><td class="n">%s</td><td>%s</td><td class="n">%.1f, %.1f, %.1f</td></tr>' % (
+        ID[m.name], e(thai(m.name)), L, ('<b>%.1f</b>' % wall) if wall != B.WALL else '%.1f' % wall, ax_, *p)
 plate_html = ''.join('<tr><td><b>%s</b></td><td>%s</td><td class="n">%.1f × %.1f</td><td>%s</td><td class="n">%.1f, %.1f, %.1f</td><td class="m">%s</td></tr>' % (
     r['id'], e(thai(r['part'])), *r['size'], ', '.join('Ø%g' % h for h in r['holes']) + (' (%d รู/ร่อง)' % r['n_holes'] if r['n_holes'] else '') or '–',
     *r['pos'], e(r['dxf'])) for r in plate_rows)
@@ -180,20 +199,21 @@ body = '''<span class="stamp">แบบสำหรับขอราคา / �
 <h2>1. ภาพรวมและรหัสชิ้น (F = ท่อ, T = แผ่นยึด)</h2><img src="images/iso_ids.png" style="width:100%%">
 <h2>2. มุมมอง 3 ด้าน</h2><img src="images/top.png" style="width:100%%"><img src="images/side.png" style="width:49%%"><img src="images/rear.png" style="width:49%%">
 <h2>3. วัสดุ</h2><ul>
-<li>ท่อ: <b>เหล็กกล่องเหลี่ยม 10×10 หนา %(wall).1f มม.</b> (เหล็กเหนียวทั่วไป) ตัดปลายฉาก 90° ทุกท่อน ไม่ต้องตัดเฉียง</li>
+<li>ท่อ: <b>เหล็กกล่องเหลี่ยม 10×10 หนา %(wall).1f มม.</b> ยกเว้น<b>รางข้าง 2 เส้นหนา %(rail).1f มม.</b> (รับแรงจากอาวุธ ห้ามเปลี่ยนเป็นบางกว่า) เหล็กเหนียวทั่วไป ตัดปลายฉาก 90° ทุกท่อน</li>
 <li>แผ่นยึด: <b>เหล็กแผ่นหนา %(tab).1f มม.</b> ตัดเลเซอร์ตามไฟล์ใน <span class="m">DXF/</span> ไฟล์ละ 1 ชิ้น
 (ชิ้นที่ลงท้าย a/b คือแผ่น 2 แผ่นที่เชื่อมกันเป็นฉาก 90°)</li>
 <li><b class="bad">ห้ามเชื่อมชิ้นอะลูมิเนียม จานอาวุธ หรือ wedgelet เข้ากับโครง</b> ชิ้นพวกนั้นยึดด้วยน็อตภายหลัง</li></ul>
 <h2>4. รายการตัดท่อ (%(nt)d ท่อน รวม %(tl).0f มม.)</h2>
-<table><tr><th>รหัส</th><th>ชื่อ</th><th>ยาว</th><th>แนว</th><th>ตำแหน่ง X, Y, Z</th></tr>%(tubes)s</table>
+<table><tr><th>รหัส</th><th>ชื่อ</th><th>ยาว</th><th>หนา</th><th>แนว</th><th>ตำแหน่ง X, Y, Z</th></tr>%(tubes)s</table>
 <h2>5. แผ่นยึด (%(np)d แผ่น)</h2>
 <table><tr><th>รหัส</th><th>ชื่อ</th><th>ขนาดแผ่น</th><th>รู</th><th>ตำแหน่ง X, Y, Z</th><th>DXF</th></tr>%(plates)s</table>
 <h2>6. รายการจุดเชื่อม (%(nw)d จุด คำนวณจากผิวที่ชิ้นสัมผัสกันใน CAD)</h2>
 <table><tr><th>จุด</th><th>ชิ้นที่เชื่อม</th><th>ตำแหน่ง X, Y, Z</th><th>ขนาดผิวสัมผัส</th><th>วิธีเชื่อม</th></tr>%(welds)s</table>
 <h2>7. ลำดับการประกอบ</h2><ol>
-<li>วางบนโต๊ะเรียบ ประกอบ<b>กรอบล่าง</b>: F01 คานท้ายล่าง, F02 คานขวางหน้าล่าง และรางข้างที่อยู่ระหว่างสองคาน ยึด clamp แล้ว<b>วัดเส้นทแยงมุมสองเส้นให้ต่างกันไม่เกิน 1 มม.</b> ก่อนแต้มเชื่อม</li>
-<li>แขนหน้าต่อจากหน้าคาน F02 แล้วคานบานพับต่อที่ปลายแขน</li>
-<li>เสา 4 ต้นตั้งบนคาน F01/F02 ตรวจฉากกับโต๊ะ แล้วคานบนท้ายและท่อนบนหน้าวางบนหัวเสา</li>
+<li>วางบนโต๊ะเรียบ ประกอบ<b>กรอบล่าง</b>: คานท้ายล่าง + <b>รางข้าง 2 เส้นยาวต่อเนื่องไม่ตัดต่อ</b> (จากคานท้ายถึงคานบานพับ) +
+คานขวางหน้า (ท่อนกลางอยู่ระหว่างราง ท่อนนอกต่อจากด้านนอกราง) + คานรองมอเตอร์ขับ ยึด clamp แล้ว<b>วัดเส้นทแยงมุมให้ต่างกันไม่เกิน 1 มม.</b> ก่อนแต้มเชื่อม</li>
+<li>คานบานพับต่อที่ปลายหน้าของราง</li>
+<li>เสาท้าย 2 ต้นตั้งบนคานท้าย ตรวจฉากกับโต๊ะ แล้วคานบนท้ายวางบนหัวเสา · เสาตัวกดมอเตอร์ตั้งบนคานรองมอเตอร์ แล้วคานกดมอเตอร์วางบนเสา (ใส่มอเตอร์จริงหรือแท่งจำลอง Ø25 ระหว่างเชื่อมเพื่อให้ได้ระยะ)</li>
 <li>แผ่นยึด: <b>หูบานพับ 3 หูแต่ละข้างต้องร้อยแท่ง Ø3 ผ่านทั้ง 3 รูขณะเชื่อม</b> ให้รูตรงแนวเดียวกัน ·
 <b>แผ่นยึดมอเตอร์ขับซ้าย/ขวาร้อยแท่ง Ø8 ผ่านทั้งสองรู</b> ให้ตรงแกนเดียวกัน · แผ่นยึดแผ่นตั้งอาวุธให้ขันแผ่นตั้งจริงหรือแผ่นจำลองไว้ขณะเชื่อม</li>
 <li>แต้มเชื่อมสลับซ้าย-ขวาเพื่อลดการบิด แล้วเชื่อมเต็มตามตารางข้อ 6 · เจียรแนวเชื่อมด้านที่แผ่น PC จะแนบ (ผิวนอกของรางและเสา) ให้เรียบ</li>
@@ -204,10 +224,16 @@ body = '''<span class="stamp">แบบสำหรับขอราคา / �
 <h2>9. คำถามถึงร้าน</h2><ol>
 <li>เชื่อมท่อหนา %(wall).1f มม. ได้ไหม ใช้ MIG หรือ TIG (ถ้าต้องหนากว่านี้ แจ้งก่อน ผู้สั่งต้องคำนวณน้ำหนักใหม่)</li>
 <li>ร้านตัดแผ่นยึด 1.5 มม. เองได้ไหม หรือต้องส่งตัดเลเซอร์</li><li>ราคา ระยะเวลา และการทำสี</li></ol>
-<h2>10. ยังไม่ครบ — ห้ามเชื่อมจนกว่าผู้สั่งจะส่งฉบับอนุมัติ</h2><ul>
-<li>รูยึดมอเตอร์ขับบน T01/T08 (M3 ห่าง 17 มม. + Ø8.5 บ่า) ใช้ค่าแคตตาล็อก ORTECH JB361 ต้องเทียบกับมอเตอร์จริงก่อนตัด</li>
-<li>ขายึดแผ่นกันข้าง/ท้าย และรู rivnut สำหรับผนัง PC</li><li>ผลคำนวณความแข็งแรงเมื่อโดนอาวุธ</li></ul>
-''' % dict(wall=B.WALL, tab=B.TAB, nt=len(tubes), tl=sum(axis_of(m.shape.BoundingBox())[1] for m in tubes), tubes=tube_rows,
+<h2>10. ความแข็งแรง (calc/frame_strength_calc.py)</h2><ul>
+<li>อาวุธตี 2.6 kN แนวหน้า-หลัง: SF ต่ำสุด %(sf).2f (รางข้าง) · ตกจาก 0.5 ม. ทั้งหงายและคว่ำ: ผ่านทุกจุด</li>
+<li>กรณีตรวจ 5.2 kN: รางข้างงอถาวร (SF 0.76) ไม่หัก · แรงดันขึ้นจากใต้จาน (ทิศที่ไม่เกิดกับจานที่หมุนฟันหน้าขึ้น) SF 1.11</li></ul>
+<h2>11. ยังไม่ครบ — ห้ามเชื่อมจนกว่าผู้สั่งจะส่งฉบับอนุมัติ</h2><ul>
+<li>รูยึดมอเตอร์ขับบนแผ่นยึดมอเตอร์ (M3 ห่าง 17 มม. + Ø8.5 บ่า + Ø5.5 หัวสกรูเกียร์) ใช้แบบผู้ขาย ORTECH JB361 ต้องเทียบกับมอเตอร์จริงก่อนตัด</li>
+<li>รุ่นล้อที่จะซื้อ (กำหนดให้ Ø64–65 กว้างไม่เกิน 16 มม. ดุมเข้าเพลา D 4 มม. ได้ 8 มม.)</li><li>รูผนัง PC และตำแหน่ง rivnut</li></ul>
+<h2>12. ชิ้นอะลูมิเนียม (ไม่เชื่อม ส่งร้านเลเซอร์/พับ) — ใน <span class="m">ALU/</span></h2><ul>
+<li>ขายึดแผ่นกัน 11 ชิ้น: อะลูมิเนียม 5052 หนา 1.5 ตัดตาม DXF แล้วพับ 1 ครั้งตามเส้น BEND (มุมใน DXF)</li>
+<li>แผ่นยึดมอเตอร์อาวุธ M06 รุ่นโครงเหล็ก: 6061 หนา 3 ตาม R3 แต่มีบาก 5×12 เหนือคานขวาง</li></ul>
+''' % dict(wall=B.WALL, rail=B.RAIL_WALL, sf=STRENGTH['summary']['min_design_sf'], tab=B.TAB, nt=len(tubes), tl=sum(axis_of(m.shape.BoundingBox())[1] for m in tubes), tubes=tube_rows,
            np=len(plate_rows), plates=plate_html, nw=len(B.welds), welds=weld_html, sg=steel_g, margin=mass['margin_to_2000_g'])
 CSS = '''@page{size:A4;margin:11mm}body{font-family:"Sukhumvit Set","Thonburi",sans-serif;font-size:9pt;color:#111;line-height:1.45}
 .stamp{border:2px solid #b36b00;color:#b36b00;font-weight:700;padding:3px 10px;display:inline-block;font-size:11pt}
