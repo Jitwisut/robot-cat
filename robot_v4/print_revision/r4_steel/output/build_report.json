@@ -938,6 +938,80 @@
   "drive_wheel_load_pct": 98.1,
   "push_N_mu0.6": 7.91
  },
+ "drill_after_weld": [
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 3.6,
+   "what": "JB361 M3 mount",
+   "yz_mm": [
+    9.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 3.6,
+   "what": "JB361 M3 mount",
+   "yz_mm": [
+    26.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 5.5,
+   "what": "JB361 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    23.5
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 5.5,
+   "what": "JB361 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    40.5
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 3.6,
+   "what": "JB361 M3 mount",
+   "yz_mm": [
+    9.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 3.6,
+   "what": "JB361 M3 mount",
+   "yz_mm": [
+    26.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 5.5,
+   "what": "JB361 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    23.5
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 5.5,
+   "what": "JB361 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    40.5
+   ]
+  }
+ ],
  "tube_cut_list_mm": [
   {
    "part": "Frame_Rear_Cross",
@@ -1705,9 +1779,9 @@
   {
    "part": "Tab_Drive_Motor_L",
    "material": "steel_tab",
-   "mass_g": 10.616,
+   "mass_g": 10.59,
    "centroid_mm": [
-    -56.74999999999997,
+    -56.749999999999986,
     18.0,
     32.0
    ],
@@ -1815,9 +1889,9 @@
   {
    "part": "Tab_Drive_Motor_R",
    "material": "steel_tab",
-   "mass_g": 10.616,
+   "mass_g": 10.59,
    "centroid_mm": [
-    56.74999999999997,
+    56.749999999999986,
     18.0,
     32.0
    ],

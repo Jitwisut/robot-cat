@@ -167,15 +167,23 @@ for f in upr.shape.Faces():
         p = (round(cyl.Location().Y(), 3), round(cyl.Location().Z(), 3))
         if p not in taps: taps.append(p)
 taps.sort()
+AS_WELDED = {}            # part -> shape as the welding shop delivers it, where it differs from the finished part
+DRILL_AFTER_WELD = []     # holes the owner drills after welding
 for side, s in (('L', -1), ('R', 1)):
     # drive motor face plate: gearbox face at |x| 56, wheel hub from 62; D8.5 boss hole on the axle
     x0 = 56.0 if s > 0 else -56.0 - TAB
     t = block(x0, x0 + TAB, FRONT_Y - 16, FRONT_Y + 16, RAIL_Z1, RAIL_Z1 + 32)
     t = hole_x(t, FRONT_Y, 32.0, 4.25)                    # D8.5 over the D7 boss
+    # The welding shop gets the plate with the D8.5 boss hole only (the D8 jig rod aligns both plates on it). The M3
+    # and D5.5 holes come from the vendor drawing alone (JB361 unmeasured), so the owner drills them after welding,
+    # positioned from the real motor; this robot CAD shows them drilled.
+    AS_WELDED['Tab_Drive_Motor_' + side] = t
     for dy, dz in MOTOR_HOLES_YZ:
-        t = hole_x(t, FRONT_Y + dy, 32.0 + dz, 1.7)      # M3 clearance D3.4
+        t = hole_x(t, FRONT_Y + dy, 32.0 + dz, 1.8)      # M3 clearance D3.6: hand-drilled +-0.3, washer under the head
+        DRILL_AFTER_WELD.append({'part': 'Tab_Drive_Motor_' + side, 'd_mm': 3.6, 'what': 'JB361 M3 mount', 'yz_mm': [FRONT_Y + dy, 32.0 + dz]})
     for dy, dz in GEARBOX_SCREWS_YZ:
         t = hole_x(t, FRONT_Y + dy, 32.0 + dz, 2.75)     # D5.5 clearance for the gearbox screw heads
+        DRILL_AFTER_WELD.append({'part': 'Tab_Drive_Motor_' + side, 'd_mm': 5.5, 'what': 'JB361 gearbox screw head', 'yz_mm': [FRONT_Y + dy, 32.0 + dz]})
     add('Tab_Drive_Motor_' + side, t, 'steel_tab')
     # upright web on the upright outer face (|x| 33..34.5), M3 clearance holes on the 4 R3 upright taps; starts at
     # y 66 (weapon motor can reaches y 65), notched around the axle washer (y 95, z 32). It stands on a floor flange
@@ -477,6 +485,7 @@ report = {
              'cg_mm': cg.round(2).tolist(), 'groups_g': groups},
     'support_2wd': {'drive_axle_y': FRONT_Y, 'other_support': 'nose skid y 69' if other == NOSE_SKID_Y else 'rear skid y %.0f' % REAR_SKID_Y,
                     'drive_wheel_load_pct': round(100 * wheel_frac, 1), 'push_N_mu0.6': round(push, 2)},
+    'drill_after_weld': DRILL_AFTER_WELD,
     'tube_cut_list_mm': cut_list, 'tube_total_mm': round(sum(c['length_mm'] for c in cut_list), 1),
     'bounds_mm': {k: round(v, 2) for k, v in zip(('xmin', 'xmax', 'ymin', 'ymax', 'zmin', 'zmax'),
                   (lambda bb: (bb.xmin, bb.xmax, bb.ymin, bb.ymax, bb.zmin, bb.zmax))(cq.Compound.makeCompound([b.shape for b in bodies if b.material != 'keepout']).BoundingBox()))},
@@ -486,7 +495,7 @@ report = {
 
 # ---------------------------------------------------------------- exports + preview
 cq.Compound.makeCompound([b.shape for b in bodies if b.material != 'keepout']).exportStep(str(OUT / 'ROBOT_V4_R4_STEEL.step'))
-cq.Compound.makeCompound([b.shape for b in new if b.material.startswith('steel')]).exportStep(str(OUT / 'FRAME_WELDMENT.step'))
+cq.Compound.makeCompound([AS_WELDED.get(b.name, b.shape) for b in steel]).exportStep(str(OUT / 'FRAME_WELDMENT.step'))   # as the shop delivers it
 find_body(root, 'Wheel_Hub_6061_Front_R').shape.translate(cq.Vector(-WHEEL_X[0], -FRONT_Y, -32.0)).exportStep(str(OUT / 'WHEEL_HUB_6061.step'))   # axis = +x, inner face x 0
 import matplotlib
 matplotlib.use('Agg')
