@@ -888,17 +888,44 @@
    "ok": true
   }
  },
+ "wheel_hub": {
+  "groove_root_d": 52.8,
+  "land_d": 57.0,
+  "rim_id": 49.0,
+  "web_t": 2.0,
+  "boss_d": 12.0,
+  "groove_w": 6.6,
+  "land_w": [
+   1.0,
+   0.8,
+   1.0
+  ],
+  "holes": [
+   5,
+   4.5,
+   15.5
+  ],
+  "x0_inner_face": 59.5,
+  "width": 16.0,
+  "bore": "D-bore D4.10, flat 1.55 from axis",
+  "set_screw_from_inner_face": 5.5,
+  "oring": "JIS B 2401 P52 NBR70 (ID 51.6 x CS 5.7)",
+  "oring_stretch_pct": 2.33,
+  "tyre_od": 64.07,
+  "hub_mass_g": 27.97,
+  "oring_mass_g": 5.95
+ },
  "mass": {
-  "total_g": 1928.7,
-  "margin_to_2000_g": 71.3,
-  "margin_to_1950_target_g": 21.3,
+  "total_g": 1918.4,
+  "margin_to_2000_g": 81.6,
+  "margin_to_1950_target_g": 31.6,
   "cg_mm": [
    -1.32,
-   18.98,
-   28.2
+   18.99,
+   28.18
   ],
   "groups_g": {
-   "R3 parts kept + bought": 1230.9,
+   "R3 parts kept + bought": 1220.5,
    "frame tubes": 364.3,
    "frame tabs/strap": 88.7,
    "PC skins": 226.8,
@@ -984,8 +1011,8 @@
   "xmax": 102.92,
   "ymin": -124.92,
   "ymax": 128.0,
-  "zmin": 0.0,
-  "zmax": 64.0
+  "zmin": -0.03,
+  "zmax": 64.03
  },
  "rows": [
   {
@@ -2182,15 +2209,37 @@
    "method": "CAD volume x density"
   },
   {
-   "part": "Wheel_Bought_Front_L",
-   "material": "wheel_bought",
-   "mass_g": 45.0,
+   "part": "Wheel_Hub_6061_Front_L",
+   "material": "al6061_hub",
+   "mass_g": 27.965,
    "centroid_mm": [
-    -67.5,
-    18.0,
-    32.00000000000001
+    -69.47574217368195,
+    18.1401109423157,
+    32.000004296678085
    ],
-   "method": "ASSUMED bought-part mass"
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wheel_ORing_P52_Front_L1",
+   "material": "NBR",
+   "mass_g": 5.949,
+   "centroid_mm": [
+    -63.8,
+    18.0,
+    31.999999999999993
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wheel_ORing_P52_Front_L2",
+   "material": "NBR",
+   "mass_g": 5.949,
+   "centroid_mm": [
+    -71.19999999999999,
+    18.0,
+    32.00000000000002
+   ],
+   "method": "CAD volume x density"
   },
   {
    "part": "Standoff_Nylon_M3_L_52",
@@ -2215,15 +2264,37 @@
    "method": "ASSUMED bought-part mass"
   },
   {
-   "part": "Wheel_Bought_Front_R",
-   "material": "wheel_bought",
-   "mass_g": 45.0,
+   "part": "Wheel_Hub_6061_Front_R",
+   "material": "al6061_hub",
+   "mass_g": 27.965,
    "centroid_mm": [
-    67.5,
-    18.0,
-    32.00000000000001
+    69.47574217368195,
+    18.1401109423157,
+    32.000004296678085
    ],
-   "method": "ASSUMED bought-part mass"
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wheel_ORing_P52_Front_R1",
+   "material": "NBR",
+   "mass_g": 5.949,
+   "centroid_mm": [
+    63.8,
+    18.0,
+    31.999999999999993
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wheel_ORing_P52_Front_R2",
+   "material": "NBR",
+   "mass_g": 5.949,
+   "centroid_mm": [
+    71.19999999999999,
+    18.0,
+    32.00000000000002
+   ],
+   "method": "CAD volume x density"
   },
   {
    "part": "Standoff_Nylon_M3_R_52",

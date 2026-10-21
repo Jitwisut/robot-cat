@@ -14,6 +14,7 @@ Run from the repository root:
 Writes robot_v4/print_revision/r4_steel/output/.
 """
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -26,6 +27,7 @@ import numpy as np
 from OCP.BRepAdaptor import BRepAdaptor_Surface
 from cad_backend import Body, part, group, block, bore, find_body
 from revision import build
+from legacy_geometry import d_bore
 from checks import mass_properties
 
 OUT = HERE / 'output'
@@ -55,8 +57,19 @@ WHEEL_R, WHEEL_X = 32.0, (59.5, 75.5)
 MOTOR_HOLES_YZ = [(-8.5, 0.0), (8.5, 0.0)]                # JB361 face: 2 x M3 at +-8.5 about the shaft (catalogue R3-10)
 GEARBOX_SCREWS_YZ = [(0.0, -8.5), (0.0, 8.5)]             # the two gearbox screw heads, 90 deg to the M3 holes (R3-10 drawing)
 BATTERY = (57.0, 31.0, 24.0)                              # 3S 650 mAh envelope, ASSUMED until the pack is chosen
-RHO = {'steel_tube': 0.00785, 'steel_tab': 0.00785, 'PC': 0.00120, 'UHMW': 0.00094, 'EPDM': 0.00130, 'al5052_bracket': 0.00268}
-EXPLICIT_G = {'wheel_bought': 45.0, 'battery_650': 58.0, 'nylon_standoff': 0.6}   # ASSUMED, see calc/steel_r4_calc.py
+RHO = {'steel_tube': 0.00785, 'steel_tab': 0.00785, 'PC': 0.00120, 'UHMW': 0.00094, 'EPDM': 0.00130, 'al5052_bracket': 0.00268,
+       'al6061_hub': 0.00270, 'NBR': 0.00130}
+EXPLICIT_G = {'battery_650': 58.0, 'nylon_standoff': 0.6}   # ASSUMED, see calc/steel_r4_calc.py
+# Drive wheel (user choice 2026-10-21): turned 6061 hub on main's R3 pattern (D-bore, radial M3 set screw 2.5 mm
+# from the shaft tip, five lightening holes) with two bought NBR70 O-rings as the tyre, inside the 16 mm slot.
+# No stock tyre with a 44 mm bore exists; JIS B 2401 P52 (ID 51.6 x CS 5.7, NOK) is a catalogue part.
+ORING_ID, ORING_CS = 51.6, 5.7
+HUB = {'groove_root_d': 52.8,      # 2.3 % stretch on the O-ring ID
+       'land_d': 57.0,             # groove depth 2.1 = 37 % of the cross-section held
+       'rim_id': 49.0, 'web_t': 2.0, 'boss_d': 12.0, 'groove_w': 6.6, 'land_w': (1.0, 0.8, 1.0),
+       'holes': (5, 4.5, 15.5)}    # D9 at 60/120/180/240/300 deg from the set screw: main's pattern (5 x D8 at r 13),
+                                   # symmetric, so the L and R hubs are the same part turned round
+ORING_CS_FITTED = ORING_CS * (1 - 0.5 * (HUB['groove_root_d'] - ORING_ID) / ORING_ID)   # section thins with stretch
 RIVNUTS = 24                # M3 steel rivnut 0.9 g + screw 0.5 g
 SWITCH_MOUNT_G = 3.0        # bought panel mount replacing the PETG collar
 WELD = 0.04                 # weld beads + paint, fraction of steel
@@ -286,10 +299,47 @@ for s in (-1, 1):
 add('Skin_PC2_Lid', lid, 'PC')
 add('Electronics_Plate_PC2', block(-58, 58, -56, -1.5, 37.6, 39.6), 'PC')      # IMU foam sits on it (z 39.6); |x| 58 clears the wheels (59.5)
 
+def wheel_hub(sgn):
+    """Hub + 2 O-rings on the axle (x outward from the motor face). Built for the R side, mirrored for L."""
+    x0, x1 = WHEEL_X
+    g, lw = HUB['groove_w'], HUB['land_w']
+    xc = lambda x: cq.Vector(x, FRONT_Y, 32.0)
+    ax = cq.Vector(1, 0, 0)
+    cyl = lambda r, a, b: cq.Solid.makeCylinder(r, b - a, xc(a), ax)
+    rim = cyl(HUB['land_d'] / 2, x0, x1).cut(cyl(HUB['rim_id'] / 2, x0 - 1, x1 + 1))
+    grooves = [(x0 + lw[0], x0 + lw[0] + g), (x0 + lw[0] + g + lw[1], x0 + lw[0] + 2 * g + lw[1])]
+    for a, b in grooves:
+        rim = rim.cut(cyl(HUB['land_d'] / 2 + 1, a, b).cut(cyl(HUB['groove_root_d'] / 2, a - 1, b + 1)))
+    web = cyl(HUB['rim_id'] / 2 + 0.01, x1 - HUB['web_t'], x1)
+    n, hr, pr = HUB['holes']
+    for k in range(n):
+        a = math.radians(60 * (k + 1))                           # solid spoke on the set-screw side (+y, 0 deg)
+        web = web.cut(cq.Solid.makeCylinder(hr, 10, cq.Vector(x1 - 5, FRONT_Y + pr * math.cos(a), 32 + pr * math.sin(a)), ax))
+    boss = cyl(HUB['boss_d'] / 2, x0, x1)
+    hub = rim.fuse(web).fuse(boss).clean()
+    # D-bore as main's hub (D4.10, flat 1.55 from the axis toward +y), through
+    db = cq.Workplane('YZ').polyline(d_bore(FRONT_Y, 32.0, 4.10 / 2, 1.55, 144)).close().extrude(x1 - x0 + 2).val()
+    hub = hub.cut(db.translate(cq.Vector(x0 - 1, 0, 0)))
+    # radial M3 set screw (tap drill D2.5) onto the flat, 2.5 mm in from the shaft tip; D3.5 key access through the
+    # inner groove's root (the O-ring rolls aside to reach it)
+    shaft_end = 56.0 + 11.5
+    xs = shaft_end - 2.5
+    hub = hub.cut(cq.Solid.makeCylinder(1.25, 40, cq.Vector(xs, FRONT_Y, 32.0), cq.Vector(0, 1, 0)))
+    hub = hub.cut(cq.Solid.makeCylinder(1.75, 10, cq.Vector(xs, FRONT_Y + HUB['rim_id'] / 2 - 2, 32.0), cq.Vector(0, 1, 0)))
+    R = HUB['groove_root_d'] / 2 + ORING_CS_FITTED / 2
+    rings = [cq.Solid.makeTorus(R, ORING_CS_FITTED / 2, xc((a + b) / 2), ax) for a, b in grooves]
+    if sgn < 0:
+        hub = hub.mirror('YZ'); rings = [r.mirror('YZ') for r in rings]
+    return hub.clean(), rings
+
+
 # bought / other parts
 for side, s in (('L', -1), ('R', 1)):
     x0 = WHEEL_X[0] if s > 0 else -WHEEL_X[1]
-    add('Wheel_Bought_Front_' + side, cq.Solid.makeCylinder(WHEEL_R, WHEEL_X[1] - WHEEL_X[0], cq.Vector(x0, FRONT_Y, 32), cq.Vector(1, 0, 0)), 'wheel_bought')
+    hub, rings = wheel_hub(s)
+    add('Wheel_Hub_6061_Front_' + side, hub, 'al6061_hub')
+    for k, r in enumerate(rings):
+        add('Wheel_ORing_P52_Front_%s%d' % (side, k + 1), r, 'NBR')
     for y in (-52.0, -8.0):
         add('Standoff_Nylon_M3_%s_%d' % (side, -y), cq.Solid.makeCylinder(3.0, 37.6 - RAIL_Z1, cq.Vector(s * 55.0, y, RAIL_Z1), cq.Vector(0, 0, 1)), 'nylon_standoff')
 bl, bw, bh = BATTERY
@@ -417,6 +467,12 @@ report = {
     'status': 'CONCEPT_CAD', 'revision': 'V4 R4-steel set A (2WD + PC 2 mm + 3S 650)', 'orientation': 'Z-up, nose +Y, mm',
     'removed_from_r3': sorted(removed), 'invalid_bodies': invalid, 'frame_members_not_touching': floating, 'edge_only_contacts': edge_only, 'welds': welds, 'interference': interference, 'upright_screw_head_hits': screw_hits,
     'upright_taps_yz': taps, 'skirt_brackets_flat': dict(skirt_brackets), 'wedgelet_swing': swing,
+    'wheel_hub': {**HUB, 'x0_inner_face': WHEEL_X[0], 'width': WHEEL_X[1] - WHEEL_X[0], 'bore': 'D-bore D4.10, flat 1.55 from axis',
+                  'set_screw_from_inner_face': 56.0 + 11.5 - 2.5 - WHEEL_X[0], 'oring': 'JIS B 2401 P52 NBR70 (ID %.1f x CS %.1f)' % (ORING_ID, ORING_CS),
+                  'oring_stretch_pct': round(100 * (HUB['groove_root_d'] - ORING_ID) / ORING_ID, 2),
+                  'tyre_od': round(HUB['groove_root_d'] + 2 * ORING_CS_FITTED, 2),
+                  'hub_mass_g': round(find_body(root, 'Wheel_Hub_6061_Front_R').shape.Volume() * RHO['al6061_hub'], 2),
+                  'oring_mass_g': round(find_body(root, 'Wheel_ORing_P52_Front_R1').shape.Volume() * RHO['NBR'], 2)},
     'mass': {'total_g': round(total, 1), 'margin_to_2000_g': round(2000 - total, 1), 'margin_to_1950_target_g': round(1950 - total, 1),
              'cg_mm': cg.round(2).tolist(), 'groups_g': groups},
     'support_2wd': {'drive_axle_y': FRONT_Y, 'other_support': 'nose skid y 69' if other == NOSE_SKID_Y else 'rear skid y %.0f' % REAR_SKID_Y,
@@ -431,12 +487,13 @@ report = {
 # ---------------------------------------------------------------- exports + preview
 cq.Compound.makeCompound([b.shape for b in bodies if b.material != 'keepout']).exportStep(str(OUT / 'ROBOT_V4_R4_STEEL.step'))
 cq.Compound.makeCompound([b.shape for b in new if b.material.startswith('steel')]).exportStep(str(OUT / 'FRAME_WELDMENT.step'))
+find_body(root, 'Wheel_Hub_6061_Front_R').shape.translate(cq.Vector(-WHEEL_X[0], -FRONT_Y, -32.0)).exportStep(str(OUT / 'WHEEL_HUB_6061.step'))   # axis = +x, inner face x 0
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 colors = {'steel_tube': '#c0392b', 'steel_tab': '#e67e22', 'PC': '#56b2b0', '6061': '#a6b4c5', 'steel': '#667381', 'purchased': '#566ca3',
-          'wheel_bought': '#2c2c2c', 'al5052_bracket': '#7f8c8d', 'battery_650': '#566ca3', 'belt': '#343b45', 'UHMW': '#eeeeee', 'EPDM': '#222', 'nylon_standoff': '#ddd'}
+          'al6061_hub': '#a6b4c5', 'NBR': '#2c2c2c', 'al5052_bracket': '#7f8c8d', 'battery_650': '#566ca3', 'belt': '#343b45', 'UHMW': '#eeeeee', 'EPDM': '#222', 'nylon_standoff': '#ddd'}
 fig = plt.figure(figsize=(14, 7), facecolor='#fafafa')
 for index, title, skins in ((1, 'Assembly (PC skins translucent)', True), (2, 'Welded frame + internals (no skins)', False)):
     ax = fig.add_subplot(1, 2, index, projection='3d')

@@ -153,6 +153,12 @@ for case in ('DT1 drop upright', 'DT2 drop inverted'):
     if case.startswith('DT2'):
         path('Clamp post 1.5 x 10 plate, tension (both motors)', case, 2 * R_clamp / (1.5 * 10.0), CAP['steel_fy_MPa'], 'MPa')
         path('Clamp post fillets (2 x 10 mm)', case, 2 * R_clamp / (2 * 10.0 * FILLET_THROAT['tab']), CAP['weld_MPa'], 'MPa')
+hub = rep.get('wheel_hub')
+if hub:   # 6061 drive hub: the shaft-collapse load goes boss -> web -> rim; torque through the D-flat + M3 set screw
+    for case in ('DT1 drop upright', 'DT2 drop inverted'):
+        path('Wheel hub web shear at the boss (D%g x %g, 6061)' % (hub['boss_d'], hub['web_t']), case,
+             F_cap / (math.pi * hub['boss_d'] * hub['web_t']), 159.0, 'MPa')
+    path('Wheel hub D-flat bearing, motor stall torque (flat 3.5 x 8 engaged)', 'drive stall', 0.1216 * 12.6 / 12 * 1000 / (1.55 * 3.5 * 8 / 2), 386.0, 'MPa')
 out['drive'] = {'D_shaft_Zpl_mm3': round(Zpl_shaft, 2), 'lever_mm': lever, 'F_shaft_collapse_N': round(F_cap, 1),
                 'R_clamp_N': round(R_clamp, 1), 'R_face_N': round(R_face, 1)}
 
