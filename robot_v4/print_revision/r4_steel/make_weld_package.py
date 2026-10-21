@@ -1,6 +1,7 @@
 """Welding-shop package for the R4-steel frame: which piece is which, where it goes, what is welded to what.
 
 Runs build_r4_steel.py (imports it, so the CAD and checks are rebuilt first), then writes WELD_RELEASE/ + WELD_RELEASE.zip:
+  WELD_SKETCH_TH.pdf   3-page simple sketch with chained dimensions (weld_sketch.py), what the welder reads first
   WELD_DRAWING_TH.pdf  Thai drawing: labelled 3D view, top/side/front views with the datum, tube cut list with
                        positions, plate list, weld list (from the CAD contacts), assembly order and jigs
   DXF/                 every steel plate flat (tabs; L-tabs split into two plates welded at 90 deg)
@@ -324,6 +325,8 @@ tmp.unlink()
                                                'plates': plate_rows, 'welds': B.welds,
                                                'tube_wall_mm': {ID[m.name]: B.TUBE_WALL.get(m.name, B.WALL) for m in tubes}, 'tab_mm': B.TAB},
                                               ensure_ascii=False, indent=1) + '\n')
+import weld_sketch                                      # noqa: E402
+weld_sketch.build(B, ID, DATUM, PKG / 'WELD_SKETCH_TH.pdf', CHROME)
 zpath = HERE / 'WELD_RELEASE.zip'
 with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_DEFLATED) as z:
     for p in sorted(PKG.rglob('*')):
