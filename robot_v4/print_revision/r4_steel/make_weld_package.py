@@ -5,7 +5,8 @@ Runs build_r4_steel.py (imports it, so the CAD and checks are rebuilt first), th
   WELD_DRAWING_TH.pdf  Thai drawing: labelled 3D view, top/side/front views with the datum, tube cut list with
                        positions, plate list, weld list (from the CAD contacts), assembly order and jigs
   DXF/                 every steel plate flat (tabs; L-tabs split into two plates welded at 90 deg)
-  FRAME_WELDMENT.step  the frame only, same coordinates as the robot (Z-up, nose +Y)
+  FRAME_WELDMENT.step  the frame only as an assembly of named parts (F01.. / T01.., size in the name), same
+                       coordinates as the robot (Z-up, nose +Y, mm)
   images/              the views used in the PDF
 Status: RELEASED FOR WELDING (rev W1, user approval 2026-10-21) with one shop hold point (the 1.0 mm tube wall
 process). The JB361 mount holes are not in the shop's plates: the owner drills them after welding from the real motor.
@@ -150,7 +151,21 @@ iso(PKG / 'images' / 'iso_ids.png')
 ortho(PKG / 'images' / 'top.png', 'x', 'y', 'มองจากด้านบน (X ไปขวา, หัวรถ +Y ขึ้นบน) หน่วย มม. จาก DATUM', 'X (มม.)', 'Y (มม.)')
 ortho(PKG / 'images' / 'side.png', 'y', 'z', 'มองจากด้านขวา (+X) หัวรถไปทางขวา', 'Y (มม.)', 'Z (มม.)')
 ortho(PKG / 'images' / 'rear.png', 'x', 'z', 'มองจากท้ายรถไปหัวรถ', 'X (มม.)', 'Z (มม.)')
-shutil.copy2(B.OUT / 'FRAME_WELDMENT.step', PKG / 'FRAME_WELDMENT.step')
+# The shop's STEP: one named, coloured part per piece (F/T id + size, ASCII so every CAD reads the names), as welded,
+# robot coordinates unchanged (Z up, nose +Y, mm). output/FRAME_WELDMENT.step stays the plain compound.
+def step_name(m):
+    bb = B.AS_WELDED.get(m.name, m.shape).BoundingBox()
+    if m.material == 'steel_tube':
+        return '%s_%s_10x10x%.1f_L%.0f' % (ID[m.name], m.name.replace('Frame_', ''), B.TUBE_WALL.get(m.name, B.WALL),
+                                           max(bb.xlen, bb.ylen, bb.zlen))
+    return '%s_%s_t%.1f' % (ID[m.name], m.name, B.TAB)
+
+
+assy = cq.Assembly(name='R4_STEEL_FRAME_WELDMENT')
+for m in sorted(B.steel, key=lambda m: ID[m.name]):
+    assy.add(B.AS_WELDED.get(m.name, m.shape), name=step_name(m),
+             color=cq.Color(0.80, 0.36, 0.30) if m.material == 'steel_tube' else cq.Color(0.95, 0.66, 0.28))
+assy.save(str(PKG / 'FRAME_WELDMENT.step'), exportType='STEP')
 
 # ---------------------------------------------------------------- aluminium parts (laser/bend shop, not welded)
 import ezdxf                                            # noqa: E402
