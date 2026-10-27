@@ -8,13 +8,13 @@
   -95.0,
   123.08,
   0.0,
-  223.91
+  226.47
  ],
  "bounds_strike_mm": [
   -96.0,
   96.0,
   -95.0,
-  133.18,
+  130.1,
   0.0,
   105.0
  ],
@@ -24,7 +24,7 @@
   -95.0,
   123.08,
   0.0,
-  223.91
+  226.47
  ],
  "invalid_bodies": [],
  "interference": {
@@ -41,13 +41,13 @@
   },
   "strike_to_park": null,
   "park_onward_back": {
-   "phi_deg": 180.0,
+   "phi_deg": 177.0,
    "arm_part": "Saw_Disc_3T_SS400_3mm",
    "hits": "Lid_TPU_2mm"
   }
  },
  "disc_sweep_hits": [],
- "arm_to_fork_min_gap_strike_mm": 10.11,
+ "arm_to_fork_min_gap_strike_mm": 11.4,
  "fork_rest_angle_deg": 6.01,
  "fork_swing": {
   "Fork_1_mild_12x4_on_edge": {
@@ -130,13 +130,13 @@
    "t_mm": 3.0,
    "bore_r_mm": 12.0,
    "mass_g": 94.91,
-   "I_kgm2": 7.809017562819861e-05,
-   "spinning_I_kgm2 (disc + hub + half bearings)": 8.071028118458566e-05
+   "I_kgm2": 7.809017562820164e-05,
+   "spinning_I_kgm2 (disc + hub + half bearings)": 8.071028118458869e-05
   },
   "arm": {
    "mass_g": 376.7,
-   "I_pivot_kgm2": 0.0023511739656923627,
-   "first_moment_kgm (horizontal)": 0.02551384620833492
+   "I_pivot_kgm2": 0.0023511739656923636,
+   "first_moment_kgm (horizontal)": 0.025513846208334908
   },
   "mass_total_g": 1817.8,
   "self_right": {

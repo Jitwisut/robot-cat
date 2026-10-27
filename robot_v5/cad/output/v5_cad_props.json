@@ -15,13 +15,13 @@
   "t_mm": 3.0,
   "bore_r_mm": 12.0,
   "mass_g": 94.91,
-  "I_kgm2": 7.809017562819861e-05,
-  "spinning_I_kgm2 (disc + hub + half bearings)": 8.071028118458566e-05
+  "I_kgm2": 7.809017562820164e-05,
+  "spinning_I_kgm2 (disc + hub + half bearings)": 8.071028118458869e-05
  },
  "arm": {
   "mass_g": 376.7,
-  "I_pivot_kgm2": 0.0023511739656923627,
-  "first_moment_kgm (horizontal)": 0.02551384620833492
+  "I_pivot_kgm2": 0.0023511739656923636,
+  "first_moment_kgm (horizontal)": 0.025513846208334908
  },
  "mass_total_g": 1817.8,
  "self_right": {

@@ -231,7 +231,9 @@ def disc_profile():
     return pts
 
 
-dp = [(Y0 + ARM_L + u, Z0 + w) for u, w in disc_profile()]
+# w is mirrored so the radial faces LEAD under +X spin (front teeth up, design_v5 rule_spin_direction);
+# disc_profile() as written has them trailing a counter-clockwise turn.
+dp = [(Y0 + ARM_L + u, Z0 - w) for u, w in disc_profile()]
 disc = yz_prism(dp, -DISC_T / 2, DISC_T / 2).cut(cyl_x(-5, 5, Y0 + ARM_L, Z0, DISC_BORE_R))
 for k in range(3):
     a = math.radians(90 + 120 * k)
