@@ -589,6 +589,13 @@ bb = comp_park.BoundingBox()
 bb_s = comp_strike.BoundingBox()
 step_path = OUT / 'ROBOT_V5_CONCEPT_PARK.step'
 comp_park.exportStep(str(step_path))
+# Named, coloured assembly for Fusion (one component per part, park pose); geometry identical to the compound
+_COL = {'steel': (0.90, 0.49, 0.13), 'tpu': (0.34, 0.70, 0.69), 'petg': (0.85, 0.85, 0.85), 'uhmw': (0.96, 0.96, 0.96),
+        'al6061': (0.65, 0.71, 0.77), 'wheel': (0.17, 0.17, 0.17), 'a2212': (0.56, 0.27, 0.68), 'servo_ds3218': (0.12, 0.23, 0.58)}
+asm = cq.Assembly(name='ROBOT_V5_CONCEPT')
+for _b in all_park:
+    asm.add(cq.Workplane().add(_b['shape']), name=_b['name'], color=cq.Color(*_COL.get(_b['material'], (0.34, 0.42, 0.64))))
+asm.save(str(OUT / 'ROBOT_V5_CONCEPT_ASSEMBLY.step'))
 comp_strike.exportStep(str(OUT / 'ROBOT_V5_CONCEPT_STRIKE.step'))
 re = cq.importers.importStep(str(step_path)).val().BoundingBox()
 bounds = lambda b: [round(v, 2) for v in (b.xmin, b.xmax, b.ymin, b.ymax, b.zmin, b.zmax)]

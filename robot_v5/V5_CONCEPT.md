@@ -198,6 +198,7 @@ CAD ตอนนี้จึงย้ายเสาไปไว้ใต้แ�
 - `cad/output/v5_preview.png`
 - `cad/output/build_report.json`
 - `cad/output/v5_cad_props.json`
+- **Fusion:** `cad/output/ROBOT_V5_CONCEPT.f3d` (57 ชิ้น มีชื่อและสี, Top = +Z, Home มองเฉียงจากด้านบน) สร้างจาก `cad/output/ROBOT_V5_CONCEPT_ASSEMBLY.step` ด้วย `fusion_scripts/ImportV5Concept.py` และเปิดกลับมาตรวจด้วย `fusion_scripts/VerifyV5ConceptF3D.py` แล้ว ขอบเขตตรงกับ CAD และ Home ตั้งให้ Z ขึ้น (ภาพ `ROBOT_V5_CONCEPT_FUSION_REOPENED.png`)
 
 ![V5](cad/output/v5_preview.png)
 
