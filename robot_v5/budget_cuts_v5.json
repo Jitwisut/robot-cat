@@ -1,0 +1,162 @@
+{
+  "baseline_cost_thb_incl_esp32_charger": 6877,
+  "prices_found_2026_10_27": {
+    "A2212 class motor": {
+      "thb": 320,
+      "source": "https://www.abcflying.com/product/4408/",
+      "note": "Motor ABC 2212, KV list not shown; Lazada A2212 1400KV listing ~200 THB"
+    },
+    "ESC 30A with BEC": {
+      "thb": 400,
+      "source": "https://www.abcflying.com/product/10413/hobbywing-skywalker-30a-v2-ubec-3s-4s",
+      "note": "BEC 5 V / 5 A switching, 39 g; listing text also says 40A/60A"
+    },
+    "DS3218 servo": {
+      "thb": 735,
+      "source": "https://www.mikroelec.com/product/3424/ds3218mg-pro-waterproof-digital-servo-20kg-360-degree-position-control",
+      "note": "Pro 360-deg position version; Lazada RC surpass hobby 801 THB"
+    },
+    "UBEC (separate)": {
+      "thb": 550,
+      "source": "abcflying.com Hobbywing UBEC-5A-V2-Air",
+      "note": "not needed with the SkyWalker BEC; a 25 THB 5 V/3 A buck (allnewstep A2052) is 2 A continuous, too weak for a stalled servo"
+    },
+    "flat bar 1/2in x 4 mm, 6 m": {
+      "thb": 198,
+      "source": "search result, Thai steel price page (undated)",
+      "note": "~2.2 kg; forks need ~0.3 m"
+    },
+    "black sheet 2.3 mm 4x8 ft": {
+      "thb": 2087,
+      "source": "http://bks-steel.co.th (1,950 + 7 % VAT, 53.2 kg, early-2025 page)",
+      "note": "39 THB/kg; buy an offcut, the arm needs ~0.12 kg"
+    }
+  },
+  "motor_options": {
+    "D3536 1250kV + Skywalker 40A (baseline)": {
+      "disc_rpm": 12487,
+      "energy_J": 69.0,
+      "energy_vs_V4": 1.2,
+      "t_spin_90pct_s": 0.33,
+      "peak_input_W": 444,
+      "mass_g": 137,
+      "price_thb": 1050
+    },
+    "A2212 1400kV + SkyWalker 30A V2, belt 0.9": {
+      "disc_rpm": 12587,
+      "energy_J": 70.1,
+      "energy_vs_V4": 1.22,
+      "t_spin_90pct_s": 0.44,
+      "peak_input_W": 333,
+      "mass_g": 93,
+      "price_thb": 720
+    },
+    "A2212 1000kV + SkyWalker 30A V2, belt 1.0": {
+      "disc_rpm": 9990,
+      "energy_J": 44.2,
+      "energy_vs_V4": 0.77,
+      "t_spin_90pct_s": 0.29,
+      "peak_input_W": 333,
+      "mass_g": 93,
+      "price_thb": 720
+    }
+  },
+  "diy_forks_12x4_mild": {
+    "orientation": "on edge (12 tall x 4 wide)",
+    "stress_drop_on_tip_MPa": 67,
+    "SF_S275": 4.09,
+    "SF_opponent_on_tip": 6.41,
+    "SF_side_push_30N_at_tip": 4.19,
+    "mass_g": 105.5
+  },
+  "arm_steel_vs_6061": {
+    "stiffness_steel2.3_vs_6061_3mm": 2.22,
+    "yield_moment_steel2.3_vs_6061_3mm": 0.68
+  },
+  "cuts": [
+    {
+      "cut": "saw motor + ESC: D3536/Skywalker40A -> A2212 1400kV + SkyWalker 30A V2, belt 0.9",
+      "saves_thb": 330,
+      "mass_delta_g": -44,
+      "cost_of_cut": "energy 70.1 J (was 69.0), spin-up 0.44 s (was 0.33); A2212 is rated ~15-20 A, the 30 A spin-up overloads it briefly"
+    },
+    {
+      "cut": "arm (2.3) + towers/tongue (1.6) + stop posts (3.2 flat): CNC/laser 6061 -> steel, hand-cut + welded; + UHMW nose skid",
+      "saves_thb": 460,
+      "mass_delta_g": 88.7,
+      "cost_of_cut": "arm stiffness x2.22 vs 3 mm 6061; under a 69.0 J hit the plates see 169 MPa at the stop (SF 1.45), arm survives ~144.5 J; tongue/posts/skid mass is in the CAD total, not in this row"
+    },
+    {
+      "cut": "forks: laser-cut 65Mn 12x3 -> mild flat bar 12x4 on edge (hinged), one 6 m bar",
+      "saves_thb": 202,
+      "mass_delta_g": 26.4,
+      "cost_of_cut": "SF dropped-on-tip 4.09 (65Mn 3 mm flat was 2.17); sideways 30 N push at the tip SF 4.19; straighten between fights"
+    },
+    {
+      "cut": "saw disc: laser-cut -> 3 mm SS400 offcut ground to a 1:1 template (as R4-DIY disc)",
+      "saves_thb": 200,
+      "mass_delta_g": 0,
+      "cost_of_cut": "same outline = same energy; softer teeth wear, regrind"
+    },
+    {
+      "cut": "UBEC 8 A dropped: the SkyWalker 30A V2 BEC (5 V / 5 A) runs servo + ESP32",
+      "saves_thb": 150,
+      "mass_delta_g": -15,
+      "cost_of_cut": "servo at 5 V: 1.86 N m and 0.16 s/60 deg instead of 2.1 N m / 0.14 s at 6.8 V; still above the 1.3 N m clutch"
+    },
+    {
+      "cut": "fasteners/inserts/XT30: share bulk packs with V4 (ASSUMED)",
+      "saves_thb": 100,
+      "mass_delta_g": 0,
+      "cost_of_cut": "none"
+    }
+  ],
+  "shared_with_v4": [
+    {
+      "item": "charger: share V4's iMAX B6AC",
+      "saves_thb": 640,
+      "catch": "charge one pack at a time"
+    },
+    {
+      "item": "ESP32: user owns two (2026-10-27), one is for V5",
+      "saves_thb": 180,
+      "catch": "none"
+    },
+    {
+      "item": "PS4-clone pad: one pad, re-pair to whichever robot fights",
+      "saves_thb": 350,
+      "catch": "firmware must accept the pad MAC on both robots; no spare pad"
+    }
+  ],
+  "rejected": [
+    {
+      "idea": "2WD instead of 4WD",
+      "would_save_thb": 370,
+      "why_not": "push 6.2 N vs 10.9 N at mu 0.6 (design_v5.py) -> loses to wedges/pushers"
+    },
+    {
+      "idea": "MG996R servo instead of DS3218",
+      "would_save_thb": 585,
+      "why_not": "about 0.95 N m at 5 V (spec 9.4 kg cm at 4.8 V) -> below the 1.3 N m clutch setting, self-right margin 1.30 < 1.5"
+    },
+    {
+      "idea": "share one LiPo between V4 and V5",
+      "would_save_thb": 490,
+      "why_not": "cannot fight back-to-back; one bad pack takes out both robots"
+    },
+    {
+      "idea": "TCT shop blade instead of steel disc",
+      "would_save_thb": 0,
+      "why_not": "not cheaper than a DIY disc and stores 29.5 J instead of 69 J"
+    }
+  ],
+  "result": {
+    "v5_robot_parts_thb (pad included; owned ESP32 and charger excluded)": 4615,
+    "margin_to_6000_cap_thb": 1385,
+    "extra_cash_for_v5_when_v4_exists_thb": 4265,
+    "mass_g": 1935,
+    "margin_to_2kg_g": 65,
+    "saw_energy_J": 70.1,
+    "t_spin_90pct_s": 0.44
+  }
+}
