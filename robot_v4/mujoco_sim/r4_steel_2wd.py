@@ -16,6 +16,7 @@ Tests (12.6 V, rotor at its no-load speed unless stated):
 Outputs: pitch/roll extremes, which skid/wedgelet/body touched the floor, lowest tooth-tip height, minimum
 wheel load fraction (both drive wheels), top speed. Writes r4_steel_2wd.json.
 Run: .venv/bin/python robot_v4/mujoco_sim/r4_steel_2wd.py   (the venv with mujoco)
+     R4_VARIANT=r4_diy .venv/bin/python robot_v4/mujoco_sim/r4_steel_2wd.py   (R4-DIY, writes r4_diy_2wd.json)
 """
 import json
 import math
@@ -28,7 +29,13 @@ from sim import CYL_X, box, f, ramp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PR = os.path.join(HERE, '..', 'print_revision')
-rep = json.load(open(os.path.join(PR, 'r4_steel', 'output', 'build_report.json')))
+VARIANT = os.environ.get('R4_VARIANT', 'r4_steel')   # 'r4_diy': print_revision/r4_diy (12x12 tube, welded steel uprights)
+rep = json.load(open(os.path.join(PR, VARIANT, 'output', 'build_report.json')))
+# collision boxes that differ between the variants (m): rails, hinge beams, uprights, nose skid
+GEO = {'r4_steel': {'rail': (0.048, 0.058, 0.062, 0.098, 0.006, 0.016), 'beam': (0.037, 0.088, 0.088, 0.098, 0.006, 0.016),
+                    'upr': (0.027, 0.033, 0.064, 0.112, 0.007, 0.057), 'nose': (0.064, 0.074, 0.001, 0.004)},
+       'r4_diy': {'rail': (0.046, 0.058, 0.062, 0.086, 0.006, 0.018), 'beam': (0.037, 0.088, 0.086, 0.098, 0.006, 0.018),
+                  'upr': (0.027, 0.0302, 0.062, 0.112, 0.0076, 0.057), 'nose': (0.064, 0.074, 0.001, 0.006)}}[VARIANT]
 r3c = json.load(open(os.path.join(PR, 'r3', 'calc', 'r3_calc.json')))
 
 M = rep['mass']['total_g'] / 1000
@@ -64,13 +71,13 @@ def model():
     b = ['<body name="r" pos="0 0 0.0005"><freejoint name="free"/>',
          '<inertial pos="%s" mass="%s" diaginertia="%s"/>' % (f(*cg_ch), f(m_ch), f(ixx, iyy, izz)),
          box('body', -0.083, 0.083, -0.110, 0.062, 0.004, 0.063, 'mass="0" ' + hard),
-         box('railL', -0.058, -0.048, 0.062, 0.098, 0.006, 0.016, 'mass="0" ' + hard),
-         box('railR', 0.048, 0.058, 0.062, 0.098, 0.006, 0.016, 'mass="0" ' + hard),
-         box('beamL', -0.088, -0.037, 0.088, 0.098, 0.006, 0.016, 'mass="0" ' + hard),
-         box('beamR', 0.037, 0.088, 0.088, 0.098, 0.006, 0.016, 'mass="0" ' + hard),
-         box('uprL', -0.033, -0.027, 0.064, 0.112, 0.007, 0.057, 'mass="0" ' + hard),
-         box('uprR', 0.027, 0.033, 0.064, 0.112, 0.007, 0.057, 'mass="0" ' + hard),
-         box('nose_skid', -0.020, 0.020, 0.064, 0.074, 0.001, 0.004, 'mass="0" ' + skid),
+         box('railL', -GEO['rail'][1], -GEO['rail'][0], *GEO['rail'][2:], 'mass="0" ' + hard),
+         box('railR', *GEO['rail'], 'mass="0" ' + hard),
+         box('beamL', -GEO['beam'][1], -GEO['beam'][0], *GEO['beam'][2:], 'mass="0" ' + hard),
+         box('beamR', *GEO['beam'], 'mass="0" ' + hard),
+         box('uprL', -GEO['upr'][1], -GEO['upr'][0], *GEO['upr'][2:], 'mass="0" ' + hard),
+         box('uprR', *GEO['upr'], 'mass="0" ' + hard),
+         box('nose_skid', -0.020, 0.020, *GEO['nose'], 'mass="0" ' + skid),
          box('rear_skid', -0.020, 0.020, -0.108, -0.096, 0.001, 0.004, 'mass="0" ' + skid),
          # released R3 skirts: rigid, bottom edge 0.5 mm over the floor (sim.py 'fixed0.5')
          box('skirtL', -0.103, -0.091, -0.110, 0.097, 0.0005, 0.0165, 'mass="0" ' + hard),
@@ -194,4 +201,4 @@ if __name__ == '__main__':
         key = 'spin_rotor_on_yawlimit_%g' % lim
         out['tests'][key] = run('spin_rotor_on', lim)
         print(key, json.dumps(out['tests'][key]))
-    json.dump(out, open(os.path.join(HERE, 'r4_steel_2wd.json'), 'w'), indent=1)
+    json.dump(out, open(os.path.join(HERE, 'r4_steel_2wd.json' if VARIANT == 'r4_steel' else VARIANT + '_2wd.json'), 'w'), indent=1)

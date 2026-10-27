@@ -1,0 +1,1697 @@
+{
+ "status": "CONCEPT_CAD_DIY_DRAWINGS",
+ "revision": "D1",
+ "date": "2026-10-27",
+ "datum_mm": [
+  -81.0,
+  -108.0,
+  6.0
+ ],
+ "ids": {
+  "Frame_Rear_Cross": "F01",
+  "Frame_Bulkhead_Cross": "F02",
+  "Frame_Bulkhead_Stub_L": "F03",
+  "Frame_Rail_L": "F04",
+  "Frame_Hinge_Beam_L": "F05",
+  "Frame_Bulkhead_Stub_R": "F06",
+  "Frame_Rail_R": "F07",
+  "Frame_Hinge_Beam_R": "F08",
+  "Frame_Motor_Cross": "F09",
+  "Frame_Clamp_Bar": "F10",
+  "Tab_Drive_Motor_L": "P01",
+  "Tab_Hinge_L1": "P02",
+  "Tab_Hinge_L2": "P03",
+  "Tab_Hinge_L3": "P04",
+  "Tab_Battery_Strap_L_50": "P05",
+  "Tab_Battery_Strap_L_31": "P06",
+  "Tab_Wall_Rear_L": "P07",
+  "Tab_Wall_Front_L": "P08",
+  "Tab_Drive_Motor_R": "P09",
+  "Tab_Hinge_R1": "P10",
+  "Tab_Hinge_R2": "P11",
+  "Tab_Hinge_R3": "P12",
+  "Tab_Battery_Strap_R_50": "P13",
+  "Tab_Battery_Strap_R_31": "P14",
+  "Tab_Wall_Rear_R": "P15",
+  "Tab_Wall_Front_R": "P16",
+  "Clamp_Drive_Motor_Post": "P17",
+  "Upright_Steel_L": "P18",
+  "Rung_1_L": "P19",
+  "Rung_2_L": "P20",
+  "Upright_Steel_R": "P21",
+  "Rung_1_R": "P22",
+  "Rung_2_R": "P23",
+  "Weapon_Base_Plate": "P24",
+  "Weapon_Top_Brace_Steel": "P25",
+  "Weapon_Motor_Mount_Steel": "P26",
+  "Weapon_Motor_Mount_Foot": "P27",
+  "Weapon_Motor_Mount_Gusset": "P28",
+  "Weapon_Motor_Mount_Shelf": "P29",
+  "Hall_Post_Steel": "P30"
+ },
+ "hold_points": [
+  "ARC practice coupons pass before any frame weld",
+  "discs weighed (<= 0.5 g apart) and rotor statically balanced before first spin"
+ ],
+ "stack_drill": [
+  {
+   "parts": [
+    "Upright_Steel_L",
+    "Upright_Steel_R"
+   ],
+   "d_mm": 8.0,
+   "axis_yz": [
+    95.0,
+    32.0
+   ],
+   "jig": "tack on an M8 bolt with a 54.0 mm dummy spacer between the inner faces; full-weld with it in; never weld with bearings or the rotor fitted"
+  },
+  {
+   "parts": [
+    "Tab_Drive_Motor_L",
+    "Tab_Drive_Motor_R"
+   ],
+   "d_mm": 8.5,
+   "axis_yz": [
+    18,
+    32.0
+   ],
+   "jig": "tack on a D8 rod through both plates"
+  }
+ ],
+ "owner_drills_after_weld": [
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 3.6,
+   "what": "JB361 M3 mount",
+   "yz_mm": [
+    9.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 3.6,
+   "what": "JB361 M3 mount",
+   "yz_mm": [
+    26.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 5.5,
+   "what": "JB361 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    23.5
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 5.5,
+   "what": "JB361 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    40.5
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 3.6,
+   "what": "JB361 M3 mount",
+   "yz_mm": [
+    9.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 3.6,
+   "what": "JB361 M3 mount",
+   "yz_mm": [
+    26.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 5.5,
+   "what": "JB361 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    23.5
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 5.5,
+   "what": "JB361 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    40.5
+   ]
+  }
+ ],
+ "flat_parts": [
+  {
+   "key": "P01",
+   "title": "แผ่นยึดมอเตอร์ขับ ซ้าย",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    32.0,
+    32.0
+   ],
+   "dxf": "P01_แผ่นยึดมอเตอร์ขับ.dxf",
+   "note": "รู Ø8.5 เจาะซ้อนคู่ซ้าย-ขวา · รู M3/Ø5.5 เจาะหลังเชื่อมจากมอเตอร์จริง"
+  },
+  {
+   "key": "P02",
+   "title": "หูบานพับ wedgelet ซ้าย #1",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    9.7,
+    7.0
+   ],
+   "dxf": "P02_หูบานพับ.dxf",
+   "note": "เจาะ Ø3.2 ซ้อน 6 แผ่นพร้อมกัน"
+  },
+  {
+   "key": "P03",
+   "title": "หูบานพับ wedgelet ซ้าย #2",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    9.7,
+    7.0
+   ],
+   "dxf": "P03_หูบานพับ.dxf",
+   "note": "เจาะ Ø3.2 ซ้อน 6 แผ่นพร้อมกัน"
+  },
+  {
+   "key": "P04",
+   "title": "หูบานพับ wedgelet ซ้าย #3",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    9.7,
+    7.0
+   ],
+   "dxf": "P04_หูบานพับ.dxf",
+   "note": "เจาะ Ø3.2 ซ้อน 6 แผ่นพร้อมกัน"
+  },
+  {
+   "key": "P05",
+   "title": "หูสายรัดแบต ซ้าย #1",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    12.0,
+    8.0
+   ],
+   "dxf": "P05_หูสายรัดแบต.dxf",
+   "note": ""
+  },
+  {
+   "key": "P06",
+   "title": "หูสายรัดแบต ซ้าย #2",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    12.0,
+    8.0
+   ],
+   "dxf": "P06_หูสายรัดแบต.dxf",
+   "note": ""
+  },
+  {
+   "key": "P07",
+   "title": "หูยึดผนัง PC ซ้าย #1",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    8.0,
+    12.0
+   ],
+   "dxf": "P07_หูยึดผนัง.dxf",
+   "note": ""
+  },
+  {
+   "key": "P08",
+   "title": "หูยึดผนัง PC ซ้าย #2",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    8.0,
+    12.0
+   ],
+   "dxf": "P08_หูยึดผนัง.dxf",
+   "note": ""
+  },
+  {
+   "key": "P09",
+   "title": "แผ่นยึดมอเตอร์ขับ ขวา",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    32.0,
+    32.0
+   ],
+   "dxf": "P09_แผ่นยึดมอเตอร์ขับ.dxf",
+   "note": "รู Ø8.5 เจาะซ้อนคู่ซ้าย-ขวา · รู M3/Ø5.5 เจาะหลังเชื่อมจากมอเตอร์จริง"
+  },
+  {
+   "key": "P10",
+   "title": "หูบานพับ wedgelet ขวา #1",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    9.7,
+    7.0
+   ],
+   "dxf": "P10_หูบานพับ.dxf",
+   "note": "เจาะ Ø3.2 ซ้อน 6 แผ่นพร้อมกัน"
+  },
+  {
+   "key": "P11",
+   "title": "หูบานพับ wedgelet ขวา #2",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    9.7,
+    7.0
+   ],
+   "dxf": "P11_หูบานพับ.dxf",
+   "note": "เจาะ Ø3.2 ซ้อน 6 แผ่นพร้อมกัน"
+  },
+  {
+   "key": "P12",
+   "title": "หูบานพับ wedgelet ขวา #3",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    9.7,
+    7.0
+   ],
+   "dxf": "P12_หูบานพับ.dxf",
+   "note": "เจาะ Ø3.2 ซ้อน 6 แผ่นพร้อมกัน"
+  },
+  {
+   "key": "P13",
+   "title": "หูสายรัดแบต ขวา #1",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    12.0,
+    8.0
+   ],
+   "dxf": "P13_หูสายรัดแบต.dxf",
+   "note": ""
+  },
+  {
+   "key": "P14",
+   "title": "หูสายรัดแบต ขวา #2",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    12.0,
+    8.0
+   ],
+   "dxf": "P14_หูสายรัดแบต.dxf",
+   "note": ""
+  },
+  {
+   "key": "P15",
+   "title": "หูยึดผนัง PC ขวา #1",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    8.0,
+    12.0
+   ],
+   "dxf": "P15_หูยึดผนัง.dxf",
+   "note": ""
+  },
+  {
+   "key": "P16",
+   "title": "หูยึดผนัง PC ขวา #2",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    8.0,
+    12.0
+   ],
+   "dxf": "P16_หูยึดผนัง.dxf",
+   "note": ""
+  },
+  {
+   "key": "P17",
+   "title": "เสาตัวกดมอเตอร์ขับ",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    27.0,
+    12.0
+   ],
+   "dxf": "P17_เสาตัวกดมอเตอร์ขับ.dxf",
+   "note": ""
+  },
+  {
+   "key": "P18",
+   "title": "แผ่นตั้งอาวุธ ซ้าย",
+   "material": "เหล็กแบน 2\"×1/8\" (3.2)",
+   "t": 3.2,
+   "qty": 1,
+   "size": [
+    49.4,
+    50.0
+   ],
+   "dxf": "P18_แผ่นตั้งอาวุธ.dxf",
+   "note": "รู Ø8.0 เจาะซ้อนคู่ซ้าย-ขวาก่อนเชื่อม"
+  },
+  {
+   "key": "P19",
+   "title": "แผ่นค้ำแผ่นตั้ง ซ้าย #1",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    15.8,
+    20.4
+   ],
+   "dxf": "P19_แผ่นค้ำแผ่นตั้ง.dxf",
+   "note": ""
+  },
+  {
+   "key": "P20",
+   "title": "แผ่นค้ำแผ่นตั้ง ซ้าย #2",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    15.8,
+    20.4
+   ],
+   "dxf": "P20_แผ่นค้ำแผ่นตั้ง.dxf",
+   "note": ""
+  },
+  {
+   "key": "P21",
+   "title": "แผ่นตั้งอาวุธ ขวา",
+   "material": "เหล็กแบน 2\"×1/8\" (3.2)",
+   "t": 3.2,
+   "qty": 1,
+   "size": [
+    49.4,
+    50.0
+   ],
+   "dxf": "P21_แผ่นตั้งอาวุธ.dxf",
+   "note": "รู Ø8.0 เจาะซ้อนคู่ซ้าย-ขวาก่อนเชื่อม"
+  },
+  {
+   "key": "P22",
+   "title": "แผ่นค้ำแผ่นตั้ง ขวา #1",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    15.8,
+    20.4
+   ],
+   "dxf": "P22_แผ่นค้ำแผ่นตั้ง.dxf",
+   "note": ""
+  },
+  {
+   "key": "P23",
+   "title": "แผ่นค้ำแผ่นตั้ง ขวา #2",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    15.8,
+    20.4
+   ],
+   "dxf": "P23_แผ่นค้ำแผ่นตั้ง.dxf",
+   "note": ""
+  },
+  {
+   "key": "P24",
+   "title": "แผ่นฐานอาวุธ",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    92.0,
+    24.0
+   ],
+   "dxf": "P24_แผ่นฐานอาวุธ.dxf",
+   "note": ""
+  },
+  {
+   "key": "P25",
+   "title": "แผ่นยึดบนแผ่นตั้ง",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    60.4,
+    13.0
+   ],
+   "dxf": "P25_แผ่นยึดบนแผ่นตั้ง.dxf",
+   "note": ""
+  },
+  {
+   "key": "P26",
+   "title": "แผ่นยึดมอเตอร์อาวุธ",
+   "material": "เหล็กแผ่นดำ 2.3",
+   "t": 2.3,
+   "qty": 1,
+   "size": [
+    50.4,
+    40.0
+   ],
+   "dxf": "P26_แผ่นยึดมอเตอร์อาวุธ.dxf",
+   "note": ""
+  },
+  {
+   "key": "P27",
+   "title": "แผ่นรองใต้แผ่นยึดมอเตอร์อาวุธ",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    4.0,
+    28.0
+   ],
+   "dxf": "P27_แผ่นรองใต้แผ่นยึดมอเตอร์อาวุธ.dxf",
+   "note": ""
+  },
+  {
+   "key": "P28",
+   "title": "แผ่นค้ำสามเหลี่ยมแผ่นยึดมอเตอร์อาวุธ",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    11.0,
+    10.0
+   ],
+   "dxf": "P28_แผ่นค้ำสามเหลี่ยมแผ่นยึดมอเตอร์อาวุธ.dxf",
+   "note": ""
+  },
+  {
+   "key": "P29",
+   "title": "แผ่นรับบนหลังรางของแผ่นยึดมอเตอร์อาวุธ",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    13.2,
+    27.0
+   ],
+   "dxf": "P29_แผ่นรับบนหลังรางของแผ่นยึดมอเตอร์อาวุธ.dxf",
+   "note": ""
+  },
+  {
+   "key": "P30",
+   "title": "ขายึดเซนเซอร์ Hall",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    35.1,
+    16.0
+   ],
+   "dxf": "P30_ขายึดเซนเซอร์.dxf",
+   "note": ""
+  },
+  {
+   "key": "W1",
+   "title": "wedgelet ขวา (+X)",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    61.0,
+    35.6
+   ],
+   "dxf": "W1_wedgelet.dxf",
+   "note": "ตัดตามเส้นลิ้น พับลง 90° ที่เส้นประ · เจียรขอบหน้าเอียง 35.5° ให้ตั้งฉากพื้น · รูหูเจาะหลังพับ"
+  },
+  {
+   "key": "W2",
+   "title": "wedgelet ซ้าย (−X) = กลับด้านของ W1",
+   "material": "เหล็กแผ่นดำ 1.6",
+   "t": 1.6,
+   "qty": 1,
+   "size": [
+    61.0,
+    35.6
+   ],
+   "dxf": "W2_wedgelet.dxf",
+   "note": "กลับด้าน: ลิ้นอยู่ฝั่งตรงข้าม"
+  },
+  {
+   "key": "D1",
+   "title": "จานอาวุธ (ทำ 2 ชิ้นเหมือนกัน)",
+   "material": "เหล็กแผ่น 6 มม. SS400",
+   "t": 6.0,
+   "qty": 2,
+   "size": [
+    46.0,
+    59.0
+   ],
+   "dxf": "D1_จานอาวุธ.dxf",
+   "note": "Ø3.4 ×4 เคาเตอร์ซิงค์ 90° Ø6.3 ด้านนอก · Ø14 รูกลาง · Ø8 ×2 รูลดน้ำหนัก · ชั่งให้ 2 ชิ้นต่างกัน ≤ 0.5 g"
+  },
+  {
+   "key": "S1",
+   "title": "แผ่นกันข้าง (ซ้าย = พลิกแผ่น)",
+   "material": "อลูมิเนียมแผ่น 0.8",
+   "t": 0.8,
+   "qty": 2,
+   "size": [
+    19.0,
+    207.0
+   ],
+   "dxf": "S1_แผ่นกันข้าง.dxf",
+   "note": "รู Ø2.2 ขยายเป็นร่องปรับสูง ~1 มม. · ลบคม"
+  },
+  {
+   "key": "S2",
+   "title": "แผ่นกันท้าย",
+   "material": "อลูมิเนียมแผ่น 0.8",
+   "t": 0.8,
+   "qty": 1,
+   "size": [
+    19.0,
+    176.0
+   ],
+   "dxf": "S2_แผ่นกันท้าย.dxf",
+   "note": "รู Ø2.2 ขยายเป็นร่องปรับสูง ~1 มม. · ลบคม"
+  },
+  {
+   "key": "A1",
+   "title": "ขายึดแผ่นกัน ข้าง",
+   "material": "อลูมิเนียม 1.5",
+   "t": 1.5,
+   "qty": 8,
+   "size": [
+    15.0,
+    32.3
+   ],
+   "dxf": "A1_ขายึดแผ่นกัน.dxf",
+   "note": "พับ 35.0° ที่เส้นประ ด้วยปากกาจับชิ้นงาน"
+  },
+  {
+   "key": "A2",
+   "title": "ขายึดแผ่นกัน ท้าย",
+   "material": "อลูมิเนียม 1.5",
+   "t": 1.5,
+   "qty": 3,
+   "size": [
+    15.0,
+    20.5
+   ],
+   "dxf": "A2_ขายึดแผ่นกัน.dxf",
+   "note": "พับ 35.0° ที่เส้นประ ด้วยปากกาจับชิ้นงาน"
+  },
+  {
+   "key": "PC01",
+   "title": "พื้น PC",
+   "material": "PC ตัน 2 มม.",
+   "t": 2.0,
+   "qty": 1,
+   "size": [
+    166.0,
+    206.0
+   ],
+   "dxf": "PC01_พื้น.dxf",
+   "note": "รู rivnut/สกรู เจาะตอนประกอบโดยใช้โครงจริงเป็นแบบ"
+  },
+  {
+   "key": "PC02",
+   "title": "ผนังท้าย PC",
+   "material": "PC ตัน 2 มม.",
+   "t": 2.0,
+   "qty": 1,
+   "size": [
+    166.0,
+    57.0
+   ],
+   "dxf": "PC02_ผนังท้าย.dxf",
+   "note": "รู rivnut/สกรู เจาะตอนประกอบโดยใช้โครงจริงเป็นแบบ"
+  },
+  {
+   "key": "PC03",
+   "title": "ผนังข้าง PC ซ้าย",
+   "material": "PC ตัน 2 มม.",
+   "t": 2.0,
+   "qty": 1,
+   "size": [
+    55.0,
+    194.0
+   ],
+   "dxf": "PC03_ผนังข้าง.dxf",
+   "note": "รู rivnut/สกรู เจาะตอนประกอบโดยใช้โครงจริงเป็นแบบ"
+  },
+  {
+   "key": "PC04",
+   "title": "ผนังข้าง PC ขวา",
+   "material": "PC ตัน 2 มม.",
+   "t": 2.0,
+   "qty": 1,
+   "size": [
+    55.0,
+    194.0
+   ],
+   "dxf": "PC04_ผนังข้าง.dxf",
+   "note": "รู rivnut/สกรู เจาะตอนประกอบโดยใช้โครงจริงเป็นแบบ"
+  },
+  {
+   "key": "PC05",
+   "title": "ฝา PC",
+   "material": "PC ตัน 2 มม.",
+   "t": 2.0,
+   "qty": 1,
+   "size": [
+    166.0,
+    172.0
+   ],
+   "dxf": "PC05_ฝา.dxf",
+   "note": "รู rivnut/สกรู เจาะตอนประกอบโดยใช้โครงจริงเป็นแบบ"
+  },
+  {
+   "key": "PC06",
+   "title": "แผ่นวางบอร์ด PC",
+   "material": "PC ตัน 2 มม.",
+   "t": 2.0,
+   "qty": 1,
+   "size": [
+    116.0,
+    54.5
+   ],
+   "dxf": "PC06_แผ่นวางบอร์ด.dxf",
+   "note": "รู rivnut/สกรู เจาะตอนประกอบโดยใช้โครงจริงเป็นแบบ"
+  },
+  {
+   "key": "U07",
+   "title": "แผ่นไถลท้าย",
+   "material": "UHMW/HDPE 3 มม.",
+   "t": 3.0,
+   "qty": 1,
+   "size": [
+    40.0,
+    12.0
+   ],
+   "dxf": "U07_แผ่นไถลท้าย.dxf",
+   "note": ""
+  },
+  {
+   "key": "U08",
+   "title": "แผ่นไถลหน้า",
+   "material": "UHMW/HDPE 5 มม.",
+   "t": 5.0,
+   "qty": 1,
+   "size": [
+    40.0,
+    10.0
+   ],
+   "dxf": "U08_แผ่นไถลหน้า.dxf",
+   "note": ""
+  }
+ ],
+ "tube_cut_list_mm": [
+  {
+   "part": "Frame_Rear_Cross",
+   "wall_mm": 1.2,
+   "length_mm": 162.0
+  },
+  {
+   "part": "Frame_Bulkhead_Cross",
+   "wall_mm": 1.2,
+   "length_mm": 92.0
+  },
+  {
+   "part": "Frame_Bulkhead_Stub_L",
+   "wall_mm": 1.2,
+   "length_mm": 23.0
+  },
+  {
+   "part": "Frame_Rail_L",
+   "wall_mm": 1.2,
+   "length_mm": 182.0
+  },
+  {
+   "part": "Frame_Hinge_Beam_L",
+   "wall_mm": 1.2,
+   "length_mm": 51.0
+  },
+  {
+   "part": "Frame_Bulkhead_Stub_R",
+   "wall_mm": 1.2,
+   "length_mm": 23.0
+  },
+  {
+   "part": "Frame_Rail_R",
+   "wall_mm": 1.2,
+   "length_mm": 182.0
+  },
+  {
+   "part": "Frame_Hinge_Beam_R",
+   "wall_mm": 1.2,
+   "length_mm": 51.0
+  },
+  {
+   "part": "Frame_Motor_Cross",
+   "wall_mm": 1.2,
+   "length_mm": 92.0
+  },
+  {
+   "part": "Frame_Clamp_Bar",
+   "wall_mm": 1.2,
+   "length_mm": 28.0
+  }
+ ],
+ "welds": [
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Frame_Rail_L",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    -52.0,
+    -96.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Frame_Rail_R",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    52.0,
+    -96.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Tab_Wall_Rear_L",
+   "contact_area_mm2": 19.2,
+   "contact_centre_mm": [
+    -80.2,
+    -102.0,
+    18.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Tab_Wall_Rear_R",
+   "contact_area_mm2": 19.2,
+   "contact_centre_mm": [
+    80.2,
+    -102.0,
+    18.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Rail_L",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    -46.0,
+    56.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Rail_R",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    46.0,
+    56.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Upright_Steel_L",
+   "contact_area_mm2": 33.3,
+   "contact_centre_mm": [
+    -28.6,
+    62.0,
+    12.8
+   ],
+   "contact_size_mm": [
+    10.4,
+    3.2
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Upright_Steel_R",
+   "contact_area_mm2": 33.3,
+   "contact_centre_mm": [
+    28.6,
+    62.0,
+    12.8
+   ],
+   "contact_size_mm": [
+    10.4,
+    3.2
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 147.2,
+   "contact_centre_mm": [
+    0.0,
+    62.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    92.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Weapon_Motor_Mount_Steel",
+   "contact_area_mm2": 27.6,
+   "contact_centre_mm": [
+    -43.2,
+    56.0,
+    18.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    2.3
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Weapon_Motor_Mount_Foot",
+   "contact_area_mm2": 6.4,
+   "contact_centre_mm": [
+    -44.0,
+    50.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    4.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Weapon_Motor_Mount_Gusset",
+   "contact_area_mm2": 17.6,
+   "contact_centre_mm": [
+    -36.5,
+    61.2,
+    18.0
+   ],
+   "contact_size_mm": [
+    11.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Weapon_Motor_Mount_Shelf",
+   "contact_area_mm2": 20.4,
+   "contact_centre_mm": [
+    -45.1,
+    56.0,
+    18.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    1.7
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Hall_Post_Steel",
+   "contact_area_mm2": 9.6,
+   "contact_centre_mm": [
+    8.8,
+    58.5,
+    18.0
+   ],
+   "contact_size_mm": [
+    6.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_L",
+   "b": "Frame_Rail_L",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    -58.0,
+    56.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_L",
+   "b": "Tab_Wall_Front_L",
+   "contact_area_mm2": 19.2,
+   "contact_centre_mm": [
+    -80.2,
+    56.0,
+    18.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Frame_Hinge_Beam_L",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    -52.0,
+    86.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Frame_Motor_Cross",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    -46.0,
+    16.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Drive_Motor_L",
+   "contact_area_mm2": 51.2,
+   "contact_centre_mm": [
+    -56.8,
+    18.0,
+    18.0
+   ],
+   "contact_size_mm": [
+    32.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Battery_Strap_L_50",
+   "contact_area_mm2": 96.0,
+   "contact_centre_mm": [
+    -46.0,
+    -50.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Battery_Strap_L_31",
+   "contact_area_mm2": 96.0,
+   "contact_centre_mm": [
+    -46.0,
+    -31.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Rung_1_L",
+   "contact_area_mm2": 16.6,
+   "contact_centre_mm": [
+    -46.0,
+    69.3,
+    12.8
+   ],
+   "contact_size_mm": [
+    10.4,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Rung_2_L",
+   "contact_area_mm2": 16.6,
+   "contact_centre_mm": [
+    -46.0,
+    81.8,
+    12.8
+   ],
+   "contact_size_mm": [
+    10.4,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 38.4,
+   "contact_centre_mm": [
+    -46.0,
+    74.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    24.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Weapon_Motor_Mount_Foot",
+   "contact_area_mm2": 44.8,
+   "contact_centre_mm": [
+    -46.0,
+    36.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    28.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Weapon_Motor_Mount_Shelf",
+   "contact_area_mm2": 310.5,
+   "contact_centre_mm": [
+    -51.8,
+    48.5,
+    18.0
+   ],
+   "contact_size_mm": [
+    27.0,
+    11.5
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Hinge_L1",
+   "contact_area_mm2": 15.5,
+   "contact_centre_mm": [
+    -37.8,
+    98.0,
+    12.8
+   ],
+   "contact_size_mm": [
+    9.7,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Hinge_L2",
+   "contact_area_mm2": 15.5,
+   "contact_centre_mm": [
+    -62.8,
+    98.0,
+    12.8
+   ],
+   "contact_size_mm": [
+    9.7,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Hinge_L3",
+   "contact_area_mm2": 15.5,
+   "contact_centre_mm": [
+    -85.8,
+    98.0,
+    12.8
+   ],
+   "contact_size_mm": [
+    9.7,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 14.4,
+   "contact_centre_mm": [
+    -41.5,
+    86.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    9.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_R",
+   "b": "Frame_Rail_R",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    58.0,
+    56.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_R",
+   "b": "Tab_Wall_Front_R",
+   "contact_area_mm2": 19.2,
+   "contact_centre_mm": [
+    80.2,
+    56.0,
+    18.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Frame_Hinge_Beam_R",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    52.0,
+    86.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Frame_Motor_Cross",
+   "contact_area_mm2": 51.8,
+   "contact_centre_mm": [
+    46.0,
+    16.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Tab_Drive_Motor_R",
+   "contact_area_mm2": 51.2,
+   "contact_centre_mm": [
+    56.8,
+    18.0,
+    18.0
+   ],
+   "contact_size_mm": [
+    32.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Tab_Battery_Strap_R_50",
+   "contact_area_mm2": 96.0,
+   "contact_centre_mm": [
+    46.0,
+    -50.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Tab_Battery_Strap_R_31",
+   "contact_area_mm2": 96.0,
+   "contact_centre_mm": [
+    46.0,
+    -31.0,
+    12.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Rung_1_R",
+   "contact_area_mm2": 16.6,
+   "contact_centre_mm": [
+    46.0,
+    69.3,
+    12.8
+   ],
+   "contact_size_mm": [
+    10.4,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Rung_2_R",
+   "contact_area_mm2": 16.6,
+   "contact_centre_mm": [
+    46.0,
+    81.8,
+    12.8
+   ],
+   "contact_size_mm": [
+    10.4,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 38.4,
+   "contact_centre_mm": [
+    46.0,
+    74.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    24.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Hinge_R1",
+   "contact_area_mm2": 15.5,
+   "contact_centre_mm": [
+    37.8,
+    98.0,
+    12.9
+   ],
+   "contact_size_mm": [
+    9.7,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Hinge_R2",
+   "contact_area_mm2": 15.5,
+   "contact_centre_mm": [
+    62.8,
+    98.0,
+    12.9
+   ],
+   "contact_size_mm": [
+    9.7,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Hinge_R3",
+   "contact_area_mm2": 15.5,
+   "contact_centre_mm": [
+    85.8,
+    98.0,
+    12.9
+   ],
+   "contact_size_mm": [
+    9.7,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 14.4,
+   "contact_centre_mm": [
+    41.5,
+    86.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    9.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Motor_Cross",
+   "b": "Clamp_Drive_Motor_Post",
+   "contact_area_mm2": 19.2,
+   "contact_centre_mm": [
+    0.0,
+    16.0,
+    18.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Motor_Cross",
+   "b": "Weapon_Motor_Mount_Steel",
+   "contact_area_mm2": 23.9,
+   "contact_centre_mm": [
+    -43.2,
+    22.0,
+    12.8
+   ],
+   "contact_size_mm": [
+    10.4,
+    2.3
+   ]
+  },
+  {
+   "a": "Frame_Motor_Cross",
+   "b": "Weapon_Motor_Mount_Foot",
+   "contact_area_mm2": 6.4,
+   "contact_centre_mm": [
+    -44.0,
+    22.0,
+    6.8
+   ],
+   "contact_size_mm": [
+    4.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Frame_Clamp_Bar",
+   "b": "Clamp_Drive_Motor_Post",
+   "contact_area_mm2": 19.2,
+   "contact_centre_mm": [
+    -0.0,
+    16.0,
+    45.0
+   ],
+   "contact_size_mm": [
+    12.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Upright_Steel_L",
+   "b": "Rung_1_L",
+   "contact_area_mm2": 32.6,
+   "contact_centre_mm": [
+    -30.2,
+    69.3,
+    17.8
+   ],
+   "contact_size_mm": [
+    20.4,
+    1.6
+   ]
+  },
+  {
+   "a": "Upright_Steel_L",
+   "b": "Rung_2_L",
+   "contact_area_mm2": 32.6,
+   "contact_centre_mm": [
+    -30.2,
+    81.8,
+    17.8
+   ],
+   "contact_size_mm": [
+    20.4,
+    1.6
+   ]
+  },
+  {
+   "a": "Upright_Steel_L",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 76.8,
+   "contact_centre_mm": [
+    -28.6,
+    74.0,
+    7.6
+   ],
+   "contact_size_mm": [
+    24.0,
+    3.2
+   ]
+  },
+  {
+   "a": "Upright_Steel_L",
+   "b": "Weapon_Top_Brace_Steel",
+   "contact_area_mm2": 41.6,
+   "contact_centre_mm": [
+    -28.6,
+    70.5,
+    57.0
+   ],
+   "contact_size_mm": [
+    13.0,
+    3.2
+   ]
+  },
+  {
+   "a": "Rung_1_L",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 25.3,
+   "contact_centre_mm": [
+    -38.1,
+    69.3,
+    7.6
+   ],
+   "contact_size_mm": [
+    15.8,
+    1.6
+   ]
+  },
+  {
+   "a": "Rung_2_L",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 25.3,
+   "contact_centre_mm": [
+    -38.1,
+    81.8,
+    7.6
+   ],
+   "contact_size_mm": [
+    15.8,
+    1.6
+   ]
+  },
+  {
+   "a": "Upright_Steel_R",
+   "b": "Rung_1_R",
+   "contact_area_mm2": 32.6,
+   "contact_centre_mm": [
+    30.2,
+    69.3,
+    17.8
+   ],
+   "contact_size_mm": [
+    20.4,
+    1.6
+   ]
+  },
+  {
+   "a": "Upright_Steel_R",
+   "b": "Rung_2_R",
+   "contact_area_mm2": 32.6,
+   "contact_centre_mm": [
+    30.2,
+    81.8,
+    17.8
+   ],
+   "contact_size_mm": [
+    20.4,
+    1.6
+   ]
+  },
+  {
+   "a": "Upright_Steel_R",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 76.8,
+   "contact_centre_mm": [
+    28.6,
+    74.0,
+    7.6
+   ],
+   "contact_size_mm": [
+    24.0,
+    3.2
+   ]
+  },
+  {
+   "a": "Upright_Steel_R",
+   "b": "Weapon_Top_Brace_Steel",
+   "contact_area_mm2": 41.6,
+   "contact_centre_mm": [
+    28.6,
+    70.5,
+    57.0
+   ],
+   "contact_size_mm": [
+    13.0,
+    3.2
+   ]
+  },
+  {
+   "a": "Rung_1_R",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 25.3,
+   "contact_centre_mm": [
+    38.1,
+    69.3,
+    7.6
+   ],
+   "contact_size_mm": [
+    15.8,
+    1.6
+   ]
+  },
+  {
+   "a": "Rung_2_R",
+   "b": "Weapon_Base_Plate",
+   "contact_area_mm2": 25.3,
+   "contact_centre_mm": [
+    38.1,
+    81.8,
+    7.6
+   ],
+   "contact_size_mm": [
+    15.8,
+    1.6
+   ]
+  },
+  {
+   "a": "Weapon_Motor_Mount_Steel",
+   "b": "Weapon_Motor_Mount_Foot",
+   "contact_area_mm2": 64.4,
+   "contact_centre_mm": [
+    -43.1,
+    36.0,
+    7.6
+   ],
+   "contact_size_mm": [
+    28.0,
+    2.3
+   ]
+  },
+  {
+   "a": "Weapon_Motor_Mount_Steel",
+   "b": "Weapon_Motor_Mount_Gusset",
+   "contact_area_mm2": 16.0,
+   "contact_centre_mm": [
+    -42.0,
+    61.2,
+    23.0
+   ],
+   "contact_size_mm": [
+    10.0,
+    1.6
+   ]
+  },
+  {
+   "a": "Weapon_Motor_Mount_Steel",
+   "b": "Weapon_Motor_Mount_Shelf",
+   "contact_area_mm2": 43.2,
+   "contact_centre_mm": [
+    -44.3,
+    48.5,
+    18.8
+   ],
+   "contact_size_mm": [
+    27.0,
+    1.6
+   ]
+  }
+ ],
+ "mass": {
+  "total_g": 1979.8,
+  "margin_to_2000_g": 20.2,
+  "margin_to_1950_target_g": -29.8,
+  "cg_mm": [
+   -1.68,
+   22.04,
+   26.98
+  ],
+  "groups_g": {
+   "R3 parts kept + bought": 1119.9,
+   "frame tubes": 360.7,
+   "frame + weapon sheet/flat parts": 226.5,
+   "PC skins": 226.3,
+   "weld beads + spatter + paint (ARC)": 47.0
+  },
+  "steel_g": 587.0
+ }
+}
