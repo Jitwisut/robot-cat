@@ -60,13 +60,14 @@ RAIL_X = (46.0, 46.0 + TUBE)  # |x|: inner face 46 as W1; outer 58.7 (wheel hub 
 BEAM_Y = (98.0 - TUBE, 98.0)  # hinge beam: front face 98 as W1 (pin y 102)
 MOTOR_CROSS_Y = (10.0, 22.0)
 HINGE_TAB_X = ((37.0, 37.0 + TAB), (62.0, 62.0 + TAB), (85.0, 85.0 + TAB))
+HINGE_BEAM_X = (33.5, 91.0)   # longer than R4-DIY (37..88) so every tab has a bolting leg on the beam (91.0: clear of the skirt)
 UPR_IN, UPR_OUT = 27.0, 33.0  # R3 6061 6 mm uprights, unchanged
 PIN_Y, PIN_Z = 102.0, 14.5                                # wedgelet hinge axis (R3)
 WHEEL_R, WHEEL_X = 32.0, (59.5, 75.5)
 MOTOR_HOLES_YZ = [(-8.5, 0.0), (8.5, 0.0)]                # JB361 face: 2 x M3 at +-8.5 about the shaft
 GEARBOX_SCREWS_YZ = [(0.0, -8.5), (0.0, 8.5)]
 BATTERY = (57.0, 31.0, 24.0)                              # 3S 650 mAh envelope, ASSUMED
-RHO = {'al_tube': 0.00270, 'al_tab': 0.00270, 'steel_pipe': 0.00785, 'steel_wedgelet': 0.00785, 'steel_bolt': 0.00785,
+RHO = {'al_tube': 0.00270, 'al_tab': 0.00270, 'al_bar': 0.00270, 'steel_pipe': 0.00785, 'steel_wedgelet': 0.00785, 'steel_bolt': 0.00785,
        'PC': 0.00120, 'UHMW': 0.00094, 'EPDM': 0.00130, 'al5052_bracket': 0.00268, 'NBR': 0.00130,
        'petg_print': 0.00127, 'PETG_80': 0.00127 * 0.8}   # structural prints (spacers, pulley, hubs) 100 % infill
 EXPLICIT_G = {'battery_650': 58.0, 'nylon_standoff': 0.6}
@@ -149,7 +150,7 @@ for side, s in (('L', -1), ('R', 1)):
     x0, x1 = (RAIL_X[1], WALL_X - SKIN) if s > 0 else (-(WALL_X - SKIN), -RAIL_X[1])
     tube_x('Frame_Bulkhead_Stub_' + side, x0, x1, CROSS_Y[0], RAIL_Z0)
     tube_y('Frame_Rail_' + side, RAIL_X[0] if s > 0 else -RAIL_X[1], REAR_CROSS_Y + TUBE, BEAM_Y[0], RAIL_Z0)
-    x_in, x_out = (HINGE_TAB_X[0][0], 88.0) if s > 0 else (-88.0, -HINGE_TAB_X[0][0])
+    x_in, x_out = HINGE_BEAM_X if s > 0 else (-HINGE_BEAM_X[1], -HINGE_BEAM_X[0])
     tube_x('Frame_Hinge_Beam_' + side, x_in, x_out, BEAM_Y[0], RAIL_Z0)
 tube_x('Frame_Motor_Cross', -RAIL_X[0], RAIL_X[0], MOTOR_CROSS_Y[0], RAIL_Z0)
 tube_x('Frame_Clamp_Bar', -14.0, 14.0, MOTOR_CROSS_Y[0], 45.0)
@@ -169,14 +170,19 @@ for side, s in (('L', -1), ('R', 1)):
     for dy, dz in GEARBOX_SCREWS_YZ:
         t = hole_x(t, FRONT_Y + dy, 32.0 + dz, 2.75)
         DRILL_AFTER_WELD.append({'part': 'Tab_Drive_Motor_' + side, 'd_mm': 5.5, 'what': 'JB361 gearbox screw head', 'yz_mm': [FRONT_Y + dy, 32.0 + dz]})
-    add('Tab_Drive_Motor_' + side, t, 'al_tab', TAB)
+    for y0_, y1_ in ((FRONT_Y - 16, FRONT_Y - 13), (FRONT_Y + 13, FRONT_Y + 16)):
+        t = t.fuse(block(*((RAIL_X[0], 56.0 + TAB) if s > 0 else (-56.0 - TAB, -RAIL_X[0])), y0_, y1_, RAIL_Z1, RAIL_Z1 + TAB))
+    add('Tab_Drive_Motor_' + side, t.clean(), 'al_tab', TAB)
     # wedgelet hinge tabs on the beam front, D3.2 for the M3 bolt pin; top-front corner one straight chamfer
     for i, (a, b) in enumerate(HINGE_TAB_X):
         x0, x1 = (a, b) if s > 0 else (-b, -a)
         t = block(x0, x1, BEAM_Y[1], 105.0, 8.0, 17.7)
         cham = cq.Workplane(cq.Plane(origin=(x0 - 1, 0, 0), xDir=(0, 1, 0), normal=(1, 0, 0))).polyline(
             [(100.6, 17.8), (105.1, 17.8), (105.1, 14.6)]).close().extrude(x1 - x0 + 2).val()
-        add('Tab_Hinge_%s%d' % (side, i + 1), hole_x(t.cut(cham), PIN_Y, PIN_Z, 1.6), 'al_tab', TAB)
+        # bolting leg on the beam front face, below the pin bolt, on the side away from the wedgelet ears (bent 5052 2 mm, one M3 rivnut)
+        lx = {0: (HINGE_BEAM_X[0], a), 1: (b, b + 6.0), 2: (b, HINGE_BEAM_X[1])}[i]
+        leg = block(*(lx if s > 0 else (-lx[1], -lx[0])), BEAM_Y[1], BEAM_Y[1] + TAB, 6.5, 11.0)   # under the pin bolt head/nut (z >= 11.3)
+        add('Tab_Hinge_%s%d' % (side, i + 1), hole_x(t.cut(cham), PIN_Y, PIN_Z, 1.6).fuse(leg).clean(), 'al_tab', TAB)
     for y in (-50.0, -31.0):
         x0 = RAIL_X[0] - TAB if s > 0 else -RAIL_X[0]
         add('Tab_Battery_Strap_%s_%d' % (side, -y), block(x0, x0 + TAB, y - 4, y + 4, RAIL_Z0, RAIL_Z1), 'al_tab', TAB)
@@ -205,23 +211,32 @@ add('Clamp_Drive_Motor_Post', block(-TAB / 2, TAB / 2, MOTOR_CROSS_Y[0], MOTOR_C
 # foot: leg A on the bulkhead cross front face (rivnut), leg B on the upright's outer face (tapped).
 JOINTS = []               # bolted joints that replace R4-DIY welds: (name, parts, bolts, where)
 RUNG_Y = (BEAM_Y[0] - 0.6 - TUBE, BEAM_Y[0] - 0.6)          # ends 0.6 short of the hinge beam
+RY = round(sum(RUNG_Y) / 2, 2)
+ZM = round((RAIL_Z0 + RAIL_Z1) / 2, 2)
+ANG_T = 3.0                                                 # 6061 angles on the weapon path (bearing / tear-out)
+WEAPON_BOLTS = []                                           # (side, name, y, z): x-direction M4 8.8 into the tapped upright
 for side, s_ in (('L', -1), ('R', 1)):
-    r_ = block(UPR_OUT, RAIL_X[0], RUNG_Y[0], RUNG_Y[1], RAIL_Z0, RAIL_Z1)
-    r_ = r_.cut(block(UPR_OUT - 1, RAIL_X[0] + 1, RUNG_Y[0] + WALL, RUNG_Y[1] - WALL, RAIL_Z0 + WALL, RAIL_Z1 - WALL))
-    add('Rung_Al_Tube_' + side, mirror_x(r_, s_), 'al_tube', WALL)
-    fa = block(UPR_OUT, RAIL_X[0], CROSS_Y[1] + 0.7, CROSS_Y[1] + 0.7 + TAB, RAIL_Z0, RAIL_Z1)       # leg A on the cross
-    fb = block(UPR_OUT, UPR_OUT + TAB, CROSS_Y[1] + 0.7, RUNG_Y[0] - 0.3, RAIL_Z0, RAIL_Z1)          # leg B on the upright
-    add('Upright_Foot_Angle_Al_' + side, mirror_x(fa.fuse(fb).clean(), s_), 'al_tab', TAB)
-    JOINTS.append(('upright->rail via rung, ' + side, ['Upright_6061_6mm_' + side, 'Rung_Al_Tube_' + side, 'Frame_Rail_' + side], 2,
-                   '2 x M4x40 8.8 through rail + rung into the tapped (M4) upright, y %.1f z 9.5 / 15.2' % (sum(RUNG_Y) / 2)))
-    JOINTS.append(('upright->cross via foot angle, ' + side, ['Upright_6061_6mm_' + side, 'Upright_Foot_Angle_Al_' + side, 'Frame_Bulkhead_Cross'], 3,
-                   'leg A: M3 into a rivnut in the cross front face; leg B: 2 x M4 into the tapped upright, y 67.9 z 9.5 / 15.2'))
+    # solid 12.7 6061 square bar spacer: the M4 is supported over its length and sees shear at the upright face
+    add('Rung_Al_Bar_Solid_' + side, mirror_x(block(UPR_OUT, RAIL_X[0], RUNG_Y[0], RUNG_Y[1], RAIL_Z0, RAIL_Z1), s_), 'al_bar', TUBE)
+    WEAPON_BOLTS.append((side, 'rung M4x50 through rail + bar', RY, ZM))
+    # riser angle: vertical leg up the upright's outer face, horizontal leg on the rung + rail tops (M4 into a rail rivnut)
+    rv = block(UPR_OUT, UPR_OUT + ANG_T, RUNG_Y[0], RUNG_Y[1], RAIL_Z1, 36.0)
+    rh = block(UPR_OUT, RAIL_X[1] - 1.0, RUNG_Y[0], RUNG_Y[1], RAIL_Z1, RAIL_Z1 + ANG_T)
+    add('Upright_Riser_Angle_6061_' + side, mirror_x(rv.fuse(rh).clean(), s_), 'al_tab', ANG_T)
+    WEAPON_BOLTS.append((side, 'riser angle vertical leg', RY, 30.0))
+    # foot angle: leg A on the bulkhead cross front face (2 x M3 rivnuts), leg B on the upright (z <= 24: clear of the L motor can)
+    fa = block(UPR_OUT, RAIL_X[0], CROSS_Y[1] + TUBE - 12.0, CROSS_Y[1] + TUBE - 12.0 + ANG_T, RAIL_Z0, RAIL_Z1)
+    fb = block(UPR_OUT, UPR_OUT + ANG_T, CROSS_Y[1] + TUBE - 12.0, RUNG_Y[0] - 0.3, RAIL_Z0, 24.0)
+    add('Upright_Foot_Angle_6061_' + side, mirror_x(fa.fuse(fb).clean(), s_), 'al_tab', ANG_T)
+    WEAPON_BOLTS.append((side, 'foot angle leg B', round((CROSS_Y[1] + TUBE - 12.0 + ANG_T + RUNG_Y[0] - 0.3) / 2, 2), 20.0))
+    JOINTS.append(('upright -> frame, ' + side, ['Upright_6061_6mm_' + side, 'Rung_Al_Bar_Solid_' + side, 'Upright_Riser_Angle_6061_' + side,
+                   'Upright_Foot_Angle_6061_' + side], 3, '3 x M4 8.8 into the tapped (M4) upright + riser M4 into a rail rivnut + foot leg A 2 x M3 rivnuts'))
 # weapon motor mount: R3 M06 (6061 3 mm) clear of the crosses, on two 2 mm Al angles bolted to the motor cross and the
 # bulkhead cross top faces
 m06 = r3_m06.cut(block(-46, -40, CROSS_Y[0], CROSS_Y[1] + TUBE - 12.0 + 0.7, 0, RAIL_Z1 + 0.3))
 m06 = m06.cut(block(-46, -40, MOTOR_CROSS_Y[0], MOTOR_CROSS_Y[0] + TUBE, 0, RAIL_Z1 + 0.3)).clean()
 add('Weapon_Motor_Mount_6061_3mm', m06, 'al_tab', 3.0)
-for nm, (y0, y1) in (('Front', (CROSS_Y[0] + 1.0, CROSS_Y[0] + TUBE - 1.0)), ('Mid', (31.0, 49.0))):
+for nm, (y0, y1) in (('Front', (CROSS_Y[0] + 1.0, CROSS_Y[0] + TUBE - 1.0)), ('Mid', (35.0, 49.0))):
     # outboard of the mount (the weapon can is inboard): leg on the rail/cross tops, leg up the mount's outer face (x -45)
     leg_h = block(-56.0, -45.0, y0, y1, RAIL_Z1, RAIL_Z1 + TAB)
     leg_v = block(-45.0 - TAB, -45.0, y0, y1, RAIL_Z1, RAIL_Z1 + 12.0)
@@ -492,7 +507,7 @@ for b in new:
         if b.material.startswith('steel'): steel_g += g
     rows.append({'part': b.name, 'material': b.material, 'mass_g': round(g, 3), 'centroid_mm': c, 'method': method})
 rows.append({'part': 'rotor pipe-to-disc welds (ARC)', 'mass_g': ROTOR_WELD_G, 'centroid_mm': [0, 95, 32], 'method': 'ASSUMED'})
-n_tt = sum(1 for w in welds if w['a'].startswith('Frame_') and w['b'].startswith(('Frame_', 'Rung_')) or w['a'].startswith('Rung_'))
+n_tt = sum(1 for w in welds if w['a'].startswith('Frame_') and w['b'].startswith('Frame_'))
 n_tab = len(welds) - n_tt
 rows.append({'part': 'bolted-joint hardware: %d tube-tube cleats, %d tab joints' % (n_tt, n_tab), 'mass_g': round(n_tt * JOINT_G['tube_tube'] + n_tab * JOINT_G['tab_tube'], 1),
              'centroid_mm': [0, -10, 12], 'method': 'ASSUMED %s g per joint' % JOINT_G})
@@ -530,6 +545,7 @@ report = {
     'removed_from_r3': sorted(removed), 'invalid_bodies': invalid, 'frame_members_not_touching': floating, 'edge_only_contacts': edge_only,
     'bolted_contacts': welds, 'weapon_joints': JOINTS, 'interference': interference, 'rotor_sweep_hits': sweep_hits, 'wedgelet_swing': swing,
     'ear_yz': EAR_YZ, 'drill_list': DRILL_AFTER_WELD, 'midwall_y': MIDWALL_Y,
+    'weapon_bolts_yz': WEAPON_BOLTS, 'weapon_angle_t_mm': ANG_T, 'foot_leg_b_y': [CROSS_Y[1] + TUBE - 12.0, RUNG_Y[0] - 0.3],
     'skirt_brackets_flat': dict(skirt_brackets),
     'mass': {'total_g': round(total, 1), 'margin_to_2000_g': round(2000 - total, 1), 'margin_to_1950_target_g': round(1950 - total, 1),
              'cg_mm': cg.round(2).tolist(), 'groups_g': groups, 'new_steel_g': round(steel_g, 1)},

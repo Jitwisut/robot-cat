@@ -80,36 +80,77 @@ for p in r4s['paths']:
             out.setdefault('rail_grade_sweep', []).append({'grade': gname, 'case': tag, 'sf': round(1 / ratio, 2)})
             continue
         chk('Rail 12.7x12.7x2.0 %s at the cross: N/Np + M/Mp' % gname, tag, ratio, 1.0, 'ratio',
-            'R4-DIY steel 12x12x1.2 same case SF %.2f' % p['sf'])
+            'N and M BORROWED from R4-DIY (weld at y 62), rescaled to R5 body share; R5 loads the rail at the rung (y 72-85): approximate. R4-DIY steel same case SF %.2f' % p['sf'])
 out['rail_section'] = {'al_12.7x2.0': al, 'steel_12x1.2': st, 'Mp_al_Nmm': al['Zp'] * FY_AL, 'Mp_steel_Nmm': st['Zp'] * 235.0,
                        'mass_g_per_mm_al': al['A'] * 2.7e-3, 'mass_g_per_mm_steel': st['A'] * 7.85e-3}
 
 # ---------------------------------------------------------------- weapon joints (were welds): bolt group in the y-z plane
-# Per side, x-direction M3 8.8: two through the rung (z 9.5 and 15.2) into the tapped upright, one through the foot
-# angle's leg B into the upright. Load S at the axle (y 95, z 32).
-RY = sum(rep['weapon_joints'][0][3].split('y ')[1].split(' z')[0:1] and [float(rep['weapon_joints'][0][3].split('y ')[1].split(' z')[0])] or [79.0]) if False else None
-rung_y = (85.3 - 0.6 - 12.7 / 2)                      # RUNG_Y mid in build_r5_al.py
-bolts = [(rung_y, 9.5), (rung_y, 15.2), (67.9, 9.5), (67.9, 15.2)]   # 4 x M4 8.8 per side
-nb = len(bolts)
-cy = sum(b[0] for b in bolts) / nb
-cz = sum(b[1] for b in bolts) / nb
-J = sum((b[0] - cy) ** 2 + (b[1] - cz) ** 2 for b in bolts)
+# Bolt positions come from the CAD (build_report weapon_bolts_yz): per side 3 x M4 8.8 along x into the tapped 6 mm
+# upright: through the solid 12.7 rung bar (mid-height), the riser angle's vertical leg and the foot angle's leg B.
+# The rung bar is solid, so the rung bolt is supported and sees shear at the upright face (no 13 mm free span).
+WB = [(y, z) for side, _n, y, z in rep['weapon_bolts_yz'] if side == 'R']
+ANG_T = rep['weapon_angle_t_mm']
 FU_T = GRADES[TUBE_GRADE][1]
-CAP_BOLT = min(BOLT_M4_88, 2.4 * 4 * 2.0 * FU_T, 2.4 * 4 * 2.0 * FU_5052, 0.5 * math.pi * 4 * 6 * TAU_6061)
+d4 = 4.0
+
+
+def tearout(e, t, fu):
+    """Block tear-out of one bolt toward a free edge at distance e (to the hole centre): 2 shear planes."""
+    return 2 * max(e - d4 / 2, 0) * t * 0.6 * fu
+
+
+# edge distances (mm) per bolt and direction, from the CAD: upright bottom z 7, rear edge y 64; angles' edges
+UPR_BOTTOM, UPR_REAR = 7.0, 64.0
+leg_b = rep['foot_leg_b_y']
+per_bolt_cap = []
+for (y, z) in WB:
+    caps = {'bolt shear M4 8.8': BOLT_M4_88,
+            'thread in 6 mm 6061': 0.5 * math.pi * d4 * 6 * TAU_6061,
+            'upright tear-out down to z 7 (up load)': tearout(z - UPR_BOTTOM, 6.0, FU_6061),
+            'upright tear-out to rear edge y 64 (+y recoil)': tearout(y - UPR_REAR, 6.0, FU_6061)}
+    if abs(y - sum(leg_b) / 2) < 0.5:                       # foot angle leg B (3 mm 6061)
+        caps['foot leg B tear-out (3 mm 6061)'] = tearout(min(y - leg_b[0], leg_b[1] - y), ANG_T, FU_6061)
+        caps['foot leg B bearing'] = 2.4 * d4 * ANG_T * FU_6061
+    elif z > 25:                                            # riser vertical leg (3 mm 6061), top at z 36
+        caps['riser leg tear-out to its top (z 36)'] = tearout(36.0 - z, ANG_T, FU_6061)
+        caps['riser leg bearing'] = 2.4 * d4 * ANG_T * FU_6061
+    else:                                                   # rung: rail walls 2.0 (double) + solid bar
+        caps['rail walls bearing (2 walls)'] = 2 * 2.4 * d4 * 2.0 * FU_T
+        caps['rail wall tear-out to its corner (z 6 / 18.7), 2 walls'] = 2 * tearout(z - 6.0, 2.0, FU_T)
+    gov = min(caps, key=caps.get)
+    per_bolt_cap.append((caps[gov], gov, caps))
+nb = len(WB)
+cy = sum(b[0] for b in WB) / nb
+cz = sum(b[1] for b in WB) / nb
+J = sum((b[0] - cy) ** 2 + (b[1] - cz) ** 2 for b in WB)
 for F, case in ((2600.0, 'DT3 2.6 kN'), (5200.0, 'DT3 5.2 kN check')):
     S = F * share / 2
     for d, (Fy, Fz) in (('fore-aft (-y)', (-S, 0.0)), ('up (+z)', (0.0, S)), ('down (-z)', (0.0, -S))):
         Mx = Fz * (95.0 - cy) - Fy * (32.0 - cz)
-        worst = 0.0
-        for by, bz in bolts:
+        worst = None
+        for (by, bz), (cap, gov, _c) in zip(WB, per_bolt_cap):
             fy = Fy / nb - Mx * (bz - cz) / J
             fz = Fz / nb + Mx * (by - cy) / J
-            worst = max(worst, math.hypot(fy, fz))
-        chk('Upright -> frame bolt group (4 x M4 8.8 per side)', '%s %s' % (case, d), worst, CAP_BOLT, 'N',
-            'capacity = min(bolt shear %.0f, bearing in 2.0 %s wall %.0f, 2.0 5052 angle %.0f, thread in 6 mm 6061 %.0f)'
-            % (BOLT_M4_88, TUBE_GRADE, 2.4 * 4 * 2 * FU_T, 2.4 * 4 * 2 * FU_5052, 0.5 * math.pi * 4 * 6 * TAU_6061))
-out['weapon_bolt_group'] = {'bolts_yz': bolts, 'centroid_yz': [round(cy, 2), round(cz, 2)], 'J_mm2': round(J, 1),
-                            'capacity_per_bolt_N': round(CAP_BOLT, 0)}
+            r = math.hypot(fy, fz) / cap
+            if worst is None or r > worst[0]:
+                worst = (r, math.hypot(fy, fz), cap, gov, (by, bz))
+        chk('Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)', '%s %s' % (case, d), worst[1], worst[2], 'N',
+            'bolt at y %.1f z %.1f; governed by %s' % (worst[4][0], worst[4][1], worst[3]))
+out['weapon_bolt_group'] = {'bolts_yz': WB, 'centroid_yz': [round(cy, 2), round(cz, 2)], 'J_mm2': round(J, 1),
+                            'per_bolt_capacity_N': [{k: round(v) for k, v in c[2].items()} for c in per_bolt_cap]}
+# foot leg A: 2 x M3 rivnuts in the cross front face carry the foot's share; take the worst bolt force of the group
+for F, case in ((2600.0, 'DT3 2.6 kN'), (5200.0, 'DT3 5.2 kN check')):
+    S = F * share / 2
+    chk('Foot leg A -> cross, 2 x M3 rivnut (takes up to S/2, worst case)', case, S / 2 / 2,
+        min(BOLT_M3_88, 2.4 * 3 * 2.0 * FU_T, 1500.0), 'N', 'M3 steel rivnut pull/shear in a 2 mm wall ~1.5 kN, ASSUMED')
+# drive-motor tab: 250 g drop of the JB361 (~45 g ASSUMED) + wheel (hub ~13 g PETG + O-rings 12 g) on 2 x M3 legs
+chk('Drive-motor tab legs, 2 x M3 rivnut, 0.5 m drop 250 g', 'DT1 drop', (0.045 + 0.025) * 9.81 * 250 / 2, 1500.0, 'N')
+# wedgelet hinge tabs: a wedgelet hit (0.2 x 2.6 kN, ASSUMED) shared by 3 tabs per side; leg M3 at e 2.25 in 2 mm 5052
+F_tab = 0.2 * 2600.0 / 3
+chk('Hinge tab leg, 1 x M3 rivnut (e 2.25 mm in 2.0 5052), wedgelet hit / 3', 'DT3 wedgelet', F_tab,
+    min(2 * (2.25 - 1.5) * 2.0 * 0.6 * FU_5052 + 2.4 * 3 * 2.0 * FU_5052 * 0, 1500.0) if False else 2 * (2.25 - 1.5) * 2.0 * 0.6 * FU_5052 * 2,
+    'N', 'leg tear-out both ways around the hole; the tab also bears on the beam face in compression')
+chk('Hinge tab pin bearing (2.0 5052, M3 pin)', 'DT3 wedgelet', F_tab, 2.4 * 3 * 2.0 * FU_5052, 'N')
 # frame corner joints: rail -> bulkhead cross carries S into the body; 2 cleats x 2 M3 per corner, bearing in the 2.0 wall
 for F, case in ((2600.0, 'DT3 2.6 kN'), (5200.0, 'DT3 5.2 kN check')):
     S = F * share / 2

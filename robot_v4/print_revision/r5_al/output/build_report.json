@@ -136,7 +136,7 @@
   },
   {
    "a": "Frame_Bulkhead_Cross",
-   "b": "Upright_Foot_Angle_Al_L",
+   "b": "Upright_Foot_Angle_6061_L",
    "contact_area_mm2": 165.1,
    "contact_centre_mm": [
     -39.5,
@@ -150,7 +150,7 @@
   },
   {
    "a": "Frame_Bulkhead_Cross",
-   "b": "Upright_Foot_Angle_Al_R",
+   "b": "Upright_Foot_Angle_6061_R",
    "contact_area_mm2": 165.1,
    "contact_centre_mm": [
     39.5,
@@ -249,15 +249,15 @@
   {
    "a": "Frame_Rail_L",
    "b": "Tab_Drive_Motor_L",
-   "contact_area_mm2": 64.0,
+   "contact_area_mm2": 124.0,
    "contact_centre_mm": [
-    -57.0,
+    -54.1,
     18.0,
     18.7
    ],
    "contact_size_mm": [
     32.0,
-    2.0
+    12.0
    ]
   },
   {
@@ -304,30 +304,30 @@
   },
   {
    "a": "Frame_Rail_L",
-   "b": "Rung_Al_Tube_L",
-   "contact_area_mm2": 85.6,
+   "b": "Upright_Riser_Angle_6061_L",
+   "contact_area_mm2": 148.6,
    "contact_centre_mm": [
-    -46.0,
+    -51.9,
     78.3,
-    12.3
+    18.7
    ],
    "contact_size_mm": [
     12.7,
-    12.7
+    11.7
    ]
   },
   {
    "a": "Frame_Rail_L",
-   "b": "Upright_Foot_Angle_Al_L",
-   "contact_area_mm2": 25.4,
+   "b": "Upright_Foot_Angle_6061_L",
+   "contact_area_mm2": 38.1,
    "contact_centre_mm": [
     -46.0,
-    63.7,
+    64.2,
     12.3
    ],
    "contact_size_mm": [
     12.7,
-    2.0
+    3.0
    ]
   },
   {
@@ -347,57 +347,57 @@
   {
    "a": "Frame_Rail_L",
    "b": "Motor_Mount_Angle_Al_Mid",
-   "contact_area_mm2": 180.0,
+   "contact_area_mm2": 140.0,
    "contact_centre_mm": [
     -51.0,
-    40.0,
+    42.0,
     18.7
    ],
    "contact_size_mm": [
-    18.0,
+    14.0,
     10.0
    ]
   },
   {
    "a": "Frame_Hinge_Beam_L",
    "b": "Tab_Hinge_L1",
-   "contact_area_mm2": 19.4,
+   "contact_area_mm2": 35.1,
    "contact_centre_mm": [
-    -38.0,
+    -36.8,
     98.0,
-    12.8
+    11.0
    ],
    "contact_size_mm": [
-    9.7,
-    2.0
+    11.2,
+    5.5
    ]
   },
   {
    "a": "Frame_Hinge_Beam_L",
    "b": "Tab_Hinge_L2",
-   "contact_area_mm2": 19.4,
+   "contact_area_mm2": 46.4,
    "contact_centre_mm": [
-    -63.0,
+    -65.3,
     98.0,
-    12.8
+    10.5
    ],
    "contact_size_mm": [
-    9.7,
-    2.0
+    11.2,
+    8.0
    ]
   },
   {
    "a": "Frame_Hinge_Beam_L",
    "b": "Tab_Hinge_L3",
-   "contact_area_mm2": 19.4,
+   "contact_area_mm2": 37.4,
    "contact_centre_mm": [
-    -86.0,
+    -87.4,
     98.0,
-    12.8
+    10.9
    ],
    "contact_size_mm": [
-    9.7,
-    2.0
+    11.2,
+    6.0
    ]
   },
   {
@@ -459,15 +459,15 @@
   {
    "a": "Frame_Rail_R",
    "b": "Tab_Drive_Motor_R",
-   "contact_area_mm2": 64.0,
+   "contact_area_mm2": 124.0,
    "contact_centre_mm": [
-    57.0,
+    54.1,
     18.0,
     18.7
    ],
    "contact_size_mm": [
     32.0,
-    2.0
+    12.0
    ]
   },
   {
@@ -514,72 +514,72 @@
   },
   {
    "a": "Frame_Rail_R",
-   "b": "Rung_Al_Tube_R",
-   "contact_area_mm2": 85.6,
+   "b": "Upright_Riser_Angle_6061_R",
+   "contact_area_mm2": 148.6,
    "contact_centre_mm": [
-    46.0,
-    78.4,
-    12.4
+    51.8,
+    78.3,
+    18.7
    ],
    "contact_size_mm": [
     12.7,
-    12.7
+    11.7
    ]
   },
   {
    "a": "Frame_Rail_R",
-   "b": "Upright_Foot_Angle_Al_R",
-   "contact_area_mm2": 25.4,
+   "b": "Upright_Foot_Angle_6061_R",
+   "contact_area_mm2": 38.1,
    "contact_centre_mm": [
     46.0,
-    63.7,
-    12.3
+    64.2,
+    12.4
    ],
    "contact_size_mm": [
     12.7,
-    2.0
+    3.0
    ]
   },
   {
    "a": "Frame_Hinge_Beam_R",
    "b": "Tab_Hinge_R1",
-   "contact_area_mm2": 19.4,
+   "contact_area_mm2": 35.1,
    "contact_centre_mm": [
-    38.0,
+    36.8,
     98.0,
-    12.8
+    11.0
    ],
    "contact_size_mm": [
-    9.7,
-    2.0
+    11.2,
+    5.5
    ]
   },
   {
    "a": "Frame_Hinge_Beam_R",
    "b": "Tab_Hinge_R2",
-   "contact_area_mm2": 19.4,
+   "contact_area_mm2": 46.4,
    "contact_centre_mm": [
-    63.0,
+    65.3,
     98.0,
-    12.8
+    10.5
    ],
    "contact_size_mm": [
-    9.7,
-    2.0
+    11.2,
+    8.0
    ]
   },
   {
    "a": "Frame_Hinge_Beam_R",
    "b": "Tab_Hinge_R3",
-   "contact_area_mm2": 19.4,
+   "contact_area_mm2": 37.4,
    "contact_centre_mm": [
-    86.0,
+    87.4,
     98.0,
-    12.8
+    10.9
    ],
    "contact_size_mm": [
-    9.7,
-    2.0
+    11.2,
+    6.0
    ]
   },
   {
@@ -621,20 +621,6 @@
    ],
    "contact_size_mm": [
     12.0,
-    2.0
-   ]
-  },
-  {
-   "a": "Tab_Drive_Motor_L",
-   "b": "Motor_Mount_Angle_Al_Mid",
-   "contact_area_mm2": 6.0,
-   "contact_centre_mm": [
-    -56.0,
-    32.5,
-    19.7
-   ],
-   "contact_size_mm": [
-    3.0,
     2.0
    ]
   },
@@ -683,58 +669,40 @@
   {
    "a": "Weapon_Motor_Mount_6061_3mm",
    "b": "Motor_Mount_Angle_Al_Mid",
-   "contact_area_mm2": 208.8,
+   "contact_area_mm2": 161.4,
    "contact_centre_mm": [
     -45.0,
-    39.8,
+    41.8,
     24.5
    ],
    "contact_size_mm": [
-    18.0,
+    14.0,
     12.0
    ]
   }
  ],
  "weapon_joints": [
   [
-   "upright->rail via rung, L",
+   "upright -> frame, L",
    [
     "Upright_6061_6mm_L",
-    "Rung_Al_Tube_L",
-    "Frame_Rail_L"
-   ],
-   2,
-   "2 x M4x40 8.8 through rail + rung into the tapped (M4) upright, y 78.3 z 9.5 / 15.2"
-  ],
-  [
-   "upright->cross via foot angle, L",
-   [
-    "Upright_6061_6mm_L",
-    "Upright_Foot_Angle_Al_L",
-    "Frame_Bulkhead_Cross"
+    "Rung_Al_Bar_Solid_L",
+    "Upright_Riser_Angle_6061_L",
+    "Upright_Foot_Angle_6061_L"
    ],
    3,
-   "leg A: M3 into a rivnut in the cross front face; leg B: 2 x M4 into the tapped upright, y 67.9 z 9.5 / 15.2"
+   "3 x M4 8.8 into the tapped (M4) upright + riser M4 into a rail rivnut + foot leg A 2 x M3 rivnuts"
   ],
   [
-   "upright->rail via rung, R",
+   "upright -> frame, R",
    [
     "Upright_6061_6mm_R",
-    "Rung_Al_Tube_R",
-    "Frame_Rail_R"
-   ],
-   2,
-   "2 x M4x40 8.8 through rail + rung into the tapped (M4) upright, y 78.3 z 9.5 / 15.2"
-  ],
-  [
-   "upright->cross via foot angle, R",
-   [
-    "Upright_6061_6mm_R",
-    "Upright_Foot_Angle_Al_R",
-    "Frame_Bulkhead_Cross"
+    "Rung_Al_Bar_Solid_R",
+    "Upright_Riser_Angle_6061_R",
+    "Upright_Foot_Angle_6061_R"
    ],
    3,
-   "leg A: M3 into a rivnut in the cross front face; leg B: 2 x M4 into the tapped upright, y 67.9 z 9.5 / 15.2"
+   "3 x M4 8.8 into the tapped (M4) upright + riser M4 into a rail rivnut + foot leg A 2 x M3 rivnuts"
   ],
   [
    "M06 -> frame via front angle",
@@ -956,6 +924,49 @@
   }
  ],
  "midwall_y": -55.0,
+ "weapon_bolts_yz": [
+  [
+   "L",
+   "rung M4x50 through rail + bar",
+   78.35,
+   12.35
+  ],
+  [
+   "L",
+   "riser angle vertical leg",
+   78.35,
+   30.0
+  ],
+  [
+   "L",
+   "foot angle leg B",
+   68.7,
+   20.0
+  ],
+  [
+   "R",
+   "rung M4x50 through rail + bar",
+   78.35,
+   12.35
+  ],
+  [
+   "R",
+   "riser angle vertical leg",
+   78.35,
+   30.0
+  ],
+  [
+   "R",
+   "foot angle leg B",
+   68.7,
+   20.0
+  ]
+ ],
+ "weapon_angle_t_mm": 3.0,
+ "foot_leg_b_y": [
+  62.7,
+  71.7
+ ],
  "skirt_brackets_flat": {
   "Skirt_Bracket_L_y-82": {
    "width": 15.0,
@@ -1058,30 +1069,30 @@
   }
  },
  "mass": {
-  "total_g": 1837.5,
-  "margin_to_2000_g": 162.5,
-  "margin_to_1950_target_g": 112.5,
+  "total_g": 1848.8,
+  "margin_to_2000_g": 151.2,
+  "margin_to_1950_target_g": 101.2,
   "cg_mm": [
-   -1.35,
-   19.92,
-   27.05
+   -1.33,
+   20.66,
+   27.02
   ],
   "groups_g": {
-   "R3 parts kept + bought": 1095.0,
-   "frame tubes (Al)": 219.3,
-   "Al plates / angles": 38.2,
+   "R3 parts kept + bought": 1106.4,
+   "frame tubes (Al)": 216.3,
+   "Al plates / angles": 48.8,
    "PETG prints (ex-lathe)": 40.4,
    "rotor pipe (steel)": 55.4,
    "PC skins": 226.1,
-   "joint hardware": 163.8
+   "joint hardware": 156.0
   },
   "new_steel_g": 114.1
  },
  "support_2wd": {
   "drive_axle_y": 18,
   "other_support": "nose skid y 69",
-  "drive_wheel_load_pct": 96.2,
-  "push_N_mu0.6": 7.85
+  "drive_wheel_load_pct": 94.8,
+  "push_N_mu0.6": 7.79
  },
  "tube_cut_list_mm": [
   {
@@ -1107,7 +1118,7 @@
   {
    "part": "Frame_Hinge_Beam_L",
    "wall_mm": 2.0,
-   "length_mm": 51.0
+   "length_mm": 57.5
   },
   {
    "part": "Frame_Bulkhead_Stub_R",
@@ -1122,7 +1133,7 @@
   {
    "part": "Frame_Hinge_Beam_R",
    "wall_mm": 2.0,
-   "length_mm": 51.0
+   "length_mm": 57.5
   },
   {
    "part": "Frame_Motor_Cross",
@@ -1143,19 +1154,9 @@
    "part": "Frame_Midwall_Stub_R",
    "wall_mm": 2.0,
    "length_mm": 20.3
-  },
-  {
-   "part": "Rung_Al_Tube_L",
-   "wall_mm": 2.0,
-   "length_mm": 13.0
-  },
-  {
-   "part": "Rung_Al_Tube_R",
-   "wall_mm": 2.0,
-   "length_mm": 13.0
   }
  ],
- "tube_total_mm": 948.4,
+ "tube_total_mm": 935.4,
  "sheet_list": [
   {
    "part": "Tab_Drive_Motor_L",
@@ -1165,37 +1166,37 @@
     32.0,
     32.0
    ],
-   "mass_g": 4.86
+   "mass_g": 5.18
   },
   {
    "part": "Tab_Hinge_L1",
    "material": "al_tab",
    "thickness_mm": 2.0,
    "blank_mm": [
-    9.7,
+    11.2,
     7.0
    ],
-   "mass_g": 0.29
+   "mass_g": 0.37
   },
   {
    "part": "Tab_Hinge_L2",
    "material": "al_tab",
    "thickness_mm": 2.0,
    "blank_mm": [
-    9.7,
-    7.0
+    11.2,
+    8.0
    ],
-   "mass_g": 0.29
+   "mass_g": 0.43
   },
   {
    "part": "Tab_Hinge_L3",
    "material": "al_tab",
    "thickness_mm": 2.0,
    "blank_mm": [
-    9.7,
+    11.2,
     7.0
    ],
-   "mass_g": 0.29
+   "mass_g": 0.39
   },
   {
    "part": "Tab_Battery_Strap_L_50",
@@ -1245,37 +1246,37 @@
     32.0,
     32.0
    ],
-   "mass_g": 4.86
+   "mass_g": 5.18
   },
   {
    "part": "Tab_Hinge_R1",
    "material": "al_tab",
    "thickness_mm": 2.0,
    "blank_mm": [
-    9.7,
+    11.2,
     7.0
    ],
-   "mass_g": 0.29
+   "mass_g": 0.37
   },
   {
    "part": "Tab_Hinge_R2",
    "material": "al_tab",
    "thickness_mm": 2.0,
    "blank_mm": [
-    9.7,
-    7.0
+    11.2,
+    8.0
    ],
-   "mass_g": 0.29
+   "mass_g": 0.43
   },
   {
    "part": "Tab_Hinge_R3",
    "material": "al_tab",
    "thickness_mm": 2.0,
    "blank_mm": [
-    9.7,
+    11.2,
     7.0
    ],
-   "mass_g": 0.29
+   "mass_g": 0.39
   },
   {
    "part": "Tab_Battery_Strap_R_50",
@@ -1348,24 +1349,44 @@
    "mass_g": 1.7
   },
   {
-   "part": "Upright_Foot_Angle_Al_L",
+   "part": "Upright_Riser_Angle_6061_L",
    "material": "al_tab",
-   "thickness_mm": 2.0,
+   "thickness_mm": 3.0,
    "blank_mm": [
-    13.0,
-    12.7
+    24.7,
+    17.3
    ],
-   "mass_g": 1.37
+   "mass_g": 4.01
   },
   {
-   "part": "Upright_Foot_Angle_Al_R",
+   "part": "Upright_Foot_Angle_6061_L",
    "material": "al_tab",
-   "thickness_mm": 2.0,
+   "thickness_mm": 3.0,
    "blank_mm": [
-    13.0,
-    12.7
+    18.0,
+    13.0
    ],
-   "mass_g": 1.37
+   "mass_g": 2.34
+  },
+  {
+   "part": "Upright_Riser_Angle_6061_R",
+   "material": "al_tab",
+   "thickness_mm": 3.0,
+   "blank_mm": [
+    24.7,
+    17.3
+   ],
+   "mass_g": 4.01
+  },
+  {
+   "part": "Upright_Foot_Angle_6061_R",
+   "material": "al_tab",
+   "thickness_mm": 3.0,
+   "blank_mm": [
+    18.0,
+    13.0
+   ],
+   "mass_g": 2.34
   },
   {
    "part": "Weapon_Motor_Mount_6061_3mm",
@@ -1392,10 +1413,10 @@
    "material": "al_tab",
    "thickness_mm": 2.0,
    "blank_mm": [
-    18.0,
+    14.0,
     12.0
    ],
-   "mass_g": 2.04
+   "mass_g": 1.59
   },
   {
    "part": "Wedgelet_DIY_L",
@@ -2032,11 +2053,11 @@
   {
    "part": "Frame_Hinge_Beam_L",
    "material": "al_tube",
-   "mass_g": 11.787,
+   "mass_g": 13.289,
    "centroid_mm": [
-    -62.49999999999999,
-    91.65000000000002,
-    12.350000000000003
+    -62.250000000000014,
+    91.64999999999998,
+    12.35
    ],
    "method": "CAD volume x density"
   },
@@ -2065,11 +2086,11 @@
   {
    "part": "Frame_Hinge_Beam_R",
    "material": "al_tube",
-   "mass_g": 11.787,
+   "mass_g": 13.289,
    "centroid_mm": [
-    62.49999999999998,
-    91.65000000000002,
-    12.350000000000003
+    62.250000000000014,
+    91.64999999999998,
+    12.35
    ],
    "method": "CAD volume x density"
   },
@@ -2098,44 +2119,44 @@
   {
    "part": "Tab_Drive_Motor_L",
    "material": "al_tab",
-   "mass_g": 4.857,
+   "mass_g": 5.181,
    "centroid_mm": [
-    -57.000000000000014,
-    18.0,
-    35.07411474018323
+    -56.62475799760421,
+    18.000000000000004,
+    34.11261247348835
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Tab_Hinge_L1",
    "material": "al_tab",
-   "mass_g": 0.288,
+   "mass_g": 0.373,
    "centroid_mm": [
-    -38.00000000000001,
-    101.17345434263461,
-    12.137681850772578
+    -37.37370707112857,
+    100.67846558408297,
+    11.366161418625325
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Tab_Hinge_L2",
    "material": "al_tab",
-   "mass_g": 0.288,
+   "mass_g": 0.434,
    "centroid_mm": [
-    -63.0,
-    101.17345434263461,
-    12.137681850772578
+    -64.3431677087946,
+    100.44362592024305,
+    11.000125633365757
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Tab_Hinge_L3",
    "material": "al_tab",
-   "mass_g": 0.288,
+   "mass_g": 0.386,
    "centroid_mm": [
-    -86.00000000000001,
-    101.17345434263461,
-    12.137681850772578
+    -86.7562290587437,
+    100.62557789871694,
+    11.283727364994965
    ],
    "method": "CAD volume x density"
   },
@@ -2186,44 +2207,44 @@
   {
    "part": "Tab_Drive_Motor_R",
    "material": "al_tab",
-   "mass_g": 4.857,
+   "mass_g": 5.181,
    "centroid_mm": [
-    57.000000000000014,
-    18.0,
-    35.07411474018323
+    56.6247579976042,
+    18.000000000000004,
+    34.11261247348838
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Tab_Hinge_R1",
    "material": "al_tab",
-   "mass_g": 0.288,
+   "mass_g": 0.373,
    "centroid_mm": [
-    38.00000000000001,
-    101.17345434263461,
-    12.137681850772578
+    37.37370707112856,
+    100.67846558408297,
+    11.366161418625323
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Tab_Hinge_R2",
    "material": "al_tab",
-   "mass_g": 0.288,
+   "mass_g": 0.434,
    "centroid_mm": [
-    63.0,
-    101.17345434263461,
-    12.137681850772578
+    64.34316770879462,
+    100.44362592024304,
+    11.000125633365759
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Tab_Hinge_R3",
    "material": "al_tab",
-   "mass_g": 0.288,
+   "mass_g": 0.386,
    "centroid_mm": [
-    86.00000000000001,
-    101.17345434263461,
-    12.137681850772578
+    86.7562290587437,
+    100.62557789871695,
+    11.283727364994963
    ],
    "method": "CAD volume x density"
   },
@@ -2371,46 +2392,68 @@
    "method": "CAD volume x density"
   },
   {
-   "part": "Rung_Al_Tube_L",
-   "material": "al_tube",
-   "mass_g": 3.005,
+   "part": "Rung_Al_Bar_Solid_L",
+   "material": "al_bar",
+   "mass_g": 5.661,
    "centroid_mm": [
-    -39.49999999999998,
+    -39.49999999999999,
     78.35,
     12.349999999999998
    ],
    "method": "CAD volume x density"
   },
   {
-   "part": "Upright_Foot_Angle_Al_L",
+   "part": "Upright_Riser_Angle_6061_L",
    "material": "al_tab",
-   "mass_g": 1.372,
+   "mass_g": 4.012,
    "centroid_mm": [
-    -37.574999999999996,
-    65.27499999999999,
-    12.349999999999998
+    -41.371666666666684,
+    78.34999999999998,
+    23.371666666666673
    ],
    "method": "CAD volume x density"
   },
   {
-   "part": "Rung_Al_Tube_R",
-   "material": "al_tube",
-   "mass_g": 3.005,
+   "part": "Upright_Foot_Angle_6061_L",
+   "material": "al_tab",
+   "mass_g": 2.341,
    "centroid_mm": [
-    39.49999999999998,
+    -37.35640138408304,
+    65.88166089965401,
+    13.83546712802768
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Rung_Al_Bar_Solid_R",
+   "material": "al_bar",
+   "mass_g": 5.661,
+   "centroid_mm": [
+    39.49999999999999,
     78.35,
     12.349999999999998
    ],
    "method": "CAD volume x density"
   },
   {
-   "part": "Upright_Foot_Angle_Al_R",
+   "part": "Upright_Riser_Angle_6061_R",
    "material": "al_tab",
-   "mass_g": 1.372,
+   "mass_g": 4.012,
    "centroid_mm": [
-    37.574999999999996,
-    65.27499999999999,
-    12.349999999999998
+    41.371666666666684,
+    78.34999999999998,
+    23.371666666666673
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Upright_Foot_Angle_6061_R",
+   "material": "al_tab",
+   "mass_g": 2.341,
+   "centroid_mm": [
+    37.35640138408304,
+    65.88166089965401,
+    13.83546712802768
    ],
    "method": "CAD volume x density"
   },
@@ -2439,11 +2482,11 @@
   {
    "part": "Motor_Mount_Angle_Al_Mid",
    "material": "al_tab",
-   "mass_g": 2.041,
+   "mass_g": 1.588,
    "centroid_mm": [
-    -48.357142857142854,
-    40.00000000000001,
-    22.55714285714286
+    -48.35714285714284,
+    41.99999999999999,
+    22.55714285714285
    ],
    "method": "CAD volume x density"
   },
@@ -2920,8 +2963,8 @@
    "method": "ASSUMED"
   },
   {
-   "part": "bolted-joint hardware: 14 tube-tube cleats, 32 tab joints",
-   "mass_g": 163.8,
+   "part": "bolted-joint hardware: 12 tube-tube cleats, 33 tab joints",
+   "mass_g": 156.0,
    "centroid_mm": [
     0,
     -10,

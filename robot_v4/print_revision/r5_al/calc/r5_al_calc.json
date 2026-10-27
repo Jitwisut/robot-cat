@@ -1,23 +1,23 @@
 {
  "inputs": {
-  "M_kg": 1.8375,
+  "M_kg": 1.8488,
   "aluminium_6063_T5_min_MPa": [
    110.0,
    150.0
   ],
-  "m_weapon_kg": 0.3947,
-  "body_share": 0.7852
+  "m_weapon_kg": 0.4019,
+  "body_share": 0.7826
  },
  "checks": [
   {
    "check": "Rail 12.7x12.7x2.0 6063-T6 at the cross: N/Np + M/Mp",
    "case": "DT3 2.6 kN fore-aft (-y)",
-   "load": 0.42,
+   "load": 0.41,
    "capacity": 1.0,
    "unit": "ratio",
    "sf": 2.41,
    "pass": true,
-   "note": "R4-DIY steel 12x12x1.2 same case SF 2.03"
+   "note": "N and M BORROWED from R4-DIY (weld at y 62), rescaled to R5 body share; R5 loads the rail at the rung (y 72-85): approximate. R4-DIY steel same case SF 2.03"
   },
   {
    "check": "Rail 12.7x12.7x2.0 6063-T6 at the cross: N/Np + M/Mp",
@@ -25,9 +25,9 @@
    "load": 0.64,
    "capacity": 1.0,
    "unit": "ratio",
-   "sf": 1.56,
+   "sf": 1.57,
    "pass": true,
-   "note": "R4-DIY steel 12x12x1.2 same case SF 1.48"
+   "note": "N and M BORROWED from R4-DIY (weld at y 62), rescaled to R5 body share; R5 loads the rail at the rung (y 72-85): approximate. R4-DIY steel same case SF 1.48"
   },
   {
    "check": "Rail 12.7x12.7x2.0 6063-T6 at the cross: N/Np + M/Mp",
@@ -35,9 +35,9 @@
    "load": 0.83,
    "capacity": 1.0,
    "unit": "ratio",
-   "sf": 1.2,
+   "sf": 1.21,
    "pass": true,
-   "note": "R4-DIY steel 12x12x1.2 same case SF 1.01"
+   "note": "N and M BORROWED from R4-DIY (weld at y 62), rescaled to R5 body share; R5 loads the rail at the rung (y 72-85): approximate. R4-DIY steel same case SF 1.01"
   },
   {
    "check": "Rail 12.7x12.7x2.0 6063-T6 at the cross: N/Np + M/Mp",
@@ -47,85 +47,135 @@
    "unit": "ratio",
    "sf": 0.78,
    "pass": false,
-   "note": "R4-DIY steel 12x12x1.2 same case SF 0.74"
+   "note": "N and M BORROWED from R4-DIY (weld at y 62), rescaled to R5 body share; R5 loads the rail at the rung (y 72-85): approximate. R4-DIY steel same case SF 0.74"
   },
   {
-   "check": "Upright -> frame bolt group (4 x M4 8.8 per side)",
+   "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 2.6 kN fore-aft (-y)",
-   "load": 990.39,
-   "capacity": 4032.0,
+   "load": 836.89,
+   "capacity": 3744.0,
    "unit": "N",
-   "sf": 4.07,
+   "sf": 4.47,
    "pass": true,
-   "note": "capacity = min(bolt shear 4214, bearing in 2.0 6063-T6 wall 4128, 2.0 5052 angle 4032, thread in 6 mm 6061 5881)"
+   "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
   },
   {
-   "check": "Upright -> frame bolt group (4 x M4 8.8 per side)",
+   "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 2.6 kN up (+z)",
-   "load": 1168.36,
-   "capacity": 4032.0,
+   "load": 1063.02,
+   "capacity": 3744.0,
    "unit": "N",
-   "sf": 3.45,
+   "sf": 3.52,
    "pass": true,
-   "note": "capacity = min(bolt shear 4214, bearing in 2.0 6063-T6 wall 4128, 2.0 5052 angle 4032, thread in 6 mm 6061 5881)"
+   "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
   },
   {
-   "check": "Upright -> frame bolt group (4 x M4 8.8 per side)",
+   "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 2.6 kN down (-z)",
-   "load": 1168.36,
-   "capacity": 4032.0,
+   "load": 1063.02,
+   "capacity": 3744.0,
    "unit": "N",
-   "sf": 3.45,
+   "sf": 3.52,
    "pass": true,
-   "note": "capacity = min(bolt shear 4214, bearing in 2.0 6063-T6 wall 4128, 2.0 5052 angle 4032, thread in 6 mm 6061 5881)"
+   "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
   },
   {
-   "check": "Upright -> frame bolt group (4 x M4 8.8 per side)",
+   "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 5.2 kN check fore-aft (-y)",
-   "load": 1980.79,
-   "capacity": 4032.0,
+   "load": 1673.78,
+   "capacity": 3744.0,
    "unit": "N",
-   "sf": 2.04,
+   "sf": 2.24,
    "pass": true,
-   "note": "capacity = min(bolt shear 4214, bearing in 2.0 6063-T6 wall 4128, 2.0 5052 angle 4032, thread in 6 mm 6061 5881)"
+   "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
   },
   {
-   "check": "Upright -> frame bolt group (4 x M4 8.8 per side)",
+   "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 5.2 kN check up (+z)",
-   "load": 2336.72,
-   "capacity": 4032.0,
+   "load": 2126.03,
+   "capacity": 3744.0,
    "unit": "N",
-   "sf": 1.73,
+   "sf": 1.76,
    "pass": true,
-   "note": "capacity = min(bolt shear 4214, bearing in 2.0 6063-T6 wall 4128, 2.0 5052 angle 4032, thread in 6 mm 6061 5881)"
+   "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
   },
   {
-   "check": "Upright -> frame bolt group (4 x M4 8.8 per side)",
+   "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 5.2 kN check down (-z)",
-   "load": 2336.72,
-   "capacity": 4032.0,
+   "load": 2126.03,
+   "capacity": 3744.0,
    "unit": "N",
-   "sf": 1.73,
+   "sf": 1.76,
    "pass": true,
-   "note": "capacity = min(bolt shear 4214, bearing in 2.0 6063-T6 wall 4128, 2.0 5052 angle 4032, thread in 6 mm 6061 5881)"
+   "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
+  },
+  {
+   "check": "Foot leg A -> cross, 2 x M3 rivnut (takes up to S/2, worst case)",
+   "case": "DT3 2.6 kN",
+   "load": 254.34,
+   "capacity": 1500.0,
+   "unit": "N",
+   "sf": 5.9,
+   "pass": true,
+   "note": "M3 steel rivnut pull/shear in a 2 mm wall ~1.5 kN, ASSUMED"
+  },
+  {
+   "check": "Foot leg A -> cross, 2 x M3 rivnut (takes up to S/2, worst case)",
+   "case": "DT3 5.2 kN check",
+   "load": 508.68,
+   "capacity": 1500.0,
+   "unit": "N",
+   "sf": 2.95,
+   "pass": true,
+   "note": "M3 steel rivnut pull/shear in a 2 mm wall ~1.5 kN, ASSUMED"
+  },
+  {
+   "check": "Drive-motor tab legs, 2 x M3 rivnut, 0.5 m drop 250 g",
+   "case": "DT1 drop",
+   "load": 85.84,
+   "capacity": 1500.0,
+   "unit": "N",
+   "sf": 17.47,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "Hinge tab leg, 1 x M3 rivnut (e 2.25 mm in 2.0 5052), wedgelet hit / 3",
+   "case": "DT3 wedgelet",
+   "load": 173.33,
+   "capacity": 756.0,
+   "unit": "N",
+   "sf": 4.36,
+   "pass": true,
+   "note": "leg tear-out both ways around the hole; the tab also bears on the beam face in compression"
+  },
+  {
+   "check": "Hinge tab pin bearing (2.0 5052, M3 pin)",
+   "case": "DT3 wedgelet",
+   "load": 173.33,
+   "capacity": 3024.0,
+   "unit": "N",
+   "sf": 17.45,
+   "pass": true,
+   "note": ""
   },
   {
    "check": "Frame corner rail->cross (2 cleats x 2 M3, worst bolt = S/2)",
    "case": "DT3 2.6 kN",
-   "load": 510.38,
+   "load": 508.68,
    "capacity": 3096.0,
    "unit": "N",
-   "sf": 6.07,
+   "sf": 6.09,
    "pass": true,
    "note": ""
   },
   {
    "check": "Frame corner rail->cross (2 cleats x 2 M3, worst bolt = S/2)",
    "case": "DT3 5.2 kN check",
-   "load": 1020.76,
+   "load": 1017.37,
    "capacity": 3096.0,
    "unit": "N",
-   "sf": 3.03,
+   "sf": 3.04,
    "pass": true,
    "note": ""
   },
@@ -287,7 +337,7 @@
   {
    "grade": "6061-T6",
    "case": "DT3 2.6 kN fore-aft (-y)",
-   "sf": 3.4
+   "sf": 3.41
   },
   {
    "grade": "6063-T5",
@@ -297,7 +347,7 @@
   {
    "grade": "6061-T6",
    "case": "DT3 2.6 kN up (+z) [non-credible direction]",
-   "sf": 2.2
+   "sf": 2.21
   },
   {
    "grade": "6063-T5",
@@ -317,7 +367,7 @@
   {
    "grade": "6061-T6",
    "case": "DT3 5.2 kN check up (+z) [non-credible direction]",
-   "sf": 1.1
+   "sf": 1.11
   }
  ],
  "rail_section": {
@@ -337,28 +387,49 @@
  "weapon_bolt_group": {
   "bolts_yz": [
    [
-    78.35000000000001,
-    9.5
+    78.35,
+    12.35
    ],
    [
-    78.35000000000001,
-    15.2
+    78.35,
+    30.0
    ],
    [
-    67.9,
-    9.5
-   ],
-   [
-    67.9,
-    15.2
+    68.7,
+    20.0
    ]
   ],
   "centroid_yz": [
-   73.12,
-   12.35
+   75.13,
+   20.78
   ],
-  "J_mm2": 141.7,
-  "capacity_per_bolt_N": 4032.0
+  "J_mm2": 218.8,
+  "per_bolt_capacity_N": [
+   {
+    "bolt shear M4 8.8": 4214,
+    "thread in 6 mm 6061": 5881,
+    "upright tear-out down to z 7 (up load)": 6271,
+    "upright tear-out to rear edge y 64 (+y recoil)": 23119,
+    "rail walls bearing (2 walls)": 8256,
+    "rail wall tear-out to its corner (z 6 / 18.7), 2 walls": 4489
+   },
+   {
+    "bolt shear M4 8.8": 4214,
+    "thread in 6 mm 6061": 5881,
+    "upright tear-out down to z 7 (up load)": 39312,
+    "upright tear-out to rear edge y 64 (+y recoil)": 23119,
+    "riser leg tear-out to its top (z 36)": 3744,
+    "riser leg bearing": 7488
+   },
+   {
+    "bolt shear M4 8.8": 4214,
+    "thread in 6 mm 6061": 5881,
+    "upright tear-out down to z 7 (up load)": 20592,
+    "upright tear-out to rear edge y 64 (+y recoil)": 5054,
+    "rail walls bearing (2 walls)": 8256,
+    "rail wall tear-out to its corner (z 6 / 18.7), 2 walls": 12384
+   }
+  ]
  },
  "rotor": {
   "T_half_hit_Nm": 122.4,
@@ -372,19 +443,19 @@
   "why_not_printed_hub": "a PETG core between the discs would carry ~122 N m: torsion of a D30/D11 PETG core 24 MPa vs ~30 MPa, and 4 x M4 bolts across a 40 mm gap would bend (M ~ 47 N m vs ~3.6 N m) -> buy 3/4\" pipe and weld instead"
  },
  "mass": {
-  "R5_AL_g": 1837.5,
+  "R5_AL_g": 1848.8,
   "R4_DIY_g": 1979.8,
-  "delta_g": -142.3,
+  "delta_g": -131.0,
   "groups_g": {
-   "R3 parts kept + bought": 1095.0,
-   "frame tubes (Al)": 219.3,
-   "Al plates / angles": 38.2,
+   "R3 parts kept + bought": 1106.4,
+   "frame tubes (Al)": 216.3,
+   "Al plates / angles": 48.8,
    "PETG prints (ex-lathe)": 40.4,
    "rotor pipe (steel)": 55.4,
    "PC skins": 226.1,
-   "joint hardware": 163.8
+   "joint hardware": 156.0
   },
-  "margin_to_2000_g": 162.5
+  "margin_to_2000_g": 151.2
  },
  "summary": {
   "design_fails": [],
