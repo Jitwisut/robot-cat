@@ -60,6 +60,7 @@ RAIL_X = (46.0, 46.0 + TUBE)  # |x|: inner face 46 as W1; outer 58.7 (wheel hub 
 BEAM_Y = (98.0 - TUBE, 98.0)  # hinge beam: front face 98 as W1 (pin y 102)
 MOTOR_CROSS_Y = (10.0, 22.0)
 HINGE_TAB_X = ((37.0, 37.0 + TAB), (62.0, 62.0 + TAB), (85.0, 85.0 + TAB))
+HINGE_BASE_X, HINGE_BASE_Y = (34.0, 88.0), (90.0, 105.0)
 HINGE_BEAM_X = (33.5, 91.0)   # longer than R4-DIY (37..88) so every tab has a bolting leg on the beam (91.0: clear of the skirt)
 UPR_IN, UPR_OUT = 27.0, 33.0  # R3 6061 6 mm uprights, unchanged
 PIN_Y, PIN_Z = 102.0, 14.5                                # wedgelet hinge axis (R3)
@@ -176,13 +177,14 @@ for side, s in (('L', -1), ('R', 1)):
     # wedgelet hinge tabs on the beam front, D3.2 for the M3 bolt pin; top-front corner one straight chamfer
     for i, (a, b) in enumerate(HINGE_TAB_X):
         x0, x1 = (a, b) if s > 0 else (-b, -a)
-        t = block(x0, x1, BEAM_Y[1], 105.0, 8.0, 17.7)
+        t = block(x0, x1, BEAM_Y[1], 105.0, RAIL_Z0, 17.7)          # bent up from the hinge base plate (z 4..6)
         cham = cq.Workplane(cq.Plane(origin=(x0 - 1, 0, 0), xDir=(0, 1, 0), normal=(1, 0, 0))).polyline(
             [(100.6, 17.8), (105.1, 17.8), (105.1, 14.6)]).close().extrude(x1 - x0 + 2).val()
-        # bolting leg on the beam front face, below the pin bolt, on the side away from the wedgelet ears (bent 5052 2 mm, one M3 rivnut)
-        lx = {0: (HINGE_BEAM_X[0], a), 1: (b, b + 6.0), 2: (b, HINGE_BEAM_X[1])}[i]
-        leg = block(*(lx if s > 0 else (-lx[1], -lx[0])), BEAM_Y[1], BEAM_Y[1] + TAB, 6.5, 11.0)   # under the pin bolt head/nut (z >= 11.3)
-        add('Tab_Hinge_%s%d' % (side, i + 1), hole_x(t.cut(cham), PIN_Y, PIN_Z, 1.6).fuse(leg).clean(), 'al_tab', TAB)
+        add('Tab_Hinge_%s%d' % (side, i + 1), hole_x(t.cut(cham), PIN_Y, PIN_Z, 1.6), 'al_tab', TAB)
+    # hinge base: one 2 mm 5052 plate under the beam (replaces the floor there), the three tabs bent up from its front
+    # edge; bolted up into the beam's bottom wall with 3 x M3 rivnuts
+    hb = block(HINGE_BASE_X[0], HINGE_BASE_X[1], HINGE_BASE_Y[0], HINGE_BASE_Y[1], FLOOR_Z0, RAIL_Z0)
+    add('Hinge_Base_5052_2mm_' + side, mirror_x(hb, s), 'al_tab', TAB)
     for y in (-50.0, -31.0):
         x0 = RAIL_X[0] - TAB if s > 0 else -RAIL_X[0]
         add('Tab_Battery_Strap_%s_%d' % (side, -y), block(x0, x0 + TAB, y - 4, y + 4, RAIL_Z0, RAIL_Z1), 'al_tab', TAB)
@@ -190,6 +192,8 @@ for side, s in (('L', -1), ('R', 1)):
     for nm, y0 in (('Rear', REAR_CROSS_Y), ('Front', CROSS_Y[0])):
         x0 = WALL_X - SKIN - TAB if s > 0 else -(WALL_X - SKIN)
         t = hole_x(block(x0, x0 + TAB, y0, y0 + TUBE, RAIL_Z1, RAIL_Z1 + 8), y0 + TUBE / 2, RAIL_Z1 + 4, 1.7)
+        lx0 = x0 - 8.0 if s > 0 else x0 + TAB
+        t = t.fuse(block(lx0, lx0 + 8.0, y0, y0 + TUBE, RAIL_Z1, RAIL_Z1 + TAB)).clean()   # leg on the tube top
         add('Tab_Wall_%s_%s' % (nm, side), t, 'al_tab', TAB)
 # mid-wall support (R4-DIY open issue: 7.5 mm wall deflection > 3 mm): a 12.7 Al stub from the rail's outer face to
 # the wall at y MIDWALL_Y with a 2 mm tab, so the PC side wall spans ~79 mm instead of 158
@@ -198,13 +202,20 @@ for side, s in (('L', -1), ('R', 1)):
     x0, x1 = (RAIL_X[1], WALL_X - SKIN - TAB) if s > 0 else (-(WALL_X - SKIN - TAB), -RAIL_X[1])
     tube_x('Frame_Midwall_Stub_' + side, x0, x1, MIDWALL_Y, RAIL_Z0)
     xt = WALL_X - SKIN - TAB if s > 0 else -(WALL_X - SKIN)
-    add('Tab_Wall_Mid_' + side, hole_x(block(xt, xt + TAB, MIDWALL_Y, MIDWALL_Y + TUBE, RAIL_Z0, RAIL_Z1 + 8), MIDWALL_Y + TUBE / 2, RAIL_Z1 + 4, 1.7), 'al_tab', TAB)
+    t = hole_x(block(xt, xt + TAB, MIDWALL_Y, MIDWALL_Y + TUBE, RAIL_Z1, RAIL_Z1 + 8), MIDWALL_Y + TUBE / 2, RAIL_Z1 + 4, 1.7)
+    lx0 = xt - 8.0 if s > 0 else xt + TAB
+    add('Tab_Wall_Mid_' + side, t.fuse(block(lx0, lx0 + 8.0, MIDWALL_Y, MIDWALL_Y + TUBE, RAIL_Z1, RAIL_Z1 + TAB)).clean(), 'al_tab', TAB)
 # drive-motor clamp (W1 pattern on the 12 tube): EPDM pads, a centre post and the clamp bar
 for side, s in (('L', -1), ('R', 1)):
     x0, x1 = (6.2, 14.0) if s > 0 else (-14.0, -6.2)
     add('Pad_Drive_Motor_EPDM_' + side, block(x0, x1, 11.0, 21.0, RAIL_Z1, 19.5), 'EPDM')
     add('Pad_Drive_Motor_Top_EPDM_' + side, block(x0, x1, 11.0, 21.0, 44.5, 45.0), 'EPDM')
-add('Clamp_Drive_Motor_Post', block(-TAB / 2, TAB / 2, MOTOR_CROSS_Y[0], MOTOR_CROSS_Y[1], RAIL_Z1, 45.0), 'al_tab', TAB)
+MC_FRONT = MOTOR_CROSS_Y[0] + TUBE
+post = block(-TAB / 2, TAB / 2, MOTOR_CROSS_Y[0], MC_FRONT, RAIL_Z1, 45.0)
+post = post.fuse(block(-TAB / 2, TAB / 2, MC_FRONT, MC_FRONT + TAB, RAIL_Z0, 45.0 + TUBE))          # web down the front faces
+post = post.fuse(block(-6.0, 6.0, MC_FRONT, MC_FRONT + TAB, RAIL_Z0, RAIL_Z1))                     # leg on the cross front face
+post = post.fuse(block(-6.0, 6.0, MC_FRONT, MC_FRONT + TAB, 45.0, 45.0 + TUBE)).clean()             # leg on the clamp bar front face
+add('Clamp_Drive_Motor_Post', post, 'al_tab', TAB)
 
 # -- weapon module: R3's 6061 uprights/braces stay (bolted). Per side: one 12.7 Al tube rung from the upright's outer
 # face to the rail's inner face (one M3 8.8 through rail, rung and into the tapped 6 mm upright), and one 2 mm Al angle
@@ -227,7 +238,8 @@ for side, s_ in (('L', -1), ('R', 1)):
     # foot angle: leg A on the bulkhead cross front face (2 x M3 rivnuts), leg B on the upright (z <= 24: clear of the L motor can)
     fa = block(UPR_OUT, RAIL_X[0], CROSS_Y[1] + TUBE - 12.0, CROSS_Y[1] + TUBE - 12.0 + ANG_T, RAIL_Z0, RAIL_Z1)
     fb = block(UPR_OUT, UPR_OUT + ANG_T, CROSS_Y[1] + TUBE - 12.0, RUNG_Y[0] - 0.3, RAIL_Z0, 24.0)
-    add('Upright_Foot_Angle_6061_' + side, mirror_x(fa.fuse(fb).clean(), s_), 'al_tab', ANG_T)
+    fc = block(RAIL_X[0] - ANG_T, RAIL_X[0], CROSS_Y[1] + TUBE - 12.0 + ANG_T, RUNG_Y[0] - 0.3, RAIL_Z0, RAIL_Z1)   # leg C on the rail
+    add('Upright_Foot_Angle_6061_' + side, mirror_x(fa.fuse(fb).fuse(fc).clean(), s_), 'al_tab', ANG_T)
     WEAPON_BOLTS.append((side, 'foot angle leg B', round((CROSS_Y[1] + TUBE - 12.0 + ANG_T + RUNG_Y[0] - 0.3) / 2, 2), 20.0))
     JOINTS.append(('upright -> frame, ' + side, ['Upright_6061_6mm_' + side, 'Rung_Al_Bar_Solid_' + side, 'Upright_Riser_Angle_6061_' + side,
                    'Upright_Foot_Angle_6061_' + side], 3, '3 x M4 8.8 into the tapped (M4) upright + riser M4 into a rail rivnut + foot leg A 2 x M3 rivnuts'))
@@ -358,7 +370,7 @@ for x in (-57.5, 0.0, 57.5):
 floor = block(-WALL_X, WALL_X, REAR_Y + SKIN, CROSS_Y[1], FLOOR_Z0, RAIL_Z0)
 for s in (-1, 1):
     x0, x1 = (34.0, WALL_X) if s > 0 else (-WALL_X, -34.0)
-    floor = floor.fuse(block(x0, x1, CROSS_Y[1] - 1, BEAM_Y[1], FLOOR_Z0, RAIL_Z0))
+    floor = floor.fuse(block(x0, x1, CROSS_Y[1] - 1, HINGE_BASE_Y[0], FLOOR_Z0, RAIL_Z0))   # the hinge base plate takes over from y 90
     floor = floor.cut(block(*((WHEEL_X[0] - 1, WHEEL_X[1] + 1) if s > 0 else (-WHEEL_X[1] - 1, -WHEEL_X[0] + 1)), FRONT_Y - 21, FRONT_Y + 21, 0, 10))
 add('Skin_PC2_Floor', floor, 'PC', SKIN)
 add('Skin_PC2_Rear_Wall', block(-WALL_X, WALL_X, REAR_Y, REAR_Y + SKIN, FLOOR_Z0, LID_Z0), 'PC', SKIN)
@@ -412,6 +424,161 @@ bl, bw, bh = BATTERY
 add('3S_650mAh_LiPo_ENVELOPE', block(-bl / 2, bl / 2, -40.5 - bw / 2, -40.5 + bw / 2, RAIL_Z0 + 1, RAIL_Z0 + 1 + bh), 'battery_650')
 add('Rear_Skid_UHMW_3mm', block(-20, 20, REAR_Y + 2, REAR_Y + 14, 1.0, FLOOR_Z0), 'UHMW', 3.0)
 add('Nose_Skid_UHMW_3mm', block(-20, 20, 64.5, 74.0, 1.0, 4.0), 'UHMW', 3.0)   # under R3's bottom brace (z 4)
+
+# ---------------------------------------------------------------- fixings: every joint drilled (R5-AL rev F)
+# Hole sizes: M3 clearance 3.4, M3 rivnut 5.0, M4 clearance 4.5, M4 rivnut 6.0, M4 tap drill 3.3 (6061 uprights),
+# M3 tap drill 2.5. FIX lists every fastener for the drawings and the assembly guide.
+FIX = []
+
+
+def body(name):
+    return find_body(root, name)
+
+
+def drill(names, solid):
+    for n in names:
+        b = body(n)
+        b.shape = b.shape.cut(solid).clean()
+
+
+def hx(x0, x1, y, z, d):
+    return cq.Solid.makeCylinder(d / 2, x1 - x0, cq.Vector(x0, y, z), cq.Vector(1, 0, 0))
+
+
+def hy(y0, y1, x, z, d):
+    return cq.Solid.makeCylinder(d / 2, y1 - y0, cq.Vector(x, y0, z), cq.Vector(0, 1, 0))
+
+
+def hz(z0, z1, x, y, d):
+    return cq.Solid.makeCylinder(d / 2, z1 - z0, cq.Vector(x, y, z0), cq.Vector(0, 0, 1))
+
+
+def fix(step, what, fastener, parts, xyz, rivnut_in=None):
+    FIX.append({'step': step, 'what': what, 'fastener': fastener, 'parts': parts, 'xyz': [round(v, 1) for v in xyz], 'rivnut_in': rivnut_in})
+
+
+for side, s in (('L', -1), ('R', 1)):
+    m = lambda x: s * x
+    # weapon module (M4): rung, riser, foot leg B into the tapped upright; riser leg into a rail-top rivnut; foot leg A 2 x M3
+    for _sd, nm, y, z in [w for w in WEAPON_BOLTS if w[0] == side]:
+        if nm.startswith('rung'):
+            drill(['Frame_Rail_' + side, 'Rung_Al_Bar_Solid_' + side], hx(min(m(UPR_OUT - 0.1), m(RAIL_X[1] + 1)), max(m(UPR_OUT - 0.1), m(RAIL_X[1] + 1)), y, z, 4.5))
+            fix(3, 'upright -> rung bar -> rail', 'M4x45 8.8 + washer (head outside the rail)', ['Frame_Rail_' + side, 'Rung_Al_Bar_Solid_' + side, 'Upright_6061_6mm_' + side], (m(52), y, z))
+        elif nm.startswith('riser'):
+            drill(['Upright_Riser_Angle_6061_' + side], hx(min(m(UPR_OUT - 0.1), m(UPR_OUT + ANG_T + 1)), max(m(UPR_OUT - 0.1), m(UPR_OUT + ANG_T + 1)), y, z, 4.5))
+            fix(3, 'upright -> riser angle', 'M4x10 8.8 + washer', ['Upright_Riser_Angle_6061_' + side, 'Upright_6061_6mm_' + side], (m(34.5), y, z))
+        else:
+            drill(['Upright_Foot_Angle_6061_' + side], hx(min(m(UPR_OUT - 0.1), m(UPR_OUT + ANG_T + 1)), max(m(UPR_OUT - 0.1), m(UPR_OUT + ANG_T + 1)), y, z, 4.5))
+            fix(3, 'upright -> foot angle', 'M4x10 8.8 + washer', ['Upright_Foot_Angle_6061_' + side, 'Upright_6061_6mm_' + side], (m(34.5), y, z))
+        drill(['Upright_6061_6mm_' + side], hx(min(m(UPR_IN - 0.1), m(UPR_OUT + 0.1)), max(m(UPR_IN - 0.1), m(UPR_OUT + 0.1)), y, z, 3.3))
+    drill(['Upright_Riser_Angle_6061_' + side], hz(RAIL_Z1 - 0.1, RAIL_Z1 + ANG_T + 0.1, m(52.0), RY, 4.5))
+    drill(['Frame_Rail_' + side], hz(RAIL_Z1 - WALL - 0.1, RAIL_Z1 + 0.1, m(52.0), RY, 6.0))
+    fix(3, 'riser angle -> rail top', 'M4x10 8.8 into an M4 rivnut', ['Upright_Riser_Angle_6061_' + side, 'Frame_Rail_' + side], (m(52), RY, RAIL_Z1), 'Frame_Rail_' + side)
+    yA0 = CROSS_Y[1] + TUBE - 12.0
+    yC = (yA0 + ANG_T + RUNG_Y[0] - 0.3) / 2
+    drill(['Upright_Foot_Angle_6061_' + side], hx(min(m(RAIL_X[0] - ANG_T - 0.1), m(RAIL_X[0] + 0.1)), max(m(RAIL_X[0] - ANG_T - 0.1), m(RAIL_X[0] + 0.1)), yC, ZM, 3.4))
+    drill(['Frame_Rail_' + side], hx(min(m(RAIL_X[0] - 0.1), m(RAIL_X[0] + WALL + 0.1)), max(m(RAIL_X[0] - 0.1), m(RAIL_X[0] + WALL + 0.1)), yC, ZM, 5.0))
+    fix(3, 'foot angle leg C -> rail inner face', 'M3x8 8.8 into an M3 rivnut', ['Upright_Foot_Angle_6061_' + side, 'Frame_Rail_' + side], (m(RAIL_X[0]), yC, ZM), 'Frame_Rail_' + side)
+    for x in (37.5, 42.5):
+        drill(['Upright_Foot_Angle_6061_' + side], hy(yA0 - 0.1, yA0 + ANG_T + 0.1, m(x), ZM, 3.4))
+        drill(['Frame_Bulkhead_Cross'], hy(yA0 - WALL - 0.1, yA0 + 0.1, m(x), ZM, 5.0))
+        fix(3, 'foot angle -> bulkhead cross front face', 'M3x8 8.8 into an M3 rivnut', ['Upright_Foot_Angle_6061_' + side, 'Frame_Bulkhead_Cross'], (m(x), yA0, ZM), 'Frame_Bulkhead_Cross')
+    # drive-motor tab legs: 2 x M3 rivnuts in the rail top
+    for yc in (FRONT_Y - 14.5, FRONT_Y + 14.5):
+        drill(['Tab_Drive_Motor_' + side], hz(RAIL_Z1 - 0.1, RAIL_Z1 + TAB + 0.1, m(51.0), yc, 3.4))
+        drill(['Frame_Rail_' + side], hz(RAIL_Z1 - WALL - 0.1, RAIL_Z1 + 0.1, m(51.0), yc, 5.0))
+        fix(2, 'drive-motor tab -> rail top', 'M3x8 into an M3 rivnut', ['Tab_Drive_Motor_' + side, 'Frame_Rail_' + side], (m(51), yc, RAIL_Z1), 'Frame_Rail_' + side)
+    # hinge base -> hinge beam bottom (3 x M3 rivnuts)
+    for x in (45.0, 55.0, 75.0):
+        drill(['Hinge_Base_5052_2mm_' + side], hz(FLOOR_Z0 - 0.1, RAIL_Z0 + 0.1, m(x), BEAM_Y[0] + TUBE / 2, 3.4))
+        drill(['Frame_Hinge_Beam_' + side], hz(RAIL_Z0 - 0.1, RAIL_Z0 + WALL + 0.1, m(x), BEAM_Y[0] + TUBE / 2, 5.0))
+        fix(4, 'hinge base -> hinge beam bottom', 'M3x6 countersunk into an M3 rivnut', ['Hinge_Base_5052_2mm_' + side, 'Frame_Hinge_Beam_' + side], (m(x), BEAM_Y[0] + TUBE / 2, RAIL_Z0), 'Frame_Hinge_Beam_' + side)
+    # battery-strap tabs: one M3 each into the rail inner wall
+    for y in (-50.0, -31.0):
+        drill(['Tab_Battery_Strap_%s_%d' % (side, -y)], hx(min(m(RAIL_X[0] - TAB - 0.1), m(RAIL_X[0] + 0.1)), max(m(RAIL_X[0] - TAB - 0.1), m(RAIL_X[0] + 0.1)), y, ZM, 3.4))
+        drill(['Frame_Rail_' + side], hx(min(m(RAIL_X[0] - 0.1), m(RAIL_X[0] + WALL + 0.1)), max(m(RAIL_X[0] - 0.1), m(RAIL_X[0] + WALL + 0.1)), y, ZM, 5.0))
+        fix(5, 'battery-strap tab -> rail inner face', 'M3x6 into an M3 rivnut', ['Tab_Battery_Strap_%s_%d' % (side, -y), 'Frame_Rail_' + side], (m(45), y, ZM), 'Frame_Rail_' + side)
+    # wall tabs: leg on the tube top (M3 rivnut); the PC side wall to the tab (M3 + nylock)
+    for nm, y0, tube in (('Rear', REAR_CROSS_Y, 'Frame_Rear_Cross'), ('Front', CROSS_Y[0], 'Frame_Bulkhead_Stub_' + side), ('Mid', MIDWALL_Y, 'Frame_Midwall_Stub_' + side)):
+        tab = 'Tab_Wall_%s_%s' % (nm, side)
+        drill([tab], hz(RAIL_Z1 - 0.1, RAIL_Z1 + TAB + 0.1, m(WALL_X - SKIN - TAB - 4.0), y0 + TUBE / 2, 3.4))
+        drill([tube], hz(RAIL_Z1 - WALL - 0.1, RAIL_Z1 + 0.1, m(WALL_X - SKIN - TAB - 4.0), y0 + TUBE / 2, 5.0))
+        fix(1, 'wall tab -> tube top', 'M3x6 into an M3 rivnut', [tab, tube], (m(WALL_X - SKIN - TAB - 4), y0 + TUBE / 2, RAIL_Z1), tube)
+        drill(['Skin_PC2_Side_Wall_' + side], hx(min(m(WALL_X - SKIN - 0.1), m(WALL_X + 0.1)), max(m(WALL_X - SKIN - 0.1), m(WALL_X + 0.1)), y0 + TUBE / 2, RAIL_Z1 + 4, 3.4))
+        fix(7, 'PC side wall -> wall tab', 'M3x8 A2 + nylock', ['Skin_PC2_Side_Wall_' + side, tab], (m(WALL_X), y0 + TUBE / 2, RAIL_Z1 + 4))
+    # floor -> rail bottom (M3 countersunk into rivnuts)
+    for y in (-80.0, -30.0, 30.0, 75.0):
+        if y == 30.0:
+            continue                                         # drive-motor bay: wheel cut-out in the floor
+        drill(['Skin_PC2_Floor'], hz(FLOOR_Z0 - 0.1, RAIL_Z0 + 0.1, m(52.0), y, 3.4))
+        drill(['Frame_Rail_' + side], hz(RAIL_Z0 - 0.1, RAIL_Z0 + WALL + 0.1, m(52.0), y, 5.0))
+        fix(7, 'PC floor -> rail bottom', 'M3x6 countersunk A2 into an M3 rivnut', ['Skin_PC2_Floor', 'Frame_Rail_' + side], (m(52), y, RAIL_Z0), 'Frame_Rail_' + side)
+# floor -> rear cross and bulkhead cross; rear wall -> rear cross
+for x in (-30.0, 30.0):
+    drill(['Skin_PC2_Floor'], hz(FLOOR_Z0 - 0.1, RAIL_Z0 + 0.1, x, REAR_CROSS_Y + TUBE / 2, 3.4))
+    drill(['Frame_Rear_Cross'], hz(RAIL_Z0 - 0.1, RAIL_Z0 + WALL + 0.1, x, REAR_CROSS_Y + TUBE / 2, 5.0))
+    fix(7, 'PC floor -> rear cross bottom', 'M3x6 countersunk A2 into an M3 rivnut', ['Skin_PC2_Floor', 'Frame_Rear_Cross'], (x, REAR_CROSS_Y + TUBE / 2, RAIL_Z0), 'Frame_Rear_Cross')
+    drill(['Skin_PC2_Floor'], hz(FLOOR_Z0 - 0.1, RAIL_Z0 + 0.1, x, CROSS_Y[0] + TUBE / 2, 3.4))
+    drill(['Frame_Bulkhead_Cross'], hz(RAIL_Z0 - 0.1, RAIL_Z0 + WALL + 0.1, x, CROSS_Y[0] + TUBE / 2, 5.0))
+    fix(7, 'PC floor -> bulkhead cross bottom', 'M3x6 countersunk A2 into an M3 rivnut', ['Skin_PC2_Floor', 'Frame_Bulkhead_Cross'], (x, CROSS_Y[0] + TUBE / 2, RAIL_Z0), 'Frame_Bulkhead_Cross')
+for x in (-60.0, 0.0, 60.0):
+    drill(['Skin_PC2_Rear_Wall'], hy(REAR_Y - 0.1, REAR_Y + SKIN + 0.1, x, ZM, 3.4))
+    drill(['Frame_Rear_Cross'], hy(REAR_CROSS_Y - 0.1, REAR_CROSS_Y + WALL + 0.1, x, ZM, 5.0))
+    fix(7, 'PC rear wall -> rear cross', 'M3x6 A2 into an M3 rivnut', ['Skin_PC2_Rear_Wall', 'Frame_Rear_Cross'], (x, REAR_Y, ZM), 'Frame_Rear_Cross')
+# clamp post: legs to the motor cross and the clamp bar front faces
+for x in (-4.0, 4.0):
+    for zc, tube in ((ZM, 'Frame_Motor_Cross'), (45.0 + TUBE / 2, 'Frame_Clamp_Bar')):
+        drill(['Clamp_Drive_Motor_Post'], hy(MC_FRONT - 0.1, MC_FRONT + TAB + 0.1, x, zc, 3.4))
+        drill([tube], hy(MC_FRONT - WALL - 0.1, MC_FRONT + 0.1, x, zc, 5.0))
+        fix(2, 'clamp post -> %s front face' % ('motor cross' if tube.endswith('Cross') else 'clamp bar'), 'M3x6 into an M3 rivnut', ['Clamp_Drive_Motor_Post', tube], (x, MC_FRONT, zc), tube)
+# electronics plate on the 4 nylon standoffs
+for xs in (-55.0, 55.0):
+    for y in (-52.0, -8.0):
+        drill(['Electronics_Plate_PC2'], hz(37.0, 40.0, xs, y, 3.4))
+        fix(6, 'electronics plate -> nylon standoff', 'M3x6 nylon', ['Electronics_Plate_PC2'], (xs, y, 39.6))
+
+# frame corner cleats: 20 x 20 x 2 Al angle, 10 mm legs, z 7.4..17.4, one M3 per leg into a rivnut in each tube
+CLEAT_Z = (RAIL_Z0 + 1.4, RAIL_Z0 + 11.4)
+
+
+def cleat(name, cx, cy, dx, dy, tube_x_face, tube_y_face):
+    """Inside corner at (cx, cy): leg A on the y-face (plate normal y) runs dx*10 in x; leg B on the x-face runs dy*10 in y."""
+    la = block(*sorted((cx, cx + dx * 10.0)), *sorted((cy, cy + dy * TAB)), *CLEAT_Z)
+    lb = block(*sorted((cx, cx + dx * TAB)), *sorted((cy, cy + dy * 10.0)), *CLEAT_Z)
+    c = la.fuse(lb).clean()
+    za = (CLEAT_Z[0] + CLEAT_Z[1]) / 2
+    c = c.cut(hy(min(cy, cy + dy * TAB) - 0.1, max(cy, cy + dy * TAB) + 0.1, cx + dx * 6.5, za, 3.4))
+    c = c.cut(hx(min(cx, cx + dx * TAB) - 0.1, max(cx, cx + dx * TAB) + 0.1, cy + dy * 6.5, za, 3.4))
+    add(name, c, 'al_tab', TAB)
+    drill([tube_y_face], hy(min(cy, cy - dy * WALL) - 0.1, max(cy, cy - dy * WALL) + 0.1, cx + dx * 6.5, za, 5.0))
+    drill([tube_x_face], hx(min(cx, cx - dx * WALL) - 0.1, max(cx, cx - dx * WALL) + 0.1, cy + dy * 6.5, za, 5.0))
+    fix(1, 'corner cleat ' + name, '2 x M3x6 into M3 rivnuts', [name, tube_x_face, tube_y_face], (cx, cy, za), tube_x_face + ' + ' + tube_y_face)
+
+
+for side, s in (('L', -1), ('R', 1)):
+    rail = 'Frame_Rail_' + side
+    cleat('Cleat_RearCross_' + side, s * RAIL_X[0], REAR_CROSS_Y + TUBE, -s, 1, rail, 'Frame_Rear_Cross')
+    if side == 'R':          # L: the weapon motor mount sits in that corner; the foot angle's leg C ties cross + rail there
+        cleat('Cleat_BulkCross_' + side, s * RAIL_X[0], CROSS_Y[0], -s, -1, rail, 'Frame_Bulkhead_Cross')
+    cleat('Cleat_MotorCross_Rear_' + side, s * RAIL_X[0], MOTOR_CROSS_Y[0], -s, -1, rail, 'Frame_Motor_Cross')
+    cleat('Cleat_BulkStub_' + side, s * RAIL_X[1], CROSS_Y[0] + TUBE, s, 1, rail, 'Frame_Bulkhead_Stub_' + side)
+    cleat('Cleat_HingeBeam_' + side, s * RAIL_X[1], BEAM_Y[0], s, -1, rail, 'Frame_Hinge_Beam_' + side)
+    cleat('Cleat_Midwall_' + side, s * RAIL_X[1], MIDWALL_Y, s, -1, rail, 'Frame_Midwall_Stub_' + side)
+
+# lid corner angles (12 x 12 x 1.5 Al, bought): vertical leg on the side wall's inner face, top leg under the lid
+for side, s in (('L', -1), ('R', 1)):
+    for nm, y0 in (('Rear', REAR_Y + SKIN + 1.0), ('Front', CROSS_Y[1] - 13.0)):
+        xw = WALL_X - SKIN
+        v = block(*sorted((s * xw, s * (xw - 1.5))), y0, y0 + 12.0, LID_Z0 - 12.0, LID_Z0)
+        h = block(*sorted((s * xw, s * (xw - 12.0))), y0, y0 + 12.0, LID_Z0 - 1.5, LID_Z0)
+        ang = v.fuse(h).clean()
+        ang = ang.cut(hz(LID_Z0 - 2, LID_Z0 + 0.1, s * (xw - 7.0), y0 + 6.0, 3.4))
+        ang = ang.cut(hx(min(s * xw, s * (xw - 1.5)) - 0.1, max(s * xw, s * (xw - 1.5)) + 0.1, y0 + 6.0, LID_Z0 - 7.0, 3.4))
+        add('Lid_Angle_%s_%s' % (nm, side), ang, 'al_tab', 1.5)
+        drill(['Skin_PC2_Lid'], hz(LID_Z0 - 0.1, LID_Z0 + SKIN + 0.1, s * (xw - 7.0), y0 + 6.0, 3.4))
+        drill(['Skin_PC2_Side_Wall_' + side], hx(min(s * xw, s * WALL_X) - 0.1, max(s * xw, s * WALL_X) + 0.1, y0 + 6.0, LID_Z0 - 7.0, 3.4))
+        fix(8, 'lid corner angle -> side wall', 'M3x8 A2 + nylock', ['Lid_Angle_%s_%s' % (nm, side), 'Skin_PC2_Side_Wall_' + side], (s * WALL_X, y0 + 6, LID_Z0 - 7))
+        fix(8, 'lid -> lid corner angle', 'M3x6 A2 + nylock', ['Skin_PC2_Lid', 'Lid_Angle_%s_%s' % (nm, side)], (s * (xw - 7), y0 + 6, LID_Z0 + SKIN))
 
 # ---------------------------------------------------------------- checks
 def bbox_overlap(a_, b_, tol=0.01):
@@ -480,7 +647,7 @@ for i, a_ in enumerate(metal):
                       'contact_centre_mm': [round(v, 1) for v in best[1].Center().toTuple()],
                       'contact_size_mm': sorted((round(bb.xlen, 1), round(bb.ylen, 1), round(bb.zlen, 1)), reverse=True)[:2]})
 joined = {w['a'] for w in welds} | {w['b'] for w in welds}
-floating = [b.name for b in metal if b.name not in joined and not b.name.startswith('Weapon_Motor_Mount')]
+floating = [b.name for b in metal if b.name not in joined and not b.name.startswith(('Weapon_Motor_Mount', 'Lid_Angle'))]   # lid angles bolt to the PC walls
 
 # rotor gap: discs/hub/spacers must clear the uprights' inner faces and everything welded
 rotor = [find_body(root, n) for n in ('Beater_Disc_L', 'Beater_Disc_R')] + [find_body(root, 'Rotor_Pipe_Steel_3-4in_L40')]
@@ -509,11 +676,12 @@ for b in new:
 rows.append({'part': 'rotor pipe-to-disc welds (ARC)', 'mass_g': ROTOR_WELD_G, 'centroid_mm': [0, 95, 32], 'method': 'ASSUMED'})
 n_tt = sum(1 for w in welds if w['a'].startswith('Frame_') and w['b'].startswith('Frame_'))
 n_tab = len(welds) - n_tt
-rows.append({'part': 'bolted-joint hardware: %d tube-tube cleats, %d tab joints' % (n_tt, n_tab), 'mass_g': round(n_tt * JOINT_G['tube_tube'] + n_tab * JOINT_G['tab_tube'], 1),
-             'centroid_mm': [0, -10, 12], 'method': 'ASSUMED %s g per joint' % JOINT_G})
-rows.append({'part': 'rivnuts M3 + screws x%d' % RIVNUTS, 'mass_g': RIVNUTS * 1.4, 'centroid_mm': [0, -20, 20], 'method': 'ASSUMED 0.9 + 0.5 g'})
+
+n_riv = sum(1 if not f['fastener'].startswith('2 x') else 2 for f in FIX if f['rivnut_in'])
+n_bolt = sum(2 if f['fastener'].startswith('2 x') else 1 for f in FIX)
+rows.append({'part': 'fasteners from the fixing list: %d bolts, %d rivnuts' % (n_bolt, n_riv), 'mass_g': round(n_bolt * 0.7 + n_riv * 0.9, 1),
+             'centroid_mm': [0, -10, 20], 'method': 'counted (FIX); ASSUMED 0.7 g per M3/M4 screw + nut/washer, 0.9 g per rivnut'})
 rows.append({'part': 'switch panel mount (bought)', 'mass_g': SWITCH_MOUNT_G, 'centroid_mm': [80, -30, 25], 'method': 'ASSUMED'})
-rows.append({'part': 'lid corner angles, bought Al x%d + M3' % LID_ANGLES, 'mass_g': 1.5 * LID_ANGLES + 4 * 0.5, 'centroid_mm': [0, -24, 58], 'method': 'ASSUMED 1.5 g each'})
 rows.append({'part': 'wall-tab M3 screws + nylocks x4, skid screws x2', 'mass_g': 6 * 0.9, 'centroid_mm': [0, 0, 15], 'method': 'ASSUMED'})
 total = sum(r['mass_g'] for r in rows)
 cg = sum(np.array(r['centroid_mm']) * r['mass_g'] for r in rows) / total
@@ -545,10 +713,10 @@ report = {
     'removed_from_r3': sorted(removed), 'invalid_bodies': invalid, 'frame_members_not_touching': floating, 'edge_only_contacts': edge_only,
     'bolted_contacts': welds, 'weapon_joints': JOINTS, 'interference': interference, 'rotor_sweep_hits': sweep_hits, 'wedgelet_swing': swing,
     'ear_yz': EAR_YZ, 'drill_list': DRILL_AFTER_WELD, 'midwall_y': MIDWALL_Y,
-    'weapon_bolts_yz': WEAPON_BOLTS, 'weapon_angle_t_mm': ANG_T, 'foot_leg_b_y': [CROSS_Y[1] + TUBE - 12.0, RUNG_Y[0] - 0.3],
+    'weapon_bolts_yz': WEAPON_BOLTS, 'fixings': FIX, 'weapon_angle_t_mm': ANG_T, 'foot_leg_b_y': [CROSS_Y[1] + TUBE - 12.0, RUNG_Y[0] - 0.3],
     'skirt_brackets_flat': dict(skirt_brackets),
     'mass': {'total_g': round(total, 1), 'margin_to_2000_g': round(2000 - total, 1), 'margin_to_1950_target_g': round(1950 - total, 1),
-             'cg_mm': cg.round(2).tolist(), 'groups_g': groups, 'new_steel_g': round(steel_g, 1)},
+             'cg_mm': cg.round(2).tolist(), 'groups_g': groups, 'new_steel_g': round(steel_g, 1), 'n_fixings': len(FIX)},
     'support_2wd': {'drive_axle_y': FRONT_Y, 'other_support': 'nose skid y 69' if other == NOSE_SKID_Y else 'rear skid y %.0f' % REAR_SKID_Y,
                     'drive_wheel_load_pct': round(100 * wheel_frac, 1), 'push_N_mu0.6': round(push, 2)},
     'tube_cut_list_mm': cut_list, 'tube_total_mm': round(sum(c['length_mm'] for c in cut_list), 1), 'sheet_list': sheet_list,
