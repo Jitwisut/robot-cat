@@ -143,8 +143,18 @@ for F, case in ((2600.0, 'DT3 2.6 kN'), (5200.0, 'DT3 5.2 kN check')):
     S = F * share / 2
     chk('Foot leg A -> cross, 2 x M3 rivnut (takes up to S/2, worst case)', case, S / 2 / 2,
         min(BOLT_M3_88, 2.4 * 3 * 2.0 * FU_T, 1500.0), 'N', 'M3 steel rivnut pull/shear in a 2 mm wall ~1.5 kN, ASSUMED')
-# drive-motor tab: 250 g drop of the JB361 (~45 g ASSUMED) + wheel (hub ~13 g PETG + O-rings 12 g) on 2 x M3 legs
-chk('Drive-motor tab legs, 2 x M3 rivnut, 0.5 m drop 250 g', 'DT1 drop', (0.045 + 0.025) * 9.81 * 250 / 2, 1500.0, 'N')
+# drive-motor tab: 250 g drop of the JB359 (110 g JB361 + 4 g, as the build) + wheel (hub ~13 g PETG + O-rings 12 g) on 2 x M3 legs
+F_leg = (0.114 + 0.025) * 9.81 * 250 / 2
+chk('Drive-motor tab legs, 2 x M3 rivnut, 0.5 m drop 250 g', 'DT1 drop', F_leg, 1500.0, 'N')
+# The drop load is normal to the legs: down, the plate bears straight on the rail top through the leg (bolts unloaded); up
+# (landing inverted / rebound) the leg pulls on its rivnut and bends as a cantilever from the bolt head to the plate.
+# Leg 8.5 mm wide x 2.0 5052-H32 (Rp0.2 min 130 MPa, EN 485-2), plastic modulus b t^2 / 4. Bend at |x| 56, bolt at |x| 51,
+# M3 button head (ISO 7380) D5.7, so the head edge is at |x| 53.85.
+leg_w = min(b - a for a, b in rep['drive_tab_legs_y'])
+Mp_leg = leg_w * 2.0 ** 2 / 4 * 130.0
+chk('Drive-motor tab leg bending, head edge -> plate (arm 2.15 mm, %.1f x 2.0 5052-H32)' % leg_w, 'DT1 drop', F_leg * 2.15, Mp_leg, 'N mm',
+    'arm from the M3 head edge (|x| 53.85) to the plate (56); bound with the arm from the bolt centre (5 mm): SF %.2f' % (Mp_leg / (F_leg * 5.0)))
+chk('Drive-motor tab M3 button-head pull-through (D5.7 head, 2.0 5052)', 'DT1 drop', F_leg, math.pi * 5.7 * 2.0 * 0.6 * FU_5052, 'N')
 # wedgelet hinge tabs: a wedgelet hit (0.2 x 2.6 kN, ASSUMED) shared by 3 tabs per side; leg M3 at e 2.25 in 2 mm 5052
 F_tab = 0.2 * 2600.0 / 3
 chk('Hinge tab leg, 1 x M3 rivnut (e 2.25 mm in 2.0 5052), wedgelet hit / 3', 'DT3 wedgelet', F_tab,

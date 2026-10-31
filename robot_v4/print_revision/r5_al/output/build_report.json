@@ -46,10 +46,7 @@
   "Wheel_Tyre_TPU_Rear_L",
   "Wheel_Tyre_TPU_Rear_R"
  ],
- "invalid_bodies": [
-  "Tab_Drive_Motor_L",
-  "Tab_Drive_Motor_R"
- ],
+ "invalid_bodies": [],
  "frame_members_not_touching": [],
  "edge_only_contacts": [],
  "bolted_contacts": [
@@ -308,15 +305,15 @@
   {
    "a": "Frame_Rail_L",
    "b": "Tab_Drive_Motor_L",
-   "contact_area_mm2": 95.9,
+   "contact_area_mm2": 188.2,
    "contact_centre_mm": [
-    -55.0,
+    -53.3,
     18.0,
     18.7
    ],
    "contact_size_mm": [
-    32.0,
-    12.0
+    33.0,
+    11.5
    ]
   },
   {
@@ -630,15 +627,15 @@
   {
    "a": "Frame_Rail_R",
    "b": "Tab_Drive_Motor_R",
-   "contact_area_mm2": 95.9,
+   "contact_area_mm2": 188.2,
    "contact_centre_mm": [
-    55.0,
+    53.3,
     18.0,
     18.7
    ],
    "contact_size_mm": [
-    32.0,
-    12.0
+    33.0,
+    11.5
    ]
   },
   {
@@ -1276,7 +1273,7 @@
   {
    "part": "Tab_Drive_Motor_L",
    "d_mm": 3.6,
-   "what": "JB361 M3 mount",
+   "what": "JB359 M3 mount",
    "yz_mm": [
     9.5,
     32.0
@@ -1285,7 +1282,7 @@
   {
    "part": "Tab_Drive_Motor_L",
    "d_mm": 3.6,
-   "what": "JB361 M3 mount",
+   "what": "JB359 M3 mount",
    "yz_mm": [
     26.5,
     32.0
@@ -1294,7 +1291,7 @@
   {
    "part": "Tab_Drive_Motor_L",
    "d_mm": 5.5,
-   "what": "JB361 gearbox screw head",
+   "what": "JB359 gearbox screw head",
    "yz_mm": [
     18.0,
     23.5
@@ -1303,7 +1300,7 @@
   {
    "part": "Tab_Drive_Motor_L",
    "d_mm": 5.5,
-   "what": "JB361 gearbox screw head",
+   "what": "JB359 gearbox screw head",
    "yz_mm": [
     18.0,
     40.5
@@ -1312,7 +1309,7 @@
   {
    "part": "Tab_Drive_Motor_R",
    "d_mm": 3.6,
-   "what": "JB361 M3 mount",
+   "what": "JB359 M3 mount",
    "yz_mm": [
     9.5,
     32.0
@@ -1321,7 +1318,7 @@
   {
    "part": "Tab_Drive_Motor_R",
    "d_mm": 3.6,
-   "what": "JB361 M3 mount",
+   "what": "JB359 M3 mount",
    "yz_mm": [
     26.5,
     32.0
@@ -1330,7 +1327,7 @@
   {
    "part": "Tab_Drive_Motor_R",
    "d_mm": 5.5,
-   "what": "JB361 gearbox screw head",
+   "what": "JB359 gearbox screw head",
    "yz_mm": [
     18.0,
     23.5
@@ -1339,7 +1336,7 @@
   {
    "part": "Tab_Drive_Motor_R",
    "d_mm": 5.5,
-   "what": "JB361 gearbox screw head",
+   "what": "JB359 gearbox screw head",
    "yz_mm": [
     18.0,
     40.5
@@ -1495,14 +1492,14 @@
   {
    "step": 2,
    "what": "drive-motor tab -> rail top",
-   "fastener": "M3x8 into an M3 rivnut",
+   "fastener": "M3x8 button head (ISO 7380) into an M3 rivnut",
    "parts": [
     "Tab_Drive_Motor_L",
     "Frame_Rail_L"
    ],
    "xyz": [
     -51,
-    3.5,
+    5.8,
     18.7
    ],
    "rivnut_in": "Frame_Rail_L"
@@ -1510,14 +1507,14 @@
   {
    "step": 2,
    "what": "drive-motor tab -> rail top",
-   "fastener": "M3x8 into an M3 rivnut",
+   "fastener": "M3x8 button head (ISO 7380) into an M3 rivnut",
    "parts": [
     "Tab_Drive_Motor_L",
     "Frame_Rail_L"
    ],
    "xyz": [
     -51,
-    32.5,
+    30.2,
     18.7
    ],
    "rivnut_in": "Frame_Rail_L"
@@ -1841,14 +1838,14 @@
   {
    "step": 2,
    "what": "drive-motor tab -> rail top",
-   "fastener": "M3x8 into an M3 rivnut",
+   "fastener": "M3x8 button head (ISO 7380) into an M3 rivnut",
    "parts": [
     "Tab_Drive_Motor_R",
     "Frame_Rail_R"
    ],
    "xyz": [
     51,
-    3.5,
+    5.8,
     18.7
    ],
    "rivnut_in": "Frame_Rail_R"
@@ -1856,14 +1853,14 @@
   {
    "step": 2,
    "what": "drive-motor tab -> rail top",
-   "fastener": "M3x8 into an M3 rivnut",
+   "fastener": "M3x8 button head (ISO 7380) into an M3 rivnut",
    "parts": [
     "Tab_Drive_Motor_R",
     "Frame_Rail_R"
    ],
    "xyz": [
     51,
-    32.5,
+    30.2,
     18.7
    ],
    "rivnut_in": "Frame_Rail_R"
@@ -2601,6 +2598,24 @@
   62.7,
   71.7
  ],
+ "drive_tab_legs_y": [
+  [
+   1.5,
+   10
+  ],
+  [
+   26,
+   34.5
+  ]
+ ],
+ "drive_tab_holes_y": [
+  5.75,
+  30.25
+ ],
+ "drive_tab_bolt_clearance_mm": {
+  "leg_inner_edge_to_can": 0.9,
+  "m3_head_top_to_can (incl. rivnut flange)": 0.61
+ },
  "skirt_brackets_flat": {
   "Skirt_Bracket_L_y-82": {
    "width": 15.0,
@@ -2703,18 +2718,18 @@
   }
  },
  "mass": {
-  "total_g": 1788.0,
-  "margin_to_2000_g": 212.0,
-  "margin_to_1950_target_g": 162.0,
+  "total_g": 1797.5,
+  "margin_to_2000_g": 202.5,
+  "margin_to_1950_target_g": 152.5,
   "cg_mm": [
    -1.36,
-   22.26,
-   27.82
+   22.23,
+   27.83
   ],
   "groups_g": {
-   "R3 parts kept + bought": 1186.6,
+   "R3 parts kept + bought": 1194.6,
    "frame tubes (Al)": 208.8,
-   "Al plates / angles": 74.1,
+   "Al plates / angles": 75.5,
    "PETG prints (ex-lathe)": 40.4,
    "rotor pipe (steel)": 55.4,
    "PC skins": 223.5
@@ -2726,7 +2741,11 @@
   "drive_axle_y": 18,
   "other_support": "nose skid y 69",
   "drive_wheel_load_pct": 91.7,
-  "push_N_mu0.6": 7.69
+  "push_N_mu0.6": 9.41,
+  "motor": "JB359 25GA-370 12V 150 rpm",
+  "F_motor_per_wheel_N_ESTIMATE": 9.58,
+  "traction_cap_per_wheel_N": 4.85,
+  "speed_noload_m_s": 0.5
  },
  "tube_cut_list_mm": [
   {
@@ -2797,10 +2816,10 @@
    "material": "al_tab",
    "thickness_mm": 2.0,
    "blank_mm": [
-    32.0,
+    33.0,
     32.0
    ],
-   "mass_g": 5.09
+   "mass_g": 5.8
   },
   {
    "part": "Tab_Hinge_L1",
@@ -2887,10 +2906,10 @@
    "material": "al_tab",
    "thickness_mm": 2.0,
    "blank_mm": [
-    32.0,
+    33.0,
     32.0
    ],
-   "mass_g": 5.09
+   "mass_g": 5.8
   },
   {
    "part": "Tab_Hinge_R1",
@@ -3608,24 +3627,24 @@
    "method": "estimated CAD volume/density"
   },
   {
-   "part": "JGA25_370_400rpm_Front_L",
+   "part": "JGA25_370_150rpm_Front_L",
    "material": "purchased",
    "mass_g": 110,
    "centroid_mm": [
-    -31.100000000000012,
-    18.0,
-    32.0
+    -30.0,
+    17.999999999999996,
+    31.999999999999996
    ],
    "method": "nominal, unverified"
   },
   {
-   "part": "JGA25_370_400rpm_Front_R",
+   "part": "JGA25_370_150rpm_Front_R",
    "material": "purchased",
    "mass_g": 110,
    "centroid_mm": [
-    31.1,
+    30.0,
     17.999999999999996,
-    32.0
+    31.999999999999996
    ],
    "method": "nominal, unverified"
   },
@@ -3849,7 +3868,7 @@
    "mass_g": 40.12,
    "centroid_mm": [
     -52.40052602457779,
-    -5.647512706006946,
+    -5.647512706006947,
     12.343135975453562
    ],
    "method": "CAD volume x density"
@@ -3882,7 +3901,7 @@
    "mass_g": 40.014,
    "centroid_mm": [
     52.41483630828301,
-    -5.777743510752556,
+    -5.7777435107525505,
     12.342985297478837
    ],
    "method": "CAD volume x density"
@@ -3923,11 +3942,11 @@
   {
    "part": "Tab_Drive_Motor_L",
    "material": "al_tab",
-   "mass_g": 5.087,
+   "mass_g": 5.804,
    "centroid_mm": [
-    -56.72801537752828,
+    -56.23731512899931,
     17.999999999999996,
-    34.37719427460895
+    33.012445929659165
    ],
    "method": "CAD volume x density"
   },
@@ -4022,11 +4041,11 @@
   {
    "part": "Tab_Drive_Motor_R",
    "material": "al_tab",
-   "mass_g": 5.087,
+   "mass_g": 5.804,
    "centroid_mm": [
-    56.7280153775283,
-    18.00000000000001,
-    34.377194274608996
+    56.237315128999334,
+    17.999999999999996,
+    33.01244592965917
    ],
    "method": "CAD volume x density"
   },
@@ -4165,44 +4184,44 @@
   {
    "part": "Pad_Drive_Motor_EPDM_L",
    "material": "EPDM",
-   "mass_g": 0.081,
+   "mass_g": 0.104,
    "centroid_mm": [
-    -10.100000000000001,
+    -9.0,
     16.0,
-    19.1
+    19.099999999999998
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Pad_Drive_Motor_Top_EPDM_L",
    "material": "EPDM",
-   "mass_g": 0.051,
+   "mass_g": 0.065,
    "centroid_mm": [
-    -10.100000000000001,
+    -9.0,
     16.0,
-    44.75
+    44.750000000000014
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Pad_Drive_Motor_EPDM_R",
    "material": "EPDM",
-   "mass_g": 0.081,
+   "mass_g": 0.104,
    "centroid_mm": [
-    10.100000000000001,
+    9.0,
     16.0,
-    19.1
+    19.099999999999998
    ],
    "method": "CAD volume x density"
   },
   {
    "part": "Pad_Drive_Motor_Top_EPDM_R",
    "material": "EPDM",
-   "mass_g": 0.051,
+   "mass_g": 0.065,
    "centroid_mm": [
-    10.100000000000001,
+    9.0,
     16.0,
-    44.75
+    44.750000000000014
    ],
    "method": "CAD volume x density"
   },
@@ -4942,6 +4961,16 @@
     57.47343330859372
    ],
    "method": "CAD volume x density"
+  },
+  {
+   "part": "drive motors: 2 mm longer gearbox x2 (JB359 vs JB361)",
+   "mass_g": 8.0,
+   "centroid_mm": [
+    0,
+    18,
+    32
+   ],
+   "method": "ASSUMED"
   },
   {
    "part": "rotor pipe-to-disc welds (ARC)",

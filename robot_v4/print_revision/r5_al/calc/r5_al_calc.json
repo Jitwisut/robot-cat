@@ -1,12 +1,12 @@
 {
  "inputs": {
-  "M_kg": 1.788,
+  "M_kg": 1.7975,
   "aluminium_6063_T5_min_MPa": [
    110.0,
    150.0
   ],
   "m_weapon_kg": 0.4005,
-  "body_share": 0.776
+  "body_share": 0.7772
  },
  "checks": [
   {
@@ -52,17 +52,17 @@
   {
    "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 2.6 kN fore-aft (-y)",
-   "load": 829.83,
+   "load": 831.1,
    "capacity": 3744.0,
    "unit": "N",
-   "sf": 4.51,
+   "sf": 4.5,
    "pass": true,
    "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
   },
   {
    "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 2.6 kN up (+z)",
-   "load": 1054.05,
+   "load": 1055.66,
    "capacity": 3744.0,
    "unit": "N",
    "sf": 3.55,
@@ -72,7 +72,7 @@
   {
    "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 2.6 kN down (-z)",
-   "load": 1054.05,
+   "load": 1055.66,
    "capacity": 3744.0,
    "unit": "N",
    "sf": 3.55,
@@ -82,47 +82,47 @@
   {
    "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 5.2 kN check fore-aft (-y)",
-   "load": 1659.66,
+   "load": 1662.19,
    "capacity": 3744.0,
    "unit": "N",
-   "sf": 2.26,
+   "sf": 2.25,
    "pass": true,
    "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
   },
   {
    "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 5.2 kN check up (+z)",
-   "load": 2108.1,
+   "load": 2111.31,
    "capacity": 3744.0,
    "unit": "N",
-   "sf": 1.78,
+   "sf": 1.77,
    "pass": true,
    "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
   },
   {
    "check": "Upright -> frame bolt group (3 x M4 8.8 per side, worst bolt)",
    "case": "DT3 5.2 kN check down (-z)",
-   "load": 2108.1,
+   "load": 2111.31,
    "capacity": 3744.0,
    "unit": "N",
-   "sf": 1.78,
+   "sf": 1.77,
    "pass": true,
    "note": "bolt at y 78.3 z 30.0; governed by riser leg tear-out to its top (z 36)"
   },
   {
    "check": "Foot leg A -> cross, 2 x M3 rivnut (takes up to S/2, worst case)",
    "case": "DT3 2.6 kN",
-   "load": 252.2,
+   "load": 252.58,
    "capacity": 1500.0,
    "unit": "N",
-   "sf": 5.95,
+   "sf": 5.94,
    "pass": true,
    "note": "M3 steel rivnut pull/shear in a 2 mm wall ~1.5 kN, ASSUMED"
   },
   {
    "check": "Foot leg A -> cross, 2 x M3 rivnut (takes up to S/2, worst case)",
    "case": "DT3 5.2 kN check",
-   "load": 504.39,
+   "load": 505.16,
    "capacity": 1500.0,
    "unit": "N",
    "sf": 2.97,
@@ -132,10 +132,30 @@
   {
    "check": "Drive-motor tab legs, 2 x M3 rivnut, 0.5 m drop 250 g",
    "case": "DT1 drop",
-   "load": 85.84,
+   "load": 170.45,
    "capacity": 1500.0,
    "unit": "N",
-   "sf": 17.47,
+   "sf": 8.8,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "Drive-motor tab leg bending, head edge -> plate (arm 2.15 mm, 8.5 x 2.0 5052-H32)",
+   "case": "DT1 drop",
+   "load": 366.46,
+   "capacity": 1105.0,
+   "unit": "N mm",
+   "sf": 3.02,
+   "pass": true,
+   "note": "arm from the M3 head edge (|x| 53.85) to the plate (56); bound with the arm from the bolt centre (5 mm): SF 1.30"
+  },
+  {
+   "check": "Drive-motor tab M3 button-head pull-through (D5.7 head, 2.0 5052)",
+   "case": "DT1 drop",
+   "load": 170.45,
+   "capacity": 4512.58,
+   "unit": "N",
+   "sf": 26.47,
    "pass": true,
    "note": ""
   },
@@ -162,20 +182,20 @@
   {
    "check": "Frame corner rail->cross (2 cleats x 2 M3, worst bolt = S/2)",
    "case": "DT3 2.6 kN",
-   "load": 504.39,
+   "load": 505.16,
    "capacity": 3096.0,
    "unit": "N",
-   "sf": 6.14,
+   "sf": 6.13,
    "pass": true,
    "note": ""
   },
   {
    "check": "Frame corner rail->cross (2 cleats x 2 M3, worst bolt = S/2)",
    "case": "DT3 5.2 kN check",
-   "load": 1008.78,
+   "load": 1010.32,
    "capacity": 3096.0,
    "unit": "N",
-   "sf": 3.07,
+   "sf": 3.06,
    "pass": true,
    "note": ""
   },
@@ -337,7 +357,7 @@
   {
    "grade": "6061-T6",
    "case": "DT3 2.6 kN fore-aft (-y)",
-   "sf": 3.44
+   "sf": 3.43
   },
   {
    "grade": "6063-T5",
@@ -367,7 +387,7 @@
   {
    "grade": "6061-T6",
    "case": "DT3 5.2 kN check up (+z) [non-credible direction]",
-   "sf": 1.12
+   "sf": 1.11
   }
  ],
  "rail_section": {
@@ -443,18 +463,18 @@
   "why_not_printed_hub": "a PETG core between the discs would carry ~122 N m: torsion of a D30/D11 PETG core 24 MPa vs ~30 MPa, and 4 x M4 bolts across a 40 mm gap would bend (M ~ 47 N m vs ~3.6 N m) -> buy 3/4\" pipe and weld instead"
  },
  "mass": {
-  "R5_AL_g": 1788.0,
+  "R5_AL_g": 1797.5,
   "R4_DIY_g": 1979.8,
-  "delta_g": -191.8,
+  "delta_g": -182.3,
   "groups_g": {
-   "R3 parts kept + bought": 1186.6,
+   "R3 parts kept + bought": 1194.6,
    "frame tubes (Al)": 208.8,
-   "Al plates / angles": 74.1,
+   "Al plates / angles": 75.5,
    "PETG prints (ex-lathe)": 40.4,
    "rotor pipe (steel)": 55.4,
    "PC skins": 223.5
   },
-  "margin_to_2000_g": 212.0
+  "margin_to_2000_g": 202.5
  },
  "summary": {
   "design_fails": [],

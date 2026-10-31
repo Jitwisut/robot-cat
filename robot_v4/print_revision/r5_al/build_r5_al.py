@@ -65,7 +65,10 @@ HINGE_BEAM_X = (33.5, 91.0)   # longer than R4-DIY (37..88) so every tab has a b
 UPR_IN, UPR_OUT = 27.0, 33.0  # R3 6061 6 mm uprights, unchanged
 PIN_Y, PIN_Z = 102.0, 14.5                                # wedgelet hinge axis (R3)
 WHEEL_R, WHEEL_X = 32.0, (59.5, 75.5)
-MOTOR_HOLES_YZ = [(-8.5, 0.0), (8.5, 0.0)]                # JB361 face: 2 x M3 at +-8.5 about the shaft
+MOTOR_HOLES_YZ = [(-8.5, 0.0), (8.5, 0.0)]                # JB359/JB361 face: 2 x M3 at +-8.5 about the shaft
+DRIVE_BODY_LEN = 52.0                                     # JB359 150 rpm: 21 gearbox + 31 can (JB361 400 rpm: 49.8)
+DRIVE_REAR_X = 56.0 - DRIVE_BODY_LEN                      # 4.0: can end, |x|; its solder lugs stand another ~4 mm proud
+DRIVE_EXTRA_G = 4.0                                       # per motor, ASSUMED: 2 mm more gearbox than the 110 g JB361
 GEARBOX_SCREWS_YZ = [(0.0, -8.5), (0.0, 8.5)]
 BATTERY = (57.0, 31.0, 24.0)                              # 3S 650 mAh envelope, ASSUMED
 RHO = {'al_tube': 0.00270, 'al_tab': 0.00270, 'al_bar': 0.00270, 'steel_pipe': 0.00785, 'steel_wedgelet': 0.00785, 'steel_bolt': 0.00785,
@@ -107,6 +110,14 @@ def prune(p):
 
 prune(root)
 modified = []
+# drive motor: JB359 25GA-370 12 V 150 rpm instead of JB361 400 rpm. Same 25 mm can, 4 mm D shaft and 2 x M3 at 17 mm, but the
+# gearbox is 21 mm instead of 19 mm (Ortech product drawings): body 52.0 instead of 49.8, face stays at |x| 56, the can end moves in.
+# The body keeps its R3 name until mass_properties has looked up its mass (checks.py keys on it); it is renamed after that.
+for b in root.bodies():
+    if b.name.startswith('JGA25_370_400rpm_Front_'):
+        sgn = 1 if b.name.endswith('_R') else -1
+        b.shape = cq.Solid.makeCylinder(12.5, DRIVE_BODY_LEN, cq.Vector(DRIVE_REAR_X if sgn > 0 else -56.0, FRONT_Y, 32.0), cq.Vector(1, 0, 0))
+        modified.append(b)
 for b in root.bodies():
     if b.name.startswith('Beater_Disc'):
         b.material = 'steel'                              # SS400 6 mm instead of Hardox: same density, same outline
@@ -160,19 +171,27 @@ tube_x('Frame_Clamp_Bar', -14.0, 14.0, MOTOR_CROSS_Y[0], 45.0)
 DRILL_AFTER_WELD = []
 STACK_DRILL = []          # coaxial pairs drilled together BEFORE welding, then tacked on a rod
 AS_WELDED = {}
+# drive-motor tab legs: 8.5 mm wide (was 3, so the D3.4 hole cut each leg in two), M3 hole on the leg centre line (e 4.25 = 1.25 d0).
+# Bounded in y on both sides: the weapon-motor angle M06-Mid sits on the left rail top from y 35, and the D25 drive can (shaft
+# line y 18, z 32; underside z = 32 - sqrt(12.5^2 - d^2) at d = |y - 18|) overhangs the inner part. Legs |y - 18| 8..16.5,
+# 0.5 clear of the angle; M3 BUTTON heads (ISO 7380, 5.7 x 1.65) because a 3.0 socket head would touch the can.
+# Clearances are computed into the report. Leg starts at |x| 46.5, clear of the motor-cross tube's end edge.
+DRIVE_TAB_HALF = 16.5
+DRIVE_TAB_LEGS_Y = ((FRONT_Y - DRIVE_TAB_HALF, FRONT_Y - 8), (FRONT_Y + 8, FRONT_Y + DRIVE_TAB_HALF))
+DRIVE_TAB_HOLES_Y = [(a + b) / 2 for a, b in DRIVE_TAB_LEGS_Y]
 for side, s in (('L', -1), ('R', 1)):
     x0 = 56.0 if s > 0 else -56.0 - TAB
-    t = block(x0, x0 + TAB, FRONT_Y - 16, FRONT_Y + 16, RAIL_Z1, RAIL_Z1 + 32)
+    t = block(x0, x0 + TAB, FRONT_Y - DRIVE_TAB_HALF, FRONT_Y + DRIVE_TAB_HALF, RAIL_Z1, RAIL_Z1 + 32)
     t = hole_x(t, FRONT_Y, 32.0, 4.25)                    # D8.5 over the D7 boss: stack-drilled L+R, tacked on a D8 rod
     AS_WELDED['Tab_Drive_Motor_' + side] = t
     for dy, dz in MOTOR_HOLES_YZ:
         t = hole_x(t, FRONT_Y + dy, 32.0 + dz, 1.8)
-        DRILL_AFTER_WELD.append({'part': 'Tab_Drive_Motor_' + side, 'd_mm': 3.6, 'what': 'JB361 M3 mount', 'yz_mm': [FRONT_Y + dy, 32.0 + dz]})
+        DRILL_AFTER_WELD.append({'part': 'Tab_Drive_Motor_' + side, 'd_mm': 3.6, 'what': 'JB359 M3 mount', 'yz_mm': [FRONT_Y + dy, 32.0 + dz]})
     for dy, dz in GEARBOX_SCREWS_YZ:
         t = hole_x(t, FRONT_Y + dy, 32.0 + dz, 2.75)
-        DRILL_AFTER_WELD.append({'part': 'Tab_Drive_Motor_' + side, 'd_mm': 5.5, 'what': 'JB361 gearbox screw head', 'yz_mm': [FRONT_Y + dy, 32.0 + dz]})
-    for y0_, y1_ in ((FRONT_Y - 16, FRONT_Y - 13), (FRONT_Y + 13, FRONT_Y + 16)):
-        t = t.fuse(block(*((RAIL_X[0], 56.0 + TAB) if s > 0 else (-56.0 - TAB, -RAIL_X[0])), y0_, y1_, RAIL_Z1, RAIL_Z1 + TAB))
+        DRILL_AFTER_WELD.append({'part': 'Tab_Drive_Motor_' + side, 'd_mm': 5.5, 'what': 'JB359 gearbox screw head', 'yz_mm': [FRONT_Y + dy, 32.0 + dz]})
+    for y0_, y1_ in DRIVE_TAB_LEGS_Y:
+        t = t.fuse(block(*((RAIL_X[0] + 0.5, 56.0 + TAB) if s > 0 else (-56.0 - TAB, -RAIL_X[0] - 0.5)), y0_, y1_, RAIL_Z1, RAIL_Z1 + TAB))
     add('Tab_Drive_Motor_' + side, t.clean(), 'al_tab', TAB)
     # wedgelet hinge tabs on the beam front, D3.2 for the M3 bolt pin; top-front corner one straight chamfer
     for i, (a, b) in enumerate(HINGE_TAB_X):
@@ -207,7 +226,7 @@ for side, s in (('L', -1), ('R', 1)):
     add('Tab_Wall_Mid_' + side, t.fuse(block(lx0, lx0 + 8.0, MIDWALL_Y, MIDWALL_Y + TUBE, RAIL_Z1, RAIL_Z1 + TAB)).clean(), 'al_tab', TAB)
 # drive-motor clamp (W1 pattern on the 12 tube): EPDM pads, a centre post and the clamp bar
 for side, s in (('L', -1), ('R', 1)):
-    x0, x1 = (6.2, 14.0) if s > 0 else (-14.0, -6.2)
+    x0, x1 = (DRIVE_REAR_X, 14.0) if s > 0 else (-14.0, -DRIVE_REAR_X)
     add('Pad_Drive_Motor_EPDM_' + side, block(x0, x1, 11.0, 21.0, RAIL_Z1, 19.5), 'EPDM')
     add('Pad_Drive_Motor_Top_EPDM_' + side, block(x0, x1, 11.0, 21.0, 44.5, 45.0), 'EPDM')
 MC_FRONT = MOTOR_CROSS_Y[0] + TUBE
@@ -484,10 +503,10 @@ for side, s in (('L', -1), ('R', 1)):
         drill(['Frame_Bulkhead_Cross'], hy(yA0 - WALL - 0.1, yA0 + 0.1, m(x), ZM, 5.0))
         fix(3, 'foot angle -> bulkhead cross front face', 'M3x8 8.8 into an M3 rivnut', ['Upright_Foot_Angle_6061_' + side, 'Frame_Bulkhead_Cross'], (m(x), yA0, ZM), 'Frame_Bulkhead_Cross')
     # drive-motor tab legs: 2 x M3 rivnuts in the rail top
-    for yc in (FRONT_Y - 14.5, FRONT_Y + 14.5):
+    for yc in DRIVE_TAB_HOLES_Y:
         drill(['Tab_Drive_Motor_' + side], hz(RAIL_Z1 - 0.1, RAIL_Z1 + TAB + 0.1, m(51.0), yc, 3.4))
         drill(['Frame_Rail_' + side], hz(RAIL_Z1 - WALL - 0.1, RAIL_Z1 + 0.1, m(51.0), yc, 5.0))
-        fix(2, 'drive-motor tab -> rail top', 'M3x8 into an M3 rivnut', ['Tab_Drive_Motor_' + side, 'Frame_Rail_' + side], (m(51), yc, RAIL_Z1), 'Frame_Rail_' + side)
+        fix(2, 'drive-motor tab -> rail top', 'M3x8 button head (ISO 7380) into an M3 rivnut', ['Tab_Drive_Motor_' + side, 'Frame_Rail_' + side], (m(51), yc, RAIL_Z1), 'Frame_Rail_' + side)
     # hinge base -> hinge beam bottom (3 x M3 rivnuts)
     for x in (45.0, 55.0, 75.0):
         drill(['Hinge_Base_5052_2mm_' + side], hz(FLOOR_Z0 - 0.1, RAIL_Z0 + 0.1, m(x), BEAM_Y[0] + TUBE / 2, 3.4))
@@ -660,9 +679,12 @@ sweep_hits = [o.name for o in bodies if not o.name.startswith(('Beater_', 'Beari
 root.children.remove(grp)
 mp = mass_properties(root, config, {})
 root.children.append(grp)
+for b in modified:
+    b.name = b.name.replace('400rpm', '150rpm')
 rows = []
 for r in mp['parts']:
     r = dict(r)
+    r['part'] = r['part'].replace('JGA25_370_400rpm', 'JGA25_370_150rpm')
     rows.append(r)
 steel_g = 0.0
 for b in new:
@@ -673,6 +695,7 @@ for b in new:
         g, method = b.shape.Volume() * RHO[b.material], 'CAD volume x density'
         if b.material.startswith('steel'): steel_g += g
     rows.append({'part': b.name, 'material': b.material, 'mass_g': round(g, 3), 'centroid_mm': c, 'method': method})
+rows.append({'part': 'drive motors: 2 mm longer gearbox x2 (JB359 vs JB361)', 'mass_g': 2 * DRIVE_EXTRA_G, 'centroid_mm': [0, FRONT_Y, 32], 'method': 'ASSUMED'})
 rows.append({'part': 'rotor pipe-to-disc welds (ARC)', 'mass_g': ROTOR_WELD_G, 'centroid_mm': [0, 95, 32], 'method': 'ASSUMED'})
 n_tt = sum(1 for w in welds if w['a'].startswith('Frame_') and w['b'].startswith('Frame_'))
 n_tab = len(welds) - n_tt
@@ -688,7 +711,9 @@ cg = sum(np.array(r['centroid_mm']) * r['mass_g'] for r in rows) / total
 NOSE_SKID_Y, REAR_SKID_Y = 69.0, REAR_Y + 8
 other = NOSE_SKID_Y if cg[1] > FRONT_Y else REAR_SKID_Y
 wheel_frac = (cg[1] - other) / (FRONT_Y - other)
-F_MOTOR, MU = 3.99144375, 0.6
+# JB361 stall torque 0.121644 N m at 12 V (catalog, r3 inputs); x 12.6/12 V as before = 0.12772 -> 3.99 N at R 32 (R5 original).
+# JB359: same motor, 400/150 x the ratio, x 0.9 for the extra gear stage: ESTIMATE, the shop lists no torque. Measure it.
+F_MOTOR, MU = 0.121644 * (400 / 150) * 0.9 * (12.6 / 12) / (WHEEL_R / 1000), 0.6
 w = total / 1000 * 9.81
 push = 2 * min(F_MOTOR, MU * w * wheel_frac / 2) - 0.2 * w * (1 - wheel_frac)
 
@@ -708,17 +733,25 @@ for b in new:
     dims = sorted((bb.xlen, bb.ylen, bb.zlen))
     sheet_list.append({'part': b.name, 'material': b.material, 'thickness_mm': THK.get(b.name), 'blank_mm': [round(dims[2], 1), round(dims[1], 1)],
                        'mass_g': round(b.shape.Volume() * RHO.get(b.material, 0), 2)})
+can_z = lambda d: 32.0 - math.sqrt(max(12.5 ** 2 - d ** 2, 0.0))   # drive can underside at |y - 18| = d
+leg_top, head_h, head_r, flange = RAIL_Z1 + TAB, 1.65, 2.85, 0.8     # M3 button head ISO 7380 5.7 x 1.65; rivnut flange ASSUMED 0.8
+drive_tab_clear = {'leg_inner_edge_to_can': round(can_z(DRIVE_TAB_LEGS_Y[1][0] - FRONT_Y) - (leg_top + flange), 2),
+                   'm3_head_top_to_can (incl. rivnut flange)': round(can_z(abs(DRIVE_TAB_HOLES_Y[1] - FRONT_Y) - head_r) - (leg_top + flange + head_h), 2)}
 report = {
     'status': 'CONCEPT_CAD', 'revision': 'V4 R5-AL (aluminium bolted frame, R3 6061 weapon module, no lathe parts)', 'orientation': 'Z-up, nose +Y, mm',
     'removed_from_r3': sorted(removed), 'invalid_bodies': invalid, 'frame_members_not_touching': floating, 'edge_only_contacts': edge_only,
     'bolted_contacts': welds, 'weapon_joints': JOINTS, 'interference': interference, 'rotor_sweep_hits': sweep_hits, 'wedgelet_swing': swing,
     'ear_yz': EAR_YZ, 'drill_list': DRILL_AFTER_WELD, 'midwall_y': MIDWALL_Y,
     'weapon_bolts_yz': WEAPON_BOLTS, 'fixings': FIX, 'weapon_angle_t_mm': ANG_T, 'foot_leg_b_y': [CROSS_Y[1] + TUBE - 12.0, RUNG_Y[0] - 0.3],
+    'drive_tab_legs_y': [list(l) for l in DRIVE_TAB_LEGS_Y], 'drive_tab_holes_y': DRIVE_TAB_HOLES_Y,
+    'drive_tab_bolt_clearance_mm': drive_tab_clear,
     'skirt_brackets_flat': dict(skirt_brackets),
     'mass': {'total_g': round(total, 1), 'margin_to_2000_g': round(2000 - total, 1), 'margin_to_1950_target_g': round(1950 - total, 1),
              'cg_mm': cg.round(2).tolist(), 'groups_g': groups, 'new_steel_g': round(steel_g, 1), 'n_fixings': len(FIX)},
     'support_2wd': {'drive_axle_y': FRONT_Y, 'other_support': 'nose skid y 69' if other == NOSE_SKID_Y else 'rear skid y %.0f' % REAR_SKID_Y,
-                    'drive_wheel_load_pct': round(100 * wheel_frac, 1), 'push_N_mu0.6': round(push, 2)},
+                    'drive_wheel_load_pct': round(100 * wheel_frac, 1), 'push_N_mu0.6': round(push, 2),
+                    'motor': 'JB359 25GA-370 12V 150 rpm', 'F_motor_per_wheel_N_ESTIMATE': round(F_MOTOR, 2),
+                    'traction_cap_per_wheel_N': round(MU * w * wheel_frac / 2, 2), 'speed_noload_m_s': round(150 * math.pi * 2 * WHEEL_R / 1000 / 60, 2)},
     'tube_cut_list_mm': cut_list, 'tube_total_mm': round(sum(c['length_mm'] for c in cut_list), 1), 'sheet_list': sheet_list,
     'bounds_mm': {k: round(v, 2) for k, v in zip(('xmin', 'xmax', 'ymin', 'ymax', 'zmin', 'zmax'),
                   (lambda bb: (bb.xmin, bb.xmax, bb.ymin, bb.ymax, bb.zmin, bb.zmax))(cq.Compound.makeCompound([b.shape for b in bodies if b.material != 'keepout']).BoundingBox()))},
@@ -735,6 +768,14 @@ for b in bodies:
     if b.material != 'keepout':
         asm.add(cq.Workplane().add(b.shape), name=b.name, color=cq.Color(*COLS.get(b.material, (0.34, 0.42, 0.64))))
 asm.save(str(OUT / 'ROBOT_V4_R5_AL_ASSEMBLY.step'))
+# printable wheel hub: one STL, print two (L is the mirror in x of R; the D bore and the body of revolution are the same). Web down on the bed,
+# axis vertical, PETG 100 % infill; the 2 mm groove ceilings are the only overhang.
+PRINT = OUT / 'print'
+PRINT.mkdir(exist_ok=True)
+hub_r = find_body(root, 'Wheel_Hub_PETG_Front_R').shape
+hub_print = hub_r.translate(cq.Vector(0, -FRONT_Y, -32.0)).rotate(cq.Vector(0, 0, 0), cq.Vector(0, 1, 0), 90)
+hub_print = hub_print.translate(cq.Vector(0, 0, -hub_print.BoundingBox().zmin))
+cq.exporters.export(cq.Workplane().add(hub_print), str(PRINT / 'Wheel_Hub_PETG_x2.stl'), tolerance=0.02, angularTolerance=0.05)
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
