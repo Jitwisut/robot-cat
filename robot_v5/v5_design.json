@@ -1,0 +1,777 @@
+{
+  "note": "concept screening; SawBlaze used for ratios only",
+  "sawblaze_fbx_measured": {
+    "overall_width": 132.6,
+    "body_width": 100.0,
+    "wheel_d": 31.0,
+    "axle_to_fork_tip": 90.3,
+    "axle_to_body_rear": 15.0,
+    "arm_pivot_height": 35.0,
+    "arm_pivot_to_blade_centre": 64.0,
+    "blade_d": 46.0,
+    "drive": "2 rear wheels, forks drag/skid at the front"
+  },
+  "ratios_over_overall_width": {
+    "overall_width": 1.0,
+    "body_width": 0.754,
+    "wheel_d": 0.234,
+    "axle_to_fork_tip": 0.681,
+    "axle_to_body_rear": 0.113,
+    "arm_pivot_height": 0.264,
+    "arm_pivot_to_blade_centre": 0.483,
+    "blade_d": 0.347
+  },
+  "v5_from_ratios_at_W200_mm": {
+    "overall_width": 200.0,
+    "body_width": 150.8,
+    "wheel_d": 46.8,
+    "axle_to_fork_tip": 136.2,
+    "axle_to_body_rear": 22.6,
+    "arm_pivot_height": 52.8,
+    "arm_pivot_to_blade_centre": 96.5,
+    "blade_d": 69.4
+  },
+  "v5_chosen_geometry_mm": {
+    "overall_width": 200.0,
+    "wheel_d": 64.0,
+    "arm_pivot_to_saw": 100.0,
+    "arm_pivot_height": 90.0,
+    "axle_to_fork_tip": 136.0
+  },
+  "saw": {
+    "A_tct_blade_85mm_24T": {
+      "mass_g": 55.5,
+      "I_kgm2": 5.383653569015168e-05,
+      "rpm": 10000,
+      "tip_speed_m_s": 44.5,
+      "energy_J": 29.5,
+      "energy_vs_V4": 0.51,
+      "t_spin_90pct_s": 0.17,
+      "bite_mm_at_arm_1m_s": 0.25,
+      "bite_mm_at_drive_2m_s": 0.5,
+      "bite_mm_at_arm_1m_s_by_teeth": {
+        "2": 3.0,
+        "3": 2.0,
+        "4": 1.5,
+        "6": 1.0,
+        "24": 0.25
+      }
+    },
+    "B_steel_disc_85mm_3mm_3T": {
+      "mass_g": 94.9,
+      "I_kgm2": 8.071028118458869e-05,
+      "rpm": 12487,
+      "tip_speed_m_s": 55.6,
+      "energy_J": 69.0,
+      "energy_vs_V4": 1.2,
+      "t_spin_90pct_s": 0.33,
+      "bite_mm_at_arm_1m_s": 1.602,
+      "bite_mm_at_drive_2m_s": 3.203,
+      "bite_mm_at_arm_1m_s_by_teeth": {
+        "2": 2.4,
+        "3": 1.6,
+        "4": 1.2,
+        "6": 0.8,
+        "24": 0.2
+      }
+    }
+  },
+  "v4_reference": {
+    "energy_J": 57.39,
+    "bite_mm_2m_s": 4.84
+  },
+  "configs": {
+    "A_tct_blade_85mm_24T | DS3218 19kg-cm @5V | 4WD": {
+      "mass_g": 1839,
+      "margin_to_2kg_g": 161,
+      "cost_thb_if_esp32_charger_owned": 6057,
+      "cost_thb_if_buying_esp32_charger": 6877,
+      "arm_hold_torque_Nm": 0.212,
+      "arm_hold_margin": 8.8,
+      "arm_I_kgm2": 0.0019570739656923635,
+      "strike": {
+        "t_strike_s": 0.285,
+        "tip_speed_m_s": 1.61,
+        "arm_KE_J": 0.25,
+        "servo_work_J": 0.1
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.71,
+        "servo_stall_Nm": 1.86,
+        "margin": 2.62,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 7.06,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 6.98
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 10.59,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 10.52
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 14.12,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 13.99
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 22.4
+    },
+    "A_tct_blade_85mm_24T | DS3218 19kg-cm @5V | 2WD": {
+      "mass_g": 1535,
+      "margin_to_2kg_g": 465,
+      "cost_thb_if_esp32_charger_owned": 5687,
+      "cost_thb_if_buying_esp32_charger": 6507,
+      "arm_hold_torque_Nm": 0.212,
+      "arm_hold_margin": 8.8,
+      "arm_I_kgm2": 0.0019570739656923635,
+      "strike": {
+        "t_strike_s": 0.285,
+        "tip_speed_m_s": 1.61,
+        "arm_KE_J": 0.25,
+        "servo_work_J": 0.1
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.59,
+        "servo_stall_Nm": 1.86,
+        "margin": 3.14,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 4.47,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.78,
+          "net_push_N": 3.7
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 6.71,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.78,
+          "net_push_N": 5.94
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 8.95,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.78,
+          "net_push_N": 6.26
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 18.7
+    },
+    "A_tct_blade_85mm_24T | DS3235SG 35kg-cm @6.8V | 4WD": {
+      "mass_g": 1844,
+      "margin_to_2kg_g": 156,
+      "cost_thb_if_esp32_charger_owned": 5972,
+      "cost_thb_if_buying_esp32_charger": 6792,
+      "arm_hold_torque_Nm": 0.212,
+      "arm_hold_margin": 16.2,
+      "arm_I_kgm2": 0.0019570739656923635,
+      "strike": {
+        "t_strike_s": 0.212,
+        "tip_speed_m_s": 1.75,
+        "arm_KE_J": 0.3,
+        "servo_work_J": 0.14
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.71,
+        "servo_stall_Nm": 3.43,
+        "margin": 4.82,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 7.08,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 7.0
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 10.62,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 10.54
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 14.16,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 13.99
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 22.5
+    },
+    "A_tct_blade_85mm_24T | DS3235SG 35kg-cm @6.8V | 2WD": {
+      "mass_g": 1540,
+      "margin_to_2kg_g": 460,
+      "cost_thb_if_esp32_charger_owned": 5602,
+      "cost_thb_if_buying_esp32_charger": 6422,
+      "arm_hold_torque_Nm": 0.212,
+      "arm_hold_margin": 16.2,
+      "arm_I_kgm2": 0.0019570739656923635,
+      "strike": {
+        "t_strike_s": 0.212,
+        "tip_speed_m_s": 1.75,
+        "arm_KE_J": 0.3,
+        "servo_work_J": 0.14
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.59,
+        "servo_stall_Nm": 3.43,
+        "margin": 5.77,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 4.49,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.78,
+          "net_push_N": 3.71
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 6.73,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.78,
+          "net_push_N": 5.95
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 8.98,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.78,
+          "net_push_N": 6.25
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 18.8
+    },
+    "A_tct_blade_85mm_24T | DS5160 60kg-cm @8.4V | 4WD": {
+      "mass_g": 1929,
+      "margin_to_2kg_g": 71,
+      "cost_thb_if_esp32_charger_owned": 6422,
+      "cost_thb_if_buying_esp32_charger": 7242,
+      "arm_hold_torque_Nm": 0.212,
+      "arm_hold_margin": 27.8,
+      "arm_I_kgm2": 0.0019570739656923635,
+      "strike": {
+        "t_strike_s": 0.223,
+        "tip_speed_m_s": 1.71,
+        "arm_KE_J": 0.29,
+        "servo_work_J": 0.13
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.75,
+        "servo_stall_Nm": 5.88,
+        "margin": 7.89,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 7.41,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 7.34
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 11.12,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 11.04
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 14.83,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 13.99
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 23.5
+    },
+    "A_tct_blade_85mm_24T | DS5160 60kg-cm @8.4V | 2WD": {
+      "mass_g": 1625,
+      "margin_to_2kg_g": 375,
+      "cost_thb_if_esp32_charger_owned": 6052,
+      "cost_thb_if_buying_esp32_charger": 6872,
+      "arm_hold_torque_Nm": 0.212,
+      "arm_hold_margin": 27.8,
+      "arm_I_kgm2": 0.0019570739656923635,
+      "strike": {
+        "t_strike_s": 0.223,
+        "tip_speed_m_s": 1.71,
+        "arm_KE_J": 0.29,
+        "servo_work_J": 0.13
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.63,
+        "servo_stall_Nm": 5.88,
+        "margin": 9.37,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 4.74,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.82,
+          "net_push_N": 3.92
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 7.1,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.82,
+          "net_push_N": 6.21
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 9.47,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.82,
+          "net_push_N": 6.21
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 19.8
+    },
+    "B_steel_disc_85mm_3mm_3T | DS3218 19kg-cm @5V | 4WD": {
+      "mass_g": 1879,
+      "margin_to_2kg_g": 121,
+      "cost_thb_if_esp32_charger_owned": 6057,
+      "cost_thb_if_buying_esp32_charger": 6877,
+      "arm_hold_torque_Nm": 0.25,
+      "arm_hold_margin": 7.4,
+      "arm_I_kgm2": 0.0023510739656923637,
+      "strike": {
+        "t_strike_s": 0.289,
+        "tip_speed_m_s": 1.6,
+        "arm_KE_J": 0.3,
+        "servo_work_J": 0.11
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.73,
+        "servo_stall_Nm": 1.86,
+        "margin": 2.56,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 7.22,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 7.14
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 10.82,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 10.75
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 14.43,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 13.99
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 12.2
+    },
+    "B_steel_disc_85mm_3mm_3T | DS3218 19kg-cm @5V | 2WD": {
+      "mass_g": 1575,
+      "margin_to_2kg_g": 425,
+      "cost_thb_if_esp32_charger_owned": 5687,
+      "cost_thb_if_buying_esp32_charger": 6507,
+      "arm_hold_torque_Nm": 0.25,
+      "arm_hold_margin": 7.4,
+      "arm_I_kgm2": 0.0023510739656923637,
+      "strike": {
+        "t_strike_s": 0.289,
+        "tip_speed_m_s": 1.6,
+        "arm_KE_J": 0.3,
+        "servo_work_J": 0.11
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.61,
+        "servo_stall_Nm": 1.86,
+        "margin": 3.06,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 4.59,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.8,
+          "net_push_N": 3.79
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 6.88,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.8,
+          "net_push_N": 6.09
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 9.18,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.8,
+          "net_push_N": 6.24
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 10.2
+    },
+    "B_steel_disc_85mm_3mm_3T | DS3235SG 35kg-cm @6.8V | 4WD": {
+      "mass_g": 1884,
+      "margin_to_2kg_g": 116,
+      "cost_thb_if_esp32_charger_owned": 5972,
+      "cost_thb_if_buying_esp32_charger": 6792,
+      "arm_hold_torque_Nm": 0.25,
+      "arm_hold_margin": 13.7,
+      "arm_I_kgm2": 0.0023510739656923637,
+      "strike": {
+        "t_strike_s": 0.214,
+        "tip_speed_m_s": 1.74,
+        "arm_KE_J": 0.36,
+        "servo_work_J": 0.17
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.73,
+        "servo_stall_Nm": 3.43,
+        "margin": 4.72,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 7.24,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 7.16
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 10.85,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 10.78
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 14.47,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 13.99
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 12.3
+    },
+    "B_steel_disc_85mm_3mm_3T | DS3235SG 35kg-cm @6.8V | 2WD": {
+      "mass_g": 1580,
+      "margin_to_2kg_g": 420,
+      "cost_thb_if_esp32_charger_owned": 5602,
+      "cost_thb_if_buying_esp32_charger": 6422,
+      "arm_hold_torque_Nm": 0.25,
+      "arm_hold_margin": 13.7,
+      "arm_I_kgm2": 0.0023510739656923637,
+      "strike": {
+        "t_strike_s": 0.214,
+        "tip_speed_m_s": 1.74,
+        "arm_KE_J": 0.36,
+        "servo_work_J": 0.17
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.61,
+        "servo_stall_Nm": 3.43,
+        "margin": 5.62,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 4.6,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.8,
+          "net_push_N": 3.81
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 6.9,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.8,
+          "net_push_N": 6.11
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 9.21,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.8,
+          "net_push_N": 6.23
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 10.3
+    },
+    "B_steel_disc_85mm_3mm_3T | DS5160 60kg-cm @8.4V | 4WD": {
+      "mass_g": 1969,
+      "margin_to_2kg_g": 31,
+      "cost_thb_if_esp32_charger_owned": 6422,
+      "cost_thb_if_buying_esp32_charger": 7242,
+      "arm_hold_torque_Nm": 0.25,
+      "arm_hold_margin": 23.5,
+      "arm_I_kgm2": 0.0023510739656923637,
+      "strike": {
+        "t_strike_s": 0.225,
+        "tip_speed_m_s": 1.7,
+        "arm_KE_J": 0.34,
+        "servo_work_J": 0.16
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.76,
+        "servo_stall_Nm": 5.88,
+        "margin": 7.73,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 7.57,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 7.49
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 11.35,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 11.28
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.98,
+          "traction_N": 15.14,
+          "motor_N": 14.06,
+          "fork_drag_N": 0.08,
+          "net_push_N": 13.99
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 12.8
+    },
+    "B_steel_disc_85mm_3mm_3T | DS5160 60kg-cm @8.4V | 2WD": {
+      "mass_g": 1665,
+      "margin_to_2kg_g": 335,
+      "cost_thb_if_esp32_charger_owned": 6052,
+      "cost_thb_if_buying_esp32_charger": 6872,
+      "arm_hold_torque_Nm": 0.25,
+      "arm_hold_margin": 23.5,
+      "arm_I_kgm2": 0.0023510739656923637,
+      "strike": {
+        "t_strike_s": 0.225,
+        "tip_speed_m_s": 1.7,
+        "arm_KE_J": 0.34,
+        "servo_work_J": 0.16
+      },
+      "self_right": {
+        "torque_needed_Nm": 0.64,
+        "servo_stall_Nm": 5.88,
+        "margin": 9.15,
+        "source": "CAD",
+        "note": "first-contact statics; need margin >= 1.5"
+      },
+      "drive": {
+        "mu_0.4": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 4.85,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.84,
+          "net_push_N": 4.01
+        },
+        "mu_0.6": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 7.28,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.84,
+          "net_push_N": 6.19
+        },
+        "mu_0.8": {
+          "wheel_load_frac": 0.74,
+          "traction_N": 9.7,
+          "motor_N": 7.03,
+          "fork_drag_N": 0.84,
+          "net_push_N": 6.19
+        }
+      },
+      "yaw_rate_limit_rad_s (gyro lifts a wheel)": 10.8
+    }
+  },
+  "recommended": "B_steel_disc_85mm_3mm_3T | DS3218 19kg-cm @5V | 4WD",
+  "recommended_mass_budget_g": {
+    "saw: B_steel_disc_85mm_3mm_3T": 94.9,
+    "saw arbor/hub + 2x 608 + driven pulley": 44.0,
+    "saw motor D3536 1250kV (seller, same as V4)": 102,
+    "saw ESC Skywalker 40A (V4 assumption)": 35,
+    "PU round belt + motor pulley (motor coaxial with arm pivot)": 15,
+    "arm: 2x 6061 plates 3x25x120 mm": 48.6,
+    "arm pivot: M8 dead shaft + 2x 608 + spacers": 40,
+    "arm pivot towers 6061 4 mm x2": 40,
+    "arm servo DS3218 19kg-cm @5V": 60,
+    "servo horn/coupling + slip clutch (ASSUMED)": 20,
+    "UBEC 6.8 V 8 A for servo": 15,
+    "forks: 4x steel 12x3x70 mm": 79.1,
+    "fork hinge blocks PETG + pins": 28,
+    "ESP32 DevKit": 10,
+    "DRV8871 x2": 10,
+    "3S 850 mAh LiPo (V4 assumption)": 80,
+    "sensors (IMU, hall, temp) + wiring + connectors + switch/fuse": 77,
+    "fasteners + inserts": 40,
+    "body: TPU tub + lid (V4 442 g, ~5 % smaller footprint)": 420,
+    "drive JGA25-370 x4 (110 g)": 440,
+    "wheels x4 PETG hub + TPU tyre": 180
+  },
+  "recommended_cost_thb": {
+    "saw motor D3536 1250kV (V4_Plan typical)": 560,
+    "Skywalker 40A (catalog TH03)": 490,
+    "3S 850 mAh 150C (catalog TH07)": 490,
+    "DRV8871 x2 (catalog TH05)": 150,
+    "JGA25-370 x4 @185 (V4_Plan)": 740,
+    "servo DS3218 19kg-cm @5V (ASSUMED)": 735,
+    "UBEC 8 A (ASSUMED)": 150,
+    "saw: 85 mm TCT blade or laser-cut 3 mm disc (ASSUMED)": 250,
+    "bearings 4x 608 (@18 catalog TH08)": 72,
+    "belt + pulleys (ASSUMED)": 120,
+    "arm plates + pivot towers 6061, laser/CNC (ASSUMED)": 600,
+    "forks 4x steel, laser-cut (ASSUMED)": 400,
+    "TPU body + PETG parts + wheels, self-print (V4 BOM)": 550,
+    "fasteners, inserts, wiring, XT30 (ASSUMED)": 300,
+    "sensors IMU/hall/temp (ASSUMED)": 100,
+    "PS4-clone pad (owned-parts memory)": 350,
+    "ESP32 30pin (catalog TH04)": 180,
+    "charger iMAX B6AC (V4_Plan, cybertice)": 640
+  },
+  "recommended_cost_total_thb": {
+    "ESP32 + charger to buy (STATUS.md 8 Oct, catalog TH04)": 6877,
+    "ESP32 + charger already owned (memory 3 Oct)": 6057
+  },
+  "forks": {
+    "opponent 2 kg on one tip x3 g": {
+      "F_N": 58.9,
+      "stress_MPa": 228.9,
+      "SF": {
+        "mild steel S275": 1.2,
+        "65Mn spring steel, hardened": 3.43
+      }
+    },
+    "own robot dropped on one tip x5 g": {
+      "F_N": 92.2,
+      "stress_MPa": 358.4,
+      "SF": {
+        "mild steel S275": 0.77,
+        "65Mn spring steel, hardened": 2.19
+      }
+    },
+    "2 J absorbed by one fork": {
+      "F_N": 435,
+      "stress_MPa": 1690,
+      "SF": {
+        "mild steel S275": 0.16,
+        "65Mn spring steel, hardened": 0.46
+      }
+    },
+    "5 J absorbed by one fork": {
+      "F_N": 687,
+      "stress_MPa": 2673,
+      "SF": {
+        "mild steel S275": 0.1,
+        "65Mn spring steel, hardened": 0.29
+      }
+    }
+  },
+  "servo_hit": {
+    "peak_force_N": 8298.0,
+    "torque_at_pivot_Nm": 830,
+    "servo_gear_limit_Nm_ASSUMED": 10,
+    "conclusion": "servo gears strip unless the arm is decoupled by a slip clutch / compliant link"
+  },
+  "matchup_recommended": {
+    "V2 robot2 (wedge+lifter)": {
+      "p_v5_forks_under": 0.81,
+      "p_opponent_under_v5": 0.9,
+      "p_v5_wins_push": 0.63
+    },
+    "R3 (lifting wedge 4WD)": {
+      "p_v5_forks_under": 0.43,
+      "p_opponent_under_v5": 0.42,
+      "p_v5_wins_push": 0.45
+    },
+    "Generic low wedge": {
+      "p_v5_forks_under": 0.63,
+      "p_opponent_under_v5": 0.26,
+      "p_v5_wins_push": 0.41
+    },
+    "Horizontal bar spinner": {
+      "p_v5_forks_under": 1.0,
+      "p_opponent_under_v5": 0.0,
+      "p_v5_wins_push": 0.87,
+      "p_saw_energy_higher": 0.27
+    },
+    "Vertical spinner": {
+      "p_v5_forks_under": 0.94,
+      "p_opponent_under_v5": 0.4,
+      "p_v5_wins_push": 0.77,
+      "p_saw_energy_higher": 0.44
+    },
+    "Control/pusher (no weapon)": {
+      "p_v5_forks_under": 0.87,
+      "p_opponent_under_v5": 0.08,
+      "p_v5_wins_push": 0.07
+    }
+  },
+  "delivery_checks": {
+    "arm_effective_mass_at_disc_front_kg": 0.116,
+    "v4_backing_mass_kg (rotor on frame)": 1.89,
+    "rule_hard_stop": "in the strike pose the arm must rest on a frame hard stop, or each hit throws the arm up and slips the clutch",
+    "rule_spin_direction": "spin +X (right-hand, nose +Y, Z up): front teeth move up, bottom teeth move forward; the reaction then drives the arm down onto the stop for both front and top contacts",
+    "peak_force_N_1ms": 9099,
+    "v4_peak_force_N_1ms": 8298,
+    "arbor_M8_bending_MPa": 588,
+    "grade_8.8_yield_MPa": 640,
+    "grade_12.9_yield_MPa": 1080,
+    "load_per_bearing_N": 4550,
+    "overload_vs_C0": {
+      "688 (C0 ~590 N, ASSUMED)": 7.7,
+      "608 (C0 1370 N)": 3.3,
+      "V4 608 for comparison": 3.0
+    },
+    "pivot_608_overload_if_no_hard_stop": 3.3
+  }
+}

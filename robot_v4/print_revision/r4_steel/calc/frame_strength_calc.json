@@ -1,0 +1,562 @@
+{
+ "inputs": {
+  "M_kg": 1.9184,
+  "m_weapon_kg": 0.3663,
+  "body_share": 0.8091,
+  "rail_wall_mm": 1.5,
+  "N_drop_g": 250.0,
+  "capacities": {
+   "steel_fy_MPa": 235.0,
+   "steel_fu_MPa": 360.0,
+   "weld_MPa": 288.0,
+   "bolt_8.8_shear_N": 1931.52,
+   "al6061_bearing_MPa": 386.0,
+   "pc_bearing_MPa": 62.0,
+   "d_shaft_yield_MPa": [
+    355.0,
+    640.0
+   ]
+  }
+ },
+ "paths": [
+  {
+   "path": "Upright M3 8.8 bolts x4, shear (max bolt)",
+   "case": "DT3 2.6 kN fore-aft (-y)",
+   "load": 277.4,
+   "capacity": 1931.5,
+   "unit": "N",
+   "sf": 6.96,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 1.5 mm steel web",
+   "case": "DT3 2.6 kN fore-aft (-y)",
+   "load": 277.4,
+   "capacity": 3888.0,
+   "unit": "N",
+   "sf": 14.02,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 6 mm 6061 upright",
+   "case": "DT3 2.6 kN fore-aft (-y)",
+   "load": 277.4,
+   "capacity": 6948.0,
+   "unit": "N",
+   "sf": 25.05,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Web fillets: to flange both sides + to 2 rungs",
+   "case": "DT3 2.6 kN fore-aft (-y)",
+   "load": 58.0,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 4.97,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bracket-to-rail fillets (flange edge + 2 rungs)",
+   "case": "DT3 2.6 kN fore-aft (-y)",
+   "load": 59.7,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 4.83,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Rail 10x10x1.5 at y 62: N/Np + M/Mp (as load/capacity = util/1)",
+   "case": "DT3 2.6 kN fore-aft (-y)",
+   "load": 0.7,
+   "capacity": 1.0,
+   "unit": "ratio",
+   "sf": 1.52,
+   "pass": true,
+   "note": "M 22088 N mm"
+  },
+  {
+   "path": "Upright M3 8.8 bolts x4, shear (max bolt)",
+   "case": "DT3 2.6 kN up (+z)",
+   "load": 370.7,
+   "capacity": 1931.5,
+   "unit": "N",
+   "sf": 5.21,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 1.5 mm steel web",
+   "case": "DT3 2.6 kN up (+z)",
+   "load": 370.7,
+   "capacity": 3888.0,
+   "unit": "N",
+   "sf": 10.49,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 6 mm 6061 upright",
+   "case": "DT3 2.6 kN up (+z)",
+   "load": 370.7,
+   "capacity": 6948.0,
+   "unit": "N",
+   "sf": 18.74,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Web fillets: to flange both sides + to 2 rungs",
+   "case": "DT3 2.6 kN up (+z)",
+   "load": 48.7,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 5.91,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bracket-to-rail fillets (flange edge + 2 rungs)",
+   "case": "DT3 2.6 kN up (+z)",
+   "load": 57.5,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 5.01,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Rail 10x10x1.5 at y 62: N/Np + M/Mp (as load/capacity = util/1)",
+   "case": "DT3 2.6 kN up (+z)",
+   "load": 0.9,
+   "capacity": 1.0,
+   "unit": "ratio",
+   "sf": 1.11,
+   "pass": false,
+   "note": "M 34709 N mm; non-credible direction for this rotor, accepted",
+   "accepted_non_credible": true
+  },
+  {
+   "path": "Upright M3 8.8 bolts x4, shear (max bolt)",
+   "case": "DT3 2.6 kN down (-z)",
+   "load": 370.7,
+   "capacity": 1931.5,
+   "unit": "N",
+   "sf": 5.21,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 1.5 mm steel web",
+   "case": "DT3 2.6 kN down (-z)",
+   "load": 370.7,
+   "capacity": 3888.0,
+   "unit": "N",
+   "sf": 10.49,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 6 mm 6061 upright",
+   "case": "DT3 2.6 kN down (-z)",
+   "load": 370.7,
+   "capacity": 6948.0,
+   "unit": "N",
+   "sf": 18.74,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Web fillets: to flange both sides + to 2 rungs",
+   "case": "DT3 2.6 kN down (-z)",
+   "load": 48.7,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 5.91,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bracket-to-rail fillets (flange edge + 2 rungs)",
+   "case": "DT3 2.6 kN down (-z)",
+   "load": 57.5,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 5.01,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Rail at y 62 (down push grounded by the nose skid after 1 mm)",
+   "case": "DT3 2.6 kN down (-z)",
+   "load": 0.0,
+   "capacity": 1.0,
+   "unit": "ratio",
+   "sf": null,
+   "pass": true,
+   "note": "floor reaction"
+  },
+  {
+   "path": "Upright M3 8.8 bolts x4, shear (max bolt)",
+   "case": "DT3 5.2 kN check fore-aft (-y)",
+   "load": 554.8,
+   "capacity": 1931.5,
+   "unit": "N",
+   "sf": 3.48,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 1.5 mm steel web",
+   "case": "DT3 5.2 kN check fore-aft (-y)",
+   "load": 554.8,
+   "capacity": 3888.0,
+   "unit": "N",
+   "sf": 7.01,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 6 mm 6061 upright",
+   "case": "DT3 5.2 kN check fore-aft (-y)",
+   "load": 554.8,
+   "capacity": 6948.0,
+   "unit": "N",
+   "sf": 12.52,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Web fillets: to flange both sides + to 2 rungs",
+   "case": "DT3 5.2 kN check fore-aft (-y)",
+   "load": 115.9,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 2.48,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bracket-to-rail fillets (flange edge + 2 rungs)",
+   "case": "DT3 5.2 kN check fore-aft (-y)",
+   "load": 119.3,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 2.41,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Rail 10x10x1.5 at y 62: N/Np + M/Mp (as load/capacity = util/1)",
+   "case": "DT3 5.2 kN check fore-aft (-y)",
+   "load": 1.3,
+   "capacity": 1.0,
+   "unit": "ratio",
+   "sf": 0.76,
+   "pass": false,
+   "note": "M 44175 N mm"
+  },
+  {
+   "path": "Upright M3 8.8 bolts x4, shear (max bolt)",
+   "case": "DT3 5.2 kN check up (+z)",
+   "load": 741.4,
+   "capacity": 1931.5,
+   "unit": "N",
+   "sf": 2.61,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 1.5 mm steel web",
+   "case": "DT3 5.2 kN check up (+z)",
+   "load": 741.4,
+   "capacity": 3888.0,
+   "unit": "N",
+   "sf": 5.24,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 6 mm 6061 upright",
+   "case": "DT3 5.2 kN check up (+z)",
+   "load": 741.4,
+   "capacity": 6948.0,
+   "unit": "N",
+   "sf": 9.37,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Web fillets: to flange both sides + to 2 rungs",
+   "case": "DT3 5.2 kN check up (+z)",
+   "load": 97.4,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 2.96,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bracket-to-rail fillets (flange edge + 2 rungs)",
+   "case": "DT3 5.2 kN check up (+z)",
+   "load": 115.0,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 2.5,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Rail 10x10x1.5 at y 62: N/Np + M/Mp (as load/capacity = util/1)",
+   "case": "DT3 5.2 kN check up (+z)",
+   "load": 1.8,
+   "capacity": 1.0,
+   "unit": "ratio",
+   "sf": 0.56,
+   "pass": false,
+   "note": "M 69418 N mm; non-credible direction for this rotor, accepted",
+   "accepted_non_credible": true
+  },
+  {
+   "path": "Upright M3 8.8 bolts x4, shear (max bolt)",
+   "case": "DT3 5.2 kN check down (-z)",
+   "load": 741.4,
+   "capacity": 1931.5,
+   "unit": "N",
+   "sf": 2.61,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 1.5 mm steel web",
+   "case": "DT3 5.2 kN check down (-z)",
+   "load": 741.4,
+   "capacity": 3888.0,
+   "unit": "N",
+   "sf": 5.24,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bolt bearing in the 6 mm 6061 upright",
+   "case": "DT3 5.2 kN check down (-z)",
+   "load": 741.4,
+   "capacity": 6948.0,
+   "unit": "N",
+   "sf": 9.37,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Web fillets: to flange both sides + to 2 rungs",
+   "case": "DT3 5.2 kN check down (-z)",
+   "load": 97.4,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 2.96,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Bracket-to-rail fillets (flange edge + 2 rungs)",
+   "case": "DT3 5.2 kN check down (-z)",
+   "load": 115.0,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 2.5,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Rail at y 62 (down push grounded by the nose skid after 1 mm)",
+   "case": "DT3 5.2 kN check down (-z)",
+   "load": 0.0,
+   "capacity": 1.0,
+   "unit": "ratio",
+   "sf": null,
+   "pass": true,
+   "note": "floor reaction"
+  },
+  {
+   "path": "Motor face plate, 2 x M3 shear (shaft collapse + motor inertia)",
+   "case": "DT1 drop upright",
+   "load": 524.2,
+   "capacity": 1931.5,
+   "unit": "N",
+   "sf": 3.68,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Motor face plate weld on the rail top (32 mm, one fillet)",
+   "case": "DT1 drop upright",
+   "load": 31.2,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 9.23,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Motor cross 10x10x1.0 (span 96, two pads at |x| 10), bending",
+   "case": "DT1 drop upright",
+   "load": 85.0,
+   "capacity": 235.0,
+   "unit": "MPa",
+   "sf": 2.76,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Motor face plate, 2 x M3 shear (shaft collapse + motor inertia)",
+   "case": "DT2 drop inverted",
+   "load": 524.2,
+   "capacity": 1931.5,
+   "unit": "N",
+   "sf": 3.68,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Motor face plate weld on the rail top (32 mm, one fillet)",
+   "case": "DT2 drop inverted",
+   "load": 31.2,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 9.23,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Clamp bar 10x10x1.0 (cantilever 10 from the post), bending",
+   "case": "DT2 drop inverted",
+   "load": 22.4,
+   "capacity": 235.0,
+   "unit": "MPa",
+   "sf": 10.5,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Clamp post 1.5 x 10 plate, tension (both motors)",
+   "case": "DT2 drop inverted",
+   "load": 36.4,
+   "capacity": 235.0,
+   "unit": "MPa",
+   "sf": 6.46,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Clamp post fillets (2 x 10 mm)",
+   "case": "DT2 drop inverted",
+   "load": 26.0,
+   "capacity": 288.0,
+   "unit": "MPa",
+   "sf": 11.08,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Wheel hub web shear at the boss (D12 x 2, 6061)",
+   "case": "DT1 drop upright",
+   "load": 6.7,
+   "capacity": 159.0,
+   "unit": "MPa",
+   "sf": 23.71,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Wheel hub web shear at the boss (D12 x 2, 6061)",
+   "case": "DT2 drop inverted",
+   "load": 6.7,
+   "capacity": 159.0,
+   "unit": "MPa",
+   "sf": 23.71,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Wheel hub D-flat bearing, motor stall torque (flat 3.5 x 8 engaged)",
+   "case": "drive stall",
+   "load": 5.9,
+   "capacity": 386.0,
+   "unit": "MPa",
+   "sf": 65.6,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "path": "Rail bending, mass behind the axle on the 120 mm wheel-to-skid span",
+   "case": "DT1/DT2",
+   "load": 110.8,
+   "capacity": 235.0,
+   "unit": "MPa",
+   "sf": 2.12,
+   "pass": true,
+   "note": "m_rear 0.989 kg; PC floor ignored"
+  }
+ ],
+ "drive": {
+  "D_shaft_Zpl_mm3": 9.08,
+  "lever_mm": 11.5,
+  "F_shaft_collapse_N": 505.6,
+  "R_clamp_N": 273.0,
+  "R_face_N": 1048.3
+ },
+ "summary": {
+  "min_design_sf": 1.52,
+  "design_fails": [],
+  "accepted_non_credible": [
+   [
+    "Rail 10x10x1.5 at y 62: N/Np + M/Mp (as load/capacity = util/1)",
+    "DT3 2.6 kN up (+z)",
+    1.11
+   ],
+   [
+    "Rail 10x10x1.5 at y 62: N/Np + M/Mp (as load/capacity = util/1)",
+    "DT3 5.2 kN check up (+z)",
+    0.56
+   ]
+  ],
+  "check_fails": [
+   [
+    "Rail 10x10x1.5 at y 62: N/Np + M/Mp (as load/capacity = util/1)",
+    "DT3 5.2 kN check fore-aft (-y)",
+    0.76
+   ],
+   [
+    "Rail 10x10x1.5 at y 62: N/Np + M/Mp (as load/capacity = util/1)",
+    "DT3 5.2 kN check up (+z)",
+    0.56
+   ]
+  ]
+ },
+ "rail_wall_options": {
+  "1.0": {
+   "sf_fore_aft": 1.12,
+   "sf_up": 0.83,
+   "g_per_rail_186mm": 52.6
+  },
+  "1.2": {
+   "sf_fore_aft": 1.29,
+   "sf_up": 0.95,
+   "g_per_rail_186mm": 61.7
+  },
+  "1.5": {
+   "sf_fore_aft": 1.52,
+   "sf_up": 1.11,
+   "g_per_rail_186mm": 74.5
+  },
+  "2.0": {
+   "sf_fore_aft": 1.82,
+   "sf_up": 1.33,
+   "g_per_rail_186mm": 93.4
+  }
+ }
+}

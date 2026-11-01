@@ -1,0 +1,222 @@
+{
+ "source": "robot_v5/cad/build_v5.py",
+ "pivot_yz_mm": [
+  -2.0,
+  90.0
+ ],
+ "arm_L_mm": 100.0,
+ "phi_strike_deg": -22.02,
+ "phi_park_deg": 110.0,
+ "swing_deg": 132.02,
+ "disc": {
+  "teeth": 3,
+  "tip_r_mm": 42.5,
+  "base_r_mm": 34.0,
+  "t_mm": 3.0,
+  "bore_r_mm": 12.0,
+  "mass_g": 94.91,
+  "I_kgm2": 7.809017562820164e-05,
+  "spinning_I_kgm2 (disc + hub + half bearings)": 8.071028118458869e-05
+ },
+ "arm": {
+  "mass_g": 376.7,
+  "I_pivot_kgm2": 0.0023511739656923636,
+  "first_moment_kgm (horizontal)": 0.025513846208334908
+ },
+ "mass_total_g": 1817.8,
+ "self_right": {
+  "rest_edge_yz": [
+   [
+    -9.5,
+    103.0
+   ],
+   [
+    -95.0,
+    54.0
+   ]
+  ],
+  "edge_groups": [
+   "frame",
+   "frame"
+  ],
+  "tilt_deg": -150.2,
+  "arm_phi_at_floor_contact_deg": 14.0,
+  "roll_point_yz": [
+   -95.0,
+   54.0
+  ],
+  "arm_contact_yz": [
+   73.9,
+   151.0
+  ],
+  "d_cg_mm": 79.7,
+  "tip_lever_mm": 194.8,
+  "pivot_to_contact_mm": 96.2,
+  "floor_force_N": 7.29,
+  "servo_torque_needed_Nm": 0.702,
+  "margin_DS3218": 2.79,
+  "status": "ok",
+  "roll_sweep": {
+   "steps": [
+    {
+     "roll_deg": 0.0,
+     "arm_phi_deg": 14.0,
+     "torque_Nm": 0.702
+    },
+    {
+     "roll_deg": 2.0,
+     "arm_phi_deg": 18.0,
+     "torque_Nm": 0.687
+    },
+    {
+     "roll_deg": 4.0,
+     "arm_phi_deg": 22.0,
+     "torque_Nm": 0.672
+    },
+    {
+     "roll_deg": 6.0,
+     "arm_phi_deg": 26.0,
+     "torque_Nm": 0.655
+    },
+    {
+     "roll_deg": 8.0,
+     "arm_phi_deg": 30.0,
+     "torque_Nm": 0.637
+    },
+    {
+     "roll_deg": 10.0,
+     "arm_phi_deg": 34.0,
+     "torque_Nm": 0.618
+    },
+    {
+     "roll_deg": 12.0,
+     "arm_phi_deg": 38.0,
+     "torque_Nm": 0.598
+    },
+    {
+     "roll_deg": 14.0,
+     "arm_phi_deg": 41.5,
+     "torque_Nm": 0.576
+    },
+    {
+     "roll_deg": 16.0,
+     "arm_phi_deg": 45.5,
+     "torque_Nm": 0.554
+    },
+    {
+     "roll_deg": 18.0,
+     "arm_phi_deg": 49.5,
+     "torque_Nm": 0.531
+    },
+    {
+     "roll_deg": 20.0,
+     "arm_phi_deg": 53.0,
+     "torque_Nm": 0.507
+    },
+    {
+     "roll_deg": 22.0,
+     "arm_phi_deg": 57.0,
+     "torque_Nm": 0.482
+    },
+    {
+     "roll_deg": 24.0,
+     "arm_phi_deg": 60.5,
+     "torque_Nm": 0.456
+    },
+    {
+     "roll_deg": 26.0,
+     "arm_phi_deg": 64.5,
+     "torque_Nm": 0.429
+    },
+    {
+     "roll_deg": 28.0,
+     "arm_phi_deg": 68.0,
+     "torque_Nm": 0.402
+    },
+    {
+     "roll_deg": 30.0,
+     "arm_phi_deg": 71.5,
+     "torque_Nm": 0.373
+    },
+    {
+     "roll_deg": 32.0,
+     "arm_phi_deg": 75.0,
+     "torque_Nm": 0.344
+    },
+    {
+     "roll_deg": 34.0,
+     "arm_phi_deg": 78.5,
+     "torque_Nm": 0.313
+    },
+    {
+     "roll_deg": 36.0,
+     "arm_phi_deg": 82.0,
+     "torque_Nm": 0.282
+    },
+    {
+     "roll_deg": 38.0,
+     "arm_phi_deg": 85.5,
+     "torque_Nm": 0.25
+    },
+    {
+     "roll_deg": 40.0,
+     "arm_phi_deg": 89.0,
+     "torque_Nm": 0.217
+    },
+    {
+     "roll_deg": 42.0,
+     "arm_phi_deg": 92.5,
+     "torque_Nm": 0.182
+    },
+    {
+     "roll_deg": 44.0,
+     "arm_phi_deg": 95.5,
+     "torque_Nm": 0.147
+    },
+    {
+     "roll_deg": 46.0,
+     "arm_phi_deg": 99.0,
+     "torque_Nm": 0.111
+    },
+    {
+     "roll_deg": 48.0,
+     "arm_phi_deg": 102.0,
+     "torque_Nm": 0.074
+    },
+    {
+     "roll_deg": 50.0,
+     "arm_phi_deg": 105.5,
+     "torque_Nm": 0.035
+    }
+   ],
+   "peak": {
+    "roll_deg": 0.0,
+    "arm_phi_deg": 14.0,
+    "torque_Nm": 0.702
+   },
+   "reaches_cg_over_roll_point": true,
+   "margin_vs_clutch_1.3Nm": 1.85,
+   "margin_vs_DS3218_stall": 2.79
+  }
+ },
+ "load_path": {
+  "energy_J": 69.0,
+  "F_peak_N": 9099,
+  "stop_u_mm": 89.6,
+  "stop_reaction_N": 10156,
+  "pivot_reaction_N": 1056,
+  "arm_plate_stress_at_stop_MPa": 169,
+  "post_height_mm": 37.7,
+  "post_load_N": 5078,
+  "post_buckling_N": 11370,
+  "post_stress_MPa": 132,
+  "pivot_load_per_608_N": 528,
+  "safety_factors": {
+   "arm_plates_yield": 1.45,
+   "post_buckling": 2.24,
+   "post_yield": 1.85,
+   "pivot_608_C0": 2.59
+  },
+  "survivable_hit_energy_J (all SF >= 1)": 144.5
+ }
+}

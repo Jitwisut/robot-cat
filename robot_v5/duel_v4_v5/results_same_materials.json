@@ -1,0 +1,215 @@
+{
+ "spec": "frame AISI 304 stainless, armour 3D-printed TPU, both robots",
+ "V4_mass_g_by_TPU_skin_thickness": {
+  "TPU_2.0mm": 1954.0,
+  "TPU_2.5mm": 2002.4,
+  "TPU_3.0mm": 2050.9
+ },
+ "V4_skin_mm_used": 2.0,
+ "V5_mass_options": {
+  "12x12x1.2_TPU_1.5mm": {
+   "frame_g": 330.9,
+   "skins_g": 105.8,
+   "total_g": 2101.7
+  },
+  "12x12x1.2_TPU_2.0mm": {
+   "frame_g": 330.9,
+   "skins_g": 141.1,
+   "total_g": 2136.9
+  },
+  "12x12x1.2_TPU_3.0mm": {
+   "frame_g": 330.9,
+   "skins_g": 211.6,
+   "total_g": 2207.5
+  },
+  "10x10x1.0_TPU_1.5mm": {
+   "frame_g": 239.5,
+   "skins_g": 105.8,
+   "total_g": 2003.0
+  },
+  "10x10x1.0_TPU_2.0mm": {
+   "frame_g": 239.5,
+   "skins_g": 141.1,
+   "total_g": 2038.3
+  },
+  "10x10x1.0_TPU_3.0mm": {
+   "frame_g": 239.5,
+   "skins_g": 211.6,
+   "total_g": 2108.8
+  }
+ },
+ "V5_option_used": "10x10x1.0_TPU_1.5mm",
+ "V5_mass_g_used": 2003.0,
+ "V5_over_2kg_with_12x12_frame": {
+  "12x12x1.2_TPU_1.5mm": 2101.7,
+  "12x12x1.2_TPU_2.0mm": 2136.9,
+  "12x12x1.2_TPU_3.0mm": 2207.5
+ },
+ "V5_arm_plate_SF_304": 1.27,
+ "V5_arm_survives_J_304": 111.3,
+ "duel_inputs_changed": {
+  "E_petg_block_J": [
+   1000000000.0,
+   1000000000.0
+  ],
+  "p_tub_internal_v5": [
+   0.02,
+   0.06
+  ],
+  "p_strike_disables_v4": [
+   0.048,
+   0.225
+  ],
+  "TPU_vs_PC_factor": [
+   0.6,
+   0.9
+  ]
+ },
+ "result": {
+  "base": {
+   "V4_win": [
+    0.656,
+    0.808,
+    0.914
+   ],
+   "V5_win": [
+    0.07,
+    0.111,
+    0.178
+   ],
+   "draw": [
+    0.014,
+    0.079,
+    0.166
+   ],
+   "V4_by_KO": [
+    0.346,
+    0.497,
+    0.709
+   ],
+   "V5_by_KO": [
+    0.036,
+    0.066,
+    0.121
+   ],
+   "headon": {
+    "A_immobilises_B": 0.14574,
+    "B_immobilises_A": 0.00436,
+    "A_control": 0.70238,
+    "B_control": 0.14752,
+    "neutral": 0.0
+   },
+   "extras": {
+    "p_V4_launches_V5": 0.6763,
+    "mean_launch_h_m": 0.5625598714279901,
+    "p_V5_forks_lost": 0.0,
+    "p_V5_strike_lands": 0.03228,
+    "p_V4_under_V5_nose": 1.0,
+    "p_V5_fork_under_V4": 0.322
+   }
+  },
+  "sweep": {
+   "eta_clean=low": {
+    "V4_win_median": 0.803,
+    "V5_win_median": 0.112
+   },
+   "eta_clean=high": {
+    "V4_win_median": 0.803,
+    "V5_win_median": 0.112
+   },
+   "eta_contested=low": {
+    "V4_win_median": 0.707,
+    "V5_win_median": 0.178
+   },
+   "eta_contested=high": {
+    "V4_win_median": 0.853,
+    "V5_win_median": 0.091
+   },
+   "p_inv_v5=low": {
+    "V4_win_median": 0.802,
+    "V5_win_median": 0.115
+   },
+   "p_inv_v5=high": {
+    "V4_win_median": 0.806,
+    "V5_win_median": 0.11
+   },
+   "p_side_stuck_v5=low": {
+    "V4_win_median": 0.793,
+    "V5_win_median": 0.123
+   },
+   "p_side_stuck_v5=high": {
+    "V4_win_median": 0.821,
+    "V5_win_median": 0.107
+   },
+   "p_selfright_v5=low": {
+    "V4_win_median": 0.834,
+    "V5_win_median": 0.103
+   },
+   "p_selfright_v5=high": {
+    "V4_win_median": 0.771,
+    "V5_win_median": 0.131
+   },
+   "p_tub_internal_v5=low": {
+    "V4_win_median": 0.798,
+    "V5_win_median": 0.12
+   },
+   "p_tub_internal_v5=high": {
+    "V4_win_median": 0.809,
+    "V5_win_median": 0.111
+   },
+   "p_v5_ready=low": {
+    "V4_win_median": 0.803,
+    "V5_win_median": 0.111
+   },
+   "p_v5_ready=high": {
+    "V4_win_median": 0.815,
+    "V5_win_median": 0.125
+   },
+   "eta_weapon_on_weapon=low": {
+    "V4_win_median": 0.793,
+    "V5_win_median": 0.127
+   },
+   "eta_weapon_on_weapon=high": {
+    "V4_win_median": 0.846,
+    "V5_win_median": 0.094
+   },
+   "p_strike_lands_front=low": {
+    "V4_win_median": 0.806,
+    "V5_win_median": 0.11
+   },
+   "p_strike_lands_front=high": {
+    "V4_win_median": 0.801,
+    "V5_win_median": 0.115
+   },
+   "p_strike_lands_side=low": {
+    "V4_win_median": 0.822,
+    "V5_win_median": 0.101
+   },
+   "p_strike_lands_side=high": {
+    "V4_win_median": 0.792,
+    "V5_win_median": 0.128
+   },
+   "p_strike_disables_v4=low": {
+    "V4_win_median": 0.841,
+    "V5_win_median": 0.079
+   },
+   "p_strike_disables_v4=high": {
+    "V4_win_median": 0.784,
+    "V5_win_median": 0.149
+   }
+  },
+  "flips": [],
+  "V5_best_case": {
+   "V4_win": [
+    0.557,
+    0.653,
+    0.783
+   ],
+   "V5_win": [
+    0.138,
+    0.24,
+    0.408
+   ]
+  }
+ }
+}

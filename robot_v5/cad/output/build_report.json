@@ -1,0 +1,1079 @@
+{
+ "status": "CONCEPT_CAD",
+ "orientation": "Z-up, nose +Y, X lateral, mm; floor Z=0 under the wheels",
+ "wheel_bottom_z_mm": 0.0,
+ "bounds_park_mm": [
+  -96.0,
+  96.0,
+  -95.0,
+  123.08,
+  0.0,
+  226.47
+ ],
+ "bounds_strike_mm": [
+  -96.0,
+  96.0,
+  -95.0,
+  130.1,
+  0.0,
+  105.0
+ ],
+ "step_reimport_bounds_park_mm": [
+  -96.0,
+  96.0,
+  -95.0,
+  123.08,
+  0.0,
+  226.47
+ ],
+ "invalid_bodies": [],
+ "interference": {
+  "park": [],
+  "strike": []
+ },
+ "arm_swing": {
+  "strike_phi_deg": -22.02,
+  "park_phi_deg": 110.0,
+  "below_strike (must hit the stop posts at once)": {
+   "phi_deg": -22.5,
+   "arm_part": "Arm_Plate_R_2.3",
+   "hits": "Stop_Post_R_3.2x12"
+  },
+  "strike_to_park": null,
+  "park_onward_back": {
+   "phi_deg": 177.0,
+   "arm_part": "Saw_Disc_3T_SS400_3mm",
+   "hits": "Lid_TPU_2mm"
+  }
+ },
+ "disc_sweep_hits": [],
+ "arm_to_fork_min_gap_strike_mm": 11.4,
+ "fork_rest_angle_deg": 6.01,
+ "fork_swing": {
+  "Fork_1_mild_12x4_on_edge": {
+   "up": "free",
+   "down": "free"
+  },
+  "Fork_2_mild_12x4_on_edge": {
+   "up": "free",
+   "down": "free"
+  },
+  "Fork_3_mild_12x4_on_edge": {
+   "up": "free",
+   "down": "free"
+  },
+  "Fork_4_mild_12x4_on_edge": {
+   "up": "free",
+   "down": "free"
+  }
+ },
+ "load_path": {
+  "energy_J": 69.0,
+  "F_peak_N": 9099,
+  "stop_u_mm": 89.6,
+  "stop_reaction_N": 10156,
+  "pivot_reaction_N": 1056,
+  "arm_plate_stress_at_stop_MPa": 169,
+  "post_height_mm": 37.7,
+  "post_load_N": 5078,
+  "post_buckling_N": 11370,
+  "post_stress_MPa": 132,
+  "pivot_load_per_608_N": 528,
+  "safety_factors": {
+   "arm_plates_yield": 1.45,
+   "post_buckling": 2.24,
+   "post_yield": 1.85,
+   "pivot_608_C0": 2.59
+  },
+  "survivable_hit_energy_J (all SF >= 1)": 144.5
+ },
+ "mass": {
+  "total_g": 1817.8,
+  "margin_to_2000_g": 182.2,
+  "vs_budget_cuts_estimate_1929_g": -111.2,
+  "fork_g": 106.9,
+  "groups_g": {
+   "arm": 376.7,
+   "frame": 1441.1
+  }
+ },
+ "balance": {
+  "park": {
+   "cg_y_mm": -12.4,
+   "cg_z_mm": 57.5,
+   "front_axle_share": 0.551,
+   "rear_axle_share": 0.449,
+   "cg_ahead_of_front_axle_mm": -40.4
+  },
+  "strike": {
+   "cg_y_mm": 5.4,
+   "cg_z_mm": 39.1,
+   "front_axle_share": 0.749,
+   "rear_axle_share": 0.251,
+   "cg_ahead_of_front_axle_mm": -22.6
+  }
+ },
+ "props": {
+  "source": "robot_v5/cad/build_v5.py",
+  "pivot_yz_mm": [
+   -2.0,
+   90.0
+  ],
+  "arm_L_mm": 100.0,
+  "phi_strike_deg": -22.02,
+  "phi_park_deg": 110.0,
+  "swing_deg": 132.02,
+  "disc": {
+   "teeth": 3,
+   "tip_r_mm": 42.5,
+   "base_r_mm": 34.0,
+   "t_mm": 3.0,
+   "bore_r_mm": 12.0,
+   "mass_g": 94.91,
+   "I_kgm2": 7.809017562820164e-05,
+   "spinning_I_kgm2 (disc + hub + half bearings)": 8.071028118458869e-05
+  },
+  "arm": {
+   "mass_g": 376.7,
+   "I_pivot_kgm2": 0.0023511739656923636,
+   "first_moment_kgm (horizontal)": 0.025513846208334908
+  },
+  "mass_total_g": 1817.8,
+  "self_right": {
+   "rest_edge_yz": [
+    [
+     -9.5,
+     103.0
+    ],
+    [
+     -95.0,
+     54.0
+    ]
+   ],
+   "edge_groups": [
+    "frame",
+    "frame"
+   ],
+   "tilt_deg": -150.2,
+   "arm_phi_at_floor_contact_deg": 14.0,
+   "roll_point_yz": [
+    -95.0,
+    54.0
+   ],
+   "arm_contact_yz": [
+    73.9,
+    151.0
+   ],
+   "d_cg_mm": 79.7,
+   "tip_lever_mm": 194.8,
+   "pivot_to_contact_mm": 96.2,
+   "floor_force_N": 7.29,
+   "servo_torque_needed_Nm": 0.702,
+   "margin_DS3218": 2.79,
+   "status": "ok",
+   "roll_sweep": {
+    "steps": [
+     {
+      "roll_deg": 0.0,
+      "arm_phi_deg": 14.0,
+      "torque_Nm": 0.702
+     },
+     {
+      "roll_deg": 2.0,
+      "arm_phi_deg": 18.0,
+      "torque_Nm": 0.687
+     },
+     {
+      "roll_deg": 4.0,
+      "arm_phi_deg": 22.0,
+      "torque_Nm": 0.672
+     },
+     {
+      "roll_deg": 6.0,
+      "arm_phi_deg": 26.0,
+      "torque_Nm": 0.655
+     },
+     {
+      "roll_deg": 8.0,
+      "arm_phi_deg": 30.0,
+      "torque_Nm": 0.637
+     },
+     {
+      "roll_deg": 10.0,
+      "arm_phi_deg": 34.0,
+      "torque_Nm": 0.618
+     },
+     {
+      "roll_deg": 12.0,
+      "arm_phi_deg": 38.0,
+      "torque_Nm": 0.598
+     },
+     {
+      "roll_deg": 14.0,
+      "arm_phi_deg": 41.5,
+      "torque_Nm": 0.576
+     },
+     {
+      "roll_deg": 16.0,
+      "arm_phi_deg": 45.5,
+      "torque_Nm": 0.554
+     },
+     {
+      "roll_deg": 18.0,
+      "arm_phi_deg": 49.5,
+      "torque_Nm": 0.531
+     },
+     {
+      "roll_deg": 20.0,
+      "arm_phi_deg": 53.0,
+      "torque_Nm": 0.507
+     },
+     {
+      "roll_deg": 22.0,
+      "arm_phi_deg": 57.0,
+      "torque_Nm": 0.482
+     },
+     {
+      "roll_deg": 24.0,
+      "arm_phi_deg": 60.5,
+      "torque_Nm": 0.456
+     },
+     {
+      "roll_deg": 26.0,
+      "arm_phi_deg": 64.5,
+      "torque_Nm": 0.429
+     },
+     {
+      "roll_deg": 28.0,
+      "arm_phi_deg": 68.0,
+      "torque_Nm": 0.402
+     },
+     {
+      "roll_deg": 30.0,
+      "arm_phi_deg": 71.5,
+      "torque_Nm": 0.373
+     },
+     {
+      "roll_deg": 32.0,
+      "arm_phi_deg": 75.0,
+      "torque_Nm": 0.344
+     },
+     {
+      "roll_deg": 34.0,
+      "arm_phi_deg": 78.5,
+      "torque_Nm": 0.313
+     },
+     {
+      "roll_deg": 36.0,
+      "arm_phi_deg": 82.0,
+      "torque_Nm": 0.282
+     },
+     {
+      "roll_deg": 38.0,
+      "arm_phi_deg": 85.5,
+      "torque_Nm": 0.25
+     },
+     {
+      "roll_deg": 40.0,
+      "arm_phi_deg": 89.0,
+      "torque_Nm": 0.217
+     },
+     {
+      "roll_deg": 42.0,
+      "arm_phi_deg": 92.5,
+      "torque_Nm": 0.182
+     },
+     {
+      "roll_deg": 44.0,
+      "arm_phi_deg": 95.5,
+      "torque_Nm": 0.147
+     },
+     {
+      "roll_deg": 46.0,
+      "arm_phi_deg": 99.0,
+      "torque_Nm": 0.111
+     },
+     {
+      "roll_deg": 48.0,
+      "arm_phi_deg": 102.0,
+      "torque_Nm": 0.074
+     },
+     {
+      "roll_deg": 50.0,
+      "arm_phi_deg": 105.5,
+      "torque_Nm": 0.035
+     }
+    ],
+    "peak": {
+     "roll_deg": 0.0,
+     "arm_phi_deg": 14.0,
+     "torque_Nm": 0.702
+    },
+    "reaches_cg_over_roll_point": true,
+    "margin_vs_clutch_1.3Nm": 1.85,
+    "margin_vs_DS3218_stall": 2.79
+   }
+  },
+  "load_path": {
+   "energy_J": 69.0,
+   "F_peak_N": 9099,
+   "stop_u_mm": 89.6,
+   "stop_reaction_N": 10156,
+   "pivot_reaction_N": 1056,
+   "arm_plate_stress_at_stop_MPa": 169,
+   "post_height_mm": 37.7,
+   "post_load_N": 5078,
+   "post_buckling_N": 11370,
+   "post_stress_MPa": 132,
+   "pivot_load_per_608_N": 528,
+   "safety_factors": {
+    "arm_plates_yield": 1.45,
+    "post_buckling": 2.24,
+    "post_yield": 1.85,
+    "pivot_608_C0": 2.59
+   },
+   "survivable_hit_energy_J (all SF >= 1)": 144.5
+  }
+ },
+ "rows_park": [
+  {
+   "part": "Tub_TPU",
+   "material": "tpu",
+   "group": "frame",
+   "mass_g": 145.74,
+   "centroid_mm": [
+    -0.0,
+    -25.1,
+    18.55
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Lid_TPU_2mm",
+   "material": "tpu",
+   "group": "frame",
+   "mass_g": 38.67,
+   "centroid_mm": [
+    0.0,
+    -30.43,
+    53.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "JGA25_370_Rear_L",
+   "material": "jga25",
+   "group": "frame",
+   "mass_g": 110.0,
+   "centroid_mm": [
+    -48.0,
+    -62.0,
+    32.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Wheel_Rear_L",
+   "material": "wheel",
+   "group": "frame",
+   "mass_g": 45.0,
+   "centroid_mm": [
+    -88.0,
+    -62.0,
+    32.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "JGA25_370_Rear_R",
+   "material": "jga25",
+   "group": "frame",
+   "mass_g": 110.0,
+   "centroid_mm": [
+    48.0,
+    -62.0,
+    32.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Wheel_Rear_R",
+   "material": "wheel",
+   "group": "frame",
+   "mass_g": 45.0,
+   "centroid_mm": [
+    88.0,
+    -62.0,
+    32.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "JGA25_370_Front_L",
+   "material": "jga25",
+   "group": "frame",
+   "mass_g": 110.0,
+   "centroid_mm": [
+    -48.0,
+    28.0,
+    32.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Wheel_Front_L",
+   "material": "wheel",
+   "group": "frame",
+   "mass_g": 45.0,
+   "centroid_mm": [
+    -88.0,
+    28.0,
+    32.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "JGA25_370_Front_R",
+   "material": "jga25",
+   "group": "frame",
+   "mass_g": 110.0,
+   "centroid_mm": [
+    48.0,
+    28.0,
+    32.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Wheel_Front_R",
+   "material": "wheel",
+   "group": "frame",
+   "mass_g": 45.0,
+   "centroid_mm": [
+    88.0,
+    28.0,
+    32.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Battery_3S_850",
+   "material": "battery",
+   "group": "frame",
+   "mass_g": 80.0,
+   "centroid_mm": [
+    -0.0,
+    -52.5,
+    19.5
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Shelf_PETG_2mm",
+   "material": "petg",
+   "group": "frame",
+   "mass_g": 6.4,
+   "centroid_mm": [
+    0.0,
+    -52.5,
+    34.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "ESP32_DevKit",
+   "material": "esp32",
+   "group": "frame",
+   "mass_g": 10.0,
+   "centroid_mm": [
+    0.0,
+    -56.25,
+    42.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "ESC_30A",
+   "material": "esc30",
+   "group": "frame",
+   "mass_g": 25.0,
+   "centroid_mm": [
+    42.0,
+    -12.5,
+    11.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "UBEC_5A",
+   "material": "ubec",
+   "group": "frame",
+   "mass_g": 15.0,
+   "centroid_mm": [
+    -44.0,
+    -15.0,
+    12.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "DRV8871_L",
+   "material": "drv8871",
+   "group": "frame",
+   "mass_g": 5.0,
+   "centroid_mm": [
+    -50.0,
+    -32.0,
+    33.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "DRV8871_R",
+   "material": "drv8871",
+   "group": "frame",
+   "mass_g": 5.0,
+   "centroid_mm": [
+    50.0,
+    -32.0,
+    33.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Arm_Module_Base_1.6",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 28.76,
+   "centroid_mm": [
+    -0.0,
+    15.0,
+    7.8
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Nose_Tongue_1.6",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 13.67,
+   "centroid_mm": [
+    0.0,
+    62.0,
+    7.8
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Nose_Skid_UHMW",
+   "material": "uhmw",
+   "group": "frame",
+   "mass_g": 2.45,
+   "centroid_mm": [
+    0.0,
+    74.0,
+    4.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tower_R_1.6",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 32.39,
+   "centroid_mm": [
+    20.4,
+    -0.71,
+    55.75
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tower_L_1.6",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 32.39,
+   "centroid_mm": [
+    -20.4,
+    -0.71,
+    55.75
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Pivot_Shaft_M8_12.9",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 19.3,
+   "centroid_mm": [
+    3.25,
+    -2.0,
+    90.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Slip_Clutch",
+   "material": "clutch",
+   "group": "frame",
+   "mass_g": 20.0,
+   "centroid_mm": [
+    -24.2,
+    -2.0,
+    90.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Servo_DS3218",
+   "material": "servo_ds3218",
+   "group": "frame",
+   "mass_g": 60.0,
+   "centroid_mm": [
+    -47.2,
+    8.25,
+    90.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Stop_Post_R_3.2x12",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 10.64,
+   "centroid_mm": [
+    11.6,
+    75.86,
+    26.27
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Stop_Post_L_3.2x12",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 10.64,
+   "centroid_mm": [
+    -11.6,
+    75.86,
+    26.27
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Fork_1_mild_12x4_on_edge",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 23.08,
+   "centroid_mm": [
+    -56.0,
+    78.38,
+    10.63
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Fork_2_mild_12x4_on_edge",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 23.08,
+   "centroid_mm": [
+    -17.0,
+    78.38,
+    10.63
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Fork_3_mild_12x4_on_edge",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 23.08,
+   "centroid_mm": [
+    17.0,
+    78.38,
+    10.63
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Fork_4_mild_12x4_on_edge",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 23.08,
+   "centroid_mm": [
+    56.0,
+    78.38,
+    10.63
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Fork_Pin_M4",
+   "material": "steel",
+   "group": "frame",
+   "mass_g": 14.6,
+   "centroid_mm": [
+    0.0,
+    52.0,
+    14.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Block_PETG_R_21",
+   "material": "petg",
+   "group": "frame",
+   "mass_g": 2.01,
+   "centroid_mm": [
+    25.5,
+    51.47,
+    12.94
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Block_PETG_L_21",
+   "material": "petg",
+   "group": "frame",
+   "mass_g": 2.01,
+   "centroid_mm": [
+    -25.5,
+    51.47,
+    12.94
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Block_PETG_R_40",
+   "material": "petg",
+   "group": "frame",
+   "mass_g": 2.68,
+   "centroid_mm": [
+    46.0,
+    51.47,
+    12.94
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Block_PETG_L_40",
+   "material": "petg",
+   "group": "frame",
+   "mass_g": 2.68,
+   "centroid_mm": [
+    -46.0,
+    51.47,
+    12.94
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Block_PETG_R_62",
+   "material": "petg",
+   "group": "frame",
+   "mass_g": 2.68,
+   "centroid_mm": [
+    68.0,
+    51.47,
+    12.94
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Block_PETG_L_62",
+   "material": "petg",
+   "group": "frame",
+   "mass_g": 2.68,
+   "centroid_mm": [
+    -68.0,
+    51.47,
+    12.94
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Arm_Plate_R_2.3",
+   "material": "steel",
+   "group": "arm",
+   "mass_g": 54.84,
+   "centroid_mm": [
+    11.15,
+    -19.65,
+    138.51
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Arm_Plate_L_2.3",
+   "material": "steel",
+   "group": "arm",
+   "mass_g": 55.35,
+   "centroid_mm": [
+    -11.15,
+    -19.67,
+    138.53
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Pivot_Housing_Ring_R",
+   "material": "steel",
+   "group": "arm",
+   "mass_g": 8.29,
+   "centroid_mm": [
+    15.8,
+    -2.0,
+    90.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Pivot_608_R",
+   "material": "bearing_608",
+   "group": "arm",
+   "mass_g": 12.0,
+   "centroid_mm": [
+    15.8,
+    -2.0,
+    90.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Arbor_Doubler_R",
+   "material": "steel",
+   "group": "arm",
+   "mass_g": 6.15,
+   "centroid_mm": [
+    13.8,
+    -36.2,
+    183.97
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Arbor_Spacer_R",
+   "material": "al6061",
+   "group": "arm",
+   "mass_g": 0.24,
+   "centroid_mm": [
+    9.0,
+    -36.2,
+    183.97
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Pivot_Housing_Ring_L",
+   "material": "steel",
+   "group": "arm",
+   "mass_g": 8.29,
+   "centroid_mm": [
+    -15.8,
+    -2.0,
+    90.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Pivot_608_L",
+   "material": "bearing_608",
+   "group": "arm",
+   "mass_g": 12.0,
+   "centroid_mm": [
+    -15.8,
+    -2.0,
+    90.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Arbor_Doubler_L",
+   "material": "steel",
+   "group": "arm",
+   "mass_g": 6.15,
+   "centroid_mm": [
+    -13.8,
+    -36.2,
+    183.97
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Arbor_Spacer_L",
+   "material": "al6061",
+   "group": "arm",
+   "mass_g": 0.24,
+   "centroid_mm": [
+    -9.0,
+    -36.2,
+    183.97
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Arbor_M8_12.9",
+   "material": "steel",
+   "group": "arm",
+   "mass_g": 14.64,
+   "centroid_mm": [
+    3.25,
+    -36.2,
+    183.97
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Saw_Hub_6061",
+   "material": "al6061",
+   "group": "arm",
+   "mass_g": 18.02,
+   "centroid_mm": [
+    -0.3,
+    -36.2,
+    183.97
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hub_608_A",
+   "material": "bearing_608",
+   "group": "arm",
+   "mass_g": 12.0,
+   "centroid_mm": [
+    -4.5,
+    -36.2,
+    183.97
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Hub_608_B",
+   "material": "bearing_608",
+   "group": "arm",
+   "mass_g": 12.0,
+   "centroid_mm": [
+    4.5,
+    -36.2,
+    183.97
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Saw_Disc_3T_SS400_3mm",
+   "material": "steel",
+   "group": "arm",
+   "mass_g": 94.91,
+   "centroid_mm": [
+    -0.0,
+    -36.2,
+    183.97
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Saw_Motor_A2212",
+   "material": "a2212",
+   "group": "arm",
+   "mass_g": 52.0,
+   "centroid_mm": [
+    28.3,
+    -20.81,
+    141.68
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Saw_Motor_Mount",
+   "material": "motor_mount",
+   "group": "arm",
+   "mass_g": 6.0,
+   "centroid_mm": [
+    13.8,
+    -20.81,
+    141.68
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Saw_Motor_Shaft",
+   "material": "steel",
+   "group": "arm",
+   "mass_g": 0.59,
+   "centroid_mm": [
+    7.65,
+    -20.81,
+    141.68
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Motor_Pulley",
+   "material": "pulley",
+   "group": "arm",
+   "mass_g": 3.0,
+   "centroid_mm": [
+    5.0,
+    -20.81,
+    141.68
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "weld beads (ARC)",
+   "mass_g": 21.4,
+   "centroid_mm": [
+    0,
+    0,
+    50
+   ],
+   "method": "8 % of welded steel, ASSUMED",
+   "group": "frame"
+  },
+  {
+   "part": "wiring + connectors",
+   "mass_g": 50.0,
+   "centroid_mm": [
+    0,
+    -30,
+    30
+   ],
+   "method": "ASSUMED",
+   "group": "frame"
+  },
+  {
+   "part": "sensors IMU/hall/temp",
+   "mass_g": 12.0,
+   "centroid_mm": [
+    0,
+    -40,
+    40
+   ],
+   "method": "ASSUMED",
+   "group": "frame"
+  },
+  {
+   "part": "switch + fuse",
+   "mass_g": 15.0,
+   "centroid_mm": [
+    60,
+    -80,
+    30
+   ],
+   "method": "ASSUMED",
+   "group": "frame"
+  },
+  {
+   "part": "fasteners + inserts",
+   "mass_g": 40.0,
+   "centroid_mm": [
+    0,
+    -20,
+    20
+   ],
+   "method": "ASSUMED",
+   "group": "frame"
+  }
+ ]
+}

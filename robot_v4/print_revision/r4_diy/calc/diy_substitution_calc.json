@@ -1,0 +1,493 @@
+{
+ "sources": {
+  "steellead_tube_table": "https://www.steellead.com/steel-tube-price.html (12x12x1.2: 2.4 kg / 6 m, median 36 THB/kg)",
+  "thaiwatsadu_tube_search": "https://www.thaiwatsadu.com/th/search/เหล็กกล่อง (smallest 19x19x1.2, 119 THB / 6 m)",
+  "thaiwatsadu_flat_bar": "https://www.thaiwatsadu.com/th/search/เหล็กแบน (thinnest 4 mm)",
+  "thaiwatsadu_pc": "https://www.thaiwatsadu.com/th/search/โพลีคาร์บอเนต ตัน (6 mm twin-wall and corrugated only)"
+ },
+ "stock": {
+  "tube": "12x12x1.2",
+  "tube_g_per_mm": 0.4069,
+  "tube_19x19x1.2_g_per_mm": 0.6707,
+  "sheet_mm": 1.6,
+  "flat_bar": "50.8 x 3.2",
+  "weld_fraction": 0.08
+ },
+ "w1_total_g": 1918.4,
+ "swaps": [
+  {
+   "group": "tube",
+   "w1": "Frame_Rear_Cross",
+   "diy": "tube 12x12x1.2 L162",
+   "shop": "ร้านเหล็ก",
+   "old_g": 45.78,
+   "new_g": 65.92,
+   "delta_g": 20.14,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Bulkhead_Cross",
+   "diy": "tube 12x12x1.2 L96",
+   "shop": "ร้านเหล็ก",
+   "old_g": 27.13,
+   "new_g": 39.07,
+   "delta_g": 11.94,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Bulkhead_Stub_L",
+   "diy": "tube 12x12x1.2 L23",
+   "shop": "ร้านเหล็ก",
+   "old_g": 6.5,
+   "new_g": 9.36,
+   "delta_g": 2.86,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Rail_L",
+   "diy": "tube 12x12x1.2 L186",
+   "shop": "ร้านเหล็ก",
+   "old_g": 74.47,
+   "new_g": 75.69,
+   "delta_g": 1.23,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Hinge_Beam_L",
+   "diy": "tube 12x12x1.2 L51",
+   "shop": "ร้านเหล็ก",
+   "old_g": 14.41,
+   "new_g": 20.75,
+   "delta_g": 6.34,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Post_Rear_L",
+   "diy": "tube 12x12x1.2 L35",
+   "shop": "ร้านเหล็ก",
+   "old_g": 9.89,
+   "new_g": 14.24,
+   "delta_g": 4.35,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Bulkhead_Stub_R",
+   "diy": "tube 12x12x1.2 L23",
+   "shop": "ร้านเหล็ก",
+   "old_g": 6.5,
+   "new_g": 9.36,
+   "delta_g": 2.86,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Rail_R",
+   "diy": "tube 12x12x1.2 L186",
+   "shop": "ร้านเหล็ก",
+   "old_g": 74.47,
+   "new_g": 75.69,
+   "delta_g": 1.23,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Hinge_Beam_R",
+   "diy": "tube 12x12x1.2 L51",
+   "shop": "ร้านเหล็ก",
+   "old_g": 14.41,
+   "new_g": 20.75,
+   "delta_g": 6.34,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Post_Rear_R",
+   "diy": "tube 12x12x1.2 L35",
+   "shop": "ร้านเหล็ก",
+   "old_g": 9.89,
+   "new_g": 14.24,
+   "delta_g": 4.35,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Top_Rear_Cross",
+   "diy": "tube 12x12x1.2 L162",
+   "shop": "ร้านเหล็ก",
+   "old_g": 45.78,
+   "new_g": 65.92,
+   "delta_g": 20.14,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Motor_Cross",
+   "diy": "tube 12x12x1.2 L96",
+   "shop": "ร้านเหล็ก",
+   "old_g": 27.13,
+   "new_g": 39.07,
+   "delta_g": 11.94,
+   "note": ""
+  },
+  {
+   "group": "tube",
+   "w1": "Frame_Clamp_Bar",
+   "diy": "tube 12x12x1.2 L28",
+   "shop": "ร้านเหล็ก",
+   "old_g": 7.91,
+   "new_g": 11.39,
+   "delta_g": 3.48,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Drive_Motor_L",
+   "diy": "Tab_Drive_Motor_L t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 10.59,
+   "new_g": 11.3,
+   "delta_g": 0.71,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Hinge_L1",
+   "diy": "Tab_Hinge_L1 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.69,
+   "new_g": 0.74,
+   "delta_g": 0.05,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Hinge_L2",
+   "diy": "Tab_Hinge_L2 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.69,
+   "new_g": 0.74,
+   "delta_g": 0.05,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Hinge_L3",
+   "diy": "Tab_Hinge_L3 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.69,
+   "new_g": 0.74,
+   "delta_g": 0.05,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Battery_Strap_L_50",
+   "diy": "Tab_Battery_Strap_L_50 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.94,
+   "new_g": 1.0,
+   "delta_g": 0.06,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Battery_Strap_L_31",
+   "diy": "Tab_Battery_Strap_L_31 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.94,
+   "new_g": 1.0,
+   "delta_g": 0.06,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Drive_Motor_R",
+   "diy": "Tab_Drive_Motor_R t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 10.59,
+   "new_g": 11.3,
+   "delta_g": 0.71,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Hinge_R1",
+   "diy": "Tab_Hinge_R1 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.69,
+   "new_g": 0.74,
+   "delta_g": 0.05,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Hinge_R2",
+   "diy": "Tab_Hinge_R2 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.69,
+   "new_g": 0.74,
+   "delta_g": 0.05,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Hinge_R3",
+   "diy": "Tab_Hinge_R3 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.69,
+   "new_g": 0.74,
+   "delta_g": 0.05,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Battery_Strap_R_50",
+   "diy": "Tab_Battery_Strap_R_50 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.94,
+   "new_g": 1.0,
+   "delta_g": 0.06,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Battery_Strap_R_31",
+   "diy": "Tab_Battery_Strap_R_31 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 0.94,
+   "new_g": 1.0,
+   "delta_g": 0.06,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Weapon_Mount_1",
+   "diy": "Tab_Weapon_Mount_1 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 1.71,
+   "new_g": 1.82,
+   "delta_g": 0.11,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Tab_Weapon_Mount_2",
+   "diy": "Tab_Weapon_Mount_2 t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 3.0,
+   "new_g": 3.2,
+   "delta_g": 0.2,
+   "note": ""
+  },
+  {
+   "group": "tab",
+   "w1": "Clamp_Drive_Motor_Post",
+   "diy": "Clamp_Drive_Motor_Post t1.6 hand-cut rectangle",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 3.42,
+   "new_g": 3.64,
+   "delta_g": 0.23,
+   "note": ""
+  },
+  {
+   "group": "weapon",
+   "w1": "Upright_6061_6mm_L + web/flange/rungs",
+   "diy": "upright 2\"x1/8\" flat bar welded + 1.6 flange",
+   "shop": "ร้านเหล็ก",
+   "old_g": 58.52,
+   "new_g": 56.57,
+   "delta_g": -1.95,
+   "note": "no M3 taps/bolts; axle holes stack-drilled before welding"
+  },
+  {
+   "group": "weapon",
+   "w1": "Upright_6061_6mm_R + web/flange/rungs",
+   "diy": "upright 2\"x1/8\" flat bar welded + 1.6 flange",
+   "shop": "ร้านเหล็ก",
+   "old_g": 58.88,
+   "new_g": 57.13,
+   "delta_g": -1.75,
+   "note": "no M3 taps/bolts; axle holes stack-drilled before welding"
+  },
+  {
+   "group": "weapon",
+   "w1": "Weapon_Top_Brace_3mm (6061)",
+   "diy": "top brace 1.6 sheet welded",
+   "shop": "ร้านเหล็ก",
+   "old_g": 6.17,
+   "new_g": 9.57,
+   "delta_g": 3.4,
+   "note": ""
+  },
+  {
+   "group": "weapon",
+   "w1": "Weapon_Bottom_Brace_3mm (6061)",
+   "diy": "bottom brace 1.6 sheet welded",
+   "shop": "ร้านเหล็ก",
+   "old_g": 5.05,
+   "new_g": 7.83,
+   "delta_g": 2.78,
+   "note": ""
+  },
+  {
+   "group": "weapon",
+   "w1": "Weapon_Motor_Mount_3mm (6061, notched)",
+   "diy": "motor mount 1.6 sheet welded to the two feet",
+   "shop": "ร้านเหล็ก",
+   "old_g": 12.4,
+   "new_g": 20.08,
+   "delta_g": 7.68,
+   "note": "stiffness E*t^3 = 46 % of 3 mm 6061: checked in the strength calc"
+  },
+  {
+   "group": "weapon",
+   "w1": "Beater_Disc_L (Hardox 450)",
+   "diy": "disc 6 mm SS400 plate, ground to a 1:1 template",
+   "shop": "ร้านเหล็ก (เศษแผ่น 6)",
+   "old_g": 80.42,
+   "new_g": 80.42,
+   "delta_g": 0.0,
+   "note": "same outline -> same inertia/energy; softer teeth (wear, not strength)"
+  },
+  {
+   "group": "weapon",
+   "w1": "Beater_Disc_R (Hardox 450)",
+   "diy": "disc 6 mm SS400 plate, ground to a 1:1 template",
+   "shop": "ร้านเหล็ก (เศษแผ่น 6)",
+   "old_g": 80.42,
+   "new_g": 80.42,
+   "delta_g": 0.0,
+   "note": "same outline -> same inertia/energy; softer teeth (wear, not strength)"
+  },
+  {
+   "group": "wedgelet",
+   "w1": "Wedgelet_L (65Mn)",
+   "diy": "wedgelet 1.6 SS400 sheet",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 25.59,
+   "new_g": 25.59,
+   "delta_g": 0.0,
+   "note": "MACHINING.md: SS400 lifts 1.9x the R3 lifter load"
+  },
+  {
+   "group": "wedgelet",
+   "w1": "Wedgelet carriers L1/L2 (6061 machined)",
+   "diy": "2 ears bent from the wedgelet blank",
+   "shop": "-",
+   "old_g": 7.91,
+   "new_g": 3.62,
+   "delta_g": -4.3,
+   "note": ""
+  },
+  {
+   "group": "wedgelet",
+   "w1": "Hinge_Pin_D3_L + E-clip (lathe)",
+   "diy": "M3x60 bolt + nylock",
+   "shop": "ร้านน็อต",
+   "old_g": 3.5,
+   "new_g": 3.3,
+   "delta_g": -0.2,
+   "note": "ASSUMED steel M3x60 2.9 g"
+  },
+  {
+   "group": "wedgelet",
+   "w1": "Wedgelet_R (65Mn)",
+   "diy": "wedgelet 1.6 SS400 sheet",
+   "shop": "ร้านเหล็ก (เศษแผ่น 1.6)",
+   "old_g": 25.59,
+   "new_g": 25.59,
+   "delta_g": 0.0,
+   "note": "MACHINING.md: SS400 lifts 1.9x the R3 lifter load"
+  },
+  {
+   "group": "wedgelet",
+   "w1": "Wedgelet carriers R1/R2 (6061 machined)",
+   "diy": "2 ears bent from the wedgelet blank",
+   "shop": "-",
+   "old_g": 7.91,
+   "new_g": 3.62,
+   "delta_g": -4.3,
+   "note": ""
+  },
+  {
+   "group": "wedgelet",
+   "w1": "Hinge_Pin_D3_R + E-clip (lathe)",
+   "diy": "M3x60 bolt + nylock",
+   "shop": "ร้านน็อต",
+   "old_g": 3.5,
+   "new_g": 3.3,
+   "delta_g": -0.2,
+   "note": "ASSUMED steel M3x60 2.9 g"
+  },
+  {
+   "group": "misc",
+   "w1": "Hall_Post_PETG (6061 machined)",
+   "diy": "Hall post 1.6 strip L, welded on the cross",
+   "shop": "ร้านเหล็ก",
+   "old_g": 2.65,
+   "new_g": 4.52,
+   "delta_g": 1.88,
+   "note": ""
+  },
+  {
+   "group": "misc",
+   "w1": "Dead_Shaft_M8_12.9 x80",
+   "diy": "M8x75 12.9 (uprights 3.2 not 6)",
+   "shop": "ร้านน็อต",
+   "old_g": 37.48,
+   "new_g": 35.14,
+   "delta_g": -2.34,
+   "note": ""
+  },
+  {
+   "group": "weld",
+   "w1": "weld beads + paint 4 % (MIG)",
+   "diy": "weld beads + spatter + paint 8 % (ARC)",
+   "shop": "-",
+   "old_g": 18.12,
+   "new_g": 56.31,
+   "delta_g": 38.19,
+   "note": "ASSUMED until the frame is weighed"
+  }
+ ],
+ "delta_by_group_g": {
+  "tube": 97.1,
+  "tab": 2.6,
+  "weapon": 10.3,
+  "wedgelet": -9.0,
+  "misc": -0.4,
+  "weld": 38.2
+ },
+ "delta_g": 138.6,
+ "diy_total_g": 2057.0,
+ "diy_steel_g": 703.9,
+ "unchanged": [
+  "PC 2 mm skins (ร้านพลาสติก/อะคริลิค, ตัดเองได้)",
+  "skirts 0.8 Al + 11 brackets 1.5 Al (ร้านอลูมิเนียม/ร้านกระจก)",
+  "weapon hub, motor pulley, 3 spacers, 2 wheel hubs (ร้านกลึง: need a lathe)",
+  "O-rings, bearings, motors, electronics, rivnuts"
+ ],
+ "options": {
+  "D0 keep everything": {
+   "total_g": 2057.0,
+   "margin_2000_g": -57.0,
+   "margin_1950_g": -107.0
+  },
+  "D1 top rear cross -> 1.6 x 12 strip on the posts (lid clamp only)": {
+   "total_g": 2012.2,
+   "margin_2000_g": -12.2,
+   "margin_1950_g": -62.2
+  },
+  "D2 NoCage: no rear posts/top cross, lid on bought Al angles (+3 g)": {
+   "total_g": 1958.0,
+   "margin_2000_g": 42.0,
+   "margin_1950_g": -8.0
+  }
+ }
+}

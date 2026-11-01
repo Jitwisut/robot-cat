@@ -1,0 +1,5016 @@
+{
+ "status": "CONCEPT_CAD",
+ "revision": "V4 R5-AL (aluminium bolted frame, R3 6061 weapon module, no lathe parts)",
+ "orientation": "Z-up, nose +Y, mm",
+ "removed_from_r3": [
+  "3S_850mAh_LiPo_ENVELOPE_75x35x25",
+  "Battery_Tray_PETG",
+  "Beater_Hub_6061_D30",
+  "Disconnect_Collar_PETG",
+  "Eclip_DIN6799_2.3_L",
+  "Eclip_DIN6799_2.3_R",
+  "Electronics_Platform_PETG",
+  "Electronics_Standoff_PETG_1",
+  "Electronics_Standoff_PETG_2",
+  "Electronics_Standoff_PETG_3",
+  "Electronics_Standoff_PETG_4",
+  "Hall_Post_PETG",
+  "Hinge_Pin_D3_L",
+  "Hinge_Pin_D3_R",
+  "JGA25_370_400rpm_Rear_L",
+  "JGA25_370_400rpm_Rear_R",
+  "Lid_TPU_2mm",
+  "Motor_Pulley_D30_1to1",
+  "Nose_Skid_UHMW_3mm",
+  "Spacer_Inner_ID8.2_OD11",
+  "Spacer_Outer_L_ID8.2_OD11",
+  "Spacer_Outer_R_ID8.2_OD11",
+  "Tub_TPU",
+  "Weapon_Motor_Mount_3mm",
+  "Weapon_Mount_Foot_PETG_1",
+  "Weapon_Mount_Foot_PETG_2",
+  "Wedgelet_Block_PETG_L",
+  "Wedgelet_Block_PETG_R",
+  "Wedgelet_Carrier_PETG_L1",
+  "Wedgelet_Carrier_PETG_L2",
+  "Wedgelet_Carrier_PETG_R1",
+  "Wedgelet_Carrier_PETG_R2",
+  "Wedgelet_L",
+  "Wedgelet_R",
+  "Wheel_Hub_PETG_Front_L",
+  "Wheel_Hub_PETG_Front_R",
+  "Wheel_Hub_PETG_Rear_L",
+  "Wheel_Hub_PETG_Rear_R",
+  "Wheel_Tyre_TPU_Front_L",
+  "Wheel_Tyre_TPU_Front_R",
+  "Wheel_Tyre_TPU_Rear_L",
+  "Wheel_Tyre_TPU_Rear_R"
+ ],
+ "invalid_bodies": [],
+ "frame_members_not_touching": [],
+ "edge_only_contacts": [],
+ "bolted_contacts": [
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Frame_Rail_L",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    -52.4,
+    -95.3,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Frame_Rail_R",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    52.3,
+    -95.3,
+    12.3
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Tab_Wall_Rear_L",
+   "contact_area_mm2": 107.4,
+   "contact_centre_mm": [
+    -76.2,
+    -101.6,
+    18.7
+   ],
+   "contact_size_mm": [
+    12.7,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Tab_Wall_Rear_R",
+   "contact_area_mm2": 107.4,
+   "contact_centre_mm": [
+    76.2,
+    -101.6,
+    18.7
+   ],
+   "contact_size_mm": [
+    12.7,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Cleat_RearCross_L",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    -41.4,
+    -95.3,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rear_Cross",
+   "b": "Cleat_RearCross_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    41.4,
+    -95.3,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Rail_L",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    -46.0,
+    56.4,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Frame_Rail_R",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    46.0,
+    56.4,
+    12.3
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Upright_Foot_Angle_6061_L",
+   "contact_area_mm2": 125.8,
+   "contact_centre_mm": [
+    -39.3,
+    62.7,
+    12.3
+   ],
+   "contact_size_mm": [
+    13.0,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Upright_Foot_Angle_6061_R",
+   "contact_area_mm2": 125.8,
+   "contact_centre_mm": [
+    39.3,
+    62.7,
+    12.3
+   ],
+   "contact_size_mm": [
+    13.0,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Weapon_Motor_Mount_6061_3mm",
+   "contact_area_mm2": 26.1,
+   "contact_centre_mm": [
+    -43.5,
+    50.0,
+    14.3
+   ],
+   "contact_size_mm": [
+    8.7,
+    3.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Motor_Mount_Angle_Al_Front",
+   "contact_area_mm2": 10.7,
+   "contact_centre_mm": [
+    -45.5,
+    56.4,
+    18.7
+   ],
+   "contact_size_mm": [
+    10.7,
+    1.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Cross",
+   "b": "Cleat_BulkCross_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    41.4,
+    50.0,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_L",
+   "b": "Frame_Rail_L",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    -58.7,
+    56.4,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_L",
+   "b": "Tab_Wall_Front_L",
+   "contact_area_mm2": 107.4,
+   "contact_centre_mm": [
+    -76.2,
+    56.4,
+    18.7
+   ],
+   "contact_size_mm": [
+    12.7,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_L",
+   "b": "Cleat_BulkStub_L",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    -63.3,
+    62.7,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Frame_Hinge_Beam_L",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    -52.4,
+    85.3,
+    12.3
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Frame_Motor_Cross",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    -46.0,
+    16.4,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Drive_Motor_L",
+   "contact_area_mm2": 188.2,
+   "contact_centre_mm": [
+    -53.3,
+    18.0,
+    18.7
+   ],
+   "contact_size_mm": [
+    33.0,
+    11.5
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Battery_Strap_L_50",
+   "contact_area_mm2": 82.0,
+   "contact_centre_mm": [
+    -46.0,
+    -50.0,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Tab_Battery_Strap_L_31",
+   "contact_area_mm2": 82.0,
+   "contact_centre_mm": [
+    -46.0,
+    -31.0,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Frame_Midwall_Stub_L",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    -58.7,
+    -48.7,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Upright_Riser_Angle_6061_L",
+   "contact_area_mm2": 120.3,
+   "contact_centre_mm": [
+    -51.8,
+    78.3,
+    18.7
+   ],
+   "contact_size_mm": [
+    12.7,
+    11.7
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Upright_Foot_Angle_6061_L",
+   "contact_area_mm2": 94.7,
+   "contact_centre_mm": [
+    -46.0,
+    66.9,
+    12.3
+   ],
+   "contact_size_mm": [
+    12.7,
+    9.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Motor_Mount_Angle_Al_Front",
+   "contact_area_mm2": 107.0,
+   "contact_centre_mm": [
+    -51.0,
+    56.4,
+    18.7
+   ],
+   "contact_size_mm": [
+    10.7,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Motor_Mount_Angle_Al_Mid",
+   "contact_area_mm2": 140.0,
+   "contact_centre_mm": [
+    -51.0,
+    42.0,
+    18.7
+   ],
+   "contact_size_mm": [
+    14.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Cleat_RearCross_L",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    -46.0,
+    -90.7,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Cleat_MotorCross_Rear_L",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    -46.0,
+    5.4,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Cleat_BulkStub_L",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    -58.7,
+    67.3,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Cleat_HingeBeam_L",
+   "contact_area_mm2": 79.7,
+   "contact_centre_mm": [
+    -58.7,
+    80.7,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_L",
+   "b": "Cleat_Midwall_L",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    -58.7,
+    -59.6,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Hinge_L1",
+   "contact_area_mm2": 23.4,
+   "contact_centre_mm": [
+    -38.0,
+    98.0,
+    11.8
+   ],
+   "contact_size_mm": [
+    11.7,
+    2.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Hinge_L2",
+   "contact_area_mm2": 23.4,
+   "contact_centre_mm": [
+    -63.0,
+    98.0,
+    11.8
+   ],
+   "contact_size_mm": [
+    11.7,
+    2.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Tab_Hinge_L3",
+   "contact_area_mm2": 23.4,
+   "contact_centre_mm": [
+    -86.0,
+    98.0,
+    11.8
+   ],
+   "contact_size_mm": [
+    11.7,
+    2.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Hinge_Base_5052_2mm_L",
+   "contact_area_mm2": 379.7,
+   "contact_centre_mm": [
+    -61.4,
+    94.3,
+    6.0
+   ],
+   "contact_size_mm": [
+    54.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_L",
+   "b": "Cleat_HingeBeam_L",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    -63.3,
+    85.3,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_R",
+   "b": "Frame_Rail_R",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    58.7,
+    56.4,
+    12.3
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_R",
+   "b": "Tab_Wall_Front_R",
+   "contact_area_mm2": 107.4,
+   "contact_centre_mm": [
+    76.2,
+    56.4,
+    18.7
+   ],
+   "contact_size_mm": [
+    12.7,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Bulkhead_Stub_R",
+   "b": "Cleat_BulkStub_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    63.3,
+    62.7,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Frame_Hinge_Beam_R",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    52.3,
+    85.3,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Frame_Motor_Cross",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    46.0,
+    16.3,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Tab_Drive_Motor_R",
+   "contact_area_mm2": 188.2,
+   "contact_centre_mm": [
+    53.3,
+    18.0,
+    18.7
+   ],
+   "contact_size_mm": [
+    33.0,
+    11.5
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Tab_Battery_Strap_R_50",
+   "contact_area_mm2": 82.0,
+   "contact_centre_mm": [
+    46.0,
+    -50.0,
+    12.3
+   ],
+   "contact_size_mm": [
+    12.7,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Tab_Battery_Strap_R_31",
+   "contact_area_mm2": 82.0,
+   "contact_centre_mm": [
+    46.0,
+    -31.0,
+    12.3
+   ],
+   "contact_size_mm": [
+    12.7,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Frame_Midwall_Stub_R",
+   "contact_area_mm2": 85.6,
+   "contact_centre_mm": [
+    58.7,
+    -48.7,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.7
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Upright_Riser_Angle_6061_R",
+   "contact_area_mm2": 120.3,
+   "contact_centre_mm": [
+    51.8,
+    78.3,
+    18.7
+   ],
+   "contact_size_mm": [
+    12.7,
+    11.7
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Upright_Foot_Angle_6061_R",
+   "contact_area_mm2": 94.7,
+   "contact_centre_mm": [
+    46.0,
+    66.9,
+    12.3
+   ],
+   "contact_size_mm": [
+    12.7,
+    9.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Cleat_RearCross_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    46.0,
+    -90.7,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Cleat_BulkCross_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    46.0,
+    45.4,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Cleat_MotorCross_Rear_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    46.0,
+    5.4,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Cleat_BulkStub_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    58.7,
+    67.3,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Cleat_HingeBeam_R",
+   "contact_area_mm2": 79.7,
+   "contact_centre_mm": [
+    58.7,
+    80.7,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Rail_R",
+   "b": "Cleat_Midwall_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    58.7,
+    -59.6,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Hinge_R1",
+   "contact_area_mm2": 23.4,
+   "contact_centre_mm": [
+    38.0,
+    98.0,
+    11.8
+   ],
+   "contact_size_mm": [
+    11.7,
+    2.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Hinge_R2",
+   "contact_area_mm2": 23.4,
+   "contact_centre_mm": [
+    63.0,
+    98.0,
+    11.8
+   ],
+   "contact_size_mm": [
+    11.7,
+    2.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Tab_Hinge_R3",
+   "contact_area_mm2": 23.4,
+   "contact_centre_mm": [
+    86.0,
+    98.0,
+    11.8
+   ],
+   "contact_size_mm": [
+    11.7,
+    2.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Hinge_Base_5052_2mm_R",
+   "contact_area_mm2": 379.7,
+   "contact_centre_mm": [
+    61.4,
+    94.3,
+    6.0
+   ],
+   "contact_size_mm": [
+    54.0,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Hinge_Beam_R",
+   "b": "Cleat_HingeBeam_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    63.3,
+    85.3,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Motor_Cross",
+   "b": "Clamp_Drive_Motor_Post",
+   "contact_area_mm2": 115.2,
+   "contact_centre_mm": [
+    -0.0,
+    22.7,
+    12.4
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.0
+   ]
+  },
+  {
+   "a": "Frame_Motor_Cross",
+   "b": "Weapon_Motor_Mount_6061_3mm",
+   "contact_area_mm2": 26.1,
+   "contact_centre_mm": [
+    -43.5,
+    22.7,
+    14.4
+   ],
+   "contact_size_mm": [
+    8.7,
+    3.0
+   ]
+  },
+  {
+   "a": "Frame_Motor_Cross",
+   "b": "Cleat_MotorCross_Rear_L",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    -41.4,
+    10.0,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Motor_Cross",
+   "b": "Cleat_MotorCross_Rear_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    41.4,
+    10.0,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Clamp_Bar",
+   "b": "Clamp_Drive_Motor_Post",
+   "contact_area_mm2": 115.2,
+   "contact_centre_mm": [
+    -0.0,
+    22.7,
+    51.3
+   ],
+   "contact_size_mm": [
+    12.7,
+    12.0
+   ]
+  },
+  {
+   "a": "Tab_Hinge_L1",
+   "b": "Hinge_Base_5052_2mm_L",
+   "contact_area_mm2": 14.0,
+   "contact_centre_mm": [
+    -38.0,
+    101.5,
+    6.0
+   ],
+   "contact_size_mm": [
+    7.0,
+    2.0
+   ]
+  },
+  {
+   "a": "Tab_Hinge_L2",
+   "b": "Hinge_Base_5052_2mm_L",
+   "contact_area_mm2": 14.0,
+   "contact_centre_mm": [
+    -63.0,
+    101.5,
+    6.0
+   ],
+   "contact_size_mm": [
+    7.0,
+    2.0
+   ]
+  },
+  {
+   "a": "Tab_Hinge_L3",
+   "b": "Hinge_Base_5052_2mm_L",
+   "contact_area_mm2": 14.0,
+   "contact_centre_mm": [
+    -86.0,
+    101.5,
+    6.0
+   ],
+   "contact_size_mm": [
+    7.0,
+    2.0
+   ]
+  },
+  {
+   "a": "Tab_Hinge_R1",
+   "b": "Hinge_Base_5052_2mm_R",
+   "contact_area_mm2": 14.0,
+   "contact_centre_mm": [
+    38.0,
+    101.5,
+    6.0
+   ],
+   "contact_size_mm": [
+    7.0,
+    2.0
+   ]
+  },
+  {
+   "a": "Tab_Hinge_R2",
+   "b": "Hinge_Base_5052_2mm_R",
+   "contact_area_mm2": 14.0,
+   "contact_centre_mm": [
+    63.0,
+    101.5,
+    6.0
+   ],
+   "contact_size_mm": [
+    7.0,
+    2.0
+   ]
+  },
+  {
+   "a": "Tab_Hinge_R3",
+   "b": "Hinge_Base_5052_2mm_R",
+   "contact_area_mm2": 14.0,
+   "contact_centre_mm": [
+    86.0,
+    101.5,
+    6.0
+   ],
+   "contact_size_mm": [
+    7.0,
+    2.0
+   ]
+  },
+  {
+   "a": "Frame_Midwall_Stub_L",
+   "b": "Tab_Wall_Mid_L",
+   "contact_area_mm2": 82.0,
+   "contact_centre_mm": [
+    -75.0,
+    -48.6,
+    18.7
+   ],
+   "contact_size_mm": [
+    12.7,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Midwall_Stub_L",
+   "b": "Cleat_Midwall_L",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    -63.3,
+    -55.0,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Frame_Midwall_Stub_R",
+   "b": "Tab_Wall_Mid_R",
+   "contact_area_mm2": 82.0,
+   "contact_centre_mm": [
+    75.0,
+    -48.6,
+    18.7
+   ],
+   "contact_size_mm": [
+    12.7,
+    8.0
+   ]
+  },
+  {
+   "a": "Frame_Midwall_Stub_R",
+   "b": "Cleat_Midwall_R",
+   "contact_area_mm2": 80.4,
+   "contact_centre_mm": [
+    63.3,
+    -55.0,
+    12.4
+   ],
+   "contact_size_mm": [
+    10.0,
+    10.0
+   ]
+  },
+  {
+   "a": "Weapon_Motor_Mount_6061_3mm",
+   "b": "Motor_Mount_Angle_Al_Front",
+   "contact_area_mm2": 125.2,
+   "contact_centre_mm": [
+    -45.0,
+    56.4,
+    24.9
+   ],
+   "contact_size_mm": [
+    11.7,
+    10.7
+   ]
+  },
+  {
+   "a": "Weapon_Motor_Mount_6061_3mm",
+   "b": "Motor_Mount_Angle_Al_Mid",
+   "contact_area_mm2": 161.4,
+   "contact_centre_mm": [
+    -45.0,
+    41.8,
+    24.5
+   ],
+   "contact_size_mm": [
+    14.0,
+    12.0
+   ]
+  }
+ ],
+ "weapon_joints": [
+  [
+   "upright -> frame, L",
+   [
+    "Upright_6061_6mm_L",
+    "Rung_Al_Bar_Solid_L",
+    "Upright_Riser_Angle_6061_L",
+    "Upright_Foot_Angle_6061_L"
+   ],
+   3,
+   "3 x M4 8.8 into the tapped (M4) upright + riser M4 into a rail rivnut + foot leg A 2 x M3 rivnuts"
+  ],
+  [
+   "upright -> frame, R",
+   [
+    "Upright_6061_6mm_R",
+    "Rung_Al_Bar_Solid_R",
+    "Upright_Riser_Angle_6061_R",
+    "Upright_Foot_Angle_6061_R"
+   ],
+   3,
+   "3 x M4 8.8 into the tapped (M4) upright + riser M4 into a rail rivnut + foot leg A 2 x M3 rivnuts"
+  ],
+  [
+   "M06 -> frame via front angle",
+   [
+    "Weapon_Motor_Mount_6061_3mm",
+    "Motor_Mount_Angle_Al_Front"
+   ],
+   2,
+   "one M3 down into a rivnut in the rail top, one M3 through the mount"
+  ],
+  [
+   "M06 -> frame via mid angle",
+   [
+    "Weapon_Motor_Mount_6061_3mm",
+    "Motor_Mount_Angle_Al_Mid"
+   ],
+   2,
+   "one M3 down into a rivnut in the rail top, one M3 through the mount"
+  ]
+ ],
+ "interference": [],
+ "rotor_sweep_hits": [],
+ "wedgelet_swing": {
+  "L": {
+   "up": {
+    "free_deg": 15,
+    "first_contact": "Upright_6061_6mm_L",
+    "at_deg": 16
+   },
+   "down": {
+    "free_deg": -20,
+    "first_contact": null
+   },
+   "sim_range_deg": [
+    -2.0,
+    14.0
+   ],
+   "ok": true
+  },
+  "R": {
+   "up": {
+    "free_deg": 15,
+    "first_contact": "Upright_6061_6mm_R",
+    "at_deg": 16
+   },
+   "down": {
+    "free_deg": -20,
+    "first_contact": null
+   },
+   "sim_range_deg": [
+    -2.0,
+    14.0
+   ],
+   "ok": true
+  }
+ },
+ "ear_yz": [
+  [
+   98.6,
+   14.5
+  ],
+  [
+   98.6291,
+   14.0562
+  ],
+  [
+   98.7159,
+   13.62
+  ],
+  [
+   98.8588,
+   13.1989
+  ],
+  [
+   99.0555,
+   12.8
+  ],
+  [
+   99.3026,
+   12.4302
+  ],
+  [
+   99.5958,
+   12.0958
+  ],
+  [
+   99.9302,
+   11.8026
+  ],
+  [
+   100.3,
+   11.5555
+  ],
+  [
+   100.6989,
+   11.3588
+  ],
+  [
+   101.12,
+   11.2159
+  ],
+  [
+   101.5562,
+   11.1291
+  ],
+  [
+   102.0,
+   11.1
+  ],
+  [
+   102.4438,
+   11.1291
+  ],
+  [
+   102.88,
+   11.2159
+  ],
+  [
+   103.3011,
+   11.3588
+  ],
+  [
+   103.7,
+   11.5555
+  ],
+  [
+   104.0698,
+   11.8026
+  ],
+  [
+   108.6023,
+   15.3386
+  ],
+  [
+   100.465,
+   21.151
+  ],
+  [
+   98.7159,
+   15.38
+  ],
+  [
+   98.6291,
+   14.9438
+  ]
+ ],
+ "drill_list": [
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 3.6,
+   "what": "JB359 M3 mount",
+   "yz_mm": [
+    9.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 3.6,
+   "what": "JB359 M3 mount",
+   "yz_mm": [
+    26.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 5.5,
+   "what": "JB359 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    23.5
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "d_mm": 5.5,
+   "what": "JB359 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    40.5
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 3.6,
+   "what": "JB359 M3 mount",
+   "yz_mm": [
+    9.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 3.6,
+   "what": "JB359 M3 mount",
+   "yz_mm": [
+    26.5,
+    32.0
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 5.5,
+   "what": "JB359 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    23.5
+   ]
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "d_mm": 5.5,
+   "what": "JB359 gearbox screw head",
+   "yz_mm": [
+    18.0,
+    40.5
+   ]
+  }
+ ],
+ "midwall_y": -55.0,
+ "weapon_bolts_yz": [
+  [
+   "L",
+   "rung M4x50 through rail + bar",
+   78.35,
+   12.35
+  ],
+  [
+   "L",
+   "riser angle vertical leg",
+   78.35,
+   30.0
+  ],
+  [
+   "L",
+   "foot angle leg B",
+   68.7,
+   20.0
+  ],
+  [
+   "R",
+   "rung M4x50 through rail + bar",
+   78.35,
+   12.35
+  ],
+  [
+   "R",
+   "riser angle vertical leg",
+   78.35,
+   30.0
+  ],
+  [
+   "R",
+   "foot angle leg B",
+   68.7,
+   20.0
+  ]
+ ],
+ "fixings": [
+  {
+   "step": 3,
+   "what": "upright -> rung bar -> rail",
+   "fastener": "M4x45 8.8 + washer (head outside the rail)",
+   "parts": [
+    "Frame_Rail_L",
+    "Rung_Al_Bar_Solid_L",
+    "Upright_6061_6mm_L"
+   ],
+   "xyz": [
+    -52,
+    78.3,
+    12.3
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 3,
+   "what": "upright -> riser angle",
+   "fastener": "M4x10 8.8 + washer",
+   "parts": [
+    "Upright_Riser_Angle_6061_L",
+    "Upright_6061_6mm_L"
+   ],
+   "xyz": [
+    -34.5,
+    78.3,
+    30.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 3,
+   "what": "upright -> foot angle",
+   "fastener": "M4x10 8.8 + washer",
+   "parts": [
+    "Upright_Foot_Angle_6061_L",
+    "Upright_6061_6mm_L"
+   ],
+   "xyz": [
+    -34.5,
+    68.7,
+    20.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 3,
+   "what": "riser angle -> rail top",
+   "fastener": "M4x10 8.8 into an M4 rivnut",
+   "parts": [
+    "Upright_Riser_Angle_6061_L",
+    "Frame_Rail_L"
+   ],
+   "xyz": [
+    -52,
+    78.3,
+    18.7
+   ],
+   "rivnut_in": "Frame_Rail_L"
+  },
+  {
+   "step": 3,
+   "what": "foot angle leg C -> rail inner face",
+   "fastener": "M3x8 8.8 into an M3 rivnut",
+   "parts": [
+    "Upright_Foot_Angle_6061_L",
+    "Frame_Rail_L"
+   ],
+   "xyz": [
+    -46.0,
+    68.7,
+    12.3
+   ],
+   "rivnut_in": "Frame_Rail_L"
+  },
+  {
+   "step": 3,
+   "what": "foot angle -> bulkhead cross front face",
+   "fastener": "M3x8 8.8 into an M3 rivnut",
+   "parts": [
+    "Upright_Foot_Angle_6061_L",
+    "Frame_Bulkhead_Cross"
+   ],
+   "xyz": [
+    -37.5,
+    62.7,
+    12.3
+   ],
+   "rivnut_in": "Frame_Bulkhead_Cross"
+  },
+  {
+   "step": 3,
+   "what": "foot angle -> bulkhead cross front face",
+   "fastener": "M3x8 8.8 into an M3 rivnut",
+   "parts": [
+    "Upright_Foot_Angle_6061_L",
+    "Frame_Bulkhead_Cross"
+   ],
+   "xyz": [
+    -42.5,
+    62.7,
+    12.3
+   ],
+   "rivnut_in": "Frame_Bulkhead_Cross"
+  },
+  {
+   "step": 2,
+   "what": "drive-motor tab -> rail top",
+   "fastener": "M3x8 button head (ISO 7380) into an M3 rivnut",
+   "parts": [
+    "Tab_Drive_Motor_L",
+    "Frame_Rail_L"
+   ],
+   "xyz": [
+    -51,
+    5.8,
+    18.7
+   ],
+   "rivnut_in": "Frame_Rail_L"
+  },
+  {
+   "step": 2,
+   "what": "drive-motor tab -> rail top",
+   "fastener": "M3x8 button head (ISO 7380) into an M3 rivnut",
+   "parts": [
+    "Tab_Drive_Motor_L",
+    "Frame_Rail_L"
+   ],
+   "xyz": [
+    -51,
+    30.2,
+    18.7
+   ],
+   "rivnut_in": "Frame_Rail_L"
+  },
+  {
+   "step": 4,
+   "what": "hinge base -> hinge beam bottom",
+   "fastener": "M3x6 countersunk into an M3 rivnut",
+   "parts": [
+    "Hinge_Base_5052_2mm_L",
+    "Frame_Hinge_Beam_L"
+   ],
+   "xyz": [
+    -45.0,
+    91.6,
+    6.0
+   ],
+   "rivnut_in": "Frame_Hinge_Beam_L"
+  },
+  {
+   "step": 4,
+   "what": "hinge base -> hinge beam bottom",
+   "fastener": "M3x6 countersunk into an M3 rivnut",
+   "parts": [
+    "Hinge_Base_5052_2mm_L",
+    "Frame_Hinge_Beam_L"
+   ],
+   "xyz": [
+    -55.0,
+    91.6,
+    6.0
+   ],
+   "rivnut_in": "Frame_Hinge_Beam_L"
+  },
+  {
+   "step": 4,
+   "what": "hinge base -> hinge beam bottom",
+   "fastener": "M3x6 countersunk into an M3 rivnut",
+   "parts": [
+    "Hinge_Base_5052_2mm_L",
+    "Frame_Hinge_Beam_L"
+   ],
+   "xyz": [
+    -75.0,
+    91.6,
+    6.0
+   ],
+   "rivnut_in": "Frame_Hinge_Beam_L"
+  },
+  {
+   "step": 5,
+   "what": "battery-strap tab -> rail inner face",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Battery_Strap_L_50",
+    "Frame_Rail_L"
+   ],
+   "xyz": [
+    -45,
+    -50.0,
+    12.3
+   ],
+   "rivnut_in": "Frame_Rail_L"
+  },
+  {
+   "step": 5,
+   "what": "battery-strap tab -> rail inner face",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Battery_Strap_L_31",
+    "Frame_Rail_L"
+   ],
+   "xyz": [
+    -45,
+    -31.0,
+    12.3
+   ],
+   "rivnut_in": "Frame_Rail_L"
+  },
+  {
+   "step": 1,
+   "what": "wall tab -> tube top",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Wall_Rear_L",
+    "Frame_Rear_Cross"
+   ],
+   "xyz": [
+    -75.0,
+    -101.7,
+    18.7
+   ],
+   "rivnut_in": "Frame_Rear_Cross"
+  },
+  {
+   "step": 7,
+   "what": "PC side wall -> wall tab",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Side_Wall_L",
+    "Tab_Wall_Rear_L"
+   ],
+   "xyz": [
+    -83.0,
+    -101.7,
+    22.7
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 1,
+   "what": "wall tab -> tube top",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Wall_Front_L",
+    "Frame_Bulkhead_Stub_L"
+   ],
+   "xyz": [
+    -75.0,
+    56.4,
+    18.7
+   ],
+   "rivnut_in": "Frame_Bulkhead_Stub_L"
+  },
+  {
+   "step": 7,
+   "what": "PC side wall -> wall tab",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Side_Wall_L",
+    "Tab_Wall_Front_L"
+   ],
+   "xyz": [
+    -83.0,
+    56.4,
+    22.7
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 1,
+   "what": "wall tab -> tube top",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Wall_Mid_L",
+    "Frame_Midwall_Stub_L"
+   ],
+   "xyz": [
+    -75.0,
+    -48.6,
+    18.7
+   ],
+   "rivnut_in": "Frame_Midwall_Stub_L"
+  },
+  {
+   "step": 7,
+   "what": "PC side wall -> wall tab",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Side_Wall_L",
+    "Tab_Wall_Mid_L"
+   ],
+   "xyz": [
+    -83.0,
+    -48.6,
+    22.7
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> rail bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Rail_L"
+   ],
+   "xyz": [
+    -52,
+    -80.0,
+    6.0
+   ],
+   "rivnut_in": "Frame_Rail_L"
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> rail bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Rail_L"
+   ],
+   "xyz": [
+    -52,
+    -30.0,
+    6.0
+   ],
+   "rivnut_in": "Frame_Rail_L"
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> rail bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Rail_L"
+   ],
+   "xyz": [
+    -52,
+    75.0,
+    6.0
+   ],
+   "rivnut_in": "Frame_Rail_L"
+  },
+  {
+   "step": 3,
+   "what": "upright -> rung bar -> rail",
+   "fastener": "M4x45 8.8 + washer (head outside the rail)",
+   "parts": [
+    "Frame_Rail_R",
+    "Rung_Al_Bar_Solid_R",
+    "Upright_6061_6mm_R"
+   ],
+   "xyz": [
+    52,
+    78.3,
+    12.3
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 3,
+   "what": "upright -> riser angle",
+   "fastener": "M4x10 8.8 + washer",
+   "parts": [
+    "Upright_Riser_Angle_6061_R",
+    "Upright_6061_6mm_R"
+   ],
+   "xyz": [
+    34.5,
+    78.3,
+    30.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 3,
+   "what": "upright -> foot angle",
+   "fastener": "M4x10 8.8 + washer",
+   "parts": [
+    "Upright_Foot_Angle_6061_R",
+    "Upright_6061_6mm_R"
+   ],
+   "xyz": [
+    34.5,
+    68.7,
+    20.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 3,
+   "what": "riser angle -> rail top",
+   "fastener": "M4x10 8.8 into an M4 rivnut",
+   "parts": [
+    "Upright_Riser_Angle_6061_R",
+    "Frame_Rail_R"
+   ],
+   "xyz": [
+    52,
+    78.3,
+    18.7
+   ],
+   "rivnut_in": "Frame_Rail_R"
+  },
+  {
+   "step": 3,
+   "what": "foot angle leg C -> rail inner face",
+   "fastener": "M3x8 8.8 into an M3 rivnut",
+   "parts": [
+    "Upright_Foot_Angle_6061_R",
+    "Frame_Rail_R"
+   ],
+   "xyz": [
+    46.0,
+    68.7,
+    12.3
+   ],
+   "rivnut_in": "Frame_Rail_R"
+  },
+  {
+   "step": 3,
+   "what": "foot angle -> bulkhead cross front face",
+   "fastener": "M3x8 8.8 into an M3 rivnut",
+   "parts": [
+    "Upright_Foot_Angle_6061_R",
+    "Frame_Bulkhead_Cross"
+   ],
+   "xyz": [
+    37.5,
+    62.7,
+    12.3
+   ],
+   "rivnut_in": "Frame_Bulkhead_Cross"
+  },
+  {
+   "step": 3,
+   "what": "foot angle -> bulkhead cross front face",
+   "fastener": "M3x8 8.8 into an M3 rivnut",
+   "parts": [
+    "Upright_Foot_Angle_6061_R",
+    "Frame_Bulkhead_Cross"
+   ],
+   "xyz": [
+    42.5,
+    62.7,
+    12.3
+   ],
+   "rivnut_in": "Frame_Bulkhead_Cross"
+  },
+  {
+   "step": 2,
+   "what": "drive-motor tab -> rail top",
+   "fastener": "M3x8 button head (ISO 7380) into an M3 rivnut",
+   "parts": [
+    "Tab_Drive_Motor_R",
+    "Frame_Rail_R"
+   ],
+   "xyz": [
+    51,
+    5.8,
+    18.7
+   ],
+   "rivnut_in": "Frame_Rail_R"
+  },
+  {
+   "step": 2,
+   "what": "drive-motor tab -> rail top",
+   "fastener": "M3x8 button head (ISO 7380) into an M3 rivnut",
+   "parts": [
+    "Tab_Drive_Motor_R",
+    "Frame_Rail_R"
+   ],
+   "xyz": [
+    51,
+    30.2,
+    18.7
+   ],
+   "rivnut_in": "Frame_Rail_R"
+  },
+  {
+   "step": 4,
+   "what": "hinge base -> hinge beam bottom",
+   "fastener": "M3x6 countersunk into an M3 rivnut",
+   "parts": [
+    "Hinge_Base_5052_2mm_R",
+    "Frame_Hinge_Beam_R"
+   ],
+   "xyz": [
+    45.0,
+    91.6,
+    6.0
+   ],
+   "rivnut_in": "Frame_Hinge_Beam_R"
+  },
+  {
+   "step": 4,
+   "what": "hinge base -> hinge beam bottom",
+   "fastener": "M3x6 countersunk into an M3 rivnut",
+   "parts": [
+    "Hinge_Base_5052_2mm_R",
+    "Frame_Hinge_Beam_R"
+   ],
+   "xyz": [
+    55.0,
+    91.6,
+    6.0
+   ],
+   "rivnut_in": "Frame_Hinge_Beam_R"
+  },
+  {
+   "step": 4,
+   "what": "hinge base -> hinge beam bottom",
+   "fastener": "M3x6 countersunk into an M3 rivnut",
+   "parts": [
+    "Hinge_Base_5052_2mm_R",
+    "Frame_Hinge_Beam_R"
+   ],
+   "xyz": [
+    75.0,
+    91.6,
+    6.0
+   ],
+   "rivnut_in": "Frame_Hinge_Beam_R"
+  },
+  {
+   "step": 5,
+   "what": "battery-strap tab -> rail inner face",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Battery_Strap_R_50",
+    "Frame_Rail_R"
+   ],
+   "xyz": [
+    45,
+    -50.0,
+    12.3
+   ],
+   "rivnut_in": "Frame_Rail_R"
+  },
+  {
+   "step": 5,
+   "what": "battery-strap tab -> rail inner face",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Battery_Strap_R_31",
+    "Frame_Rail_R"
+   ],
+   "xyz": [
+    45,
+    -31.0,
+    12.3
+   ],
+   "rivnut_in": "Frame_Rail_R"
+  },
+  {
+   "step": 1,
+   "what": "wall tab -> tube top",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Wall_Rear_R",
+    "Frame_Rear_Cross"
+   ],
+   "xyz": [
+    75.0,
+    -101.7,
+    18.7
+   ],
+   "rivnut_in": "Frame_Rear_Cross"
+  },
+  {
+   "step": 7,
+   "what": "PC side wall -> wall tab",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Side_Wall_R",
+    "Tab_Wall_Rear_R"
+   ],
+   "xyz": [
+    83.0,
+    -101.7,
+    22.7
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 1,
+   "what": "wall tab -> tube top",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Wall_Front_R",
+    "Frame_Bulkhead_Stub_R"
+   ],
+   "xyz": [
+    75.0,
+    56.4,
+    18.7
+   ],
+   "rivnut_in": "Frame_Bulkhead_Stub_R"
+  },
+  {
+   "step": 7,
+   "what": "PC side wall -> wall tab",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Side_Wall_R",
+    "Tab_Wall_Front_R"
+   ],
+   "xyz": [
+    83.0,
+    56.4,
+    22.7
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 1,
+   "what": "wall tab -> tube top",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Tab_Wall_Mid_R",
+    "Frame_Midwall_Stub_R"
+   ],
+   "xyz": [
+    75.0,
+    -48.6,
+    18.7
+   ],
+   "rivnut_in": "Frame_Midwall_Stub_R"
+  },
+  {
+   "step": 7,
+   "what": "PC side wall -> wall tab",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Side_Wall_R",
+    "Tab_Wall_Mid_R"
+   ],
+   "xyz": [
+    83.0,
+    -48.6,
+    22.7
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> rail bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Rail_R"
+   ],
+   "xyz": [
+    52,
+    -80.0,
+    6.0
+   ],
+   "rivnut_in": "Frame_Rail_R"
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> rail bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Rail_R"
+   ],
+   "xyz": [
+    52,
+    -30.0,
+    6.0
+   ],
+   "rivnut_in": "Frame_Rail_R"
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> rail bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Rail_R"
+   ],
+   "xyz": [
+    52,
+    75.0,
+    6.0
+   ],
+   "rivnut_in": "Frame_Rail_R"
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> rear cross bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Rear_Cross"
+   ],
+   "xyz": [
+    -30.0,
+    -101.7,
+    6.0
+   ],
+   "rivnut_in": "Frame_Rear_Cross"
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> bulkhead cross bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Bulkhead_Cross"
+   ],
+   "xyz": [
+    -30.0,
+    56.4,
+    6.0
+   ],
+   "rivnut_in": "Frame_Bulkhead_Cross"
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> rear cross bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Rear_Cross"
+   ],
+   "xyz": [
+    30.0,
+    -101.7,
+    6.0
+   ],
+   "rivnut_in": "Frame_Rear_Cross"
+  },
+  {
+   "step": 7,
+   "what": "PC floor -> bulkhead cross bottom",
+   "fastener": "M3x6 countersunk A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Floor",
+    "Frame_Bulkhead_Cross"
+   ],
+   "xyz": [
+    30.0,
+    56.4,
+    6.0
+   ],
+   "rivnut_in": "Frame_Bulkhead_Cross"
+  },
+  {
+   "step": 7,
+   "what": "PC rear wall -> rear cross",
+   "fastener": "M3x6 A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Rear_Wall",
+    "Frame_Rear_Cross"
+   ],
+   "xyz": [
+    -60.0,
+    -110.0,
+    12.3
+   ],
+   "rivnut_in": "Frame_Rear_Cross"
+  },
+  {
+   "step": 7,
+   "what": "PC rear wall -> rear cross",
+   "fastener": "M3x6 A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Rear_Wall",
+    "Frame_Rear_Cross"
+   ],
+   "xyz": [
+    0.0,
+    -110.0,
+    12.3
+   ],
+   "rivnut_in": "Frame_Rear_Cross"
+  },
+  {
+   "step": 7,
+   "what": "PC rear wall -> rear cross",
+   "fastener": "M3x6 A2 into an M3 rivnut",
+   "parts": [
+    "Skin_PC2_Rear_Wall",
+    "Frame_Rear_Cross"
+   ],
+   "xyz": [
+    60.0,
+    -110.0,
+    12.3
+   ],
+   "rivnut_in": "Frame_Rear_Cross"
+  },
+  {
+   "step": 2,
+   "what": "clamp post -> motor cross front face",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Clamp_Drive_Motor_Post",
+    "Frame_Motor_Cross"
+   ],
+   "xyz": [
+    -4.0,
+    22.7,
+    12.3
+   ],
+   "rivnut_in": "Frame_Motor_Cross"
+  },
+  {
+   "step": 2,
+   "what": "clamp post -> clamp bar front face",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Clamp_Drive_Motor_Post",
+    "Frame_Clamp_Bar"
+   ],
+   "xyz": [
+    -4.0,
+    22.7,
+    51.4
+   ],
+   "rivnut_in": "Frame_Clamp_Bar"
+  },
+  {
+   "step": 2,
+   "what": "clamp post -> motor cross front face",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Clamp_Drive_Motor_Post",
+    "Frame_Motor_Cross"
+   ],
+   "xyz": [
+    4.0,
+    22.7,
+    12.3
+   ],
+   "rivnut_in": "Frame_Motor_Cross"
+  },
+  {
+   "step": 2,
+   "what": "clamp post -> clamp bar front face",
+   "fastener": "M3x6 into an M3 rivnut",
+   "parts": [
+    "Clamp_Drive_Motor_Post",
+    "Frame_Clamp_Bar"
+   ],
+   "xyz": [
+    4.0,
+    22.7,
+    51.4
+   ],
+   "rivnut_in": "Frame_Clamp_Bar"
+  },
+  {
+   "step": 6,
+   "what": "electronics plate -> nylon standoff",
+   "fastener": "M3x6 nylon",
+   "parts": [
+    "Electronics_Plate_PC2"
+   ],
+   "xyz": [
+    -55.0,
+    -52.0,
+    39.6
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 6,
+   "what": "electronics plate -> nylon standoff",
+   "fastener": "M3x6 nylon",
+   "parts": [
+    "Electronics_Plate_PC2"
+   ],
+   "xyz": [
+    -55.0,
+    -8.0,
+    39.6
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 6,
+   "what": "electronics plate -> nylon standoff",
+   "fastener": "M3x6 nylon",
+   "parts": [
+    "Electronics_Plate_PC2"
+   ],
+   "xyz": [
+    55.0,
+    -52.0,
+    39.6
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 6,
+   "what": "electronics plate -> nylon standoff",
+   "fastener": "M3x6 nylon",
+   "parts": [
+    "Electronics_Plate_PC2"
+   ],
+   "xyz": [
+    55.0,
+    -8.0,
+    39.6
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_RearCross_L",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_RearCross_L",
+    "Frame_Rail_L",
+    "Frame_Rear_Cross"
+   ],
+   "xyz": [
+    -46.0,
+    -95.3,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_L + Frame_Rear_Cross"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_MotorCross_Rear_L",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_MotorCross_Rear_L",
+    "Frame_Rail_L",
+    "Frame_Motor_Cross"
+   ],
+   "xyz": [
+    -46.0,
+    10.0,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_L + Frame_Motor_Cross"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_BulkStub_L",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_BulkStub_L",
+    "Frame_Rail_L",
+    "Frame_Bulkhead_Stub_L"
+   ],
+   "xyz": [
+    -58.7,
+    62.7,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_L + Frame_Bulkhead_Stub_L"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_HingeBeam_L",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_HingeBeam_L",
+    "Frame_Rail_L",
+    "Frame_Hinge_Beam_L"
+   ],
+   "xyz": [
+    -58.7,
+    85.3,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_L + Frame_Hinge_Beam_L"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_Midwall_L",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_Midwall_L",
+    "Frame_Rail_L",
+    "Frame_Midwall_Stub_L"
+   ],
+   "xyz": [
+    -58.7,
+    -55.0,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_L + Frame_Midwall_Stub_L"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_RearCross_R",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_RearCross_R",
+    "Frame_Rail_R",
+    "Frame_Rear_Cross"
+   ],
+   "xyz": [
+    46.0,
+    -95.3,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_R + Frame_Rear_Cross"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_BulkCross_R",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_BulkCross_R",
+    "Frame_Rail_R",
+    "Frame_Bulkhead_Cross"
+   ],
+   "xyz": [
+    46.0,
+    50.0,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_R + Frame_Bulkhead_Cross"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_MotorCross_Rear_R",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_MotorCross_Rear_R",
+    "Frame_Rail_R",
+    "Frame_Motor_Cross"
+   ],
+   "xyz": [
+    46.0,
+    10.0,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_R + Frame_Motor_Cross"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_BulkStub_R",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_BulkStub_R",
+    "Frame_Rail_R",
+    "Frame_Bulkhead_Stub_R"
+   ],
+   "xyz": [
+    58.7,
+    62.7,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_R + Frame_Bulkhead_Stub_R"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_HingeBeam_R",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_HingeBeam_R",
+    "Frame_Rail_R",
+    "Frame_Hinge_Beam_R"
+   ],
+   "xyz": [
+    58.7,
+    85.3,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_R + Frame_Hinge_Beam_R"
+  },
+  {
+   "step": 1,
+   "what": "corner cleat Cleat_Midwall_R",
+   "fastener": "2 x M3x6 into M3 rivnuts",
+   "parts": [
+    "Cleat_Midwall_R",
+    "Frame_Rail_R",
+    "Frame_Midwall_Stub_R"
+   ],
+   "xyz": [
+    58.7,
+    -55.0,
+    12.4
+   ],
+   "rivnut_in": "Frame_Rail_R + Frame_Midwall_Stub_R"
+  },
+  {
+   "step": 8,
+   "what": "lid corner angle -> side wall",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Lid_Angle_Rear_L",
+    "Skin_PC2_Side_Wall_L"
+   ],
+   "xyz": [
+    -83.0,
+    -101.0,
+    54.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 8,
+   "what": "lid -> lid corner angle",
+   "fastener": "M3x6 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Lid",
+    "Lid_Angle_Rear_L"
+   ],
+   "xyz": [
+    -74.0,
+    -101.0,
+    63.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 8,
+   "what": "lid corner angle -> side wall",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Lid_Angle_Front_L",
+    "Skin_PC2_Side_Wall_L"
+   ],
+   "xyz": [
+    -83.0,
+    55.0,
+    54.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 8,
+   "what": "lid -> lid corner angle",
+   "fastener": "M3x6 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Lid",
+    "Lid_Angle_Front_L"
+   ],
+   "xyz": [
+    -74.0,
+    55.0,
+    63.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 8,
+   "what": "lid corner angle -> side wall",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Lid_Angle_Rear_R",
+    "Skin_PC2_Side_Wall_R"
+   ],
+   "xyz": [
+    83.0,
+    -101.0,
+    54.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 8,
+   "what": "lid -> lid corner angle",
+   "fastener": "M3x6 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Lid",
+    "Lid_Angle_Rear_R"
+   ],
+   "xyz": [
+    74.0,
+    -101.0,
+    63.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 8,
+   "what": "lid corner angle -> side wall",
+   "fastener": "M3x8 A2 + nylock",
+   "parts": [
+    "Lid_Angle_Front_R",
+    "Skin_PC2_Side_Wall_R"
+   ],
+   "xyz": [
+    83.0,
+    55.0,
+    54.0
+   ],
+   "rivnut_in": null
+  },
+  {
+   "step": 8,
+   "what": "lid -> lid corner angle",
+   "fastener": "M3x6 A2 + nylock",
+   "parts": [
+    "Skin_PC2_Lid",
+    "Lid_Angle_Front_R"
+   ],
+   "xyz": [
+    74.0,
+    55.0,
+    63.0
+   ],
+   "rivnut_in": null
+  }
+ ],
+ "weapon_angle_t_mm": 3.0,
+ "foot_leg_b_y": [
+  62.7,
+  71.7
+ ],
+ "drive_tab_legs_y": [
+  [
+   1.5,
+   10
+  ],
+  [
+   26,
+   34.5
+  ]
+ ],
+ "drive_tab_holes_y": [
+  5.75,
+  30.25
+ ],
+ "drive_tab_bolt_clearance_mm": {
+  "leg_inner_edge_to_can": 0.9,
+  "m3_head_top_to_can (incl. rivnut flange)": 0.61
+ },
+ "skirt_brackets_flat": {
+  "Skirt_Bracket_L_y-82": {
+   "width": 15.0,
+   "wall_leg": 13.85,
+   "seat_leg": 18.45,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 14.45
+  },
+  "Skirt_Bracket_L_y-28": {
+   "width": 15.0,
+   "wall_leg": 13.85,
+   "seat_leg": 18.45,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 14.45
+  },
+  "Skirt_Bracket_L_y+32": {
+   "width": 15.0,
+   "wall_leg": 13.85,
+   "seat_leg": 18.45,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 14.45
+  },
+  "Skirt_Bracket_L_y+62": {
+   "width": 15.0,
+   "wall_leg": 13.85,
+   "seat_leg": 18.45,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 14.45
+  },
+  "Skirt_Bracket_R_y-82": {
+   "width": 15.0,
+   "wall_leg": 13.85,
+   "seat_leg": 18.45,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 14.45
+  },
+  "Skirt_Bracket_R_y-28": {
+   "width": 15.0,
+   "wall_leg": 13.85,
+   "seat_leg": 18.45,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 14.45
+  },
+  "Skirt_Bracket_R_y+32": {
+   "width": 15.0,
+   "wall_leg": 13.85,
+   "seat_leg": 18.45,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 14.45
+  },
+  "Skirt_Bracket_R_y+62": {
+   "width": 15.0,
+   "wall_leg": 13.85,
+   "seat_leg": 18.45,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 14.45
+  },
+  "Skirt_Bracket_Rear_x-58": {
+   "width": 15.0,
+   "wall_leg": 10.38,
+   "seat_leg": 9.74,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 5.74
+  },
+  "Skirt_Bracket_Rear_x+0": {
+   "width": 15.0,
+   "wall_leg": 10.38,
+   "seat_leg": 9.74,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 5.74
+  },
+  "Skirt_Bracket_Rear_x+58": {
+   "width": 15.0,
+   "wall_leg": 10.38,
+   "seat_leg": 9.74,
+   "bend_deg_from_flat": 35.0,
+   "m3_hole_from_leg_end": 4.0,
+   "m3_hole_offset_from_centre": 0.0,
+   "m2_hole_from_bend": 5.74
+  }
+ },
+ "mass": {
+  "total_g": 1797.5,
+  "margin_to_2000_g": 202.5,
+  "margin_to_1950_target_g": 152.5,
+  "cg_mm": [
+   -1.36,
+   22.23,
+   27.83
+  ],
+  "groups_g": {
+   "R3 parts kept + bought": 1194.6,
+   "frame tubes (Al)": 208.8,
+   "Al plates / angles": 75.5,
+   "PETG prints (ex-lathe)": 40.4,
+   "rotor pipe (steel)": 55.4,
+   "PC skins": 223.5
+  },
+  "new_steel_g": 114.1,
+  "n_fixings": 80
+ },
+ "support_2wd": {
+  "drive_axle_y": 18,
+  "other_support": "nose skid y 69",
+  "drive_wheel_load_pct": 91.7,
+  "push_N_mu0.6": 9.41,
+  "motor": "JB359 25GA-370 12V 150 rpm",
+  "F_motor_per_wheel_N_ESTIMATE": 9.58,
+  "traction_cap_per_wheel_N": 4.85,
+  "speed_noload_m_s": 0.5
+ },
+ "tube_cut_list_mm": [
+  {
+   "part": "Frame_Rear_Cross",
+   "wall_mm": 2.0,
+   "length_mm": 162.0
+  },
+  {
+   "part": "Frame_Bulkhead_Cross",
+   "wall_mm": 2.0,
+   "length_mm": 92.0
+  },
+  {
+   "part": "Frame_Bulkhead_Stub_L",
+   "wall_mm": 2.0,
+   "length_mm": 22.3
+  },
+  {
+   "part": "Frame_Rail_L",
+   "wall_mm": 2.0,
+   "length_mm": 180.6
+  },
+  {
+   "part": "Frame_Hinge_Beam_L",
+   "wall_mm": 2.0,
+   "length_mm": 57.5
+  },
+  {
+   "part": "Frame_Bulkhead_Stub_R",
+   "wall_mm": 2.0,
+   "length_mm": 22.3
+  },
+  {
+   "part": "Frame_Rail_R",
+   "wall_mm": 2.0,
+   "length_mm": 180.6
+  },
+  {
+   "part": "Frame_Hinge_Beam_R",
+   "wall_mm": 2.0,
+   "length_mm": 57.5
+  },
+  {
+   "part": "Frame_Motor_Cross",
+   "wall_mm": 2.0,
+   "length_mm": 92.0
+  },
+  {
+   "part": "Frame_Clamp_Bar",
+   "wall_mm": 2.0,
+   "length_mm": 28.0
+  },
+  {
+   "part": "Frame_Midwall_Stub_L",
+   "wall_mm": 2.0,
+   "length_mm": 20.3
+  },
+  {
+   "part": "Frame_Midwall_Stub_R",
+   "wall_mm": 2.0,
+   "length_mm": 20.3
+  }
+ ],
+ "tube_total_mm": 935.4,
+ "sheet_list": [
+  {
+   "part": "Tab_Drive_Motor_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    33.0,
+    32.0
+   ],
+   "mass_g": 5.8
+  },
+  {
+   "part": "Tab_Hinge_L1",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    11.7,
+    7.0
+   ],
+   "mass_g": 0.36
+  },
+  {
+   "part": "Tab_Hinge_L2",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    11.7,
+    7.0
+   ],
+   "mass_g": 0.36
+  },
+  {
+   "part": "Tab_Hinge_L3",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    11.7,
+    7.0
+   ],
+   "mass_g": 0.36
+  },
+  {
+   "part": "Hinge_Base_5052_2mm_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    54.0,
+    15.0
+   ],
+   "mass_g": 4.23
+  },
+  {
+   "part": "Tab_Battery_Strap_L_50",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    8.0
+   ],
+   "mass_g": 0.5
+  },
+  {
+   "part": "Tab_Battery_Strap_L_31",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    8.0
+   ],
+   "mass_g": 0.5
+  },
+  {
+   "part": "Tab_Wall_Rear_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    10.0
+   ],
+   "mass_g": 1.0
+  },
+  {
+   "part": "Tab_Wall_Front_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    10.0
+   ],
+   "mass_g": 1.0
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    33.0,
+    32.0
+   ],
+   "mass_g": 5.8
+  },
+  {
+   "part": "Tab_Hinge_R1",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    11.7,
+    7.0
+   ],
+   "mass_g": 0.36
+  },
+  {
+   "part": "Tab_Hinge_R2",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    11.7,
+    7.0
+   ],
+   "mass_g": 0.36
+  },
+  {
+   "part": "Tab_Hinge_R3",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    11.7,
+    7.0
+   ],
+   "mass_g": 0.36
+  },
+  {
+   "part": "Hinge_Base_5052_2mm_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    54.0,
+    15.0
+   ],
+   "mass_g": 4.23
+  },
+  {
+   "part": "Tab_Battery_Strap_R_50",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    8.0
+   ],
+   "mass_g": 0.5
+  },
+  {
+   "part": "Tab_Battery_Strap_R_31",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    8.0
+   ],
+   "mass_g": 0.5
+  },
+  {
+   "part": "Tab_Wall_Rear_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    10.0
+   ],
+   "mass_g": 1.0
+  },
+  {
+   "part": "Tab_Wall_Front_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    10.0
+   ],
+   "mass_g": 1.0
+  },
+  {
+   "part": "Tab_Wall_Mid_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    10.0
+   ],
+   "mass_g": 1.0
+  },
+  {
+   "part": "Tab_Wall_Mid_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.7,
+    10.0
+   ],
+   "mass_g": 1.0
+  },
+  {
+   "part": "Clamp_Drive_Motor_Post",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    51.7,
+    14.7
+   ],
+   "mass_g": 3.54
+  },
+  {
+   "part": "Upright_Riser_Angle_6061_L",
+   "material": "al_tab",
+   "thickness_mm": 3.0,
+   "blank_mm": [
+    24.7,
+    17.3
+   ],
+   "mass_g": 3.75
+  },
+  {
+   "part": "Upright_Foot_Angle_6061_L",
+   "material": "al_tab",
+   "thickness_mm": 3.0,
+   "blank_mm": [
+    18.0,
+    13.0
+   ],
+   "mass_g": 2.61
+  },
+  {
+   "part": "Upright_Riser_Angle_6061_R",
+   "material": "al_tab",
+   "thickness_mm": 3.0,
+   "blank_mm": [
+    24.7,
+    17.3
+   ],
+   "mass_g": 3.75
+  },
+  {
+   "part": "Upright_Foot_Angle_6061_R",
+   "material": "al_tab",
+   "thickness_mm": 3.0,
+   "blank_mm": [
+    18.0,
+    13.0
+   ],
+   "mass_g": 2.61
+  },
+  {
+   "part": "Weapon_Motor_Mount_6061_3mm",
+   "material": "al_tab",
+   "thickness_mm": 3.0,
+   "blank_mm": [
+    48.0,
+    40.0
+   ],
+   "mass_g": 12.1
+  },
+  {
+   "part": "Motor_Mount_Angle_Al_Front",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    12.0,
+    11.0
+   ],
+   "mass_g": 1.21
+  },
+  {
+   "part": "Motor_Mount_Angle_Al_Mid",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    14.0,
+    12.0
+   ],
+   "mass_g": 1.59
+  },
+  {
+   "part": "Wedgelet_DIY_L",
+   "material": "steel_wedgelet",
+   "thickness_mm": 1.6,
+   "blank_mm": [
+    61.0,
+    29.4
+   ],
+   "mass_g": 24.95
+  },
+  {
+   "part": "Wedgelet_DIY_R",
+   "material": "steel_wedgelet",
+   "thickness_mm": 1.6,
+   "blank_mm": [
+    61.0,
+    29.4
+   ],
+   "mass_g": 24.95
+  },
+  {
+   "part": "Skirt_Bracket_L_y-82",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    16.0,
+    15.0
+   ],
+   "mass_g": 1.79
+  },
+  {
+   "part": "Skirt_Bracket_L_y-28",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    16.0,
+    15.0
+   ],
+   "mass_g": 1.79
+  },
+  {
+   "part": "Skirt_Bracket_L_y+32",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    16.0,
+    15.0
+   ],
+   "mass_g": 1.79
+  },
+  {
+   "part": "Skirt_Bracket_L_y+62",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    16.0,
+    15.0
+   ],
+   "mass_g": 1.79
+  },
+  {
+   "part": "Skirt_Bracket_R_y-82",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    16.0,
+    15.0
+   ],
+   "mass_g": 1.79
+  },
+  {
+   "part": "Skirt_Bracket_R_y-28",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    16.0,
+    15.0
+   ],
+   "mass_g": 1.79
+  },
+  {
+   "part": "Skirt_Bracket_R_y+32",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    16.0,
+    15.0
+   ],
+   "mass_g": 1.79
+  },
+  {
+   "part": "Skirt_Bracket_R_y+62",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    16.0,
+    15.0
+   ],
+   "mass_g": 1.79
+  },
+  {
+   "part": "Skirt_Bracket_Rear_x-58",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    15.0,
+    10.4
+   ],
+   "mass_g": 1.05
+  },
+  {
+   "part": "Skirt_Bracket_Rear_x+0",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    15.0,
+    10.4
+   ],
+   "mass_g": 1.05
+  },
+  {
+   "part": "Skirt_Bracket_Rear_x+58",
+   "material": "al5052_bracket",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    15.0,
+    10.4
+   ],
+   "mass_g": 1.05
+  },
+  {
+   "part": "Skin_PC2_Floor",
+   "material": "PC",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    198.0,
+    166.0
+   ],
+   "mass_g": 70.47
+  },
+  {
+   "part": "Skin_PC2_Rear_Wall",
+   "material": "PC",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    166.0,
+    57.0
+   ],
+   "mass_g": 22.64
+  },
+  {
+   "part": "Skin_PC2_Side_Wall_L",
+   "material": "PC",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    193.3,
+    55.0
+   ],
+   "mass_g": 25.41
+  },
+  {
+   "part": "Skin_PC2_Side_Wall_R",
+   "material": "PC",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    193.3,
+    55.0
+   ],
+   "mass_g": 25.41
+  },
+  {
+   "part": "Skin_PC2_Lid",
+   "material": "PC",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    172.0,
+    166.0
+   ],
+   "mass_g": 64.46
+  },
+  {
+   "part": "Electronics_Plate_PC2",
+   "material": "PC",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    116.0,
+    54.5
+   ],
+   "mass_g": 15.09
+  },
+  {
+   "part": "Rear_Skid_UHMW_3mm",
+   "material": "UHMW",
+   "thickness_mm": 3.0,
+   "blank_mm": [
+    40.0,
+    12.0
+   ],
+   "mass_g": 1.35
+  },
+  {
+   "part": "Nose_Skid_UHMW_3mm",
+   "material": "UHMW",
+   "thickness_mm": 3.0,
+   "blank_mm": [
+    40.0,
+    9.5
+   ],
+   "mass_g": 1.07
+  },
+  {
+   "part": "Cleat_RearCross_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_MotorCross_Rear_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_BulkStub_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_HingeBeam_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_Midwall_L",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_RearCross_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_BulkCross_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_MotorCross_Rear_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_BulkStub_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_HingeBeam_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Cleat_Midwall_R",
+   "material": "al_tab",
+   "thickness_mm": 2.0,
+   "blank_mm": [
+    10.0,
+    10.0
+   ],
+   "mass_g": 0.87
+  },
+  {
+   "part": "Lid_Angle_Rear_L",
+   "material": "al_tab",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    12.0,
+    12.0
+   ],
+   "mass_g": 1.02
+  },
+  {
+   "part": "Lid_Angle_Front_L",
+   "material": "al_tab",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    12.0,
+    12.0
+   ],
+   "mass_g": 1.02
+  },
+  {
+   "part": "Lid_Angle_Rear_R",
+   "material": "al_tab",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    12.0,
+    12.0
+   ],
+   "mass_g": 1.02
+  },
+  {
+   "part": "Lid_Angle_Front_R",
+   "material": "al_tab",
+   "thickness_mm": 1.5,
+   "blank_mm": [
+    12.0,
+    12.0
+   ],
+   "mass_g": 1.02
+  }
+ ],
+ "bounds_mm": {
+  "xmin": -102.92,
+  "xmax": 102.92,
+  "ymin": -124.92,
+  "ymax": 128.0,
+  "zmin": -0.03,
+  "zmax": 64.03
+ },
+ "rows": [
+  {
+   "part": "Upright_6061_6mm_L",
+   "material": "6061",
+   "mass_g": 32.3487,
+   "centroid_mm": [
+    -29.999999999999993,
+    86.06377738019494,
+    33.14499122140517
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Upright_6061_6mm_R",
+   "material": "6061",
+   "mass_g": 32.7142,
+   "centroid_mm": [
+    30.0,
+    85.82622775121658,
+    33.24952010119589
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Weapon_Top_Brace_3mm",
+   "material": "6061",
+   "mass_g": 6.1737,
+   "centroid_mm": [
+    -3.4803875481879757e-16,
+    70.74711935312952,
+    58.5
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Weapon_Bottom_Brace_3mm",
+   "material": "6061",
+   "mass_g": 5.0518,
+   "centroid_mm": [
+    2.4304398929989026e-16,
+    69.00000000000001,
+    5.5
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Beater_Disc_L",
+   "material": "steel",
+   "mass_g": 80.4165,
+   "centroid_mm": [
+    -23.000000000000004,
+    95.19958316298306,
+    31.886669811272814
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Beater_Disc_R",
+   "material": "steel",
+   "mass_g": 80.4165,
+   "centroid_mm": [
+    23.000000000000004,
+    95.19958316298306,
+    31.886669811272814
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Bearing_608_L",
+   "material": "steel",
+   "mass_g": 12,
+   "centroid_mm": [
+    -16.5,
+    95.0,
+    32.0
+   ],
+   "method": "bearing measured/nominal"
+  },
+  {
+   "part": "Bearing_608_R",
+   "material": "steel",
+   "mass_g": 12,
+   "centroid_mm": [
+    16.5,
+    95.0,
+    32.0
+   ],
+   "method": "bearing measured/nominal"
+  },
+  {
+   "part": "Dead_Shaft_M8_12.9",
+   "material": "steel",
+   "mass_g": 37.4786,
+   "centroid_mm": [
+    -1.4968086503575437,
+    95.0,
+    32.0
+   ],
+   "method": "whole axle set measured/nominal, volume apportioned"
+  },
+  {
+   "part": "D3536_1250kV_Can_ENVELOPE",
+   "material": "purchased",
+   "mass_g": 109,
+   "centroid_mm": [
+    -23.545221041507677,
+    47.5,
+    42.500000000000014
+   ],
+   "method": "supplier published, physically unverified"
+  },
+  {
+   "part": "Belt_Upper_ENVELOPE",
+   "material": "belt",
+   "mass_g": 5.25,
+   "centroid_mm": [
+    3.8337850370920274e-17,
+    74.70347270082314,
+    52.8728526941999
+   ],
+   "method": "belt measured/nominal"
+  },
+  {
+   "part": "Belt_Lower_ENVELOPE",
+   "material": "belt",
+   "mass_g": 5.25,
+   "centroid_mm": [
+    4.1876943532040823e-17,
+    67.79652729917687,
+    21.627147305800094
+   ],
+   "method": "belt measured/nominal"
+  },
+  {
+   "part": "Skirt_Plate_08mm_L",
+   "material": "6061",
+   "mass_g": 8.4665,
+   "centroid_mm": [
+    -97.15517178292565,
+    -6.510667913527395,
+    8.49280840193683
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Plate_08mm_R",
+   "material": "6061",
+   "mass_g": 8.4665,
+   "centroid_mm": [
+    97.15517178292565,
+    -6.510667913527396,
+    8.49280840193684
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "Skirt_Plate_08mm_Rear",
+   "material": "6061",
+   "mass_g": 7.2018,
+   "centroid_mm": [
+    -1.0243861260032196e-14,
+    -119.15332802472112,
+    8.495441561541584
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "JGA25_370_150rpm_Front_L",
+   "material": "purchased",
+   "mass_g": 110,
+   "centroid_mm": [
+    -30.0,
+    17.999999999999996,
+    31.999999999999996
+   ],
+   "method": "nominal, unverified"
+  },
+  {
+   "part": "JGA25_370_150rpm_Front_R",
+   "material": "purchased",
+   "mass_g": 110,
+   "centroid_mm": [
+    30.0,
+    17.999999999999996,
+    31.999999999999996
+   ],
+   "method": "nominal, unverified"
+  },
+  {
+   "part": "Skywalker_40A_ESC_55x25x12",
+   "material": "purchased",
+   "mass_g": 39,
+   "centroid_mm": [
+    -22.0,
+    -42.5,
+    44.60000000000001
+   ],
+   "method": "supplier published, physically unverified"
+  },
+  {
+   "part": "ESP32_DevKit_51.5x28.3",
+   "material": "purchased",
+   "mass_g": 10,
+   "centroid_mm": [
+    -4.66866171973944e-16,
+    -15.75,
+    47.6
+   ],
+   "method": "nominal, unverified"
+  },
+  {
+   "part": "DRV8871_L",
+   "material": "purchased",
+   "mass_g": 5,
+   "centroid_mm": [
+    -42.999999999999986,
+    -15.0,
+    43.60000000000001
+   ],
+   "method": "nominal, unverified"
+  },
+  {
+   "part": "DRV8871_R",
+   "material": "purchased",
+   "mass_g": 5,
+   "centroid_mm": [
+    42.999999999999986,
+    -15.0,
+    43.60000000000001
+   ],
+   "method": "nominal, unverified"
+  },
+  {
+   "part": "IMU_Foam_Pad_1mm",
+   "material": "foam",
+   "mass_g": 0.0269,
+   "centroid_mm": [
+    42.0,
+    -42.5,
+    40.1
+   ],
+   "method": "estimated CAD volume/density"
+  },
+  {
+   "part": "IMU_GY521_MPU6050_21x16",
+   "material": "purchased",
+   "mass_g": 3,
+   "centroid_mm": [
+    42.0,
+    -42.49999999999999,
+    42.35
+   ],
+   "method": "nominal, unverified"
+  },
+  {
+   "part": "Hall_A3144_TO92",
+   "material": "purchased",
+   "mass_g": 1,
+   "centroid_mm": [
+    7.25,
+    47.5,
+    49.5
+   ],
+   "method": "nominal, unverified"
+  },
+  {
+   "part": "Power_Switch_Link",
+   "material": "purchased",
+   "mass_g": 15,
+   "centroid_mm": [
+    73.0,
+    -30.0,
+    24.999999999999993
+   ],
+   "method": "nominal, unverified"
+  },
+  {
+   "part": "Weapon_Axle_Nut_M8",
+   "material": "steel",
+   "mass_g": 4.88,
+   "centroid_mm": [
+    37.85000000000001,
+    94.99999999999996,
+    31.99999999999999
+   ],
+   "method": "whole axle set measured/nominal, volume apportioned"
+  },
+  {
+   "part": "Weapon_Axle_Washer_L",
+   "material": "steel",
+   "mass_g": 1.8207,
+   "centroid_mm": [
+    -33.800000000000004,
+    95.00000000000001,
+    32.0
+   ],
+   "method": "whole axle set measured/nominal, volume apportioned"
+  },
+  {
+   "part": "Weapon_Axle_Washer_R",
+   "material": "steel",
+   "mass_g": 1.8207,
+   "centroid_mm": [
+    33.800000000000004,
+    95.0,
+    32.0
+   ],
+   "method": "whole axle set measured/nominal, volume apportioned"
+  },
+  {
+   "part": "rotor screws",
+   "mass_g": 8,
+   "centroid_mm": [
+    0,
+    95,
+    32
+   ],
+   "method": "unverified allowance"
+  },
+  {
+   "part": "original screws/inserts/washers",
+   "mass_g": 40,
+   "centroid_mm": [
+    0,
+    -5,
+    25
+   ],
+   "method": "unverified allowance"
+  },
+  {
+   "part": "R1 extra screws/nuts/washers",
+   "mass_g": 15,
+   "centroid_mm": [
+    0,
+    -35,
+    20
+   ],
+   "method": "unverified allowance"
+  },
+  {
+   "part": "wiring/connectors",
+   "mass_g": 50,
+   "centroid_mm": [
+    0,
+    -25,
+    28
+   ],
+   "method": "unverified allowance"
+  },
+  {
+   "part": "temperature sensors/magnets",
+   "mass_g": 8,
+   "centroid_mm": [
+    0,
+    0,
+    30
+   ],
+   "method": "unverified allowance"
+  },
+  {
+   "part": "straps/foam/insulation",
+   "mass_g": 8,
+   "centroid_mm": [
+    0,
+    -35,
+    35
+   ],
+   "method": "unverified allowance"
+  },
+  {
+   "part": "Frame_Rear_Cross",
+   "material": "al_tube",
+   "mass_g": 36.487,
+   "centroid_mm": [
+    -9.539963022295656e-15,
+    -101.63445333938198,
+    12.349709408212743
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Bulkhead_Cross",
+   "material": "al_tube",
+   "mass_g": 20.521,
+   "centroid_mm": [
+    -0.20409183855888954,
+    56.26707154407922,
+    12.40502729318107
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Bulkhead_Stub_L",
+   "material": "al_tube",
+   "mass_g": 4.942,
+   "centroid_mm": [
+    -69.83927251105548,
+    56.235215868293565,
+    12.23414311939913
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Rail_L",
+   "material": "al_tube",
+   "mass_g": 40.12,
+   "centroid_mm": [
+    -52.40052602457779,
+    -5.647512706006947,
+    12.343135975453562
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Hinge_Beam_L",
+   "material": "al_tube",
+   "mass_g": 12.865,
+   "centroid_mm": [
+    -62.32252486196095,
+    91.69409181948761,
+    12.481863385383562
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Bulkhead_Stub_R",
+   "material": "al_tube",
+   "mass_g": 4.942,
+   "centroid_mm": [
+    69.83927251105547,
+    56.23521586829356,
+    12.234143119399123
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Rail_R",
+   "material": "al_tube",
+   "mass_g": 40.014,
+   "centroid_mm": [
+    52.41483630828301,
+    -5.7777435107525505,
+    12.342985297478837
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Hinge_Beam_R",
+   "material": "al_tube",
+   "mass_g": 12.865,
+   "centroid_mm": [
+    62.32252486196093,
+    91.69409181948758,
+    12.481863385383557
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Motor_Cross",
+   "material": "al_tube",
+   "mass_g": 20.839,
+   "centroid_mm": [
+    -6.260190788973265e-17,
+    16.35,
+    12.349491198552224
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Clamp_Bar",
+   "material": "al_tube",
+   "mass_g": 6.259,
+   "centroid_mm": [
+    -1.2259930801006784e-17,
+    16.16874855101286,
+    51.35000000000003
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Drive_Motor_L",
+   "material": "al_tab",
+   "mass_g": 5.804,
+   "centroid_mm": [
+    -56.23731512899931,
+    17.999999999999996,
+    33.012445929659165
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Hinge_L1",
+   "material": "al_tab",
+   "mass_g": 0.364,
+   "centroid_mm": [
+    -37.99999999999999,
+    101.24127583808175,
+    11.070617388600951
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Hinge_L2",
+   "material": "al_tab",
+   "mass_g": 0.364,
+   "centroid_mm": [
+    -62.999999999999986,
+    101.24127583808175,
+    11.070617388600951
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Hinge_L3",
+   "material": "al_tab",
+   "mass_g": 0.364,
+   "centroid_mm": [
+    -86.0,
+    101.24127583808175,
+    11.070617388600951
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Base_5052_2mm_L",
+   "material": "al_tab",
+   "mass_g": 4.227,
+   "centroid_mm": [
+    -61.092502019114704,
+    97.70275116791373,
+    5.000000000000001
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Battery_Strap_L_50",
+   "material": "al_tab",
+   "mass_g": 0.5,
+   "centroid_mm": [
+    -44.99999999999999,
+    -50.00000000000001,
+    12.350000000000001
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Battery_Strap_L_31",
+   "material": "al_tab",
+   "mass_g": 0.5,
+   "centroid_mm": [
+    -44.99999999999999,
+    -30.99999999999999,
+    12.350000000000001
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Wall_Rear_L",
+   "material": "al_tab",
+   "mass_g": 0.999,
+   "centroid_mm": [
+    -77.50000000000001,
+    -101.65000000000002,
+    21.199999999999996
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Wall_Front_L",
+   "material": "al_tab",
+   "mass_g": 0.999,
+   "centroid_mm": [
+    -77.50000000000001,
+    56.35,
+    21.199999999999992
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Drive_Motor_R",
+   "material": "al_tab",
+   "mass_g": 5.804,
+   "centroid_mm": [
+    56.237315128999334,
+    17.999999999999996,
+    33.01244592965917
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Hinge_R1",
+   "material": "al_tab",
+   "mass_g": 0.364,
+   "centroid_mm": [
+    38.0,
+    101.24127583808175,
+    11.070617388600951
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Hinge_R2",
+   "material": "al_tab",
+   "mass_g": 0.364,
+   "centroid_mm": [
+    62.999999999999986,
+    101.24127583808175,
+    11.070617388600951
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Hinge_R3",
+   "material": "al_tab",
+   "mass_g": 0.364,
+   "centroid_mm": [
+    86.0,
+    101.24127583808175,
+    11.070617388600951
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Base_5052_2mm_R",
+   "material": "al_tab",
+   "mass_g": 4.227,
+   "centroid_mm": [
+    61.092502019114704,
+    97.70275116791373,
+    5.000000000000001
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Battery_Strap_R_50",
+   "material": "al_tab",
+   "mass_g": 0.5,
+   "centroid_mm": [
+    45.00000000000001,
+    -50.00000000000001,
+    12.350000000000001
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Battery_Strap_R_31",
+   "material": "al_tab",
+   "mass_g": 0.5,
+   "centroid_mm": [
+    45.00000000000001,
+    -30.99999999999999,
+    12.350000000000001
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Wall_Rear_R",
+   "material": "al_tab",
+   "mass_g": 0.999,
+   "centroid_mm": [
+    77.5,
+    -101.65,
+    21.2
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Wall_Front_R",
+   "material": "al_tab",
+   "mass_g": 0.999,
+   "centroid_mm": [
+    77.49999999999999,
+    56.34999999999999,
+    21.199999999999996
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Midwall_Stub_L",
+   "material": "al_tube",
+   "mass_g": 4.48,
+   "centroid_mm": [
+    -68.79082792316673,
+    -48.52337175557684,
+    12.222188314040178
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Wall_Mid_L",
+   "material": "al_tab",
+   "mass_g": 0.999,
+   "centroid_mm": [
+    -77.49999999999999,
+    -48.65,
+    21.199999999999992
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Frame_Midwall_Stub_R",
+   "material": "al_tube",
+   "mass_g": 4.48,
+   "centroid_mm": [
+    68.79082792316672,
+    -48.52337175557683,
+    12.22218831404017
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Tab_Wall_Mid_R",
+   "material": "al_tab",
+   "mass_g": 0.999,
+   "centroid_mm": [
+    77.49999999999999,
+    -48.65,
+    21.199999999999996
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Pad_Drive_Motor_EPDM_L",
+   "material": "EPDM",
+   "mass_g": 0.104,
+   "centroid_mm": [
+    -9.0,
+    16.0,
+    19.099999999999998
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Pad_Drive_Motor_Top_EPDM_L",
+   "material": "EPDM",
+   "mass_g": 0.065,
+   "centroid_mm": [
+    -9.0,
+    16.0,
+    44.750000000000014
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Pad_Drive_Motor_EPDM_R",
+   "material": "EPDM",
+   "mass_g": 0.104,
+   "centroid_mm": [
+    9.0,
+    16.0,
+    19.099999999999998
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Pad_Drive_Motor_Top_EPDM_R",
+   "material": "EPDM",
+   "mass_g": 0.065,
+   "centroid_mm": [
+    9.0,
+    16.0,
+    44.750000000000014
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Clamp_Drive_Motor_Post",
+   "material": "al_tab",
+   "mass_g": 3.538,
+   "centroid_mm": [
+    -3.1410074462297505e-17,
+    19.952482026213012,
+    31.84999999999999
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Rung_Al_Bar_Solid_L",
+   "material": "al_bar",
+   "mass_g": 5.103,
+   "centroid_mm": [
+    -39.5,
+    78.35,
+    12.349999999999998
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Upright_Riser_Angle_6061_L",
+   "material": "al_tab",
+   "mass_g": 3.754,
+   "centroid_mm": [
+    -41.24275984102257,
+    78.34999999999997,
+    23.2530540861938
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Upright_Foot_Angle_6061_L",
+   "material": "al_tab",
+   "mass_g": 2.608,
+   "centroid_mm": [
+    -38.83590291250322,
+    66.42488900246927,
+    13.30551125588528
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Rung_Al_Bar_Solid_R",
+   "material": "al_bar",
+   "mass_g": 5.103,
+   "centroid_mm": [
+    39.5,
+    78.35,
+    12.349999999999998
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Upright_Riser_Angle_6061_R",
+   "material": "al_tab",
+   "mass_g": 3.754,
+   "centroid_mm": [
+    41.24275984102257,
+    78.34999999999995,
+    23.25305408619379
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Upright_Foot_Angle_6061_R",
+   "material": "al_tab",
+   "mass_g": 2.608,
+   "centroid_mm": [
+    38.83590291250322,
+    66.42488900246927,
+    13.30551125588528
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Weapon_Motor_Mount_6061_3mm",
+   "material": "al_tab",
+   "mass_g": 12.1,
+   "centroid_mm": [
+    -43.499999999999986,
+    42.61835520567227,
+    35.148992393616176
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Motor_Mount_Angle_Al_Front",
+   "material": "al_tab",
+   "mass_g": 1.213,
+   "centroid_mm": [
+    -48.357142857142854,
+    56.35,
+    22.55714285714286
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Motor_Mount_Angle_Al_Mid",
+   "material": "al_tab",
+   "mass_g": 1.588,
+   "centroid_mm": [
+    -48.35714285714284,
+    41.99999999999999,
+    22.55714285714285
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hall_Post_PETG_3mm",
+   "material": "petg_print",
+   "mass_g": 0.847,
+   "centroid_mm": [
+    9.499999999999998,
+    57.92446043165465,
+    37.07985611510791
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Rotor_Pipe_Steel_3-4in_L40",
+   "material": "steel_pipe",
+   "mass_g": 55.36,
+   "centroid_mm": [
+    -1.0559028450696978e-15,
+    95.00000000000003,
+    31.999999999999993
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Belt_Flange_PETG_L",
+   "material": "petg_print",
+   "mass_g": 0.457,
+   "centroid_mm": [
+    -3.7500000000000004,
+    95.00000000000004,
+    31.99999999999999
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Belt_Flange_PETG_R",
+   "material": "petg_print",
+   "mass_g": 0.457,
+   "centroid_mm": [
+    3.7500000000000004,
+    95.00000000000004,
+    31.99999999999999
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Spacer_PETG_Outer_L",
+   "material": "petg_print",
+   "mass_g": 0.375,
+   "centroid_mm": [
+    -23.5,
+    95.00000000000003,
+    32.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Spacer_PETG_Inner",
+   "material": "petg_print",
+   "mass_g": 1.394,
+   "centroid_mm": [
+    -1.0517707279971932e-16,
+    95.00000000000003,
+    32.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Spacer_PETG_Outer_R",
+   "material": "petg_print",
+   "mass_g": 0.375,
+   "centroid_mm": [
+    23.5,
+    95.00000000000003,
+    32.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Motor_Pulley_PETG_D30",
+   "material": "petg_print",
+   "mass_g": 6.395,
+   "centroid_mm": [
+    0.3910749037734511,
+    47.48976309158733,
+    42.49999997807663
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wedgelet_DIY_L",
+   "material": "steel_wedgelet",
+   "mass_g": 24.948,
+   "centroid_mm": [
+    -57.33163461326018,
+    114.52436116261629,
+    10.915101337492665
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Bolt_M3x55_L",
+   "material": "steel_bolt",
+   "mass_g": 4.4,
+   "centroid_mm": [
+    -65.20114491514737,
+    102.00000000000001,
+    14.499999999999998
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wedgelet_DIY_R",
+   "material": "steel_wedgelet",
+   "mass_g": 24.948,
+   "centroid_mm": [
+    57.33163461326017,
+    114.52436116261626,
+    10.915101337492665
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Hinge_Bolt_M3x55_R",
+   "material": "steel_bolt",
+   "mass_g": 4.4,
+   "centroid_mm": [
+    65.20114491514737,
+    102.0,
+    14.500000000000002
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_L_y-82",
+   "material": "al5052_bracket",
+   "mass_g": 1.785,
+   "centroid_mm": [
+    -86.86236900157003,
+    -82.5000000000244,
+    18.16538832574717
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_L_y-28",
+   "material": "al5052_bracket",
+   "mass_g": 1.785,
+   "centroid_mm": [
+    -86.86236900157003,
+    -27.500000000024386,
+    18.165388325747163
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_L_y+32",
+   "material": "al5052_bracket",
+   "mass_g": 1.785,
+   "centroid_mm": [
+    -86.86236900157003,
+    32.4999999999756,
+    18.16538832574717
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_L_y+62",
+   "material": "al5052_bracket",
+   "mass_g": 1.785,
+   "centroid_mm": [
+    -86.86236900157002,
+    62.49999999997561,
+    18.16538832574717
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_R_y-82",
+   "material": "al5052_bracket",
+   "mass_g": 1.785,
+   "centroid_mm": [
+    86.86236900157004,
+    -82.50000000002441,
+    18.165388325747166
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_R_y-28",
+   "material": "al5052_bracket",
+   "mass_g": 1.785,
+   "centroid_mm": [
+    86.86236900157002,
+    -27.500000000024393,
+    18.165388325747166
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_R_y+32",
+   "material": "al5052_bracket",
+   "mass_g": 1.785,
+   "centroid_mm": [
+    86.86236900157003,
+    32.4999999999756,
+    18.165388325747166
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_R_y+62",
+   "material": "al5052_bracket",
+   "mass_g": 1.785,
+   "centroid_mm": [
+    86.86236900157003,
+    62.49999999997561,
+    18.165388325747166
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_Rear_x-58",
+   "material": "al5052_bracket",
+   "mass_g": 1.053,
+   "centroid_mm": [
+    -57.500000005158924,
+    -112.12576233071019,
+    13.753002767956831
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_Rear_x+0",
+   "material": "al5052_bracket",
+   "mass_g": 1.053,
+   "centroid_mm": [
+    -5.1587591040144475e-09,
+    -112.12576233070716,
+    13.753002767962426
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skirt_Bracket_Rear_x+58",
+   "material": "al5052_bracket",
+   "mass_g": 1.053,
+   "centroid_mm": [
+    57.4999999948411,
+    -112.1257623307102,
+    13.753002767956847
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skin_PC2_Floor",
+   "material": "PC",
+   "mass_g": 70.467,
+   "centroid_mm": [
+    2.7820378841365185e-15,
+    -15.880609560581865,
+    5.0
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skin_PC2_Rear_Wall",
+   "material": "PC",
+   "mass_g": 22.643,
+   "centroid_mm": [
+    0.0,
+    -109.00000000000004,
+    32.558171873820775
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skin_PC2_Side_Wall_L",
+   "material": "PC",
+   "mass_g": 25.407,
+   "centroid_mm": [
+    -82.00000000000004,
+    -11.27864327883438,
+    33.492624185071826
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skin_PC2_Side_Wall_R",
+   "material": "PC",
+   "mass_g": 25.407,
+   "centroid_mm": [
+    82.00000000000003,
+    -11.27864327883438,
+    33.492624185071826
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Skin_PC2_Lid",
+   "material": "PC",
+   "mass_g": 64.463,
+   "centroid_mm": [
+    1.3967646671127954e-16,
+    -26.590809292932015,
+    61.999999999999986
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Electronics_Plate_PC2",
+   "material": "PC",
+   "mass_g": 15.086,
+   "centroid_mm": [
+    6.239887985934034e-16,
+    -28.742777871158957,
+    38.599999999999994
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wheel_Hub_PETG_Front_L",
+   "material": "petg_print",
+   "mass_g": 15.001,
+   "centroid_mm": [
+    -69.90972453858906,
+    18.20633702916466,
+    32.000003767600816
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wheel_ORing_P52_Front_L1",
+   "material": "NBR",
+   "mass_g": 5.949,
+   "centroid_mm": [
+    -63.8,
+    18.0,
+    31.999999999999993
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wheel_ORing_P52_Front_L2",
+   "material": "NBR",
+   "mass_g": 5.949,
+   "centroid_mm": [
+    -71.19999999999999,
+    18.0,
+    32.00000000000002
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Standoff_Nylon_M3_L_52",
+   "material": "nylon_standoff",
+   "mass_g": 0.6,
+   "centroid_mm": [
+    -54.99999999999999,
+    -51.999999999999986,
+    28.149999999999995
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Standoff_Nylon_M3_L_8",
+   "material": "nylon_standoff",
+   "mass_g": 0.6,
+   "centroid_mm": [
+    -55.0,
+    -8.0,
+    28.15
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Wheel_Hub_PETG_Front_R",
+   "material": "petg_print",
+   "mass_g": 15.001,
+   "centroid_mm": [
+    69.90972453858906,
+    18.20633702916466,
+    32.000003767600816
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wheel_ORing_P52_Front_R1",
+   "material": "NBR",
+   "mass_g": 5.949,
+   "centroid_mm": [
+    63.8,
+    18.0,
+    31.999999999999993
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Wheel_ORing_P52_Front_R2",
+   "material": "NBR",
+   "mass_g": 5.949,
+   "centroid_mm": [
+    71.19999999999999,
+    18.0,
+    32.00000000000002
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Standoff_Nylon_M3_R_52",
+   "material": "nylon_standoff",
+   "mass_g": 0.6,
+   "centroid_mm": [
+    54.99999999999999,
+    -51.999999999999986,
+    28.149999999999995
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Standoff_Nylon_M3_R_8",
+   "material": "nylon_standoff",
+   "mass_g": 0.6,
+   "centroid_mm": [
+    55.0,
+    -8.0,
+    28.15
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "3S_650mAh_LiPo_ENVELOPE",
+   "material": "battery_650",
+   "mass_g": 58.0,
+   "centroid_mm": [
+    -4.003539014211328e-16,
+    -40.5,
+    19.0
+   ],
+   "method": "ASSUMED bought-part mass"
+  },
+  {
+   "part": "Rear_Skid_UHMW_3mm",
+   "material": "UHMW",
+   "mass_g": 1.354,
+   "centroid_mm": [
+    -4.780648724528436e-16,
+    -102.0,
+    2.5000000000000004
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Nose_Skid_UHMW_3mm",
+   "material": "UHMW",
+   "mass_g": 1.072,
+   "centroid_mm": [
+    -3.9366195245210073e-16,
+    69.25,
+    2.5
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_RearCross_L",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    -42.836993722569616,
+    -92.13699372256963,
+    12.399999999999995
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_MotorCross_Rear_L",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    -42.83699372256961,
+    6.836993722569621,
+    12.399999999999991
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_BulkStub_L",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    -61.86300627743037,
+    65.86300627743037,
+    12.4
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_HingeBeam_L",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    -61.86300627743037,
+    82.13699372256963,
+    12.399999999999997
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_Midwall_L",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    -61.86300627743038,
+    -58.16300627743036,
+    12.399999999999997
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_RearCross_R",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    42.83699372256962,
+    -92.13699372256961,
+    12.399999999999995
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_BulkCross_R",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    42.836993722569616,
+    46.83699372256962,
+    12.4
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_MotorCross_Rear_R",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    42.83699372256962,
+    6.836993722569624,
+    12.400000000000002
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_BulkStub_R",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    61.863006277430365,
+    65.86300627743034,
+    12.4
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_HingeBeam_R",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    61.86300627743037,
+    82.13699372256964,
+    12.4
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Cleat_Midwall_R",
+   "material": "al_tab",
+   "mass_g": 0.874,
+   "centroid_mm": [
+    61.86300627743035,
+    -58.16300627743037,
+    12.399999999999997
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Lid_Angle_Rear_L",
+   "material": "al_tab",
+   "mass_g": 1.02,
+   "centroid_mm": [
+    -77.47343330859368,
+    -100.99999999999999,
+    57.47343330859373
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Lid_Angle_Front_L",
+   "material": "al_tab",
+   "mass_g": 1.02,
+   "centroid_mm": [
+    -77.47343330859371,
+    55.00000000000001,
+    57.47343330859373
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Lid_Angle_Rear_R",
+   "material": "al_tab",
+   "mass_g": 1.02,
+   "centroid_mm": [
+    77.47343330859373,
+    -100.99999999999997,
+    57.47343330859372
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "Lid_Angle_Front_R",
+   "material": "al_tab",
+   "mass_g": 1.02,
+   "centroid_mm": [
+    77.47343330859373,
+    55.000000000000014,
+    57.47343330859372
+   ],
+   "method": "CAD volume x density"
+  },
+  {
+   "part": "drive motors: 2 mm longer gearbox x2 (JB359 vs JB361)",
+   "mass_g": 8.0,
+   "centroid_mm": [
+    0,
+    18,
+    32
+   ],
+   "method": "ASSUMED"
+  },
+  {
+   "part": "rotor pipe-to-disc welds (ARC)",
+   "mass_g": 3.0,
+   "centroid_mm": [
+    0,
+    95,
+    32
+   ],
+   "method": "ASSUMED"
+  },
+  {
+   "part": "fasteners from the fixing list: 91 bolts, 67 rivnuts",
+   "mass_g": 124.0,
+   "centroid_mm": [
+    0,
+    -10,
+    20
+   ],
+   "method": "counted (FIX); ASSUMED 0.7 g per M3/M4 screw + nut/washer, 0.9 g per rivnut"
+  },
+  {
+   "part": "switch panel mount (bought)",
+   "mass_g": 3.0,
+   "centroid_mm": [
+    80,
+    -30,
+    25
+   ],
+   "method": "ASSUMED"
+  },
+  {
+   "part": "wall-tab M3 screws + nylocks x4, skid screws x2",
+   "mass_g": 5.4,
+   "centroid_mm": [
+    0,
+    0,
+    15
+   ],
+   "method": "ASSUMED"
+  }
+ ]
+}
